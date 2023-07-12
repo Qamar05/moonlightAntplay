@@ -1,0 +1,434 @@
+[
+    {
+        "merged": "com.antplay.app-merged_res-9:/xml_network_security_config.xml.flat",
+        "source": "com.antplay.app-main-11:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-mdpi_ic_play.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-mdpi/ic_play.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_activity_configure_virtual_controller.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/activity_configure_virtual_controller.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.antplay.app-main-11:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable_ic_channel.xml.flat",
+        "source": "com.antplay.app-main-11:/drawable/ic_channel.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xxxhdpi_ic_pc_scut.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xxxhdpi/ic_pc_scut.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_ic_computer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xhdpi/ic_computer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxxhdpi_ic_lock.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxxhdpi/ic_lock.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-anydpi-v21_ic_computer.xml.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-anydpi-v21/ic_computer.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable_btngradient.xml.flat",
+        "source": "com.antplay.app-main-11:/drawable/btngradient.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_activity_game.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/activity_game.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-anydpi-v21_ic_pc_offline.xml.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-anydpi-v21/ic_pc_offline.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_activity_pc_view.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/activity_pc_view.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-anydpi-v26_ic_pc_scut.xml.flat",
+        "source": "com.antplay.app-main-11:/mipmap-anydpi-v26/ic_pc_scut.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_ic_play.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xhdpi/ic_play.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxxhdpi_ic_pc_offline.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxxhdpi/ic_pc_offline.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-ldpi_ic_play.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-ldpi/ic_play.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-anydpi-v21_ic_lock.xml.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-anydpi-v21/ic_lock.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_ic_lock.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xhdpi/ic_lock.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_app_grid_view_small.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/app_grid_view_small.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_activity_login.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_ic_add.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xhdpi/ic_add.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_ic_pc_offline.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xhdpi/ic_pc_offline.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxhdpi_ic_settings.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxhdpi/ic_settings.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxxhdpi_ic_play.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxxhdpi/ic_play.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-hdpi_ic_computer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-hdpi/ic_computer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xxxhdpi_ic_pc_scut_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xxxhdpi/ic_pc_scut_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-mdpi_ic_pc_scut_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-mdpi/ic_pc_scut_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_atv_banner.png.flat",
+        "source": "com.antplay.app-main-11:/drawable-xhdpi/atv_banner.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-mdpi_ic_lock.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-mdpi/ic_lock.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-anydpi-v21_ic_lime_layer.xml.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-anydpi-v21/ic_lime_layer.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-mdpi_ic_add.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-mdpi/ic_add.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-hdpi_ic_help.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-hdpi/ic_help.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxxhdpi_ic_add.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxxhdpi/ic_add.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-mdpi_ic_help.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-mdpi/ic_help.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout-land_activity_pc_view.xml.flat",
+        "source": "com.antplay.app-main-11:/layout-land/activity_pc_view.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_ouya_icon.png.flat",
+        "source": "com.antplay.app-main-11:/drawable-xhdpi/ouya_icon.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-mdpi_ic_lime_layer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-mdpi/ic_lime_layer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xxhdpi_ic_pc_scut_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xxhdpi/ic_pc_scut_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-ldpi_ic_settings.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-ldpi/ic_settings.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-ldpi_ic_pc_offline.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-ldpi/ic_pc_offline.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-ldpi_ic_computer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-ldpi/ic_computer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-mdpi_ic_computer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-mdpi/ic_computer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_ic_lime_layer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xhdpi/ic_lime_layer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-hdpi_ic_pc_scut_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-hdpi/ic_pc_scut_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_app_grid_item_small.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/app_grid_item_small.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxhdpi_ic_play.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxhdpi/ic_play.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-ldpi_ic_lock.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-ldpi/ic_lock.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxxhdpi_ic_computer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxxhdpi/ic_computer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-ldpi_ic_lime_layer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-ldpi/ic_lime_layer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_ic_settings.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xhdpi/ic_settings.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_activity_add_computer_manually.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/activity_add_computer_manually.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-anydpi-v21_ic_play.xml.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-anydpi-v21/ic_play.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxhdpi_ic_help.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxhdpi/ic_help.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable_login_bg_new.jpg.flat",
+        "source": "com.antplay.app-main-11:/drawable/login_bg_new.jpg"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_pc_grid_item.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/pc_grid_item.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_ic_help.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xhdpi/ic_help.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-hdpi_ic_settings.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-hdpi/ic_settings.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-ldpi_ic_add.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-ldpi/ic_add.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxxhdpi_ic_help.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxxhdpi/ic_help.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-hdpi_ic_play.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-hdpi/ic_play.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxhdpi_ic_computer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxhdpi/ic_computer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/anim_boxart_fadein.xml.flat",
+        "source": "com.antplay.app-main-11:/anim/boxart_fadein.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-hdpi_ic_lime_layer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-hdpi/ic_lime_layer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-mdpi_ic_settings.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-mdpi/ic_settings.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxhdpi_ic_pc_offline.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxhdpi/ic_pc_offline.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-anydpi-v21_ic_help.xml.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-anydpi-v21/ic_help.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-hdpi_ic_pc_offline.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-hdpi/ic_pc_offline.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable_list_view_unselected.xml.flat",
+        "source": "com.antplay.app-main-11:/drawable/list_view_unselected.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/anim_boxart_fadeout.xml.flat",
+        "source": "com.antplay.app-main-11:/anim/boxart_fadeout.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxhdpi_ic_lock.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxhdpi/ic_lock.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-mdpi_ic_pc_offline.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-mdpi/ic_pc_offline.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-anydpi-v21_ic_settings.xml.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-anydpi-v21/ic_settings.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-ldpi_ic_help.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-ldpi/ic_help.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-mdpi_ic_pc_scut.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-mdpi/ic_pc_scut.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxhdpi_ic_lime_layer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxhdpi/ic_lime_layer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xhdpi_ic_pc_scut.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xhdpi/ic_pc_scut.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxhdpi_ic_add.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxhdpi/ic_add.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_app_grid_item.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/app_grid_item.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_activity_app_view.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/activity_app_view.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-anydpi-v21_ic_add.xml.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-anydpi-v21/ic_add.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xxhdpi_ic_pc_scut.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xxhdpi/ic_pc_scut.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable_btnshape.xml.flat",
+        "source": "com.antplay.app-main-11:/drawable/btnshape.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-hdpi_ic_pc_scut.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-hdpi/ic_pc_scut.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_pc_grid_view.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/pc_grid_view.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable_app_icon.png.flat",
+        "source": "com.antplay.app-main-11:/drawable/app_icon.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxxhdpi_ic_settings.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxxhdpi/ic_settings.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/mipmap-xhdpi_ic_pc_scut_foreground.png.flat",
+        "source": "com.antplay.app-main-11:/mipmap-xhdpi/ic_pc_scut_foreground.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xxxhdpi_ic_lime_layer.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-xxxhdpi/ic_lime_layer.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/xml_locales_config.xml.flat",
+        "source": "com.antplay.app-main-11:/xml/locales_config.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/xml_backup_rules_s.xml.flat",
+        "source": "com.antplay.app-main-11:/xml/backup_rules_s.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_activity_stream_settings.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/activity_stream_settings.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-hdpi_ic_add.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-hdpi/ic_add.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/xml_backup_rules.xml.flat",
+        "source": "com.antplay.app-main-11:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/xml_preferences.xml.flat",
+        "source": "com.antplay.app-main-11:/xml/preferences.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-hdpi_ic_lock.png.flat",
+        "source": "com.antplay.app-nonRoot-4:/drawable-hdpi/ic_lock.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/layout_app_grid_view.xml.flat",
+        "source": "com.antplay.app-main-11:/layout/app_grid_view.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-9:/drawable-xhdpi_no_app_image.png.flat",
+        "source": "com.antplay.app-main-11:/drawable-xhdpi/no_app_image.png"
+    }
+]

@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-7:/values-v29/values-v29.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\res\\values-v29\\styles.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "401"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "7",
+                        "endColumns": "12",
+                        "endOffsets": "355"
+                    }
+                }
+            ]
+        }
+    ]
+}

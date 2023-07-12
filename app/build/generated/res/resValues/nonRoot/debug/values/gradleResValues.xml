@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Automatically generated file. DO NOT MODIFY -->
+
+    <!-- Value from build type: debug -->
+    <string name="app_label" translatable="false">Moonlight (Debug)</string>
+    <!-- Value from build type: debug -->
+    <string name="app_label_root" translatable="false">Moonlight (Root Debug)</string>
+
+</resources>

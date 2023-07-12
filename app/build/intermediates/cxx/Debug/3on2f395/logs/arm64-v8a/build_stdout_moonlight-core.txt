@@ -1,0 +1,3 @@
+[arm64-v8a] Compile        : moonlight-core <= simplejni.c
+[arm64-v8a] Compile        : moonlight-core <= callbacks.c
+[arm64-v8a] SharedLibrary  : libmoonlight-core.so

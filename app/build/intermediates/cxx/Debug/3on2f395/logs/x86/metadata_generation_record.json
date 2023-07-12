@@ -1,0 +1,44 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 16 min SDK version: x86",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1850164537
+  },
+  {
+    "level_": 0,
+    "message_": "JSON \u0027C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx\\Debug\\3on2f395\\x86\\android_gradle_build.json\u0027 was up-to-date",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 661883177
+  },
+  {
+    "level_": 0,
+    "message_": "JSON generation completed without problems",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1818016420
+  }
+]

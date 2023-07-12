@@ -1,0 +1,2 @@
+C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\jni\Android.mk
+C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\jni\Application.mk

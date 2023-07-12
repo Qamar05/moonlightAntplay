@@ -1,0 +1,58 @@
+{
+  "buildFiles": [
+    "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Application.mk"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\ndk-build.cmd",
+      "NDK_PROJECT_PATH\u003dnull",
+      "APP_BUILD_SCRIPT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+      "NDK_APPLICATION_MK\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Application.mk",
+      "APP_ABI\u003dx86",
+      "NDK_ALL_ABIS\u003dx86",
+      "NDK_DEBUG\u003d1",
+      "APP_PLATFORM\u003dandroid-16",
+      "NDK_OUT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395/obj",
+      "NDK_LIBS_OUT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395/lib",
+      "PRODUCT_FLAVOR\u003dnonRoot",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\ndk-build.cmd",
+    "NDK_PROJECT_PATH\u003dnull",
+    "APP_BUILD_SCRIPT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "NDK_APPLICATION_MK\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Application.mk",
+    "APP_ABI\u003dx86",
+    "NDK_ALL_ABIS\u003dx86",
+    "NDK_DEBUG\u003d1",
+    "APP_PLATFORM\u003dandroid-16",
+    "NDK_OUT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395/obj",
+    "NDK_LIBS_OUT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395/lib",
+    "PRODUCT_FLAVOR\u003dnonRoot",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "moonlight-core-nonRootDebug-x86": {
+      "artifactName": "moonlight-core",
+      "buildCommandComponents": [
+        "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d1",
+        "APP_PLATFORM\u003dandroid-16",
+        "NDK_OUT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395/obj",
+        "NDK_LIBS_OUT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395/lib",
+        "PRODUCT_FLAVOR\u003dnonRoot",
+        "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395/obj/local/x86/libmoonlight-core.so"
+      ],
+      "abi": "x86",
+      "output": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395\\obj\\local\\x86\\libmoonlight-core.so",
+      "runtimeFiles": []
+    }
+  }
+}

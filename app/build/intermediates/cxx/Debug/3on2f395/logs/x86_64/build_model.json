@@ -1,0 +1,149 @@
+{
+  "abi": "X86_64",
+  "info": {
+    "abi": "X86_64",
+    "bitness": 64,
+    "deprecated": false,
+    "default": true
+  },
+  "cxxBuildFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx\\Debug\\3on2f395\\x86_64",
+  "soFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395\\obj\\local\\x86_64",
+  "soRepublishFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\ndkBuild\\nonRootDebug\\obj\\local\\x86_64",
+  "abiPlatformVersion": 16,
+  "variant": {
+    "buildSystemArgumentList": [
+      "PRODUCT_FLAVOR\u003dnonRoot"
+    ],
+    "cFlagsList": [],
+    "cppFlagsList": [],
+    "variantName": "nonRootDebug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "module": {
+      "cxxFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx",
+      "intermediatesBaseFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates",
+      "intermediatesFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app",
+      "moduleBuildFile": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build.gradle",
+      "makeFile": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+      "buildSystem": "NDK_BUILD",
+      "ndkFolder": "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313",
+      "ndkVersion": "23.2.8568313",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultStl": "SYSTEM",
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 31,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30,
+          "S": 31
+        }
+      },
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "cmakeToolchainFile": "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\build\\cmake\\android.toolchain.cmake",
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      },
+      "project": {
+        "rootBuildGradleFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android",
+        "sdkFolder": "C:\\Users\\qamar\\AppData\\Local\\Android\\Sdk",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": false
+      },
+      "outputOptions": []
+    },
+    "prefabClassPaths": [],
+    "prefabPackages": [],
+    "prefabPackageConfigurations": [],
+    "stlType": "system",
+    "optimizationTag": "Debug"
+  },
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "prefabFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx\\Debug\\3on2f395\\prefab\\x86_64",
+  "isActiveAbi": true,
+  "fullConfigurationHash": "3on2f39592x212981u6t4v3oe4vq1q402u486n234w37205k3c451r273n69",
+  "configurationArguments": [
+    "NDK_PROJECT_PATH\u003dnull",
+    "APP_BUILD_SCRIPT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "NDK_APPLICATION_MK\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Application.mk",
+    "APP_ABI\u003dx86_64",
+    "NDK_ALL_ABIS\u003dx86_64",
+    "NDK_DEBUG\u003d1",
+    "APP_PLATFORM\u003dandroid-16",
+    "NDK_OUT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395/obj",
+    "NDK_LIBS_OUT\u003dC:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395/lib",
+    "PRODUCT_FLAVOR\u003dnonRoot"
+  ],
+  "intermediatesParentFolder": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\intermediates\\cxx\\Debug\\3on2f395"
+}
