@@ -63,12 +63,12 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_forgetPass:
-               /* Intent i = new Intent(LoginScreenActivity.this, ForgetPassword.class);
-                startActivity(i);*/
+                Intent intentForgotPassword = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+                startActivity(intentForgotPassword);
                 break;
             case R.id.tv_signupHere:
-               /* Intent i = new Intent(LoginScreenActivity.this, RegisterActivity.class);
-                startActivity(i);*/
+                Intent intentSignup = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intentSignup);
                 break;
             case R.id.btn_signup:
                 // isAllFieldsChecked = CheckAllLoginFields();

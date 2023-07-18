@@ -11,7 +11,7 @@
         android:id="@+id/edtFirstName"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/firstname"
@@ -23,14 +23,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/edtPhoneNumber"
         app:layout_constraintWidth_percent="0.46" />
 
     <EditText
         android:id="@+id/edtLastName"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/firstname"
@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/edtPhoneNumber"
         app:layout_constraintWidth_percent="0.46" />
 
 
@@ -50,7 +50,7 @@
         android:id="@+id/edtPhoneNumber"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/phone_number"
@@ -62,14 +62,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtFirstName"
+        app:layout_constraintBottom_toTopOf="@id/edtPassword"
         app:layout_constraintWidth_percent="0.46" />
 
     <EditText
         android:id="@+id/edtEmail"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/email"
@@ -81,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtLastName"
+        app:layout_constraintBottom_toTopOf="@id/edtPassword"
         app:layout_constraintWidth_percent="0.46" />
 
 
@@ -89,7 +89,7 @@
         android:id="@+id/edtPassword"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/password"
@@ -101,14 +101,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtPhoneNumber"
+        app:layout_constraintBottom_toTopOf="@id/edtAge"
         app:layout_constraintWidth_percent="0.46" />
 
     <EditText
         android:id="@+id/edtConfirmPassword"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/confirm_password"
@@ -120,18 +120,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtEmail"
+        app:layout_constraintBottom_toTopOf="@id/edtAge"
         app:layout_constraintWidth_percent="0.46" />
 
     <EditText
         android:id="@+id/edtAge"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/age"
-        android:inputType="textPassword"
+        android:inputType="number"
         android:maxLength="20"
         android:padding="15dp"
         android:textColorHint="@color/gray"
@@ -139,18 +139,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtPassword"
+        app:layout_constraintBottom_toTopOf="@id/spinnerState"
         app:layout_constraintWidth_percent="0.46" />
 
     <EditText
         android:id="@+id/edtAddress"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/address"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:maxLength="20"
         android:padding="15dp"
         android:textColorHint="@color/gray"
@@ -158,7 +158,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtConfirmPassword"
+        app:layout_constraintBottom_toTopOf="@id/spinnerState"
         app:layout_constraintWidth_percent="0.46" />
 
 
@@ -166,7 +166,7 @@
         android:id="@+id/spinnerState"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/state"
@@ -178,18 +178,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtAge"
+        app:layout_constraintBottom_toTopOf="@id/edtPinCode"
         app:layout_constraintWidth_percent="0.46" />
 
     <EditText
         android:id="@+id/edtCity"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/city"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:maxLength="20"
         android:padding="15dp"
         android:textColorHint="@color/gray"
@@ -197,17 +197,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtAddress"
+        app:layout_constraintBottom_toTopOf="@id/edtPinCode"
         app:layout_constraintWidth_percent="0.46" />
 
     <EditText
         android:id="@+id/edtPinCode"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/white_border_bg"
         android:fontFamily="sans-serif"
-        android:hint="@string/state"
+        android:hint="@string/pin_code"
         android:inputType="number"
         android:maxLength="20"
         android:padding="15dp"
@@ -215,14 +215,14 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtState"
+        app:layout_constraintBottom_toTopOf="@id/chkBoxUserAgreement"
         app:layout_constraintWidth_percent="0.95" />
 
     <CheckBox
         android:id="@+id/chkBoxUserAgreement"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:buttonTint="@color/gray"
         android:checked="false"
         android:fontFamily="sans-serif"
@@ -231,41 +231,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtPinCode"
+        app:layout_constraintBottom_toTopOf="@id/btnSignUp"
         app:layout_constraintWidth_percent="0.46" />
 
     <TextView
         android:id="@+id/txtUserAgreement"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:padding="5dp"
         android:text="@string/user_agreements"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/chkBoxUserAgreement"
-        app:layout_constraintTop_toBottomOf="@id/edtPinCode" />
+        app:layout_constraintBottom_toTopOf="@id/btnSignUp" />
 
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/btngradient"
         android:fontFamily="sans-serif"
         android:text="@string/signup"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chkBoxUserAgreement"
+        app:layout_constraintBottom_toTopOf="@id/txtAlreadyRegister"
         app:layout_constraintWidth_percent="0.95" />
 
     <TextView
         android:id="@+id/txtAlreadyRegister"
         android:layout_width="0dp"
         android:layout_height="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:fontFamily="sans-serif"
         android:text="@string/alreadyRegister"
         android:textColor="@color/textColor"
@@ -273,7 +273,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSignUp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintWidth_percent="0.65" />
 
     <ProgressBar

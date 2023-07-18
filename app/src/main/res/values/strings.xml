@@ -316,6 +316,9 @@
     <string name="state">State</string>
     <string name="city">City</string>
     <string name="pass_regex">Password Should contains at least \nupper case,\nlower case,\nspecial character\nand a number</string>
+    <string name="terms_and_condition"><u>Terms and Conditions</u></string>
+    <string name="reset_password">Reset Password</string>
+    <string name="pin_code">Pincode</string>
 
 
 </resources>
