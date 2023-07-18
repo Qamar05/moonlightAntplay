@@ -56,13 +56,19 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.antplay.ui.LoginActivity"
-            android:exported="true" >
+            android:name="com.antplay.ui.SplashActivity"
+            android:exported="true"
+            android:resizeableActivity="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.antplay.ui.LoginActivity"
+            android:exported="false"
+            android:resizeableActivity="true" >
         </activity>
 
         <provider

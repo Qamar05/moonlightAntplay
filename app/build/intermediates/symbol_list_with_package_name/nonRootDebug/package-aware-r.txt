@@ -802,6 +802,8 @@ drawable ic_add
 drawable ic_channel
 drawable ic_computer
 drawable ic_help
+drawable ic_launcher_background
+drawable ic_launcher_foreground_1
 drawable ic_lime_layer
 drawable ic_lock
 drawable ic_pc_offline
@@ -809,6 +811,7 @@ drawable ic_play
 drawable ic_settings
 drawable list_view_unselected
 drawable login_bg_new
+drawable logo
 drawable no_app_image
 drawable notification_action_background
 drawable notification_bg
@@ -1108,6 +1111,7 @@ layout activity_configure_virtual_controller
 layout activity_game
 layout activity_login
 layout activity_pc_view
+layout activity_splash
 layout activity_stream_settings
 layout app_grid_item
 layout app_grid_item_small

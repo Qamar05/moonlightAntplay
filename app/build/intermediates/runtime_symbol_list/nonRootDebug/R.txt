@@ -801,6 +801,8 @@ int drawable ic_add 0x7f070058
 int drawable ic_channel 0x7f070059
 int drawable ic_computer 0x7f07005a
 int drawable ic_help 0x7f07005b
+int drawable ic_launcher_background 0x7f070073
+int drawable ic_launcher_foreground_1 0x7f070074
 int drawable ic_lime_layer 0x7f07005c
 int drawable ic_lock 0x7f07005d
 int drawable ic_pc_offline 0x7f07005e
@@ -808,6 +810,7 @@ int drawable ic_play 0x7f07005f
 int drawable ic_settings 0x7f070060
 int drawable list_view_unselected 0x7f070061
 int drawable login_bg_new 0x7f070062
+int drawable logo 0x7f070075
 int drawable no_app_image 0x7f070063
 int drawable notification_action_background 0x7f070064
 int drawable notification_bg 0x7f070065
@@ -1107,6 +1110,7 @@ int layout activity_configure_virtual_controller 0x7f0a001e
 int layout activity_game 0x7f0a001f
 int layout activity_login 0x7f0a0020
 int layout activity_pc_view 0x7f0a0021
+int layout activity_splash 0x7f0a0033
 int layout activity_stream_settings 0x7f0a0022
 int layout app_grid_item 0x7f0a0023
 int layout app_grid_item_small 0x7f0a0024

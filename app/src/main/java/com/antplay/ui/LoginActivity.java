@@ -170,8 +170,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             String accessToken = jsonObject.getJSONObject("data").getString("access");
-                            Log.d("ANT_PLAY", "Access Token : " + accessToken);
-                            SharedPreferenceUtils.saveBoolean(LoginActivity.this, Const.IS_LOGGED_IN, true);
+                            Log.d(TAG, "Access Token : " + accessToken);
+                           // SharedPreferenceUtils.saveBoolean(LoginActivity.this, Const.IS_LOGGED_IN, true);
                             SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
                             Intent i = new Intent(LoginActivity.this, PcView.class);
                             startActivity(i);
@@ -184,7 +184,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                         try {
                             jsonObject = new JSONObject(response);
                             String details = jsonObject.getString("detail");
-                            Log.d("ANT_PLAY", "Response Details : " + details);
+                            Log.d(TAG, "Response Details : " + details);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
