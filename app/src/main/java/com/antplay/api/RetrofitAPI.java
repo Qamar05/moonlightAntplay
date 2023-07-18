@@ -1,6 +1,10 @@
 package com.antplay.api;
 
 import com.antplay.models.GetVMResponse;
+import com.antplay.models.LoginRequestModal;
+import com.antplay.models.LoginResponse;
+import com.antplay.models.ResetEmailReq;
+import com.antplay.models.ResetEmailResp;
 import com.antplay.models.UpdatePinRequestModal;
 import com.antplay.models.UpdatePinResponseModal;
 import com.antplay.models.UserRegisterRequest;
@@ -25,8 +29,15 @@ public interface RetrofitAPI {
     @GET("getvm/")
     Call<GetVMResponse> getVMFromServer(@Header("Authorization") String token);
 
+    @POST("login/")
+    Call<LoginResponse> userLogin(@Body LoginRequestModal loginRequestModal);
+
+
     @POST("register/")
     Call<UserRegisterResp> userRegister(@Body UserRegisterRequest userRegisterRequest);
+
+    @POST("request-reset-email/")
+    Call<ResetEmailResp> forgotPassword(@Body ResetEmailReq resetEmailReq);
 
 
 

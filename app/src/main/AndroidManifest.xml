@@ -47,11 +47,7 @@
         <activity
             android:name=".ui.ForgotPasswordActivity"
             android:resizeableActivity="true"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".ui.GeneralWebViewActivity"
             android:exported="false">

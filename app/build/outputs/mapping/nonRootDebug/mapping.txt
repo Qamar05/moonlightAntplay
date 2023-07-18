@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 09a2048
-# pg_map_hash: SHA-256 09a2048028f06e0249024837cd54c71fc2b4038637243a0dbfd469e44f073c4d
+# pg_map_id: 7e6d074
+# pg_map_hash: SHA-256 7e6d074c0451d6796c885fe4896f005cfdde56626920aeb3fa5d373619037b6a
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -5466,9 +5466,18 @@ com.antplay.grid.assets.ScaledBitmap -> com.antplay.grid.assets.ScaledBitmap:
     11:11:void <init>() -> <init>
     13:17:void <init>(int,int,android.graphics.Bitmap) -> <init>
 com.antplay.models.LoginResponse -> com.antplay.models.LoginResponse:
+    13:13:void <init>() -> <init>
+com.antplay.models.ResetEmailReq -> com.antplay.models.ResetEmailReq:
+    11:13:void <init>(java.lang.String) -> <init>
+com.antplay.models.ResetEmailResp -> com.antplay.models.ResetEmailResp:
     6:6:void <init>() -> <init>
+    23:23:java.lang.String getMessage() -> getMessage
+    15:15:boolean isStatus() -> isStatus
 com.antplay.models.UserRegisterRequest -> com.antplay.models.UserRegisterRequest:
     43:54:void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> <init>
+com.antplay.models.UserRegisterResp -> com.antplay.models.UserRegisterResp:
+    13:13:void <init>() -> <init>
+    31:31:java.lang.String getMessage() -> getMessage
 com.antplay.nvstream.ConnectionContext -> com.antplay.nvstream.ConnectionContext:
     9:9:void <init>() -> <init>
 com.antplay.nvstream.NvConnection -> com.antplay.nvstream.NvConnection:
@@ -6013,6 +6022,25 @@ com.antplay.ui.AdapterFragment -> com.antplay.ui.AdapterFragment:
     32:34:void onActivityCreated(android.os.Bundle) -> onActivityCreated
     19:22:void onAttach(android.app.Activity) -> onAttach
     27:27:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+com.antplay.ui.ForgotPasswordActivity -> com.antplay.ui.ForgotPasswordActivity:
+    void $r8$lambda$4pI6B4qqzEo1pQ2i2oGG3NKmJVA(com.antplay.ui.ForgotPasswordActivity,android.view.View) -> $r8$lambda$4pI6B4qqzEo1pQ2i2oGG3NKmJVA
+      # {"id":"com.android.tools.r8.synthesized"}
+    29:29:void <init>() -> <init>
+    43:71:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
+    36:74:void onCreate(android.os.Bundle) -> onCreate
+    77:88:boolean validateFormField() -> validateFormField
+com.antplay.ui.ForgotPasswordActivity$$ExternalSyntheticLambda0 -> com.antplay.ui.ForgotPasswordActivity$$ExternalSyntheticLambda0:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    com.antplay.ui.ForgotPasswordActivity com.antplay.ui.ForgotPasswordActivity$$InternalSyntheticLambda$1$5107a6f8b2a1a3d34ba3ceeaffdc27009cf32a2e19dba02f85956771d3768264$0.f$0 -> f$0
+    void com.antplay.ui.ForgotPasswordActivity$$InternalSyntheticLambda$1$5107a6f8b2a1a3d34ba3ceeaffdc27009cf32a2e19dba02f85956771d3768264$0.<init>(com.antplay.ui.ForgotPasswordActivity) -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void com.antplay.ui.ForgotPasswordActivity$$InternalSyntheticLambda$1$5107a6f8b2a1a3d34ba3ceeaffdc27009cf32a2e19dba02f85956771d3768264$0.onClick(android.view.View) -> onClick
+      # {"id":"com.android.tools.r8.synthesized"}
+com.antplay.ui.ForgotPasswordActivity$1 -> com.antplay.ui.ForgotPasswordActivity$1:
+    50:50:void <init>(com.antplay.ui.ForgotPasswordActivity) -> <init>
+    66:68:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    53:62:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.GeneralWebViewActivity -> com.antplay.ui.GeneralWebViewActivity:
     12:12:void <init>() -> <init>
     19:32:void onCreate(android.os.Bundle) -> onCreate
@@ -6021,17 +6049,17 @@ com.antplay.ui.LoginActivity -> com.antplay.ui.LoginActivity:
       # {"id":"com.android.tools.r8.synthesized"}
     android.widget.ProgressBar -$$Nest$fgetloadingPB(com.antplay.ui.LoginActivity) -> -$$Nest$fgetloadingPB
       # {"id":"com.android.tools.r8.synthesized"}
-    28:33:void <init>() -> <init>
-    156:206:void callManualLoginAPI(java.lang.String,java.lang.String) -> callManualLoginAPI
-    64:90:void onClick(android.view.View) -> onClick
-    39:53:void onCreate(android.os.Bundle) -> onCreate
-    56:59:void setOnClickListener() -> setOnClickListener
+    37:42:void <init>() -> <init>
+    165:214:void callManualLoginAPI(java.lang.String,java.lang.String) -> callManualLoginAPI
+    73:99:void onClick(android.view.View) -> onClick
+    48:62:void onCreate(android.os.Bundle) -> onCreate
+    65:68:void setOnClickListener() -> setOnClickListener
 com.antplay.ui.LoginActivity$1 -> com.antplay.ui.LoginActivity$1:
-    161:161:void <init>(com.antplay.ui.LoginActivity) -> <init>
-    165:196:void onResponse(java.lang.String,int,java.lang.String) -> onResponse
+    169:169:void <init>(com.antplay.ui.LoginActivity) -> <init>
+    173:204:void onResponse(java.lang.String,int,java.lang.String) -> onResponse
 com.antplay.ui.LoginActivity$2 -> com.antplay.ui.LoginActivity$2:
-    197:197:void <init>(com.antplay.ui.LoginActivity) -> <init>
-    200:203:void onError(java.lang.String,java.lang.String,long) -> onError
+    205:205:void <init>(com.antplay.ui.LoginActivity) -> <init>
+    208:211:void onError(java.lang.String,java.lang.String,long) -> onError
 com.antplay.ui.SignupActivity -> com.antplay.ui.SignupActivity:
     void -$$Nest$mcallRegisterApi(com.antplay.ui.SignupActivity,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> -$$Nest$mcallRegisterApi
       # {"id":"com.android.tools.r8.synthesized"}
@@ -6060,7 +6088,7 @@ com.antplay.ui.SignupActivity$5 -> com.antplay.ui.SignupActivity$5:
 com.antplay.ui.SignupActivity$6 -> com.antplay.ui.SignupActivity$6:
     200:200:void <init>(com.antplay.ui.SignupActivity) -> <init>
     214:216:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    203:208:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    203:210:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.SplashActivity -> com.antplay.ui.SplashActivity:
     void $r8$lambda$VLOF6B3-YDBDBn0G0ZSO3L7AGjE(com.antplay.ui.SplashActivity,boolean) -> $r8$lambda$VLOF6B3-YDBDBn0G0ZSO3L7AGjE
       # {"id":"com.android.tools.r8.synthesized"}
@@ -6092,7 +6120,7 @@ com.antplay.utils.CacheHelper -> com.antplay.utils.CacheHelper:
     54:64:void writeInputStreamToOutputStream(java.io.InputStream,java.io.OutputStream,long) -> writeInputStreamToOutputStream
     84:85:void writeStringToOutputStream(java.io.OutputStream,java.lang.String) -> writeStringToOutputStream
 com.antplay.utils.Const -> com.antplay.utils.Const:
-    6:26:void <clinit>() -> <clinit>
+    6:28:void <clinit>() -> <clinit>
 com.antplay.utils.Dialog -> com.antplay.utils.Dialog:
     android.app.Activity -$$Nest$fgetactivity(com.antplay.utils.Dialog) -> -$$Nest$fgetactivity
       # {"id":"com.android.tools.r8.synthesized"}

@@ -1124,6 +1124,7 @@ int layout abc_tooltip 0x7f0a001b
 int layout activity_add_computer_manually 0x7f0a001c
 int layout activity_app_view 0x7f0a001d
 int layout activity_configure_virtual_controller 0x7f0a001e
+int layout activity_forgot_password 0x7f0a0036
 int layout activity_game 0x7f0a001f
 int layout activity_general_web_view 0x7f0a0020
 int layout activity_login 0x7f0a0021
@@ -1337,8 +1338,11 @@ int string perf_overlay_netlatency 0x7f0c00b5
 int string perf_overlay_renderingfps 0x7f0c00b6
 int string perf_overlay_streamdetails 0x7f0c00b7
 int string phone_number 0x7f0c00b8
+int string pin_code 0x7f0c013a
+int string pincode 0x7f0c013b
 int string poor_connection_msg 0x7f0c00b9
 int string remove_whitespace 0x7f0c00ba
+int string reset_password 0x7f0c013c
 int string resolution_1080p 0x7f0c00bb
 int string resolution_1440p 0x7f0c00bc
 int string resolution_360p 0x7f0c00bd
@@ -1403,6 +1407,7 @@ int string summary_troubleshooting 0x7f0c00f7
 int string summary_unlock_fps 0x7f0c00f8
 int string summary_video_format 0x7f0c00f9
 int string termsCondition 0x7f0c00fa
+int string terms_and_condition 0x7f0c013d
 int string text_native_res_dialog 0x7f0c00fb
 int string title_add_pc 0x7f0c00fc
 int string title_audio_config_list 0x7f0c00fd

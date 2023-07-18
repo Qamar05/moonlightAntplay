@@ -12,6 +12,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.antplay.api.APIClient;
+import com.antplay.api.RetrofitAPI;
+import com.antplay.models.LoginRequestModal;
+import com.antplay.models.UserRegisterRequest;
+import com.antplay.models.UserRegisterResp;
 import com.google.gson.Gson;
 import com.antplay.PcView;
 import com.antplay.models.LoginResponse;
@@ -24,6 +29,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends Activity implements View.OnClickListener {
     private String TAG = "ANT_PLAY";
@@ -46,8 +55,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         btnLetsGo = (Button) findViewById(R.id.btn_signup);
         loadingPB = (ProgressBar) findViewById(R.id.loadingLogin_progress_xml);
 
-        etEmail.setText("kabir@vmstechs.com");
-        etPass.setText("Antplay@123");
+        etEmail.setText("shobhit.agarwal@vmstechs.com");
+        etPass.setText("Test@123");
 
         setOnClickListener();
     }
@@ -79,8 +88,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     // we can call Api here
                     st_email = etEmail.getText().toString();
                     st_password = etPass.getText().toString();
+                   // callLoginAPi(st_email,st_password);
 
-                    // callLoginAPI(st_email, st_password);
                     callManualLoginAPI(st_email, st_password);
 //                    Intent i = new Intent(LoginScreenActivity.this, MainActivity.class);
 //                    startActivity(i);
@@ -203,5 +212,56 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         });
 
     }
+
+    private void callLoginAPi(String stEmail,String strPassword) {
+
+        loadingPB.setVisibility(View.VISIBLE);
+        LoginRequestModal loginRequestModal = new LoginRequestModal(stEmail,strPassword);
+        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
+        //
+
+        Call<LoginResponse> call = retrofitAPI.userLogin(loginRequestModal);
+
+        call.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                loadingPB.setVisibility(View.GONE);
+                if (response != null) {
+
+                    if (response.code() == 200) {
+                        Log.d(TAG, "Response : " + response.body());
+                        try {
+                            String accessToken = response.body().getData().getAccess();
+                            SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
+                            Intent i = new Intent(LoginActivity.this, PcView.class);
+                            startActivity(i);
+                            finish();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    } else if (response.code() == 401) {
+                        try {
+                            JSONObject jObj =  new JSONObject(response.errorBody().string());
+                            String detailValue  =  jObj.getString("detail");
+                            Toast.makeText(LoginActivity.this,  detailValue, Toast.LENGTH_SHORT).show();
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Something went wrong, please try again later.", Toast.LENGTH_LONG).show();
+                    }
+                }
+
+            }
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                loadingPB.setVisibility(View.GONE);
+                Log.i("Error: ", ""+t.getMessage());
+            }
+        });
+    }
+
 
 }

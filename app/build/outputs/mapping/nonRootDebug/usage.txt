@@ -6124,6 +6124,7 @@ com.antplay.api.APIClient:
 com.antplay.api.RetrofitAPI:
     public abstract retrofit2.Call getVMFromServer(java.lang.String)
     public abstract retrofit2.Call updatePin(java.lang.String,com.antplay.models.UpdatePinRequestModal)
+    public abstract retrofit2.Call userLogin(com.antplay.models.LoginRequestModal)
 com.antplay.binding.PlatformBinding:
     public void <init>()
 com.antplay.binding.crypto.AndroidCryptoProvider:
@@ -6356,6 +6357,12 @@ com.antplay.models.LoginResponse:
     public void setData(com.antplay.models.LoginData)
     public void setEmail(java.lang.String)
 com.antplay.models.PinResponseData
+com.antplay.models.ResetEmailReq:
+    public java.lang.String getEmail()
+    public void setEmail(java.lang.String)
+com.antplay.models.ResetEmailResp:
+    public void setMessage(java.lang.String)
+    public void setStatus(boolean)
 com.antplay.models.UpdatePinRequestModal
 com.antplay.models.UpdatePinResponseModal
 com.antplay.models.UserRegisterRequest:
@@ -6379,7 +6386,11 @@ com.antplay.models.UserRegisterRequest:
     public void setPhone_number(java.lang.String)
     public void setPincode(java.lang.String)
     public void setState(java.lang.String)
-com.antplay.models.UserRegisterResp
+com.antplay.models.UserRegisterResp:
+    private boolean status
+    public boolean isStatus()
+    public void setMessage(java.lang.String)
+    public void setStatus(boolean)
 com.antplay.models.VMInfo
 com.antplay.nvstream.NvConnection:
     public void sendControllerInput(short,byte,byte,short,short,short,short)
@@ -6526,8 +6537,10 @@ com.antplay.preferences.SeekBarPreference:
 com.antplay.preferences.WebLauncherPreference
 com.antplay.ui.GameGestures:
     public abstract void toggleKeyboard()
+com.antplay.ui.LoginActivity$3
 com.antplay.ui.LoginActivity:
     private boolean CheckAllLoginFields()
+    private void callLoginAPi(java.lang.String,java.lang.String)
 com.antplay.ui.StreamView:
     public void <init>(android.content.Context)
     public void <init>(android.content.Context,android.util.AttributeSet,int)

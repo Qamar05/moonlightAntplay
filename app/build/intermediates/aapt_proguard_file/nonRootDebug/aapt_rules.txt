@@ -10,6 +10,7 @@
 -keep class com.antplay.discovery.DiscoveryService { <init>(); }
 -keep class com.antplay.preferences.AddComputerManually { <init>(); }
 -keep class com.antplay.preferences.StreamSettings { <init>(); }
+-keep class com.antplay.ui.ForgotPasswordActivity { <init>(); }
 -keep class com.antplay.ui.GeneralWebViewActivity { <init>(); }
 -keep class com.antplay.ui.LoginActivity { <init>(); }
 -keep class com.antplay.ui.SignupActivity { <init>(); }

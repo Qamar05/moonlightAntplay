@@ -1125,6 +1125,7 @@ layout abc_tooltip
 layout activity_add_computer_manually
 layout activity_app_view
 layout activity_configure_virtual_controller
+layout activity_forgot_password
 layout activity_game
 layout activity_general_web_view
 layout activity_login
@@ -1338,8 +1339,11 @@ string perf_overlay_netlatency
 string perf_overlay_renderingfps
 string perf_overlay_streamdetails
 string phone_number
+string pin_code
+string pincode
 string poor_connection_msg
 string remove_whitespace
+string reset_password
 string resolution_1080p
 string resolution_1440p
 string resolution_360p
@@ -1404,6 +1408,7 @@ string summary_troubleshooting
 string summary_unlock_fps
 string summary_video_format
 string termsCondition
+string terms_and_condition
 string text_native_res_dialog
 string title_add_pc
 string title_audio_config_list
