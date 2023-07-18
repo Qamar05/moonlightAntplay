@@ -4,24 +4,7 @@
             "outputFile": "com.antplay.app-mergeNonRootDebugResources-7:/values-ko/values-ko.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\23ce814dad77b3e6221612dc7ca2644e\\transformed\\support-compat-28.0.0\\res\\values-ko\\values-ko.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "173",
-                        "startColumns": "4",
-                        "startOffsets": "11570",
-                        "endColumns": "100",
-                        "endOffsets": "11666"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\811c9cfbf51278caf6fde936fdafe1b8\\transformed\\appcompat-v7-28.0.0\\res\\values-ko\\values-ko.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\4b030f8a9dc6447fdda504523f1aba26\\transformed\\appcompat-v7-28.0.0\\res\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\res\\values-ko\\strings.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\d12af3dd775aaaeea58eb211b4213b34\\transformed\\support-compat-28.0.0\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "173",
+                        "startColumns": "4",
+                        "startOffsets": "11570",
+                        "endColumns": "100",
+                        "endOffsets": "11666"
+                    }
+                },
+                {
+                    "source": "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\res\\values-ko\\strings.xml",
                     "from": {
                         "startLines": "81,78,79,80,134,62,135,66,138,136,64,65,63,137,185,71,74,73,72,70,69,68,67,252,253,236,111,91,83,256,106,120,98,101,150,45,46,50,49,43,42,47,44,48,52,51,148,203,199,204,151,38,36,35,37,159,235,231,251,234,261,60,7,6,54,59,162,160,77,164,165,169,170,174,173,181,58,156,157,245,246,244,255,22,21,20,19,18,17,16,15,9,13,182,179,180,177,10,12,178,11,144,139,143,141,140,142,219,145,227,232,228,233,230,229,123,221,257,258,3,187,186,4,183,55,146,114,184,95,121,250,90,248,198,108,209,110,215,213,93,260,100,105,118,216,116,210,97,194,192,191,188,124,243,264,103,207,200,242,205,85,87,226,238,240,196,113,126,76,122,249,89,247,115,107,212,109,218,214,92,259,99,104,88,119,217,117,211,96,163,161,149,195,193,190,189,125,254,265,102,133,208,201,241,206,84,86,94,237,239,197,112,202,220,33,32,31,30,158,224,223,225,28,25,24,27,26,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

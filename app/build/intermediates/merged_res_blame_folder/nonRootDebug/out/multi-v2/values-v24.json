@@ -4,7 +4,7 @@
             "outputFile": "com.antplay.app-mergeNonRootDebugResources-7:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\811c9cfbf51278caf6fde936fdafe1b8\\transformed\\appcompat-v7-28.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\4b030f8a9dc6447fdda504523f1aba26\\transformed\\appcompat-v7-28.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\res\\values-v24\\styles.xml",
+                    "source": "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\res\\values-v24\\styles.xml",
                     "from": {
                         "startLines": "7",
                         "startColumns": "4",

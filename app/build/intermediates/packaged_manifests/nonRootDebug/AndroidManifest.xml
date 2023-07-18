@@ -56,6 +56,20 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.antplay.ui.GeneralWebViewActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.antplay.ui.SignupActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name="com.antplay.ui.SplashActivity"
             android:exported="true"
             android:resizeableActivity="true" >
@@ -68,8 +82,7 @@
         <activity
             android:name="com.antplay.ui.LoginActivity"
             android:exported="false"
-            android:resizeableActivity="true" >
-        </activity>
+            android:resizeableActivity="true" />
 
         <provider
             android:name="com.antplay.PosterContentProvider"

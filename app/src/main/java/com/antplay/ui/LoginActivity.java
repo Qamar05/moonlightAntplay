@@ -63,12 +63,12 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_forgetPass:
-               /* Intent i = new Intent(LoginScreenActivity.this, ForgetPassword.class);
-                startActivity(i);*/
+//                Intent i = new Intent(LoginActivity.this, For.class);
+//                startActivity(i);
                 break;
             case R.id.tv_signupHere:
-               /* Intent i = new Intent(LoginScreenActivity.this, RegisterActivity.class);
-                startActivity(i);*/
+               Intent i2 = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(i2);
                 break;
             case R.id.btn_signup:
                 // isAllFieldsChecked = CheckAllLoginFields();
@@ -157,6 +157,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         HashMap<String, String> loginMap = new HashMap<>();
         loginMap.put("email", email);
         loginMap.put("password", password);
+
         new RestClient(LoginActivity.this).postRequestWithoutMethod("new_holiday", "login/", loginMap, new RestClient.ResponseListenerUpdated() {
             @Override
             public void onResponse(String tag, int responseCode, String response) {

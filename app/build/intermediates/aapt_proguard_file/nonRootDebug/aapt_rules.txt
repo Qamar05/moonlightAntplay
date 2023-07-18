@@ -10,7 +10,9 @@
 -keep class com.antplay.discovery.DiscoveryService { <init>(); }
 -keep class com.antplay.preferences.AddComputerManually { <init>(); }
 -keep class com.antplay.preferences.StreamSettings { <init>(); }
+-keep class com.antplay.ui.GeneralWebViewActivity { <init>(); }
 -keep class com.antplay.ui.LoginActivity { <init>(); }
+-keep class com.antplay.ui.SignupActivity { <init>(); }
 -keep class com.antplay.ui.SplashActivity { <init>(); }
 -keep class android.support.constraint.ConstraintLayout { <init>(android.content.Context, android.util.AttributeSet); }
 

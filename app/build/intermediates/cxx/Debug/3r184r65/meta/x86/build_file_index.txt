@@ -1,0 +1,2 @@
+C:\vmsProject\moonlightAntplay\app\src\main\jni\Android.mk
+C:\vmsProject\moonlightAntplay\app\src\main\jni\Application.mk
