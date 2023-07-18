@@ -3,6 +3,9 @@ package com.antplay.api;
 import com.antplay.models.GetVMResponse;
 import com.antplay.models.UpdatePinRequestModal;
 import com.antplay.models.UpdatePinResponseModal;
+import com.antplay.models.UserRegisterRequest;
+import com.antplay.models.UserRegisterResp;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -21,4 +24,11 @@ public interface RetrofitAPI {
 */
     @GET("getvm/")
     Call<GetVMResponse> getVMFromServer(@Header("Authorization") String token);
+
+    @POST("register/")
+    Call<UserRegisterResp> userRegister(@Body UserRegisterRequest userRegisterRequest);
+
+
+
+
 }

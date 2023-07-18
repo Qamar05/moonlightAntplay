@@ -797,7 +797,6 @@ drawable abc_vector_test
 drawable app_icon
 drawable atv_banner
 drawable btngradient
-drawable btnshape
 drawable ic_add
 drawable ic_channel
 drawable ic_computer
@@ -828,6 +827,7 @@ drawable notify_panel_notification_icon_bg
 drawable ouya_icon
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable white_border_bg
 id ALT
 id CTRL
 id FUNCTION
@@ -881,6 +881,7 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btnSignUp
 id btn_signup
 id buttonPanel
 id cache_measures
@@ -890,6 +891,7 @@ id center_vertical
 id chain
 id chains
 id checkbox
+id chkBoxUserAgreement
 id chronometer
 id clip_horizontal
 id clip_vertical
@@ -921,6 +923,16 @@ id easeIn
 id easeInOut
 id easeOut
 id edit_query
+id edtAddress
+id edtAge
+id edtCity
+id edtConfirmPassword
+id edtEmail
+id edtFirstName
+id edtLastName
+id edtPassword
+id edtPhoneNumber
+id edtPinCode
 id end
 id et_email
 id et_password
@@ -994,6 +1006,7 @@ id percent
 id performanceOverlay
 id position
 id postLayout
+id progressSignUp
 id progress_circular
 id progress_horizontal
 id radio
@@ -1026,6 +1039,7 @@ id showHome
 id showTitle
 id sin
 id spacer
+id spinnerState
 id spline
 id split_action_bar
 id spread
@@ -1065,10 +1079,13 @@ id transitionToStart
 id triangle
 id tv_forgetPass
 id tv_signupHere
+id txtAlreadyRegister
+id txtUserAgreement
 id uniform
 id up
 id useLogo
 id visible
+id webViewGeneral
 id withText
 id wrap
 id wrap_content
@@ -1109,8 +1126,10 @@ layout activity_add_computer_manually
 layout activity_app_view
 layout activity_configure_virtual_controller
 layout activity_game
+layout activity_general_web_view
 layout activity_login
 layout activity_pc_view
+layout activity_signup
 layout activity_splash
 layout activity_stream_settings
 layout app_grid_item
@@ -1177,6 +1196,8 @@ string addpc_fail
 string addpc_success
 string addpc_unknown_host
 string addpc_wrong_sitelocal
+string address
+string age
 string alreadyRegister
 string app_label
 string app_label_root
@@ -1210,6 +1231,8 @@ string category_input_settings
 string category_on_screen_controls_settings
 string category_ui_settings
 string check_ports_msg
+string city
+string confirm_password
 string conn_client_latency
 string conn_client_latency_hw
 string conn_error_msg
@@ -1226,6 +1249,7 @@ string dialog_text_reset_osc
 string dialog_title_osc_opacity
 string dialog_title_reset_osc
 string early_termination_error
+string email
 string emailOrMobile
 string error_404
 string error_address
@@ -1236,6 +1260,7 @@ string error_confirmPass
 string error_confirm_password
 string error_email
 string error_firstname
+string error_greater_18
 string error_invalidEmail
 string error_invalidPhone
 string error_lastname
@@ -1252,6 +1277,7 @@ string error_state
 string error_unknown_host
 string error_usb_prohibited
 string error_username
+string firstname
 string forgotPass
 string fps_120
 string fps_30
@@ -1262,6 +1288,7 @@ string help
 string help_loading_msg
 string help_loading_title
 string ip_hint
+string lastname
 string letsGo
 string lost_connection
 string message_decoding_error
@@ -1290,6 +1317,7 @@ string pair_pairing_title
 string pair_pc_ingame
 string pair_pc_offline
 string pairing
+string pass_regex
 string password
 string pcview_menu_app_list
 string pcview_menu_delete_pc
@@ -1309,6 +1337,7 @@ string perf_overlay_netdrops
 string perf_overlay_netlatency
 string perf_overlay_renderingfps
 string perf_overlay_streamdetails
+string phone_number
 string poor_connection_msg
 string remove_whitespace
 string resolution_1080p
@@ -1331,6 +1360,7 @@ string searching_pc
 string signup
 string signupHere
 string slow_connection_msg
+string state
 string status_bar_notification_info_overflow
 string suffix_osc_opacity
 string suffix_seekbar_bitrate_mbps

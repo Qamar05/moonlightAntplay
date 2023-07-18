@@ -308,6 +308,7 @@
     <string name="error_invalidPhone">Invalid phone number</string>
     <string name="error_pass_minimum">Password must be minimum 8 characters</string>
     <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
     <string name="phone_number">Phone Number</string>
     <string name="email">Email</string>
     <string name="address">Address</string>
@@ -315,6 +316,7 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="state">State</string>
     <string name="city">City</string>
+    <string name="pincode">Pincode</string>
     <string name="pass_regex">Password Should contains at least \nupper case,\nlower case,\nspecial character\nand a number</string>
     <string name="terms_and_condition"><u>Terms and Conditions</u></string>
     <string name="reset_password">Reset Password</string>

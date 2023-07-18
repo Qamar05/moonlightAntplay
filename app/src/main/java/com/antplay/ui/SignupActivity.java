@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,10 +20,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.antplay.R;
+import com.antplay.api.APIClient;
+import com.antplay.api.RetrofitAPI;
+import com.antplay.models.GetVMResponse;
+import com.antplay.models.UserRegisterRequest;
+import com.antplay.models.UserRegisterResp;
 import com.antplay.utils.Const;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class SignupActivity extends Activity {
 
@@ -158,9 +169,8 @@ public class SignupActivity extends Activity {
                     strEmail = edtEmail.getText().toString().trim();
                     strPhoneNumber = edtPhoneNumber.getText().toString().trim();
                     strMiddleName = edtFirstName.getText().toString().trim();
-
                     strPassword = edtPassword.getText().toString().trim();
-                    strPassword = edtAddress.getText().toString();
+                    strAddress = edtAddress.getText().toString();
                     strAge = edtAge.getText().toString().trim();
                     strCity = edtCity.getText().toString().trim();
                     strPinCode = edtPinCode.getText().toString();
@@ -174,10 +184,46 @@ public class SignupActivity extends Activity {
 
     }
 
-    private void callRegisterApi(String strFirstName, String strMiddleName, String strLastName, String strEmail, String strPhoneNumber, boolean lastLogin, boolean isNewUser, boolean isSubscribed, String strPassword, String strAddress, String strAge, String strState, String strCity, String strPinCode) {
+    private void callRegisterApi(String strFirstName, String strMiddleName, String strLastName,
+                                 String strEmail, String strPhoneNumber, boolean lastLogin, boolean isNewUser,
+                                 boolean isSubscribed, String strPassword, String strAddress, String strAge,
+                                 String strState, String strCity, String strPinCode) {
+
+        progressBar.setVisibility(View.VISIBLE);
+        UserRegisterRequest userRegisterRequestv = new UserRegisterRequest(strFirstName, strLastName,strEmail,strPhoneNumber,
+                strAddress,strAge,strState,strCity,strPinCode,strPassword);
+        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
+        // calling a method to create a post and passing our modal class.
+
+        Call<UserRegisterResp> call = retrofitAPI.userRegister(userRegisterRequestv);
+
+        call.enqueue(new Callback<UserRegisterResp>() {
+            @Override
+            public void onResponse(Call<UserRegisterResp> call, Response<UserRegisterResp> response) {
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(SignupActivity.this, ""+response.body().getMessage() , Toast.LENGTH_SHORT).show();
+                Intent i =  new Intent(SignupActivity.this , LoginActivity.class);
+                startActivity(i);
+                finish();
 
 
+            }
+
+            @Override
+            public void onFailure(Call<UserRegisterResp> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
+                Log.i("Error: ", ""+t.getMessage());
+            }
+        });
     }
+
+
+
+
+
+
+
+
 
 
     private boolean validateFormField() {

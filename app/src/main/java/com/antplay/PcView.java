@@ -148,25 +148,12 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         ImageButton addComputerButton = findViewById(R.id.manuallyAddPc);
         ImageButton helpButton = findViewById(R.id.helpButton);
 
-        settingsButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PcView.this, StreamSettings.class));
-            }
+        settingsButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, StreamSettings.class)));
+        addComputerButton.setOnClickListener(v -> {
+            Intent i = new Intent(PcView.this, AddComputerManually.class);
+            startActivity(i);
         });
-        addComputerButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(PcView.this, AddComputerManually.class);
-                startActivity(i);
-            }
-        });
-        helpButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HelpLauncher.launchSetupGuide(PcView.this);
-            }
-        });
+        helpButton.setOnClickListener(v -> HelpLauncher.launchSetupGuide(PcView.this));
 
         // Amazon review didn't like the help button because the wiki was not entirely
         // navigable via the Fire TV remote (though the relevant parts were). Let's hide
@@ -234,16 +221,12 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
 
     private void completeOnCreate() {
         completeOnCreateCalled = true;
-
         shortcutHelper = new ShortcutHelper(this);
-
         UiHelper.setLocale(this);
 
         // Bind to the computer manager service
         bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection, Service.BIND_AUTO_CREATE);
-
         pcGridAdapter = new PcGridAdapter(this, PreferenceConfiguration.readPreferences(this));
-
         initializeViews();
     }
 
@@ -276,9 +259,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
             }
 
             freezeUpdates = true;
-
             managerBinder.stopPolling();
-
             if (wait) {
                 managerBinder.waitForPollingStopped();
             }

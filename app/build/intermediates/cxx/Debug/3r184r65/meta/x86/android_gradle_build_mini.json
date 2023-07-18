@@ -1,0 +1,58 @@
+{
+  "buildFiles": [
+    "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\jni\\Android.mk",
+    "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\jni\\Application.mk"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\HP\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\ndk-build.cmd",
+      "NDK_PROJECT_PATH\u003dnull",
+      "APP_BUILD_SCRIPT\u003dC:\\vmsProject\\moonlightAntplay\\app\\src\\main\\jni\\Android.mk",
+      "NDK_APPLICATION_MK\u003dC:\\vmsProject\\moonlightAntplay\\app\\src\\main\\jni\\Application.mk",
+      "APP_ABI\u003dx86",
+      "NDK_ALL_ABIS\u003dx86",
+      "NDK_DEBUG\u003d1",
+      "APP_PLATFORM\u003dandroid-16",
+      "NDK_OUT\u003dC:\\vmsProject\\moonlightAntplay\\app\\build\\intermediates\\cxx\\Debug\\3r184r65/obj",
+      "NDK_LIBS_OUT\u003dC:\\vmsProject\\moonlightAntplay\\app\\build\\intermediates\\cxx\\Debug\\3r184r65/lib",
+      "PRODUCT_FLAVOR\u003dnonRoot",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\HP\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\ndk-build.cmd",
+    "NDK_PROJECT_PATH\u003dnull",
+    "APP_BUILD_SCRIPT\u003dC:\\vmsProject\\moonlightAntplay\\app\\src\\main\\jni\\Android.mk",
+    "NDK_APPLICATION_MK\u003dC:\\vmsProject\\moonlightAntplay\\app\\src\\main\\jni\\Application.mk",
+    "APP_ABI\u003dx86",
+    "NDK_ALL_ABIS\u003dx86",
+    "NDK_DEBUG\u003d1",
+    "APP_PLATFORM\u003dandroid-16",
+    "NDK_OUT\u003dC:\\vmsProject\\moonlightAntplay\\app\\build\\intermediates\\cxx\\Debug\\3r184r65/obj",
+    "NDK_LIBS_OUT\u003dC:\\vmsProject\\moonlightAntplay\\app\\build\\intermediates\\cxx\\Debug\\3r184r65/lib",
+    "PRODUCT_FLAVOR\u003dnonRoot",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "moonlight-core-nonRootDebug-x86": {
+      "artifactName": "moonlight-core",
+      "buildCommandComponents": [
+        "C:\\Users\\HP\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dC:\\vmsProject\\moonlightAntplay\\app\\src\\main\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dC:\\vmsProject\\moonlightAntplay\\app\\src\\main\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d1",
+        "APP_PLATFORM\u003dandroid-16",
+        "NDK_OUT\u003dC:\\vmsProject\\moonlightAntplay\\app\\build\\intermediates\\cxx\\Debug\\3r184r65/obj",
+        "NDK_LIBS_OUT\u003dC:\\vmsProject\\moonlightAntplay\\app\\build\\intermediates\\cxx\\Debug\\3r184r65/lib",
+        "PRODUCT_FLAVOR\u003dnonRoot",
+        "C:\\vmsProject\\moonlightAntplay\\app\\build\\intermediates\\cxx\\Debug\\3r184r65/obj/local/x86/libmoonlight-core.so"
+      ],
+      "abi": "x86",
+      "output": "C:\\vmsProject\\moonlightAntplay\\app\\build\\intermediates\\cxx\\Debug\\3r184r65\\obj\\local\\x86\\libmoonlight-core.so",
+      "runtimeFiles": []
+    }
+  }
+}

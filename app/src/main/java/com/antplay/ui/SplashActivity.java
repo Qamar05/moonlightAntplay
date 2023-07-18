@@ -20,28 +20,23 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
         boolean isNotFirstTime=  SharedPreferenceUtils.getBoolean(SplashActivity.this,Const.IS_FIRST_TIME);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i;
-                if (SharedPreferenceUtils.getBoolean(SplashActivity.this, Const.IS_LOGGED_IN)){
-                    Log.e(TAG,"Logged in :"+SharedPreferenceUtils.getBoolean(SplashActivity.this, Const.IS_LOGGED_IN));
-                    i = new Intent(SplashActivity.this, PcView.class);
-                    startActivity(i);
-                }
-                else if(isNotFirstTime){
-                    // This method will be execute once the timer is over
-                    i = new Intent(SplashActivity.this, LoginActivity.class);
-                }else {
-                    // This method will be execute once the timer is over
-                   // i = new Intent(SplashActivity.this, OnBoardingActivity.class);
-                    i = new Intent(SplashActivity.this, LoginActivity.class);
-                }
+        new Handler().postDelayed(() -> {
+            Intent i;
+            if (SharedPreferenceUtils.getBoolean(SplashActivity.this, Const.IS_LOGGED_IN)){
+                Log.e(TAG,"Logged in :"+SharedPreferenceUtils.getBoolean(SplashActivity.this, Const.IS_LOGGED_IN));
+                i = new Intent(SplashActivity.this, PcView.class);
                 startActivity(i);
-                finish();
-
-
             }
+            else if(isNotFirstTime){
+                // This method will be execute once the timer is over
+                i = new Intent(SplashActivity.this, LoginActivity.class);
+            }else {
+                // This method will be execute once the timer is over
+               // i = new Intent(SplashActivity.this, OnBoardingActivity.class);
+                i = new Intent(SplashActivity.this, LoginActivity.class);
+            }
+            startActivity(i);
+            finish();
         }, 4000);
     }
 }
