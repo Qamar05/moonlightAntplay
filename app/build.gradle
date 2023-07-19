@@ -150,4 +150,8 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.8.9'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+
+    implementation "com.google.android.material:material:1.2.0"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }

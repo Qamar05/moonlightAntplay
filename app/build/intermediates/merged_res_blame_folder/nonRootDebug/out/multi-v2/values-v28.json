@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-7:/values-v28/values-v28.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-13:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\4b030f8a9dc6447fdda504523f1aba26\\transformed\\appcompat-v7-28.0.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\5fbc9bb5cbddf86222bfe3dc88b507ab\\transformed\\appcompat-1.1.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -14,12 +14,22 @@
                         "endOffsets": "125,212,442,684"
                     },
                     "to": {
-                        "startLines": "2,3,4,8",
+                        "startLines": "10,11,12,16",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "55,130,217,397",
-                        "endLines": "2,3,7,11",
+                        "startOffsets": "755,830,917,1097",
+                        "endLines": "10,11,15,19",
                         "endColumns": "74,86,12,12",
-                        "endOffsets": "125,212,392,584"
+                        "endOffsets": "825,912,1092,1284"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\62a6a6de98bad13f098caf1b153fa78f\\transformed\\material-1.2.0\\res\\values-v28\\values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,143,231,319,407,494,581,668",
+                        "endColumns": "87,87,87,87,86,86,86,86",
+                        "endOffsets": "138,226,314,402,489,576,663,750"
                     }
                 }
             ]

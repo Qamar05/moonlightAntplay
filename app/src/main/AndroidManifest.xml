@@ -45,9 +45,24 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.ForgotPasswordActivity"
-            android:resizeableActivity="true"
+            android:name=".SubscriptionPlanActivity"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ForgotPasswordActivity"
+            android:exported="false"
+            android:resizeableActivity="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

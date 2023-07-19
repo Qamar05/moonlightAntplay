@@ -1,11 +1,11 @@
 package com.antplay.ui;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.antplay.R;
 
-public class ForgotPasswordActivity extends AppCompatActivity {
+public class ForgotPasswordActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
 import android.util.Log;
-
 import com.antplay.PcView;
 import com.antplay.R;
 import com.antplay.utils.Const;
