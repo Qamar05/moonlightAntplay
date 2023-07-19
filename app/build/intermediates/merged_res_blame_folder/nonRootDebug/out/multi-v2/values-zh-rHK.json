@@ -1,20 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-13:/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-26:/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\5fbc9bb5cbddf86222bfe3dc88b507ab\\transformed\\appcompat-1.1.0\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\a7bc0d583083f17ce431510d0f69632e\\transformed\\appcompat-1.6.1\\res\\values-zh-rHK\\values-zh-rHK.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,200,293,393,475,572,680,757,833,925,1018,1109,1205,1301,1395,1491,1583,1675,1767,1844,1940,2035,2130,2227,2323,2421,2572,2666",
-                        "endColumns": "94,92,99,81,96,107,76,75,91,92,90,95,95,93,95,91,91,91,76,95,94,94,96,95,97,150,93,77",
-                        "endOffsets": "195,288,388,470,567,675,752,828,920,1013,1104,1200,1296,1390,1486,1578,1670,1762,1839,1935,2030,2125,2222,2318,2416,2567,2661,2739"
+                        "startOffsets": "105,200,293,393,475,572,680,757,832,924,1018,1109,1205,1300,1394,1490,1582,1674,1766,1844,1940,2035,2130,2227,2323,2421,2572,2666",
+                        "endColumns": "94,92,99,81,96,107,76,74,91,93,90,95,94,93,95,91,91,91,77,95,94,94,96,95,97,150,93,78",
+                        "endOffsets": "195,288,388,470,567,675,752,827,919,1013,1104,1200,1295,1389,1485,1577,1669,1761,1839,1935,2030,2125,2222,2318,2416,2567,2661,2740"
                     }
                 },
                 {
-                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\221d8dc92cf8ebcfd2cc9b448a42120b\\transformed\\core-1.2.0\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\fb7116196c481d237063c2d46ff6cdcc\\transformed\\core-1.9.0\\res\\values-zh-rHK\\values-zh-rHK.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -25,9 +25,9 @@
                     "to": {
                         "startLines": "30",
                         "startColumns": "4",
-                        "startOffsets": "2744",
+                        "startOffsets": "2745",
                         "endColumns": "100",
-                        "endOffsets": "2840"
+                        "endOffsets": "2841"
                     }
                 }
             ]

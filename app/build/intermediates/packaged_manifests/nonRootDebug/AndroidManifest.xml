@@ -34,7 +34,13 @@
         android:required="false" /> <!-- Disable legacy input emulation on ChromeOS -->
     <uses-feature
         android:name="android.hardware.type.pc"
-        android:required="false" /> <!-- Non-root application name -->
+        android:required="false" />
+
+    <permission
+        android:name="com.antplay.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.antplay.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Non-root application name -->
     <!-- FIXME: We should set extractNativeLibs=false but this breaks installation on the Fire TV 3 -->
     <application
         android:allowBackup="true"
@@ -55,6 +61,13 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.antplay.SubscriptionPlanActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name="com.antplay.ui.HomeActivity"
             android:exported="false"
@@ -98,6 +111,10 @@
         <activity
             android:name="com.antplay.ui.LoginActivity"
             android:exported="false"
+            android:resizeableActivity="true" />
+        <activity
+            android:name="com.antplay.ui.SubscriptionPlanActivity"
+            android:exported="true"
             android:resizeableActivity="true" />
 
         <provider
@@ -221,6 +238,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.antplay.PcView" />
         </activity>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.antplay.debug.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
     </application>
 
 </manifest>

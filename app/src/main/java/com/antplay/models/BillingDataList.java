@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 public class BillingDataList {
     @SerializedName("id")
     @Expose
-    private String id;
+    private int id;
     @SerializedName("plan_type")
     @Expose
     private String plan_type;
@@ -39,11 +39,11 @@ public class BillingDataList {
     @Expose
     private String price;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

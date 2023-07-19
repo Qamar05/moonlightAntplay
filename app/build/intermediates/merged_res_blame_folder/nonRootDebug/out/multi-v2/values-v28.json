@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-13:/values-v28/values-v28.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-26:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\5fbc9bb5cbddf86222bfe3dc88b507ab\\transformed\\appcompat-1.1.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\a7bc0d583083f17ce431510d0f69632e\\transformed\\appcompat-1.6.1\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "55,130,217,447",
+                        "startOffsets": "55,130,217,397",
                         "endLines": "2,3,7,11",
                         "endColumns": "74,86,12,12",
-                        "endOffsets": "125,212,442,684"
+                        "endOffsets": "125,212,392,584"
                     },
                     "to": {
                         "startLines": "10,11,12,16",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\62a6a6de98bad13f098caf1b153fa78f\\transformed\\material-1.2.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\6b5e8f8727559cd3b999c8d4ce40a360\\transformed\\material-1.2.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

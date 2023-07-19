@@ -24,6 +24,7 @@
         android:layout_marginLeft="20dp" />
 
     <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginLeft="5dp"
@@ -46,6 +47,19 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgBack"/>
 
+
+
+
+    <TextView
+        android:id="@+id/tvNoDataFound"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressSubscriptionPlan"

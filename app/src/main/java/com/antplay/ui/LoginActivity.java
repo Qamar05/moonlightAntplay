@@ -180,7 +180,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                             Log.d(TAG, "Access Token : " + accessToken);
                            // SharedPreferenceUtils.saveBoolean(LoginActivity.this, Const.IS_LOGGED_IN, true);
                             SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
-                            Intent i = new Intent(LoginActivity.this, PcView.class);
+//                            Intent i = new Intent(LoginActivity.this, PcView.class);
+                            Intent i = new Intent(LoginActivity.this, SubscriptionPlanActivity.class);
                             startActivity(i);
                             finish();
                         } catch (JSONException e) {

@@ -8,7 +8,8 @@ public class Const {
     //public static String PROD_URL="https://fmcg.xaapps.com/";
     public static String URL =  "https://api.antplay.tech/api/";
 
-    public static String emailPattern = "^(?:\\d{10}|\\w+@\\w+\\.\\w{2,3})$";
+//    public static String emailPattern = "^(?:\\d{10}|\\w+@\\w+\\.\\w{2,3})$";
+    public static String emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
     public static String passwordRegex = "^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
 
     public static String ACCESS_TOKEN="access_token";

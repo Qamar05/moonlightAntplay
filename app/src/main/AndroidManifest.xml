@@ -96,6 +96,11 @@
             android:exported="false"
             android:resizeableActivity="true" />
 
+        <activity
+            android:name=".ui.SubscriptionPlanActivity"
+            android:exported="true"
+            android:resizeableActivity="true" />
+
         <provider
             android:name=".PosterContentProvider"
             android:authorities="poster.${applicationId}"

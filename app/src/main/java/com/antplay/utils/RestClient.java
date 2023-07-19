@@ -164,7 +164,7 @@ public class RestClient {
                 public void handleMessage(Message msg) {
                     InputStream is = null;
                     try {
-                        URL url = new URL(BASE_URL + baseUrl); //+ postUrl
+                        URL url = new URL(Const.URL + baseUrl); //+ postUrl
                         Log.d(TAG_RESPONSE, "===========" + baseUrl + "===========");
                         HttpURLConnection con = (HttpURLConnection) url.openConnection();
 

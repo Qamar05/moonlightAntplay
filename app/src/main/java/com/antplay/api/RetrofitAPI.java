@@ -8,6 +8,8 @@ import com.antplay.models.LoginRequestModal;
 import com.antplay.models.LoginResponse;
 import com.antplay.models.ResetEmailReq;
 import com.antplay.models.ResultResponse;
+import com.antplay.models.StartPaymentReq;
+import com.antplay.models.StartPaymentResp;
 import com.antplay.models.UpdatePinRequestModal;
 import com.antplay.models.UpdatePinResponseModal;
 import com.antplay.models.UserRegisterRequest;
@@ -17,22 +19,18 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 
 public interface RetrofitAPI {
 
-
-
     @GET("getallbillingplan/")
     Call<AllBillingPlanResp> getAllBillingPlan();
 
-    @GET("getbillingplan/")
+    @GET("getbillingplan")
     Call<AllBillingPlanResp> getBillingPlan(@Header("Authorization") String token);
-
-
-
 
 
     @POST("vmauth/")
@@ -54,15 +52,12 @@ public interface RetrofitAPI {
     @POST("change_password/")
     Call<ChangePasswordResp> changePassword(@Body ChangePassReq changePassReq);
 
+
+    @POST("start_payment/")
+    Call<StartPaymentResp> startPayment(@Header("Authorization") String token , @Body StartPaymentReq startPaymentReq);
+
     @PUT("userupdate/")
     Call<ChangePasswordResp> userUpdate(@Body UserRegisterRequest userRegisterRequest);
-
-
-
-
-
-
-
 
 
 }

@@ -1,10 +1,12 @@
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
+-keep class androidx.startup.InitializationProvider { <init>(); }
 -keep class com.antplay.AppView { <init>(); }
 -keep class com.antplay.Game { <init>(); }
 -keep class com.antplay.HelpActivity { <init>(); }
 -keep class com.antplay.PcView { <init>(); }
 -keep class com.antplay.PosterContentProvider { <init>(); }
 -keep class com.antplay.ShortcutTrampoline { <init>(); }
+-keep class com.antplay.SubscriptionPlanActivity { <init>(); }
 -keep class com.antplay.binding.input.driver.UsbDriverService { <init>(); }
 -keep class com.antplay.computers.ComputerManagerService { <init>(); }
 -keep class com.antplay.discovery.DiscoveryService { <init>(); }
@@ -16,6 +18,7 @@
 -keep class com.antplay.ui.LoginActivity { <init>(); }
 -keep class com.antplay.ui.SignupActivity { <init>(); }
 -keep class com.antplay.ui.SplashActivity { <init>(); }
+-keep class com.antplay.ui.SubscriptionPlanActivity { <init>(); }
 -keep class android.support.constraint.ConstraintLayout { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
