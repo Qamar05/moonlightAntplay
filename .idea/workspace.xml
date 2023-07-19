@@ -13,30 +13,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4dc8bdb-9e86-4770-a6d4-558d7e988294" name="Changes" comment="Login signup activities added">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/backarrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/editprofile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/instagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/paymenthistory.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/plan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/rupees.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/black_trans_bg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/payment_button_bg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_billing_plan.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/BillingDataList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/adapter/SubscriptionPlanAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/subcription_item_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/AllBillingPlanResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/AllBillingPlanResp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SubscriptionPlanActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SubscriptionPlanActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription_plan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription_plan.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[8d950d5d]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\HP\.android\avd\Pixel_6_API_34.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -83,8 +73,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="layoutResourceFile" />
         <option value="Class" />
-        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -100,19 +90,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DEBUGGABLE_DEVICE&quot;: &quot;realme-rmp2105-12D231631002194&quot;,
+    &quot;DEBUGGABLE_PROCESS&quot;: &quot;com.antplay.debug&quot;,
+    &quot;DEBUGGER_ID&quot;: &quot;Auto&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="android.template.500949360">
       <recent name="com.antplay.ui" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.antplay.ui.adapter" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\drawable-xhdpi" />
       <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\drawable" />
       <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\mipmap-hdpi" />
       <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\mipmap-mdpi" />
       <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\mipmap-xhdpi" />
+      <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\mipmap-xxhdpi" />
     </key>
     <key name="android.template.1956969507">
       <recent name="com.limelight.ui" />
@@ -130,7 +135,7 @@
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="moonlight-android.app.main" />
+      <module name="moonlightAntplay.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -178,7 +183,6 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
         <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-        <option name="PROFILING_MODE" value="NOT_SET" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
