@@ -1,0 +1,8 @@
+# C/C++ build system timings
+generate_cxx_metadata
+  execute-generate-process
+    exec-configure 117ms
+  execute-generate-process completed in 126ms
+  remove-unexpected-so-files 16ms
+generate_cxx_metadata completed in 151ms
+
