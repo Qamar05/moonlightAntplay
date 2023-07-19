@@ -101,6 +101,16 @@
             android:exported="true"
             android:resizeableActivity="true" />
 
+        <activity
+            android:name=".ui.ChangePassword"
+            android:exported="true"
+            android:resizeableActivity="true" />
+
+        <activity
+            android:name=".ui.PaymentHistory"
+            android:exported="true"
+            android:resizeableActivity="true" />
+
         <provider
             android:name=".PosterContentProvider"
             android:authorities="poster.${applicationId}"

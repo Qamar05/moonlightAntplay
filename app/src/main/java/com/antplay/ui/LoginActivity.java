@@ -54,7 +54,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         loadingPB = (ProgressBar) findViewById(R.id.loadingLogin_progress_xml);
 
         etEmail.setText("shobhit.agarwal@vmstechs.com");
-        etPass.setText("Test@123");
+        etPass.setText("Test@1234");
 
         setOnClickListener();
     }
@@ -181,7 +181,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                            // SharedPreferenceUtils.saveBoolean(LoginActivity.this, Const.IS_LOGGED_IN, true);
                             SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
 //                            Intent i = new Intent(LoginActivity.this, PcView.class);
-                            Intent i = new Intent(LoginActivity.this, SubscriptionPlanActivity.class);
+                            Intent i = new Intent(LoginActivity.this, PaymentHistory.class);
                             startActivity(i);
                             finish();
                         } catch (JSONException e) {

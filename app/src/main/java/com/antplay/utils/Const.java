@@ -15,8 +15,30 @@ public class Const {
     public static String ACCESS_TOKEN="access_token";
     public static String IS_LOGGED_IN="logged_in";
     public static String IS_FIRST_TIME="is_first_time";
-
     public static String REDIRECT_URL="redirectURL";
+
+    public static String USERNAME="username";
+    public static String FIRSTNAME="first_name";
+    public static String LASTNAME="last_name";
+    public static String EMAIL_ID="email_id";
+    public static String PHONE_NUMBER="phone_number";
+    public static String STATE="state";
+    public static String CITY="city";
+    public static String PINCODE="pincode";
+
+    public static final Integer ERROR_CODE_500 = 500;
+    public static final String ERROR_CODE_500_SERVER_ERROR = "500 Internal Server Error";
+    public static String no_records = "No Records Found";
+    public static final Integer ERROR_CODE_400 = 400;
+    public static final Integer ERROR_CODE_404 = 404;
+    public static final Integer SUCCESS_CODE_200 = 200;
+    public static String something_went_wrong = "Something went wrong";
+
+
+
+
+
+
 
     /*****
      * Intent Values

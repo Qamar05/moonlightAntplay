@@ -116,6 +116,14 @@
             android:name="com.antplay.ui.SubscriptionPlanActivity"
             android:exported="true"
             android:resizeableActivity="true" />
+        <activity
+            android:name="com.antplay.ui.ChangePassword"
+            android:exported="true"
+            android:resizeableActivity="true" />
+        <activity
+            android:name="com.antplay.ui.PaymentHistory"
+            android:exported="true"
+            android:resizeableActivity="true" />
 
         <provider
             android:name="com.antplay.PosterContentProvider"

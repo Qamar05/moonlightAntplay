@@ -2,6 +2,8 @@ package com.antplay.ui;
 
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.antplay.models.BillingDataList;
 import com.antplay.models.ResultResponse;
 import com.antplay.models.StartPaymentReq;
 import com.antplay.models.StartPaymentResp;
+import com.antplay.models.UserViewResponse;
 import com.antplay.ui.adapter.SubscriptionPlanAdapter;
 import com.antplay.utils.Const;
 import com.antplay.utils.SharedPreferenceUtils;
@@ -53,6 +56,7 @@ public class SubscriptionPlanActivity extends Activity implements SubscriptionPl
         progressSubscriptionPlan = findViewById(R.id.progressSubscriptionPlan);
         tvNoDataFound =  findViewById(R.id.tvNoDataFound);
         buttonClickListener =  this;
+        getUserData();
         getPlanApi();
     }
 
@@ -82,6 +86,7 @@ public class SubscriptionPlanActivity extends Activity implements SubscriptionPl
     @Override
     public void onButtonClick(int idValue) {
         progressSubscriptionPlan.setVisibility(View.VISIBLE);
+        //start Payment APi  ...
         StartPaymentReq startPaymentReq =  new StartPaymentReq(idValue);
         Call<StartPaymentResp> call = retrofitAPI.startPayment("Bearer "+ accessToken ,startPaymentReq);
         call.enqueue(new Callback<StartPaymentResp>() {
@@ -89,12 +94,46 @@ public class SubscriptionPlanActivity extends Activity implements SubscriptionPl
             public void onResponse(Call<StartPaymentResp> call, Response<StartPaymentResp> response) {
                 progressSubscriptionPlan.setVisibility(View.GONE);
                 if(response!=null) {
-
-                   // Toast.makeText(SubscriptionPlanActivity.this, "" +response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    if (response.body().getPayment_url()!=null) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(response.body().getPayment_url()));
+                        startActivity(browserIntent);
+                    }
                 }
             }
             @Override
             public void onFailure(Call<StartPaymentResp> call, Throwable t) {
+                progressSubscriptionPlan.setVisibility(View.GONE);
+                Log.i("Error: ", "" + t.getMessage());
+            }
+        });
+    }
+
+
+
+    private void getUserData() {
+        progressSubscriptionPlan.setVisibility(View.VISIBLE);
+        Call<UserViewResponse> call = retrofitAPI.getUserView("Bearer "+ accessToken);
+        call.enqueue(new Callback<UserViewResponse>() {
+            @Override
+            public void onResponse(Call<UserViewResponse> call, Response<UserViewResponse> response) {
+                progressSubscriptionPlan.setVisibility(View.GONE);
+                if(response!=null) {
+                    Toast.makeText(SubscriptionPlanActivity.this, ""+response.body().getEmail(), Toast.LENGTH_SHORT).show();
+                    SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.USERNAME, response.body().getUsername());
+                    SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.FIRSTNAME, response.body().getFirst_name());
+                    SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.LASTNAME, response.body().getLast_name());
+                    SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.EMAIL_ID, response.body().getEmail());
+                    SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.PHONE_NUMBER, response.body().getPhone_number());
+                    SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.STATE, response.body().getState());
+                    SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.CITY, response.body().getCity());
+                    SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.PINCODE, response.body().getPincode());
+
+
+
+                }
+            }
+            @Override
+            public void onFailure(Call<UserViewResponse> call, Throwable t) {
                 progressSubscriptionPlan.setVisibility(View.GONE);
                 Log.i("Error: ", "" + t.getMessage());
             }
