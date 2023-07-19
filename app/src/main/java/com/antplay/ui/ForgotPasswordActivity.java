@@ -4,7 +4,6 @@ import static com.antplay.utils.Const.emailPattern;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,10 +16,7 @@ import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.ResetEmailReq;
-import com.antplay.models.ResetEmailResp;
-import com.antplay.models.UserRegisterRequest;
-import com.antplay.models.UserRegisterResp;
-import com.antplay.utils.Const;
+import com.antplay.models.ResultResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,10 +42,10 @@ public class ForgotPasswordActivity extends Activity {
                 progressBar.setVisibility(View.VISIBLE);
                 ResetEmailReq resetEmailReq = new ResetEmailReq(strEmail);
                 RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
-                Call<ResetEmailResp> call = retrofitAPI.forgotPassword(resetEmailReq);
-                call.enqueue(new Callback<ResetEmailResp>() {
+                Call<ResultResponse> call = retrofitAPI.forgotPassword(resetEmailReq);
+                call.enqueue(new Callback<ResultResponse>() {
                     @Override
-                    public void onResponse(Call<ResetEmailResp> call, Response<ResetEmailResp> response) {
+                    public void onResponse(Call<ResultResponse> call, Response<ResultResponse> response) {
                         progressBar.setVisibility(View.GONE);
                         if(response.body().isStatus()) {
                             Toast.makeText(ForgotPasswordActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
@@ -62,7 +58,7 @@ public class ForgotPasswordActivity extends Activity {
                     }
 
                     @Override
-                    public void onFailure(Call<ResetEmailResp> call, Throwable t) {
+                    public void onFailure(Call<ResultResponse> call, Throwable t) {
                         progressBar.setVisibility(View.GONE);
                         Log.i("Error: ", "" + t.getMessage());
                     }

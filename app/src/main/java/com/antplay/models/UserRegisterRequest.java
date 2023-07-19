@@ -53,6 +53,19 @@ public class UserRegisterRequest {
         this.password = password;
     }
 
+    public UserRegisterRequest(String email, String phone_number, String address, String age, String state, String city, String pincode) {
+        this.email = email;
+        this.phone_number = phone_number;
+        this.address = address;
+        this.age = age;
+        this.state = state;
+        this.city = city;
+        this.pincode = pincode;
+    }
+
+
+
+
     public String getFirst_name() {
         return first_name;
     }

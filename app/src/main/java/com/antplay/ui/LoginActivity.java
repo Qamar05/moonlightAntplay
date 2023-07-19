@@ -15,8 +15,6 @@ import android.widget.Toast;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.LoginRequestModal;
-import com.antplay.models.UserRegisterRequest;
-import com.antplay.models.UserRegisterResp;
 import com.google.gson.Gson;
 import com.antplay.PcView;
 import com.antplay.models.LoginResponse;
