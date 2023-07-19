@@ -1,5 +1,6 @@
 package com.antplay.api;
 
+import com.antplay.models.AllBillingPlanResp;
 import com.antplay.models.ChangePassReq;
 import com.antplay.models.ChangePasswordResp;
 import com.antplay.models.GetVMResponse;
@@ -17,9 +18,22 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 
 public interface RetrofitAPI {
+
+
+
+    @GET("getallbillingplan/")
+    Call<AllBillingPlanResp> getAllBillingPlan();
+
+    @GET("getbillingplan/")
+    Call<AllBillingPlanResp> getBillingPlan(@Header("Authorization") String token);
+
+
+
+
 
     @POST("vmauth/")
     Call<UpdatePinResponseModal> updatePin(@Header("Authorization") String token, @Body UpdatePinRequestModal updatePinRequestModal);
@@ -40,8 +54,12 @@ public interface RetrofitAPI {
     @POST("change_password/")
     Call<ChangePasswordResp> changePassword(@Body ChangePassReq changePassReq);
 
-    @POST("userupdate/")
+    @PUT("userupdate/")
     Call<ChangePasswordResp> userUpdate(@Body UserRegisterRequest userRegisterRequest);
+
+
+
+
 
 
 

@@ -13,15 +13,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4dc8bdb-9e86-4770-a6d4-558d7e988294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/ChangePassReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/ChangePasswordResp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/AllBillingPlanResp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/api/RetrofitAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/api/RetrofitAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/ResetEmailResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/ResultResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/UserRegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/UserRegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/UserRegisterResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/UserRegisterResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/ForgotPasswordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/ForgotPasswordActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SignupActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/NetHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/NetHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +75,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SHOW_ALL_PROCESSES": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",

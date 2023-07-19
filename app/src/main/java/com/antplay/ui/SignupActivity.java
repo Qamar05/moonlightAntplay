@@ -193,7 +193,6 @@ public class SignupActivity extends Activity {
         UserRegisterRequest userRegisterRequestv = new UserRegisterRequest(strFirstName, strLastName,strEmail,strPhoneNumber,
                 strAddress,strAge,strState,strCity,strPinCode,strPassword);
         RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
-        // calling a method to create a post and passing our modal class.
 
         Call<UserRegisterResp> call = retrofitAPI.userRegister(userRegisterRequestv);
 
@@ -205,8 +204,6 @@ public class SignupActivity extends Activity {
                 Intent i =  new Intent(SignupActivity.this , LoginActivity.class);
                 startActivity(i);
                 finish();
-
-
             }
 
             @Override
@@ -216,15 +213,6 @@ public class SignupActivity extends Activity {
             }
         });
     }
-
-
-
-
-
-
-
-
-
 
     private boolean validateFormField() {
         if (edtFirstName.getText().toString().contains(" ")) {
