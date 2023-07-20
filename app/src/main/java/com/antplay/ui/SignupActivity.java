@@ -3,6 +3,7 @@ package com.antplay.ui;
 import static com.antplay.utils.Const.emailPattern;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -24,6 +25,7 @@ import com.antplay.api.RetrofitAPI;
 import com.antplay.models.GetVMResponse;
 import com.antplay.models.UserRegisterRequest;
 import com.antplay.models.UserRegisterResp;
+import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 
 import java.util.ArrayList;
@@ -34,7 +36,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class SignupActivity extends Activity {
+public class SignupActivity extends Activity implements View.OnClickListener {
 
     EditText edtFirstName, edtLastName, edtPhoneNumber, edtEmail, edtPassword, edtConfirmPassword, edtAge, edtAddress, edtCity, edtPinCode;
     Button btnSignup;
@@ -44,12 +46,13 @@ public class SignupActivity extends Activity {
     boolean isUserAgreementChecked = false,isSubscribed = false,isNewUser=true,lastLogin=false;
     Spinner spinnerState;
     String strState, strFirstName, strMiddleName, strLastName, strPhoneNumber, strEmail, strPassword, strAge, strAddress, strPinCode, strCity;
-
+    RetrofitAPI retrofitAPI;
+    Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
+        mContext= SignupActivity.this;
         edtFirstName = (EditText) findViewById(R.id.edtFirstName);
         edtLastName = (EditText) findViewById(R.id.edtLastName);
         edtPhoneNumber = (EditText) findViewById(R.id.edtPhoneNumber);
@@ -62,36 +65,19 @@ public class SignupActivity extends Activity {
         spinnerState = (Spinner) findViewById(R.id.spinnerState);
         edtCity = (EditText) findViewById(R.id.edtCity);
         progressBar = (ProgressBar) findViewById(R.id.progressSignUp);
+         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
 
         btnSignup = (Button) findViewById(R.id.btnSignUp);
         txtAlreadyRegister = (TextView) findViewById(R.id.txtAlreadyRegister);
         chkBoxUserAgreement = (CheckBox) findViewById(R.id.chkBoxUserAgreement);
         txtUserAgreement = findViewById(R.id.txtUserAgreement);
 
-        chkBoxUserAgreement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isUserAgreementChecked = chkBoxUserAgreement.isChecked();
-            }
-        });
+        chkBoxUserAgreement.setOnClickListener(this);
+        txtAlreadyRegister.setOnClickListener(this);
+        txtUserAgreement.setOnClickListener(this);
+        btnSignup.setOnClickListener(this);
 
-        txtAlreadyRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(SignupActivity.this, LoginActivity.class);
-                startActivity(i);
-            }
-        });
 
-        txtUserAgreement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Open WebView here
-                Intent intent = new Intent(SignupActivity.this, GeneralWebViewActivity.class);
-                intent.putExtra(Const.REDIRECT_URL, Const.TERMS_AND_CONDITION_URL);
-                startActivity(intent);
-            }
-        });
 
         // Spinner Drop down elements
         List<String> stateList = new ArrayList<String>();
@@ -155,30 +141,7 @@ public class SignupActivity extends Activity {
         });
 
 
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validateFormField();
 
-                //  Integer intValue = myLong.intValue();
-                if (validateFormField()) {
-                    // we can call Api here
-                    strFirstName = edtFirstName.getText().toString().trim();
-                    strLastName = edtLastName.getText().toString().trim();
-                    strEmail = edtEmail.getText().toString().trim();
-                    strPhoneNumber = edtPhoneNumber.getText().toString().trim();
-                    strMiddleName = edtFirstName.getText().toString().trim();
-                    strPassword = edtPassword.getText().toString().trim();
-                    strAddress = edtAddress.getText().toString();
-                    strAge = edtAge.getText().toString().trim();
-                    strCity = edtCity.getText().toString().trim();
-                    strPinCode = edtPinCode.getText().toString();
-
-                    callRegisterApi(strFirstName, strMiddleName,strLastName, strEmail, strPhoneNumber, lastLogin, isNewUser, isSubscribed, strPassword, strAddress, strAge, strState, strCity, strPinCode);
-
-                }
-            }
-        });
 
 
     }
@@ -188,29 +151,34 @@ public class SignupActivity extends Activity {
                                  boolean isSubscribed, String strPassword, String strAddress, String strAge,
                                  String strState, String strCity, String strPinCode) {
 
-        progressBar.setVisibility(View.VISIBLE);
-        UserRegisterRequest userRegisterRequestv = new UserRegisterRequest(strFirstName, strLastName,strEmail,strPhoneNumber,
-                strAddress,strAge,strState,strCity,strPinCode,strPassword);
-        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
+        if(AppUtils.isOnline(mContext)) {
+            progressBar.setVisibility(View.VISIBLE);
+            UserRegisterRequest userRegisterRequestv = new UserRegisterRequest(strFirstName, strLastName, strEmail, strPhoneNumber,
+                    strAddress, strAge, strState, strCity, strPinCode, strPassword);
 
-        Call<UserRegisterResp> call = retrofitAPI.userRegister(userRegisterRequestv);
+            Call<UserRegisterResp> call = retrofitAPI.userRegister(userRegisterRequestv);
 
-        call.enqueue(new Callback<UserRegisterResp>() {
-            @Override
-            public void onResponse(Call<UserRegisterResp> call, Response<UserRegisterResp> response) {
-                progressBar.setVisibility(View.GONE);
-                Toast.makeText(SignupActivity.this, ""+response.body().getMessage() , Toast.LENGTH_SHORT).show();
-                Intent i =  new Intent(SignupActivity.this , LoginActivity.class);
-                startActivity(i);
-                finish();
-            }
+            call.enqueue(new Callback<UserRegisterResp>() {
+                @Override
+                public void onResponse(Call<UserRegisterResp> call, Response<UserRegisterResp> response) {
+                    progressBar.setVisibility(View.GONE);
+                    if(response.body()!=null) {
+                        Toast.makeText(SignupActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                      if(response.body().isStatus())
+                        AppUtils.navigateScreen(SignupActivity.this, LoginActivity.class);
+                    }
 
-            @Override
-            public void onFailure(Call<UserRegisterResp> call, Throwable t) {
-                progressBar.setVisibility(View.GONE);
-                Log.i("Error: ", ""+t.getMessage());
-            }
-        });
+                }
+
+                @Override
+                public void onFailure(Call<UserRegisterResp> call, Throwable t) {
+                    progressBar.setVisibility(View.GONE);
+                    Log.i("Error: ", "" + t.getMessage());
+                }
+            });
+        }
+        else
+            Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
     }
 
     private boolean validateFormField() {
@@ -313,5 +281,41 @@ public class SignupActivity extends Activity {
             return false;
         }
         return true;
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.chkBoxUserAgreement:
+                isUserAgreementChecked = chkBoxUserAgreement.isChecked();
+                break;
+            case R.id.txtAlreadyRegister:
+                AppUtils.navigateScreen(SignupActivity.this, LoginActivity.class);
+                break;
+            case R.id.txtUserAgreement:
+                Intent intent = new Intent(SignupActivity.this, GeneralWebViewActivity.class);
+                intent.putExtra(Const.REDIRECT_URL, Const.TERMS_AND_CONDITION_URL);
+                startActivity(intent);
+                break;
+            case R.id.btnSignUp:
+                if (validateFormField()) {
+                    // we can call Api here
+                    strFirstName = edtFirstName.getText().toString().trim();
+                    strLastName = edtLastName.getText().toString().trim();
+                    strEmail = edtEmail.getText().toString().trim();
+                    strPhoneNumber = edtPhoneNumber.getText().toString().trim();
+                    strMiddleName = edtFirstName.getText().toString().trim();
+                    strPassword = edtPassword.getText().toString().trim();
+                    strAddress = edtAddress.getText().toString();
+                    strAge = edtAge.getText().toString().trim();
+                    strCity = edtCity.getText().toString().trim();
+                    strPinCode = edtPinCode.getText().toString();
+
+                    callRegisterApi(strFirstName, strMiddleName,strLastName, strEmail, strPhoneNumber, lastLogin, isNewUser, isSubscribed, strPassword, strAddress, strAge, strState, strCity, strPinCode);
+
+                }
+                break;
+        }
     }
 }
