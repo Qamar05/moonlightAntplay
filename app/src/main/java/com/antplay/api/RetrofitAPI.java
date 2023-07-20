@@ -17,6 +17,7 @@ import com.antplay.models.UserRegisterRequest;
 import com.antplay.models.UserRegisterResp;
 import com.antplay.models.UserViewResponse;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -42,7 +43,7 @@ public interface RetrofitAPI {
     Call<GetVMResponse> getVMFromServer(@Header("Authorization") String token);
 
     @POST("login/")
-    Call<LoginResponse> userLogin(@Body LoginRequestModal loginRequestModal);
+    Call<ResponseBody> userLogin(@Body LoginRequestModal loginRequestModal);
 
     @POST("register/")
     Call<UserRegisterResp> userRegister(@Body UserRegisterRequest userRegisterRequest);

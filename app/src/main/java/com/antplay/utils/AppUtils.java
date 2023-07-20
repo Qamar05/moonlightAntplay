@@ -30,7 +30,7 @@ public class AppUtils {
         sb.show();
     }
 
-    public static void navigateScreen(Activity activity, Class<LoginActivity> loginActivityClass){
+    public static void navigateScreen(Activity activity, Class loginActivityClass){
         Intent i = new Intent(activity,loginActivityClass);
         activity.startActivity(i);
         activity.finish();

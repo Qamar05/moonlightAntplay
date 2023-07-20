@@ -3,7 +3,6 @@
 -keep class com.antplay.AppView { <init>(); }
 -keep class com.antplay.Game { <init>(); }
 -keep class com.antplay.HelpActivity { <init>(); }
--keep class com.antplay.PcView { <init>(); }
 -keep class com.antplay.PosterContentProvider { <init>(); }
 -keep class com.antplay.ShortcutTrampoline { <init>(); }
 -keep class com.antplay.binding.input.driver.UsbDriverService { <init>(); }
@@ -11,15 +10,16 @@
 -keep class com.antplay.discovery.DiscoveryService { <init>(); }
 -keep class com.antplay.preferences.AddComputerManually { <init>(); }
 -keep class com.antplay.preferences.StreamSettings { <init>(); }
--keep class com.antplay.ui.ChangePassword { <init>(); }
--keep class com.antplay.ui.ForgotPasswordActivity { <init>(); }
--keep class com.antplay.ui.GeneralWebViewActivity { <init>(); }
--keep class com.antplay.ui.HomeActivity { <init>(); }
--keep class com.antplay.ui.LoginActivity { <init>(); }
--keep class com.antplay.ui.PaymentHistory { <init>(); }
--keep class com.antplay.ui.SignupActivity { <init>(); }
--keep class com.antplay.ui.SplashActivity { <init>(); }
--keep class com.antplay.ui.SubscriptionPlanActivity { <init>(); }
+-keep class com.antplay.ui.activity.ChangePasswordActivity { <init>(); }
+-keep class com.antplay.ui.activity.ForgotPasswordActivity { <init>(); }
+-keep class com.antplay.ui.activity.GeneralWebViewActivity { <init>(); }
+-keep class com.antplay.ui.activity.HomeActivity { <init>(); }
+-keep class com.antplay.ui.activity.LoginActivity { <init>(); }
+-keep class com.antplay.ui.activity.PaymentHistoryActivity { <init>(); }
+-keep class com.antplay.ui.activity.PcView { <init>(); }
+-keep class com.antplay.ui.activity.SignupActivity { <init>(); }
+-keep class com.antplay.ui.activity.SplashActivity { <init>(); }
+-keep class com.antplay.ui.activity.SubscriptionPlanActivity { <init>(); }
 -keep class android.support.constraint.ConstraintLayout { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
@@ -84,7 +84,7 @@
 
 -keep class com.antplay.preferences.SmallIconCheckboxPreference { <init>(...); }
 
--keep class com.antplay.ui.StreamView { <init>(android.content.Context, android.util.AttributeSet); }
+-keep class com.antplay.ui.intrface.StreamView { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class com.google.android.material.bottomnavigation.BottomNavigationView { <init>(android.content.Context, android.util.AttributeSet); }
 

@@ -10732,17 +10732,6 @@ com.antplay.Game:
     private static final int THREE_FINGER_TAP_THRESHOLD
 com.antplay.LimeLog:
     public static void setFileHandler(java.lang.String)
-com.antplay.PcView:
-    private static final int DELETE_ID
-    private static final int FULL_APP_LIST_ID
-    private static final int GAMESTREAM_EOL_ID
-    private static final int PAIR_ID
-    private static final int QUIT_ID
-    private static final int RESUME_ID
-    private static final int TEST_NETWORK_ID
-    private static final int UNPAIR_ID
-    private static final int VIEW_DETAILS_ID
-    private static final int WOL_ID
 com.antplay.PosterContentProvider:
     public static final int APP_ID_PATH_INDEX
     public static final java.lang.String AUTHORITY
@@ -10777,7 +10766,6 @@ com.antplay.api.RetrofitAPI:
     public abstract retrofit2.Call getAllBillingPlan()
     public abstract retrofit2.Call getVMFromServer(java.lang.String)
     public abstract retrofit2.Call updatePin(java.lang.String,com.antplay.models.UpdatePinRequestModal)
-    public abstract retrofit2.Call userLogin(com.antplay.models.LoginRequestModal)
     public abstract retrofit2.Call userUpdate(com.antplay.models.UserRegisterRequest)
 com.antplay.binding.PlatformBinding:
     public void <init>()
@@ -11031,14 +11019,12 @@ com.antplay.models.ChangePasswordResp
 com.antplay.models.ChangePasswordResponseModal
 com.antplay.models.GetVMResponse
 com.antplay.models.LoginData
-com.antplay.models.LoginRequestModal
-com.antplay.models.LoginResponse:
-    private com.antplay.models.LoginData data
-    private java.lang.String email
-    public com.antplay.models.LoginData getData()
-    public java.lang.String getEmail()
-    public void setData(com.antplay.models.LoginData)
-    public void setEmail(java.lang.String)
+com.antplay.models.LoginRequestModal:
+    public java.lang.String getPassword()
+    public java.lang.String getUsername()
+    public void setPassword(java.lang.String)
+    public void setUsername(java.lang.String)
+com.antplay.models.LoginResponse
 com.antplay.models.Payment:
     public void setBillingPlan(java.lang.String)
     public void setBillingPrice(java.lang.Double)
@@ -11266,18 +11252,23 @@ com.antplay.preferences.SeekBarPreference:
     public int getProgress()
     public void setProgress(int)
 com.antplay.preferences.WebLauncherPreference
-com.antplay.ui.ChangePassword:
+com.antplay.ui.activity.ChangePasswordActivity:
     android.widget.LinearLayout logoutLinear
-com.antplay.ui.GameGestures:
-    public abstract void toggleKeyboard()
-com.antplay.ui.LoginActivity$3
-com.antplay.ui.LoginActivity:
-    private boolean CheckAllLoginFields()
-    private void callLoginAPi(java.lang.String,java.lang.String)
-com.antplay.ui.StreamView:
-    public void <init>(android.content.Context)
-    public void <init>(android.content.Context,android.util.AttributeSet,int)
-    public void <init>(android.content.Context,android.util.AttributeSet,int,int)
+com.antplay.ui.activity.LoginActivity$1
+com.antplay.ui.activity.LoginActivity$2
+com.antplay.ui.activity.LoginActivity:
+    private void callManualLoginAPI(java.lang.String,java.lang.String)
+com.antplay.ui.activity.PcView:
+    private static final int DELETE_ID
+    private static final int FULL_APP_LIST_ID
+    private static final int GAMESTREAM_EOL_ID
+    private static final int PAIR_ID
+    private static final int QUIT_ID
+    private static final int RESUME_ID
+    private static final int TEST_NETWORK_ID
+    private static final int UNPAIR_ID
+    private static final int VIEW_DETAILS_ID
+    private static final int WOL_ID
 com.antplay.ui.fragments.HomeFragment:
     private static final java.lang.String ARG_PARAM1
     private static final java.lang.String ARG_PARAM2
@@ -11290,6 +11281,12 @@ com.antplay.ui.fragments.VMFragment:
     private static final java.lang.String ARG_PARAM1
     private static final java.lang.String ARG_PARAM2
     public static com.antplay.ui.fragments.VMFragment newInstance(java.lang.String,java.lang.String)
+com.antplay.ui.intrface.GameGestures:
+    public abstract void toggleKeyboard()
+com.antplay.ui.intrface.StreamView:
+    public void <init>(android.content.Context)
+    public void <init>(android.content.Context,android.util.AttributeSet,int)
+    public void <init>(android.content.Context,android.util.AttributeSet,int,int)
 com.antplay.utils.AppUtils:
     public void <init>()
 com.antplay.utils.CacheHelper:
@@ -11306,6 +11303,8 @@ com.antplay.utils.NetHelper:
 com.antplay.utils.RestClient$1$1
 com.antplay.utils.RestClient$10
 com.antplay.utils.RestClient$1
+com.antplay.utils.RestClient$2$1
+com.antplay.utils.RestClient$2
 com.antplay.utils.RestClient$3$1
 com.antplay.utils.RestClient$3
 com.antplay.utils.RestClient$4$1
@@ -11318,6 +11317,7 @@ com.antplay.utils.RestClient$8$1
 com.antplay.utils.RestClient$8
 com.antplay.utils.RestClient$FileDownloadListener
 com.antplay.utils.RestClient$MultipartUtility
+com.antplay.utils.RestClient$ResponseListenerUpdated
 com.antplay.utils.RestClient:
     public static final java.lang.String BASE_URL
     public void MultipartRequest(java.lang.String,java.lang.String,java.util.HashMap,java.io.File,java.lang.String,com.antplay.utils.RestClient$ResponseListenerUpdated,com.antplay.utils.RestClient$ErrorListener)
@@ -11329,6 +11329,7 @@ com.antplay.utils.RestClient:
     public com.antplay.utils.RestClient getRequest(java.lang.String,java.lang.String,com.antplay.utils.RestClient$ResponseListener,com.antplay.utils.RestClient$ErrorListener)
     public com.antplay.utils.RestClient postRequest(java.lang.String,java.lang.String,java.util.HashMap,com.antplay.utils.RestClient$ResponseListener,com.antplay.utils.RestClient$ErrorListener)
     public com.antplay.utils.RestClient postRequestWithLocalisation(java.lang.String,java.lang.String,java.util.HashMap,java.lang.String,com.antplay.utils.RestClient$ResponseListener,com.antplay.utils.RestClient$ErrorListener)
+    public com.antplay.utils.RestClient postRequestWithoutMethod(java.lang.String,java.lang.String,java.util.HashMap,com.antplay.utils.RestClient$ResponseListenerUpdated,com.antplay.utils.RestClient$ErrorListener)
     public com.antplay.utils.RestClient setTimeout(int)
 com.antplay.utils.ServerHelper:
     public static final java.lang.String CONNECTION_TEST_SERVER
@@ -18515,11 +18516,16 @@ com.google.gson.Gson:
     static final boolean DEFAULT_SERIALIZE_NULLS
     static final boolean DEFAULT_SPECIALIZE_FLOAT_VALUES
     private static final java.lang.String JSON_NON_EXECUTABLE_PREFIX
+    private static void assertFullConsumption(java.lang.Object,com.google.gson.stream.JsonReader)
     public com.google.gson.internal.Excluder excluder()
     public com.google.gson.FieldNamingStrategy fieldNamingStrategy()
     public java.lang.Object fromJson(com.google.gson.JsonElement,java.lang.Class)
     public java.lang.Object fromJson(com.google.gson.JsonElement,java.lang.reflect.Type)
+    public java.lang.Object fromJson(com.google.gson.stream.JsonReader,java.lang.reflect.Type)
     public java.lang.Object fromJson(java.io.Reader,java.lang.Class)
+    public java.lang.Object fromJson(java.io.Reader,java.lang.reflect.Type)
+    public java.lang.Object fromJson(java.lang.String,java.lang.Class)
+    public java.lang.Object fromJson(java.lang.String,java.lang.reflect.Type)
     public boolean htmlSafe()
     public com.google.gson.GsonBuilder newBuilder()
     public boolean serializeNulls()
@@ -18667,6 +18673,7 @@ com.google.gson.internal.Primitives:
     private void <init>()
     public static boolean isWrapperType(java.lang.reflect.Type)
     public static java.lang.Class unwrap(java.lang.Class)
+    public static java.lang.Class wrap(java.lang.Class)
 com.google.gson.internal.Streams:
     private void <init>()
 com.google.gson.internal.bind.DefaultDateTypeAdapter$1
@@ -34718,7 +34725,6 @@ retrofit2.RequestFactory$Builder:
     private static final java.lang.String PARAM
 retrofit2.Response:
     public static retrofit2.Response error(int,okhttp3.ResponseBody)
-    public okhttp3.ResponseBody errorBody()
     public okhttp3.Headers headers()
     public okhttp3.Response raw()
     public static retrofit2.Response success(int,java.lang.Object)

@@ -1,4 +1,4 @@
-#Thu Jul 20 13:28:47 IST 2023
+#Thu Jul 20 17:10:25 IST 2023
 base.0=C\:\\vmsProject\\moonlightAntplay\\app\\build\\intermediates\\dex\\nonRootDebug\\minifyNonRootDebugWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
