@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_image"
-    tools:context=".ui.SubscriptionPlanActivity">
+    tools:context=".ui.activity.SubscriptionPlanActivity">
 
     <View
         android:layout_width="match_parent"

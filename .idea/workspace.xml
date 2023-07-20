@@ -15,54 +15,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4dc8bdb-9e86-4770-a6d4-558d7e988294" name="Changes" comment="Login signup activities added">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/nonRoot/debug/app-nonRoot-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/nonRoot/debug/app-nonRoot-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/nonRootDebug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/nonRootDebug/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/abi_configuration_725b704c.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/abi_configuration_725b704c.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/nonRootDebug/minifyNonRootDebugWithR8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/nonRootDebug/minifyNonRootDebugWithR8/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/nonRootDebug/mergeNonRootDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/nonRootDebug/mergeNonRootDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/nonRootDebug/mergeNonRootDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/nonRootDebug/mergeNonRootDebugResources/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageNonRootDebug/tmp/nonRootDebug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageNonRootDebug/tmp/nonRootDebug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageNonRootDebug/tmp/nonRootDebug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageNonRootDebug/tmp/nonRootDebug/zip-cache/androidResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/ForgotPasswordActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/ForgotPasswordActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/LoginActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/LoginActivity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/SignupActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/Const.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/nonRootDebug/layout_activity_forgot_password.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/nonRootDebug/layout_activity_forgot_password.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/nonRootDebug/values_values.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/nonRootDebug/values_values.arsc.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/multi-v2/nonRootDebug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/multi-v2/nonRootDebug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/multi-v2/values.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/single/nonRootDebug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/single/nonRootDebug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/nonRootDebug/out/resources-nonRootDebug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/nonRootDebug/out/resources-nonRootDebug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/nonRootDebug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/nonRootDebug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/nonRootDebug/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/nonRootDebug/stableIds.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/nonRootDebug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/nonRootDebug/package-aware-r.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/seeds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/seeds.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileNonRootDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileNonRootDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/AppView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/AppView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/PcView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/PcView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ShortcutTrampoline.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ShortcutTrampoline.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/api/RetrofitAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/api/RetrofitAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/ChangePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/ChangePassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/PaymentHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/PaymentHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SubscriptionPlanActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SubscriptionPlanActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_change_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_change_password.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/binding/input/ControllerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/binding/input/ControllerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/grid/PcGridAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/grid/PcGridAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/preferences/StreamSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/preferences/StreamSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/AdapterFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/fragments/AdapterFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/AdapterFragmentCallbacks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/intrface/AdapterFragmentCallbacks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/ChangePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/ChangePasswordActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/ForgotPasswordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/ForgotPasswordActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/GameGestures.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/intrface/GameGestures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/GeneralWebViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/GeneralWebViewActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/HomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/PaymentHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/PaymentHistoryActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/SignupActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/SplashActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/StreamView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/intrface/StreamView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SubscriptionPlanActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/SubscriptionPlanActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/AppUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/AppUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_pc_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_pc_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_general_web_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_general_web_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_pc_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pc_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription_plan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription_plan.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,22 +123,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DEBUGGABLE_DEVICE&quot;: &quot;realme-rmp2105-12D231631002194&quot;,
-    &quot;DEBUGGABLE_PROCESS&quot;: &quot;com.antplay.debug&quot;,
-    &quot;DEBUGGER_ID&quot;: &quot;Auto&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/vmsProject/moonlightAntplay/app/src/main/res/drawable&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DEBUGGABLE_DEVICE": "realme-rmp2105-12D231631002194",
+    "DEBUGGABLE_PROCESS": "com.antplay.debug",
+    "DEBUGGER_ID": "Auto",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SHOW_ALL_PROCESSES": "false",
+    "android-custom-viewC:/vmsProject/moonlightAntplay/app/src/main/java/com/antplay/ui/StreamView.java_SELECTED": "StreamView",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/vmsProject/moonlightAntplay/app/src/main/res/drawable",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="android.template.500949360">
       <recent name="com.antplay.ui" />
@@ -312,17 +299,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SignupActivity.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/SignupActivity.java</url>
           <line>151</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SubscriptionPlanActivity.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/SubscriptionPlanActivity.java</url>
           <line>58</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SubscriptionPlanActivity.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/SubscriptionPlanActivity.java</url>
           <line>69</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>

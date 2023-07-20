@@ -1,7 +1,6 @@
-package com.antplay.ui;
+package com.antplay.ui.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,27 +10,20 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.ChangePassReq;
 import com.antplay.models.ChangePasswordResp;
-import com.antplay.models.ChangePasswordResponseModal;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.SharedPreferenceUtils;
-import com.google.android.material.textfield.TextInputEditText;
-
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ChangePassword extends Activity implements View.OnClickListener {
+public class ChangePasswordActivity extends Activity implements View.OnClickListener {
 
     LinearLayout backLinear, logoutLinear;
     boolean isAllFieldChecked = false;
@@ -105,13 +97,12 @@ public class ChangePassword extends Activity implements View.OnClickListener {
             edTxtConfirmPassword.setError(getString(R.string.error_password_not_match));
             return false;
         }
-
         return true;
     }
 
     private void callChangePasswordAPI() {
         progressBar.setVisibility(View.VISIBLE);
-        String access_token = SharedPreferenceUtils.getString(ChangePassword.this, Const.ACCESS_TOKEN);
+        String access_token = SharedPreferenceUtils.getString(ChangePasswordActivity.this, Const.ACCESS_TOKEN);
         RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         ChangePassReq changePasswordRequestModal = new ChangePassReq(edTxtOldPassword.getText().toString(), edTxtNewPassword.getText().toString(), edTxtConfirmPassword.getText().toString());
         Call<ChangePasswordResp> call = retrofitAPI.changePassword("Bearer "+access_token,changePasswordRequestModal);
@@ -121,24 +112,24 @@ public class ChangePassword extends Activity implements View.OnClickListener {
                 if (response.code() == 200) {
                     Log.d("BILLING_PLANjjj", "success" );
                     progressBar.setVisibility(View.GONE);
-                    AppUtils.navigateScreen(ChangePassword.this, LoginActivity.class);
+                    AppUtils.navigateScreen(ChangePasswordActivity.this, LoginActivity.class);
 
                 }
                 else if (response.code() == Const.ERROR_CODE_404){
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(ChangePassword.this,  response.message(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChangePasswordActivity.this,  response.message(), Toast.LENGTH_SHORT).show();
                    // AppUtils.showSnack(getWindow().getDecorView().getRootView(),R.color.black,response.message(),ChangePassword.this);
                 }
                 else if (response.code() == Const.ERROR_CODE_500){
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(ChangePassword.this,  response.message(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChangePasswordActivity.this,  response.message(), Toast.LENGTH_SHORT).show();
 
                    // AppUtils.showSnack(getWindow().getDecorView().getRootView(),R.color.black,response.message(),ChangePassword.this);
                 }
 
                 else if (response.code() == Const.ERROR_CODE_400){
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(ChangePassword.this,  response.message(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChangePasswordActivity.this,  response.message(), Toast.LENGTH_SHORT).show();
 
                     //  AppUtils.showSnack(getWindow().getDecorView().getRootView(),R.color.black,getString(R.string.wrong_old_pass),ChangePassword.this);
                 }
@@ -148,7 +139,7 @@ public class ChangePassword extends Activity implements View.OnClickListener {
             public void onFailure(Call<ChangePasswordResp> call, Throwable t) {
                 Log.d("BILLING_PLAN", "Failure");
                 progressBar.setVisibility(View.GONE);
-                AppUtils.showSnack(getWindow().getDecorView().getRootView(),R.color.black,Const.something_went_wrong,ChangePassword.this);
+                AppUtils.showSnack(getWindow().getDecorView().getRootView(),R.color.black,Const.something_went_wrong, ChangePasswordActivity.this);
 
             }
         });

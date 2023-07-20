@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.core.content.ContextCompat;
 
 import com.antplay.R;
-import com.antplay.ui.LoginActivity;
+import com.antplay.ui.activity.LoginActivity;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 

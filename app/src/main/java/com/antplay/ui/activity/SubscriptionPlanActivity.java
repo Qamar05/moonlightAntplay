@@ -1,4 +1,4 @@
-package com.antplay.ui;
+package com.antplay.ui.activity;
 
 
 import android.app.Activity;
@@ -19,7 +19,6 @@ import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.AllBillingPlanResp;
 import com.antplay.models.BillingDataList;
-import com.antplay.models.ResultResponse;
 import com.antplay.models.StartPaymentReq;
 import com.antplay.models.StartPaymentResp;
 import com.antplay.models.UserViewResponse;
@@ -27,8 +26,6 @@ import com.antplay.ui.adapter.SubscriptionPlanAdapter;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.SharedPreferenceUtils;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 

@@ -30,7 +30,7 @@ import com.antplay.nvstream.NvConnection;
 import com.antplay.nvstream.input.ControllerPacket;
 import com.antplay.nvstream.input.MouseButtonPacket;
 import com.antplay.preferences.PreferenceConfiguration;
-import com.antplay.ui.GameGestures;
+import com.antplay.ui.intrface.GameGestures;
 import com.antplay.utils.Vector2d;
 
 import org.cgutman.shieldcontrollerextensions.SceManager;

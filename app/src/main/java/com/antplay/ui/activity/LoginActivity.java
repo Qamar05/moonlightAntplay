@@ -1,4 +1,4 @@
-package com.antplay.ui;
+package com.antplay.ui.activity;
 
 
 import android.app.Activity;
@@ -16,7 +16,6 @@ import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.LoginRequestModal;
 import com.google.gson.Gson;
-import com.antplay.PcView;
 import com.antplay.models.LoginResponse;
 import com.antplay.utils.Const;
 import com.antplay.utils.RestClient;
@@ -78,29 +77,17 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 startActivity(intentSignup);
                 break;
             case R.id.btn_signup:
-                // isAllFieldsChecked = CheckAllLoginFields();
-                isAllFieldsChecked = true;
-
-
-                if (isAllFieldsChecked) {
-                    // we can call Api here
+                if (CheckAllLoginFields()) {
                     st_email = etEmail.getText().toString();
                     st_password = etPass.getText().toString();
                    // callLoginAPi(st_email,st_password);
-
                     callManualLoginAPI(st_email, st_password);
-//                    Intent i = new Intent(LoginScreenActivity.this, MainActivity.class);
-//                    startActivity(i);
                 }
                 break;
         }
     }
-
-
     private boolean CheckAllLoginFields() {
-        // String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-        String emailPattern = "^(?:\\d{10}|\\w+@\\w+\\.\\w{2,3})$";
-
+        String emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
         if (etEmail.getText().toString().trim().length() == 0) {
             etEmail.setError(getString(R.string.error_email));
             return false;
@@ -108,7 +95,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             etEmail.setError(getString(R.string.error_invalidEmail));
             return false;
         }
-
         if (etPass.getText().toString().trim().length() == 0) {
             etPass.setError(getString(R.string.error_password));
             return false;
@@ -168,13 +154,10 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             @Override
             public void onResponse(String tag, int responseCode, String response) {
                 loadingPB.setVisibility(View.GONE);
-                // AlertUtil.hideProgressDialog();
                 if (response != null) {
                     LoginResponse loginResponse = new Gson().fromJson(response, LoginResponse.class);
-
                     if (responseCode == 200) {
                         Log.d(TAG, "Response : " + response);
-
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             String accessToken = jsonObject.getJSONObject("data").getString("access");
@@ -207,14 +190,11 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             public void onError(String tag, String errorMsg, long statusCode) {
                 loadingPB.setVisibility(View.GONE);
                 Log.e(TAG, "Reason Of Failure : " + errorMsg);
-
             }
         });
-
     }
 
     private void callLoginAPi(String stEmail,String strPassword) {
-
         loadingPB.setVisibility(View.VISIBLE);
         LoginRequestModal loginRequestModal = new LoginRequestModal(stEmail,strPassword);
         RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
@@ -224,7 +204,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 loadingPB.setVisibility(View.GONE);
                 if (response != null) {
-
                     if (response.code() == 200) {
                         Log.d(TAG, "Response : " + response.body());
                         try {
@@ -245,12 +224,10 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                         catch (Exception e){
                             e.printStackTrace();
                         }
-
                     } else {
                         Toast.makeText(LoginActivity.this, "Something went wrong, please try again later.", Toast.LENGTH_LONG).show();
                     }
                 }
-
             }
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
@@ -259,6 +236,4 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             }
         });
     }
-
-
 }

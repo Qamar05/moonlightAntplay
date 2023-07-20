@@ -1,4 +1,4 @@
-package com.antplay.ui;
+package com.antplay.ui.fragments;
 
 
 import android.app.Activity;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 
 import com.antplay.R;
+import com.antplay.ui.intrface.AdapterFragmentCallbacks;
 
 public class AdapterFragment extends Fragment {
     private AdapterFragmentCallbacks callbacks;

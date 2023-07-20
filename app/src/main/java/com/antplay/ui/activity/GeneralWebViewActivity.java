@@ -1,4 +1,4 @@
-package com.antplay.ui;
+package com.antplay.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;

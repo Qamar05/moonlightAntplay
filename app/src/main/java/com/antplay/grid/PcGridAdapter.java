@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.antplay.PcView;
+import com.antplay.ui.activity.PcView;
 import com.antplay.R;
 import com.antplay.nvstream.http.ComputerDetails;
 import com.antplay.nvstream.http.PairingManager;

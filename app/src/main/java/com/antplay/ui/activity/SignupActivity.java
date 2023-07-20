@@ -1,4 +1,4 @@
-package com.antplay.ui;
+package com.antplay.ui.activity;
 
 import static com.antplay.utils.Const.emailPattern;
 
@@ -22,7 +22,6 @@ import android.widget.Toast;
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
-import com.antplay.models.GetVMResponse;
 import com.antplay.models.UserRegisterRequest;
 import com.antplay.models.UserRegisterResp;
 import com.antplay.utils.AppUtils;

@@ -1,4 +1,4 @@
-package com.antplay.ui;
+package com.antplay.ui.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,7 +33,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PaymentHistory extends Activity {
+public class PaymentHistoryActivity extends Activity {
     RecyclerView recyclerView;
     List<Payment> paymentHistory_modals;
     LinearLayout linear_back;
@@ -45,7 +44,7 @@ public class PaymentHistory extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_history);
-        mContext  =  PaymentHistory.this;
+        mContext  =  PaymentHistoryActivity.this;
         getWindow().setStatusBarColor(getResources().getColor(R.color.colorAccentDark_light, this.getTheme()));
 
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView_payment);
@@ -70,7 +69,7 @@ public class PaymentHistory extends Activity {
         if(AppUtils.isOnline(mContext)){
             loadingPB.setVisibility(View.VISIBLE);
             RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
-            Call<PaymentHistory_modal> call = retrofitAPI.getPaymentHistory("Bearer " + SharedPreferenceUtils.getString(PaymentHistory.this, Const.ACCESS_TOKEN));
+            Call<PaymentHistory_modal> call = retrofitAPI.getPaymentHistory("Bearer " + SharedPreferenceUtils.getString(PaymentHistoryActivity.this, Const.ACCESS_TOKEN));
             call.enqueue(new Callback<PaymentHistory_modal>() {
                 @Override
                 public void onResponse(Call<PaymentHistory_modal> call, Response<PaymentHistory_modal> response) {
@@ -78,15 +77,15 @@ public class PaymentHistory extends Activity {
                     if (response.isSuccessful()) {
                         loadingPB.setVisibility(View.GONE);
                         paymentHistory_modals = response.body().getData();
-                        PaymentHistory_Adapter paymentHistory_adapter = new PaymentHistory_Adapter(PaymentHistory.this, paymentHistory_modals);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(PaymentHistory.this, 1);
+                        PaymentHistory_Adapter paymentHistory_adapter = new PaymentHistory_Adapter(PaymentHistoryActivity.this, paymentHistory_modals);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(PaymentHistoryActivity.this, 1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(paymentHistory_adapter);
 
                     } else {
                         loadingPB.setVisibility(View.GONE);
-                        AppUtils.showToast(Const.no_records, PaymentHistory.this);
+                        AppUtils.showToast(Const.no_records, PaymentHistoryActivity.this);
                     }
                 }
 
@@ -94,7 +93,7 @@ public class PaymentHistory extends Activity {
                 public void onFailure(Call<PaymentHistory_modal> call, Throwable t) {
                     Log.e("Hello Get VM", "Failure");
                     // loadingPB.setVisibility(View.GONE);
-                    AppUtils.showToast(Const.something_went_wrong, PaymentHistory.this);
+                    AppUtils.showToast(Const.something_went_wrong, PaymentHistoryActivity.this);
 
                 }
             });

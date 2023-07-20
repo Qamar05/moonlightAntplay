@@ -1,10 +1,7 @@
-package com.antplay.ui;
-
-import static com.antplay.utils.Const.emailPattern;
+package com.antplay.ui.activity;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +16,6 @@ import com.antplay.api.RetrofitAPI;
 import com.antplay.models.ResetEmailReq;
 import com.antplay.models.ResultResponse;
 import com.antplay.utils.AppUtils;
-import com.antplay.utils.RestClient;
 
 import retrofit2.Call;
 import retrofit2.Callback;

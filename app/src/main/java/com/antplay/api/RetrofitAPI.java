@@ -62,5 +62,4 @@ public interface RetrofitAPI {
     @PUT("userupdate/")
     Call<ChangePasswordResp> userUpdate(@Body UserRegisterRequest userRegisterRequest);
 
-
 }

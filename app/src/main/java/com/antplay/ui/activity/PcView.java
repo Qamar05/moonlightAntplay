@@ -1,10 +1,13 @@
-package com.antplay;
+package com.antplay.ui.activity;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 
+import com.antplay.AppView;
+import com.antplay.LimeLog;
+import com.antplay.R;
 import com.antplay.binding.PlatformBinding;
 import com.antplay.binding.crypto.AndroidCryptoProvider;
 import com.antplay.computers.ComputerManagerListener;
@@ -21,8 +24,8 @@ import com.antplay.preferences.AddComputerManually;
 import com.antplay.preferences.GlPreferences;
 import com.antplay.preferences.PreferenceConfiguration;
 import com.antplay.preferences.StreamSettings;
-import com.antplay.ui.AdapterFragment;
-import com.antplay.ui.AdapterFragmentCallbacks;
+import com.antplay.ui.fragments.AdapterFragment;
+import com.antplay.ui.intrface.AdapterFragmentCallbacks;
 import com.antplay.utils.Const;
 import com.antplay.utils.Dialog;
 import com.antplay.utils.HelpLauncher;
@@ -51,7 +54,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
-import android.view.View.OnClickListener;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;

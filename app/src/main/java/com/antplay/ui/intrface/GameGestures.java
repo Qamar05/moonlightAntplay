@@ -1,4 +1,4 @@
-package com.antplay.ui;
+package com.antplay.ui.intrface;
 
 public interface GameGestures {
     void toggleKeyboard();

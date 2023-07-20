@@ -1,11 +1,11 @@
-package com.antplay.ui;
+package com.antplay.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
 import android.util.Log;
-import com.antplay.PcView;
+
 import com.antplay.R;
 import com.antplay.utils.Const;
 import com.antplay.utils.SharedPreferenceUtils;

@@ -1,4 +1,4 @@
-package com.antplay.ui;
+package com.antplay.ui.intrface;
 
 import android.annotation.TargetApi;
 import android.content.Context;
