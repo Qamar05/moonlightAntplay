@@ -339,6 +339,7 @@
     <string name="Amount">Amount</string>
     <string name="payment_history">Payment History</string>
     <string name="check_internet_connection">Please check internet connection</string>
+    <string name="noDataFound">no data found\n</string>
 
 
 </resources>

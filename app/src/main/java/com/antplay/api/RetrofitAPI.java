@@ -26,7 +26,6 @@ import retrofit2.http.PUT;
 
 
 public interface RetrofitAPI {
-
     @GET("getallbillingplan")
     Call<AllBillingPlanResp> getAllBillingPlan();
 
@@ -56,6 +55,7 @@ public interface RetrofitAPI {
 
     @GET("getpaymenthistory")
     Call<PaymentHistory_modal> getPaymentHistory(@Header("Authorization") String Token);
+
     @POST("start_payment/")
     Call<StartPaymentResp> startPayment(@Header("Authorization") String token , @Body StartPaymentReq startPaymentReq);
 

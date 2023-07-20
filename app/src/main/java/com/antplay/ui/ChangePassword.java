@@ -50,7 +50,7 @@ public class ChangePassword extends Activity implements View.OnClickListener {
         edTxtOldPassword = findViewById(R.id.etOldPassword);
         edTxtNewPassword = findViewById(R.id.etNewPassword);
         edTxtConfirmPassword = findViewById(R.id.etConPassword);
-        btnUpdate = findViewById(R.id.btn_resetPass);
+        btnUpdate = findViewById(R.id.btnUpdatePassword);
         progressBar = findViewById(R.id.loading_changePass);
 
         setOnClickListener();
@@ -75,7 +75,7 @@ public class ChangePassword extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_resetPass:
+            case R.id.btnUpdatePassword:
               //  isAllFieldsChecked = CheckAllLoginFields();
                 if(CheckAllFields()){
                     callChangePasswordAPI();
@@ -94,12 +94,6 @@ public class ChangePassword extends Activity implements View.OnClickListener {
             edTxtOldPassword.setError(getString(R.string.error_old_password));
             return false;
         }
-
-//        else if (!edTxtOldPassword.getText().toString().matches(Const.passwordRegex)) {
-//            edTxtOldPassword.setError(getString(R.string.error_old_password));
-//            return false;
-//        }
-
         if (edTxtNewPassword.getText().toString().trim().length()<8) {
             edTxtNewPassword.setError(getString(R.string.error_pass_minimum));
             return false;
@@ -107,7 +101,6 @@ public class ChangePassword extends Activity implements View.OnClickListener {
             edTxtNewPassword.setError(getString(R.string.pass_regex));
             return false;
         }
-
         if (!edTxtNewPassword.getText().toString().equals(edTxtConfirmPassword.getText().toString())) {
             edTxtConfirmPassword.setError(getString(R.string.error_password_not_match));
             return false;
@@ -128,9 +121,7 @@ public class ChangePassword extends Activity implements View.OnClickListener {
                 if (response.code() == 200) {
                     Log.d("BILLING_PLANjjj", "success" );
                     progressBar.setVisibility(View.GONE);
-                    Intent intent = new Intent(ChangePassword.this, LoginActivity.class);
-                    startActivity(intent);
-                    finish();
+                    AppUtils.navigateScreen(ChangePassword.this, LoginActivity.class);
 
                 }
                 else if (response.code() == Const.ERROR_CODE_404){

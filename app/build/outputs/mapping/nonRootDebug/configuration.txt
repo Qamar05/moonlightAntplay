@@ -157,7 +157,6 @@
 -keep class com.antplay.PcView { <init>(); }
 -keep class com.antplay.PosterContentProvider { <init>(); }
 -keep class com.antplay.ShortcutTrampoline { <init>(); }
--keep class com.antplay.SubscriptionPlanActivity { <init>(); }
 -keep class com.antplay.binding.input.driver.UsbDriverService { <init>(); }
 -keep class com.antplay.computers.ComputerManagerService { <init>(); }
 -keep class com.antplay.discovery.DiscoveryService { <init>(); }

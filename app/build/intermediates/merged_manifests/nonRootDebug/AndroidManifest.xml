@@ -62,7 +62,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.antplay.SubscriptionPlanActivity"
+            android:name="com.antplay.ui.SubscriptionPlanActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
@@ -111,10 +111,6 @@
         <activity
             android:name="com.antplay.ui.LoginActivity"
             android:exported="false"
-            android:resizeableActivity="true" />
-        <activity
-            android:name="com.antplay.ui.SubscriptionPlanActivity"
-            android:exported="true"
             android:resizeableActivity="true" />
         <activity
             android:name="com.antplay.ui.ChangePassword"

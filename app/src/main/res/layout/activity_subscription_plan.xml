@@ -51,9 +51,12 @@
 
 
     <TextView
+        android:textColor="@color/black"
+        android:text="no data found "
         android:id="@+id/tvNoDataFound"
         android:layout_centerInParent="true"
         android:visibility="invisible"
+        android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

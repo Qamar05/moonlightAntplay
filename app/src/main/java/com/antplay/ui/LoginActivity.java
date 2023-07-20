@@ -54,7 +54,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         loadingPB = (ProgressBar) findViewById(R.id.loadingLogin_progress_xml);
 
         etEmail.setText("shobhit.agarwal@vmstechs.com");
-        etPass.setText("Test@1234");
+        etPass.setText("Antplay@123");
 
         setOnClickListener();
     }
@@ -167,6 +167,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         new RestClient(LoginActivity.this).postRequestWithoutMethod("new_holiday", "login/", loginMap, new RestClient.ResponseListenerUpdated() {
             @Override
             public void onResponse(String tag, int responseCode, String response) {
+                loadingPB.setVisibility(View.GONE);
                 // AlertUtil.hideProgressDialog();
                 if (response != null) {
                     LoginResponse loginResponse = new Gson().fromJson(response, LoginResponse.class);
@@ -180,8 +181,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                             Log.d(TAG, "Access Token : " + accessToken);
                            // SharedPreferenceUtils.saveBoolean(LoginActivity.this, Const.IS_LOGGED_IN, true);
                             SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
-//                            Intent i = new Intent(LoginActivity.this, PcView.class);
-                            Intent i = new Intent(LoginActivity.this, PaymentHistory.class);
+                            Intent i = new Intent(LoginActivity.this, PcView.class);
+                           // Intent i = new Intent(LoginActivity.this, PaymentHistory.class);
                             startActivity(i);
                             finish();
                         } catch (JSONException e) {
@@ -217,10 +218,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         loadingPB.setVisibility(View.VISIBLE);
         LoginRequestModal loginRequestModal = new LoginRequestModal(stEmail,strPassword);
         RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
-        //
-
         Call<LoginResponse> call = retrofitAPI.userLogin(loginRequestModal);
-
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {

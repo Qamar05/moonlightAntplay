@@ -45,7 +45,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SubscriptionPlanActivity"
+            android:name=".ui.SubscriptionPlanActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -96,10 +96,7 @@
             android:exported="false"
             android:resizeableActivity="true" />
 
-        <activity
-            android:name=".ui.SubscriptionPlanActivity"
-            android:exported="true"
-            android:resizeableActivity="true" />
+
 
         <activity
             android:name=".ui.ChangePassword"

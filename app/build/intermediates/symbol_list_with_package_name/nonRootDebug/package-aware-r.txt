@@ -3476,8 +3476,9 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnResetPassword
 id btnSignUp
-id btn_resetPass
+id btnUpdatePassword
 id btn_signup
 id buttonPanel
 id cache_measures
@@ -4256,6 +4257,7 @@ string change_pass
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string check_internet_connection
 string check_ports_msg
 string city
 string clear_text_end_icon_content_description
@@ -4427,6 +4429,7 @@ string nettest_title_done
 string nettest_title_waiting
 string new_pass
 string no
+string noDataFound
 string no_frame_received_error
 string no_video_received_error
 string old_pass

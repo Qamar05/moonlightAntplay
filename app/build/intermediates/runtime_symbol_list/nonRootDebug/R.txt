@@ -3475,8 +3475,9 @@ int id bounce 0x7f090067
 int id bounceBoth 0x7f090068
 int id bounceEnd 0x7f090069
 int id bounceStart 0x7f09006a
+int id btnResetPassword 0x7f090242
 int id btnSignUp 0x7f09006b
-int id btn_resetPass 0x7f09006c
+int id btnUpdatePassword 0x7f090243
 int id btn_signup 0x7f09006d
 int id buttonPanel 0x7f09006e
 int id cache_measures 0x7f09006f
@@ -4255,6 +4256,7 @@ int string change_pass 0x7f11004d
 int string character_counter_content_description 0x7f11004e
 int string character_counter_overflowed_content_description 0x7f11004f
 int string character_counter_pattern 0x7f110050
+int string check_internet_connection 0x7f1101b2
 int string check_ports_msg 0x7f110051
 int string city 0x7f110052
 int string clear_text_end_icon_content_description 0x7f110053
@@ -4426,6 +4428,7 @@ int string nettest_title_done 0x7f1100f8
 int string nettest_title_waiting 0x7f1100f9
 int string new_pass 0x7f1100fa
 int string no 0x7f1100fb
+int string noDataFound 0x7f1101b3
 int string no_frame_received_error 0x7f1100fc
 int string no_video_received_error 0x7f1100fd
 int string old_pass 0x7f1100fe
