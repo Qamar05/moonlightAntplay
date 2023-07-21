@@ -15,11 +15,104 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4dc8bdb-9e86-4770-a6d4-558d7e988294" name="Changes" comment="Login signup activities added">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/UserDetailsModal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/UserUpdateRequestModal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/UserUpdateResponseModal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/EditProfileActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/ProfileActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/DateFormatterHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/discord.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient_pcsetting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logouts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/setting.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/user_agreement.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/website.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_profile.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/aapt_proguard_file/nonRootDebug/aapt_rules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/aapt_proguard_file/nonRootDebug/aapt_rules.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/nonRoot/debug/app-nonRoot-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/nonRoot/debug/app-nonRoot-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/nonRootDebug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/nonRootDebug/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/abi_configuration_725b704c.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/abi_configuration_725b704c.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/nonRootDebug/minifyNonRootDebugWithR8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/nonRootDebug/minifyNonRootDebugWithR8/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/nonRootDebug/mergeNonRootDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/nonRootDebug/mergeNonRootDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/nonRootDebug/mergeNonRootDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/nonRootDebug/mergeNonRootDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageNonRootDebug/tmp/nonRootDebug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageNonRootDebug/tmp/nonRootDebug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageNonRootDebug/tmp/nonRootDebug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageNonRootDebug/tmp/nonRootDebug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/AppView$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/AppView$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/AppView$2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/AppView$2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/AppView.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/AppView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/HelpActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/HelpActivity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ShortcutTrampoline$1$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ShortcutTrampoline$1$1$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ShortcutTrampoline$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ShortcutTrampoline$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ShortcutTrampoline.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ShortcutTrampoline.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/api/RetrofitAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/api/RetrofitAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/binding/input/capture/InputCaptureManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/binding/input/capture/InputCaptureManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/binding/input/driver/UsbDriverService.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/binding/input/driver/UsbDriverService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/binding/input/virtual_controller/VirtualController.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/binding/input/virtual_controller/VirtualController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/binding/video/MediaCodecDecoderRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/binding/video/MediaCodecDecoderRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/grid/AppGridAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/grid/AppGridAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/grid/GenericGridAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/grid/GenericGridAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/grid/PcGridAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/grid/PcGridAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/AddComputerManually$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/AddComputerManually$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/AddComputerManually.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/AddComputerManually.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/ConfirmDeleteOscPreference.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/ConfirmDeleteOscPreference.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/StreamSettings$SettingsFragment$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/StreamSettings$SettingsFragment$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/StreamSettings$SettingsFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/StreamSettings$SettingsFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/StreamSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/preferences/StreamSettings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/fragments/HomeFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/fragments/HomeFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/fragments/SettingsFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/fragments/SettingsFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/fragments/VMFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/ui/fragments/VMFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/Const.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/Dialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/Dialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/ServerHelper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/ServerHelper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/ServerHelper$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/ServerHelper$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/ServerHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/ServerHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/SharedPreferenceUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/SharedPreferenceUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/TvChannelHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/TvChannelHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/UiHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/nonRootDebug/classes/com/antplay/utils/UiHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/nonRootDebug/manifest-merger-blame-nonRoot-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/nonRootDebug/manifest-merger-blame-nonRoot-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/nonRootDebug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/nonRootDebug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/nonRootDebug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/nonRootDebug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/nonRootDebug/values_values.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/nonRootDebug/values_values.arsc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/multi-v2/nonRootDebug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/multi-v2/nonRootDebug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/multi-v2/values.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/single/nonRootDebug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/nonRootDebug/out/single/nonRootDebug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/ndkBuild/nonRootDebug/obj/local/x86_64/libmoonlight-core.so" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/ndkBuild/nonRootDebug/obj/local/x86_64/libmoonlight-core.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/nonRootDebug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/nonRootDebug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/nonRootDebug/out/resources-nonRootDebug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/nonRootDebug/out/resources-nonRootDebug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/nonRootDebug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/nonRootDebug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/nonRootDebug/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/nonRootDebug/stableIds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/nonRootDebug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/nonRootDebug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-nonRoot-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-nonRoot-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/configuration.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/seeds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/seeds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/usage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/nonRootDebug/usage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/native-debug-symbols/nonRootDebug/native-debug-symbols.zip" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/native-debug-symbols/nonRootDebug/native-debug-symbols.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileNonRootDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileNonRootDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/api/RetrofitAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/api/RetrofitAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/AppUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/AppUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/SharedPreferenceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/SharedPreferenceUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_general_web_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_general_web_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,23 +187,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DEBUGGABLE_DEVICE&quot;: &quot;realme-rmp2105-12D231631002194&quot;,
-    &quot;DEBUGGABLE_PROCESS&quot;: &quot;com.antplay.debug&quot;,
-    &quot;DEBUGGER_ID&quot;: &quot;Auto&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
-    &quot;android-custom-viewC:/vmsProject/moonlightAntplay/app/src/main/java/com/antplay/ui/StreamView.java_SELECTED&quot;: &quot;StreamView&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/vmsProject/moonlightAntplay/app/src/main/res/drawable&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DEBUGGABLE_DEVICE": "realme-rmp2105-12D231631002194",
+    "DEBUGGABLE_PROCESS": "com.antplay.debug",
+    "DEBUGGER_ID": "Auto",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SHOW_ALL_PROCESSES": "false",
+    "android-custom-viewC:/vmsProject/moonlightAntplay/app/src/main/java/com/antplay/ui/StreamView.java_SELECTED": "StreamView",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/vmsProject/moonlightAntplay/app/src/main/res/drawable",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="android.template.500949360">
       <recent name="com.antplay.ui" />
@@ -120,10 +213,10 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\vmsProject\moonlightAntplay\app\src\main\res\drawable" />
-      <recent name="C:\vmsProject\moonlightAntplay\app\src\main\res\anim" />
       <recent name="C:\vmsProject\moonlightAntplay\app\src\main\res\layout" />
+      <recent name="C:\vmsProject\moonlightAntplay\app\src\main\java\com\antplay\ui\activity" />
+      <recent name="C:\vmsProject\moonlightAntplay\app\src\main\res\anim" />
       <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\drawable" />
-      <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\mipmap-hdpi" />
     </key>
     <key name="android.template.1956969507">
       <recent name="com.limelight.ui" />
@@ -135,10 +228,10 @@
       <recent name="com.antplay.ui" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.antplay.ui.adapter" />
       <recent name="com.antplay.models" />
-      <recent name="com.antplay.ui" />
       <recent name="com.antplay.utils" />
+      <recent name="com.antplay.ui.adapter" />
+      <recent name="com.antplay.ui" />
       <recent name="com.limelight.utils" />
     </key>
   </component>
@@ -289,9 +382,29 @@
           <line>83</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java</url>
-          <line>108</line>
+          <line>114</line>
           <properties class="com.antplay.ui.activity.LoginActivity" method="callLoginAPi">
             <option name="WATCH_EXIT" value="false" />
           </properties>

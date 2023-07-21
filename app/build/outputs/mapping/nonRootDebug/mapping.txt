@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 64dde0d
-# pg_map_hash: SHA-256 64dde0dfb6edf04dd7fe84665a2b7a3e3eea9f5ffe647fb20b95f4f48814bba6
+# pg_map_id: 3a3627a
+# pg_map_hash: SHA-256 3a3627afce17ac78619b1cc29e98a9155d8e4900b3e096fe7dc13ebfaea5ff8d
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -772,9 +772,13 @@ androidx.appcompat.app.AlertDialog$Builder -> androidx.appcompat.app.AlertDialog
     983:994:androidx.appcompat.app.AlertDialog create() -> create
     358:358:android.content.Context getContext() -> getContext
     659:661:androidx.appcompat.app.AlertDialog$Builder setAdapter(android.widget.ListAdapter,android.content.DialogInterface$OnClickListener) -> setAdapter
+    579:580:androidx.appcompat.app.AlertDialog$Builder setCancelable(boolean) -> setCancelable
     398:399:androidx.appcompat.app.AlertDialog$Builder setCustomTitle(android.view.View) -> setCustomTitle
     445:446:androidx.appcompat.app.AlertDialog$Builder setIcon(android.graphics.drawable.Drawable) -> setIcon
+    418:419:androidx.appcompat.app.AlertDialog$Builder setMessage(java.lang.CharSequence) -> setMessage
+    522:524:androidx.appcompat.app.AlertDialog$Builder setNegativeButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener) -> setNegativeButton
     620:621:androidx.appcompat.app.AlertDialog$Builder setOnKeyListener(android.content.DialogInterface$OnKeyListener) -> setOnKeyListener
+    486:488:androidx.appcompat.app.AlertDialog$Builder setPositiveButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener) -> setPositiveButton
     853:857:androidx.appcompat.app.AlertDialog$Builder setSingleChoiceItems(android.widget.ListAdapter,int,android.content.DialogInterface$OnClickListener) -> setSingleChoiceItems
     377:378:androidx.appcompat.app.AlertDialog$Builder setTitle(java.lang.CharSequence) -> setTitle
 androidx.appcompat.app.AppCompatActivity -> androidx.appcompat.app.AppCompatActivity:
@@ -13886,10 +13890,23 @@ com.antplay.models.StartPaymentReq -> com.antplay.models.StartPaymentReq:
 com.antplay.models.StartPaymentResp -> com.antplay.models.StartPaymentResp:
     10:10:void <init>() -> <init>
     63:63:java.lang.String getPayment_url() -> getPayment_url
+com.antplay.models.UserDetailsModal -> com.antplay.models.UserDetailsModal:
+    6:6:void <init>() -> <init>
+    36:36:java.lang.String getAddress() -> getAddress
+    52:52:java.lang.String getCity() -> getCity
+    60:60:java.lang.String getEmail() -> getEmail
+    68:68:java.lang.String getFirstName() -> getFirstName
+    76:76:java.lang.String getLastName() -> getLastName
+    92:92:java.lang.String getPhoneNumber() -> getPhoneNumber
+    100:100:java.lang.String getPincode() -> getPincode
+    116:116:java.lang.String getState() -> getState
+    124:124:java.lang.String getUsername() -> getUsername
 com.antplay.models.UserRegisterRequest -> com.antplay.models.UserRegisterRequest:
     43:54:void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> <init>
 com.antplay.models.UserRegisterResp -> com.antplay.models.UserRegisterResp:
     13:13:void <init>() -> <init>
+com.antplay.models.UserUpdateRequestModal -> com.antplay.models.UserUpdateRequestModal:
+    32:39:void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> <init>
 com.antplay.models.UserViewResponse -> com.antplay.models.UserViewResponse:
     20:20:void <init>() -> <init>
     132:132:java.lang.String getCity() -> getCity
@@ -14452,6 +14469,42 @@ com.antplay.ui.activity.ChangePasswordActivity$2 -> com.antplay.ui.activity.Chan
     109:109:void <init>(com.antplay.ui.activity.ChangePasswordActivity) -> <init>
     140:144:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
     112:136:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+com.antplay.ui.activity.EditProfileActivity -> com.antplay.ui.activity.EditProfileActivity:
+    java.lang.String -$$Nest$fgetTAG(com.antplay.ui.activity.EditProfileActivity) -> -$$Nest$fgetTAG
+      # {"id":"com.android.tools.r8.synthesized"}
+    android.widget.ProgressBar -$$Nest$fgetprogressBar(com.antplay.ui.activity.EditProfileActivity) -> -$$Nest$fgetprogressBar
+      # {"id":"com.android.tools.r8.synthesized"}
+    void -$$Nest$mgetUserDetails(com.antplay.ui.activity.EditProfileActivity) -> -$$Nest$mgetUserDetails
+      # {"id":"com.android.tools.r8.synthesized"}
+    void -$$Nest$msetData(com.antplay.ui.activity.EditProfileActivity) -> -$$Nest$msetData
+      # {"id":"com.android.tools.r8.synthesized"}
+    void -$$Nest$mupdateUserProfile(com.antplay.ui.activity.EditProfileActivity) -> -$$Nest$mupdateUserProfile
+      # {"id":"com.android.tools.r8.synthesized"}
+    34:42:void <init>() -> <init>
+    265:300:void getUserDetails() -> getUserDetails
+    49:99:void onCreate(android.os.Bundle) -> onCreate
+    103:143:void populateStateList() -> populateStateList
+    173:215:void setData() -> setData
+    147:170:void setStateAdopter() -> setStateAdopter
+    219:262:void updateUserProfile() -> updateUserProfile
+com.antplay.ui.activity.EditProfileActivity$1 -> com.antplay.ui.activity.EditProfileActivity$1:
+    74:74:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
+    77:78:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.EditProfileActivity$2 -> com.antplay.ui.activity.EditProfileActivity$2:
+    81:81:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
+    87:97:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.EditProfileActivity$3 -> com.antplay.ui.activity.EditProfileActivity$3:
+    156:156:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
+    159:163:void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    168:168:void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
+com.antplay.ui.activity.EditProfileActivity$4 -> com.antplay.ui.activity.EditProfileActivity$4:
+    227:227:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
+    256:260:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    230:252:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+com.antplay.ui.activity.EditProfileActivity$5 -> com.antplay.ui.activity.EditProfileActivity$5:
+    268:268:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
+    294:297:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    271:290:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.ForgotPasswordActivity -> com.antplay.ui.activity.ForgotPasswordActivity:
     void $r8$lambda$QNH21aCVG0ku47poiFmdqKwgCoI(com.antplay.ui.activity.ForgotPasswordActivity,android.view.View) -> $r8$lambda$QNH21aCVG0ku47poiFmdqKwgCoI
       # {"id":"com.android.tools.r8.synthesized"}
@@ -14479,20 +14532,18 @@ com.antplay.ui.activity.HomeActivity -> com.antplay.ui.activity.HomeActivity:
     26:32:void onCreate(android.os.Bundle) -> onCreate
     36:59:boolean onNavigationItemSelected(android.view.MenuItem) -> onNavigationItemSelected
 com.antplay.ui.activity.LoginActivity -> com.antplay.ui.activity.LoginActivity:
-    java.lang.String -$$Nest$fgetTAG(com.antplay.ui.activity.LoginActivity) -> -$$Nest$fgetTAG
-      # {"id":"com.android.tools.r8.synthesized"}
     android.widget.ProgressBar -$$Nest$fgetloadingPB(com.antplay.ui.activity.LoginActivity) -> -$$Nest$fgetloadingPB
       # {"id":"com.android.tools.r8.synthesized"}
-    37:42:void <init>() -> <init>
-    93:108:boolean CheckAllLoginFields() -> CheckAllLoginFields
-    201:242:void callLoginAPi(java.lang.String,java.lang.String) -> callLoginAPi
-    73:91:void onClick(android.view.View) -> onClick
-    48:62:void onCreate(android.os.Bundle) -> onCreate
-    65:68:void setOnClickListener() -> setOnClickListener
-com.antplay.ui.activity.LoginActivity$3 -> com.antplay.ui.activity.LoginActivity$3:
-    205:205:void <init>(com.antplay.ui.activity.LoginActivity) -> <init>
-    238:240:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    208:235:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    37:38:void <init>() -> <init>
+    97:112:boolean CheckAllLoginFields() -> CheckAllLoginFields
+    116:155:void callLoginAPi(java.lang.String,java.lang.String) -> callLoginAPi
+    71:95:void onClick(android.view.View) -> onClick
+    47:60:void onCreate(android.os.Bundle) -> onCreate
+    63:66:void setOnClickListener() -> setOnClickListener
+com.antplay.ui.activity.LoginActivity$1 -> com.antplay.ui.activity.LoginActivity$1:
+    120:120:void <init>(com.antplay.ui.activity.LoginActivity) -> <init>
+    151:153:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    123:148:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PaymentHistoryActivity -> com.antplay.ui.activity.PaymentHistoryActivity:
     android.widget.ProgressBar -$$Nest$fgetloadingPB(com.antplay.ui.activity.PaymentHistoryActivity) -> -$$Nest$fgetloadingPB
       # {"id":"com.android.tools.r8.synthesized"}
@@ -14646,6 +14697,59 @@ com.antplay.ui.activity.PcView$9 -> com.antplay.ui.activity.PcView$9:
 com.antplay.ui.activity.PcView$ComputerObject -> com.antplay.ui.activity.PcView$ComputerObject:
     768:773:void <init>(com.antplay.nvstream.http.ComputerDetails) -> <init>
     777:777:java.lang.String toString() -> toString
+com.antplay.ui.activity.ProfileActivity -> com.antplay.ui.activity.ProfileActivity:
+    void -$$Nest$mlogoutMethod(com.antplay.ui.activity.ProfileActivity) -> -$$Nest$mlogoutMethod
+      # {"id":"com.android.tools.r8.synthesized"}
+    22:210:void <init>() -> <init>
+    289:292:int dayInYear(long) -> dayInYear
+    214:246:java.lang.String getDateFromSec(long) -> getDateFromSec
+    267:285:long getMonthCount(long) -> getMonthCount
+    251:263:long getYear(long) -> getYear
+    161:183:void logoutMethod() -> logoutMethod
+    33:158:void onCreate(android.os.Bundle) -> onCreate
+    186:204:void setData() -> setData
+com.antplay.ui.activity.ProfileActivity$1 -> com.antplay.ui.activity.ProfileActivity$1:
+    54:54:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    57:60:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$10 -> com.antplay.ui.activity.ProfileActivity$10:
+    133:133:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    139:142:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$11 -> com.antplay.ui.activity.ProfileActivity$11:
+    144:144:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    147:149:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$12 -> com.antplay.ui.activity.ProfileActivity$12:
+    151:151:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    154:156:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$13 -> com.antplay.ui.activity.ProfileActivity$13:
+    172:172:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    174:176:void onClick(android.content.DialogInterface,int) -> onClick
+com.antplay.ui.activity.ProfileActivity$14 -> com.antplay.ui.activity.ProfileActivity$14:
+    163:163:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    165:170:void onClick(android.content.DialogInterface,int) -> onClick
+com.antplay.ui.activity.ProfileActivity$2 -> com.antplay.ui.activity.ProfileActivity$2:
+    64:64:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    70:70:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$3 -> com.antplay.ui.activity.ProfileActivity$3:
+    72:72:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    75:76:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$4 -> com.antplay.ui.activity.ProfileActivity$4:
+    79:79:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    82:85:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$5 -> com.antplay.ui.activity.ProfileActivity$5:
+    89:89:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    94:98:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$6 -> com.antplay.ui.activity.ProfileActivity$6:
+    101:101:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    104:107:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$7 -> com.antplay.ui.activity.ProfileActivity$7:
+    110:110:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    113:115:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$8 -> com.antplay.ui.activity.ProfileActivity$8:
+    117:117:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    120:122:void onClick(android.view.View) -> onClick
+com.antplay.ui.activity.ProfileActivity$9 -> com.antplay.ui.activity.ProfileActivity$9:
+    124:124:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    127:129:void onClick(android.view.View) -> onClick
 com.antplay.ui.activity.SignupActivity -> com.antplay.ui.activity.SignupActivity:
     38:45:void <init>() -> <init>
     153:181:void callRegisterApi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> callRegisterApi
@@ -14768,7 +14872,10 @@ com.antplay.utils.CacheHelper -> com.antplay.utils.CacheHelper:
     54:64:void writeInputStreamToOutputStream(java.io.InputStream,java.io.OutputStream,long) -> writeInputStreamToOutputStream
     84:85:void writeStringToOutputStream(java.io.OutputStream,java.lang.String) -> writeStringToOutputStream
 com.antplay.utils.Const -> com.antplay.utils.Const:
-    6:50:void <clinit>() -> <clinit>
+    6:63:void <clinit>() -> <clinit>
+com.antplay.utils.DateFormatterHelper -> com.antplay.utils.DateFormatterHelper:
+    9:18:void <clinit>() -> <clinit>
+    40:56:java.lang.String parseDate(java.lang.String,java.lang.String) -> parseDate
 com.antplay.utils.Dialog -> com.antplay.utils.Dialog:
     android.app.Activity -$$Nest$fgetactivity(com.antplay.utils.Dialog) -> -$$Nest$fgetactivity
       # {"id":"com.android.tools.r8.synthesized"}
@@ -14843,9 +14950,10 @@ com.antplay.utils.ServerHelper$2$1 -> com.antplay.utils.ServerHelper$2$1:
     163:164:void run() -> run
 com.antplay.utils.SharedPreferenceUtils -> com.antplay.utils.SharedPreferenceUtils:
     8:8:void <clinit>() -> <clinit>
-    18:19:boolean getBoolean(android.content.Context,java.lang.String) -> getBoolean
-    66:67:java.lang.String getString(android.content.Context,java.lang.String) -> getString
-    59:63:void saveString(android.content.Context,java.lang.String,java.lang.String) -> saveString
+    19:20:boolean getBoolean(android.content.Context,java.lang.String) -> getBoolean
+    67:68:java.lang.String getString(android.content.Context,java.lang.String) -> getString
+    60:64:void saveString(android.content.Context,java.lang.String,java.lang.String) -> saveString
+    71:75:void saveUserLoggedIn(android.content.Context,java.lang.String,boolean) -> saveUserLoggedIn
 com.antplay.utils.ShortcutHelper -> com.antplay.utils.ShortcutHelper:
     25:34:void <init>(android.app.Activity) -> <init>
     96:138:void createAppViewShortcut(com.antplay.nvstream.http.ComputerDetails,boolean,boolean) -> createAppViewShortcut

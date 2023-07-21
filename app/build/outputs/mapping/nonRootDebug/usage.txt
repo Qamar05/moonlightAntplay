@@ -1366,7 +1366,6 @@ androidx.appcompat.app.AlertController:
     public android.widget.Button getButton(int)
     public void setButtonPanelLayoutHint(int)
 androidx.appcompat.app.AlertDialog$Builder:
-    public androidx.appcompat.app.AlertDialog$Builder setCancelable(boolean)
     public androidx.appcompat.app.AlertDialog$Builder setCursor(android.database.Cursor,android.content.DialogInterface$OnClickListener,java.lang.String)
     public androidx.appcompat.app.AlertDialog$Builder setIcon(int)
     public androidx.appcompat.app.AlertDialog$Builder setIconAttribute(int)
@@ -1374,12 +1373,10 @@ androidx.appcompat.app.AlertDialog$Builder:
     public androidx.appcompat.app.AlertDialog$Builder setItems(int,android.content.DialogInterface$OnClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setItems(java.lang.CharSequence[],android.content.DialogInterface$OnClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setMessage(int)
-    public androidx.appcompat.app.AlertDialog$Builder setMessage(java.lang.CharSequence)
     public androidx.appcompat.app.AlertDialog$Builder setMultiChoiceItems(int,boolean[],android.content.DialogInterface$OnMultiChoiceClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setMultiChoiceItems(android.database.Cursor,java.lang.String,java.lang.String,android.content.DialogInterface$OnMultiChoiceClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setMultiChoiceItems(java.lang.CharSequence[],boolean[],android.content.DialogInterface$OnMultiChoiceClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setNegativeButton(int,android.content.DialogInterface$OnClickListener)
-    public androidx.appcompat.app.AlertDialog$Builder setNegativeButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setNegativeButtonIcon(android.graphics.drawable.Drawable)
     public androidx.appcompat.app.AlertDialog$Builder setNeutralButton(int,android.content.DialogInterface$OnClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setNeutralButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)
@@ -1388,7 +1385,6 @@ androidx.appcompat.app.AlertDialog$Builder:
     public androidx.appcompat.app.AlertDialog$Builder setOnDismissListener(android.content.DialogInterface$OnDismissListener)
     public androidx.appcompat.app.AlertDialog$Builder setOnItemSelectedListener(android.widget.AdapterView$OnItemSelectedListener)
     public androidx.appcompat.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)
-    public androidx.appcompat.app.AlertDialog$Builder setPositiveButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setPositiveButtonIcon(android.graphics.drawable.Drawable)
     public androidx.appcompat.app.AlertDialog$Builder setRecycleOnMeasureEnabled(boolean)
     public androidx.appcompat.app.AlertDialog$Builder setSingleChoiceItems(int,int,android.content.DialogInterface$OnClickListener)
@@ -10766,7 +10762,6 @@ com.antplay.api.RetrofitAPI:
     public abstract retrofit2.Call getAllBillingPlan()
     public abstract retrofit2.Call getVMFromServer(java.lang.String)
     public abstract retrofit2.Call updatePin(java.lang.String,com.antplay.models.UpdatePinRequestModal)
-    public abstract retrofit2.Call userUpdate(com.antplay.models.UserRegisterRequest)
 com.antplay.binding.PlatformBinding:
     public void <init>()
 com.antplay.binding.crypto.AndroidCryptoProvider:
@@ -11065,6 +11060,28 @@ com.antplay.models.StartPaymentResp:
     public void setTransaction_id(java.lang.String)
 com.antplay.models.UpdatePinRequestModal
 com.antplay.models.UpdatePinResponseModal
+com.antplay.models.UserDetailsModal:
+    private java.lang.Object mAge
+    private java.lang.String mExpire
+    private java.lang.String mMiddleName
+    private java.lang.String mResourceGroup
+    public java.lang.Object getAge()
+    public java.lang.String getExpire()
+    public java.lang.String getMiddleName()
+    public java.lang.String getResourceGroup()
+    public void setAddress(java.lang.String)
+    public void setAge(java.lang.Object)
+    public void setCity(java.lang.String)
+    public void setEmail(java.lang.String)
+    public void setExpire(java.lang.String)
+    public void setFirstName(java.lang.String)
+    public void setLastName(java.lang.String)
+    public void setMiddleName(java.lang.String)
+    public void setPhoneNumber(java.lang.String)
+    public void setPincode(java.lang.String)
+    public void setResourceGroup(java.lang.String)
+    public void setState(java.lang.String)
+    public void setUsername(java.lang.String)
 com.antplay.models.UserRegisterRequest:
     public void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
     public java.lang.String getAddress()
@@ -11087,6 +11104,20 @@ com.antplay.models.UserRegisterRequest:
     public void setPhone_number(java.lang.String)
     public void setPincode(java.lang.String)
     public void setState(java.lang.String)
+com.antplay.models.UserUpdateRequestModal:
+    public java.lang.String getAddress()
+    public java.lang.String getCity()
+    public java.lang.String getEmail()
+    public java.lang.String getPhone_number()
+    public java.lang.String getPinCode()
+    public java.lang.String getState()
+    public void setAddress(java.lang.String)
+    public void setCity(java.lang.String)
+    public void setEmail(java.lang.String)
+    public void setPhone_number(java.lang.String)
+    public void setPinCode(java.lang.String)
+    public void setState(java.lang.String)
+com.antplay.models.UserUpdateResponseModal
 com.antplay.models.UserViewResponse:
     private java.lang.String address
     private java.lang.String age
@@ -11254,10 +11285,8 @@ com.antplay.preferences.SeekBarPreference:
 com.antplay.preferences.WebLauncherPreference
 com.antplay.ui.activity.ChangePasswordActivity:
     android.widget.LinearLayout logoutLinear
-com.antplay.ui.activity.LoginActivity$1
-com.antplay.ui.activity.LoginActivity$2
-com.antplay.ui.activity.LoginActivity:
-    private void callManualLoginAPI(java.lang.String,java.lang.String)
+com.antplay.ui.activity.EditProfileActivity:
+    android.widget.EditText edTxtState
 com.antplay.ui.activity.PcView:
     private static final int DELETE_ID
     private static final int FULL_APP_LIST_ID
@@ -11269,6 +11298,8 @@ com.antplay.ui.activity.PcView:
     private static final int UNPAIR_ID
     private static final int VIEW_DETAILS_ID
     private static final int WOL_ID
+com.antplay.ui.activity.ProfileActivity:
+    android.widget.TextView tv_changePassword
 com.antplay.ui.fragments.HomeFragment:
     private static final java.lang.String ARG_PARAM1
     private static final java.lang.String ARG_PARAM2
@@ -11294,7 +11325,15 @@ com.antplay.utils.CacheHelper:
     public static varargs long getFileSize(java.io.File,java.lang.String[])
 com.antplay.utils.Const:
     public static final java.lang.String ERROR_CODE_500_SERVER_ERROR
+    public static final java.lang.String address_should_not_empty
+    public static final java.lang.String city_should_not_empty
+    public static final java.lang.String enter_valid_data
+    public static final java.lang.String enter_valid_picCode
+    public static final java.lang.String profile_updated_success
     public void <init>()
+com.antplay.utils.DateFormatterHelper:
+    public static long getDifferenceOfTwoDates(java.lang.String,java.lang.String)
+    public static java.lang.String parseDateToddMMyyyy(java.lang.String)
 com.antplay.utils.HelpLauncher:
     public void <init>()
 com.antplay.utils.NetHelper:
@@ -35423,6 +35462,9 @@ com.antplay.binding.video.VideoStats:
     static final synthetic boolean $assertionsDisabled
 com.antplay.nvstream.http.NvHTTP$TLSv12SocketFactory
 com.antplay.preferences.StreamSettings$SettingsFragment$6
+com.antplay.utils.DateFormatterHelper:
+    static final synthetic boolean $assertionsDisabled
+    public void <init>()
 com.google.android.material.R$drawable:
     public static final int abc_btn_check_material
     public static final int abc_btn_check_material_anim
