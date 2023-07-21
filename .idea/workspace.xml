@@ -12,21 +12,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4dc8bdb-9e86-4770-a6d4-558d7e988294" name="Changes" comment="Login signup activities added">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/BillingDataList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/adapter/SubscriptionPlanAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/subcription_item_layout.xml" afterDir="false" />
+    <list default="true" id="d4dc8bdb-9e86-4770-a6d4-558d7e988294" name="Changes" comment="Subscription Item Created">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/AllBillingPlanResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/models/AllBillingPlanResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SubscriptionPlanActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SubscriptionPlanActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription_plan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription_plan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/Debug/3on2f395/logs/x86/generate_cxx_metadata_42_timing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/Debug/3on2f395/logs/x86/generate_cxx_metadata_42_timing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/Debug/3on2f395/logs/x86/metadata_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/Debug/3on2f395/logs/x86/metadata_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/create_cxx_tasks_42_timing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/create_cxx_tasks_42_timing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/ndk_locator_record_645q4l4r.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/ndk_locator_record_645q4l4r.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\HP\.android\avd\Pixel_6_API_34.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[8d950d5d]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -90,21 +89,10 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DEBUGGABLE_DEVICE&quot;: &quot;realme-rmp2105-12D231631002194&quot;,
-    &quot;DEBUGGABLE_PROCESS&quot;: &quot;com.antplay.debug&quot;,
-    &quot;DEBUGGER_ID&quot;: &quot;Auto&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="android.template.500949360">
       <recent name="com.antplay.ui" />
@@ -135,7 +123,7 @@
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="moonlightAntplay.app.main" />
+      <module name="moonlight-android.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -183,6 +171,7 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
         <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+        <option name="PROFILING_MODE" value="NOT_SET" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
