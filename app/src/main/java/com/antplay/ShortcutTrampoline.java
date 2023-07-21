@@ -14,6 +14,7 @@ import com.antplay.nvstream.http.ComputerDetails;
 import com.antplay.nvstream.http.NvApp;
 import com.antplay.nvstream.http.PairingManager;
 import com.antplay.nvstream.wol.WakeOnLanSender;
+import com.antplay.ui.activity.PcView;
 import com.antplay.utils.Dialog;
 import com.antplay.utils.ServerHelper;
 import com.antplay.utils.SpinnerDialog;

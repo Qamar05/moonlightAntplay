@@ -28,7 +28,7 @@ import android.view.ViewGroup;
 import android.view.WindowInsets;
 
 import com.antplay.LimeLog;
-import com.antplay.PcView;
+import com.antplay.ui.activity.PcView;
 import com.antplay.R;
 import com.antplay.binding.video.MediaCodecHelper;
 import com.antplay.utils.Dialog;

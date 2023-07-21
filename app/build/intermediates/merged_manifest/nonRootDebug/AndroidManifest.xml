@@ -34,7 +34,13 @@
         android:required="false" /> <!-- Disable legacy input emulation on ChromeOS -->
     <uses-feature
         android:name="android.hardware.type.pc"
-        android:required="false" /> <!-- Non-root application name -->
+        android:required="false" />
+
+    <permission
+        android:name="com.antplay.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.antplay.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Non-root application name -->
     <!-- FIXME: We should set extractNativeLibs=false but this breaks installation on the Fire TV 3 -->
     <application
         android:allowBackup="true"
@@ -56,7 +62,14 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.antplay.ui.HomeActivity"
+            android:name="com.antplay.ui.activity.SubscriptionPlanActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.antplay.ui.activity.HomeActivity"
             android:exported="false"
             android:theme="@android:style/Theme.NoTitleBar" >
             <meta-data
@@ -64,7 +77,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.antplay.ui.ForgotPasswordActivity"
+            android:name="com.antplay.ui.activity.ForgotPasswordActivity"
             android:exported="false"
             android:resizeableActivity="true" >
             <meta-data
@@ -72,21 +85,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.antplay.ui.GeneralWebViewActivity"
+            android:name="com.antplay.ui.activity.GeneralWebViewActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.antplay.ui.SignupActivity"
+            android:name="com.antplay.ui.activity.SignupActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.antplay.ui.SplashActivity"
+            android:name="com.antplay.ui.activity.SplashActivity"
             android:exported="true"
             android:resizeableActivity="true" >
             <intent-filter>
@@ -96,8 +109,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.antplay.ui.LoginActivity"
+            android:name="com.antplay.ui.activity.LoginActivity"
             android:exported="false"
+            android:resizeableActivity="true" />
+        <activity
+            android:name="com.antplay.ui.activity.ChangePasswordActivity"
+            android:exported="true"
+            android:resizeableActivity="true" />
+        <activity
+            android:name="com.antplay.ui.activity.PaymentHistoryActivity"
+            android:exported="true"
             android:resizeableActivity="true" />
 
         <provider
@@ -124,7 +145,7 @@
              in each activity even though it is implied by targeting API 24+
         -->
         <activity
-            android:name="com.antplay.PcView"
+            android:name="com.antplay.ui.activity.PcView"
             android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
             android:exported="true"
             android:resizeableActivity="true" >
@@ -148,7 +169,7 @@
             android:resizeableActivity="true" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
         <activity
             android:name="com.antplay.AppView"
@@ -156,7 +177,7 @@
             android:resizeableActivity="true" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
         <activity
             android:name="com.antplay.preferences.StreamSettings"
@@ -165,7 +186,7 @@
             android:resizeableActivity="true" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
         <activity
             android:name="com.antplay.preferences.AddComputerManually"
@@ -175,7 +196,7 @@
             android:windowSoftInputMode="stateVisible" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
         <activity
             android:name="com.antplay.Game"
@@ -219,8 +240,20 @@
             android:resizeableActivity="true" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.antplay.debug.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
     </application>
 
 </manifest>

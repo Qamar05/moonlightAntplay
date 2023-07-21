@@ -6,26 +6,27 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="                " />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4dc8bdb-9e86-4770-a6d4-558d7e988294" name="Changes" comment="Subscription Item Created">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
+    <list default="true" id="d4dc8bdb-9e86-4770-a6d4-558d7e988294" name="Changes" comment="Login signup activities added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/Debug/3on2f395/logs/x86/generate_cxx_metadata_42_timing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/Debug/3on2f395/logs/x86/generate_cxx_metadata_42_timing.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/Debug/3on2f395/logs/x86/metadata_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/Debug/3on2f395/logs/x86/metadata_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/create_cxx_tasks_42_timing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/create_cxx_tasks_42_timing.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/cxx/ndk_locator_record_645q4l4r.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/cxx/ndk_locator_record_645q4l4r.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/api/RetrofitAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/api/RetrofitAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/AppUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/AppUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/antplay/utils/Const.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[8d950d5d]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[12D231631002194]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -74,6 +75,7 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -83,16 +85,32 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2RazU5n0OK7yHpql0ejhojJF3WI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="cidr.known.project.marker" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DEBUGGABLE_DEVICE&quot;: &quot;realme-rmp2105-12D231631002194&quot;,
+    &quot;DEBUGGABLE_PROCESS&quot;: &quot;com.antplay.debug&quot;,
+    &quot;DEBUGGER_ID&quot;: &quot;Auto&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
+    &quot;android-custom-viewC:/vmsProject/moonlightAntplay/app/src/main/java/com/antplay/ui/StreamView.java_SELECTED&quot;: &quot;StreamView&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/vmsProject/moonlightAntplay/app/src/main/res/drawable&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="android.template.500949360">
       <recent name="com.antplay.ui" />
@@ -101,11 +119,11 @@
       <recent name="com.antplay.ui.adapter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\vmsProject\moonlightAntplay\app\src\main\res\drawable" />
+      <recent name="C:\vmsProject\moonlightAntplay\app\src\main\res\anim" />
+      <recent name="C:\vmsProject\moonlightAntplay\app\src\main\res\layout" />
       <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\drawable" />
       <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\mipmap-hdpi" />
-      <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\mipmap-mdpi" />
-      <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\mipmap-xhdpi" />
-      <recent name="C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\res\mipmap-xxhdpi" />
     </key>
     <key name="android.template.1956969507">
       <recent name="com.limelight.ui" />
@@ -117,13 +135,16 @@
       <recent name="com.antplay.ui" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.antplay.ui.adapter" />
       <recent name="com.antplay.models" />
+      <recent name="com.antplay.ui" />
+      <recent name="com.antplay.utils" />
       <recent name="com.limelight.utils" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="moonlight-android.app.main" />
+      <module name="moonlightAntplay.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -171,7 +192,6 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
         <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-        <option name="PROFILING_MODE" value="NOT_SET" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -249,40 +269,33 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/preferences/AddComputerManually.java</url>
-          <line>360</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/SignupActivity.java</url>
-          <line>188</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/SignupActivity.java</url>
+          <line>151</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/LoginActivity.java</url>
-          <line>226</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/SubscriptionPlanActivity.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/LoginActivity.java</url>
-          <line>228</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/SubscriptionPlanActivity.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/LoginActivity.java</url>
-          <line>229</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/LoginActivity.java</url>
-          <line>237</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/ForgotPasswordActivity.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="11" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/antplay/ui/activity/LoginActivity.java</url>
+          <line>108</line>
+          <properties class="com.antplay.ui.activity.LoginActivity" method="callLoginAPi">
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

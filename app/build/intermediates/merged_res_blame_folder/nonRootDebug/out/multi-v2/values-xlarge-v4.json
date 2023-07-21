@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-13:/values-xlarge-v4/values-xlarge-v4.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-28:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\5fbc9bb5cbddf86222bfe3dc88b507ab\\transformed\\appcompat-1.1.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\a7bc0d583083f17ce431510d0f69632e\\transformed\\appcompat-1.6.1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

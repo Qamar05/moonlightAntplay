@@ -45,14 +45,14 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SubscriptionPlanActivity"
+            android:name=".ui.activity.SubscriptionPlanActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.activity.HomeActivity"
             android:exported="false"
             android:theme="@android:style/Theme.NoTitleBar">
             <meta-data
@@ -60,7 +60,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.ForgotPasswordActivity"
+            android:name=".ui.activity.ForgotPasswordActivity"
             android:exported="false"
             android:resizeableActivity="true">
             <meta-data
@@ -68,21 +68,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.GeneralWebViewActivity"
+            android:name=".ui.activity.GeneralWebViewActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.SignupActivity"
+            android:name=".ui.activity.SignupActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.activity.SplashActivity"
             android:exported="true"
             android:resizeableActivity="true">
             <intent-filter>
@@ -92,8 +92,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="false"
+            android:resizeableActivity="true" />
+
+
+
+        <activity
+            android:name=".ui.activity.ChangePasswordActivity"
+            android:exported="true"
+            android:resizeableActivity="true" />
+
+        <activity
+            android:name=".ui.activity.PaymentHistoryActivity"
+            android:exported="true"
             android:resizeableActivity="true" />
 
         <provider
@@ -120,7 +132,7 @@
              in each activity even though it is implied by targeting API 24+
         -->
         <activity
-            android:name=".PcView"
+            android:name=".ui.activity.PcView"
             android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
             android:exported="true"
             android:resizeableActivity="true">
@@ -144,7 +156,7 @@
             android:resizeableActivity="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
         <activity
             android:name=".AppView"
@@ -152,7 +164,7 @@
             android:resizeableActivity="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
         <activity
             android:name=".preferences.StreamSettings"
@@ -161,7 +173,7 @@
             android:resizeableActivity="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
         <activity
             android:name=".preferences.AddComputerManually"
@@ -171,7 +183,7 @@
             android:windowSoftInputMode="stateVisible">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
         <activity
             android:name=".Game"
@@ -215,7 +227,7 @@
             android:resizeableActivity="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antplay.PcView" />
+                android:value="com.antplay.ui.activity.PcView" />
         </activity>
     </application>
 
