@@ -13,8 +13,11 @@ import com.antplay.models.StartPaymentReq;
 import com.antplay.models.StartPaymentResp;
 import com.antplay.models.UpdatePinRequestModal;
 import com.antplay.models.UpdatePinResponseModal;
+import com.antplay.models.UserDetailsModal;
 import com.antplay.models.UserRegisterRequest;
 import com.antplay.models.UserRegisterResp;
+import com.antplay.models.UserUpdateRequestModal;
+import com.antplay.models.UserUpdateResponseModal;
 import com.antplay.models.UserViewResponse;
 
 import okhttp3.ResponseBody;
@@ -61,6 +64,10 @@ public interface RetrofitAPI {
     Call<StartPaymentResp> startPayment(@Header("Authorization") String token , @Body StartPaymentReq startPaymentReq);
 
     @PUT("userupdate/")
-    Call<ChangePasswordResp> userUpdate(@Body UserRegisterRequest userRegisterRequest);
+    Call<UserUpdateResponseModal> userUpdate(@Header("Authorization") String Token, @Body UserUpdateRequestModal userUpdateRequestModal);
+
+
+    @GET("userview")
+    Call<UserDetailsModal> getUserDetails(@Header("Authorization") String Token);
 
 }

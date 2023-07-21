@@ -284,6 +284,7 @@
     <string name="password">Password</string>
     <string name="signup">Sign Up</string>
     <string name="letsGo">Let’s Go</string>
+    <string name="user_agreement">User agreement</string>
 
     <string name="error_email">Email is required</string>
     <string name="error_firstname">First Name is required</string>
@@ -340,6 +341,21 @@
     <string name="payment_history">Payment History</string>
     <string name="check_internet_connection">Please check internet connection</string>
     <string name="noDataFound">no data found\n</string>
+    <string name="are_you_sure">Are you sure, you want to logout ?</string>
+    <string name="logout">Log out</string>
+    <string name="edit">Edit\n\n</string>
+    <string name="manage_subscription">Manage Subscription</string>
+    <string name="discord">Discord</string>
+    <string name="instagram">Instagram</string>
+    <string name="website">AntPlay.Tech</string>
+    <string name="about">About Us</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="phone">Phone Number</string>
+    <string name="pinCode">Pincode</string>
+    <string name="update_profile">Update</string>
 
 
 </resources>
