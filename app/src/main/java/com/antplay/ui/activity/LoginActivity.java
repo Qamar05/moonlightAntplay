@@ -54,8 +54,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         btnLetsGo = (Button) findViewById(R.id.btn_signup);
         loadingPB = (ProgressBar) findViewById(R.id.loadingLogin_progress_xml);
         etEmail.setText("shobhit.agarwal@vmstechs.com");
-        etPass.setText("Test@1234");
-
+        etPass.setText("Antplay@123");
         setOnClickListener();
     }
 
@@ -82,7 +81,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     st_email = etEmail.getText().toString();
                     st_password = etPass.getText().toString();
                     callLoginAPi(st_email,st_password);
-
                 }
                 break;
         }
@@ -108,6 +106,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
     private void callLoginAPi(String stEmail,String strPassword) {
         loadingPB.setVisibility(View.VISIBLE);
+        Log.d(TAG,"Email : "+stEmail+"Password : "+strPassword);
         LoginRequestModal loginRequestModal = new LoginRequestModal(stEmail,strPassword);
         RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         Call<ResponseBody> call = retrofitAPI.userLogin(loginRequestModal);
@@ -121,8 +120,9 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                             String responseValue = response.body().string();
                             JSONObject jObj =  new JSONObject(responseValue);
                             String accessToken = jObj.getJSONObject("data").getString("access");
+                            Log.d(TAG,"Access Token : "+accessToken);
                             SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
-                            AppUtils.navigateScreen(LoginActivity.this, PaymentHistoryActivity.class);
+                            AppUtils.navigateScreen(LoginActivity.this, PcView.class);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -130,6 +130,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                         try {
                             JSONObject jObj =  new JSONObject(response.errorBody().string());
                             String detailValue  =  jObj.getString("detail");
+                            Log.d(TAG,"Issue : "+detailValue);
                             Toast.makeText(LoginActivity.this,  detailValue, Toast.LENGTH_SHORT).show();
                         }
                         catch (Exception e){

@@ -4,7 +4,7 @@
             "outputFile": "com.antplay.app-mergeNonRootDebugResources-28:/values-v29/values-v29.xml",
             "map": [
                 {
-                    "source": "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\res\\values-v29\\styles.xml",
+                    "source": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\res\\values-v29\\styles.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

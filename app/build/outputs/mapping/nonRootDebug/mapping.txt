@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 64dde0d
-# pg_map_hash: SHA-256 64dde0dfb6edf04dd7fe84665a2b7a3e3eea9f5ffe647fb20b95f4f48814bba6
+# pg_map_id: f490e12
+# pg_map_hash: SHA-256 f490e124d84c6cebf0304b1baf981011b208182ddfa7d5b928d5e5ec2e6b41ed
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -13238,13 +13238,11 @@ com.antplay.binding.input.virtual_controller.AnalogStick -> com.antplay.binding.
 com.antplay.binding.input.virtual_controller.AnalogStick$1 -> com.antplay.binding.input.virtual_controller.AnalogStick$1:
     241:241:void <clinit>() -> <clinit>
 com.antplay.binding.input.virtual_controller.AnalogStick$CLICK_STATE -> com.antplay.binding.input.virtual_controller.AnalogStick$CLICK_STATE:
-    85:85:com.antplay.binding.input.virtual_controller.AnalogStick$CLICK_STATE[] $values() -> $values
     85:87:void <clinit>() -> <clinit>
     85:85:void <init>(java.lang.String,int) -> <init>
     85:85:com.antplay.binding.input.virtual_controller.AnalogStick$CLICK_STATE valueOf(java.lang.String) -> valueOf
     85:85:com.antplay.binding.input.virtual_controller.AnalogStick$CLICK_STATE[] values() -> values
 com.antplay.binding.input.virtual_controller.AnalogStick$STICK_STATE -> com.antplay.binding.input.virtual_controller.AnalogStick$STICK_STATE:
-    76:76:com.antplay.binding.input.virtual_controller.AnalogStick$STICK_STATE[] $values() -> $values
     76:79:void <clinit>() -> <clinit>
     76:76:void <init>(java.lang.String,int) -> <init>
     76:76:com.antplay.binding.input.virtual_controller.AnalogStick$STICK_STATE valueOf(java.lang.String) -> valueOf
@@ -13333,7 +13331,6 @@ com.antplay.binding.input.virtual_controller.VirtualController$2 -> com.antplay.
 com.antplay.binding.input.virtual_controller.VirtualController$ControllerInputContext -> com.antplay.binding.input.virtual_controller.VirtualController$ControllerInputContext:
     24:31:void <init>() -> <init>
 com.antplay.binding.input.virtual_controller.VirtualController$ControllerMode -> com.antplay.binding.input.virtual_controller.VirtualController$ControllerMode:
-    34:34:com.antplay.binding.input.virtual_controller.VirtualController$ControllerMode[] $values() -> $values
     34:37:void <clinit>() -> <clinit>
     34:34:void <init>(java.lang.String,int) -> <init>
     34:34:com.antplay.binding.input.virtual_controller.VirtualController$ControllerMode valueOf(java.lang.String) -> valueOf
@@ -13378,7 +13375,6 @@ com.antplay.binding.input.virtual_controller.VirtualControllerElement -> com.ant
 com.antplay.binding.input.virtual_controller.VirtualControllerElement$2 -> com.antplay.binding.input.virtual_controller.VirtualControllerElement$2:
     254:254:void <clinit>() -> <clinit>
 com.antplay.binding.input.virtual_controller.VirtualControllerElement$Mode -> com.antplay.binding.input.virtual_controller.VirtualControllerElement$Mode:
-    56:56:com.antplay.binding.input.virtual_controller.VirtualControllerElement$Mode[] $values() -> $values
     56:59:void <clinit>() -> <clinit>
     56:56:void <init>(java.lang.String,int) -> <init>
     56:56:com.antplay.binding.input.virtual_controller.VirtualControllerElement$Mode valueOf(java.lang.String) -> valueOf
@@ -14050,7 +14046,6 @@ com.antplay.nvstream.http.ComputerDetails$AddressTuple -> com.antplay.nvstream.h
     35:35:int hashCode() -> hashCode
     49:55:java.lang.String toString() -> toString
 com.antplay.nvstream.http.ComputerDetails$State -> com.antplay.nvstream.http.ComputerDetails$State:
-    8:8:com.antplay.nvstream.http.ComputerDetails$State[] $values() -> $values
     8:9:void <clinit>() -> <clinit>
     8:8:void <init>(java.lang.String,int) -> <init>
     8:8:com.antplay.nvstream.http.ComputerDetails$State valueOf(java.lang.String) -> valueOf
@@ -14153,7 +14148,6 @@ com.antplay.nvstream.http.PairingManager -> com.antplay.nvstream.http.PairingMan
     116:124:byte[] signData(byte[],java.security.PrivateKey) -> signData
     104:110:boolean verifySignature(byte[],byte[],java.security.cert.Certificate) -> verifySignature
 com.antplay.nvstream.http.PairingManager$PairState -> com.antplay.nvstream.http.PairingManager$PairState:
-    28:28:com.antplay.nvstream.http.PairingManager$PairState[] $values() -> $values
     28:33:void <clinit>() -> <clinit>
     28:28:void <init>(java.lang.String,int) -> <init>
     28:28:com.antplay.nvstream.http.PairingManager$PairState valueOf(java.lang.String) -> valueOf
@@ -14483,16 +14477,16 @@ com.antplay.ui.activity.LoginActivity -> com.antplay.ui.activity.LoginActivity:
       # {"id":"com.android.tools.r8.synthesized"}
     android.widget.ProgressBar -$$Nest$fgetloadingPB(com.antplay.ui.activity.LoginActivity) -> -$$Nest$fgetloadingPB
       # {"id":"com.android.tools.r8.synthesized"}
-    37:42:void <init>() -> <init>
-    93:108:boolean CheckAllLoginFields() -> CheckAllLoginFields
-    201:242:void callLoginAPi(java.lang.String,java.lang.String) -> callLoginAPi
-    73:91:void onClick(android.view.View) -> onClick
-    48:62:void onCreate(android.os.Bundle) -> onCreate
-    65:68:void setOnClickListener() -> setOnClickListener
-com.antplay.ui.activity.LoginActivity$3 -> com.antplay.ui.activity.LoginActivity$3:
-    205:205:void <init>(com.antplay.ui.activity.LoginActivity) -> <init>
-    238:240:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    208:235:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    37:38:void <init>() -> <init>
+    91:106:boolean CheckAllLoginFields() -> CheckAllLoginFields
+    110:152:void callLoginAPi(java.lang.String,java.lang.String) -> callLoginAPi
+    71:89:void onClick(android.view.View) -> onClick
+    47:60:void onCreate(android.os.Bundle) -> onCreate
+    63:66:void setOnClickListener() -> setOnClickListener
+com.antplay.ui.activity.LoginActivity$1 -> com.antplay.ui.activity.LoginActivity$1:
+    115:115:void <init>(com.antplay.ui.activity.LoginActivity) -> <init>
+    148:150:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    118:145:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PaymentHistoryActivity -> com.antplay.ui.activity.PaymentHistoryActivity:
     android.widget.ProgressBar -$$Nest$fgetloadingPB(com.antplay.ui.activity.PaymentHistoryActivity) -> -$$Nest$fgetloadingPB
       # {"id":"com.android.tools.r8.synthesized"}
@@ -14797,9 +14791,9 @@ com.antplay.utils.Dialog$4 -> com.antplay.utils.Dialog$4:
     95:95:void <init>(com.antplay.utils.Dialog) -> <init>
     100:104:void onShow(android.content.DialogInterface) -> onShow
 com.antplay.utils.HelpLauncher -> com.antplay.utils.HelpLauncher:
-    49:50:void launchGameStreamEolFaq(android.content.Context) -> launchGameStreamEolFaq
-    41:42:void launchSetupGuide(android.content.Context) -> launchSetupGuide
-    45:46:void launchTroubleshooting(android.content.Context) -> launchTroubleshooting
+    50:51:void launchGameStreamEolFaq(android.content.Context) -> launchGameStreamEolFaq
+    42:43:void launchSetupGuide(android.content.Context) -> launchSetupGuide
+    46:47:void launchTroubleshooting(android.content.Context) -> launchTroubleshooting
     14:38:void launchUrl(android.content.Context,java.lang.String) -> launchUrl
 com.antplay.utils.NetHelper -> com.antplay.utils.NetHelper:
     12:30:boolean isActiveNetworkVpn(android.content.Context) -> isActiveNetworkVpn

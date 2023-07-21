@@ -11254,10 +11254,6 @@ com.antplay.preferences.SeekBarPreference:
 com.antplay.preferences.WebLauncherPreference
 com.antplay.ui.activity.ChangePasswordActivity:
     android.widget.LinearLayout logoutLinear
-com.antplay.ui.activity.LoginActivity$1
-com.antplay.ui.activity.LoginActivity$2
-com.antplay.ui.activity.LoginActivity:
-    private void callManualLoginAPI(java.lang.String,java.lang.String)
 com.antplay.ui.activity.PcView:
     private static final int DELETE_ID
     private static final int FULL_APP_LIST_ID

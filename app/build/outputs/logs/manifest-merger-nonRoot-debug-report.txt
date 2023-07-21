@@ -1,574 +1,574 @@
 -- Merging decision tree log ---
 provider#com.antplay.PosterContentProvider
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:111:9-115:39
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:111:9-115:39
 	android:authorities
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml
 manifest
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:2:1-234:12
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:2:1-234:12
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:2:1-234:12
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:2:1-234:12
-MERGED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:2:1-234:12
-MERGED from [com.github.cgutman:ShieldControllerExtensions:1.0] C:\Users\HP\.gradle\caches\transforms-3\f71c0b9014c179cfeb35179d036ab6a3\transformed\jetified-ShieldControllerExtensions-1.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.material:material:1.7.0] C:\Users\HP\.gradle\caches\transforms-3\6f4a478983f431632e5d612347e87940\transformed\material-1.7.0\AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\HP\.gradle\caches\transforms-3\2ce2640c44732ddaf63145e696e5e674\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\HP\.gradle\caches\transforms-3\7e20864a42a7f526323d755cc0bd0d98\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\HP\.gradle\caches\transforms-3\a7bc0d583083f17ce431510d0f69632e\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.intuit.sdp:sdp-android:1.0.5] C:\Users\HP\.gradle\caches\transforms-3\9bd00f33fb9abe050ef950358a43adaf\transformed\jetified-sdp-android-1.0.5\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\efb6b57f60e9e9483eb6af1ad9d96ecd\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\HP\.gradle\caches\transforms-3\be385308b53544484f0f505102d5b46f\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.6.0] C:\Users\HP\.gradle\caches\transforms-3\0725b0a7e89fb8fc2f4522969d771090\transformed\jetified-activity-1.6.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\98ede6f304b9c71adabad666e596a515\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\37902fbe08bd5edb0f7fe8e2eab95aec\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\6e7b2a3c66ee6b96b8d73d47ca3fd39e\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\15306fe706999ba07295695f1f9b0396\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.transition:transition:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\e522759973fe1357010125c25571306a\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\28bc6af0786c5f75662ec5a84cea117e\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\819fc34c6ee636aa061408c3009c5ca1\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\d8053d98646ea9184023c9da7c64fa75\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\672ad221719e3f52e208c425375a02d8\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\d2aca5839a350daee5f9b5a3cec540fa\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\7ceeb2c436a6cdb0fed18fa93ed1a305\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\5d24237d9f6dfc59ed2cc77dd04e6bd3\transformed\jetified-core-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\3b787ba927f674138aed5927f77d41a8\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\e30ecc3f6e2400ea9e8a2362e38f6f1e\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\ed79fd936c95038b96faaf80b600c665\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:17:1-30:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\5821aab7601c9da37f1b737be835df47\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:17:1-37:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\281535da056bdbb4850e3e18372f2c2d\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\967cf951731a847193219a99abc579ab\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\c7aafa31071d32bc16802e74fe03bb88\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\b57bf79dead4301e71c92134b772a621\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\2cb33b221f688f741a636183bbca2f76\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\1a23494ef2bbe8d0a0e2ad45833e4c38\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\HP\.gradle\caches\transforms-3\5fba0841c515734ca12dbd314d0e6ddc\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\bbf4650ebbb5e77cacb9752a15ed59b4\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\HP\.gradle\caches\transforms-3\52105d4c97c3e854c2fce28684646304\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\64c099c9bac132d65d9da985f4b2c31f\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\1e397416f62583df61afac7ba09f7029\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\d39a32f3dcca886847248fccf8f8b9da\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\21d6e3afd229fe8d8da8f2f3f7b766f1\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\48660fdbbe9f68c75be6d6041f90c2a1\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml:2:1-7:12
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:2:1-234:12
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:2:1-234:12
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:2:1-234:12
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:2:1-234:12
+MERGED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:2:1-234:12
+MERGED from [com.github.cgutman:ShieldControllerExtensions:1.0] C:\Users\qamar\.gradle\caches\transforms-3\d5c66b3d249b02dea8449e9839ab9e11\transformed\jetified-ShieldControllerExtensions-1.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.material:material:1.7.0] C:\Users\qamar\.gradle\caches\transforms-3\468d8c06ae4ee469abda4efdbe0c7e04\transformed\material-1.7.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\qamar\.gradle\caches\transforms-3\1051d67a3fc9179338f419756fcf27ae\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\qamar\.gradle\caches\transforms-3\bec9a300d545ea3ce6290f440d2e5fd4\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\qamar\.gradle\caches\transforms-3\948e039aad198d66b9b3ef38afbffd9e\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.intuit.sdp:sdp-android:1.0.5] C:\Users\qamar\.gradle\caches\transforms-3\8f7fb19932daf20e265cb1fb87b8b171\transformed\jetified-sdp-android-1.0.5\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\29c80bfb061c7b0a7f4f0911bc979966\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\qamar\.gradle\caches\transforms-3\fd06d34e18732994e74b7a3e7cb89bc2\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\qamar\.gradle\caches\transforms-3\4cd834be1819978133c13a674655279e\transformed\jetified-activity-1.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\f6396027ac92092997a46dd06bf36901\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\0d3cdc2f988d8cad0dd974ec4b2276a6\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\0582e85b5d6086f7ca29734904e7405b\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\01be2504a2665a76f4295986a1cbad7d\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\f02788972df43e4a1eab2bf6382bbe21\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\057f46cbf410e1e156e7631391b803ca\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\55faadff26ce3102f6b4895d37ed9e36\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\921aae1c1f9393594437f3af06961b65\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\02d7966a257683300049ee472cd9791b\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\105c953c4a42529896f8ba30f7e6a177\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\2623c4b84f0d1741b41ea4d586582e4c\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\7e7e77738756e6cc1f8cc875f99674bb\transformed\jetified-core-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\6b4fc069f9e70ea0dc7aa59fdd4c3c27\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\3276d021e5d6b044ea57428da2e39a1a\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\b9c3cb34484577cd7c859abc4761439d\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\0f6017f9086cb13d5074b2c32032e5ac\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\433ce99204ca75ea0a947007b8f2d6fe\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\bbdb4caadeba39954f5916f93a9a4f99\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\255a4aba3c30a08b5243129436a38b6c\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\d33ab72625923da81417b556e406915d\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\ae9231ceea056915d521894927673c39\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\b4ecd87c7069ddf6cd964c3a6d828dfd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\qamar\.gradle\caches\transforms-3\4ae79ead16e5d341db9b491319d35664\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\59a810ffc726956893343cc0b0ae6195\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\qamar\.gradle\caches\transforms-3\8eb12f9fa8e35baa4494eb626cbdc115\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\d51e26b35e7bf7c850d23fb888f29670\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\70c7addae805bd869d7ed61fe659f9dc\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\fe3fde958a389b952490f1eb21f1336b\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\0169315de90a5bedd8eb0c60cc77c20b\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\qamar\.gradle\caches\transforms-3\5096059b2f75706e2d9da902009cb28f\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml:2:1-7:12
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml:2:1-7:12
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml:2:1-7:12
 	package
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:2:1-234:12
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:2:1-234:12
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:2:1-234:12
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:2:1-234:12
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:2:1-234:12
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:2:1-234:12
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:4:5-67
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:4:5-67
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:4:22-64
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:5:5-79
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:5:5-79
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:5:22-76
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:5:22-76
 uses-permission#android.permission.VIBRATE
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:6:5-66
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:6:5-66
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:6:22-63
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:6:22-63
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:7:5-68
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:7:5-68
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:7:22-65
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:7:22-65
 uses-permission#android.permission.CHANGE_WIFI_MULTICAST_STATE
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:8:5-86
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:8:5-86
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:8:22-83
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:8:22-83
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:9:5-76
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:9:5-76
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:9:22-73
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:9:22-73
 uses-permission#com.android.providers.tv.permission.READ_EPG_DATA
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:10:5-89
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:10:5-89
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:10:22-86
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:10:22-86
 uses-permission#com.android.providers.tv.permission.WRITE_EPG_DATA
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:11:5-90
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:11:5-90
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:11:22-87
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:11:22-87
 uses-feature#android.hardware.touchscreen
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:13:5-15:36
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:13:5-15:36
 	android:required
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:15:9-33
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:15:9-33
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:14:9-52
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:14:9-52
 uses-feature#android.hardware.wifi
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:16:5-18:36
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:16:5-18:36
 	android:required
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:18:9-33
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:18:9-33
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:17:9-45
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:17:9-45
 uses-feature#android.hardware.gamepad
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:19:5-21:36
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:19:5-21:36
 	android:required
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:21:9-33
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:21:9-33
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:20:9-48
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:20:9-48
 uses-feature#android.hardware.usb.host
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:22:5-24:36
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:22:5-24:36
 	android:required
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:24:9-33
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:24:9-33
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:23:9-49
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:23:9-49
 uses-feature#android.software.leanback
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:25:5-27:36
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:25:5-27:36
 	android:required
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:27:9-33
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:27:9-33
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:26:9-49
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:26:9-49
 uses-feature#android.hardware.type.pc
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:28:5-30:36
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:28:5-30:36
 	android:required
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:30:9-33
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:30:9-33
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:29:9-48
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:29:9-48
 application
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:32:5-232:19
-MERGED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:32:5-232:19
-MERGED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:32:5-232:19
-MERGED from [com.google.android.material:material:1.7.0] C:\Users\HP\.gradle\caches\transforms-3\6f4a478983f431632e5d612347e87940\transformed\material-1.7.0\AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.material:material:1.7.0] C:\Users\HP\.gradle\caches\transforms-3\6f4a478983f431632e5d612347e87940\transformed\material-1.7.0\AndroidManifest.xml:24:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\HP\.gradle\caches\transforms-3\2ce2640c44732ddaf63145e696e5e674\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\HP\.gradle\caches\transforms-3\2ce2640c44732ddaf63145e696e5e674\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
-MERGED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\b57bf79dead4301e71c92134b772a621\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\b57bf79dead4301e71c92134b772a621\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\1a23494ef2bbe8d0a0e2ad45833e4c38\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\1a23494ef2bbe8d0a0e2ad45833e4c38\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:32:5-232:19
+MERGED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:32:5-232:19
+MERGED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:32:5-232:19
+MERGED from [com.google.android.material:material:1.7.0] C:\Users\qamar\.gradle\caches\transforms-3\468d8c06ae4ee469abda4efdbe0c7e04\transformed\material-1.7.0\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.7.0] C:\Users\qamar\.gradle\caches\transforms-3\468d8c06ae4ee469abda4efdbe0c7e04\transformed\material-1.7.0\AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\qamar\.gradle\caches\transforms-3\1051d67a3fc9179338f419756fcf27ae\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\qamar\.gradle\caches\transforms-3\1051d67a3fc9179338f419756fcf27ae\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\d33ab72625923da81417b556e406915d\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\d33ab72625923da81417b556e406915d\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\b4ecd87c7069ddf6cd964c3a6d828dfd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\b4ecd87c7069ddf6cd964c3a6d828dfd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:appCategory
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:34:9-35
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:34:9-35
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:34:9-35
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:34:9-35
 	android:roundIcon
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:45:9-48
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:45:9-48
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:45:9-48
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:45:9-48
 	android:gwpAsanMode
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:39:9-37
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:39:9-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:39:9-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:39:9-37
 	android:icon
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:40:9-43
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:40:9-43
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:40:9-43
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:40:9-43
 	android:banner
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:35:9-46
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:35:9-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:35:9-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:35:9-46
 	android:networkSecurityConfig
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:44:9-69
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:44:9-69
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:44:9-69
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:44:9-69
 	android:localeConfig
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:43:9-51
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:43:9-51
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:43:9-51
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:43:9-51
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+		ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml:6:18-51
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml:6:18-51
 	android:fullBackupContent
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:38:9-54
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:38:9-54
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:38:9-54
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:38:9-54
 	android:installLocation
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:41:9-39
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:41:9-39
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:41:9-39
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:41:9-39
 	android:allowBackup
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:33:9-35
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:33:9-35
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:33:9-35
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:33:9-35
 	android:theme
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:46:9-40
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:46:9-40
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:46:9-40
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:46:9-40
 	android:enableOnBackInvokedCallback
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:37:9-52
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:37:9-52
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:37:9-52
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:37:9-52
 	android:dataExtractionRules
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:36:9-58
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:36:9-58
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:36:9-58
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:36:9-58
 	android:isGame
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:42:9-30
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:42:9-30
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:42:9-30
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:42:9-30
 activity#com.antplay.ui.activity.SubscriptionPlanActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:47:9-53:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:47:9-53:20
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:49:13-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:49:13-37
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:48:13-65
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:48:13-65
 meta-data#android.app.lib_name
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:50:13-52:36
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:50:13-52:36
 	android:value
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:52:17-33
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:52:17-33
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:51:17-52
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:51:17-52
 activity#com.antplay.ui.activity.HomeActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:54:9-61:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:54:9-61:20
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:56:13-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:56:13-37
 	android:theme
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:57:13-60
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:57:13-60
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:55:13-53
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:55:13-53
 activity#com.antplay.ui.activity.ForgotPasswordActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:62:9-69:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:62:9-69:20
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:64:13-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:64:13-37
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:65:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:65:13-46
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:63:13-63
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:63:13-63
 activity#com.antplay.ui.activity.GeneralWebViewActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:70:9-76:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:70:9-76:20
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:72:13-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:72:13-37
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:71:13-63
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:71:13-63
 activity#com.antplay.ui.activity.SignupActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:77:9-83:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:77:9-83:20
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:79:13-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:79:13-37
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:78:13-55
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:78:13-55
 activity#com.antplay.ui.activity.SplashActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:84:9-93:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:84:9-93:20
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:86:13-36
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:86:13-36
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:87:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:87:13-46
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:85:13-55
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:85:13-55
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:88:13-92:29
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:88:13-92:29
 action#android.intent.action.MAIN
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:89:17-69
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:89:17-69
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:89:25-66
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:89:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:91:17-77
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:91:17-77
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:91:27-74
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:91:27-74
 activity#com.antplay.ui.activity.LoginActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:94:9-97:49
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:94:9-97:49
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:96:13-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:96:13-37
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:97:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:97:13-46
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:95:13-54
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:95:13-54
 activity#com.antplay.ui.activity.ChangePasswordActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:101:9-104:49
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:101:9-104:49
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:103:13-36
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:103:13-36
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:104:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:104:13-46
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:102:13-63
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:102:13-63
 activity#com.antplay.ui.activity.PaymentHistoryActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:106:9-109:49
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:106:9-109:49
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:108:13-36
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:108:13-36
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:109:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:109:13-46
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:107:13-63
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:107:13-63
 uses-library#com.sec.android.app.multiwindow
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:116:9-118:40
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:116:9-118:40
 	android:required
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:118:13-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:118:13-37
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:117:13-59
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:117:13-59
 meta-data#com.sec.android.support.multiwindow
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:120:9-122:36
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:120:9-122:36
 	android:value
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:122:13-33
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:122:13-33
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:121:13-63
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:121:13-63
 meta-data#com.android.graphics.intervention.wm.allowDownscale
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:127:9-129:37
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:127:9-129:37
 	android:value
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:129:13-34
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:129:13-34
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:128:13-79
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:128:13-79
 activity#com.antplay.ui.activity.PcView
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:134:9-150:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:134:9-150:20
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:137:13-36
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:137:13-36
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:138:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:138:13-46
 	android:configChanges
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:136:13-179
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:136:13-179
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:135:13-47
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:135:13-47
 intent-filter#category:name:android.intent.category.LEANBACK_LAUNCHER+category:name:android.intent.category.MULTIWINDOW_LAUNCHER+category:name:tv.ouya.intent.category.APP
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:139:13-149:29
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:139:13-149:29
 category#android.intent.category.MULTIWINDOW_LAUNCHER
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:146:17-89
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:146:17-89
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:146:27-86
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:146:27-86
 category#android.intent.category.LEANBACK_LAUNCHER
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:147:17-86
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:147:17-86
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:147:27-83
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:147:27-83
 category#tv.ouya.intent.category.APP
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:148:17-72
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:148:17-72
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:148:27-69
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:148:27-69
 activity#com.antplay.ShortcutTrampoline
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:151:9-160:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:151:9-160:20
 	android:noHistory
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:155:13-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:155:13-37
 	android:exported
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:154:13-36
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:154:13-36
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:156:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:156:13-46
 	android:configChanges
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:153:13-186
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:153:13-186
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:152:13-47
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:152:13-47
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:157:13-159:66
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:157:13-159:66
 	android:value
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:159:17-63
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:159:17-63
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:158:17-63
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:158:17-63
 activity#com.antplay.AppView
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:161:9-168:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:161:9-168:20
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:164:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:164:13-46
 	android:configChanges
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:163:13-179
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:163:13-179
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:162:13-36
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:162:13-36
 activity#com.antplay.preferences.StreamSettings
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:169:9-177:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:169:9-177:20
 	android:label
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:172:13-47
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:172:13-47
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:173:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:173:13-46
 	android:configChanges
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:171:13-179
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:171:13-179
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:170:13-55
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:170:13-55
 activity#com.antplay.preferences.AddComputerManually
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:178:9-187:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:178:9-187:20
 	android:label
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:181:13-50
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:181:13-50
 	android:windowSoftInputMode
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:183:13-55
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:183:13-55
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:182:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:182:13-46
 	android:configChanges
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:180:13-179
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:180:13-179
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:179:13-60
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:179:13-60
 activity#com.antplay.Game
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:188:9-212:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:188:9-212:20
 	android:excludeFromRecents
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:191:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:191:13-46
 	android:launchMode
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:192:13-44
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:192:13-44
 	android:noHistory
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:193:13-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:193:13-37
 	android:supportsPictureInPicture
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:196:13-52
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:196:13-52
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:195:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:195:13-46
 	android:configChanges
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:190:13-186
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:190:13-186
 	android:theme
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:197:13-47
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:197:13-47
 	android:preferMinimalPostProcessing
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:194:13-55
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:194:13-55
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:189:13-33
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:189:13-33
 meta-data#com.nvidia.immediateInput
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:206:13-208:40
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:206:13-208:40
 	android:value
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:208:17-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:208:17-37
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:207:17-57
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:207:17-57
 meta-data#com.nvidia.rawCursorInput
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:209:13-211:40
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:209:13-211:40
 	android:value
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:211:17-37
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:211:17-37
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:210:17-57
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:210:17-57
 service#com.antplay.discovery.DiscoveryService
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:214:9-216:62
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:214:9-216:62
 	android:label
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:216:13-59
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:216:13-59
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:215:13-55
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:215:13-55
 service#com.antplay.computers.ComputerManagerService
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:217:9-219:59
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:217:9-219:59
 	android:label
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:219:13-56
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:219:13-56
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:218:13-61
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:218:13-61
 service#com.antplay.binding.input.driver.UsbDriverService
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:220:9-222:50
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:220:9-222:50
 	android:label
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:222:13-47
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:222:13-47
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:221:13-66
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:221:13-66
 activity#com.antplay.HelpActivity
-ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:224:9-231:20
+ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:224:9-231:20
 	android:resizeableActivity
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:227:13-46
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:227:13-46
 	android:configChanges
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:226:13-179
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:226:13-179
 	android:name
-		ADDED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:225:13-41
+		ADDED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml:225:13-41
 uses-sdk
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml
-MERGED from [com.github.cgutman:ShieldControllerExtensions:1.0] C:\Users\HP\.gradle\caches\transforms-3\f71c0b9014c179cfeb35179d036ab6a3\transformed\jetified-ShieldControllerExtensions-1.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.cgutman:ShieldControllerExtensions:1.0] C:\Users\HP\.gradle\caches\transforms-3\f71c0b9014c179cfeb35179d036ab6a3\transformed\jetified-ShieldControllerExtensions-1.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.material:material:1.7.0] C:\Users\HP\.gradle\caches\transforms-3\6f4a478983f431632e5d612347e87940\transformed\material-1.7.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.material:material:1.7.0] C:\Users\HP\.gradle\caches\transforms-3\6f4a478983f431632e5d612347e87940\transformed\material-1.7.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\HP\.gradle\caches\transforms-3\2ce2640c44732ddaf63145e696e5e674\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\HP\.gradle\caches\transforms-3\2ce2640c44732ddaf63145e696e5e674\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\HP\.gradle\caches\transforms-3\7e20864a42a7f526323d755cc0bd0d98\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\HP\.gradle\caches\transforms-3\7e20864a42a7f526323d755cc0bd0d98\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\HP\.gradle\caches\transforms-3\a7bc0d583083f17ce431510d0f69632e\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\HP\.gradle\caches\transforms-3\a7bc0d583083f17ce431510d0f69632e\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [com.intuit.sdp:sdp-android:1.0.5] C:\Users\HP\.gradle\caches\transforms-3\9bd00f33fb9abe050ef950358a43adaf\transformed\jetified-sdp-android-1.0.5\AndroidManifest.xml:7:5-9:41
-MERGED from [com.intuit.sdp:sdp-android:1.0.5] C:\Users\HP\.gradle\caches\transforms-3\9bd00f33fb9abe050ef950358a43adaf\transformed\jetified-sdp-android-1.0.5\AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\efb6b57f60e9e9483eb6af1ad9d96ecd\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\efb6b57f60e9e9483eb6af1ad9d96ecd\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\HP\.gradle\caches\transforms-3\be385308b53544484f0f505102d5b46f\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\HP\.gradle\caches\transforms-3\be385308b53544484f0f505102d5b46f\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.6.0] C:\Users\HP\.gradle\caches\transforms-3\0725b0a7e89fb8fc2f4522969d771090\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.6.0] C:\Users\HP\.gradle\caches\transforms-3\0725b0a7e89fb8fc2f4522969d771090\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\98ede6f304b9c71adabad666e596a515\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\98ede6f304b9c71adabad666e596a515\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\37902fbe08bd5edb0f7fe8e2eab95aec\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\37902fbe08bd5edb0f7fe8e2eab95aec\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\6e7b2a3c66ee6b96b8d73d47ca3fd39e\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\6e7b2a3c66ee6b96b8d73d47ca3fd39e\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\15306fe706999ba07295695f1f9b0396\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\15306fe706999ba07295695f1f9b0396\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.transition:transition:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\e522759973fe1357010125c25571306a\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\e522759973fe1357010125c25571306a\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\28bc6af0786c5f75662ec5a84cea117e\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\28bc6af0786c5f75662ec5a84cea117e\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\819fc34c6ee636aa061408c3009c5ca1\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\819fc34c6ee636aa061408c3009c5ca1\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\d8053d98646ea9184023c9da7c64fa75\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\d8053d98646ea9184023c9da7c64fa75\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\672ad221719e3f52e208c425375a02d8\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\672ad221719e3f52e208c425375a02d8\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\d2aca5839a350daee5f9b5a3cec540fa\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\d2aca5839a350daee5f9b5a3cec540fa\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\7ceeb2c436a6cdb0fed18fa93ed1a305\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\7ceeb2c436a6cdb0fed18fa93ed1a305\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\5d24237d9f6dfc59ed2cc77dd04e6bd3\transformed\jetified-core-ktx-1.9.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\5d24237d9f6dfc59ed2cc77dd04e6bd3\transformed\jetified-core-ktx-1.9.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\3b787ba927f674138aed5927f77d41a8\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\3b787ba927f674138aed5927f77d41a8\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\e30ecc3f6e2400ea9e8a2362e38f6f1e\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\e30ecc3f6e2400ea9e8a2362e38f6f1e\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\ed79fd936c95038b96faaf80b600c665\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\HP\.gradle\caches\transforms-3\ed79fd936c95038b96faaf80b600c665\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\5821aab7601c9da37f1b737be835df47\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\5821aab7601c9da37f1b737be835df47\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\281535da056bdbb4850e3e18372f2c2d\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\281535da056bdbb4850e3e18372f2c2d\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\967cf951731a847193219a99abc579ab\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\967cf951731a847193219a99abc579ab\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\c7aafa31071d32bc16802e74fe03bb88\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\c7aafa31071d32bc16802e74fe03bb88\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\b57bf79dead4301e71c92134b772a621\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\b57bf79dead4301e71c92134b772a621\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\2cb33b221f688f741a636183bbca2f76\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\2cb33b221f688f741a636183bbca2f76\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\1a23494ef2bbe8d0a0e2ad45833e4c38\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\1a23494ef2bbe8d0a0e2ad45833e4c38\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\HP\.gradle\caches\transforms-3\5fba0841c515734ca12dbd314d0e6ddc\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\HP\.gradle\caches\transforms-3\5fba0841c515734ca12dbd314d0e6ddc\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\bbf4650ebbb5e77cacb9752a15ed59b4\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\HP\.gradle\caches\transforms-3\bbf4650ebbb5e77cacb9752a15ed59b4\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\HP\.gradle\caches\transforms-3\52105d4c97c3e854c2fce28684646304\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\HP\.gradle\caches\transforms-3\52105d4c97c3e854c2fce28684646304\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\64c099c9bac132d65d9da985f4b2c31f\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\64c099c9bac132d65d9da985f4b2c31f\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\1e397416f62583df61afac7ba09f7029\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\1e397416f62583df61afac7ba09f7029\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\d39a32f3dcca886847248fccf8f8b9da\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\d39a32f3dcca886847248fccf8f8b9da\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\21d6e3afd229fe8d8da8f2f3f7b766f1\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\21d6e3afd229fe8d8da8f2f3f7b766f1\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\48660fdbbe9f68c75be6d6041f90c2a1\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\48660fdbbe9f68c75be6d6041f90c2a1\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml
-INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml
+MERGED from [com.github.cgutman:ShieldControllerExtensions:1.0] C:\Users\qamar\.gradle\caches\transforms-3\d5c66b3d249b02dea8449e9839ab9e11\transformed\jetified-ShieldControllerExtensions-1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.cgutman:ShieldControllerExtensions:1.0] C:\Users\qamar\.gradle\caches\transforms-3\d5c66b3d249b02dea8449e9839ab9e11\transformed\jetified-ShieldControllerExtensions-1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.material:material:1.7.0] C:\Users\qamar\.gradle\caches\transforms-3\468d8c06ae4ee469abda4efdbe0c7e04\transformed\material-1.7.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.7.0] C:\Users\qamar\.gradle\caches\transforms-3\468d8c06ae4ee469abda4efdbe0c7e04\transformed\material-1.7.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\qamar\.gradle\caches\transforms-3\1051d67a3fc9179338f419756fcf27ae\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\qamar\.gradle\caches\transforms-3\1051d67a3fc9179338f419756fcf27ae\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\qamar\.gradle\caches\transforms-3\bec9a300d545ea3ce6290f440d2e5fd4\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\qamar\.gradle\caches\transforms-3\bec9a300d545ea3ce6290f440d2e5fd4\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\qamar\.gradle\caches\transforms-3\948e039aad198d66b9b3ef38afbffd9e\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\qamar\.gradle\caches\transforms-3\948e039aad198d66b9b3ef38afbffd9e\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [com.intuit.sdp:sdp-android:1.0.5] C:\Users\qamar\.gradle\caches\transforms-3\8f7fb19932daf20e265cb1fb87b8b171\transformed\jetified-sdp-android-1.0.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.intuit.sdp:sdp-android:1.0.5] C:\Users\qamar\.gradle\caches\transforms-3\8f7fb19932daf20e265cb1fb87b8b171\transformed\jetified-sdp-android-1.0.5\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\29c80bfb061c7b0a7f4f0911bc979966\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\29c80bfb061c7b0a7f4f0911bc979966\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\qamar\.gradle\caches\transforms-3\fd06d34e18732994e74b7a3e7cb89bc2\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\qamar\.gradle\caches\transforms-3\fd06d34e18732994e74b7a3e7cb89bc2\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\qamar\.gradle\caches\transforms-3\4cd834be1819978133c13a674655279e\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\qamar\.gradle\caches\transforms-3\4cd834be1819978133c13a674655279e\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\f6396027ac92092997a46dd06bf36901\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\f6396027ac92092997a46dd06bf36901\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\0d3cdc2f988d8cad0dd974ec4b2276a6\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\0d3cdc2f988d8cad0dd974ec4b2276a6\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\0582e85b5d6086f7ca29734904e7405b\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\0582e85b5d6086f7ca29734904e7405b\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\01be2504a2665a76f4295986a1cbad7d\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\01be2504a2665a76f4295986a1cbad7d\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\f02788972df43e4a1eab2bf6382bbe21\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\f02788972df43e4a1eab2bf6382bbe21\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\057f46cbf410e1e156e7631391b803ca\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\057f46cbf410e1e156e7631391b803ca\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\55faadff26ce3102f6b4895d37ed9e36\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\55faadff26ce3102f6b4895d37ed9e36\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\921aae1c1f9393594437f3af06961b65\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\921aae1c1f9393594437f3af06961b65\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\02d7966a257683300049ee472cd9791b\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\02d7966a257683300049ee472cd9791b\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\105c953c4a42529896f8ba30f7e6a177\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\105c953c4a42529896f8ba30f7e6a177\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\2623c4b84f0d1741b41ea4d586582e4c\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\2623c4b84f0d1741b41ea4d586582e4c\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\7e7e77738756e6cc1f8cc875f99674bb\transformed\jetified-core-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\7e7e77738756e6cc1f8cc875f99674bb\transformed\jetified-core-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\6b4fc069f9e70ea0dc7aa59fdd4c3c27\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\6b4fc069f9e70ea0dc7aa59fdd4c3c27\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\3276d021e5d6b044ea57428da2e39a1a\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\3276d021e5d6b044ea57428da2e39a1a\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\b9c3cb34484577cd7c859abc4761439d\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\qamar\.gradle\caches\transforms-3\b9c3cb34484577cd7c859abc4761439d\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\0f6017f9086cb13d5074b2c32032e5ac\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\0f6017f9086cb13d5074b2c32032e5ac\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\433ce99204ca75ea0a947007b8f2d6fe\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\433ce99204ca75ea0a947007b8f2d6fe\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\bbdb4caadeba39954f5916f93a9a4f99\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\bbdb4caadeba39954f5916f93a9a4f99\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\255a4aba3c30a08b5243129436a38b6c\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\255a4aba3c30a08b5243129436a38b6c\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\d33ab72625923da81417b556e406915d\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\d33ab72625923da81417b556e406915d\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\ae9231ceea056915d521894927673c39\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\ae9231ceea056915d521894927673c39\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\b4ecd87c7069ddf6cd964c3a6d828dfd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\b4ecd87c7069ddf6cd964c3a6d828dfd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\qamar\.gradle\caches\transforms-3\4ae79ead16e5d341db9b491319d35664\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\qamar\.gradle\caches\transforms-3\4ae79ead16e5d341db9b491319d35664\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\59a810ffc726956893343cc0b0ae6195\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\qamar\.gradle\caches\transforms-3\59a810ffc726956893343cc0b0ae6195\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\qamar\.gradle\caches\transforms-3\8eb12f9fa8e35baa4494eb626cbdc115\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\qamar\.gradle\caches\transforms-3\8eb12f9fa8e35baa4494eb626cbdc115\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\d51e26b35e7bf7c850d23fb888f29670\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\d51e26b35e7bf7c850d23fb888f29670\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\70c7addae805bd869d7ed61fe659f9dc\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\70c7addae805bd869d7ed61fe659f9dc\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\fe3fde958a389b952490f1eb21f1336b\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\fe3fde958a389b952490f1eb21f1336b\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\0169315de90a5bedd8eb0c60cc77c20b\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\qamar\.gradle\caches\transforms-3\0169315de90a5bedd8eb0c60cc77c20b\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\qamar\.gradle\caches\transforms-3\5096059b2f75706e2d9da902009cb28f\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\qamar\.gradle\caches\transforms-3\5096059b2f75706e2d9da902009cb28f\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml
+INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml
-		INJECTED from C:\vmsProject\moonlightAntplay\app\src\nonRoot\AndroidManifest.xml
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\qamar\AndroidStudioProjects\moonlight-android\app\src\nonRoot\AndroidManifest.xml
 provider#androidx.startup.InitializationProvider
-ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\b57bf79dead4301e71c92134b772a621\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP\.gradle\caches\transforms-3\b57bf79dead4301e71c92134b772a621\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\d33ab72625923da81417b556e406915d\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\qamar\.gradle\caches\transforms-3\d33ab72625923da81417b556e406915d\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
 	tools:node
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:28:13-31
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:28:13-31
 	android:authorities
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
 	android:exported
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
 meta-data#androidx.emoji2.text.EmojiCompatInitializer
-ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 	android:value
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
 	android:name
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\qamar\.gradle\caches\transforms-3\d466b44156994f5ad5a55e4cad6e310d\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
 permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 permission#com.antplay.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 uses-permission#com.antplay.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.9.0] C:\Users\qamar\.gradle\caches\transforms-3\e771f9ea7a97d7ada690f5df0c2fdcae\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 meta-data#androidx.lifecycle.ProcessLifecycleInitializer
-ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
 	android:value
-		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
 	android:name
-		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\qamar\.gradle\caches\transforms-3\5a02d0faa1c8b7e7996eb7c7b12c2c18\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78

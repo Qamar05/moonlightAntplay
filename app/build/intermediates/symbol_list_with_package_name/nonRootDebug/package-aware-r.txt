@@ -3246,6 +3246,7 @@ drawable back_arrow
 drawable backarrow
 drawable background_image
 drawable backgroundimage
+drawable bg_white_round
 drawable black_trans_bg
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -3363,6 +3364,7 @@ drawable ouya_icon
 drawable payment_button_bg
 drawable payment_sucess
 drawable paymenthistory
+drawable person
 drawable plan
 drawable rupees
 drawable test_level_drawable

@@ -4,7 +4,7 @@
             "outputFile": "com.antplay.app-mergeNonRootDebugResources-28:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\6f4a478983f431632e5d612347e87940\\transformed\\material-1.7.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\468d8c06ae4ee469abda4efdbe0c7e04\\transformed\\material-1.7.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -23,7 +23,17 @@
                     }
                 },
                 {
-                    "source": "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\res\\values-v24\\styles.xml",
+                    "source": "C:\\Users\\qamar\\.gradle\\caches\\transforms-3\\948e039aad198d66b9b3ef38afbffd9e\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\res\\values-v24\\styles.xml",
                     "from": {
                         "startLines": "7",
                         "startColumns": "4",
@@ -39,16 +49,6 @@
                         "endLines": "22",
                         "endColumns": "12",
                         "endOffsets": "1686"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\a7bc0d583083f17ce431510d0f69632e\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
                     }
                 }
             ]
