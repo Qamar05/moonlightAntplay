@@ -3,6 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/stream_settings"
+    android:background="@drawable/background_image"
     tools:context=".preferences.StreamSettings">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_green"/>
 
 </RelativeLayout>

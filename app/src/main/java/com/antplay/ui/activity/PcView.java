@@ -146,10 +146,12 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         pcGridAdapter.updateLayoutWithPreferences(this, PreferenceConfiguration.readPreferences(this));
 
         // Setup the list view
+        ImageButton profileButton = findViewById(R.id.profileButton);
         ImageButton settingsButton = findViewById(R.id.settingsButton);
         ImageButton addComputerButton = findViewById(R.id.manuallyAddPc);
         ImageButton helpButton = findViewById(R.id.helpButton);
 
+        profileButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, ProfileActivity.class)));
         settingsButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, StreamSettings.class)));
         addComputerButton.setOnClickListener(v -> {
             Intent i = new Intent(PcView.this, AddComputerManually.class);

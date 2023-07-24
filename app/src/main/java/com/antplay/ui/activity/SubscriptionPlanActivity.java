@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class SubscriptionPlanActivity extends Activity implements SubscriptionPl
     SubscriptionPlanAdapter adapter;
     List<BillingDataList> planList;
     ProgressBar progressSubscriptionPlan;
+    ImageView imgBack;
 
     TextView tvNoDataFound;
     String accessToken;
@@ -56,9 +58,17 @@ public class SubscriptionPlanActivity extends Activity implements SubscriptionPl
         accessToken = SharedPreferenceUtils.getString(SubscriptionPlanActivity.this, Const.ACCESS_TOKEN);
         progressSubscriptionPlan = findViewById(R.id.progressSubscriptionPlan);
         tvNoDataFound = findViewById(R.id.tvNoDataFound);
+        imgBack = findViewById(R.id.imgBack);
         buttonClickListener = this;
         getUserData();
         getPlanApi();
+
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void getPlanApi() {

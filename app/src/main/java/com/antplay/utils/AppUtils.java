@@ -35,6 +35,17 @@ public class AppUtils {
         activity.startActivity(i);
         activity.finish();
     }
+
+    public static void navigateScreenWithoutFinish(Activity activity, Class loginActivityClass){
+        Intent i = new Intent(activity,loginActivityClass);
+        activity.startActivity(i);
+    }
+
+    public static void navigateScreenSendValue(Activity activity, Class loginActivityClass ,String key , String value){
+        Intent i = new Intent(activity,loginActivityClass);
+        i.putExtra(key,value);
+        activity.startActivity(i);
+    }
     public static boolean validateEmailField(Context mContext,EditText edtEmail) {
         if (edtEmail.getText().toString().contains(" ")) {
             edtEmail.setError(mContext.getString(R.string.remove_whitespace));

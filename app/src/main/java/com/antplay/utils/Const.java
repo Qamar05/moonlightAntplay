@@ -12,6 +12,8 @@ public class Const {
 //    public static String emailPattern = "^(?:\\d{10}|\\w+@\\w+\\.\\w{2,3})$";
     public static String emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
     public static String passwordRegex = "^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+    public static String phoneRegex = "^[1-9][0-9]{9,10}$";
+
 
     public static String ACCESS_TOKEN="access_token";
     public static String IS_LOGGED_IN="logged_in";

@@ -45,6 +45,13 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.activity.LoginSignUpActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.activity.SubscriptionPlanActivity"
             android:exported="false">
             <meta-data
@@ -95,26 +102,18 @@
             android:name=".ui.activity.LoginActivity"
             android:exported="false"
             android:resizeableActivity="true" />
-
         <activity
             android:name=".ui.activity.ProfileActivity"
             android:exported="true"
             android:resizeableActivity="true" />
-
-
-
         <activity
             android:name=".ui.activity.EditProfileActivity"
             android:exported="true"
             android:resizeableActivity="true" />
-
-
-
         <activity
             android:name=".ui.activity.ChangePasswordActivity"
             android:exported="true"
             android:resizeableActivity="true" />
-
         <activity
             android:name=".ui.activity.PaymentHistoryActivity"
             android:exported="true"

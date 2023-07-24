@@ -9,6 +9,7 @@ import com.antplay.models.LoginResponse;
 import com.antplay.models.PaymentHistory_modal;
 import com.antplay.models.ResetEmailReq;
 import com.antplay.models.ResultResponse;
+import com.antplay.models.SendOTPResponse;
 import com.antplay.models.StartPaymentReq;
 import com.antplay.models.StartPaymentResp;
 import com.antplay.models.UpdatePinRequestModal;
@@ -19,6 +20,7 @@ import com.antplay.models.UserRegisterResp;
 import com.antplay.models.UserUpdateRequestModal;
 import com.antplay.models.UserUpdateResponseModal;
 import com.antplay.models.UserViewResponse;
+import com.antplay.models.VerifyOTPResponseModal;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -27,6 +29,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Query;
+import retrofit2.http.Url;
 
 
 public interface RetrofitAPI {
@@ -69,5 +73,12 @@ public interface RetrofitAPI {
 
     @GET("userview")
     Call<UserDetailsModal> getUserDetails(@Header("Authorization") String Token);
+
+    @GET
+    Call<SendOTPResponse> sendOTP(@Url String url);
+
+    @POST("verifyOTPView/")
+    Call<VerifyOTPResponseModal> verifyOTP(@Query("phone_number") String phone, @Query("otp") String otp);
+
 
 }

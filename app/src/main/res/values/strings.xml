@@ -356,6 +356,18 @@
     <string name="phone">Phone Number</string>
     <string name="pinCode">Pincode</string>
     <string name="update_profile">Update</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="login_with_otp">Login with OTP</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="enter_registered_mobile">Please, Enter Registered Mobile Number"</string>
+    <string name="enter_otp">Please enter 6 digit OTP</string>
+    <string name="verification_cade_sent_to">We have sent a 6 digit verification code on</string>
+    <string name="error_wrong_otp">Enter valid OTP</string>
+    <string name="verify_otp_text">Didn’t  get code ? We can resend it in</string>
+    <string name="otp_send">Send Otp</string>
+    <string name="otp_verify">Verify</string>
+    <string name="verify_phone">Verify Phone</string>
 
 
 </resources>

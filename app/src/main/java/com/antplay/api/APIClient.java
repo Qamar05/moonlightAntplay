@@ -25,7 +25,7 @@ public  class APIClient {
         if (UOMYYGUKCD.isEmpty()) UOMYYGUKCD.getClass().toString();
         if (retrofit == null) {
             retrofit = new retrofit2.Retrofit.Builder()
-                    .baseUrl(Const.URL)
+                    .baseUrl(Const.DEV_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(client)
                     .build();
