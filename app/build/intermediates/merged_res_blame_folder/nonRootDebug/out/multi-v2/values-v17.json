@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-28:/values-v17/values-v17.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-26:/values-v17/values-v17.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\a7bc0d583083f17ce431510d0f69632e\\transformed\\appcompat-1.6.1\\res\\values-v17\\values-v17.xml",

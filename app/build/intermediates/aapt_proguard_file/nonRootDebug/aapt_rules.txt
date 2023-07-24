@@ -17,12 +17,15 @@
 -keep class com.antplay.ui.activity.HomeActivity { <init>(); }
 -keep class com.antplay.ui.activity.LoginActivity { <init>(); }
 -keep class com.antplay.ui.activity.LoginSignUpActivity { <init>(); }
+-keep class com.antplay.ui.activity.LoginWithOTP { <init>(); }
+-keep class com.antplay.ui.activity.OnBoardingActivity { <init>(); }
 -keep class com.antplay.ui.activity.PaymentHistoryActivity { <init>(); }
 -keep class com.antplay.ui.activity.PcView { <init>(); }
 -keep class com.antplay.ui.activity.ProfileActivity { <init>(); }
 -keep class com.antplay.ui.activity.SignupActivity { <init>(); }
 -keep class com.antplay.ui.activity.SplashActivity { <init>(); }
 -keep class com.antplay.ui.activity.SubscriptionPlanActivity { <init>(); }
+-keep class com.antplay.ui.activity.VerifyOTP { <init>(); }
 -keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.appcompat.app.AlertController$RecycleListView { <init>(android.content.Context, android.util.AttributeSet); }
@@ -55,6 +58,8 @@
 
 -keep class androidx.appcompat.widget.FitWindowsLinearLayout { <init>(android.content.Context, android.util.AttributeSet); }
 
+-keep class androidx.appcompat.widget.LinearLayoutCompat { <init>(android.content.Context, android.util.AttributeSet); }
+
 -keep class androidx.appcompat.widget.SearchView$SearchAutoComplete { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.appcompat.widget.Toolbar { <init>(android.content.Context, android.util.AttributeSet); }
@@ -63,19 +68,15 @@
 
 -keep class androidx.cardview.widget.CardView { <init>(android.content.Context, android.util.AttributeSet); }
 
--keep class androidx.constraintlayout.widget.Barrier { <init>(android.content.Context, android.util.AttributeSet); }
-
 -keep class androidx.constraintlayout.widget.ConstraintLayout { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class androidx.constraintlayout.widget.Guideline { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.coordinatorlayout.widget.CoordinatorLayout { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.core.widget.NestedScrollView { <init>(android.content.Context, android.util.AttributeSet); }
 
--keep class androidx.fragment.app.FragmentContainerView { <init>(android.content.Context, android.util.AttributeSet); }
-
 -keep class androidx.recyclerview.widget.RecyclerView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.viewpager.widget.ViewPager { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class com.antplay.preferences.ConfirmDeleteOscPreference { <init>(...); }
 
@@ -89,14 +90,6 @@
 
 -keep class com.google.android.material.bottomnavigation.BottomNavigationView { <init>(android.content.Context, android.util.AttributeSet); }
 
--keep class com.google.android.material.button.MaterialButton { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.material.button.MaterialButtonToggleGroup { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.material.chip.Chip { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.material.datepicker.MaterialCalendarGridView { <init>(android.content.Context, android.util.AttributeSet); }
-
 -keep class com.google.android.material.internal.BaselineLayout { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class com.google.android.material.internal.CheckableImageButton { <init>(android.content.Context, android.util.AttributeSet); }
@@ -109,15 +102,5 @@
 
 -keep class com.google.android.material.snackbar.SnackbarContentLayout { <init>(android.content.Context, android.util.AttributeSet); }
 
--keep class com.google.android.material.textfield.TextInputEditText { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.material.textfield.TextInputLayout { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.material.timepicker.ChipTextInputComboView { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.material.timepicker.ClockFaceView { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.material.timepicker.ClockHandView { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.material.timepicker.TimePickerView { <init>(android.content.Context, android.util.AttributeSet); }
+-keep class com.google.android.material.tabs.TabLayout { <init>(android.content.Context, android.util.AttributeSet); }
 

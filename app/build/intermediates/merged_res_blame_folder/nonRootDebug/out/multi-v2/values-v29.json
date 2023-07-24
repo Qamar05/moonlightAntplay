@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-28:/values-v29/values-v29.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-26:/values-v29/values-v29.xml",
             "map": [
                 {
                     "source": "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\res\\values-v29\\styles.xml",

@@ -1,5 +1,6 @@
 package com.antplay.ui.activity;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,19 +14,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
-import com.antplay.models.VerifyOTPResponseModal;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.GenericTextWatcher;
 import com.antplay.utils.SharedPreferenceUtils;
-
+import org.json.JSONObject;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+
+
 
 public class VerifyOTP extends Activity implements View.OnClickListener {
 
@@ -87,31 +90,45 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
         String otp = otp_textbox_one.getText().toString()+otp_textbox_two.getText().toString()+otp_textbox_three.getText().toString()+otp_textbox_four.getText().toString()+otp_textbox_five.getText().toString()+otp_textbox_six.getText().toString();
         Log.e("otp get", otp);
         RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
-        Call<VerifyOTPResponseModal> call = retrofitAPI.verifyOTP(getMobile,otp);
-        call.enqueue(new Callback<VerifyOTPResponseModal>() {
+        Call<ResponseBody> call = retrofitAPI.verifyOTP(getMobile,otp);
+        call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<VerifyOTPResponseModal> call, Response<VerifyOTPResponseModal> response) {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    if (response.body().getSuccess().equals("True")) {
-                        SharedPreferenceUtils.saveUserLoggedIn(VerifyOTP.this, Const.IS_LOGGED_IN, true);
-                        SharedPreferenceUtils.saveString(VerifyOTP.this, Const.ACCESS_TOKEN, response.body().getData().getAccess());
-                        AppUtils.navigateScreen(VerifyOTP.this, PcView.class);
+                    String responseValue;
+                    try {
+                        responseValue = response.body().string();
+                        JSONObject jObj =  new JSONObject(responseValue);
+                        if (jObj.getString("success").equals("True")) {
+                            String accessToken = jObj.getJSONObject("data").getString("access");
+                            SharedPreferenceUtils.saveString(VerifyOTP.this, Const.EMAIL_ID, jObj.getString("email"));
+                            SharedPreferenceUtils.saveUserLoggedIn(VerifyOTP.this, Const.IS_LOGGED_IN, true);
+                            SharedPreferenceUtils.saveString(VerifyOTP.this, Const.ACCESS_TOKEN, accessToken);
+                            AppUtils.navigateScreen(VerifyOTP.this, PcView.class);
+                            finishAffinity();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+                else if (response.code() == Const.ERROR_CODE_500 || response.code() == Const.ERROR_CODE_400||response.code() == Const.ERROR_CODE_404) {
+                    try {
+                        JSONObject jObj = new JSONObject(response.errorBody().string());
+                        String detailValue = jObj.getString("error");
+                        Toast.makeText(VerifyOTP.this, detailValue, Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
-                else if (response.code() == Const.ERROR_CODE_500 || response.code() == Const.ERROR_CODE_400||response.code() == Const.ERROR_CODE_404)
-                    Toast.makeText(VerifyOTP.this, getString(R.string.error_wrong_otp), Toast.LENGTH_SHORT).show();
-                  //  AppUtils.showSnack(getWindow().getDecorView().getRootView(),R.color.black,getString(R.string.error_wrong_otp), VerifyOTP.this);
-
-
-                else
-                    Toast.makeText(VerifyOTP.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                   //AppUtils.showSnack(getWindow().getDecorView().getRootView(),R.color.black,response.body().getMessage(), VerifyOTP.this);
-
+                else {
+                    Toast.makeText(VerifyOTP.this, "Something went wrong, please try again later.", Toast.LENGTH_LONG).show();
+                }
 
             }
 
             @Override
-            public void onFailure(Call<VerifyOTPResponseModal> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 AppUtils.showToast(Const.something_went_wrong, VerifyOTP.this);
 
             }

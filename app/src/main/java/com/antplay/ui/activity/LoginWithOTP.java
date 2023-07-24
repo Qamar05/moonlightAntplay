@@ -99,7 +99,7 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.btn_register:
+            case R.id.tv_signupHere_loginWithOTP:
                 AppUtils.navigateScreen(LoginWithOTP.this, SignupActivity.class);
                 break;
             case R.id.btn_letsGo_otp:

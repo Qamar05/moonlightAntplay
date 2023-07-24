@@ -120,9 +120,11 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                             String responseValue = response.body().string();
                             JSONObject jObj =  new JSONObject(responseValue);
                             String accessToken = jObj.getJSONObject("data").getString("access");
-                            Log.d(TAG,"Access Token : "+accessToken);
+                            SharedPreferenceUtils.saveString(LoginActivity.this, Const.EMAIL_ID, jObj.getString("email"));
+                            SharedPreferenceUtils.saveUserLoggedIn(LoginActivity.this, Const.IS_LOGGED_IN, true);
                             SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
                             AppUtils.navigateScreen(LoginActivity.this, PcView.class);
+                            finishAffinity();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

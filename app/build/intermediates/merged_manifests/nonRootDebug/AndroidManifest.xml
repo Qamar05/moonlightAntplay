@@ -122,6 +122,15 @@
         <activity
             android:name="com.antplay.ui.activity.ProfileActivity"
             android:exported="true"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.antplay.ui.activity.LoginWithOTP"
+            android:exported="true"
+            android:resizeableActivity="true" />
+        <activity
+            android:name="com.antplay.ui.activity.VerifyOTP"
+            android:exported="true"
             android:resizeableActivity="true" />
         <activity
             android:name="com.antplay.ui.activity.EditProfileActivity"
@@ -135,6 +144,11 @@
             android:name="com.antplay.ui.activity.PaymentHistoryActivity"
             android:exported="true"
             android:resizeableActivity="true" />
+        <activity
+            android:name="com.antplay.ui.activity.OnBoardingActivity"
+            android:exported="true"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.MyApplication" />
 
         <provider
             android:name="com.antplay.PosterContentProvider"

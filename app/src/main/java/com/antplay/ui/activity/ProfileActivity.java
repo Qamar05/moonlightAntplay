@@ -15,17 +15,20 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.antplay.R;
+import com.antplay.preferences.AddComputerManually;
+import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.DateFormatterHelper;
 import com.antplay.utils.SharedPreferenceUtils;
 
-public class ProfileActivity extends Activity {
+public class ProfileActivity extends AppCompatActivity {
 
     LinearLayout backLinear, logoutLinear, linear_Change, linearAgree, linearWebsite, linearAbout,
             linearPayment, linearEdit, linearDiscord, linearInstagram, linearPrivacyPolicy;
 
     TextView tv_changePassword, tv_manageSubs, txtUserID,txtExpiryDate;
     AlertDialog.Builder builder;
+    String strEmailId;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -33,6 +36,8 @@ public class ProfileActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         getWindow().setStatusBarColor(getResources().getColor(R.color.colorAccentDark_light, this.getTheme()));
+        strEmailId = SharedPreferenceUtils.getString(ProfileActivity.this, Const.EMAIL_ID);
+
         builder = new AlertDialog.Builder(this);
         backLinear = (LinearLayout) findViewById(R.id.back_linear);
         logoutLinear = (LinearLayout) findViewById(R.id.logout_linear);
@@ -48,6 +53,8 @@ public class ProfileActivity extends Activity {
         txtUserID = (TextView) findViewById(R.id.txtUserEmailID);
         txtExpiryDate = (TextView) findViewById(R.id.txtExpiryDate);
         linearPrivacyPolicy = (LinearLayout) findViewById(R.id.linear_privacyPolicy);
+
+        txtUserID.setText(strEmailId);
 
         setData();
 
@@ -76,14 +83,7 @@ public class ProfileActivity extends Activity {
             }
         });
 
-        linear_Change.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ProfileActivity.this, ChangePasswordActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
+        linear_Change.setOnClickListener(v -> AppUtils.navigateScreen(ProfileActivity.this, ChangePasswordActivity.class));
 
 
         linearAgree.setOnClickListener(new View.OnClickListener() {
@@ -158,45 +158,37 @@ public class ProfileActivity extends Activity {
     }
 
     private void logoutMethod() {
-        builder.setMessage(getResources().getString(R.string.are_you_sure))
+        builder.setTitle(getResources().getString(R.string.logout))
+                .setMessage(getResources().getString(R.string.are_you_sure))
                 .setCancelable(false)
-                .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
-                        Intent i = new Intent(ProfileActivity.this, LoginActivity.class);
-                        startActivity(i);
-                        finish();
-                        // Toast.makeText(getApplicationContext(),getResources().getString(R.string.yes), Toast.LENGTH_SHORT).show();
-                    }
+                .setPositiveButton(getResources().getString(R.string.yes), (dialog, id) -> {
+                    SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
+                    SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
+                    SharedPreferenceUtils.saveString(ProfileActivity.this, Const.EMAIL_ID, "");
+                    AppUtils.navigateScreen(ProfileActivity.this, LoginActivity.class);
                 })
-                .setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                        // Toast.makeText(getApplicationContext(),getResources().getString(R.string.no), Toast.LENGTH_SHORT).show();
-                    }
+                .setNegativeButton(getResources().getString(R.string.no), (dialog, id) -> {
+                    dialog.cancel();
                 });
-        //Creating dialog box
-        AlertDialog alert = builder.create();
-        //Setting the title manually
-        alert.setTitle(getResources().getString(R.string.logout));
-        alert.show();
+
+        builder.show();
     }
 
     private void setData() {
-        String firstName = SharedPreferenceUtils.getString(ProfileActivity.this, Const.FIRSTNAME);
-        String lastName = SharedPreferenceUtils.getString(ProfileActivity.this, Const.LASTNAME);
-        String email = SharedPreferenceUtils.getString(ProfileActivity.this, Const.EMAIL_ID);
-        String phoneNumber = SharedPreferenceUtils.getString(ProfileActivity.this, Const.PHONE_NUMBER);
-        String address = SharedPreferenceUtils.getString(ProfileActivity.this, Const.ADDRESS);
-        String state = SharedPreferenceUtils.getString(ProfileActivity.this, Const.STATE);
-        String city = SharedPreferenceUtils.getString(ProfileActivity.this, Const.CITY);
-        String userName = SharedPreferenceUtils.getString(ProfileActivity.this, Const.USERNAME);
-        String expiryDate = SharedPreferenceUtils.getString(ProfileActivity.this, Const.USER_EXPIRY_DATE);
-
-        if (expiryDate!=null){
-            txtExpiryDate.setText(getDateFromSec(Long.parseLong(expiryDate)));
-        }
-        txtUserID.setText(userName);
+//        String firstName = SharedPreferenceUtils.getString(ProfileActivity.this, Const.FIRSTNAME);
+//        String lastName = SharedPreferenceUtils.getString(ProfileActivity.this, Const.LASTNAME);
+//        String email = SharedPreferenceUtils.getString(ProfileActivity.this, Const.EMAIL_ID);
+//        String phoneNumber = SharedPreferenceUtils.getString(ProfileActivity.this, Const.PHONE_NUMBER);
+//        String address = SharedPreferenceUtils.getString(ProfileActivity.this, Const.ADDRESS);
+//        String state = SharedPreferenceUtils.getString(ProfileActivity.this, Const.STATE);
+//        String city = SharedPreferenceUtils.getString(ProfileActivity.this, Const.CITY);
+//        String userName = SharedPreferenceUtils.getString(ProfileActivity.this, Const.USERNAME);
+//        String expiryDate = SharedPreferenceUtils.getString(ProfileActivity.this, Const.USER_EXPIRY_DATE);
+//
+//        if (expiryDate!=null){
+//            txtExpiryDate.setText(getDateFromSec(Long.parseLong(expiryDate)));
+//        }
+//        txtUserID.setText(userName);
         //txtExpiryDate.setText(getDateFromSec(Long.parseLong(expiryDate)));
         //getDateFromSec(Long.parseLong(expiryDate));
        // getDateFromSec(42076800);

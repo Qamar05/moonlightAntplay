@@ -368,6 +368,17 @@
     <string name="otp_send">Send Otp</string>
     <string name="otp_verify">Verify</string>
     <string name="verify_phone">Verify Phone</string>
-
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="skip">Skip</string>
+    <string name="run_remote_pc">Run remote PC</string>
+    <string name="from_smart_phone">and run it from your smartphone</string>
+    <string name="download_pc_game">Download your favorites PC games</string>
+    <string name="any_source">from any source in the internet</string>
+    <string name="play_pc_game">Play PC games on your smartphone</string>
+    <string name="by_using_smartphone">by using screen control</string>
+    <string name="connect_a_gamepad">Connect a gamepad for the game convenience</string>
+    <string name="more_professional">and more professional and precise control</string>
+    <string name="choose_new_pc">CHOOSE A NEW PC</string>
 
 </resources>

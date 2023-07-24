@@ -31,7 +31,8 @@
             android:layout_toEndOf="@id/imgBack"
             android:text="@string/verify_phone"
             android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/imgBack" />
     </RelativeLayout>
 
     <TextView
@@ -148,7 +149,8 @@
         android:layout_marginRight="10dp"
         android:text="@string/verify_otp_text"
         android:textAlignment="center"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:gravity="center_horizontal" />
 
     <LinearLayout
         android:id="@+id/linear_timer"
@@ -167,7 +169,8 @@
             android:text="00:30"
             android:textAlignment="textEnd"
             android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="end" />
 
         <TextView
             android:id="@+id/tv_second"
@@ -189,7 +192,8 @@
         android:textAlignment="center"
         android:textColor="@color/green_button"
         android:textStyle="bold"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:gravity="center_horizontal" />
 
 
     <TextView
@@ -205,6 +209,7 @@
         android:text="@string/otp_verify"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:gravity="center_horizontal" />
 
 </RelativeLayout>

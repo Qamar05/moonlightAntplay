@@ -105,6 +105,15 @@
         <activity
             android:name=".ui.activity.ProfileActivity"
             android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:resizeableActivity="true" />
+        <activity
+            android:name=".ui.activity.LoginWithOTP"
+            android:exported="true"
+            android:resizeableActivity="true" />
+        <activity
+            android:name=".ui.activity.VerifyOTP"
+            android:exported="true"
             android:resizeableActivity="true" />
         <activity
             android:name=".ui.activity.EditProfileActivity"
@@ -117,6 +126,12 @@
         <activity
             android:name=".ui.activity.PaymentHistoryActivity"
             android:exported="true"
+            android:resizeableActivity="true" />
+
+        <activity
+            android:name=".ui.activity.OnBoardingActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyApplication"
             android:resizeableActivity="true" />
 
         <provider
