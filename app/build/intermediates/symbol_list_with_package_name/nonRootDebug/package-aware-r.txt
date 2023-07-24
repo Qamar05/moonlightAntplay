@@ -3288,6 +3288,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_pc_offline
 drawable ic_play
+drawable ic_profile
 drawable ic_settings
 drawable instagram
 drawable list_view_unselected
@@ -3490,6 +3491,8 @@ id bounceStart
 id btnResetPassword
 id btnSignUp
 id btnUpdatePassword
+id btn_login
+id btn_register
 id btn_signup
 id buttonPanel
 id buttonUpdateProfile
@@ -3525,6 +3528,8 @@ id container
 id content
 id contentPanel
 id contiguous
+id continueWithGoogle
+id continueWithOTP
 id continuousVelocity
 id coordinator
 id cos
@@ -3802,6 +3807,7 @@ id plan_Name
 id position
 id postLayout
 id pressed
+id profileButton
 id progressBarEditProfile
 id progressSignUp
 id progressSubscriptionPlan
@@ -3946,6 +3952,7 @@ id tv_mbp
 id tv_ram
 id tv_signupHere
 id tv_ssd
+id tv_termsandc_login
 id txtAlreadyRegister
 id txtDurationInHours
 id txtExpiryDate
@@ -4112,6 +4119,7 @@ layout activity_game
 layout activity_general_web_view
 layout activity_home
 layout activity_login
+layout activity_login_sign_up
 layout activity_payment_history
 layout activity_pc_view
 layout activity_profile
@@ -4313,6 +4321,7 @@ string conn_metered
 string conn_starting
 string conn_terminated_msg
 string conn_terminated_title
+string continue_with_google
 string delete_pc_msg
 string dialog_text_reset_osc
 string dialog_title_osc_opacity
@@ -4372,6 +4381,8 @@ string ip_hint
 string item_view_role_description
 string lastname
 string letsGo
+string login
+string login_with_otp
 string logout
 string lost_connection
 string m3_sys_motion_easing_emphasized
@@ -4526,6 +4537,7 @@ string pincode
 string planName
 string poor_connection_msg
 string privacy_policy
+string register
 string remove_whitespace
 string reset_password
 string resolution_1080p

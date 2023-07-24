@@ -59,8 +59,14 @@
         android:localeConfig="@xml/locales_config"
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.antplay.ui.activity.LoginSignUpActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name="com.antplay.ui.activity.SubscriptionPlanActivity"
             android:exported="false" >

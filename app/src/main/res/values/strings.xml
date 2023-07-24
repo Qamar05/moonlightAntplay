@@ -356,6 +356,10 @@
     <string name="phone">Phone Number</string>
     <string name="pinCode">Pincode</string>
     <string name="update_profile">Update</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="login_with_otp">Login with OTP</string>
+    <string name="continue_with_google">Continue with Google</string>
 
 
 </resources>

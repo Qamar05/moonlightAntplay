@@ -66,7 +66,7 @@ public class ProfileActivity extends Activity {
             public void onClick(View view) {
 //                Intent i = new Intent(ProfileActivity.this, MainActivity.class);
 //                startActivity(i);
-//                finish();
+                finish();
             }
         });
         logoutLinear.setOnClickListener(new View.OnClickListener() {

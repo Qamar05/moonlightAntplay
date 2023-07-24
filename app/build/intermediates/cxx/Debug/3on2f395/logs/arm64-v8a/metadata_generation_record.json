@@ -11,11 +11,11 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 1798449099
+    "memoizedHashCode": -1292044752
   },
   {
     "level_": 0,
-    "message_": "JSON \u0027C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx\\Debug\\3on2f395\\arm64-v8a\\android_gradle_build.json\u0027 was up-to-date",
+    "message_": "rebuilding JSON C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx\\Debug\\3on2f395\\arm64-v8a\\android_gradle_build.json due to:",
     "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
     "tag_": "nonRootDebug|arm64-v8a",
     "diagnosticCode_": 0,
@@ -25,7 +25,147 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 1498835387
+    "memoizedHashCode": 633908937
+  },
+  {
+    "level_": 0,
+    "message_": "- expected json C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx\\Debug\\3on2f395\\arm64-v8a\\android_gradle_build.json file is not present, will remove stale json folder",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -75742057
+  },
+  {
+    "level_": 0,
+    "message_": "- missing previous command file C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx\\Debug\\3on2f395\\arm64-v8a\\metadata_generation_command.txt, will remove stale json folder",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1441173995
+  },
+  {
+    "level_": 0,
+    "message_": "- command changed from previous, will remove stale json folder",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 330532924
+  },
+  {
+    "level_": 0,
+    "message_": "created folder \u0027C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx\\Debug\\3on2f395\\arm64-v8a\u0027",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1207530439
+  },
+  {
+    "level_": 0,
+    "message_": "executing ndkBuild @echo off\n\"C:\\\\Users\\\\qamar\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.2.8568313\\\\ndk-build.cmd\" ^\n  \"NDK_PROJECT_PATH\u003dnull\" ^\n  \"APP_BUILD_SCRIPT\u003dC:\\\\Users\\\\qamar\\\\AndroidStudioProjects\\\\moonlight-android\\\\app\\\\src\\\\main\\\\jni\\\\Android.mk\" ^\n  \"NDK_APPLICATION_MK\u003dC:\\\\Users\\\\qamar\\\\AndroidStudioProjects\\\\moonlight-android\\\\app\\\\src\\\\main\\\\jni\\\\Application.mk\" ^\n  \"APP_ABI\u003darm64-v8a\" ^\n  \"NDK_ALL_ABIS\u003darm64-v8a\" ^\n  \"NDK_DEBUG\u003d1\" ^\n  \"APP_PLATFORM\u003dandroid-16\" ^\n  \"NDK_OUT\u003dC:\\\\Users\\\\qamar\\\\AndroidStudioProjects\\\\moonlight-android\\\\app\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\3on2f395/obj\" ^\n  \"NDK_LIBS_OUT\u003dC:\\\\Users\\\\qamar\\\\AndroidStudioProjects\\\\moonlight-android\\\\app\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\3on2f395/lib\" ^\n  \"PRODUCT_FLAVOR\u003dnonRoot\" ^\n  \"APP_SHORT_COMMANDS\u003dfalse\" ^\n  \"LOCAL_SHORT_COMMANDS\u003dfalse\" ^\n  -B ^\n  -n\n",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 459113720
+  },
+  {
+    "level_": 0,
+    "message_": "@echo off\n\"C:\\\\Users\\\\qamar\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.2.8568313\\\\ndk-build.cmd\" ^\n  \"NDK_PROJECT_PATH\u003dnull\" ^\n  \"APP_BUILD_SCRIPT\u003dC:\\\\Users\\\\qamar\\\\AndroidStudioProjects\\\\moonlight-android\\\\app\\\\src\\\\main\\\\jni\\\\Android.mk\" ^\n  \"NDK_APPLICATION_MK\u003dC:\\\\Users\\\\qamar\\\\AndroidStudioProjects\\\\moonlight-android\\\\app\\\\src\\\\main\\\\jni\\\\Application.mk\" ^\n  \"APP_ABI\u003darm64-v8a\" ^\n  \"NDK_ALL_ABIS\u003darm64-v8a\" ^\n  \"NDK_DEBUG\u003d1\" ^\n  \"APP_PLATFORM\u003dandroid-16\" ^\n  \"NDK_OUT\u003dC:\\\\Users\\\\qamar\\\\AndroidStudioProjects\\\\moonlight-android\\\\app\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\3on2f395/obj\" ^\n  \"NDK_LIBS_OUT\u003dC:\\\\Users\\\\qamar\\\\AndroidStudioProjects\\\\moonlight-android\\\\app\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\3on2f395/lib\" ^\n  \"PRODUCT_FLAVOR\u003dnonRoot\" ^\n  \"APP_SHORT_COMMANDS\u003dfalse\" ^\n  \"LOCAL_SHORT_COMMANDS\u003dfalse\" ^\n  -B ^\n  -n\n",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1448115787
+  },
+  {
+    "level_": 0,
+    "message_": "parse and convert ndk-build output to build configuration JSON",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1226950389
+  },
+  {
+    "level_": 0,
+    "message_": "found application make file C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Application.mk",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1061067978
+  },
+  {
+    "level_": 0,
+    "message_": "done executing ndkBuild",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 637896177
+  },
+  {
+    "level_": 0,
+    "message_": "write command file C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\build\\.cxx\\Debug\\3on2f395\\arm64-v8a\\metadata_generation_command.txt",
+    "file_": "C:\\Users\\qamar\\AndroidStudioProjects\\moonlight-android\\app\\src\\main\\jni\\Android.mk",
+    "tag_": "nonRootDebug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 979401619
   },
   {
     "level_": 0,
@@ -39,6 +179,6 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 751786312
+    "memoizedHashCode": 1956259757
   }
 ]

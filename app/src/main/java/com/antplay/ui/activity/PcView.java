@@ -151,7 +151,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         ImageButton addComputerButton = findViewById(R.id.manuallyAddPc);
         ImageButton helpButton = findViewById(R.id.helpButton);
 
-        profileButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, StreamSettings.class)));
+        profileButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, ProfileActivity.class)));
         settingsButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, StreamSettings.class)));
         addComputerButton.setOnClickListener(v -> {
             Intent i = new Intent(PcView.this, AddComputerManually.class);

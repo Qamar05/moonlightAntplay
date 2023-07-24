@@ -167,6 +167,7 @@
 -keep class com.antplay.ui.activity.GeneralWebViewActivity { <init>(); }
 -keep class com.antplay.ui.activity.HomeActivity { <init>(); }
 -keep class com.antplay.ui.activity.LoginActivity { <init>(); }
+-keep class com.antplay.ui.activity.LoginSignUpActivity { <init>(); }
 -keep class com.antplay.ui.activity.PaymentHistoryActivity { <init>(); }
 -keep class com.antplay.ui.activity.PcView { <init>(); }
 -keep class com.antplay.ui.activity.ProfileActivity { <init>(); }

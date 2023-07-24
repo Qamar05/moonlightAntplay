@@ -28,11 +28,11 @@ public class SplashActivity extends Activity {
             }
             else if(isNotFirstTime){
                 // This method will be execute once the timer is over
-                i = new Intent(SplashActivity.this, LoginActivity.class);
+                i = new Intent(SplashActivity.this, LoginSignUpActivity.class);
             }else {
                 // This method will be execute once the timer is over
                // i = new Intent(SplashActivity.this, OnBoardingActivity.class);
-                i = new Intent(SplashActivity.this, LoginActivity.class);
+                i = new Intent(SplashActivity.this, LoginSignUpActivity.class);
             }
             startActivity(i);
             finish();
