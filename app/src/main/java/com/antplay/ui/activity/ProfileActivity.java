@@ -99,6 +99,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
                     SharedPreferenceUtils.saveString(ProfileActivity.this, Const.EMAIL_ID, "");
                     AppUtils.navigateScreen(ProfileActivity.this, LoginSignUpActivity.class);
+                    finishAffinity();
                 })
                 .setNegativeButton(getResources().getString(R.string.no), (dialog, id) -> {
                     dialog.cancel();

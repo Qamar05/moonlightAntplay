@@ -147,7 +147,6 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
                     getUserDetails();
                     Toast.makeText(EditProfileActivity.this, Const.profile_updated_success, Toast.LENGTH_SHORT).show();
 //                    AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, Const.profile_updated_success, EditProfileActivity.this);
-                    finish();
 
                 } else if (response.code() == Const.ERROR_CODE_400 || response.code() == Const.ERROR_CODE_500) {
                     progressBar.setVisibility(View.GONE);
