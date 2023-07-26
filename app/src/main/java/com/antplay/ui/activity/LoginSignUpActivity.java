@@ -15,7 +15,6 @@ import com.antplay.utils.Const;
 public class LoginSignUpActivity extends Activity implements View.OnClickListener {
     Button btnLogin, btnRegister, btnGoogleLogin, btn_otp;
     Context mContext;
-
     TextView tv_tandC;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +41,6 @@ public class LoginSignUpActivity extends Activity implements View.OnClickListene
                 break;
             case R.id.tv_termsandc_login:
                 AppUtils.navigateScreenSendValue((Activity) mContext, GeneralWebViewActivity.class,Const.REDIRECT_URL,Const.TERMS_AND_CONDITION_URL);
-
                 break;
             case R.id.btn_login:
                 AppUtils.navigateScreenWithoutFinish((Activity) mContext, LoginActivity.class);

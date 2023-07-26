@@ -67,12 +67,4 @@ public class GenericTextWatcher implements TextWatcher {
                 break;
         }
     }
-
-   /* @Override
-    public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-    }
-
-    @Override
-    public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3 , int arg4, int arg5) {
-    }*/
 }

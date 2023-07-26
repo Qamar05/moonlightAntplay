@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-26:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-29:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\fb7116196c481d237063c2d46ff6cdcc\\transformed\\core-1.9.0\\res\\values-en-rAU\\values-en-rAU.xml",

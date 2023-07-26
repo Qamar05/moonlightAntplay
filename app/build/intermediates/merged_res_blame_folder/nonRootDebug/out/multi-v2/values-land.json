@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-26:/values-land/values-land.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-29:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\358a46423796d290be80369ddc6fdd25\\transformed\\material-1.0.0\\res\\values-land\\values-land.xml",

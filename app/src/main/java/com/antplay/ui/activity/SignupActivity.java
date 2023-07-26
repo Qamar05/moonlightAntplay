@@ -47,6 +47,8 @@ public class SignupActivity extends Activity implements View.OnClickListener {
     String strState, strFirstName, strMiddleName, strLastName, strPhoneNumber, strEmail, strPassword, strAge, strAddress, strPinCode, strCity;
     RetrofitAPI retrofitAPI;
     Context mContext;
+    ArrayList<String> stateList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,7 @@ public class SignupActivity extends Activity implements View.OnClickListener {
         spinnerState = (Spinner) findViewById(R.id.spinnerState);
         edtCity = (EditText) findViewById(R.id.edtCity);
         progressBar = (ProgressBar) findViewById(R.id.progressSignUp);
-         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
+        retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
 
         btnSignup = (Button) findViewById(R.id.btnSignUp);
         txtAlreadyRegister = (TextView) findViewById(R.id.txtAlreadyRegister);
@@ -76,57 +78,10 @@ public class SignupActivity extends Activity implements View.OnClickListener {
         txtUserAgreement.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
 
-
-
-        // Spinner Drop down elements
-        List<String> stateList = new ArrayList<String>();
-        stateList.add("Andaman and Nicobar Islands");
-        stateList.add("Andhra Pradesh");
-        stateList.add("Arunachal Pradesh");
-        stateList.add("Assam");
-        stateList.add("Bihar");
-        stateList.add("Chandigarh");
-        stateList.add("Chhattisgarh");
-        stateList.add("Dadra and Nagar Haveli");
-        stateList.add("Daman and Diu");
-        stateList.add("Delhi");
-        stateList.add("Goa");
-        stateList.add("Gujarat");
-        stateList.add("Haryana");
-        stateList.add("Himachal Pradesh");
-        stateList.add("Jammu and Kashmir");
-        stateList.add("Jharkhand");
-        stateList.add("Karnataka");
-        stateList.add("Kerala");
-        stateList.add("Ladakh");
-        stateList.add("Lakshadweep");
-        stateList.add("Madhya Pradesh");
-        stateList.add("Maharashtra");
-        stateList.add("Manipur");
-        stateList.add("Meghalaya");
-        stateList.add("Mizoram");
-        stateList.add("Nagaland");
-        stateList.add("Odisha");
-        stateList.add("Puducherry");
-        stateList.add("Punjab");
-        stateList.add("Rajasthan");
-        stateList.add("Sikkim");
-        stateList.add("Tamil Nadu");
-        stateList.add("Telangana");
-        stateList.add("Tripura");
-        stateList.add("Uttar Pradesh");
-        stateList.add("Uttarakhand");
-        stateList.add("West Bengal");
-
-        // Creating adapter for spinner
+        stateList  =  AppUtils.stateList();
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stateList);
-
-        // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
         spinnerState.setAdapter(dataAdapter);
-
         spinnerState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -138,11 +93,6 @@ public class SignupActivity extends Activity implements View.OnClickListener {
 
             }
         });
-
-
-
-
-
     }
 
     private void callRegisterApi(String strFirstName, String strMiddleName, String strLastName,
@@ -164,7 +114,7 @@ public class SignupActivity extends Activity implements View.OnClickListener {
                     if(response.body()!=null) {
                         Toast.makeText(SignupActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                       if(response.body().isStatus())
-                        AppUtils.navigateScreen(SignupActivity.this, LoginActivity.class);
+                        AppUtils.navigateScreen((Activity) mContext, LoginActivity.class);
                     }
 
                 }
@@ -172,7 +122,6 @@ public class SignupActivity extends Activity implements View.OnClickListener {
                 @Override
                 public void onFailure(Call<UserRegisterResp> call, Throwable t) {
                     progressBar.setVisibility(View.GONE);
-                    Log.i("Error: ", "" + t.getMessage());
                 }
             });
         }
@@ -231,17 +180,6 @@ public class SignupActivity extends Activity implements View.OnClickListener {
             edtPassword.setError(getString(R.string.pass_regex));
             return false;
         }
-
-        /*if (edtConfirmPassword.getText().toString().contains(" ")) {
-            edtConfirmPassword.setError(getString(R.string.remove_whitespace));
-            return false;
-        } else if (edtConfirmPassword.length() == 0) {
-            edtConfirmPassword.setError(getString(R.string.error_confirmPass));
-            return false;
-        } else if (edtConfirmPassword.length() < 8) {
-            edtConfirmPassword.setError(getString(R.string.error_Confirmpass_minimum));
-            return false;
-        }*/
         if (!edtPassword.getText().toString().equals(edtConfirmPassword.getText().toString())) {
             edtConfirmPassword.setError(getString(R.string.error_password_not_match));
             return false;
@@ -290,12 +228,10 @@ public class SignupActivity extends Activity implements View.OnClickListener {
                 isUserAgreementChecked = chkBoxUserAgreement.isChecked();
                 break;
             case R.id.txtAlreadyRegister:
-                AppUtils.navigateScreen(SignupActivity.this, LoginActivity.class);
+                AppUtils.navigateScreen((Activity) mContext, LoginActivity.class);
                 break;
             case R.id.txtUserAgreement:
-                Intent intent = new Intent(SignupActivity.this, GeneralWebViewActivity.class);
-                intent.putExtra(Const.REDIRECT_URL, Const.TERMS_AND_CONDITION_URL);
-                startActivity(intent);
+                AppUtils.navigateScreenSendValue((Activity) mContext, GeneralWebViewActivity.class,Const.REDIRECT_URL, Const.TERMS_AND_CONDITION_URL);
                 break;
             case R.id.btnSignUp:
                 if (validateFormField()) {

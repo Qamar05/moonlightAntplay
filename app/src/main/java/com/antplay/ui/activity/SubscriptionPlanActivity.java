@@ -60,7 +60,7 @@ public class SubscriptionPlanActivity extends Activity implements SubscriptionPl
         tvNoDataFound = findViewById(R.id.tvNoDataFound);
         imgBack = findViewById(R.id.imgBack);
         buttonClickListener = this;
-        getUserData();
+
         getPlanApi();
 
         imgBack.setOnClickListener(new View.OnClickListener() {
@@ -125,38 +125,6 @@ public class SubscriptionPlanActivity extends Activity implements SubscriptionPl
                 }
             });
         } else
-            Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
-    }
-
-    private void getUserData() {
-        if (AppUtils.isOnline(mContext)) {
-            progressSubscriptionPlan.setVisibility(View.VISIBLE);
-            Call<UserViewResponse> call = retrofitAPI.getUserView("Bearer " + accessToken);
-            call.enqueue(new Callback<UserViewResponse>() {
-                @Override
-                public void onResponse(Call<UserViewResponse> call, Response<UserViewResponse> response) {
-                    progressSubscriptionPlan.setVisibility(View.GONE);
-                    if (response != null) {
-                        Toast.makeText(SubscriptionPlanActivity.this, "" + response.body().getEmail(), Toast.LENGTH_SHORT).show();
-                        SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.USERNAME, response.body().getUsername());
-                        SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.FIRSTNAME, response.body().getFirst_name());
-                        SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.LASTNAME, response.body().getLast_name());
-                        SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.EMAIL_ID, response.body().getEmail());
-                        SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.PHONE_NUMBER, response.body().getPhone_number());
-                        SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.STATE, response.body().getState());
-                        SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.CITY, response.body().getCity());
-                        SharedPreferenceUtils.saveString(SubscriptionPlanActivity.this, Const.PINCODE, response.body().getPincode());
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<UserViewResponse> call, Throwable t) {
-                    progressSubscriptionPlan.setVisibility(View.GONE);
-                    Log.i("Error: ", "" + t.getMessage());
-                }
-            });
-        }
-        else
             Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
     }
 }

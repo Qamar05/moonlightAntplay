@@ -19,6 +19,8 @@ import com.antplay.models.UserRegisterResp;
 import com.antplay.models.UserUpdateRequestModal;
 import com.antplay.models.UserUpdateResponseModal;
 import com.antplay.models.UserViewResponse;
+import com.antplay.models.VMTimerReq;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -33,47 +35,36 @@ import retrofit2.http.Url;
 public interface RetrofitAPI {
     @GET("getallbillingplan")
     Call<AllBillingPlanResp> getAllBillingPlan();
-
     @GET("getbillingplan")
     Call<AllBillingPlanResp> getBillingPlan(@Header("Authorization") String token);
-
     @GET("userview")
     Call<UserViewResponse> getUserView(@Header("Authorization") String token);
-
     @POST("vmauth/")
     Call<UpdatePinResponseModal> updatePin(@Header("Authorization") String token, @Body UpdatePinRequestModal updatePinRequestModal);
-
     @GET("getvm/")
     Call<GetVMResponse> getVMFromServer(@Header("Authorization") String token);
-
     @POST("login/")
     Call<ResponseBody> userLogin(@Body LoginRequestModal loginRequestModal);
-
     @POST("register/")
     Call<UserRegisterResp> userRegister(@Body UserRegisterRequest userRegisterRequest);
-
     @POST("request-reset-email/")
     Call<ResultResponse> forgotPassword(@Body ResetEmailReq resetEmailReq);
-
     @PUT("change_password")
     Call<ChangePasswordResp> changePassword(@Header("Authorization") String token , @Body ChangePassReq changePassReq);
-
     @GET("getpaymenthistory")
     Call<PaymentHistory_modal> getPaymentHistory(@Header("Authorization") String Token);
-
     @POST("start_payment/")
     Call<StartPaymentResp> startPayment(@Header("Authorization") String token , @Body StartPaymentReq startPaymentReq);
-
     @PUT("userupdate/")
     Call<UserUpdateResponseModal> userUpdate(@Header("Authorization") String Token, @Body UserUpdateRequestModal userUpdateRequestModal);
-
-
     @GET("userview")
     Call<UserDetailsModal> getUserDetails(@Header("Authorization") String Token);
-
     @GET
     Call<SendOTPResponse> sendOTP(@Url String url);
-
     @POST("verifyOTPView/")
     Call<ResponseBody> verifyOTP(@Query("phone_number") String phone, @Query("otp") String otp);
+    @POST("startvmtime/")
+    Call<ResponseBody> startVmTime(@Header("Authorization") String token, @Body VMTimerReq vmTimerReq);
+    @POST("endvmtime/")
+    Call<ResponseBody> endVmTime(@Header("Authorization") String token, @Body VMTimerReq vmTimerReq);
 }

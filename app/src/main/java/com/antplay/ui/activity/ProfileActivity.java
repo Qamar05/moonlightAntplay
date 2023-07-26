@@ -1,11 +1,13 @@
 package com.antplay.ui.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,28 +17,42 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.antplay.R;
+import com.antplay.api.APIClient;
+import com.antplay.api.RetrofitAPI;
+import com.antplay.models.UserDetailsModal;
 import com.antplay.preferences.AddComputerManually;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.DateFormatterHelper;
 import com.antplay.utils.SharedPreferenceUtils;
 
-public class ProfileActivity extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     LinearLayout backLinear, logoutLinear, linear_Change, linearAgree, linearWebsite, linearAbout,
             linearPayment, linearEdit, linearDiscord, linearInstagram, linearPrivacyPolicy;
 
-    TextView tv_changePassword, tv_manageSubs, txtUserID,txtExpiryDate;
+    TextView  tv_manageSubs, txtUserID,txtExpiryDate;
     AlertDialog.Builder builder;
-    String strEmailId;
+    String strEmailId,access_token;
+    Context mContext;
+    long days = 0, month = 0,year = 0;
+    int[] daysOfMonths = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    RetrofitAPI retrofitAPI;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        mContext = ProfileActivity.this;
+        retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         getWindow().setStatusBarColor(getResources().getColor(R.color.colorAccentDark_light, this.getTheme()));
-        strEmailId = SharedPreferenceUtils.getString(ProfileActivity.this, Const.EMAIL_ID);
+        strEmailId = SharedPreferenceUtils.getString(mContext, Const.EMAIL_ID);
+        access_token = SharedPreferenceUtils.getString(mContext, Const.ACCESS_TOKEN);
 
         builder = new AlertDialog.Builder(this);
         backLinear = (LinearLayout) findViewById(R.id.back_linear);
@@ -56,106 +72,23 @@ public class ProfileActivity extends AppCompatActivity {
 
         txtUserID.setText(strEmailId);
 
-        setData();
+        tv_manageSubs.setOnClickListener(this);
+        backLinear.setOnClickListener(this);
+        logoutLinear.setOnClickListener(this);
+        linear_Change.setOnClickListener(this);
+        linearAgree.setOnClickListener(this);
+        linearPrivacyPolicy.setOnClickListener(this);
+        linearWebsite.setOnClickListener(this);
+        linearDiscord.setOnClickListener(this);
+        linearInstagram.setOnClickListener(this);
+        linearAbout.setOnClickListener(this);
+        linearPayment.setOnClickListener(this);
+        linearEdit.setOnClickListener(this);
+        getUserDetails();
 
-        tv_manageSubs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ProfileActivity.this, SubscriptionPlanActivity.class);
-                startActivity(i);
-
-            }
-        });
-
-
-        backLinear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent i = new Intent(ProfileActivity.this, MainActivity.class);
-//                startActivity(i);
-                finish();
-            }
-        });
-        logoutLinear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                logoutMethod();
-            }
-        });
-
-        linear_Change.setOnClickListener(v -> AppUtils.navigateScreen(ProfileActivity.this, ChangePasswordActivity.class));
-
-
-        linearAgree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               /* Intent i = new Intent(ProfileActivity.this, Agreement_User.class);
-                startActivity(i);*/
-                Intent intent = new Intent(ProfileActivity.this, GeneralWebViewActivity.class);
-                intent.putExtra(Const.REDIRECT_URL, Const.TERMS_AND_CONDITION_URL);
-                startActivity(intent);
-
-            }
-        });
-
-        linearPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, GeneralWebViewActivity.class);
-                intent.putExtra(Const.REDIRECT_URL, Const.PRIVACY_POLICY_URL);
-                startActivity(intent);
-            }
-        });
-
-        linearWebsite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://antplay.tech/"));
-                startActivity(browserIntent);
-            }
-        });
-        linearDiscord.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://discord.gg/vGHsh8MYXX"));
-                startActivity(browserIntent);
-            }
-        });
-        linearInstagram.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/antplay.tech/"));
-                startActivity(browserIntent);
-            }
-        });
-
-
-        linearAbout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               /* Intent i = new Intent(ProfileActivity.this, AboutUs.class);
-                startActivity(i);*/
-
-                Intent intent = new Intent(ProfileActivity.this, GeneralWebViewActivity.class);
-                intent.putExtra(Const.REDIRECT_URL, Const.ABOUT_US_URL);
-                startActivity(intent);
-            }
-        });
-        linearPayment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ProfileActivity.this, PaymentHistoryActivity.class);
-                startActivity(i);
-            }
-        });
-        linearEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ProfileActivity.this, EditProfileActivity.class);
-                startActivity(i);
-            }
-        });
     }
+
+
 
     private void logoutMethod() {
         builder.setTitle(getResources().getString(R.string.logout))
@@ -165,7 +98,7 @@ public class ProfileActivity extends AppCompatActivity {
                     SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
                     SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
                     SharedPreferenceUtils.saveString(ProfileActivity.this, Const.EMAIL_ID, "");
-                    AppUtils.navigateScreen(ProfileActivity.this, LoginActivity.class);
+                    AppUtils.navigateScreen(ProfileActivity.this, LoginSignUpActivity.class);
                 })
                 .setNegativeButton(getResources().getString(R.string.no), (dialog, id) -> {
                     dialog.cancel();
@@ -174,32 +107,9 @@ public class ProfileActivity extends AppCompatActivity {
         builder.show();
     }
 
-    private void setData() {
-//        String firstName = SharedPreferenceUtils.getString(ProfileActivity.this, Const.FIRSTNAME);
-//        String lastName = SharedPreferenceUtils.getString(ProfileActivity.this, Const.LASTNAME);
-//        String email = SharedPreferenceUtils.getString(ProfileActivity.this, Const.EMAIL_ID);
-//        String phoneNumber = SharedPreferenceUtils.getString(ProfileActivity.this, Const.PHONE_NUMBER);
-//        String address = SharedPreferenceUtils.getString(ProfileActivity.this, Const.ADDRESS);
-//        String state = SharedPreferenceUtils.getString(ProfileActivity.this, Const.STATE);
-//        String city = SharedPreferenceUtils.getString(ProfileActivity.this, Const.CITY);
-//        String userName = SharedPreferenceUtils.getString(ProfileActivity.this, Const.USERNAME);
-//        String expiryDate = SharedPreferenceUtils.getString(ProfileActivity.this, Const.USER_EXPIRY_DATE);
-//
-//        if (expiryDate!=null){
-//            txtExpiryDate.setText(getDateFromSec(Long.parseLong(expiryDate)));
-//        }
-//        txtUserID.setText(userName);
-        //txtExpiryDate.setText(getDateFromSec(Long.parseLong(expiryDate)));
-        //getDateFromSec(Long.parseLong(expiryDate));
-       // getDateFromSec(42076800);
-
-    }
 
 
-    long days = 0;
-    long month = 0;
-    long year = 0;
-    int[] daysOfMonths = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
 
     private String getDateFromSec(long expiryDateInSec) {
         String dayStr, monthStr, yearStr;
@@ -283,5 +193,84 @@ public class ProfileActivity extends AppCompatActivity {
         } else {
             return 365;
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.tv_manageSubscription:
+                AppUtils.navigateScreenWithoutFinish((Activity) mContext, SubscriptionPlanActivity.class);
+                break;
+            case R.id.back_linear:
+                finish();
+                break;
+            case R.id.logout_linear:
+                logoutMethod();
+                break;
+            case R.id.linear_changePassword:
+                AppUtils.navigateScreenWithoutFinish((Activity)mContext, ChangePasswordActivity.class);
+                break;
+            case R.id.linear_agreements:
+                AppUtils.navigateScreenSendValue((Activity) mContext, GeneralWebViewActivity.class,Const.REDIRECT_URL, Const.TERMS_AND_CONDITION_URL);
+                break;
+            case R.id.linear_privacyPolicy:
+                AppUtils.navigateScreenSendValue((Activity) mContext, GeneralWebViewActivity.class,Const.REDIRECT_URL, Const.PRIVACY_POLICY_URL);
+                    break;
+            case R.id.linear_website:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Const.WEBSITE_URL));
+                startActivity(browserIntent);
+                break;
+            case R.id.linear_discord:
+                Intent disordIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Const.DISCORD_URL));
+                startActivity(disordIntent);
+                break;
+            case R.id.linear_instagram:
+                Intent instaIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Const.INSTAGRAM_URL));
+                startActivity(instaIntent);
+                break;
+            case R.id.linear_aboutUs:
+                AppUtils.navigateScreenSendValue((Activity) mContext, GeneralWebViewActivity.class,Const.REDIRECT_URL, Const.ABOUT_US_URL);
+                break;
+            case R.id.linear_paymentHistory:
+                AppUtils.navigateScreenWithoutFinish((Activity) mContext, PaymentHistoryActivity.class);
+                break;
+            case R.id.linear_edit:
+                AppUtils.navigateScreenWithoutFinish((Activity) mContext, EditProfileActivity.class);
+                break;
+        }
+    }
+    private void getUserDetails() {
+        Call<UserDetailsModal> call = retrofitAPI.getUserDetails("Bearer " + access_token);
+        call.enqueue(new Callback<UserDetailsModal>() {
+            @Override
+            public void onResponse(Call<UserDetailsModal> call, Response<UserDetailsModal> response) {
+                if (response.isSuccessful()) {
+
+                   // progressBar.setVisibility(View.GONE);
+                    SharedPreferenceUtils.saveString(mContext, Const.FIRSTNAME, response.body().getFirstName());
+                    SharedPreferenceUtils.saveString(mContext, Const.LASTNAME, response.body().getLastName());
+                    SharedPreferenceUtils.saveString(mContext, Const.EMAIL_ID, response.body().getEmail());
+                    SharedPreferenceUtils.saveString(mContext, Const.PHONE_NUMBER, response.body().getPhoneNumber());
+                    SharedPreferenceUtils.saveString(mContext, Const.ADDRESS, response.body().getAddress());
+                    SharedPreferenceUtils.saveString(mContext, Const.STATE, response.body().getState());
+                    SharedPreferenceUtils.saveString(mContext, Const.CITY, response.body().getCity());
+                    SharedPreferenceUtils.saveString(mContext, Const.USERNAME, response.body().getUsername());
+                    SharedPreferenceUtils.saveString(mContext, Const.PINCODE, response.body().getPincode());
+                    String expiryDate =  response.body().getExpire();
+                    if (expiryDate!=null)
+                        txtExpiryDate.setText(getDateFromSec(Long.parseLong(expiryDate)));
+                    txtUserID.setText(response.body().getEmail());
+                } else {
+                    //  progressBar.setVisibility(View.GONE);
+                    AppUtils.showToast(Const.no_records, mContext);
+                }
+            }
+            @Override
+            public void onFailure(Call<UserDetailsModal> call, Throwable t) {
+            //    progressBar.setVisibility(View.GONE);
+                AppUtils.showToast(Const.something_went_wrong, mContext);
+            }
+        });
+
     }
 }

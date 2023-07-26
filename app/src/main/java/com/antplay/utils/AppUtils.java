@@ -18,6 +18,9 @@ import com.antplay.ui.activity.LoginActivity;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class AppUtils {
 
     public static void showToast(String msg, Context ctx) {
@@ -68,5 +71,46 @@ public class AppUtils {
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         // should check null because in air plan mode it will be null
         return (netInfo != null && netInfo.isConnected());
+    }
+    public  static ArrayList<String> stateList(){
+        ArrayList<String> stateList =  new ArrayList<>();
+        stateList.add("Andaman and Nicobar Islands");
+        stateList.add("Andhra Pradesh");
+        stateList.add("Arunachal Pradesh");
+        stateList.add("Assam");
+        stateList.add("Bihar");
+        stateList.add("Chandigarh");
+        stateList.add("Chhattisgarh");
+        stateList.add("Dadra and Nagar Haveli");
+        stateList.add("Daman and Diu");
+        stateList.add("Delhi");
+        stateList.add("Goa");
+        stateList.add("Gujarat");
+        stateList.add("Haryana");
+        stateList.add("Himachal Pradesh");
+        stateList.add("Jammu and Kashmir");
+        stateList.add("Jharkhand");
+        stateList.add("Karnataka");
+        stateList.add("Kerala");
+        stateList.add("Ladakh");
+        stateList.add("Lakshadweep");
+        stateList.add("Madhya Pradesh");
+        stateList.add("Maharashtra");
+        stateList.add("Manipur");
+        stateList.add("Meghalaya");
+        stateList.add("Mizoram");
+        stateList.add("Nagaland");
+        stateList.add("Odisha");
+        stateList.add("Puducherry");
+        stateList.add("Punjab");
+        stateList.add("Rajasthan");
+        stateList.add("Sikkim");
+        stateList.add("Tamil Nadu");
+        stateList.add("Telangana");
+        stateList.add("Tripura");
+        stateList.add("Uttar Pradesh");
+        stateList.add("Uttarakhand");
+        stateList.add("West Bengal");
+        return stateList;
     }
 }

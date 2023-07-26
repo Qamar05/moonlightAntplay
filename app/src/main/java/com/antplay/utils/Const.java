@@ -32,6 +32,7 @@ public class Const {
     public static String PINCODE="pincode";
 
     public static final String city_should_not_empty = "City should not be empty ";
+
     public static final String address_should_not_empty = "Address should not be empty";
     public static final String enter_valid_picCode = "Enter 6 digit Valid PinCode ";
 
@@ -62,6 +63,12 @@ public class Const {
     public static String TERMS_AND_CONDITION_URL="https://antplay.tech/termsAndConditionsForApp";
     public static String PRIVACY_POLICY_URL="https://antplay.tech/privacyPolicyForApp";
     public static String ABOUT_US_URL="https://antplay.tech/aboutUsForApp";
+    public static String WEBSITE_URL="https://antplay.tech/";
+    public static String DISCORD_URL="https://discord.gg/vGHsh8MYXX";
+
+    public static String INSTAGRAM_URL="https://www.instagram.com/antplay.tech/";
+
+
     public static String FAQ_URL="https://antplay.tech/faqForApp";
 
 }

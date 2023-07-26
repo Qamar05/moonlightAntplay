@@ -1,8 +1,8 @@
 package com.antplay.ui.activity;
 
+
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,14 +13,12 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.SendOTPResponse;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,6 +27,7 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
 
     EditText edt_phone;
     Button btn_lestGo;
+
     boolean isPhoneNumberEntered = false;
     ProgressBar progressBar;
     TextView tv_register;
@@ -50,11 +49,9 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
 
         tv_register.setOnClickListener(this);
         btn_lestGo.setOnClickListener(this);
-
     }
 
     private void callSendOTP() {
-
         progressBar.setVisibility(View.VISIBLE);
         RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         Call<SendOTPResponse> call = retrofitAPI.sendOTP(Const.URL+"getuserbyphone/"+phoneValue);
@@ -66,8 +63,6 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
                     AppUtils.navigateScreenSendValue(LoginWithOTP.this, VerifyOTP.class ,"mobile",phoneValue);
                 } else if (response.code() == Const.ERROR_CODE_404) {
                     progressBar.setVisibility(View.GONE);
-                    Log.e("hi 404--", response.message());
-                    Log.e("hi 404--", edt_phone.getText().toString());
                     Toast.makeText(mContext, getString(R.string.enter_registered_mobile), Toast.LENGTH_SHORT).show();
                   //  AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, getString(R.string.enter_registered_mobile), LoginWithOTP.this);
                 }
@@ -76,7 +71,6 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
             @Override
             public void onFailure(Call<SendOTPResponse> call, Throwable t) {
                 progressBar.setVisibility(View.GONE);
-                Log.e("hi else--", t.getMessage());
                 Toast.makeText(mContext, t.getMessage(), Toast.LENGTH_SHORT).show();
                // AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, t.getMessage(), LoginWithOTP.this);
 

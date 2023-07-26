@@ -114,7 +114,7 @@ public class OnBoardingActivity extends AppCompatActivity implements View.OnClic
         Log.d("PAGER", "Current Item: " + currentItem);
         if (currentItem == 6) {
             SharedPreferenceUtils.saveBoolean(OnBoardingActivity.this, Const.IS_FIRST_TIME,true);
-            AppUtils.navigateScreen(OnBoardingActivity.this, LoginActivity.class);
+            AppUtils.navigateScreen(OnBoardingActivity.this, LoginSignUpActivity.class);
         } else {
             viewPager.setCurrentItem(currentItem);
         }

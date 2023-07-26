@@ -47,14 +47,6 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
 
         setOnClickListener();
 
-        backLinear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent i = new Intent(ChangePassword.this, ProfileActivity.class);
-//                startActivity(i);
-//                finish();
-            }
-        });
     }
 
     private void setOnClickListener() {
@@ -68,17 +60,13 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnUpdatePassword:
-              //  isAllFieldsChecked = CheckAllLoginFields();
-                if(CheckAllFields()){
+                if(CheckAllFields())
                     callChangePasswordAPI();
-                }
                 break;
-            case R.id.back_linear: {
-//                Intent i = new Intent(ChangePassword.this, ProfileActivity.class);
-//                startActivity(i);
-//                finish();
+            case R.id.back_linear:
+                 AppUtils.navigateScreen(ChangePasswordActivity.this, ProfileActivity.class);
+                 break;
             }
-        }
     }
 
     private boolean CheckAllFields() {
@@ -110,10 +98,8 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
             @Override
             public void onResponse(Call<ChangePasswordResp> call, Response<ChangePasswordResp> response) {
                 if (response.code() == 200) {
-                    Log.d("BILLING_PLANjjj", "success" );
                     progressBar.setVisibility(View.GONE);
-                    AppUtils.navigateScreen(ChangePasswordActivity.this, LoginActivity.class);
-
+                    AppUtils.navigateScreen(ChangePasswordActivity.this, PcView.class);
                 }
                 else if (response.code() == Const.ERROR_CODE_404){
                     progressBar.setVisibility(View.GONE);
@@ -137,7 +123,6 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
 
             @Override
             public void onFailure(Call<ChangePasswordResp> call, Throwable t) {
-                Log.d("BILLING_PLAN", "Failure");
                 progressBar.setVisibility(View.GONE);
                 AppUtils.showSnack(getWindow().getDecorView().getRootView(),R.color.black,Const.something_went_wrong, ChangePasswordActivity.this);
 

@@ -3,6 +3,7 @@ package com.antplay.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -20,8 +21,16 @@ import com.antplay.api.RetrofitAPI;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.GenericTextWatcher;
+import com.antplay.utils.SMSReceiver;
 import com.antplay.utils.SharedPreferenceUtils;
+import com.google.android.gms.auth.api.phone.SmsRetriever;
+import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
+
 import org.json.JSONObject;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,6 +46,10 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
     ImageView img_back;
     LinearLayout linearLayout;
     String getMobile;
+    SMSReceiver smsBroadcastReceiver;
+
+    private static final int REQ_USER_CONSENT = 200;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +89,8 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
         otp_textbox_five.addTextChangedListener(new GenericTextWatcher(otp_textbox_five, edit));
         otp_textbox_six.addTextChangedListener(new GenericTextWatcher(otp_textbox_six, edit));
 
+        startSmartUserConsent();
+        registerBroadcastReceiver();
         callTimer();
 
 
@@ -88,7 +103,6 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
 
     private void callVerifyOTP() {
         String otp = otp_textbox_one.getText().toString()+otp_textbox_two.getText().toString()+otp_textbox_three.getText().toString()+otp_textbox_four.getText().toString()+otp_textbox_five.getText().toString()+otp_textbox_six.getText().toString();
-        Log.e("otp get", otp);
         RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         Call<ResponseBody> call = retrofitAPI.verifyOTP(getMobile,otp);
         call.enqueue(new Callback<ResponseBody>() {
@@ -101,7 +115,7 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
                         JSONObject jObj =  new JSONObject(responseValue);
                         if (jObj.getString("success").equals("True")) {
                             String accessToken = jObj.getJSONObject("data").getString("access");
-                            SharedPreferenceUtils.saveString(VerifyOTP.this, Const.EMAIL_ID, jObj.getString("email"));
+                         //   SharedPreferenceUtils.saveString(VerifyOTP.this, Const.EMAIL_ID, jObj.getString("email"));
                             SharedPreferenceUtils.saveUserLoggedIn(VerifyOTP.this, Const.IS_LOGGED_IN, true);
                             SharedPreferenceUtils.saveString(VerifyOTP.this, Const.ACCESS_TOKEN, accessToken);
                             AppUtils.navigateScreen(VerifyOTP.this, PcView.class);
@@ -183,5 +197,61 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
                 break;
         }
 
+    }
+
+    private void registerBroadcastReceiver(){
+        smsBroadcastReceiver = new SMSReceiver();
+        smsBroadcastReceiver.smsBroadcastReceiverListener = new SMSReceiver.SmsBroadcastReceiverListener() {
+            @Override
+            public void onSuccess(Intent intent) {
+                startActivityForResult(intent,REQ_USER_CONSENT);
+            }
+
+            @Override
+            public void onFailure() {
+
+            }
+        };
+
+        IntentFilter intentFilter = new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION);
+        registerReceiver(smsBroadcastReceiver,intentFilter);
+    }
+
+    private void startSmartUserConsent() {
+        SmsRetrieverClient client = SmsRetriever.getClient(this);
+        client.startSmsUserConsent(null);
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(smsBroadcastReceiver);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQ_USER_CONSENT) {
+            if ((resultCode == RESULT_OK) && (data != null)) {
+                String message = data.getStringExtra(SmsRetriever.EXTRA_SMS_MESSAGE);
+                getOtpFromMessage(message);
+            }
+        }
+    }
+
+    private void getOtpFromMessage(String message) {
+        Pattern otpPattern = Pattern.compile("(|^)\\d{6}");
+        Matcher matcher = otpPattern.matcher(message);
+        if (matcher.find()){
+            String otpValue = matcher.group(0);
+            otp_textbox_one.setText(String.valueOf(otpValue.charAt(0)));
+            otp_textbox_two.setText(String.valueOf(otpValue.charAt(1)));
+            otp_textbox_three.setText(String.valueOf(otpValue.charAt(2)));
+            otp_textbox_four.setText(String.valueOf(otpValue.charAt(3)));
+            otp_textbox_five.setText(String.valueOf(otpValue.charAt(4)));
+            otp_textbox_six.setText(String.valueOf(otpValue.charAt(5)));
+
+        }
     }
 }
