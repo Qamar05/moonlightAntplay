@@ -336,32 +336,32 @@ public class AddComputerManually extends Activity {
 
     private void getVMFromServer() {
 
-        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
-        String accessToken = SharedPreferenceUtils.getString(AddComputerManually.this, Const.ACCESS_TOKEN);
-        Log.d(TAG, " Access Token : " + accessToken);
-        Call<GetVMResponse> call = retrofitAPI.getVMFromServer("Bearer " + accessToken);
-        call.enqueue(new Callback<GetVMResponse>() {
-            @Override
-            public void onResponse(Call<GetVMResponse> call, Response<GetVMResponse> response) {
-                // progressBar_checkIn.setVisibility(View.GONE);
-                // assert response.body() != null;
-
-                Log.d(TAG, " Response Code : " + response.code());
-                if (response.isSuccessful()) {
-                    String vmIp = response.body().getData().get(0).getVmIp();
-                    Log.d(TAG, " VM IP : " + vmIp);
-                    //Toast.makeText(AddComputerManually.this, "VM IP : "+vmIp, Toast.LENGTH_SHORT).show();
-                    hostText.setText(vmIp);
-                } else {
-                    Toast.makeText(AddComputerManually.this, "API Hit Successful, Status : false", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<GetVMResponse> call, Throwable t) {
-                Toast.makeText(AddComputerManually.this, "Something went wrong" + t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
+//        String accessToken = SharedPreferenceUtils.getString(AddComputerManually.this, Const.ACCESS_TOKEN);
+//        Log.d(TAG, " Access Token : " + accessToken);
+//        Call<GetVMResponse> call = retrofitAPI.getVMFromServer("Bearer " + accessToken);
+//        call.enqueue(new Callback<GetVMResponse>() {
+//            @Override
+//            public void onResponse(Call<GetVMResponse> call, Response<GetVMResponse> response) {
+//                // progressBar_checkIn.setVisibility(View.GONE);
+//                // assert response.body() != null;
+//
+//                Log.d(TAG, " Response Code : " + response.code());
+//                if (response.isSuccessful()) {
+//                    String vmIp = response.body().getData().get(0).getVmIp();
+//                    Log.d(TAG, " VM IP : " + vmIp);
+//                    //Toast.makeText(AddComputerManually.this, "VM IP : "+vmIp, Toast.LENGTH_SHORT).show();
+//                    hostText.setText(vmIp);
+//                } else {
+//                    Toast.makeText(AddComputerManually.this, "API Hit Successful, Status : false", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<GetVMResponse> call, Throwable t) {
+//                Toast.makeText(AddComputerManually.this, "Something went wrong" + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
 

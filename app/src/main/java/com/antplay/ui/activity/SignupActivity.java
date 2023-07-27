@@ -106,19 +106,16 @@ public class SignupActivity extends Activity implements View.OnClickListener {
                     strAddress, strAge, strState, strCity, strPinCode, strPassword);
 
             Call<UserRegisterResp> call = retrofitAPI.userRegister(userRegisterRequestv);
-
-            call.enqueue(new Callback<UserRegisterResp>() {
+            call.enqueue(new Callback<>() {
                 @Override
                 public void onResponse(Call<UserRegisterResp> call, Response<UserRegisterResp> response) {
                     progressBar.setVisibility(View.GONE);
-                    if(response.body()!=null) {
+                    if (response.body() != null) {
                         Toast.makeText(SignupActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                      if(response.body().isStatus())
-                        AppUtils.navigateScreen((Activity) mContext, LoginActivity.class);
+                        if (response.body().isStatus())
+                            AppUtils.navigateScreen((Activity) mContext, LoginActivity.class);
                     }
-
                 }
-
                 @Override
                 public void onFailure(Call<UserRegisterResp> call, Throwable t) {
                     progressBar.setVisibility(View.GONE);
@@ -142,12 +139,10 @@ public class SignupActivity extends Activity implements View.OnClickListener {
             edtLastName.setError(getString(R.string.remove_whitespace));
             return false;
         }
-
         if (edtLastName.length() == 0) {
             edtLastName.setError(getString(R.string.error_lastname));
             return false;
         }
-
         if (edtPhoneNumber.getText().toString().contains(" ")) {
             edtPhoneNumber.setError(getString(R.string.remove_whitespace));
             return false;
@@ -166,7 +161,6 @@ public class SignupActivity extends Activity implements View.OnClickListener {
             edtEmail.setError(getString(R.string.error_invalidEmail));
             return false;
         }
-
         if (edtPassword.getText().toString().contains(" ")) {
             edtPassword.setError(getString(R.string.remove_whitespace));
             return false;
@@ -202,7 +196,6 @@ public class SignupActivity extends Activity implements View.OnClickListener {
             edtCity.setError(getString(R.string.error_city));
             return false;
         }
-
         if (edtPinCode.getText().toString().contains(" ")) {
             edtPinCode.setError(getString(R.string.remove_whitespace));
             return false;
@@ -211,7 +204,6 @@ public class SignupActivity extends Activity implements View.OnClickListener {
             edtPinCode.setError(getString(R.string.error_pinCode));
             return false;
         }
-
         if (!chkBoxUserAgreement.isChecked()) {
               Toast.makeText(this, getString(R.string.error_checkbox), Toast.LENGTH_SHORT).show();
             //AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, getString(R.string.error_checkbox), RegisterActivity.this);
@@ -235,7 +227,6 @@ public class SignupActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btnSignUp:
                 if (validateFormField()) {
-                    // we can call Api here
                     strFirstName = edtFirstName.getText().toString().trim();
                     strLastName = edtLastName.getText().toString().trim();
                     strEmail = edtEmail.getText().toString().trim();
@@ -246,9 +237,7 @@ public class SignupActivity extends Activity implements View.OnClickListener {
                     strAge = edtAge.getText().toString().trim();
                     strCity = edtCity.getText().toString().trim();
                     strPinCode = edtPinCode.getText().toString();
-
                     callRegisterApi(strFirstName, strMiddleName,strLastName, strEmail, strPhoneNumber, lastLogin, isNewUser, isSubscribed, strPassword, strAddress, strAge, strState, strCity, strPinCode);
-
                 }
                 break;
         }

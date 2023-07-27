@@ -7,6 +7,8 @@
 
     -->
     <style name="AppBaseTheme" parent="android:Theme">
+        <item name="android:itemBackground">@color/white</item>
+        <item name="colorPrimary">@color/white</item>
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -20,6 +22,8 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+
+
     </style>
 
     <style name="StreamBaseTheme" parent="AppBaseTheme">
@@ -40,6 +44,14 @@
     </style>
 
     <style name="TabAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    </style>
+
+    <style name="MyPopupAppTheme" parent="Theme.AppCompat.Light">
+        <item name="popupMenuStyle">@style/popupMenuStyle</item>
+    </style>
+
+    <style name="popupMenuStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@android:color/white</item>
     </style>
 
 </resources>

@@ -34,6 +34,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -292,6 +293,7 @@ public class AppView extends Activity implements AdapterFragmentCallbacks {
         UiHelper.setLocale(this);
 
         setContentView(R.layout.activity_app_view);
+        Log.i("testtt" , "2");
 
         // Allow floating expanded PiP overlays while browsing apps
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -309,6 +311,7 @@ public class AppView extends Activity implements AdapterFragmentCallbacks {
         }
 
         String computerName = getIntent().getStringExtra(NAME_EXTRA);
+
 
         TextView label = findViewById(R.id.appListText);
         setTitle(computerName);
@@ -631,11 +634,14 @@ public class AppView extends Activity implements AdapterFragmentCallbacks {
             public void onItemClick(AdapterView<?> arg0, View arg1, int pos,
                                     long id) {
                 AppObject app = (AppObject) appGridAdapter.getItem(pos);
+                Log.i("testtt" , "3");
 
                 // Only open the context menu if something is running, otherwise start it
                 if (lastRunningAppId != 0) {
+                    Log.i("testtt" , "4");
                     openContextMenu(arg1);
                 } else {
+                    Log.i("testtt" , "5");
                     ServerHelper.doStart(AppView.this, app.app, computer, managerBinder);
                 }
             }

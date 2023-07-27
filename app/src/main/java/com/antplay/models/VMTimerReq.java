@@ -8,6 +8,11 @@ public class VMTimerReq {
     @Expose
     private String vmid;
 
+
+    public VMTimerReq(String vmid) {
+        this.vmid = vmid;
+    }
+
     public String getVmid() {
         return vmid;
     }

@@ -74,7 +74,7 @@ public class SubscriptionPlanActivity extends Activity implements SubscriptionPl
     private void getPlanApi() {
         if (AppUtils.isOnline(mContext)) {
             progressSubscriptionPlan.setVisibility(View.VISIBLE);
-            Call<AllBillingPlanResp> call = retrofitAPI.getBillingPlan("Bearer " + accessToken);
+            Call<AllBillingPlanResp> call = retrofitAPI.getBillingPlan("Bearer " + accessToken,"android");
             call.enqueue(new Callback<AllBillingPlanResp>() {
                 @Override
                 public void onResponse(Call<AllBillingPlanResp> call, Response<AllBillingPlanResp> response) {

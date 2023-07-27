@@ -1,25 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-29:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-31:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\358a46423796d290be80369ddc6fdd25\\transformed\\material-1.0.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\e66b148cde062fd5c5e8b006265846a1\\transformed\\material-1.4.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,10,11,12",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,115,185,256,328,386,444,553,617,680",
-                        "endLines": "2,3,4,5,6,7,9,10,11,15",
-                        "endColumns": "59,69,70,71,57,57,10,63,62,10",
-                        "endOffsets": "110,180,251,323,381,439,548,612,675,847"
+                        "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,185,256,328,386,444,553,617,673,732,795",
+                        "endLines": "2,3,4,5,6,7,9,10,11,12,13,17",
+                        "endColumns": "59,69,70,71,57,57,10,63,55,58,62,10",
+                        "endOffsets": "110,180,251,323,381,439,548,612,668,727,790,962"
                     },
                     "to": {
-                        "startLines": "670,671,672,673,674,675,676,678,679,680",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "29169,29229,29299,29370,29442,29500,29558,29667,29731,29794",
-                        "endLines": "670,671,672,673,674,675,677,678,679,683",
-                        "endColumns": "59,69,70,71,57,57,10,63,62,10",
-                        "endOffsets": "29224,29294,29365,29437,29495,29553,29662,29726,29789,29961"
+                        "startLines": "670,671,672,673,674,675,676,678,679,680,681,682",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "29169,29229,29299,29370,29442,29500,29558,29667,29731,29787,29846,29909",
+                        "endLines": "670,671,672,673,674,675,677,678,679,680,681,685",
+                        "endColumns": "59,69,70,71,57,57,10,63,55,58,62,10",
+                        "endOffsets": "29224,29294,29365,29437,29495,29553,29662,29726,29782,29841,29904,30076"
                     }
                 },
                 {

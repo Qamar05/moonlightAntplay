@@ -1,11 +1,17 @@
 package com.antplay.ui.activity;
 
+
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,9 +19,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.antplay.R;
 import com.antplay.api.APIClient;
@@ -23,28 +31,36 @@ import com.antplay.api.RetrofitAPI;
 import com.antplay.models.UserDetailsModal;
 import com.antplay.models.UserUpdateRequestModal;
 import com.antplay.models.UserUpdateResponseModal;
+import com.antplay.ui.adapter.StateListAdapter;
+import com.antplay.ui.adapter.SubscriptionPlanAdapter;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.SharedPreferenceUtils;
+import com.skydoves.powermenu.CustomPowerMenu;
+import com.skydoves.powermenu.MenuAnimation;
+import com.skydoves.powermenu.OnMenuItemClickListener;
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EditProfileActivity extends Activity implements View.OnClickListener {
 
+public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener, StateListAdapter.ButtonClickListener {
     private String TAG = "ANT_PLAY";
     LinearLayout linearLayout;
-    EditText edTxtName, edTxtUserName, edTxtPhoneNumber, edTxtEmail, edTxtAge, edTxtCity, edTxtAddress, edTxtState, editTextPinCode;
+    EditText edTxtName, edTxtUserName, edTxtPhoneNumber, edTxtEmail, edTxtAge, edTxtState , edTxtCity, edTxtAddress, editTextPinCode;
     Button buttonUpdateProfile;
     Spinner spinnerStateList;
     private ProgressBar progressBar;
     List<String> stateList;
     String st_state;
-    String access_token , email, phoneNumber;
+    String access_token, email, phoneNumber;
     RetrofitAPI retrofitAPI;
     Context mContext;
+    Dialog dialog;
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -52,7 +68,8 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         getWindow().setStatusBarColor(getResources().getColor(R.color.colorAccentDark_light, this.getTheme()));
-        mContext =  EditProfileActivity.this;
+        mContext = EditProfileActivity.this;
+
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         access_token = SharedPreferenceUtils.getString(EditProfileActivity.this, Const.ACCESS_TOKEN);
         email = SharedPreferenceUtils.getString(EditProfileActivity.this, Const.EMAIL_ID);
@@ -66,6 +83,7 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
         edTxtAge = findViewById(R.id.edTxtAge);
         edTxtCity = findViewById(R.id.edTxtCity);
         edTxtAddress = findViewById(R.id.edTxtAddress);
+        edTxtState = findViewById(R.id.edTxtState);
         editTextPinCode = findViewById(R.id.edTxtPinCode);
         spinnerStateList = findViewById(R.id.spinnerStateList);
         buttonUpdateProfile = findViewById(R.id.buttonUpdateProfile);
@@ -74,36 +92,17 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
 
         linearLayout.setOnClickListener(this);
         buttonUpdateProfile.setOnClickListener(this);
+        edTxtState.setOnClickListener(this);
 
-        setStateListAdapter();
+        stateList = new ArrayList<>();
+        stateList = AppUtils.stateList();
         getUserDetails();
 
     }
 
 
-
-    private void setStateListAdapter() {
-        stateList = new ArrayList<String>();
-        stateList =  AppUtils.stateList();
-        ArrayAdapter<String> stateAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stateList);
-        stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerStateList.setAdapter(stateAdapter);
-        spinnerStateList.setPrompt("your state here");
-        spinnerStateList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                st_state = parent.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
-
     private void setData(UserDetailsModal userDetail) {
-        if (userDetail.getFirstName()!= null || userDetail.getLastName()!= null)
+        if (userDetail.getFirstName() != null || userDetail.getLastName() != null)
             edTxtName.setText(userDetail.getFirstName() + " " + userDetail.getLastName());
 
         if (userDetail.getUsername() != null)
@@ -114,6 +113,9 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
 
         if (userDetail.getEmail() != null)
             edTxtEmail.setText(userDetail.getEmail());
+
+        if (userDetail.getState() != null)
+            edTxtState.setText(userDetail.getState());
 
         if (userDetail.getCity() != null)
             edTxtCity.setText(userDetail.getCity());
@@ -133,7 +135,7 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
 
     private void updateUserProfile() {
         progressBar.setVisibility(View.VISIBLE);
-        UserUpdateRequestModal updateRequestModal = new UserUpdateRequestModal(email,phoneNumber,
+        UserUpdateRequestModal updateRequestModal = new UserUpdateRequestModal(email, phoneNumber,
                 edTxtAddress.getText().toString().trim(),
                 st_state,
                 edTxtCity.getText().toString().trim(),
@@ -153,7 +155,7 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
                     Log.e(TAG, "Else condition");
                     Toast.makeText(EditProfileActivity.this, Const.enter_valid_data, Toast.LENGTH_SHORT).show();
 //                    AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, Const.enter_valid_data, EditProfileActivity.this);
-                }  else {
+                } else {
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(EditProfileActivity.this, Const.something_went_wrong, Toast.LENGTH_SHORT).show();
 //                    AppUtils.showSnsssack(getWindow().getDecorView().getRootView(), R.color.black, Const.something_went_wrong, EditProfileActivity.this);
@@ -206,9 +208,14 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.back_linear_edit:
                 finish();
+                break;
+
+            case R.id.edTxtState:
+//                openStatePopup(view);
+                openStateDialog();
                 break;
             case R.id.buttonUpdateProfile:
                 if (edTxtCity.getText().toString().trim().length() == 0) {
@@ -220,8 +227,31 @@ public class EditProfileActivity extends Activity implements View.OnClickListene
                 } else {
                     updateUserProfile();
                 }
-                    break;
+                break;
+        }
+    }
+
+    private void openStateDialog() {
+        dialog = new Dialog(EditProfileActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.state_dialog_layout);
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        RecyclerView rvStateList =(RecyclerView) dialog.findViewById(R.id.rvStateList);
+        StateListAdapter.ButtonClickListener buttonClickListener = EditProfileActivity.this;
+        if(stateList!=null) {
+            StateListAdapter adapter = new StateListAdapter(mContext, stateList, buttonClickListener);
+            rvStateList.setAdapter(adapter);
         }
 
+
+        dialog.show();
+    }
+
+    @Override
+    public void onButtonClick(int value) {
+        dialog.dismiss();
+        edTxtState.setText(stateList.get(value));
     }
 }

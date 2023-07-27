@@ -1,6 +1,8 @@
 package com.antplay;
 
 
+import com.antplay.api.APIClient;
+import com.antplay.api.RetrofitAPI;
 import com.antplay.binding.PlatformBinding;
 import com.antplay.binding.audio.AndroidAudioRenderer;
 import com.antplay.binding.input.ControllerHandler;
@@ -17,6 +19,10 @@ import com.antplay.binding.video.CrashListener;
 import com.antplay.binding.video.MediaCodecDecoderRenderer;
 import com.antplay.binding.video.MediaCodecHelper;
 import com.antplay.binding.video.PerfOverlayListener;
+import com.antplay.models.MessageResponse;
+import com.antplay.models.ResultResponse;
+import com.antplay.models.UserDetailsModal;
+import com.antplay.models.VMTimerReq;
 import com.antplay.nvstream.NvConnection;
 import com.antplay.nvstream.NvConnectionListener;
 import com.antplay.nvstream.StreamConfiguration;
@@ -28,10 +34,14 @@ import com.antplay.nvstream.input.MouseButtonPacket;
 import com.antplay.nvstream.jni.MoonBridge;
 import com.antplay.preferences.GlPreferences;
 import com.antplay.preferences.PreferenceConfiguration;
+import com.antplay.ui.activity.EditProfileActivity;
 import com.antplay.ui.intrface.GameGestures;
 import com.antplay.ui.intrface.StreamView;
+import com.antplay.utils.AppUtils;
+import com.antplay.utils.Const;
 import com.antplay.utils.Dialog;
 import com.antplay.utils.ServerHelper;
+import com.antplay.utils.SharedPreferenceUtils;
 import com.antplay.utils.ShortcutHelper;
 import com.antplay.utils.SpinnerDialog;
 import com.antplay.utils.UiHelper;
@@ -59,6 +69,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.util.Log;
 import android.util.Rational;
 import android.view.Display;
 import android.view.InputDevice;
@@ -78,6 +89,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.ByteArrayInputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -85,6 +99,11 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Locale;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class Game extends Activity implements SurfaceHolder.Callback,
@@ -160,6 +179,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             binder.setStateListener(Game.this);
             binder.start();
             connectedToUsbDriverService = true;
+
+
         }
 
         @Override
@@ -178,6 +199,9 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     public static final String EXTRA_PC_NAME = "PcName";
     public static final String EXTRA_APP_HDR = "HDR";
     public static final String EXTRA_SERVER_CERT = "ServerCert";
+    String accessToken , strVMId;
+    RetrofitAPI retrofitAPI;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,6 +234,10 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
         // Inflate the content
         setContentView(R.layout.activity_game);
+        retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
+        accessToken = SharedPreferenceUtils.getString(Game.this, Const.ACCESS_TOKEN);
+        getVM();
+
 
         // Start the spinner
         spinner = SpinnerDialog.displayDialog(this, getResources().getString(R.string.conn_establishing_title),
@@ -1877,6 +1905,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         if (connecting || connected) {
             connecting = connected = false;
             updatePipAutoEnter();
+            endVMTimeAPi();
 
             controllerHandler.stop();
 
@@ -2046,8 +2075,10 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                     spinner.dismiss();
                     spinner = null;
                 }
-
                 connected = true;
+
+                startVMTimeAPi();
+
                 connecting = false;
                 updatePipAutoEnter();
 
@@ -2074,6 +2105,80 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             }
         });
     }
+
+    private void startVMTimeAPi() {
+        VMTimerReq vmTimerReq = new VMTimerReq(strVMId);
+        Call<MessageResponse> call = retrofitAPI.startVmTime("Bearer " + accessToken , vmTimerReq);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
+//                if (response.body().getSuccess().equalsIgnoreCase("True"))
+//                 //   Toast.makeText(Game.this, "", Toast.LENGTH_SHORT).show();
+//                    else {
+//                 //   progressBar.setVisibility(View.GONE);
+//                 //   AppUtils.showToast(Const.no_records, Game.this);
+//                }
+            }
+            @Override
+            public void onFailure(Call<MessageResponse> call, Throwable t) {
+                Log.e("testttttt", "" + t);
+               // progressBar.setVisibility(View.GONE);
+                AppUtils.showToast(Const.something_went_wrong, Game.this);
+            }
+        });
+    }
+
+    private void endVMTimeAPi() {
+        VMTimerReq vmTimerReq = new VMTimerReq(strVMId);
+        Call<MessageResponse> call = retrofitAPI.endVmTime("Bearer " + accessToken , vmTimerReq);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
+//                {"success":"True","message":"Your vm time End"}
+//                if (response.body().string()) {
+//                    if()
+//                    //      progressBar.setVisibility(View.GONE);
+//                } else {
+//                    //   progressBar.setVisibility(View.GONE);
+//                    AppUtils.showToast(Const.no_records, Game.this);
+//                }
+            }
+            @Override
+            public void onFailure(Call<MessageResponse> call, Throwable t) {
+                Log.e("testttttt", "" + t);
+                // progressBar.setVisibility(View.GONE);
+                AppUtils.showToast(Const.something_went_wrong, Game.this);
+            }
+        });
+    }
+
+   private void getVM() {
+        Call<ResponseBody> call = retrofitAPI.getVMFromServer("Bearer " + accessToken);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    try{
+                        JSONObject jsonObject = new JSONObject(response.body().string());
+                        JSONArray jsonArray = jsonObject.getJSONArray("data");
+                        strVMId = jsonArray.getJSONObject(0).getString("vmid");
+                    }
+                    catch (Exception e){
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                // progressBar.setVisibility(View.GONE);
+                AppUtils.showToast(Const.something_went_wrong, Game.this);
+            }
+        });
+    }
+
+
+
+
+
 
     @Override
     public void displayMessage(final String message) {

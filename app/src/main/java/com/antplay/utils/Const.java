@@ -13,8 +13,6 @@ public class Const {
     public static String emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
     public static String passwordRegex = "^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
     public static String phoneRegex = "^[1-9][0-9]{9,10}$";
-
-
     public static String ACCESS_TOKEN="access_token";
     public static String IS_LOGGED_IN="logged_in";
     public static String IS_FIRST_TIME="is_first_time";
@@ -40,22 +38,13 @@ public class Const {
     public static String pinCodeRegex = "^[1-9][0-9]{5}$";
     public static final String profile_updated_success = "Profile Updated Successfully ";
     public static final String enter_valid_data = "Enter Valid Data ";
-
-
     public static final Integer ERROR_CODE_500 = 500;
-    public static final String ERROR_CODE_500_SERVER_ERROR = "500 Internal Server Error";
     public static String no_records = "No Records Found";
     public static final Integer ERROR_CODE_400 = 400;
     public static final Integer ERROR_CODE_404 = 404;
 
     public static final Integer SUCCESS_CODE_200 = 200;
     public static String something_went_wrong = "Something went wrong";
-
-
-
-
-
-
 
     /*****
      * Intent Values
@@ -65,10 +54,7 @@ public class Const {
     public static String ABOUT_US_URL="https://antplay.tech/aboutUsForApp";
     public static String WEBSITE_URL="https://antplay.tech/";
     public static String DISCORD_URL="https://discord.gg/vGHsh8MYXX";
-
     public static String INSTAGRAM_URL="https://www.instagram.com/antplay.tech/";
-
-
     public static String FAQ_URL="https://antplay.tech/faqForApp";
 
 }

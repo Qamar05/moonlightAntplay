@@ -135,7 +135,8 @@
         <activity
             android:name="com.antplay.ui.activity.EditProfileActivity"
             android:exported="true"
-            android:resizeableActivity="true" />
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.MyApplication" />
         <activity
             android:name="com.antplay.ui.activity.ChangePasswordActivity"
             android:exported="true"

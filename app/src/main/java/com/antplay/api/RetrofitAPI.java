@@ -5,6 +5,7 @@ import com.antplay.models.ChangePassReq;
 import com.antplay.models.ChangePasswordResp;
 import com.antplay.models.GetVMResponse;
 import com.antplay.models.LoginRequestModal;
+import com.antplay.models.MessageResponse;
 import com.antplay.models.PaymentHistory_modal;
 import com.antplay.models.ResetEmailReq;
 import com.antplay.models.ResultResponse;
@@ -36,13 +37,11 @@ public interface RetrofitAPI {
     @GET("getallbillingplan")
     Call<AllBillingPlanResp> getAllBillingPlan();
     @GET("getbillingplan")
-    Call<AllBillingPlanResp> getBillingPlan(@Header("Authorization") String token);
-    @GET("userview")
-    Call<UserViewResponse> getUserView(@Header("Authorization") String token);
+    Call<AllBillingPlanResp> getBillingPlan(@Header("Authorization") String token , @Query("user_type") String userType);
     @POST("vmauth/")
     Call<UpdatePinResponseModal> updatePin(@Header("Authorization") String token, @Body UpdatePinRequestModal updatePinRequestModal);
-    @GET("getvm/")
-    Call<GetVMResponse> getVMFromServer(@Header("Authorization") String token);
+    @GET("getvm")
+    Call<ResponseBody> getVMFromServer(@Header("Authorization") String token);
     @POST("login/")
     Call<ResponseBody> userLogin(@Body LoginRequestModal loginRequestModal);
     @POST("register/")
@@ -64,7 +63,7 @@ public interface RetrofitAPI {
     @POST("verifyOTPView/")
     Call<ResponseBody> verifyOTP(@Query("phone_number") String phone, @Query("otp") String otp);
     @POST("startvmtime/")
-    Call<ResponseBody> startVmTime(@Header("Authorization") String token, @Body VMTimerReq vmTimerReq);
+    Call<MessageResponse> startVmTime(@Header("Authorization") String token, @Body VMTimerReq vmTimerReq);
     @POST("endvmtime/")
-    Call<ResponseBody> endVmTime(@Header("Authorization") String token, @Body VMTimerReq vmTimerReq);
+    Call<MessageResponse> endVmTime(@Header("Authorization") String token, @Body VMTimerReq vmTimerReq);
 }

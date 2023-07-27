@@ -591,6 +591,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
             return;
         }
 
+        Log.i("testtt" , "1");
         Intent i = new Intent(this, AppView.class);
         i.putExtra(AppView.NAME_EXTRA, computer.name);
         i.putExtra(AppView.UUID_EXTRA, computer.uuid);

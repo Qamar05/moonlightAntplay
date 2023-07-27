@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-29:/values-nb-rNO/values-nb-rNO.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-31:/values-nb-rNO/values-nb-rNO.xml",
             "map": [
                 {
                     "source": "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\res\\values-nb-rNO\\strings.xml",

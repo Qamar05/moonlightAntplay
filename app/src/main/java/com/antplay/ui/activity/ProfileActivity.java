@@ -1,14 +1,24 @@
 package com.antplay.ui.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -36,7 +46,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             linearPayment, linearEdit, linearDiscord, linearInstagram, linearPrivacyPolicy;
 
     TextView  tv_manageSubs, txtUserID,txtExpiryDate;
-    AlertDialog.Builder builder;
     String strEmailId,access_token;
     Context mContext;
     long days = 0, month = 0,year = 0;
@@ -54,7 +63,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         strEmailId = SharedPreferenceUtils.getString(mContext, Const.EMAIL_ID);
         access_token = SharedPreferenceUtils.getString(mContext, Const.ACCESS_TOKEN);
 
-        builder = new AlertDialog.Builder(this);
         backLinear = (LinearLayout) findViewById(R.id.back_linear);
         logoutLinear = (LinearLayout) findViewById(R.id.logout_linear);
         linearAgree = (LinearLayout) findViewById(R.id.linear_agreements);
@@ -91,22 +99,34 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
 
     private void logoutMethod() {
-        builder.setTitle(getResources().getString(R.string.logout))
-                .setMessage(getResources().getString(R.string.are_you_sure))
-                .setCancelable(false)
-                .setPositiveButton(getResources().getString(R.string.yes), (dialog, id) -> {
-                    SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
-                    SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
-                    SharedPreferenceUtils.saveString(ProfileActivity.this, Const.EMAIL_ID, "");
-                    AppUtils.navigateScreen(ProfileActivity.this, LoginSignUpActivity.class);
-                    finishAffinity();
-                })
-                .setNegativeButton(getResources().getString(R.string.no), (dialog, id) -> {
-                    dialog.cancel();
-                });
+            Dialog dialog = new Dialog(mContext);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_logout);
+            dialog.setCancelable(false);
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            Button txtNo = dialog.findViewById(R.id.txtNo);
+            Button txtYes = dialog.findViewById(R.id.txtYes);
 
-        builder.show();
-    }
+
+            txtYes.setOnClickListener(view -> {
+                SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
+                SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
+                SharedPreferenceUtils.saveString(ProfileActivity.this, Const.EMAIL_ID, "");
+                AppUtils.navigateScreen(ProfileActivity.this, LoginSignUpActivity.class);
+                finishAffinity();
+            });
+
+            txtNo.setOnClickListener(view -> {
+                dialog.dismiss();
+            });
+
+            dialog.show();
+        }
+
+
+
+
 
 
 

@@ -38,8 +38,7 @@ public class HelpLauncher {
     }
 
     public static void launchSetupGuide(Context context) {
-        //launchUrl(context, "https://github.com/moonlight-stream/moonlight-docs/wiki/Setup-Guide");
-        launchUrl(context, "https://antplay.tech/faqForApp");
+        launchUrl(context, Const.FAQ_URL);
     }
 
     public static void launchTroubleshooting(Context context) {
