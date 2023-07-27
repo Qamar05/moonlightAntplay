@@ -4,38 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_image"
+    android:background="@color/transparent_green"
     tools:context=".ui.activity.SubscriptionPlanActivity">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/transparent_green"/>
+
 
     <ImageView
-        android:id="@+id/imgBack"
-        android:layout_width="50dp"
-        android:layout_height="70dp"
-        android:scaleType="centerInside"
-        android:paddingTop="20dp"
-        android:src="@drawable/back_arrow"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="20dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/imgBack"
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:src="@drawable/backarrow" />
 
     <TextView
-
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:fontFamily="sans-serif"
-        android:text="@string/subscription_plan"
+        android:text="@string/back"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:paddingTop="33dp"
         app:layout_constraintStart_toEndOf="@id/imgBack"
-        app:layout_constraintTop_toTopOf="@id/imgBack"
         android:textStyle="normal" />
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        app:layout_constraintTop_toBottomOf="@+id/imgBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/paymenthistory"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:text="@string/subscription_plan"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSubscriptionPlans"
@@ -45,7 +67,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgBack"/>
+        app:layout_constraintTop_toBottomOf="@id/titleLayout"/>
 
 
 

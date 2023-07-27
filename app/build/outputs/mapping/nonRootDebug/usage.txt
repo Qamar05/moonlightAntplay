@@ -11350,7 +11350,11 @@ com.antplay.models.UserUpdateRequestModal:
     public void setPhone_number(java.lang.String)
     public void setPinCode(java.lang.String)
     public void setState(java.lang.String)
-com.antplay.models.UserUpdateResponseModal
+com.antplay.models.UserUpdateResponseModal:
+    private java.lang.String success
+    public java.lang.String getSuccess()
+    public void setMessage(java.lang.String)
+    public void setSuccess(java.lang.String)
 com.antplay.models.UserViewResponse
 com.antplay.models.VMInfo
 com.antplay.models.VMTimerReq:
@@ -11500,6 +11504,11 @@ com.antplay.preferences.SeekBarPreference:
     public int getProgress()
     public void setProgress(int)
 com.antplay.preferences.WebLauncherPreference
+com.antplay.ui.activity.EditProfileActivity:
+    android.widget.Spinner spinnerStateList
+com.antplay.ui.activity.LoginActivity:
+    java.lang.String st_email
+    java.lang.String st_password
 com.antplay.ui.activity.OnBoardingActivity:
     private void mathscalculation()
     private void updateSharedPreferences(boolean)

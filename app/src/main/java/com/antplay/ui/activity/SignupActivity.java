@@ -3,12 +3,16 @@ package com.antplay.ui.activity;
 import static com.antplay.utils.Const.emailPattern;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,11 +23,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.UserRegisterRequest;
 import com.antplay.models.UserRegisterResp;
+import com.antplay.ui.adapter.StateListAdapter;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 
@@ -35,9 +42,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class SignupActivity extends Activity implements View.OnClickListener {
+public class SignupActivity extends Activity implements View.OnClickListener,StateListAdapter.ButtonClickListener {
 
-    EditText edtFirstName, edtLastName, edtPhoneNumber, edtEmail, edtPassword, edtConfirmPassword, edtAge, edtAddress, edtCity, edtPinCode;
+    EditText edtFirstName, edtLastName,edTxtState , edtPhoneNumber, edtEmail, edtPassword, edtConfirmPassword, edtAge, edtAddress, edtCity, edtPinCode;
     Button btnSignup;
     TextView txtAlreadyRegister, txtUserAgreement;
     CheckBox chkBoxUserAgreement;
@@ -48,6 +55,7 @@ public class SignupActivity extends Activity implements View.OnClickListener {
     RetrofitAPI retrofitAPI;
     Context mContext;
     ArrayList<String> stateList;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +65,7 @@ public class SignupActivity extends Activity implements View.OnClickListener {
         edtFirstName = (EditText) findViewById(R.id.edtFirstName);
         edtLastName = (EditText) findViewById(R.id.edtLastName);
         edtPhoneNumber = (EditText) findViewById(R.id.edtPhoneNumber);
+        edTxtState = (EditText) findViewById(R.id.edTxtState);
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         edtConfirmPassword = (EditText) findViewById(R.id.edtConfirmPassword);
@@ -76,23 +85,10 @@ public class SignupActivity extends Activity implements View.OnClickListener {
         chkBoxUserAgreement.setOnClickListener(this);
         txtAlreadyRegister.setOnClickListener(this);
         txtUserAgreement.setOnClickListener(this);
+        edTxtState.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
-
+        stateList =  new ArrayList<>();
         stateList  =  AppUtils.stateList();
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stateList);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerState.setAdapter(dataAdapter);
-        spinnerState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                strState = parent.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
     }
 
     private void callRegisterApi(String strFirstName, String strMiddleName, String strLastName,
@@ -225,6 +221,9 @@ public class SignupActivity extends Activity implements View.OnClickListener {
             case R.id.txtUserAgreement:
                 AppUtils.navigateScreenSendValue((Activity) mContext, GeneralWebViewActivity.class,Const.REDIRECT_URL, Const.TERMS_AND_CONDITION_URL);
                 break;
+            case R.id.edTxtState:
+                openStateDialog();
+                break;
             case R.id.btnSignUp:
                 if (validateFormField()) {
                     strFirstName = edtFirstName.getText().toString().trim();
@@ -241,5 +240,27 @@ public class SignupActivity extends Activity implements View.OnClickListener {
                 }
                 break;
         }
+    }
+
+    private void openStateDialog() {
+        dialog = new Dialog(SignupActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.state_dialog_layout);
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        RecyclerView rvStateList =(RecyclerView) dialog.findViewById(R.id.rvStateList);
+        StateListAdapter.ButtonClickListener buttonClickListener = SignupActivity.this;
+        if(stateList!=null) {
+            StateListAdapter adapter = new StateListAdapter(mContext, stateList, buttonClickListener);
+            rvStateList.setAdapter(adapter);
+        }
+        dialog.show();
+    }
+
+    @Override
+    public void onButtonClick(int value) {
+        dialog.dismiss();
+        edTxtState.setText(stateList.get(0));
     }
 }

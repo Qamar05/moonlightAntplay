@@ -139,7 +139,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/spinnerState"
+        app:layout_constraintBottom_toTopOf="@id/edTxtState"
         app:layout_constraintWidth_percent="0.46" />
 
     <EditText
@@ -158,11 +158,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/spinnerState"
+        app:layout_constraintBottom_toTopOf="@id/edTxtState"
         app:layout_constraintWidth_percent="0.46" />
 
 
+    <EditText
+        android:id="@+id/edTxtState"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/white_border_bg"
+        android:fontFamily="sans-serif"
+        android:hint="@string/state"
+        android:inputType="text"
+        android:maxLength="20"
+        android:padding="15dp"
+        android:textColorHint="@color/gray"
+        android:textSize="15sp"
+        android:focusable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/edtPinCode"
+        app:layout_constraintWidth_percent="0.46" />
+
     <Spinner
+        android:visibility="gone"
         android:id="@+id/spinnerState"
         android:layout_width="0dp"
         android:layout_height="52dp"

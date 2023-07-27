@@ -3243,6 +3243,7 @@ id textinput_suffix_text
 id time
 id title
 id titleDividerNoCustom
+id titleLayout
 id titleText
 id title_template
 id toggle

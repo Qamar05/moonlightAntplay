@@ -53,7 +53,8 @@
         </activity>
         <activity
             android:name=".ui.activity.SubscriptionPlanActivity"
-            android:exported="false">
+            android:theme="@style/Theme.MyApplication"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -126,6 +127,7 @@
             android:resizeableActivity="true" />
         <activity
             android:name=".ui.activity.PaymentHistoryActivity"
+            android:theme="@style/Theme.MyApplication"
             android:exported="true"
             android:resizeableActivity="true" />
 

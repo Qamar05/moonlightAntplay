@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.antplay.R;
@@ -34,7 +35,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SubscriptionPlanActivity extends Activity implements SubscriptionPlanAdapter.ButtonClickListener {
+public class SubscriptionPlanActivity extends AppCompatActivity implements SubscriptionPlanAdapter.ButtonClickListener {
     RecyclerView rvSubscriptionPlans;
     SubscriptionPlanAdapter adapter;
     List<BillingDataList> planList;
@@ -63,12 +64,7 @@ public class SubscriptionPlanActivity extends Activity implements SubscriptionPl
 
         getPlanApi();
 
-        imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        imgBack.setOnClickListener(v -> finish());
     }
 
     private void getPlanApi() {

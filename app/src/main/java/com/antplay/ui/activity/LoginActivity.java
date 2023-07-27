@@ -2,6 +2,7 @@ package com.antplay.ui.activity;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,12 +42,14 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     EditText etEmail, etPass;
     String st_email, st_password;
     private ProgressBar loadingPB;
-
+    RetrofitAPI retrofitAPI;
+    Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        mContext   = LoginActivity.this;
+        retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         tvForgetPass = (TextView) findViewById(R.id.tv_forgetPass);
         tvSignupHere = (TextView) findViewById(R.id.tv_signupHere);
         etEmail = (EditText) findViewById(R.id.et_email);
@@ -55,15 +58,10 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         loadingPB = (ProgressBar) findViewById(R.id.loadingLogin_progress_xml);
         etEmail.setText("shobhit.agarwal@vmstechs.com");
         etPass.setText("Antplay@123");
-        setOnClickListener();
-    }
-
-    private void setOnClickListener() {
         tvForgetPass.setOnClickListener(this);
         tvSignupHere.setOnClickListener(this);
         btnLetsGo.setOnClickListener(this);
     }
-
 
     @Override
     public void onClick(View v) {
@@ -76,9 +74,11 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn_signup:
                 if (CheckAllLoginFields()) {
-                    st_email = etEmail.getText().toString();
-                    st_password = etPass.getText().toString();
-                    callLoginAPi(st_email,st_password);
+                    if (AppUtils.isOnline(mContext))
+                        callLoginAPi(etEmail.getText().toString(), etPass.getText().toString());
+                    else
+                        Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
+
                 }
                 break;
         }
@@ -104,9 +104,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
     private void callLoginAPi(String stEmail,String strPassword) {
         loadingPB.setVisibility(View.VISIBLE);
-        Log.d(TAG,"Email : "+stEmail+"Password : "+strPassword);
         LoginRequestModal loginRequestModal = new LoginRequestModal(stEmail,strPassword);
-        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         Call<ResponseBody> call = retrofitAPI.userLogin(loginRequestModal);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -118,7 +116,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                             String responseValue = response.body().string();
                             JSONObject jObj =  new JSONObject(responseValue);
                             String accessToken = jObj.getJSONObject("data").getString("access");
-                            SharedPreferenceUtils.saveString(LoginActivity.this, Const.EMAIL_ID, jObj.getString("email"));
                             SharedPreferenceUtils.saveUserLoggedIn(LoginActivity.this, Const.IS_LOGGED_IN, true);
                             SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
                             AppUtils.navigateScreen(LoginActivity.this, PcView.class);
@@ -129,9 +126,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     } else if (response.code() == 401) {
                         try {
                             JSONObject jObj =  new JSONObject(response.errorBody().string());
-                            String detailValue  =  jObj.getString("detail");
-                            Log.d(TAG,"Issue : "+detailValue);
-                            Toast.makeText(LoginActivity.this,  detailValue, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,   jObj.getString("detail"), Toast.LENGTH_SHORT).show();
                         }
                         catch (Exception e){
                             e.printStackTrace();

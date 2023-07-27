@@ -85,7 +85,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         edTxtAddress = findViewById(R.id.edTxtAddress);
         edTxtState = findViewById(R.id.edTxtState);
         editTextPinCode = findViewById(R.id.edTxtPinCode);
-        spinnerStateList = findViewById(R.id.spinnerStateList);
+
         buttonUpdateProfile = findViewById(R.id.buttonUpdateProfile);
         linearLayout = (LinearLayout) findViewById(R.id.back_linear_edit);
 
@@ -126,10 +126,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         if (userDetail.getPhoneNumber() != null)
             editTextPinCode.setText(userDetail.getPincode());
 
-        for (int i = 0; i < stateList.size(); i++) {
-            if (stateList.get(i).equals(userDetail.getState()))
-                spinnerStateList.setSelection(i);
-        }
     }
 
 
@@ -141,33 +137,22 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                 edTxtCity.getText().toString().trim(),
                 editTextPinCode.getText().toString());
         Call<UserUpdateResponseModal> call = retrofitAPI.userUpdate("Bearer " + access_token, updateRequestModal);
-        call.enqueue(new Callback<UserUpdateResponseModal>() {
+        call.enqueue(new Callback<>() {
             @Override
             public void onResponse(Call<UserUpdateResponseModal> call, Response<UserUpdateResponseModal> response) {
-                if (response.code() == Const.SUCCESS_CODE_200) {
-                    progressBar.setVisibility(View.GONE);
-                    getUserDetails();
-                    Toast.makeText(EditProfileActivity.this, Const.profile_updated_success, Toast.LENGTH_SHORT).show();
-//                    AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, Const.profile_updated_success, EditProfileActivity.this);
-
-                } else if (response.code() == Const.ERROR_CODE_400 || response.code() == Const.ERROR_CODE_500) {
-                    progressBar.setVisibility(View.GONE);
-                    Log.e(TAG, "Else condition");
-                    Toast.makeText(EditProfileActivity.this, Const.enter_valid_data, Toast.LENGTH_SHORT).show();
-//                    AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, Const.enter_valid_data, EditProfileActivity.this);
-                } else {
-                    progressBar.setVisibility(View.GONE);
-                    Toast.makeText(EditProfileActivity.this, Const.something_went_wrong, Toast.LENGTH_SHORT).show();
-//                    AppUtils.showSnsssack(getWindow().getDecorView().getRootView(), R.color.black, Const.something_went_wrong, EditProfileActivity.this);
+                if (response.body() != null) {
+                    Toast.makeText(EditProfileActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    if (response.code() == Const.SUCCESS_CODE_200) {
+                        progressBar.setVisibility(View.GONE);
+                        getUserDetails();
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<UserUpdateResponseModal> call, Throwable t) {
-                Log.d("BILLING_PLAN", "Failure");
                 progressBar.setVisibility(View.GONE);
-                AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, Const.something_went_wrong, EditProfileActivity.this);
-
+                Toast.makeText(EditProfileActivity.this, Const.something_went_wrong, Toast.LENGTH_SHORT).show();
             }
         });
     }
