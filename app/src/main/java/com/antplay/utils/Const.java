@@ -18,6 +18,8 @@ public class Const {
     public static String IS_FIRST_TIME="is_first_time";
     public static String REDIRECT_URL="redirectURL";
 
+    public static String ANDROID ="android";
+
     public static String USERNAME="username";
     public static String FIRSTNAME="first_name";
     public static String LASTNAME="last_name";

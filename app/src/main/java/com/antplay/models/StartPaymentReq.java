@@ -11,11 +11,26 @@ public class StartPaymentReq {
     @SerializedName("billingplan_id")
     @Expose
     private int billingplan_id;
+    @SerializedName("user_type")
+    @Expose
+    private String user_type;
 
-    public  StartPaymentReq(int billingplan_id){
+
+    public  StartPaymentReq(int billingplan_id , String user_type){
         this.billingplan_id  =  billingplan_id;
+        this.user_type =  user_type;
 
     }
+
+    public String getUser_type() {
+        return user_type;
+    }
+
+    public void setUser_type(String user_type) {
+        this.user_type = user_type;
+    }
+
+
 
     public int getBillingplan_id() {
         return billingplan_id;

@@ -41,12 +41,10 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login_with_otp);
         mContext = LoginWithOTP.this;
-
         progressBar = findViewById(R.id.progress_sendOTP);
         edt_phone = findViewById(R.id.et_phone_otp);
         btn_lestGo = findViewById(R.id.btn_letsGo_otp);
         tv_register = findViewById(R.id.tv_signupHere_loginWithOTP);
-
         tv_register.setOnClickListener(this);
         btn_lestGo.setOnClickListener(this);
     }

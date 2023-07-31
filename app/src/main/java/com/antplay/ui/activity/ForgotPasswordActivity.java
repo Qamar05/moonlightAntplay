@@ -37,14 +37,12 @@ public class ForgotPasswordActivity extends Activity {
         btnResetPassword =  findViewById(R.id.btnResetPassword);
         progressBar =  findViewById(R.id.progressSignUp);
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
-
         btnResetPassword.setOnClickListener(view -> {
             if (AppUtils.validateEmailField(mContext,edtEmail)) {
                 strEmail = edtEmail.getText().toString();
                 callForgotPasswordApi();
             }
         });
-
     }
 
     private void callForgotPasswordApi() {
@@ -52,11 +50,11 @@ public class ForgotPasswordActivity extends Activity {
             progressBar.setVisibility(View.VISIBLE);
             ResetEmailReq resetEmailReq = new ResetEmailReq(strEmail);
             Call<ResultResponse> call = retrofitAPI.forgotPassword(resetEmailReq);
-            call.enqueue(new Callback<ResultResponse>() {
+            call.enqueue(new Callback<>() {
                 @Override
                 public void onResponse(Call<ResultResponse> call, Response<ResultResponse> response) {
                     progressBar.setVisibility(View.GONE);
-                    if(response.body()!=null) {
+                    if (response.body() != null) {
                         Toast.makeText(mContext, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         if (response.body().isStatus())
                             AppUtils.navigateScreen(ForgotPasswordActivity.this, LoginActivity.class);
@@ -72,12 +70,5 @@ public class ForgotPasswordActivity extends Activity {
         }
         else
             Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
-
-
     }
-
-
-
-
-
 }

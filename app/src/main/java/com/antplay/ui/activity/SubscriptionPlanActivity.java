@@ -70,7 +70,7 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
     private void getPlanApi() {
         if (AppUtils.isOnline(mContext)) {
             progressSubscriptionPlan.setVisibility(View.VISIBLE);
-            Call<AllBillingPlanResp> call = retrofitAPI.getBillingPlan("Bearer " + accessToken,"android");
+            Call<AllBillingPlanResp> call = retrofitAPI.getBillingPlan("Bearer " + accessToken,Const.ANDROID);
             call.enqueue(new Callback<AllBillingPlanResp>() {
                 @Override
                 public void onResponse(Call<AllBillingPlanResp> call, Response<AllBillingPlanResp> response) {
@@ -101,7 +101,7 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
         if (AppUtils.isOnline(mContext)) {
             progressSubscriptionPlan.setVisibility(View.VISIBLE);
             //start Payment APi  ...
-            StartPaymentReq startPaymentReq = new StartPaymentReq(idValue);
+            StartPaymentReq startPaymentReq = new StartPaymentReq(idValue,Const.ANDROID);
             Call<StartPaymentResp> call = retrofitAPI.startPayment("Bearer " + accessToken, startPaymentReq);
             call.enqueue(new Callback<StartPaymentResp>() {
                 @Override
