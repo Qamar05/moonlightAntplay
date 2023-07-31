@@ -1,12 +1,16 @@
 package com.antplay.ui.activity;
 
 import android.app.Activity;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -30,6 +34,8 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
     private ProgressBar progressBar;
     String access_token;
     RetrofitAPI retrofitAPI;
+    ImageView ivOldPasswordShow ,ivNewPasswordShow ,  ivConfirmPasswordShow;
+    boolean showOldPassword = false,showNewPassword = false,showConfirmPassword = false;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -46,8 +52,18 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
         edTxtConfirmPassword = findViewById(R.id.etConPassword);
         btnUpdate = findViewById(R.id.btnUpdatePassword);
         progressBar = findViewById(R.id.loading_changePass);
+
+        ivOldPasswordShow = findViewById(R.id.ivOldPasswordShow);
+        ivNewPasswordShow = findViewById(R.id.ivNewPasswordShow);
+        ivConfirmPasswordShow = findViewById(R.id.ivConfirmPasswordShow);
         backLinear.setOnClickListener(this);
         btnUpdate.setOnClickListener(this);
+
+        ivOldPasswordShow.setOnClickListener(this);
+        ivNewPasswordShow.setOnClickListener(this);
+        ivConfirmPasswordShow.setOnClickListener(this);
+
+
     }
 
 
@@ -60,6 +76,20 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
                 break;
             case R.id.back_linear:
                  onBackPressed();
+                 break;
+
+            case R.id.ivOldPasswordShow:
+                showHideOldPassword(edTxtOldPassword , ivOldPasswordShow);
+                 break;
+
+            case R.id.ivNewPasswordShow:
+                showHideNewPassword(edTxtNewPassword,ivNewPasswordShow);
+                 break;
+
+
+            case R.id.ivConfirmPasswordShow:
+                showHideConfirmPassword(edTxtConfirmPassword , ivConfirmPasswordShow);
+
                  break;
             }
     }
@@ -104,5 +134,54 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
                 Toast.makeText(ChangePasswordActivity.this,  Const.something_went_wrong, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private void showHideOldPassword(EditText  passwordEditText , ImageView ivPassword) {
+        if(!showOldPassword) {
+            if (passwordEditText.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+                ivPassword.setImageResource(R.drawable.visibile_icon);
+                //Show Password
+                passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                showOldPassword = true;
+            }
+        }
+        else{
+            ivPassword.setImageResource(R.drawable.visibility_off);
+            //Hide Password
+            passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            showOldPassword = false;
+        }
+    }
+    private void showHideNewPassword(EditText  passwordEditText , ImageView ivPassword) {
+        if(!showNewPassword) {
+            if (passwordEditText.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+                ivPassword.setImageResource(R.drawable.visibile_icon);
+                //Show Password
+                passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                showNewPassword = true;
+            }
+        }
+        else{
+            ivPassword.setImageResource(R.drawable.visibility_off);
+            //Hide Password
+            passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            showNewPassword = false;
+        }
+    }
+
+    private void showHideConfirmPassword(EditText  passwordEditText , ImageView ivPassword) {
+        if(!showConfirmPassword) {
+            if (passwordEditText.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+                ivPassword.setImageResource(R.drawable.visibile_icon);
+                //Show Password
+                passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                showConfirmPassword = true;
+            }
+        }
+        else{
+            ivPassword.setImageResource(R.drawable.visibility_off);
+            //Hide Password
+            passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            showConfirmPassword = false;
+        }
     }
 }

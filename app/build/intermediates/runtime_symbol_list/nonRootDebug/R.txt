@@ -2970,6 +2970,8 @@ int id item_power_menu_layout 0x7f09012b
 int id item_power_menu_title 0x7f09012c
 int id item_touch_helper_previous_elevation 0x7f09012d
 int id ivConfirmPasswordShow 0x7f09012e
+int id ivNewPasswordShow 0x7f090298
+int id ivOldPasswordShow 0x7f090299
 int id ivPasswordShow 0x7f09012f
 int id jumpToEnd 0x7f090130
 int id jumpToStart 0x7f090131

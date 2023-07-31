@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 163f7e9
-# pg_map_hash: SHA-256 163f7e95c62a1f76cea6d0f321dfb16008276db3e5ded0605c86d77e9497ee92
+# pg_map_id: 87203d2
+# pg_map_hash: SHA-256 87203d2f61dfbb19d94a6c4ae2ed317048943f527c6c97fa856618763b9dded6
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -14730,15 +14730,18 @@ com.antplay.preferences.StreamSettings$SettingsFragment$9 -> com.antplay.prefere
 com.antplay.ui.activity.ChangePasswordActivity -> com.antplay.ui.activity.ChangePasswordActivity:
     android.widget.ProgressBar -$$Nest$fgetprogressBar(com.antplay.ui.activity.ChangePasswordActivity) -> -$$Nest$fgetprogressBar
       # {"id":"com.android.tools.r8.synthesized"}
-    26:26:void <init>() -> <init>
-    68:83:boolean CheckAllFields() -> CheckAllFields
-    87:107:void callChangePasswordAPI() -> callChangePasswordAPI
-    56:65:void onClick(android.view.View) -> onClick
-    38:51:void onCreate(android.os.Bundle) -> onCreate
+    30:38:void <init>() -> <init>
+    98:113:boolean CheckAllFields() -> CheckAllFields
+    117:137:void callChangePasswordAPI() -> callChangePasswordAPI
+    72:95:void onClick(android.view.View) -> onClick
+    44:67:void onCreate(android.os.Bundle) -> onCreate
+    172:186:void showHideConfirmPassword(android.widget.EditText,android.widget.ImageView) -> showHideConfirmPassword
+    155:169:void showHideNewPassword(android.widget.EditText,android.widget.ImageView) -> showHideNewPassword
+    139:153:void showHideOldPassword(android.widget.EditText,android.widget.ImageView) -> showHideOldPassword
 com.antplay.ui.activity.ChangePasswordActivity$1 -> com.antplay.ui.activity.ChangePasswordActivity$1:
-    91:91:void <init>(com.antplay.ui.activity.ChangePasswordActivity) -> <init>
-    102:105:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    94:99:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    121:121:void <init>(com.antplay.ui.activity.ChangePasswordActivity) -> <init>
+    132:135:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    124:129:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.EditProfileActivity -> com.antplay.ui.activity.EditProfileActivity:
     java.lang.String -$$Nest$fgetTAG(com.antplay.ui.activity.EditProfileActivity) -> -$$Nest$fgetTAG
       # {"id":"com.android.tools.r8.synthesized"}

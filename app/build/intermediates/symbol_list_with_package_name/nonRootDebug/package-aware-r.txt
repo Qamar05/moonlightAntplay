@@ -2971,6 +2971,8 @@ id item_power_menu_layout
 id item_power_menu_title
 id item_touch_helper_previous_elevation
 id ivConfirmPasswordShow
+id ivNewPasswordShow
+id ivOldPasswordShow
 id ivPasswordShow
 id jumpToEnd
 id jumpToStart
