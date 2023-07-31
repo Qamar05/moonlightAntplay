@@ -2652,6 +2652,9 @@ int drawable ubi 0x7f0800e4
 int drawable user_agreement 0x7f0800e5
 int drawable ut 0x7f0800e6
 int drawable videobackground 0x7f0800e7
+int drawable visibile_icon 0x7f0800f6
+int drawable visibility_off 0x7f0800f4
+int drawable visible_iicon 0x7f0800f5
 int drawable walkthrough_1 0x7f0800e8
 int drawable walkthrough_2 0x7f0800e9
 int drawable walkthrough_3 0x7f0800ea
@@ -2964,6 +2967,7 @@ int id item_power_menu_icon 0x7f090128
 int id item_power_menu_layout 0x7f090129
 int id item_power_menu_title 0x7f09012a
 int id item_touch_helper_previous_elevation 0x7f09012b
+int id ivPasswordShow 0x7f090295
 int id jumpToEnd 0x7f09012c
 int id jumpToStart 0x7f09012d
 int id labeled 0x7f09012e
@@ -2995,6 +2999,7 @@ int id listMode 0x7f090147
 int id list_item 0x7f090148
 int id llTimer 0x7f090149
 int id loadingLogin_progress_xml 0x7f09014a
+int id loadingProgressBar 0x7f090292
 int id loading_changePass 0x7f09014b
 int id loading_getPaymentHistory 0x7f09014c
 int id logout_linear 0x7f09014d
@@ -3279,6 +3284,7 @@ int id tv_timer 0x7f090262
 int id txtAlreadyRegister 0x7f090263
 int id txtBack 0x7f090264
 int id txtCodeHasSent 0x7f090265
+int id txtCurrentPlan 0x7f090293
 int id txtDurationInHours 0x7f090266
 int id txtExpiryDate 0x7f090267
 int id txtNext 0x7f090268

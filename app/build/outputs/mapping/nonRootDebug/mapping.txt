@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 3e24520
-# pg_map_hash: SHA-256 3e245209a2405815da1cb858e3fa5503145509999023a7eb66f7e8577979e98c
+# pg_map_id: 818d853
+# pg_map_hash: SHA-256 818d853b0b8d11ef1d43c7d502795d178d74c14dca83cd3c6061946d9439bf8d
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -14149,11 +14149,12 @@ com.antplay.models.LoginRequestModal -> com.antplay.models.LoginRequestModal:
     15:18:void <init>(java.lang.String,java.lang.String) -> <init>
 com.antplay.models.Payment -> com.antplay.models.Payment:
     6:6:void <init>() -> <init>
-    49:49:java.lang.String getBillingPlan() -> getBillingPlan
-    57:57:java.lang.Double getBillingPrice() -> getBillingPrice
-    33:33:java.lang.String getPaymentDate() -> getPaymentDate
-    25:25:java.lang.String getPaymentId() -> getPaymentId
-    41:41:java.lang.String getPaymentStatus() -> getPaymentStatus
+    61:61:java.lang.String getBillingPlan() -> getBillingPlan
+    69:69:java.lang.Double getBillingPrice() -> getBillingPrice
+    29:29:java.lang.String getExpiry_date() -> getExpiry_date
+    45:45:java.lang.String getPaymentDate() -> getPaymentDate
+    37:37:java.lang.String getPaymentId() -> getPaymentId
+    53:53:java.lang.String getPaymentStatus() -> getPaymentStatus
 com.antplay.models.PaymentHistory_modal -> com.antplay.models.PaymentHistory_modal:
     8:13:void <init>() -> <init>
     26:26:java.util.List getData() -> getData
@@ -14164,7 +14165,7 @@ com.antplay.models.ResultResponse -> com.antplay.models.ResultResponse:
     23:23:java.lang.String getMessage() -> getMessage
     15:15:boolean isStatus() -> isStatus
 com.antplay.models.StartPaymentReq -> com.antplay.models.StartPaymentReq:
-    15:18:void <init>(int) -> <init>
+    19:23:void <init>(int,java.lang.String) -> <init>
 com.antplay.models.StartPaymentResp -> com.antplay.models.StartPaymentResp:
     10:10:void <init>() -> <init>
     63:63:java.lang.String getPayment_url() -> getPayment_url
@@ -14173,7 +14174,6 @@ com.antplay.models.UserDetailsModal -> com.antplay.models.UserDetailsModal:
     36:36:java.lang.String getAddress() -> getAddress
     52:52:java.lang.String getCity() -> getCity
     60:60:java.lang.String getEmail() -> getEmail
-    132:132:java.lang.String getExpire() -> getExpire
     68:68:java.lang.String getFirstName() -> getFirstName
     76:76:java.lang.String getLastName() -> getLastName
     92:92:java.lang.String getPhoneNumber() -> getPhoneNumber
@@ -14768,9 +14768,9 @@ com.antplay.ui.activity.ForgotPasswordActivity -> com.antplay.ui.activity.Forgot
     void $r8$lambda$QNH21aCVG0ku47poiFmdqKwgCoI(com.antplay.ui.activity.ForgotPasswordActivity,android.view.View) -> $r8$lambda$QNH21aCVG0ku47poiFmdqKwgCoI
       # {"id":"com.android.tools.r8.synthesized"}
     24:24:void <init>() -> <init>
-    51:77:void callForgotPasswordApi() -> callForgotPasswordApi
-    42:46:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
-    33:48:void onCreate(android.os.Bundle) -> onCreate
+    49:73:void callForgotPasswordApi() -> callForgotPasswordApi
+    41:45:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
+    33:46:void onCreate(android.os.Bundle) -> onCreate
 com.antplay.ui.activity.ForgotPasswordActivity$$ExternalSyntheticLambda0 -> com.antplay.ui.activity.ForgotPasswordActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -14780,9 +14780,9 @@ com.antplay.ui.activity.ForgotPasswordActivity$$ExternalSyntheticLambda0 -> com.
     void com.antplay.ui.activity.ForgotPasswordActivity$$InternalSyntheticLambda$1$e6a1ab83ad726d30999698c663a3eac891b55d82931e32f84568ddb42f6a4594$0.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.ui.activity.ForgotPasswordActivity$1 -> com.antplay.ui.activity.ForgotPasswordActivity$1:
-    55:55:void <init>(com.antplay.ui.activity.ForgotPasswordActivity) -> <init>
-    68:70:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    58:64:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    53:53:void <init>(com.antplay.ui.activity.ForgotPasswordActivity) -> <init>
+    66:68:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    56:62:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.GeneralWebViewActivity -> com.antplay.ui.activity.GeneralWebViewActivity:
     11:11:void <init>() -> <init>
     17:30:void onCreate(android.os.Bundle) -> onCreate
@@ -14793,29 +14793,29 @@ com.antplay.ui.activity.HomeActivity -> com.antplay.ui.activity.HomeActivity:
 com.antplay.ui.activity.LoginActivity -> com.antplay.ui.activity.LoginActivity:
     android.widget.ProgressBar -$$Nest$fgetloadingPB(com.antplay.ui.activity.LoginActivity) -> -$$Nest$fgetloadingPB
       # {"id":"com.android.tools.r8.synthesized"}
-    38:39:void <init>() -> <init>
-    87:102:boolean CheckAllLoginFields() -> CheckAllLoginFields
-    106:145:void callLoginAPi(java.lang.String,java.lang.String) -> callLoginAPi
-    68:85:void onClick(android.view.View) -> onClick
-    49:64:void onCreate(android.os.Bundle) -> onCreate
+    42:52:void <init>() -> <init>
+    111:126:boolean CheckAllLoginFields() -> CheckAllLoginFields
+    130:169:void callLoginAPi(java.lang.String,java.lang.String) -> callLoginAPi
+    76:109:void onClick(android.view.View) -> onClick
+    55:72:void onCreate(android.os.Bundle) -> onCreate
 com.antplay.ui.activity.LoginActivity$1 -> com.antplay.ui.activity.LoginActivity$1:
-    109:109:void <init>(com.antplay.ui.activity.LoginActivity) -> <init>
-    141:143:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    112:138:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    133:133:void <init>(com.antplay.ui.activity.LoginActivity) -> <init>
+    165:167:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    136:162:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.LoginSignUpActivity -> com.antplay.ui.activity.LoginSignUpActivity:
     15:15:void <init>() -> <init>
-    38:52:void onClick(android.view.View) -> onClick
-    21:34:void onCreate(android.os.Bundle) -> onCreate
+    39:53:void onClick(android.view.View) -> onClick
+    21:35:void onCreate(android.os.Bundle) -> onCreate
 com.antplay.ui.activity.LoginWithOTP -> com.antplay.ui.activity.LoginWithOTP:
     26:31:void <init>() -> <init>
-    55:79:void callSendOTP() -> callSendOTP
-    82:89:boolean checkPhoneNumberEntered() -> checkPhoneNumberEntered
-    95:106:void onClick(android.view.View) -> onClick
-    39:52:void onCreate(android.os.Bundle) -> onCreate
+    53:77:void callSendOTP() -> callSendOTP
+    80:87:boolean checkPhoneNumberEntered() -> checkPhoneNumberEntered
+    93:104:void onClick(android.view.View) -> onClick
+    39:50:void onCreate(android.os.Bundle) -> onCreate
 com.antplay.ui.activity.LoginWithOTP$1 -> com.antplay.ui.activity.LoginWithOTP$1:
-    58:58:void <init>(com.antplay.ui.activity.LoginWithOTP) -> <init>
-    73:77:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    61:69:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    56:56:void <init>(com.antplay.ui.activity.LoginWithOTP) -> <init>
+    71:75:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    59:67:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.OnBoardingActivity -> com.antplay.ui.activity.OnBoardingActivity:
     23:23:void <init>() -> <init>
     112:122:void movePagerToNextPage() -> movePagerToNextPage
@@ -14829,18 +14829,26 @@ com.antplay.ui.activity.OnBoardingActivity$1 -> com.antplay.ui.activity.OnBoardi
     66:76:void onPageScrolled(int,float,int) -> onPageScrolled
     81:81:void onPageSelected(int) -> onPageSelected
 com.antplay.ui.activity.PaymentHistoryActivity -> com.antplay.ui.activity.PaymentHistoryActivity:
+    void $r8$lambda$9T6emDMWAk526XNTzwjzjWFxkp8(com.antplay.ui.activity.PaymentHistoryActivity,android.view.View) -> $r8$lambda$9T6emDMWAk526XNTzwjzjWFxkp8
+      # {"id":"com.android.tools.r8.synthesized"}
     android.widget.ProgressBar -$$Nest$fgetloadingPB(com.antplay.ui.activity.PaymentHistoryActivity) -> -$$Nest$fgetloadingPB
       # {"id":"com.android.tools.r8.synthesized"}
     37:37:void <init>() -> <init>
-    70:105:void callPaymentHistoryAPI() -> callPaymentHistoryAPI
-    46:66:void onCreate(android.os.Bundle) -> onCreate
+    65:100:void callPaymentHistoryAPI() -> callPaymentHistoryAPI
+    54:54:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
+    46:61:void onCreate(android.os.Bundle) -> onCreate
+com.antplay.ui.activity.PaymentHistoryActivity$$ExternalSyntheticLambda0 -> com.antplay.ui.activity.PaymentHistoryActivity$$ExternalSyntheticLambda0:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    com.antplay.ui.activity.PaymentHistoryActivity com.antplay.ui.activity.PaymentHistoryActivity$$InternalSyntheticLambda$1$7376c04ff4a05a836a1d447a2ef0866b3140bd3ed31e0e8b28a5120008b0764c$0.f$0 -> f$0
+    void com.antplay.ui.activity.PaymentHistoryActivity$$InternalSyntheticLambda$1$7376c04ff4a05a836a1d447a2ef0866b3140bd3ed31e0e8b28a5120008b0764c$0.<init>(com.antplay.ui.activity.PaymentHistoryActivity) -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void com.antplay.ui.activity.PaymentHistoryActivity$$InternalSyntheticLambda$1$7376c04ff4a05a836a1d447a2ef0866b3140bd3ed31e0e8b28a5120008b0764c$0.onClick(android.view.View) -> onClick
+      # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.ui.activity.PaymentHistoryActivity$1 -> com.antplay.ui.activity.PaymentHistoryActivity$1:
-    54:54:void <init>(com.antplay.ui.activity.PaymentHistoryActivity) -> <init>
-    57:58:void onClick(android.view.View) -> onClick
-com.antplay.ui.activity.PaymentHistoryActivity$2 -> com.antplay.ui.activity.PaymentHistoryActivity$2:
-    74:74:void <init>(com.antplay.ui.activity.PaymentHistoryActivity) -> <init>
-    95:99:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    78:91:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    69:69:void <init>(com.antplay.ui.activity.PaymentHistoryActivity) -> <init>
+    90:94:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    73:86:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView -> com.antplay.ui.activity.PcView:
     void $r8$lambda$AReLF9gwEcvnaC1_ypvVs4BNHug(com.antplay.ui.activity.PcView,android.view.View) -> $r8$lambda$AReLF9gwEcvnaC1_ypvVs4BNHug
       # {"id":"com.android.tools.r8.synthesized"}
@@ -15009,19 +15017,17 @@ com.antplay.ui.activity.ProfileActivity -> com.antplay.ui.activity.ProfileActivi
       # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$lxGik2wAoTL0u-BM-PvKChESAN4(com.antplay.ui.activity.ProfileActivity,android.view.View) -> $r8$lambda$lxGik2wAoTL0u-BM-PvKChESAN4
       # {"id":"com.android.tools.r8.synthesized"}
-    java.lang.String -$$Nest$mgetDateFromSec(com.antplay.ui.activity.ProfileActivity,long) -> -$$Nest$mgetDateFromSec
+    java.lang.String -$$Nest$mconvertDateToString(com.antplay.ui.activity.ProfileActivity,java.lang.String) -> -$$Nest$mconvertDateToString
       # {"id":"com.android.tools.r8.synthesized"}
-    43:52:void <init>() -> <init>
-    212:215:int dayInYear(long) -> dayInYear
-    137:169:java.lang.String getDateFromSec(long) -> getDateFromSec
-    190:208:long getMonthCount(long) -> getMonthCount
-    264:296:void getUserDetails() -> getUserDetails
-    174:186:long getYear(long) -> getYear
-    113:118:void lambda$logoutMethod$0(android.view.View) -> lambda$logoutMethod$0
-    121:122:void lambda$logoutMethod$1(android.app.Dialog,android.view.View) -> lambda$logoutMethod$1
-    102:125:void logoutMethod() -> logoutMethod
-    221:262:void onClick(android.view.View) -> onClick
-    58:97:void onCreate(android.os.Bundle) -> onCreate
+    56:65:void <init>() -> <init>
+    314:350:void callPaymentHistoryAPI() -> callPaymentHistoryAPI
+    354:368:java.lang.String convertDateToString(java.lang.String) -> convertDateToString
+    282:311:void getUserDetails() -> getUserDetails
+    131:136:void lambda$logoutMethod$0(android.view.View) -> lambda$logoutMethod$0
+    139:140:void lambda$logoutMethod$1(android.app.Dialog,android.view.View) -> lambda$logoutMethod$1
+    119:143:void logoutMethod() -> logoutMethod
+    239:280:void onClick(android.view.View) -> onClick
+    72:114:void onCreate(android.os.Bundle) -> onCreate
 com.antplay.ui.activity.ProfileActivity$$ExternalSyntheticLambda0 -> com.antplay.ui.activity.ProfileActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -15039,21 +15045,25 @@ com.antplay.ui.activity.ProfileActivity$$ExternalSyntheticLambda1 -> com.antplay
     void com.antplay.ui.activity.ProfileActivity$$InternalSyntheticLambda$2$3c3769892b37e4249e62d8e364e0c28982d37a314400c980697416430e0ff450$1.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.ui.activity.ProfileActivity$1 -> com.antplay.ui.activity.ProfileActivity$1:
-    265:265:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
-    292:293:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    268:288:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    283:283:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    308:309:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    286:304:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+com.antplay.ui.activity.ProfileActivity$2 -> com.antplay.ui.activity.ProfileActivity$2:
+    317:317:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    343:345:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    320:339:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.SignupActivity -> com.antplay.ui.activity.SignupActivity:
     45:52:void <init>() -> <init>
-    98:122:void callRegisterApi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> callRegisterApi
-    262:264:void onButtonClick(int) -> onButtonClick
-    213:242:void onClick(android.view.View) -> onClick
-    62:91:void onCreate(android.os.Bundle) -> onCreate
-    245:258:void openStateDialog() -> openStateDialog
-    125:207:boolean validateFormField() -> validateFormField
+    99:123:void callRegisterApi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> callRegisterApi
+    263:265:void onButtonClick(int) -> onButtonClick
+    214:243:void onClick(android.view.View) -> onClick
+    62:92:void onCreate(android.os.Bundle) -> onCreate
+    246:259:void openStateDialog() -> openStateDialog
+    126:208:boolean validateFormField() -> validateFormField
 com.antplay.ui.activity.SignupActivity$1 -> com.antplay.ui.activity.SignupActivity$1:
-    104:104:void <init>(com.antplay.ui.activity.SignupActivity) -> <init>
-    116:117:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    107:113:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    105:105:void <init>(com.antplay.ui.activity.SignupActivity) -> <init>
+    117:118:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    108:114:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.SplashActivity -> com.antplay.ui.activity.SplashActivity:
     void $r8$lambda$sYVCYwisWCcSbWyXn8Shyf1J8qY(com.antplay.ui.activity.SplashActivity) -> $r8$lambda$sYVCYwisWCcSbWyXn8Shyf1J8qY
       # {"id":"com.android.tools.r8.synthesized"}
@@ -15240,10 +15250,7 @@ com.antplay.utils.CacheHelper -> com.antplay.utils.CacheHelper:
     54:64:void writeInputStreamToOutputStream(java.io.InputStream,java.io.OutputStream,long) -> writeInputStreamToOutputStream
     84:85:void writeStringToOutputStream(java.io.OutputStream,java.lang.String) -> writeStringToOutputStream
 com.antplay.utils.Const -> com.antplay.utils.Const:
-    6:58:void <clinit>() -> <clinit>
-com.antplay.utils.DateFormatterHelper -> com.antplay.utils.DateFormatterHelper:
-    9:18:void <clinit>() -> <clinit>
-    40:56:java.lang.String parseDate(java.lang.String,java.lang.String) -> parseDate
+    6:60:void <clinit>() -> <clinit>
 com.antplay.utils.Dialog -> com.antplay.utils.Dialog:
     android.app.Activity -$$Nest$fgetactivity(com.antplay.utils.Dialog) -> -$$Nest$fgetactivity
       # {"id":"com.android.tools.r8.synthesized"}

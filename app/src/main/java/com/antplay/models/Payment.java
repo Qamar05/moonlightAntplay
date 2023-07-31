@@ -21,6 +21,18 @@ public class Payment {
     @Expose
     private Double billingPrice;
 
+    @SerializedName("expiry_date")
+    @Expose
+    private String expiry_date;
+
+    public String getExpiry_date() {
+        return expiry_date;
+    }
+
+    public void setExpiry_date(String expiry_date) {
+        this.expiry_date = expiry_date;
+    }
+
     public String getPaymentId() {
         return paymentId;
     }
@@ -60,4 +72,7 @@ public class Payment {
     public void setBillingPrice(Double billingPrice) {
         this.billingPrice = billingPrice;
     }
+
+
+
 }

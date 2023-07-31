@@ -2653,6 +2653,9 @@ drawable ubi
 drawable user_agreement
 drawable ut
 drawable videobackground
+drawable visibile_icon
+drawable visibility_off
+drawable visible_iicon
 drawable walkthrough_1
 drawable walkthrough_2
 drawable walkthrough_3
@@ -2965,6 +2968,7 @@ id item_power_menu_icon
 id item_power_menu_layout
 id item_power_menu_title
 id item_touch_helper_previous_elevation
+id ivPasswordShow
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -2996,6 +3000,7 @@ id listMode
 id list_item
 id llTimer
 id loadingLogin_progress_xml
+id loadingProgressBar
 id loading_changePass
 id loading_getPaymentHistory
 id logout_linear
@@ -3280,6 +3285,7 @@ id tv_timer
 id txtAlreadyRegister
 id txtBack
 id txtCodeHasSent
+id txtCurrentPlan
 id txtDurationInHours
 id txtExpiryDate
 id txtNext

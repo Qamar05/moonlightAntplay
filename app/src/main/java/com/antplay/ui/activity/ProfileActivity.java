@@ -20,21 +20,34 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
+import com.antplay.models.Payment;
+import com.antplay.models.PaymentHistory_modal;
 import com.antplay.models.UserDetailsModal;
 import com.antplay.preferences.AddComputerManually;
+import com.antplay.ui.adapter.PaymentHistory_Adapter;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.DateFormatterHelper;
 import com.antplay.utils.SharedPreferenceUtils;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,12 +58,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     LinearLayout backLinear, logoutLinear, linear_Change, linearAgree, linearWebsite, linearAbout,
             linearPayment, linearEdit, linearDiscord, linearInstagram, linearPrivacyPolicy;
 
-    TextView  tv_manageSubs, txtUserID,txtExpiryDate;
+    TextView  tv_manageSubs, txtUserID,txtExpiryDate,txtCurrentPlan;
     String strEmailId,access_token;
     Context mContext;
     long days = 0, month = 0,year = 0;
     int[] daysOfMonths = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     RetrofitAPI retrofitAPI;
+    ProgressBar loadingProgressBar;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -64,6 +78,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         access_token = SharedPreferenceUtils.getString(mContext, Const.ACCESS_TOKEN);
 
         backLinear = (LinearLayout) findViewById(R.id.back_linear);
+        txtCurrentPlan =  findViewById(R.id.txtCurrentPlan);
         logoutLinear = (LinearLayout) findViewById(R.id.logout_linear);
         linearAgree = (LinearLayout) findViewById(R.id.linear_agreements);
         linear_Change = (LinearLayout) findViewById(R.id.linear_changePassword);
@@ -77,6 +92,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         txtUserID = (TextView) findViewById(R.id.txtUserEmailID);
         txtExpiryDate = (TextView) findViewById(R.id.txtExpiryDate);
         linearPrivacyPolicy = (LinearLayout) findViewById(R.id.linear_privacyPolicy);
+        loadingProgressBar =  findViewById(R.id.loadingProgressBar);
 
         txtUserID.setText(strEmailId);
 
@@ -93,6 +109,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         linearPayment.setOnClickListener(this);
         linearEdit.setOnClickListener(this);
         getUserDetails();
+        callPaymentHistoryAPI();
 
     }
 
@@ -104,6 +121,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             dialog.setContentView(R.layout.dialog_logout);
             dialog.setCancelable(false);
             dialog.setCanceledOnTouchOutside(false);
+            dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             Button txtNo = dialog.findViewById(R.id.txtNo);
             Button txtYes = dialog.findViewById(R.id.txtYes);
@@ -277,9 +295,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     SharedPreferenceUtils.saveString(mContext, Const.CITY, response.body().getCity());
                     SharedPreferenceUtils.saveString(mContext, Const.USERNAME, response.body().getUsername());
                     SharedPreferenceUtils.saveString(mContext, Const.PINCODE, response.body().getPincode());
-                    String expiryDate =  response.body().getExpire();
-                    if (expiryDate!=null)
-                        txtExpiryDate.setText(getDateFromSec(Long.parseLong(expiryDate)));
+
                     txtUserID.setText(response.body().getEmail());
                 } else {
                     //  progressBar.setVisibility(View.GONE);
@@ -292,6 +308,64 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 AppUtils.showToast(Const.something_went_wrong, mContext);
             }
         });
-
     }
+
+    private void callPaymentHistoryAPI() {
+        if(AppUtils.isOnline(mContext)){
+            loadingProgressBar.setVisibility(View.VISIBLE);
+            Call<PaymentHistory_modal> call = retrofitAPI.getPaymentHistory("Bearer " + access_token);
+            call.enqueue(new Callback<>() {
+                @Override
+                public void onResponse(Call<PaymentHistory_modal> call, Response<PaymentHistory_modal> response) {
+                    if (response.isSuccessful()) {
+                        loadingProgressBar.setVisibility(View.GONE);
+                        List<Payment> paymentHistory_list = response.body().getData();
+                        try {
+                            for (int i = 0; i < paymentHistory_list.size(); i++) {
+                                if (paymentHistory_list.get(i).getPaymentStatus().equalsIgnoreCase("active")) {
+                                    txtCurrentPlan.setText(paymentHistory_list.get(i).getBillingPlan());
+                                    String newdate =  convertDateToString(paymentHistory_list.get(i).getExpiry_date());
+                                    txtExpiryDate.setText(newdate);
+                                    break;
+                                }
+                            }
+                        }
+                        catch (Exception e){
+
+                        }
+                    } else {
+                        loadingProgressBar.setVisibility(View.GONE);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<PaymentHistory_modal> call, Throwable t) {
+                    Log.e("Hello Get VM", "Failure");
+                    // loadingPB.setVisibility(View.GONE);
+                }
+            });
+        }
+        else
+            Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
+    }
+
+    private String  convertDateToString(String expiry_date) {
+        //2023-08-28T09:03:21
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+
+        SimpleDateFormat formatterOut = new SimpleDateFormat(" dd MMM, yyyy");
+
+
+        String convertedDate = null;
+        try {
+            Date date = formatter.parse(expiry_date);
+            System.out.println(date);
+            convertedDate = formatterOut.format(date);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return convertedDate;
+    }
+
 }

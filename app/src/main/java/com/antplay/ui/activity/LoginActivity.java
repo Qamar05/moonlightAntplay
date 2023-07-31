@@ -4,11 +4,15 @@ package com.antplay.ui.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.ImageReader;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,10 +44,12 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     Button btnLetsGo;
     TextView tvForgetPass, tvSignupHere;
     EditText etEmail, etPass;
+    ImageView ivPasswordShow;
     String st_email, st_password;
     private ProgressBar loadingPB;
     RetrofitAPI retrofitAPI;
     Context mContext;
+    boolean showPassword =  false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +57,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         mContext   = LoginActivity.this;
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         tvForgetPass = (TextView) findViewById(R.id.tv_forgetPass);
+        ivPasswordShow =  findViewById(R.id.ivPasswordShow);
         tvSignupHere = (TextView) findViewById(R.id.tv_signupHere);
         etEmail = (EditText) findViewById(R.id.et_email);
         etPass = (EditText) findViewById(R.id.et_password);
@@ -61,6 +68,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         tvForgetPass.setOnClickListener(this);
         tvSignupHere.setOnClickListener(this);
         btnLetsGo.setOnClickListener(this);
+        ivPasswordShow.setOnClickListener(this);
     }
 
     @Override
@@ -79,6 +87,22 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     else
                         Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
 
+                }
+                break;
+            case R.id.ivPasswordShow:
+                if(!showPassword) {
+                    if (etPass.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+                        ivPasswordShow.setImageResource(R.drawable.visibile_icon);
+                        //Show Password
+                        etPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        showPassword = true;
+                    }
+                }
+                else{
+                    ivPasswordShow.setImageResource(R.drawable.visibility_off);
+                    //Hide Password
+                    etPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    showPassword = false;
                 }
                 break;
         }
@@ -143,4 +167,5 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             }
         });
     }
+
 }

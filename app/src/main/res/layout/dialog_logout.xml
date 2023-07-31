@@ -6,8 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/inset_dialog"
+    android:layout_gravity="center"
     android:padding="@dimen/_10sdp"
+    android:layout_margin="@dimen/_30sdp"
     android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/titleText"
@@ -36,31 +39,34 @@
         android:textColor="@color/white"
         android:textSize="14sp" />
 
-
     <Button
-        android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/msgText"
         android:id="@+id/txtNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/no"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
         android:background="@drawable/btngradient"
+        android:text="@string/no"
         android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtYes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgText" />
 
     <Button
+        android:id="@+id/txtYes"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/msgText"
-        android:id="@+id/txtYes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/yes"
         android:background="@drawable/btngradient"
+        android:text="@string/yes"
         android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtNo"
+        app:layout_constraintTop_toBottomOf="@+id/msgText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

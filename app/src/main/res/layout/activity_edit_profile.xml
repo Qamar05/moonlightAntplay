@@ -102,6 +102,7 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/name"
+                            android:textSize="@dimen/_12sdp"
                             android:textColor="@color/white" />
 
                         <LinearLayout
@@ -111,6 +112,7 @@
                             android:weightSum="2">
 
                             <EditText
+                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtFullName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -163,6 +165,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -179,6 +182,7 @@
                             android:weightSum="2">
 
                             <EditText
+                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtUserName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -231,6 +235,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -247,6 +252,7 @@
                             android:weightSum="2">
 
                             <EditText
+                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtPhoneNumber"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -298,6 +304,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -314,6 +321,7 @@
                             android:weightSum="2">
 
                             <EditText
+                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtEmail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -374,6 +382,7 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/age"
+                            android:textSize="@dimen/_12sdp"
                             android:textColor="@color/white" />
 
                         <LinearLayout
@@ -383,6 +392,7 @@
                             android:weightSum="2">
 
                             <EditText
+                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtAge"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -432,6 +442,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -448,6 +459,7 @@
                             android:weightSum="2">
 
                             <EditText
+                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtCity"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -496,6 +508,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -512,6 +525,7 @@
                             android:weightSum="2">
 
                             <EditText
+                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtAddress"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -559,6 +573,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -575,6 +590,7 @@
                             android:weightSum="2">
 
                             <EditText
+                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtState"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -639,6 +655,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -655,6 +672,7 @@
                             android:weightSum="2">
 
                             <EditText
+                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtPinCode"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -718,7 +736,7 @@
             android:layout_height="52dp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
-            android:background="@drawable/gradient_pcsetting"
+            android:background="@drawable/btngradient"
             android:fontFamily="sans-serif"
             android:text="@string/update_profile"
             android:textColor="@color/white" />

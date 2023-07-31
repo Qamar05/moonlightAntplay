@@ -51,12 +51,7 @@ public class PaymentHistoryActivity extends AppCompatActivity {
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView_payment);
         linear_back= (LinearLayout) findViewById(R.id.back_linear_payment);
         loadingPB = (ProgressBar) findViewById(R.id.loading_getPaymentHistory);
-        linear_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        linear_back.setOnClickListener(v -> finish());
 
         paymentHistory_modals = new ArrayList<Payment>();
 

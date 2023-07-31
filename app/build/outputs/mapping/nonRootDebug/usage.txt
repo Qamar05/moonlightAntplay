@@ -11257,6 +11257,7 @@ com.antplay.models.MessageResponse
 com.antplay.models.Payment:
     public void setBillingPlan(java.lang.String)
     public void setBillingPrice(java.lang.Double)
+    public void setExpiry_date(java.lang.String)
     public void setPaymentDate(java.lang.String)
     public void setPaymentId(java.lang.String)
     public void setPaymentStatus(java.lang.String)
@@ -11275,7 +11276,9 @@ com.antplay.models.ResultResponse:
 com.antplay.models.SendOTPResponse
 com.antplay.models.StartPaymentReq:
     public int getBillingplan_id()
+    public java.lang.String getUser_type()
     public void setBillingplan_id(int)
+    public void setUser_type(java.lang.String)
 com.antplay.models.StartPaymentResp:
     private java.lang.String id
     private java.lang.String isPaid
@@ -11297,9 +11300,11 @@ com.antplay.models.UpdatePinRequestModal
 com.antplay.models.UpdatePinResponseModal
 com.antplay.models.UserDetailsModal:
     private java.lang.Object mAge
+    private java.lang.String mExpire
     private java.lang.String mMiddleName
     private java.lang.String mResourceGroup
     public java.lang.Object getAge()
+    public java.lang.String getExpire()
     public java.lang.String getMiddleName()
     public java.lang.String getResourceGroup()
     public void setAddress(java.lang.String)
@@ -11523,6 +11528,11 @@ com.antplay.ui.activity.PcView:
     private static final int UNPAIR_ID
     private static final int VIEW_DETAILS_ID
     private static final int WOL_ID
+com.antplay.ui.activity.ProfileActivity:
+    private int dayInYear(long)
+    private java.lang.String getDateFromSec(long)
+    private long getMonthCount(long)
+    private long getYear(long)
 com.antplay.ui.activity.VerifyOTP:
     private static final int REQ_USER_CONSENT
     android.widget.EditText et_confirmPassword
@@ -11560,9 +11570,7 @@ com.antplay.utils.Const:
     public static final java.lang.String enter_valid_picCode
     public static final java.lang.String profile_updated_success
     public void <init>()
-com.antplay.utils.DateFormatterHelper:
-    public static long getDifferenceOfTwoDates(java.lang.String,java.lang.String)
-    public static java.lang.String parseDateToddMMyyyy(java.lang.String)
+com.antplay.utils.DateFormatterHelper
 com.antplay.utils.HelpLauncher:
     public void <init>()
 com.antplay.utils.NetHelper:
@@ -36545,9 +36553,6 @@ com.antplay.binding.video.VideoStats:
     static final synthetic boolean $assertionsDisabled
 com.antplay.nvstream.http.NvHTTP$TLSv12SocketFactory
 com.antplay.preferences.StreamSettings$SettingsFragment$6
-com.antplay.utils.DateFormatterHelper:
-    static final synthetic boolean $assertionsDisabled
-    public void <init>()
 com.google.android.gms.common.api.TransformedResult
 com.google.android.gms.common.api.internal.BasePendingResult:
     public static final synthetic int zad
