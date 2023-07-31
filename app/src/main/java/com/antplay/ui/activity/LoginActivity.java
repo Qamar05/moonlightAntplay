@@ -90,23 +90,12 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.ivPasswordShow:
-                if(!showPassword) {
-                    if (etPass.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
-                        ivPasswordShow.setImageResource(R.drawable.visibile_icon);
-                        //Show Password
-                        etPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                        showPassword = true;
-                    }
-                }
-                else{
-                    ivPasswordShow.setImageResource(R.drawable.visibility_off);
-                    //Hide Password
-                    etPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    showPassword = false;
-                }
+                showHidePassword();
                 break;
         }
     }
+
+
     private boolean CheckAllLoginFields() {
         String emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
         if (etEmail.getText().toString().trim().length() == 0) {
@@ -167,5 +156,22 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             }
         });
     }
+    private void showHidePassword() {
+        if(!showPassword) {
+            if (etPass.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+                ivPasswordShow.setImageResource(R.drawable.visibile_icon);
+                //Show Password
+                etPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                showPassword = true;
+            }
+        }
+        else{
+            ivPasswordShow.setImageResource(R.drawable.visibility_off);
+            //Hide Password
+            etPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            showPassword = false;
+        }
+    }
+
 
 }

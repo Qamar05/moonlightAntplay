@@ -10,6 +10,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -18,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -56,6 +59,9 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
     Context mContext;
     ArrayList<String> stateList;
     Dialog dialog;
+    boolean showPassword = false;
+    boolean showConfirmPassword = false;
+    ImageView ivPasswordShow ,ivConfirmPasswordShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +79,8 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
         edtAddress = (EditText) findViewById(R.id.edtAddress);
         edtPinCode = (EditText) findViewById(R.id.edtPinCode);
         spinnerState = (Spinner) findViewById(R.id.spinnerState);
+        ivPasswordShow = (ImageView) findViewById(R.id.ivPasswordShow);
+        ivConfirmPasswordShow = (ImageView) findViewById(R.id.ivConfirmPasswordShow);
         edtCity = (EditText) findViewById(R.id.edtCity);
         progressBar = (ProgressBar) findViewById(R.id.progressSignUp);
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
@@ -87,6 +95,8 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
         txtUserAgreement.setOnClickListener(this);
         edTxtState.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
+        ivPasswordShow.setOnClickListener(this);
+        ivConfirmPasswordShow.setOnClickListener(this);
         stateList =  new ArrayList<>();
         stateList  =  AppUtils.stateList();
     }
@@ -224,6 +234,14 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
             case R.id.edTxtState:
                 openStateDialog();
                 break;
+            case R.id.ivPasswordShow:
+                showHidePassword(edtPassword , ivPasswordShow);
+                break;
+
+            case R.id.ivConfirmPasswordShow:
+                showHideConfirmPassword(edtConfirmPassword , ivConfirmPasswordShow);
+                break;
+
             case R.id.btnSignUp:
                 if (validateFormField()) {
                     strFirstName = edtFirstName.getText().toString().trim();
@@ -263,4 +281,39 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
         dialog.dismiss();
         edTxtState.setText(stateList.get(0));
     }
+    private void showHidePassword(EditText  passwordEditText , ImageView ivPassword) {
+        if(!showPassword) {
+            if (passwordEditText.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+                ivPassword.setImageResource(R.drawable.visibile_icon);
+                //Show Password
+                passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                showPassword = true;
+            }
+        }
+        else{
+            ivPassword.setImageResource(R.drawable.visibility_off);
+            //Hide Password
+            passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            showPassword = false;
+        }
+    }
+
+    private void showHideConfirmPassword(EditText  passwordEditText , ImageView ivPassword) {
+        if(!showConfirmPassword) {
+            if (passwordEditText.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+                ivPassword.setImageResource(R.drawable.visibile_icon);
+                //Show Password
+                passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                showConfirmPassword = true;
+            }
+        }
+        else{
+            ivPassword.setImageResource(R.drawable.visibility_off);
+            //Hide Password
+            passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            showConfirmPassword = false;
+        }
+    }
+
+
 }

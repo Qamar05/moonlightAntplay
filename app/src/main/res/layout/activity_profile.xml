@@ -179,7 +179,7 @@
                             android:layout_marginRight="@dimen/_20sdp"
                             android:fontFamily="sans-serif"
                             android:gravity="right"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/teal_200" />
 
                     </LinearLayout>
 

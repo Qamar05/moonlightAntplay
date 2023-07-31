@@ -2881,10 +2881,12 @@ id edtAddress
 id edtAge
 id edtCity
 id edtConfirmPassword
+id edtConfirmPasswordLayout
 id edtEmail
 id edtFirstName
 id edtLastName
 id edtPassword
+id edtPasswordLayout
 id edtPhoneNumber
 id edtPinCode
 id elastic
@@ -2968,6 +2970,7 @@ id item_power_menu_icon
 id item_power_menu_layout
 id item_power_menu_title
 id item_touch_helper_previous_elevation
+id ivConfirmPasswordShow
 id ivPasswordShow
 id jumpToEnd
 id jumpToStart

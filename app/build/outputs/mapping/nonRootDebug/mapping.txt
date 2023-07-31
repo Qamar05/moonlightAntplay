@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 818d853
-# pg_map_hash: SHA-256 818d853b0b8d11ef1d43c7d502795d178d74c14dca83cd3c6061946d9439bf8d
+# pg_map_id: 163f7e9
+# pg_map_hash: SHA-256 163f7e95c62a1f76cea6d0f321dfb16008276db3e5ded0605c86d77e9497ee92
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -14794,14 +14794,15 @@ com.antplay.ui.activity.LoginActivity -> com.antplay.ui.activity.LoginActivity:
     android.widget.ProgressBar -$$Nest$fgetloadingPB(com.antplay.ui.activity.LoginActivity) -> -$$Nest$fgetloadingPB
       # {"id":"com.android.tools.r8.synthesized"}
     42:52:void <init>() -> <init>
-    111:126:boolean CheckAllLoginFields() -> CheckAllLoginFields
-    130:169:void callLoginAPi(java.lang.String,java.lang.String) -> callLoginAPi
-    76:109:void onClick(android.view.View) -> onClick
+    100:115:boolean CheckAllLoginFields() -> CheckAllLoginFields
+    119:158:void callLoginAPi(java.lang.String,java.lang.String) -> callLoginAPi
+    76:96:void onClick(android.view.View) -> onClick
     55:72:void onCreate(android.os.Bundle) -> onCreate
+    160:174:void showHidePassword() -> showHidePassword
 com.antplay.ui.activity.LoginActivity$1 -> com.antplay.ui.activity.LoginActivity$1:
-    133:133:void <init>(com.antplay.ui.activity.LoginActivity) -> <init>
-    165:167:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    136:162:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    122:122:void <init>(com.antplay.ui.activity.LoginActivity) -> <init>
+    154:156:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    125:151:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.LoginSignUpActivity -> com.antplay.ui.activity.LoginSignUpActivity:
     15:15:void <init>() -> <init>
     39:53:void onClick(android.view.View) -> onClick
@@ -15053,17 +15054,19 @@ com.antplay.ui.activity.ProfileActivity$2 -> com.antplay.ui.activity.ProfileActi
     343:345:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
     320:339:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.SignupActivity -> com.antplay.ui.activity.SignupActivity:
-    45:52:void <init>() -> <init>
-    99:123:void callRegisterApi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> callRegisterApi
-    263:265:void onButtonClick(int) -> onButtonClick
-    214:243:void onClick(android.view.View) -> onClick
-    62:92:void onCreate(android.os.Bundle) -> onCreate
-    246:259:void openStateDialog() -> openStateDialog
-    126:208:boolean validateFormField() -> validateFormField
+    48:63:void <init>() -> <init>
+    109:133:void callRegisterApi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> callRegisterApi
+    281:283:void onButtonClick(int) -> onButtonClick
+    224:261:void onClick(android.view.View) -> onClick
+    68:102:void onCreate(android.os.Bundle) -> onCreate
+    264:277:void openStateDialog() -> openStateDialog
+    302:316:void showHideConfirmPassword(android.widget.EditText,android.widget.ImageView) -> showHideConfirmPassword
+    285:299:void showHidePassword(android.widget.EditText,android.widget.ImageView) -> showHidePassword
+    136:218:boolean validateFormField() -> validateFormField
 com.antplay.ui.activity.SignupActivity$1 -> com.antplay.ui.activity.SignupActivity$1:
-    105:105:void <init>(com.antplay.ui.activity.SignupActivity) -> <init>
-    117:118:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    108:114:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    115:115:void <init>(com.antplay.ui.activity.SignupActivity) -> <init>
+    127:128:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    118:124:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.SplashActivity -> com.antplay.ui.activity.SplashActivity:
     void $r8$lambda$sYVCYwisWCcSbWyXn8Shyf1J8qY(com.antplay.ui.activity.SplashActivity) -> $r8$lambda$sYVCYwisWCcSbWyXn8Shyf1J8qY
       # {"id":"com.android.tools.r8.synthesized"}
