@@ -54,7 +54,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     Spinner spinnerStateList;
     private ProgressBar progressBar;
     List<String> stateList;
-    String st_state;
+
     String access_token, email, phoneNumber;
     RetrofitAPI retrofitAPI;
     Context mContext;
@@ -132,7 +132,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         progressBar.setVisibility(View.VISIBLE);
         UserUpdateRequestModal updateRequestModal = new UserUpdateRequestModal(email, phoneNumber,
                 edTxtAddress.getText().toString().trim(),
-                st_state,
+                edTxtState.getText().toString(),
                 edTxtCity.getText().toString().trim(),
                 editTextPinCode.getText().toString());
         Call<UserUpdateResponseModal> call = retrofitAPI.userUpdate("Bearer " + access_token, updateRequestModal);
@@ -234,8 +234,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     }
 
     @Override
-    public void onButtonClick(int value) {
+    public void onButtonClick(int position) {
         dialog.dismiss();
-        edTxtState.setText(stateList.get(value));
+        edTxtState.setText(stateList.get(position));
     }
 }

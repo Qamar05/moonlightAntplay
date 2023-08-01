@@ -94,6 +94,7 @@
         android:src="@drawable/ic_help" />
 
     <ImageButton
+        android:visibility="gone"
         android:id="@+id/manuallyAddPc"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="70dp"

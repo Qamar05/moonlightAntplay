@@ -29,6 +29,7 @@ public class SpinnerDialog implements Runnable,OnCancelListener {
     public static SpinnerDialog displayDialog(Activity activity, String title, String message, boolean finish)
     {
         SpinnerDialog spinner = new SpinnerDialog(activity, title, message, finish);
+
         activity.runOnUiThread(spinner);
         return spinner;
     }
@@ -79,7 +80,8 @@ public class SpinnerDialog implements Runnable,OnCancelListener {
 
             progress.setTitle(title);
             progress.setMessage(message);
-            progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progress.setProgressStyle(ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
+
             progress.setOnCancelListener(this);
 
             // If we want to finish the activity when this is killed, make it cancellable

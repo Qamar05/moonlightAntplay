@@ -133,10 +133,10 @@
     <string name="applist_details_id">App ID:</string>
 
     <!-- Add computer manually activity -->
-    <string name="title_add_pc">Add PC Manually</string>
+    <string name="title_add_pc">CONNECTING</string>
     <string name="msg_add_pc">Connecting to the PC…</string>
     <string name="addpc_fail">Unable to connect to the specified computer. Make sure the required ports are allowed through the firewall.</string>
-    <string name="addpc_success">Successfully added computer</string>
+    <string name="addpc_success">Successfully added your VM</string>
     <string name="addpc_unknown_host">Unable to resolve PC address. Make sure you didn\'t make a typo in the address.</string>
     <string name="addpc_enter_ip">You must enter an IP address</string>
     <string name="addpc_wrong_sitelocal">That address doesn\'t look right. You must use your router\'s public IP address for streaming over the Internet.</string>

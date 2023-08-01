@@ -189,6 +189,7 @@
         </activity>
         <activity
             android:name=".AppView"
+            android:theme="@style/Theme.MyApplication"
             android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
             android:resizeableActivity="true">
             <meta-data

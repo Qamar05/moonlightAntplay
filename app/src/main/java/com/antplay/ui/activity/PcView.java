@@ -2,8 +2,16 @@ package com.antplay.ui.activity;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.InterfaceAddress;
+import java.net.NetworkInterface;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.UnknownHostException;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import com.antplay.AppView;
 import com.antplay.LimeLog;
@@ -19,6 +27,7 @@ import com.antplay.nvstream.http.NvApp;
 import com.antplay.nvstream.http.NvHTTP;
 import com.antplay.nvstream.http.PairingManager;
 import com.antplay.nvstream.http.PairingManager.PairState;
+import com.antplay.nvstream.jni.MoonBridge;
 import com.antplay.nvstream.wol.WakeOnLanSender;
 import com.antplay.preferences.AddComputerManually;
 import com.antplay.preferences.GlPreferences;
@@ -33,6 +42,7 @@ import com.antplay.utils.RestClient;
 import com.antplay.utils.ServerHelper;
 import com.antplay.utils.SharedPreferenceUtils;
 import com.antplay.utils.ShortcutHelper;
+import com.antplay.utils.SpinnerDialog;
 import com.antplay.utils.UiHelper;
 
 
@@ -63,6 +73,9 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParserException;
@@ -75,7 +88,9 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
     private PcGridAdapter pcGridAdapter;
     private ShortcutHelper shortcutHelper;
     boolean doubleBackToExitPressedOnce = false;
+    private Thread addThread;
     private ComputerManagerService.ComputerManagerBinder managerBinder;
+    private final LinkedBlockingQueue<String> computersToAdd = new LinkedBlockingQueue<>();
     private boolean freezeUpdates, runningPolling, inForeground, completeOnCreateCalled;
     private final ServiceConnection serviceConnection = new ServiceConnection() {
         public void onServiceConnected(ComponentName className, IBinder binder) {
@@ -105,6 +120,218 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         }
     };
 
+
+    private final ServiceConnection serviceConnection2 = new ServiceConnection() {
+        public void onServiceConnected(ComponentName className, final IBinder binder) {
+            managerBinder = ((ComputerManagerService.ComputerManagerBinder) binder);
+            startAddThread();
+        }
+
+        public void onServiceDisconnected(ComponentName className) {
+            joinAddThread();
+            managerBinder = null;
+        }
+    };
+
+    private boolean isWrongSubnetSiteLocalAddress(String address) {
+        try {
+            InetAddress targetAddress = InetAddress.getByName(address);
+            if (!(targetAddress instanceof Inet4Address) || !targetAddress.isSiteLocalAddress()) {
+                return false;
+            }
+
+            // We have a site-local address. Look for a matching local interface.
+            for (NetworkInterface iface : Collections.list(NetworkInterface.getNetworkInterfaces())) {
+                for (InterfaceAddress addr : iface.getInterfaceAddresses()) {
+                    if (!(addr.getAddress() instanceof Inet4Address) || !addr.getAddress().isSiteLocalAddress()) {
+                        // Skip non-site-local or non-IPv4 addresses
+                        continue;
+                    }
+
+                    byte[] targetAddrBytes = targetAddress.getAddress();
+                    byte[] ifaceAddrBytes = addr.getAddress().getAddress();
+
+                    // Compare prefix to ensure it's the same
+                    boolean addressMatches = true;
+                    for (int i = 0; i < addr.getNetworkPrefixLength(); i++) {
+                        if ((ifaceAddrBytes[i / 8] & (1 << (i % 8))) != (targetAddrBytes[i / 8] & (1 << (i % 8)))) {
+                            addressMatches = false;
+                            break;
+                        }
+                    }
+
+                    if (addressMatches) {
+                        return false;
+                    }
+                }
+            }
+
+            // Couldn't find a matching interface
+            return true;
+        } catch (Exception e) {
+            // Catch all exceptions because some broken Android devices
+            // will throw an NPE from inside getNetworkInterfaces().
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    private URI parseRawUserInputToUri(String rawUserInput) {
+        try {
+            // Try adding a scheme and parsing the remaining input.
+            // This handles input like 127.0.0.1:47989, [::1], [::1]:47989, and 127.0.0.1.
+            URI uri = new URI("moonlight://" + rawUserInput);
+            if (uri.getHost() != null && !uri.getHost().isEmpty()) {
+                return uri;
+            }
+        } catch (URISyntaxException ignored) {
+        }
+
+        try {
+            // Attempt to escape the input as an IPv6 literal.
+            // This handles input like ::1.
+            URI uri = new URI("moonlight://[" + rawUserInput + "]");
+            if (uri.getHost() != null && !uri.getHost().isEmpty()) {
+                return uri;
+            }
+        } catch (URISyntaxException ignored) {
+        }
+
+        return null;
+    }
+
+    private void doAddPc(String rawUserInput) throws InterruptedException {
+        boolean wrongSiteLocal = false;
+        boolean invalidInput = false;
+        boolean success;
+        int portTestResult;
+
+        SpinnerDialog dialog = SpinnerDialog.displayDialog(this, getResources().getString(R.string.title_add_pc),
+                getResources().getString(R.string.msg_add_pc), false);
+
+        try {
+            ComputerDetails details = new ComputerDetails();
+
+            // Check if we parsed a host address successfully
+            URI uri = parseRawUserInputToUri(rawUserInput);
+            if (uri != null && uri.getHost() != null && !uri.getHost().isEmpty()) {
+                String host = uri.getHost();
+                int port = uri.getPort();
+
+                // If a port was not specified, use the default
+                if (port == -1) {
+                    port = NvHTTP.DEFAULT_HTTP_PORT;
+                }
+
+                details.manualAddress = new ComputerDetails.AddressTuple(host, port);
+                success = managerBinder.addComputerBlocking(details);
+                if (!success) {
+                    wrongSiteLocal = isWrongSubnetSiteLocalAddress(host);
+                }
+            } else {
+                // Invalid user input
+                success = false;
+                invalidInput = true;
+            }
+        } catch (InterruptedException e) {
+            // Propagate the InterruptedException to the caller for proper handling
+            dialog.dismiss();
+            throw e;
+        } catch (IllegalArgumentException e) {
+            // This can be thrown from OkHttp if the host fails to canonicalize to a valid name.
+            // https://github.com/square/okhttp/blob/okhttp_27/okhttp/src/main/java/com/squareup/okhttp/HttpUrl.java#L705
+            e.printStackTrace();
+            success = false;
+            invalidInput = true;
+        }
+
+        // Keep the SpinnerDialog open while testing connectivity
+        if (!success && !wrongSiteLocal && !invalidInput) {
+            // Run the test before dismissing the spinner because it can take a few seconds.
+            portTestResult = MoonBridge.testClientConnectivity(ServerHelper.CONNECTION_TEST_SERVER, 443,
+                    MoonBridge.ML_PORT_FLAG_TCP_47984 | MoonBridge.ML_PORT_FLAG_TCP_47989);
+        } else {
+            // Don't bother with the test if we succeeded or the IP address was bogus
+            portTestResult = MoonBridge.ML_TEST_RESULT_INCONCLUSIVE;
+        }
+
+        dialog.dismiss();
+
+        if (invalidInput) {
+            Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_unknown_host), false);
+        } else if (wrongSiteLocal) {
+            Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_wrong_sitelocal), false);
+        } else if (!success) {
+            String dialogText;
+            if (portTestResult != MoonBridge.ML_TEST_RESULT_INCONCLUSIVE && portTestResult != 0) {
+                dialogText = getResources().getString(R.string.nettest_text_blocked);
+            } else {
+                dialogText = getResources().getString(R.string.addpc_fail);
+            }
+            Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), dialogText, false);
+        } else {
+            PcView.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(PcView.this, getResources().getString(R.string.addpc_success), Toast.LENGTH_LONG).show();
+
+                   // completeOnCreate();
+
+
+
+
+                   // if (!isFinishing()) {
+
+                        // Close the activity
+                        //AddComputerManually.this.finish();
+                  //  }
+                }
+            });
+        }
+
+    }
+
+    private void startAddThread() {
+        addThread = new Thread() {
+            @Override
+            public void run() {
+                while (!isInterrupted()) {
+                    try {
+                        String computer = computersToAdd.take();
+                        doAddPc(computer);
+                    } catch (InterruptedException e) {
+                        return;
+                    }
+                }
+            }
+        };
+        addThread.setName("UI - AddComputerManually");
+        addThread.start();
+    }
+
+    private void joinAddThread() {
+        if (addThread != null) {
+            addThread.interrupt();
+
+            try {
+                addThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+
+                // InterruptedException clears the thread's interrupt status. Since we can't
+                // handle that here, we will re-interrupt the thread to set the interrupt
+                // status back to true.
+                Thread.currentThread().interrupt();
+            }
+
+            addThread = null;
+        }
+    }
+
+
+
+
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -133,6 +360,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
 
     private void initializeViews() {
         setContentView(R.layout.activity_pc_view);
+
 
         UiHelper.notifyNewRootView(this);
 
@@ -186,6 +414,8 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         // Assume we're in the foreground when created to avoid a race
         // between binding to CMS and onResume()
         inForeground = true;
+        getVMFromServerManually();
+
 
         // Create a GLSurfaceView to fetch GLRenderer unless we have
         // a cached result already.
@@ -219,6 +449,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
                 }
             });
             setContentView(surfaceView);
+
         } else {
             LimeLog.info("Cached GL Renderer: " + glPrefs.glRenderer);
             completeOnCreate();
@@ -234,6 +465,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection, Service.BIND_AUTO_CREATE);
         pcGridAdapter = new PcGridAdapter(this, PreferenceConfiguration.readPreferences(this));
         initializeViews();
+
     }
 
     private void startComputerUpdates() {
@@ -280,6 +512,9 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
 
         if (managerBinder != null) {
             unbindService(serviceConnection);
+                joinAddThread();
+                unbindService(serviceConnection2);
+
         }
     }
 
@@ -792,6 +1027,55 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Please click back again to exit", Toast.LENGTH_SHORT).show();
         new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
+    }
+
+    private void getVMFromServerManually() {
+        String accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
+        Log.d(TAG, " Access Token : " + accessToken);
+
+        new RestClient(PcView.this).getRequestWithHeader("add_vm_manually", "getvmip", "", accessToken, new RestClient.ResponseListener() {
+            @Override
+            public void onResponse(String tag, String response) {
+
+                if (response != null) {
+                    Log.d(TAG,"Response : "+response );
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        JSONArray jsonArray = jsonObject.getJSONArray("data");
+                        String vmIp = jsonArray.getJSONObject(0).getString("vmip");
+                        Log.d("ANT_PLAY", "VM IP : " + vmIp);
+                        handleDoneEvent(vmIp);
+                        bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection2, Service.BIND_AUTO_CREATE);
+                        pcGridAdapter = new PcGridAdapter(PcView.this, PreferenceConfiguration.readPreferences(PcView.this));
+                        initializeViews();
+                       /*
+                        Intent i = new Intent(LoginActivity.this, PcView.class);
+                        startActivity(i);
+                        finish();*/
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }, new RestClient.ErrorListener() {
+            @Override
+            public void onError(String tag, String errorMsg, long statusCode) {
+                Log.e(TAG, "Reason Of Failure : " + errorMsg);
+            }
+        });
+    }
+
+    private boolean handleDoneEvent(String vmIp) {
+
+
+        if (vmIp.length() == 0) {
+            Toast.makeText(PcView.this, getResources().getString(R.string.addpc_enter_ip), Toast.LENGTH_LONG).show();
+            return true;
+        }
+
+        computersToAdd.add(vmIp);
+        return false;
     }
 
 }
