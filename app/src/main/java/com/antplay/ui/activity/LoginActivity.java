@@ -119,7 +119,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         loadingPB.setVisibility(View.VISIBLE);
         LoginRequestModal loginRequestModal = new LoginRequestModal(stEmail,strPassword);
         Call<ResponseBody> call = retrofitAPI.userLogin(loginRequestModal);
-        call.enqueue(new Callback<ResponseBody>() {
+        call.enqueue(new Callback<>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 loadingPB.setVisibility(View.GONE);
@@ -127,7 +127,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     if (response.code() == 200) {
                         try {
                             String responseValue = response.body().string();
-                            JSONObject jObj =  new JSONObject(responseValue);
+                            JSONObject jObj = new JSONObject(responseValue);
                             String accessToken = jObj.getJSONObject("data").getString("access");
                             SharedPreferenceUtils.saveUserLoggedIn(LoginActivity.this, Const.IS_LOGGED_IN, true);
                             SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
@@ -138,10 +138,9 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                         }
                     } else if (response.code() == 401) {
                         try {
-                            JSONObject jObj =  new JSONObject(response.errorBody().string());
-                            Toast.makeText(LoginActivity.this,   jObj.getString("detail"), Toast.LENGTH_SHORT).show();
-                        }
-                        catch (Exception e){
+                            JSONObject jObj = new JSONObject(response.errorBody().string());
+                            Toast.makeText(LoginActivity.this, jObj.getString("detail"), Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     } else {
@@ -149,10 +148,11 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 loadingPB.setVisibility(View.GONE);
-                Log.i("Error: ", ""+t.getMessage());
+                Log.i("Error: ", "" + t.getMessage());
             }
         });
     }

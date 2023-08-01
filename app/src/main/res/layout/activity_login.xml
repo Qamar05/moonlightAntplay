@@ -33,7 +33,7 @@
                 android:inputType="textEmailAddress"
                 android:padding="@dimen/_8sdp"
                 android:textColorHint="@color/gray"
-                android:textSize="15sp" />
+                android:textSize="@dimen/_12sdp" />
 
 
             <LinearLayout
@@ -55,7 +55,7 @@
                 android:inputType="textPassword"
                 android:padding="@dimen/_8sdp"
                 android:textColorHint="@color/gray"
-                android:textSize="15sp" />
+                android:textSize="@dimen/_12sdp"/>
 
 
 

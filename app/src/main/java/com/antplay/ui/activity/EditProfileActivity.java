@@ -61,7 +61,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     Dialog dialog;
 
 
-
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,37 +157,41 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void getUserDetails() {
-        Call<UserDetailsModal> call = retrofitAPI.getUserDetails("Bearer " + access_token);
-        call.enqueue(new Callback<>() {
-            @Override
-            public void onResponse(Call<UserDetailsModal> call, Response<UserDetailsModal> response) {
-                if (response.isSuccessful()) {
-                    progressBar.setVisibility(View.GONE);
-                    SharedPreferenceUtils.saveString(mContext, Const.FIRSTNAME, response.body().getFirstName());
-                    SharedPreferenceUtils.saveString(mContext, Const.LASTNAME, response.body().getLastName());
-                    SharedPreferenceUtils.saveString(mContext, Const.EMAIL_ID, response.body().getEmail());
-                    SharedPreferenceUtils.saveString(mContext, Const.PHONE_NUMBER, response.body().getPhoneNumber());
-                    SharedPreferenceUtils.saveString(mContext, Const.ADDRESS, response.body().getAddress());
-                    SharedPreferenceUtils.saveString(mContext, Const.STATE, response.body().getState());
-                    SharedPreferenceUtils.saveString(mContext, Const.CITY, response.body().getCity());
-                    SharedPreferenceUtils.saveString(mContext, Const.USERNAME, response.body().getUsername());
-                    SharedPreferenceUtils.saveString(mContext, Const.PINCODE, response.body().getPincode());
-                    setData(response.body());
+        if(AppUtils.isOnline(mContext)) {
+            Call<UserDetailsModal> call = retrofitAPI.getUserDetails("Bearer " + access_token);
+            call.enqueue(new Callback<>() {
+                @Override
+                public void onResponse(Call<UserDetailsModal> call, Response<UserDetailsModal> response) {
+                    if (response.isSuccessful()) {
+                        progressBar.setVisibility(View.GONE);
+                        SharedPreferenceUtils.saveString(mContext, Const.FIRSTNAME, response.body().getFirstName());
+                        SharedPreferenceUtils.saveString(mContext, Const.LASTNAME, response.body().getLastName());
+                        SharedPreferenceUtils.saveString(mContext, Const.EMAIL_ID, response.body().getEmail());
+                        SharedPreferenceUtils.saveString(mContext, Const.PHONE_NUMBER, response.body().getPhoneNumber());
+                        SharedPreferenceUtils.saveString(mContext, Const.ADDRESS, response.body().getAddress());
+                        SharedPreferenceUtils.saveString(mContext, Const.STATE, response.body().getState());
+                        SharedPreferenceUtils.saveString(mContext, Const.CITY, response.body().getCity());
+                        SharedPreferenceUtils.saveString(mContext, Const.USERNAME, response.body().getUsername());
+                        SharedPreferenceUtils.saveString(mContext, Const.PINCODE, response.body().getPincode());
+                        setData(response.body());
 
-                } else {
-                    progressBar.setVisibility(View.GONE);
-                    AppUtils.showToast(Const.no_records, EditProfileActivity.this);
+                    } else {
+                        progressBar.setVisibility(View.GONE);
+                        AppUtils.showToast(Const.no_records, EditProfileActivity.this);
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<UserDetailsModal> call, Throwable t) {
-                Log.e(TAG, "" + t);
-                progressBar.setVisibility(View.GONE);
-                AppUtils.showToast(Const.something_went_wrong, EditProfileActivity.this);
-            }
-        });
+                @Override
+                public void onFailure(Call<UserDetailsModal> call, Throwable t) {
+                    Log.e(TAG, "" + t);
+                    progressBar.setVisibility(View.GONE);
+                    AppUtils.showToast(Const.something_went_wrong, EditProfileActivity.this);
+                }
+            });
 
+        }
+        else
+            Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -197,9 +200,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             case R.id.back_linear_edit:
                 finish();
                 break;
-
             case R.id.edTxtState:
-//                openStatePopup(view);
                 openStateDialog();
                 break;
             case R.id.buttonUpdateProfile:
@@ -229,8 +230,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             StateListAdapter adapter = new StateListAdapter(mContext, stateList, buttonClickListener);
             rvStateList.setAdapter(adapter);
         }
-
-
         dialog.show();
     }
 

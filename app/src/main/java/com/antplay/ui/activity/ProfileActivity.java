@@ -353,7 +353,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //2023-08-28T09:03:21
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
-        SimpleDateFormat formatterOut = new SimpleDateFormat(" dd MMM, yyyy");
+        SimpleDateFormat formatterOut = new SimpleDateFormat(" dd MMM , yyyy");
 
 
         String convertedDate = null;

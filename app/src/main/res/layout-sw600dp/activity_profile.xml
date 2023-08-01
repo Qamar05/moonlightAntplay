@@ -170,7 +170,7 @@
                             android:layout_marginLeft="@dimen/_10sdp"
                             android:layout_marginTop="@dimen/_1sdp"
                             android:fontFamily="sans-serif"
-                            android:text="Renew Plan"
+                            android:text="Renew Plan By"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_9sdp"/>
 

@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 87203d2
-# pg_map_hash: SHA-256 87203d2f61dfbb19d94a6c4ae2ed317048943f527c6c97fa856618763b9dded6
+# pg_map_id: 89da601
+# pg_map_hash: SHA-256 89da601891f2c52367e24c11be9481f9f8d9b513d53bcbbce8a69fbdfade5f4c
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -14752,17 +14752,17 @@ com.antplay.ui.activity.EditProfileActivity -> com.antplay.ui.activity.EditProfi
     void -$$Nest$msetData(com.antplay.ui.activity.EditProfileActivity,com.antplay.models.UserDetailsModal) -> -$$Nest$msetData
       # {"id":"com.android.tools.r8.synthesized"}
     49:50:void <init>() -> <init>
-    161:192:void getUserDetails() -> getUserDetails
-    239:241:void onButtonClick(int) -> onButtonClick
-    196:217:void onClick(android.view.View) -> onClick
-    68:101:void onCreate(android.os.Bundle) -> onCreate
-    220:235:void openStateDialog() -> openStateDialog
-    105:129:void setData(com.antplay.models.UserDetailsModal) -> setData
-    133:158:void updateUserProfile() -> updateUserProfile
+    160:195:void getUserDetails() -> getUserDetails
+    238:240:void onButtonClick(int) -> onButtonClick
+    199:218:void onClick(android.view.View) -> onClick
+    67:100:void onCreate(android.os.Bundle) -> onCreate
+    221:234:void openStateDialog() -> openStateDialog
+    104:128:void setData(com.antplay.models.UserDetailsModal) -> setData
+    132:157:void updateUserProfile() -> updateUserProfile
 com.antplay.ui.activity.EditProfileActivity$1 -> com.antplay.ui.activity.EditProfileActivity$1:
-    140:140:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
-    154:156:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    143:150:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    139:139:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
+    153:155:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    142:149:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.EditProfileActivity$2 -> com.antplay.ui.activity.EditProfileActivity$2:
     162:162:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
     186:189:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
@@ -14805,7 +14805,7 @@ com.antplay.ui.activity.LoginActivity -> com.antplay.ui.activity.LoginActivity:
 com.antplay.ui.activity.LoginActivity$1 -> com.antplay.ui.activity.LoginActivity$1:
     122:122:void <init>(com.antplay.ui.activity.LoginActivity) -> <init>
     154:156:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    125:151:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    125:150:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.LoginSignUpActivity -> com.antplay.ui.activity.LoginSignUpActivity:
     15:15:void <init>() -> <init>
     39:53:void onClick(android.view.View) -> onClick
