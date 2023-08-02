@@ -106,7 +106,6 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
                                  boolean isSubscribed, String strPassword, String strAddress, String strAge,
                                  String strState, String strCity, String strPinCode) {
 
-        if(AppUtils.isOnline(mContext)) {
             progressBar.setVisibility(View.VISIBLE);
             UserRegisterRequest userRegisterRequestv = new UserRegisterRequest(strFirstName, strLastName, strEmail, strPhoneNumber,
                     strAddress, strAge, strState, strCity, strPinCode, strPassword);
@@ -127,9 +126,6 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
                     progressBar.setVisibility(View.GONE);
                 }
             });
-        }
-        else
-            Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
     }
 
     private boolean validateFormField() {
@@ -244,17 +240,21 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
 
             case R.id.btnSignUp:
                 if (validateFormField()) {
-                    strFirstName = edtFirstName.getText().toString().trim();
-                    strLastName = edtLastName.getText().toString().trim();
-                    strEmail = edtEmail.getText().toString().trim();
-                    strPhoneNumber = edtPhoneNumber.getText().toString().trim();
-                    strMiddleName = edtFirstName.getText().toString().trim();
-                    strPassword = edtPassword.getText().toString().trim();
-                    strAddress = edtAddress.getText().toString();
-                    strAge = edtAge.getText().toString().trim();
-                    strCity = edtCity.getText().toString().trim();
-                    strPinCode = edtPinCode.getText().toString();
-                    callRegisterApi(strFirstName, strMiddleName,strLastName, strEmail, strPhoneNumber, lastLogin, isNewUser, isSubscribed, strPassword, strAddress, strAge, strState, strCity, strPinCode);
+                    if (AppUtils.isOnline(mContext)) {
+                        strFirstName = edtFirstName.getText().toString().trim();
+                        strLastName = edtLastName.getText().toString().trim();
+                        strEmail = edtEmail.getText().toString().trim();
+                        strPhoneNumber = edtPhoneNumber.getText().toString().trim();
+                        strMiddleName = edtFirstName.getText().toString().trim();
+                        strPassword = edtPassword.getText().toString().trim();
+                        strAddress = edtAddress.getText().toString();
+                        strAge = edtAge.getText().toString().trim();
+                        strCity = edtCity.getText().toString().trim();
+                        strPinCode = edtPinCode.getText().toString();
+                        callRegisterApi(strFirstName, strMiddleName, strLastName, strEmail, strPhoneNumber, lastLogin, isNewUser, isSubscribed, strPassword, strAddress, strAge, strState, strCity, strPinCode);
+                    }
+                    else
+                        AppUtils.showInternetDialog(mContext);
                 }
                 break;
         }

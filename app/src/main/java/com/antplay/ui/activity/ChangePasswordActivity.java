@@ -1,6 +1,7 @@
 package com.antplay.ui.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
     RetrofitAPI retrofitAPI;
     ImageView ivOldPasswordShow ,ivNewPasswordShow ,  ivConfirmPasswordShow;
     boolean showOldPassword = false,showNewPassword = false,showConfirmPassword = false;
+    Context mContext;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -44,6 +46,7 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
         getWindow().setStatusBarColor(getResources().getColor(R.color.colorAccentDark_light, this.getTheme()));
+        mContext  =  ChangePasswordActivity.this;
         access_token = SharedPreferenceUtils.getString(ChangePasswordActivity.this, Const.ACCESS_TOKEN);
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         backLinear = (LinearLayout) findViewById(R.id.back_linear);
@@ -71,22 +74,22 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnUpdatePassword:
-                if(CheckAllFields())
-                    callChangePasswordAPI();
+                if(CheckAllFields()) {
+                    if (AppUtils.isOnline(mContext))
+                        callChangePasswordAPI();
+                    else
+                        AppUtils.showInternetDialog(mContext);
+                }
                 break;
             case R.id.back_linear:
                  onBackPressed();
                  break;
-
             case R.id.ivOldPasswordShow:
                 showHideOldPassword(edTxtOldPassword , ivOldPasswordShow);
                  break;
-
             case R.id.ivNewPasswordShow:
                 showHideNewPassword(edTxtNewPassword,ivNewPasswordShow);
                  break;
-
-
             case R.id.ivConfirmPasswordShow:
                 showHideConfirmPassword(edTxtConfirmPassword , ivConfirmPasswordShow);
 
@@ -130,7 +133,6 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
             @Override
             public void onFailure(Call<ChangePasswordResp> call, Throwable t) {
                 progressBar.setVisibility(View.GONE);
-               // AppUtils.showSnack(getWindow().getDecorView().getRootView(),R.color.black,Const.something_went_wrong, ChangePasswordActivity.this);
                 Toast.makeText(ChangePasswordActivity.this,  Const.something_went_wrong, Toast.LENGTH_SHORT).show();
             }
         });

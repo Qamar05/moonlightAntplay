@@ -38,9 +38,12 @@ public class ForgotPasswordActivity extends Activity {
         progressBar =  findViewById(R.id.progressSignUp);
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         btnResetPassword.setOnClickListener(view -> {
+
             if (AppUtils.validateEmailField(mContext,edtEmail)) {
-                strEmail = edtEmail.getText().toString();
-                callForgotPasswordApi();
+                if(AppUtils.isOnline(mContext))
+                    callForgotPasswordApi();
+                else
+                    AppUtils.showInternetDialog(mContext);
             }
         });
     }
@@ -48,7 +51,7 @@ public class ForgotPasswordActivity extends Activity {
     private void callForgotPasswordApi() {
         if (AppUtils.isOnline(mContext)) {
             progressBar.setVisibility(View.VISIBLE);
-            ResetEmailReq resetEmailReq = new ResetEmailReq(strEmail);
+            ResetEmailReq resetEmailReq = new ResetEmailReq(edtEmail.getText().toString());
             Call<ResultResponse> call = retrofitAPI.forgotPassword(resetEmailReq);
             call.enqueue(new Callback<>() {
                 @Override

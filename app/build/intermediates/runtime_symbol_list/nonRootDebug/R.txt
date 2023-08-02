@@ -3288,6 +3288,7 @@ int id tv_termsandc_login 0x7f090269
 int id tv_timer 0x7f09026a
 int id txtAlreadyRegister 0x7f09026b
 int id txtBack 0x7f09026c
+int id txtClose 0x7f09029a
 int id txtCodeHasSent 0x7f09026d
 int id txtCurrentPlan 0x7f09026e
 int id txtDurationInHours 0x7f09026f
@@ -3453,6 +3454,7 @@ int layout fragment_on_boarding_three 0x7f0c004c
 int layout fragment_on_boarding_two 0x7f0c004d
 int layout fragment_settings 0x7f0c004e
 int layout fragment_v_m 0x7f0c004f
+int layout internet_dialog_layout 0x7f0c00a1
 int layout item_billing_plan 0x7f0c0050
 int layout item_power_menu_library_skydoves 0x7f0c0051
 int layout layout_material_power_menu_library_skydoves 0x7f0c0052
@@ -3621,12 +3623,14 @@ int string change_pass 0x7f10004d
 int string character_counter_content_description 0x7f10004e
 int string character_counter_overflowed_content_description 0x7f10004f
 int string character_counter_pattern 0x7f100050
+int string check_connection 0x7f1001ca
 int string check_internet_connection 0x7f100051
 int string check_ports_msg 0x7f100052
 int string chip_text 0x7f100053
 int string choose_new_pc 0x7f100054
 int string city 0x7f100055
 int string clear_text_end_icon_content_description 0x7f100056
+int string close 0x7f1001cb
 int string common_google_play_services_enable_button 0x7f100057
 int string common_google_play_services_enable_text 0x7f100058
 int string common_google_play_services_enable_title 0x7f100059
@@ -3801,6 +3805,7 @@ int string next 0x7f100101
 int string no 0x7f100102
 int string noDataFound 0x7f100103
 int string no_frame_received_error 0x7f100104
+int string no_internet 0x7f1001cc
 int string no_video_received_error 0x7f100105
 int string old_pass 0x7f100106
 int string otp_send 0x7f100107

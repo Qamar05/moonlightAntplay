@@ -287,6 +287,7 @@
     <string name="user_agreement">User agreement</string>
 
     <string name="error_email">Email is required</string>
+    <string name="error_name">Name is required</string>
     <string name="error_firstname">First Name is required</string>
     <string name="remove_whitespace">Remove White Space</string>
     <string name="error_lastname">Last Name is required</string>
@@ -308,6 +309,8 @@
     <string name="error_invalidEmail">Invalid email address</string>
     <string name="error_invalidPhone">Invalid phone number</string>
     <string name="error_pass_minimum">Password must be minimum 8 characters</string>
+    <string name="city_error">City is required</string>
+    <string name="address_error">Address is required</string>
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
     <string name="phone_number">Phone Number</string>
@@ -343,6 +346,8 @@
     <string name="noDataFound">no data found\n</string>
     <string name="are_you_sure">Are you sure, you want to logout ?</string>
     <string name="logout">Log out</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="check_connection">Check your Internet  and try again</string>
     <string name="edit">Edit\n\n</string>
     <string name="manage_subscription">Manage Subscription</string>
     <string name="discord">Discord</string>
@@ -380,5 +385,6 @@
     <string name="connect_a_gamepad">Connect a gamepad for the game convenience</string>
     <string name="more_professional">and more professional and precise control</string>
     <string name="choose_new_pc">CHOOSE A NEW PC</string>
+    <string name="close">Close</string>
 
 </resources>

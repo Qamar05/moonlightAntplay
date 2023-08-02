@@ -3,33 +3,23 @@ package com.antplay.ui.activity;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.antplay.R;
 import com.antplay.api.APIClient;
@@ -37,8 +27,6 @@ import com.antplay.api.RetrofitAPI;
 import com.antplay.models.Payment;
 import com.antplay.models.PaymentHistory_modal;
 import com.antplay.models.UserDetailsModal;
-import com.antplay.preferences.AddComputerManually;
-import com.antplay.ui.adapter.PaymentHistory_Adapter;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.DateFormatterHelper;
@@ -108,8 +96,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         linearAbout.setOnClickListener(this);
         linearPayment.setOnClickListener(this);
         linearEdit.setOnClickListener(this);
-        getUserDetails();
-        callPaymentHistoryAPI();
+
+        if(AppUtils.isOnline(mContext)) {
+            getUserDetails();
+            callPaymentHistoryAPI();
+        } else
+            AppUtils.showInternetDialog(mContext);
+
+
 
     }
 
@@ -141,14 +135,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
             dialog.show();
         }
-
-
-
-
-
-
-
-
 
     private String getDateFromSec(long expiryDateInSec) {
         String dayStr, monthStr, yearStr;
@@ -298,7 +284,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
                     txtUserID.setText(response.body().getEmail());
                 } else {
-                    //  progressBar.setVisibility(View.GONE);
+                     // progressBar.setVisibility(View.GONE);
                     AppUtils.showToast(Const.no_records, mContext);
                 }
             }
@@ -311,7 +297,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void callPaymentHistoryAPI() {
-        if(AppUtils.isOnline(mContext)){
             loadingProgressBar.setVisibility(View.VISIBLE);
             Call<PaymentHistory_modal> call = retrofitAPI.getPaymentHistory("Bearer " + access_token);
             call.enqueue(new Callback<>() {
@@ -344,9 +329,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     // loadingPB.setVisibility(View.GONE);
                 }
             });
-        }
-        else
-            Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
+
     }
 
     private String  convertDateToString(String expiry_date) {

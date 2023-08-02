@@ -1,13 +1,20 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundimage"
     tools:context=".AppView" >
 
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.9"
+        android:background="@color/background" />
+
     <FrameLayout
         android:paddingTop="@dimen/_20sdp"
-        android:background="@color/background"
         android:id="@+id/appFragmentContainer"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"

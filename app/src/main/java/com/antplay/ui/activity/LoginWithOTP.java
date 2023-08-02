@@ -33,6 +33,7 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
     TextView tv_register;
     Context mContext;
     String phoneValue;
+    RetrofitAPI retrofitAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login_with_otp);
+        retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         mContext = LoginWithOTP.this;
         progressBar = findViewById(R.id.progress_sendOTP);
         edt_phone = findViewById(R.id.et_phone_otp);
@@ -51,18 +53,16 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
 
     private void callSendOTP() {
         progressBar.setVisibility(View.VISIBLE);
-        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         Call<SendOTPResponse> call = retrofitAPI.sendOTP(Const.URL+"getuserbyphone/"+phoneValue);
-        call.enqueue(new Callback<SendOTPResponse>() {
+        call.enqueue(new Callback<>() {
             @Override
             public void onResponse(Call<SendOTPResponse> call, Response<SendOTPResponse> response) {
                 if (response.code() == Const.SUCCESS_CODE_200) {
                     progressBar.setVisibility(View.GONE);
-                    AppUtils.navigateScreenSendValue(LoginWithOTP.this, VerifyOTP.class ,"mobile",phoneValue);
+                    AppUtils.navigateScreenSendValue(LoginWithOTP.this, VerifyOTP.class, "mobile", phoneValue);
                 } else if (response.code() == Const.ERROR_CODE_404) {
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(mContext, getString(R.string.enter_registered_mobile), Toast.LENGTH_SHORT).show();
-                  //  AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, getString(R.string.enter_registered_mobile), LoginWithOTP.this);
                 }
             }
 
@@ -70,7 +70,6 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
             public void onFailure(Call<SendOTPResponse> call, Throwable t) {
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(mContext, t.getMessage(), Toast.LENGTH_SHORT).show();
-               // AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, t.getMessage(), LoginWithOTP.this);
 
             }
         });
@@ -96,8 +95,12 @@ public class LoginWithOTP extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn_letsGo_otp:
                 phoneValue = edt_phone.getText().toString();
-                if (checkPhoneNumberEntered())
-                    callSendOTP();
+                if (checkPhoneNumberEntered()) {
+                    if (AppUtils.isOnline(mContext))
+                        callSendOTP();
+                    else
+                        AppUtils.showInternetDialog(mContext);
+                }
                 break;
 
         }

@@ -76,6 +76,8 @@
             android:layout_marginRight="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
             android:alpha="0.9"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:backgroundTint="@color/transparent">
 
         </androidx.recyclerview.widget.RecyclerView>

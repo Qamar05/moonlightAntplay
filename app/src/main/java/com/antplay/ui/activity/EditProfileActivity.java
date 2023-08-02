@@ -1,6 +1,8 @@
 package com.antplay.ui.activity;
 
 
+import static com.antplay.utils.Const.emailPattern;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -130,7 +132,9 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
     private void updateUserProfile() {
         progressBar.setVisibility(View.VISIBLE);
-        UserUpdateRequestModal updateRequestModal = new UserUpdateRequestModal(email, phoneNumber,
+        UserUpdateRequestModal updateRequestModal = new UserUpdateRequestModal(
+                edTxtEmail.getText().toString().trim(),
+                edTxtPhoneNumber.getText().toString().trim(),
                 edTxtAddress.getText().toString().trim(),
                 edTxtState.getText().toString(),
                 edTxtCity.getText().toString().trim(),
@@ -147,7 +151,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                     }
                 }
             }
-
             @Override
             public void onFailure(Call<UserUpdateResponseModal> call, Throwable t) {
                 progressBar.setVisibility(View.GONE);
@@ -174,7 +177,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                         SharedPreferenceUtils.saveString(mContext, Const.USERNAME, response.body().getUsername());
                         SharedPreferenceUtils.saveString(mContext, Const.PINCODE, response.body().getPincode());
                         setData(response.body());
-
                     } else {
                         progressBar.setVisibility(View.GONE);
                         AppUtils.showToast(Const.no_records, EditProfileActivity.this);
@@ -204,14 +206,11 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                 openStateDialog();
                 break;
             case R.id.buttonUpdateProfile:
-                if (edTxtCity.getText().toString().trim().length() == 0) {
-                    AppUtils.showSnack(view, R.color.black, Const.city_should_not_empty, mContext);
-                } else if (edTxtAddress.getText().toString().trim().length() == 0) {
-                    AppUtils.showSnack(view, R.color.black, Const.address_should_not_empty, mContext);
-                } else if (!editTextPinCode.getText().toString().matches(Const.pinCodeRegex)) {
-                    AppUtils.showSnack(view, R.color.black, Const.enter_valid_picCode, mContext);
-                } else {
-                    updateUserProfile();
+                if (validateFormField()) {
+                    if(AppUtils.isOnline(mContext))
+                        updateUserProfile();
+                    else
+                        AppUtils.showInternetDialog(mContext);
                 }
                 break;
         }
@@ -237,5 +236,60 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     public void onButtonClick(int position) {
         dialog.dismiss();
         edTxtState.setText(stateList.get(position));
+    }
+
+    private boolean validateFormField() {
+        if (edTxtPhoneNumber.getText().toString().contains(" ")) {
+            edTxtPhoneNumber.setError(getString(R.string.remove_whitespace));
+            return false;
+        }
+        if (edTxtPhoneNumber.length() == 0) {
+            edTxtPhoneNumber.setError(getString(R.string.error_phone));
+            return false;
+        }
+        if (edTxtEmail.getText().toString().contains(" ")) {
+            edTxtEmail.setError(getString(R.string.remove_whitespace));
+            return false;
+        }
+         if (edTxtEmail.length() == 0) {
+            edTxtEmail.setError(getString(R.string.error_email));
+            return false;
+        }  if (!edTxtEmail.getText().toString().matches(emailPattern)) {
+            edTxtEmail.setError(getString(R.string.error_invalidEmail));
+            return false;
+        }
+        if (edTxtCity.getText().toString().contains(" ")) {
+            edTxtCity.setError(getString(R.string.remove_whitespace));
+            return false;
+        }  if (edTxtCity.length() == 0) {
+            edTxtCity.setError(getString(R.string.city_error));
+            return false;
+        }
+        if (edTxtAddress.getText().toString().contains(" ")) {
+            edTxtAddress.setError(getString(R.string.remove_whitespace));
+            return false;
+        }
+        if (edTxtAddress.length() == 0) {
+            edTxtAddress.setError(getString(R.string.address_error));
+            return false;
+        }
+        if (edTxtState.getText().toString().trim().contains(" ")) {
+            edTxtState.setError(getString(R.string.remove_whitespace));
+            return false;
+        }
+        if (edTxtState.length() == 0) {
+            edTxtState.setError(getString(R.string.error_state));
+            return false;
+        }
+        if (editTextPinCode.getText().toString().trim().contains(" ")) {
+            editTextPinCode.setError(getString(R.string.remove_whitespace));
+            return false;
+        }
+         if (editTextPinCode.getText().toString().trim().length() == 0) {
+            editTextPinCode.setError(getString(R.string.error_pinCode));
+            return false;
+        }
+
+        return true;
     }
 }

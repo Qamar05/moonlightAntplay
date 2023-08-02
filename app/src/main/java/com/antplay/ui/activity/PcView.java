@@ -35,6 +35,7 @@ import com.antplay.preferences.PreferenceConfiguration;
 import com.antplay.preferences.StreamSettings;
 import com.antplay.ui.fragments.AdapterFragment;
 import com.antplay.ui.intrface.AdapterFragmentCallbacks;
+import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.Dialog;
 import com.antplay.utils.HelpLauncher;
@@ -414,8 +415,10 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         // Assume we're in the foreground when created to avoid a race
         // between binding to CMS and onResume()
         inForeground = true;
-        getVMFromServerManually();
-
+        if (AppUtils.isOnline(PcView.this))
+            getVMFromServerManually();
+        else
+            AppUtils.showInternetDialog(PcView.this);
 
         // Create a GLSurfaceView to fetch GLRenderer unless we have
         // a cached result already.
@@ -826,7 +829,6 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
             return;
         }
 
-        Log.i("testtt" , "1");
         Intent i = new Intent(this, AppView.class);
         i.putExtra(AppView.NAME_EXTRA, computer.name);
         i.putExtra(AppView.UUID_EXTRA, computer.uuid);
@@ -1043,20 +1045,14 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
                         JSONObject jsonObject = new JSONObject(response);
                         JSONArray jsonArray = jsonObject.getJSONArray("data");
                         String vmIp = jsonArray.getJSONObject(0).getString("vmip");
-                        Log.d("ANT_PLAY", "VM IP : " + vmIp);
                         handleDoneEvent(vmIp);
                         bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection2, Service.BIND_AUTO_CREATE);
                         pcGridAdapter = new PcGridAdapter(PcView.this, PreferenceConfiguration.readPreferences(PcView.this));
                         initializeViews();
-                       /*
-                        Intent i = new Intent(LoginActivity.this, PcView.class);
-                        startActivity(i);
-                        finish();*/
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
-
             }
         }, new RestClient.ErrorListener() {
             @Override
@@ -1067,13 +1063,10 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
     }
 
     private boolean handleDoneEvent(String vmIp) {
-
-
         if (vmIp.length() == 0) {
             Toast.makeText(PcView.this, getResources().getString(R.string.addpc_enter_ip), Toast.LENGTH_LONG).show();
             return true;
         }
-
         computersToAdd.add(vmIp);
         return false;
     }

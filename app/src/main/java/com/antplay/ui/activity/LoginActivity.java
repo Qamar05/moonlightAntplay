@@ -85,8 +85,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     if (AppUtils.isOnline(mContext))
                         callLoginAPi(etEmail.getText().toString(), etPass.getText().toString());
                     else
-                        Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
-
+                        AppUtils.showInternetDialog(mContext);
                 }
                 break;
             case R.id.ivPasswordShow:

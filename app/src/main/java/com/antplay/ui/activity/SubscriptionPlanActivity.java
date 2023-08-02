@@ -60,40 +60,41 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
         progressSubscriptionPlan = findViewById(R.id.progressSubscriptionPlan);
         tvNoDataFound = findViewById(R.id.tvNoDataFound);
         imgBack = findViewById(R.id.imgBack);
-        buttonClickListener = this;
-
-        getPlanApi();
-
         imgBack.setOnClickListener(v -> finish());
+        buttonClickListener = this;
+        if (AppUtils.isOnline(mContext))
+            getPlanApi();
+        else
+            AppUtils.showInternetDialog(mContext);
+
+
     }
 
     private void getPlanApi() {
-        if (AppUtils.isOnline(mContext)) {
-            progressSubscriptionPlan.setVisibility(View.VISIBLE);
-            Call<AllBillingPlanResp> call = retrofitAPI.getBillingPlan("Bearer " + accessToken,Const.ANDROID);
-            call.enqueue(new Callback<AllBillingPlanResp>() {
-                @Override
-                public void onResponse(Call<AllBillingPlanResp> call, Response<AllBillingPlanResp> response) {
-                    progressSubscriptionPlan.setVisibility(View.GONE);
-                    if (response != null) {
-                        planList = response.body().getData();
-                        if (planList.size() > 0) {
-                            adapter = new SubscriptionPlanAdapter(SubscriptionPlanActivity.this, planList, buttonClickListener);
-                            rvSubscriptionPlans.setAdapter(adapter);
-                        } else {
-                            tvNoDataFound.setVisibility(View.VISIBLE);
-                            tvNoDataFound.setText(getString(R.string.noDataFound));
-                        }
+        progressSubscriptionPlan.setVisibility(View.VISIBLE);
+        Call<AllBillingPlanResp> call = retrofitAPI.getBillingPlan("Bearer " + accessToken, Const.ANDROID);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<AllBillingPlanResp> call, Response<AllBillingPlanResp> response) {
+                progressSubscriptionPlan.setVisibility(View.GONE);
+                if (response != null) {
+                    planList = response.body().getData();
+                    if (planList.size() > 0) {
+                        adapter = new SubscriptionPlanAdapter(SubscriptionPlanActivity.this, planList, buttonClickListener);
+                        rvSubscriptionPlans.setAdapter(adapter);
+                    } else {
+                        tvNoDataFound.setVisibility(View.VISIBLE);
+                        tvNoDataFound.setText(getString(R.string.noDataFound));
                     }
                 }
-                @Override
-                public void onFailure(Call<AllBillingPlanResp> call, Throwable t) {
-                    progressSubscriptionPlan.setVisibility(View.GONE);
-                    Log.i("Error: ", "" + t.getMessage());
-                }
-            });
-        } else
-            Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<AllBillingPlanResp> call, Throwable t) {
+                progressSubscriptionPlan.setVisibility(View.GONE);
+                Log.i("Error: ", "" + t.getMessage());
+            }
+        });
     }
 
     @Override
@@ -121,7 +122,7 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
                 }
             });
         } else
-            Toast.makeText(mContext, getString(R.string.check_internet_connection), Toast.LENGTH_SHORT).show();
+           AppUtils.showInternetDialog(mContext);
     }
 }
 

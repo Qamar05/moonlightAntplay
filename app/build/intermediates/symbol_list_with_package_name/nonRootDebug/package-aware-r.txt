@@ -3289,6 +3289,7 @@ id tv_termsandc_login
 id tv_timer
 id txtAlreadyRegister
 id txtBack
+id txtClose
 id txtCodeHasSent
 id txtCurrentPlan
 id txtDurationInHours
@@ -3454,6 +3455,7 @@ layout fragment_on_boarding_three
 layout fragment_on_boarding_two
 layout fragment_settings
 layout fragment_v_m
+layout internet_dialog_layout
 layout item_billing_plan
 layout item_power_menu_library_skydoves
 layout layout_material_power_menu_library_skydoves
@@ -3622,12 +3624,14 @@ string change_pass
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string check_connection
 string check_internet_connection
 string check_ports_msg
 string chip_text
 string choose_new_pc
 string city
 string clear_text_end_icon_content_description
+string close
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -3802,6 +3806,7 @@ string next
 string no
 string noDataFound
 string no_frame_received_error
+string no_internet
 string no_video_received_error
 string old_pass
 string otp_send

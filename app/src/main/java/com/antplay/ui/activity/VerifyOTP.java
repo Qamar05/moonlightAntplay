@@ -2,6 +2,7 @@ package com.antplay.ui.activity;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
@@ -36,9 +37,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-
-
 public class VerifyOTP extends Activity implements View.OnClickListener {
 
     EditText otp_textbox_one, otp_textbox_two, otp_textbox_three, otp_textbox_four,otp_textbox_five,otp_textbox_six, et_newPassword, et_confirmPassword;
@@ -47,6 +45,8 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
     LinearLayout linearLayout;
     String getMobile;
     SMSReceiver smsBroadcastReceiver;
+    Context mContext;
+
 
     private static final int REQ_USER_CONSENT = 200;
 
@@ -56,7 +56,7 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_verify_otp);
-
+        mContext =  VerifyOTP.this;
         otp_textbox_one = findViewById(R.id.otp_edit_box1);
         otp_textbox_two = findViewById(R.id.otp_edit_box2);
         otp_textbox_three = findViewById(R.id.otp_edit_box3);
@@ -115,10 +115,9 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
                         JSONObject jObj =  new JSONObject(responseValue);
                         if (jObj.getString("success").equals("True")) {
                             String accessToken = jObj.getJSONObject("data").getString("access");
-                         //   SharedPreferenceUtils.saveString(VerifyOTP.this, Const.EMAIL_ID, jObj.getString("email"));
-                            SharedPreferenceUtils.saveUserLoggedIn(VerifyOTP.this, Const.IS_LOGGED_IN, true);
-                            SharedPreferenceUtils.saveString(VerifyOTP.this, Const.ACCESS_TOKEN, accessToken);
-                            AppUtils.navigateScreen(VerifyOTP.this, PcView.class);
+                            SharedPreferenceUtils.saveUserLoggedIn(mContext, Const.IS_LOGGED_IN, true);
+                            SharedPreferenceUtils.saveString(mContext, Const.ACCESS_TOKEN, accessToken);
+                            AppUtils.navigateScreen((Activity) mContext, PcView.class);
                             finishAffinity();
                         }
                     } catch (Exception e) {
@@ -136,7 +135,7 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
                     }
                 }
                 else {
-                    Toast.makeText(VerifyOTP.this, "Something went wrong, please try again later.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext, "Something went wrong, please try again later.", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -189,8 +188,12 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
                 callTimer();
                 break;
             case R.id.verifyOTP:
-                if (validateOTPTextFields())
-                    callVerifyOTP();
+                if (validateOTPTextFields()){
+                    if (AppUtils.isOnline(mContext))
+                        callVerifyOTP();
+                    else
+                        AppUtils.showInternetDialog(mContext);
+                }
                 break;
             case R.id.imgBack:
                 finish();

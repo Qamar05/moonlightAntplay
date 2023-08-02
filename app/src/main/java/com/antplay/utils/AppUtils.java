@@ -3,18 +3,27 @@ package com.antplay.utils;
 import static com.antplay.utils.Const.emailPattern;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.antplay.R;
+import com.antplay.ui.activity.EditProfileActivity;
 import com.antplay.ui.activity.LoginActivity;
+import com.antplay.ui.adapter.StateListAdapter;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -113,4 +122,19 @@ public class AppUtils {
         stateList.add("West Bengal");
         return stateList;
     }
+    public static Dialog showInternetDialog(Context mContext){
+        Dialog dialog = new Dialog(mContext);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.internet_dialog_layout);
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Button close =(Button) dialog.findViewById(R.id.txtClose);
+        close.setOnClickListener(view -> {dialog.dismiss();});
+
+        dialog.show();
+    return dialog;
+    }
+
 }
