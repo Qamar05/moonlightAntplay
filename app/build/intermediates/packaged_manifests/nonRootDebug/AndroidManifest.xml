@@ -180,7 +180,8 @@
             android:name="com.antplay.ui.activity.PcView"
             android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
             android:exported="true"
-            android:resizeableActivity="true" >
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.MyApplication" >
             <intent-filter>
 
                 <!--
@@ -207,7 +208,7 @@
             android:name="com.antplay.AppView"
             android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
             android:resizeableActivity="true"
-            android:theme="@style/Theme.MyApplication" >
+            android:theme="@style/Theme.MyApplication2" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.antplay.ui.activity.PcView" />

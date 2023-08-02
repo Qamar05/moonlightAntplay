@@ -44,7 +44,6 @@ public class AppGridAdapter extends GenericGridAdapter<AppView.AppObject> {
         this.computer = computer;
         this.uniqueId = uniqueId;
         this.showHiddenApps = showHiddenApps;
-
         updateLayoutWithPreferences(context, prefs);
     }
 

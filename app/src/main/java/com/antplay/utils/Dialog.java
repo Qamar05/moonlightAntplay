@@ -63,7 +63,7 @@ public class Dialog implements Runnable {
         if (activity.isFinishing())
             return;
 
-        alert = new AlertDialog.Builder(activity).create();
+        alert = new AlertDialog.Builder(activity,R.style.CustomDialog).create();
 
         alert.setTitle(title);
         alert.setMessage(message);

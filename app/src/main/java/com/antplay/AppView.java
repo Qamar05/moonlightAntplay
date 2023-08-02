@@ -400,7 +400,8 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) menuInfo;
         AppObject selectedApp = (AppObject) appGridAdapter.getItem(info.position);
 
-        menu.setHeaderTitle(selectedApp.app.getAppName());
+
+        menu.setHeaderTitle("AntPlay");
 
         if (lastRunningAppId != 0) {
             if (lastRunningAppId == selectedApp.app.getAppId()) {
@@ -446,38 +447,24 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
         final AppObject app = (AppObject) appGridAdapter.getItem(info.position);
         switch (item.getItemId()) {
             case START_WITH_QUIT:
-                // Display a confirmation dialog first
-                UiHelper.displayQuitConfirmationDialog(this, new Runnable() {
-                    @Override
-                    public void run() {
-                        ServerHelper.doStart(AppView.this, app.app, computer, managerBinder);
-                    }
-                }, null);
+                UiHelper.displayQuitConfirmationDialog(this, () -> ServerHelper.doStart(AppView.this, app.app, computer, managerBinder), null);
                 return true;
 
             case START_OR_RESUME_ID:
-                // Resume is the same as start for us
                 ServerHelper.doStart(AppView.this, app.app, computer, managerBinder);
                 return true;
 
             case QUIT_ID:
                 // Display a confirmation dialog first
-                UiHelper.displayQuitConfirmationDialog(this, new Runnable() {
-                    @Override
-                    public void run() {
-                        suspendGridUpdates = true;
-                        ServerHelper.doQuit(AppView.this, computer,
-                                app.app, managerBinder, new Runnable() {
-                            @Override
-                            public void run() {
-                                // Trigger a poll immediately
-                                suspendGridUpdates = false;
-                                if (poller != null) {
-                                    poller.pollNow();
-                                }
-                            }
-                        });
-                    }
+                UiHelper.displayQuitConfirmationDialog(this, () -> {
+                    suspendGridUpdates = true;
+                    ServerHelper.doQuit(AppView.this, computer, app.app, managerBinder, () -> {
+                        // Trigger a poll immediately
+                        suspendGridUpdates = false;
+                        if (poller != null) {
+                            poller.pollNow();
+                        }
+                    });
                 }, null);
                 return true;
 
@@ -640,10 +627,8 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
 
                 // Only open the context menu if something is running, otherwise start it
                 if (lastRunningAppId != 0) {
-                    Log.i("testtt" , "4");
                     openContextMenu(arg1);
                 } else {
-                    Log.i("testtt" , "5");
                     ServerHelper.doStart(AppView.this, app.app, computer, managerBinder);
                 }
             }

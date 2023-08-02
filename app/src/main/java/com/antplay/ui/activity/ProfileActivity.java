@@ -82,8 +82,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         linearPrivacyPolicy = (LinearLayout) findViewById(R.id.linear_privacyPolicy);
         loadingProgressBar =  findViewById(R.id.loadingProgressBar);
 
-        txtUserID.setText(strEmailId);
-
         tv_manageSubs.setOnClickListener(this);
         backLinear.setOnClickListener(this);
         logoutLinear.setOnClickListener(this);
@@ -102,12 +100,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             callPaymentHistoryAPI();
         } else
             AppUtils.showInternetDialog(mContext);
-
-
-
     }
-
-
 
     private void logoutMethod() {
             Dialog dialog = new Dialog(mContext);
@@ -119,8 +112,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             Button txtNo = dialog.findViewById(R.id.txtNo);
             Button txtYes = dialog.findViewById(R.id.txtYes);
-
-
             txtYes.setOnClickListener(view -> {
                 SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
                 SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
@@ -128,11 +119,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 AppUtils.navigateScreen(ProfileActivity.this, LoginSignUpActivity.class);
                 finishAffinity();
             });
-
             txtNo.setOnClickListener(view -> {
                 dialog.dismiss();
             });
-
             dialog.show();
         }
 
@@ -172,8 +161,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         String date = year + "-" + monthStr + "-" + dayStr+" 00:00:00";
        return DateFormatterHelper.parseDate(date,DateFormatterHelper.DATE_FORMAT_TWO);
     }
-
-
     private long getYear(long totalDays) {
         long expiryYear = 1600;
         long dayCount;
@@ -270,22 +257,25 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onResponse(Call<UserDetailsModal> call, Response<UserDetailsModal> response) {
                 if (response.isSuccessful()) {
-
                    // progressBar.setVisibility(View.GONE);
-                    SharedPreferenceUtils.saveString(mContext, Const.FIRSTNAME, response.body().getFirstName());
-                    SharedPreferenceUtils.saveString(mContext, Const.LASTNAME, response.body().getLastName());
-                    SharedPreferenceUtils.saveString(mContext, Const.EMAIL_ID, response.body().getEmail());
-                    SharedPreferenceUtils.saveString(mContext, Const.PHONE_NUMBER, response.body().getPhoneNumber());
-                    SharedPreferenceUtils.saveString(mContext, Const.ADDRESS, response.body().getAddress());
-                    SharedPreferenceUtils.saveString(mContext, Const.STATE, response.body().getState());
-                    SharedPreferenceUtils.saveString(mContext, Const.CITY, response.body().getCity());
-                    SharedPreferenceUtils.saveString(mContext, Const.USERNAME, response.body().getUsername());
-                    SharedPreferenceUtils.saveString(mContext, Const.PINCODE, response.body().getPincode());
-
-                    txtUserID.setText(response.body().getEmail());
-                } else {
+                    if(response.body()!=null) {
+                        SharedPreferenceUtils.saveString(mContext, Const.FIRSTNAME, response.body().getFirstName());
+                        SharedPreferenceUtils.saveString(mContext, Const.LASTNAME, response.body().getLastName());
+                        SharedPreferenceUtils.saveString(mContext, Const.EMAIL_ID, response.body().getEmail());
+                        SharedPreferenceUtils.saveString(mContext, Const.PHONE_NUMBER, response.body().getPhoneNumber());
+                        SharedPreferenceUtils.saveString(mContext, Const.ADDRESS, response.body().getAddress());
+                        SharedPreferenceUtils.saveString(mContext, Const.STATE, response.body().getState());
+                        SharedPreferenceUtils.saveString(mContext, Const.CITY, response.body().getCity());
+                        SharedPreferenceUtils.saveString(mContext, Const.USERNAME, response.body().getUsername());
+                        SharedPreferenceUtils.saveString(mContext, Const.PINCODE, response.body().getPincode());
+                        txtUserID.setText(response.body().getEmail());
+                    }
+                    else
+                        AppUtils.showToast(Const.no_records, mContext);
+                }
+                else {
                      // progressBar.setVisibility(View.GONE);
-                    AppUtils.showToast(Const.no_records, mContext);
+                    AppUtils.showToast(Const.something_went_wrong, mContext);
                 }
             }
             @Override
@@ -329,7 +319,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     // loadingPB.setVisibility(View.GONE);
                 }
             });
-
     }
 
     private String  convertDateToString(String expiry_date) {

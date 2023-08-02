@@ -7802,6 +7802,7 @@ androidx.core.view.ViewCompat:
     public static void setAlpha(android.view.View,float)
     public static varargs void setAutofillHints(android.view.View,java.lang.String[])
     public static void setChildrenDrawingOrderEnabled(android.view.ViewGroup,boolean)
+    public static void setFitsSystemWindows(android.view.View,boolean)
     public static void setFocusedByDefault(android.view.View,boolean)
     public static void setKeyboardNavigationCluster(android.view.View,boolean)
     public static void setLabelFor(android.view.View,int)
@@ -8218,6 +8219,7 @@ androidx.core.view.accessibility.AccessibilityNodeInfoCompat:
     public void setCanOpenPopup(boolean)
     public void setContentInvalid(boolean)
     public void setContextClickable(boolean)
+    public void setDismissable(boolean)
     public void setDrawingOrder(int)
     public void setEditable(boolean)
     public void setImportantForAccessibility(boolean)
@@ -9784,6 +9786,7 @@ androidx.recyclerview.widget.GridLayoutManager:
     private static final boolean DEBUG
     public static final int DEFAULT_SPAN_COUNT
     private static final java.lang.String TAG
+    public void <init>(android.content.Context,int)
     public androidx.recyclerview.widget.GridLayoutManager$SpanSizeLookup getSpanSizeLookup()
     public boolean isUsingSpansToEstimateScrollbarDimensions()
     public void setSpanSizeLookup(androidx.recyclerview.widget.GridLayoutManager$SpanSizeLookup)
@@ -9826,6 +9829,7 @@ androidx.recyclerview.widget.LinearLayoutManager:
     private static final float MAX_SCROLL_FACTOR
     private static final java.lang.String TAG
     public static final int VERTICAL
+    public void <init>(android.content.Context)
     public int findFirstCompletelyVisibleItemPosition()
     public int findLastCompletelyVisibleItemPosition()
     public int getInitialPrefetchItemCount()
@@ -11511,6 +11515,8 @@ com.antplay.preferences.SeekBarPreference:
 com.antplay.preferences.WebLauncherPreference
 com.antplay.ui.activity.EditProfileActivity:
     android.widget.Spinner spinnerStateList
+com.antplay.ui.activity.ForgotPasswordActivity:
+    java.lang.String strEmail
 com.antplay.ui.activity.LoginActivity:
     java.lang.String st_email
     java.lang.String st_password
@@ -11560,6 +11566,7 @@ com.antplay.ui.intrface.StreamView:
     public void <init>(android.content.Context,android.util.AttributeSet,int,int)
 com.antplay.utils.AppUtils:
     public void <init>()
+    public static void showSnack(android.view.View,int,java.lang.String,android.content.Context)
 com.antplay.utils.CacheHelper:
     public void <init>()
     public static varargs long getFileSize(java.io.File,java.lang.String[])
@@ -14450,6 +14457,9 @@ com.google.android.material.R$attr:
     public static final int singleSelection
     public static final int sizePercent
     public static final int sliderStyle
+    public static final int snackbarButtonStyle
+    public static final int snackbarStyle
+    public static final int snackbarTextViewStyle
     public static final int spanCount
     public static final int spinBars
     public static final int spinnerDropDownItemStyle
@@ -15690,6 +15700,8 @@ com.google.android.material.R$layout:
     public static final int abc_tooltip
     public static final int custom_dialog
     public static final int design_bottom_sheet_dialog
+    public static final int design_layout_snackbar
+    public static final int design_layout_snackbar_include
     public static final int design_menu_item_action_area
     public static final int design_navigation_item
     public static final int design_navigation_item_header
@@ -15714,6 +15726,8 @@ com.google.android.material.R$layout:
     public static final int mtrl_calendar_month
     public static final int mtrl_calendar_month_navigation
     public static final int mtrl_calendar_months
+    public static final int mtrl_layout_snackbar
+    public static final int mtrl_layout_snackbar_include
     public static final int mtrl_navigation_rail_item
     public static final int mtrl_picker_actions
     public static final int mtrl_picker_header_dialog
@@ -17972,6 +17986,7 @@ com.google.android.material.behavior.SwipeDismissBehavior:
     public int getDragState()
     public com.google.android.material.behavior.SwipeDismissBehavior$OnDismissListener getListener()
     public void setDragDismissDistance(float)
+    public void setListener(com.google.android.material.behavior.SwipeDismissBehavior$OnDismissListener)
     public void setSensitivity(float)
 com.google.android.material.bottomappbar.BottomAppBar$1
 com.google.android.material.bottomappbar.BottomAppBar$2
@@ -18870,76 +18885,65 @@ com.google.android.material.slider.RangeSlider
 com.google.android.material.slider.Slider$OnChangeListener
 com.google.android.material.slider.Slider$OnSliderTouchListener
 com.google.android.material.slider.Slider
+com.google.android.material.snackbar.BaseTransientBottomBar$10
+com.google.android.material.snackbar.BaseTransientBottomBar$11
+com.google.android.material.snackbar.BaseTransientBottomBar$12
+com.google.android.material.snackbar.BaseTransientBottomBar$13
+com.google.android.material.snackbar.BaseTransientBottomBar$14
+com.google.android.material.snackbar.BaseTransientBottomBar$15
+com.google.android.material.snackbar.BaseTransientBottomBar$16
+com.google.android.material.snackbar.BaseTransientBottomBar$17
+com.google.android.material.snackbar.BaseTransientBottomBar$18
+com.google.android.material.snackbar.BaseTransientBottomBar$1
+com.google.android.material.snackbar.BaseTransientBottomBar$2
+com.google.android.material.snackbar.BaseTransientBottomBar$3
+com.google.android.material.snackbar.BaseTransientBottomBar$4
+com.google.android.material.snackbar.BaseTransientBottomBar$5
+com.google.android.material.snackbar.BaseTransientBottomBar$6
+com.google.android.material.snackbar.BaseTransientBottomBar$7$1
+com.google.android.material.snackbar.BaseTransientBottomBar$7
+com.google.android.material.snackbar.BaseTransientBottomBar$8
+com.google.android.material.snackbar.BaseTransientBottomBar$9
 com.google.android.material.snackbar.BaseTransientBottomBar$AnimationMode
 com.google.android.material.snackbar.BaseTransientBottomBar$BaseCallback$DismissEvent
-com.google.android.material.snackbar.BaseTransientBottomBar$BaseCallback:
-    public static final int DISMISS_EVENT_ACTION
-    public static final int DISMISS_EVENT_CONSECUTIVE
-    public static final int DISMISS_EVENT_MANUAL
-    public static final int DISMISS_EVENT_SWIPE
-    public static final int DISMISS_EVENT_TIMEOUT
+com.google.android.material.snackbar.BaseTransientBottomBar$BaseCallback
+com.google.android.material.snackbar.BaseTransientBottomBar$Behavior:
+    static synthetic void access$1300(com.google.android.material.snackbar.BaseTransientBottomBar$Behavior,com.google.android.material.snackbar.BaseTransientBottomBar)
+    private void setBaseTransientBottomBar(com.google.android.material.snackbar.BaseTransientBottomBar)
+com.google.android.material.snackbar.BaseTransientBottomBar$BehaviorDelegate:
+    public void setBaseTransientBottomBar(com.google.android.material.snackbar.BaseTransientBottomBar)
 com.google.android.material.snackbar.BaseTransientBottomBar$ContentViewCallback
 com.google.android.material.snackbar.BaseTransientBottomBar$Duration
 com.google.android.material.snackbar.BaseTransientBottomBar$SnackbarBaseLayout:
     protected void <init>(android.content.Context)
-com.google.android.material.snackbar.BaseTransientBottomBar:
-    static final int ANIMATION_DURATION
-    static final int ANIMATION_FADE_DURATION
-    private static final int ANIMATION_FADE_IN_DURATION
-    private static final int ANIMATION_FADE_OUT_DURATION
-    public static final int ANIMATION_MODE_FADE
-    public static final int ANIMATION_MODE_SLIDE
-    private static final float ANIMATION_SCALE_FROM_VALUE
-    public static final int LENGTH_INDEFINITE
-    public static final int LENGTH_LONG
-    public static final int LENGTH_SHORT
-    static final int MSG_DISMISS
-    static final int MSG_SHOW
-    protected void <init>(android.view.ViewGroup,android.view.View,com.google.android.material.snackbar.ContentViewCallback)
-    public com.google.android.material.snackbar.BaseTransientBottomBar addCallback(com.google.android.material.snackbar.BaseTransientBottomBar$BaseCallback)
-    public android.view.View getAnchorView()
-    public int getAnimationMode()
-    public com.google.android.material.snackbar.BaseTransientBottomBar$Behavior getBehavior()
-    public android.content.Context getContext()
-    public boolean isAnchorViewLayoutListenerEnabled()
-    public boolean isGestureInsetBottomIgnored()
-    public boolean isShown()
-    public com.google.android.material.snackbar.BaseTransientBottomBar removeCallback(com.google.android.material.snackbar.BaseTransientBottomBar$BaseCallback)
-    public com.google.android.material.snackbar.BaseTransientBottomBar setAnchorView(int)
-    public com.google.android.material.snackbar.BaseTransientBottomBar setAnchorView(android.view.View)
-    public void setAnchorViewLayoutListenerEnabled(boolean)
-    public com.google.android.material.snackbar.BaseTransientBottomBar setAnimationMode(int)
-    public com.google.android.material.snackbar.BaseTransientBottomBar setBehavior(com.google.android.material.snackbar.BaseTransientBottomBar$Behavior)
-    public com.google.android.material.snackbar.BaseTransientBottomBar setGestureInsetBottomIgnored(boolean)
+com.google.android.material.snackbar.BaseTransientBottomBar
+com.google.android.material.snackbar.ContentViewCallback
 com.google.android.material.snackbar.Snackbar$1
 com.google.android.material.snackbar.Snackbar$Callback
 com.google.android.material.snackbar.Snackbar$SnackbarLayout:
     public void <init>(android.content.Context)
-com.google.android.material.snackbar.Snackbar:
-    private com.google.android.material.snackbar.BaseTransientBottomBar$BaseCallback callback
-    protected static boolean hasSnackbarButtonStyleAttr(android.content.Context)
-    public boolean isShown()
-    public static com.google.android.material.snackbar.Snackbar make(android.content.Context,android.view.View,java.lang.CharSequence,int)
-    public static com.google.android.material.snackbar.Snackbar make(android.view.View,int,int)
-    public com.google.android.material.snackbar.Snackbar setAction(int,android.view.View$OnClickListener)
-    public com.google.android.material.snackbar.Snackbar setAction(java.lang.CharSequence,android.view.View$OnClickListener)
-    public com.google.android.material.snackbar.Snackbar setActionTextColor(int)
-    public com.google.android.material.snackbar.Snackbar setActionTextColor(android.content.res.ColorStateList)
-    public com.google.android.material.snackbar.Snackbar setBackgroundTint(int)
-    public com.google.android.material.snackbar.Snackbar setBackgroundTintList(android.content.res.ColorStateList)
-    public com.google.android.material.snackbar.Snackbar setBackgroundTintMode(android.graphics.PorterDuff$Mode)
-    public com.google.android.material.snackbar.Snackbar setCallback(com.google.android.material.snackbar.Snackbar$Callback)
-    public com.google.android.material.snackbar.Snackbar setMaxInlineActionWidth(int)
-    public com.google.android.material.snackbar.Snackbar setText(int)
-    public com.google.android.material.snackbar.Snackbar setTextColor(int)
-    public com.google.android.material.snackbar.Snackbar setTextColor(android.content.res.ColorStateList)
+com.google.android.material.snackbar.Snackbar
 com.google.android.material.snackbar.SnackbarContentLayout:
     public void <init>(android.content.Context)
+    public void animateContentIn(int,int)
+    public void animateContentOut(int,int)
+    void updateActionTextColorAlphaIfNeeded(float)
+com.google.android.material.snackbar.SnackbarManager$Callback:
+    public abstract void show()
+com.google.android.material.snackbar.SnackbarManager$SnackbarRecord:
+    void <init>(int,com.google.android.material.snackbar.SnackbarManager$Callback)
 com.google.android.material.snackbar.SnackbarManager:
     private static final int LONG_DURATION_MS
     static final int MSG_TIMEOUT
     private static final int SHORT_DURATION_MS
+    public void dismiss(com.google.android.material.snackbar.SnackbarManager$Callback,int)
     public boolean isCurrent(com.google.android.material.snackbar.SnackbarManager$Callback)
+    public boolean isCurrentOrNext(com.google.android.material.snackbar.SnackbarManager$Callback)
+    private boolean isNextSnackbarLocked(com.google.android.material.snackbar.SnackbarManager$Callback)
+    public void onDismissed(com.google.android.material.snackbar.SnackbarManager$Callback)
+    public void onShown(com.google.android.material.snackbar.SnackbarManager$Callback)
+    public void show(int,com.google.android.material.snackbar.SnackbarManager$Callback)
+    private void showNextSnackbarLocked()
 com.google.android.material.switchmaterial.SwitchMaterial
 com.google.android.material.tabs.TabIndicatorInterpolator:
     private static final int MIN_INDICATOR_WIDTH

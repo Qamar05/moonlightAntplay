@@ -8,6 +8,8 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 
+import com.antplay.R;
+
 public class SpinnerDialog implements Runnable,OnCancelListener {
     private final String title;
     private final String message;
@@ -17,8 +19,7 @@ public class SpinnerDialog implements Runnable,OnCancelListener {
 
     private static final ArrayList<SpinnerDialog> rundownDialogs = new ArrayList<>();
 
-    private SpinnerDialog(Activity activity, String title, String message, boolean finish)
-    {
+    private SpinnerDialog(Activity activity, String title, String message, boolean finish) {
         this.activity = activity;
         this.title = title;
         this.message = message;
@@ -26,10 +27,8 @@ public class SpinnerDialog implements Runnable,OnCancelListener {
         this.finish = finish;
     }
 
-    public static SpinnerDialog displayDialog(Activity activity, String title, String message, boolean finish)
-    {
+    public static SpinnerDialog displayDialog(Activity activity, String title, String message, boolean finish) {
         SpinnerDialog spinner = new SpinnerDialog(activity, title, message, finish);
-
         activity.runOnUiThread(spinner);
         return spinner;
     }
@@ -76,7 +75,7 @@ public class SpinnerDialog implements Runnable,OnCancelListener {
 
         if (progress == null)
         {
-            progress = new ProgressDialog(activity);
+            progress = new ProgressDialog(activity, R.style.CustomDialog);
 
             progress.setTitle(title);
             progress.setMessage(message);

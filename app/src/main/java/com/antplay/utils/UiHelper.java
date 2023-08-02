@@ -250,7 +250,7 @@ public class UiHelper {
             }
         };
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(parent);
+        AlertDialog.Builder builder = new AlertDialog.Builder(parent ,R.style.CustomDialog);
         builder.setMessage(parent.getResources().getString(R.string.delete_pc_msg))
                 .setTitle(computer.name)
                 .setPositiveButton(parent.getResources().getString(R.string.yes), dialogClickListener)

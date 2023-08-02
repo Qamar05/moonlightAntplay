@@ -251,7 +251,10 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
                         strAge = edtAge.getText().toString().trim();
                         strCity = edtCity.getText().toString().trim();
                         strPinCode = edtPinCode.getText().toString();
-                        callRegisterApi(strFirstName, strMiddleName, strLastName, strEmail, strPhoneNumber, lastLogin, isNewUser, isSubscribed, strPassword, strAddress, strAge, strState, strCity, strPinCode);
+                        strState = edTxtState.getText().toString();
+                        callRegisterApi(strFirstName, strMiddleName, strLastName,
+                                strEmail, strPhoneNumber, lastLogin, isNewUser, isSubscribed,
+                                strPassword, strAddress, strAge, strState, strCity, strPinCode);
                     }
                     else
                         AppUtils.showInternetDialog(mContext);
@@ -279,7 +282,7 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
     @Override
     public void onButtonClick(int value) {
         dialog.dismiss();
-        edTxtState.setText(stateList.get(0));
+        edTxtState.setText(stateList.get(value));
     }
     private void showHidePassword(EditText  passwordEditText , ImageView ivPassword) {
         if(!showPassword) {

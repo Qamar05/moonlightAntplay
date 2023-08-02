@@ -16,7 +16,53 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:id="@+id/back_linear_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
 
+            <ImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:src="@drawable/backarrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/editprofile" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:fontFamily="sans-serif"
+                android:text="@string/edit_profile"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -27,56 +73,6 @@
                 android:layout_height="match_parent"
                 android:gravity="bottom"
                 android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/back_linear_edit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="@dimen/_10sdp"
-                        android:layout_height="@dimen/_10sdp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:src="@drawable/backarrow" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:fontFamily="sans-serif"
-                        android:text="@string/back"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_12sdp"
-                        android:textStyle="normal" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginLeft="@dimen/_20sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_15sdp"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:src="@drawable/editprofile" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_10sdp"
-                        android:fontFamily="sans-serif"
-                        android:text="@string/edit_profile"
-                        android:textColor="@color/gray"
-                        android:textSize="@dimen/_12sdp" />
-                </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -102,8 +98,8 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/name"
-                            android:textSize="@dimen/_12sdp"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -112,7 +108,6 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtFullName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -125,7 +120,8 @@
                                 android:focusable="false"
                                 android:fontFamily="sans-serif"
                                 android:text="Rakesh Jha"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -164,7 +160,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -172,7 +167,8 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/username"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -181,7 +177,6 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtUserName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -194,7 +189,8 @@
                                 android:focusable="false"
                                 android:fontFamily="sans-serif"
                                 android:text="Rakesh#213"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -233,7 +229,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -241,7 +236,8 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/phone"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -250,7 +246,6 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtPhoneNumber"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -263,7 +258,8 @@
                                 android:focusable="false"
                                 android:fontFamily="sans-serif"
                                 android:text="9717844140"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -301,7 +297,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -309,7 +304,8 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/email"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -318,7 +314,6 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtEmail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -331,7 +326,8 @@
                                 android:focusable="false"
                                 android:fontFamily="sans-serif"
                                 android:text="Rakesh@gmail.com"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -378,8 +374,8 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/age"
-                            android:textSize="@dimen/_12sdp"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -388,7 +384,6 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtAge"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -399,7 +394,8 @@
                                 android:background="@null"
                                 android:fontFamily="sans-serif"
                                 android:text="28"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -437,7 +433,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -445,7 +440,8 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/city"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -454,7 +450,6 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtCity"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -465,7 +460,8 @@
                                 android:background="@null"
                                 android:fontFamily="sans-serif"
                                 android:text="Noida"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -502,7 +498,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -510,7 +505,8 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/address"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -519,7 +515,6 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtAddress"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -530,7 +525,8 @@
                                 android:background="@null"
                                 android:fontFamily="sans-serif"
                                 android:text="Sector 156"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -566,7 +562,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -574,7 +569,8 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/state"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -583,7 +579,6 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtState"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -592,14 +587,14 @@
                                 android:layout_marginBottom="@dimen/_5sdp"
                                 android:layout_weight="0.3"
                                 android:background="@null"
-                                android:fontFamily="sans-serif"
                                 android:focusable="false"
+                                android:fontFamily="sans-serif"
                                 android:text="Sector 156"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
 
 
                             <Spinner
-                                android:visibility="gone"
                                 android:id="@+id/spinnerStateList"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -610,7 +605,8 @@
                                 android:autofillHints="name"
                                 android:background="@null"
                                 android:fontFamily="sans-serif"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:visibility="gone" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -647,7 +643,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:textSize="@dimen/_12sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_10sdp"
@@ -655,7 +650,8 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
                             android:text="@string/pinCode"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -664,7 +660,6 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:textSize="@dimen/_12sdp"
                                 android:id="@+id/edTxtPinCode"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -676,7 +671,8 @@
                                 android:fontFamily="sans-serif"
                                 android:inputType="number"
                                 android:maxLength="6"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"

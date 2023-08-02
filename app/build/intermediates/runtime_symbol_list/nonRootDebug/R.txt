@@ -1149,6 +1149,7 @@ int color cardview_shadow_start_color 0x7f060030
 int color checkbox_themeable_attribute_color 0x7f060031
 int color colorAccentDark_light 0x7f060032
 int color color_0093dd 0x7f060033
+int color color_236349 0x7f0600f3
 int color color_333333 0x7f060034
 int color color_4fb04f 0x7f060035
 int color color_707070 0x7f060036
@@ -3578,6 +3579,7 @@ int string addpc_success 0x7f100020
 int string addpc_unknown_host 0x7f100021
 int string addpc_wrong_sitelocal 0x7f100022
 int string address 0x7f100023
+int string address_error 0x7f1001cd
 int string age 0x7f100024
 int string alreadyRegister 0x7f100025
 int string androidx_startup 0x7f100026
@@ -3629,6 +3631,7 @@ int string check_ports_msg 0x7f100052
 int string chip_text 0x7f100053
 int string choose_new_pc 0x7f100054
 int string city 0x7f100055
+int string city_error 0x7f1001ce
 int string clear_text_end_icon_content_description 0x7f100056
 int string close 0x7f1001cb
 int string common_google_play_services_enable_button 0x7f100057
@@ -3692,6 +3695,7 @@ int string error_invalidEmail 0x7f100090
 int string error_invalidPhone 0x7f100091
 int string error_lastname 0x7f100092
 int string error_manager_not_running 0x7f100093
+int string error_name 0x7f1001cf
 int string error_new_password 0x7f100094
 int string error_old_password 0x7f100095
 int string error_pass_minimum 0x7f100096
@@ -4237,6 +4241,7 @@ int style Base_Widget_MaterialComponents_TextView 0x7f1100e6
 int style CardView 0x7f1100e7
 int style CardView_Dark 0x7f1100e8
 int style CardView_Light 0x7f1100e9
+int style CustomDialog 0x7f1102e6
 int style ElasticMenuAnimation_BL 0x7f1100ea
 int style ElasticMenuAnimation_BR 0x7f1100eb
 int style ElasticMenuAnimation_Center 0x7f1100ec
@@ -4489,6 +4494,7 @@ int style Theme_MaterialComponents_Light_NoActionBar_Bridge 0x7f1101e2
 int style Theme_MaterialComponents_NoActionBar 0x7f1101e3
 int style Theme_MaterialComponents_NoActionBar_Bridge 0x7f1101e4
 int style Theme_MyApplication 0x7f1101e5
+int style Theme_MyApplication2 0x7f1102e7
 int style ThemeOverlay_AppCompat 0x7f1101e6
 int style ThemeOverlay_AppCompat_ActionBar 0x7f1101e7
 int style ThemeOverlay_AppCompat_Dark 0x7f1101e8

@@ -84,7 +84,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class PcView extends Activity implements AdapterFragmentCallbacks {
+public class PcView extends AppCompatActivity implements AdapterFragmentCallbacks {
     private RelativeLayout noPcFoundLayout;
     private PcGridAdapter pcGridAdapter;
     private ShortcutHelper shortcutHelper;
@@ -207,6 +207,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         boolean success;
         int portTestResult;
 
+
         SpinnerDialog dialog = SpinnerDialog.displayDialog(this, getResources().getString(R.string.title_add_pc),
                 getResources().getString(R.string.msg_add_pc), false);
 
@@ -237,6 +238,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         } catch (InterruptedException e) {
             // Propagate the InterruptedException to the caller for proper handling
             dialog.dismiss();
+
             throw e;
         } catch (IllegalArgumentException e) {
             // This can be thrown from OkHttp if the host fails to canonicalize to a valid name.
