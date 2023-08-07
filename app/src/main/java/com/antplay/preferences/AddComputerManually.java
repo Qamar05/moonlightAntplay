@@ -9,16 +9,13 @@ import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import com.antplay.api.APIClient;
-import com.antplay.api.RetrofitAPI;
 import com.antplay.computers.ComputerManagerService;
 import com.antplay.R;
-import com.antplay.models.GetVMResponse;
 import com.antplay.nvstream.http.ComputerDetails;
 import com.antplay.nvstream.http.NvHTTP;
 import com.antplay.nvstream.jni.MoonBridge;
 import com.antplay.utils.Const;
-import com.antplay.utils.Dialog;
+import com.antplay.utils.MyDialog;
 import com.antplay.utils.RestClient;
 import com.antplay.utils.ServerHelper;
 import com.antplay.utils.SharedPreferenceUtils;
@@ -44,10 +41,6 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class AddComputerManually extends Activity {
     private TextView hostText;
@@ -191,9 +184,9 @@ public class AddComputerManually extends Activity {
         dialog.dismiss();
 
         if (invalidInput) {
-            Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_unknown_host), false);
+            MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_unknown_host), false);
         } else if (wrongSiteLocal) {
-            Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_wrong_sitelocal), false);
+            MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_wrong_sitelocal), false);
         } else if (!success) {
             String dialogText;
             if (portTestResult != MoonBridge.ML_TEST_RESULT_INCONCLUSIVE && portTestResult != 0) {
@@ -201,7 +194,7 @@ public class AddComputerManually extends Activity {
             } else {
                 dialogText = getResources().getString(R.string.addpc_fail);
             }
-            Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), dialogText, false);
+            MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), dialogText, false);
         } else {
             AddComputerManually.this.runOnUiThread(new Runnable() {
                 @Override
@@ -259,7 +252,7 @@ public class AddComputerManually extends Activity {
     protected void onStop() {
         super.onStop();
 
-        Dialog.closeDialogs();
+        MyDialog.closeDialogs();
         SpinnerDialog.closeDialogs(this);
     }
 

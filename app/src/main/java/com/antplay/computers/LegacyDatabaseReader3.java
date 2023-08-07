@@ -113,7 +113,7 @@ public class LegacyDatabaseReader3 {
         ) {
             // Open the existing database
             return getAllComputers(computerDb);
-        } catch (SQLiteException e) {
+        } catch (Exception e) {
             return new LinkedList<ComputerDetails>();
         } finally {
             // Close and delete the old DB

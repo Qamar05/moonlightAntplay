@@ -258,23 +258,12 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             edTxtEmail.setError(getString(R.string.error_invalidEmail));
             return false;
         }
-        if (edTxtCity.getText().toString().contains(" ")) {
-            edTxtCity.setError(getString(R.string.remove_whitespace));
-            return false;
-        }  if (edTxtCity.length() == 0) {
+         if (edTxtCity.length() == 0) {
             edTxtCity.setError(getString(R.string.city_error));
-            return false;
-        }
-        if (edTxtAddress.getText().toString().contains(" ")) {
-            edTxtAddress.setError(getString(R.string.remove_whitespace));
             return false;
         }
         if (edTxtAddress.length() == 0) {
             edTxtAddress.setError(getString(R.string.address_error));
-            return false;
-        }
-        if (edTxtState.getText().toString().trim().contains(" ")) {
-            edTxtState.setError(getString(R.string.remove_whitespace));
             return false;
         }
         if (edTxtState.length() == 0) {
@@ -285,7 +274,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             editTextPinCode.setError(getString(R.string.remove_whitespace));
             return false;
         }
-         if (editTextPinCode.getText().toString().trim().length() == 0) {
+        if (editTextPinCode.getText().toString().trim().length() == 0) {
             editTextPinCode.setError(getString(R.string.error_pinCode));
             return false;
         }

@@ -31,7 +31,7 @@ import com.antplay.LimeLog;
 import com.antplay.ui.activity.PcView;
 import com.antplay.R;
 import com.antplay.binding.video.MediaCodecHelper;
-import com.antplay.utils.Dialog;
+import com.antplay.utils.MyDialog;
 import com.antplay.utils.UiHelper;
 
 import java.lang.reflect.Method;
@@ -613,7 +613,7 @@ public class StreamSettings extends Activity {
 
                     // If this is native resolution, show the warning dialog
                     if (isNativeRes) {
-                        Dialog.displayDialog(getActivity(),
+                        MyDialog.displayDialog(getActivity(),
                                 getResources().getString(R.string.title_native_res_dialog),
                                 getResources().getString(R.string.text_native_res_dialog),
                                 false);

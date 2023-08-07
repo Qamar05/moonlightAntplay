@@ -80,10 +80,6 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\drawable-xhdpi\\home.png"
     },
     {
-        "merged": "com.antplay.app-merged_res-33:/layout_activity_edit_profile.xml.flat",
-        "source": "com.antplay.app-main-35:/layout/activity_edit_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\layout_activity_login.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\layout\\activity_login.xml"
     },
@@ -136,12 +132,12 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\drawable\\white_border_bg.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable-mdpi_ic_pc_offline.png.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-28:\\drawable-mdpi\\ic_pc_offline.png"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable-xhdpi_ic_lime_layer.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-28:\\drawable-xhdpi\\ic_lime_layer.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable-mdpi_ic_pc_offline.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-28:\\drawable-mdpi\\ic_pc_offline.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable-xxxhdpi_ic_computer.png.flat",
@@ -184,12 +180,12 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\drawable\\play.png"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable_gradient_pcsetting.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\drawable\\gradient_pcsetting.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable-xhdpi_no_app_image.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\drawable-xhdpi\\no_app_image.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable_gradient_pcsetting.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\drawable\\gradient_pcsetting.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable_lock.png.flat",
@@ -576,6 +572,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\layout\\activity_profile.xml"
     },
     {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\layout-sw600dp_progress_dialog.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\layout-sw600dp\\progress_dialog.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\mipmap-xhdpi\\ic_launcher.png"
     },
@@ -606,6 +606,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\anim_boxart_fadein.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\anim\\boxart_fadein.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-33:/layout_state_dialog_layout.xml.flat",
+        "source": "com.antplay.app-main-35:/layout/state_dialog_layout.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable-xhdpi_ic_add.png.flat",
@@ -806,6 +810,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\layout_app_grid_item_small.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\layout\\app_grid_item_small.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\layout_progress_dialog.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\layout\\progress_dialog.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\layout_activity_verify_otp.xml.flat",

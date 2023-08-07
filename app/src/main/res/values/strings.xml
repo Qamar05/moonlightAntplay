@@ -386,5 +386,11 @@
     <string name="more_professional">and more professional and precise control</string>
     <string name="choose_new_pc">CHOOSE A NEW PC</string>
     <string name="close">Close</string>
+    <string name="subscription_msg">Your subscription is going to expire in 5 minutes, Renew your subscription to continue.</string>
+    <string name="subscription_title">Subscription Alert</string>
+    <string name="subs_continue">Continue</string>
+
+    <string name="exit_vm_msg">Are you sure you want to Exit?</string>
+    <string name="exit_vm">Exit</string>
 
 </resources>

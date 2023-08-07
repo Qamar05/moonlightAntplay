@@ -103,6 +103,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void logoutMethod() {
+
+        try {
             Dialog dialog = new Dialog(mContext);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setContentView(R.layout.dialog_logout);
@@ -113,6 +115,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             Button txtNo = dialog.findViewById(R.id.txtNo);
             Button txtYes = dialog.findViewById(R.id.txtYes);
             txtYes.setOnClickListener(view -> {
+                dialog.dismiss();
                 SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
                 SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
                 SharedPreferenceUtils.saveString(ProfileActivity.this, Const.EMAIL_ID, "");
@@ -123,6 +126,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 dialog.dismiss();
             });
             dialog.show();
+        }
+        catch (Exception e){
+            SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
+            SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
+            SharedPreferenceUtils.saveString(ProfileActivity.this, Const.EMAIL_ID, "");
+            AppUtils.navigateScreen(ProfileActivity.this, LoginSignUpActivity.class);
+            finishAffinity();
+        }
         }
 
     private String getDateFromSec(long expiryDateInSec) {

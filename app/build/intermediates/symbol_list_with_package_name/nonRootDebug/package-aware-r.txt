@@ -1148,6 +1148,7 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color checkbox_themeable_attribute_color
+color color
 color colorAccentDark_light
 color color_0093dd
 color color_236349
@@ -3252,6 +3253,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timerText
 id title
 id titleDividerNoCustom
 id titleLayout
@@ -3514,6 +3516,7 @@ layout notification_template_part_time
 layout paymenthistory_adapter
 layout pc_grid_item
 layout pc_grid_view
+layout progress_dialog
 layout sdp_example
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
@@ -3710,6 +3713,8 @@ string error_unknown_host
 string error_usb_prohibited
 string error_username
 string error_wrong_otp
+string exit_vm
+string exit_vm_msg
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -3891,8 +3896,11 @@ string slow_connection_msg
 string state
 string status
 string status_bar_notification_info_overflow
+string subs_continue
 string subscribe
+string subscription_msg
 string subscription_plan
+string subscription_title
 string suffix_osc_opacity
 string suffix_seekbar_bitrate_mbps
 string suffix_seekbar_deadzone
@@ -4018,6 +4026,7 @@ style Animation_Design_BottomSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
 style AppBaseTheme
 style AppTheme
+style AppTheme_DropDownList
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
@@ -4243,6 +4252,7 @@ style CardView
 style CardView_Dark
 style CardView_Light
 style CustomDialog
+style CustomDialog2
 style ElasticMenuAnimation_BL
 style ElasticMenuAnimation_BR
 style ElasticMenuAnimation_Center
@@ -4276,6 +4286,7 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style PopupMenu
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon

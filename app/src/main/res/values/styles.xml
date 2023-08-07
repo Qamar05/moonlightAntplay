@@ -55,10 +55,18 @@
     </style>
 
     <style name="CustomDialog" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:background">@color/color_236349</item>
+<!--        <item name="android:background">@color/color_236349</item>-->
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:screenSize">large</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
+
+    <style name="CustomDialog2" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@color/color_236349</item>
+        <item name="android:screenSize">normal</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 
 </resources>

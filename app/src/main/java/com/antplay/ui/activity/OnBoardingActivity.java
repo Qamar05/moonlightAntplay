@@ -20,7 +20,7 @@ import com.antplay.utils.Const;
 import com.antplay.utils.SharedPreferenceUtils;
 import com.google.android.material.tabs.TabLayout;
 
-public class OnBoardingActivity extends AppCompatActivity implements View.OnClickListener {
+public class  OnBoardingActivity extends AppCompatActivity implements View.OnClickListener {
     ViewPager viewPager;
     TabLayout tabLayout;
     TextView txtSkip;
@@ -98,7 +98,7 @@ public class OnBoardingActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
             case R.id.txtSkip:
                 SharedPreferenceUtils.saveBoolean(OnBoardingActivity.this, Const.IS_FIRST_TIME,false);
-                AppUtils.navigateScreen(OnBoardingActivity.this, LoginActivity.class);
+                AppUtils.navigateScreen(OnBoardingActivity.this, LoginSignUpActivity.class);
                 break;
             case R.id.txtNext:
                 movePagerToNextPage();

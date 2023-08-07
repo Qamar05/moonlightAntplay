@@ -647,9 +647,11 @@ static void processRtpPayloadSlow(PBUFFER_DESC currentPos, PLENTRY_INTERNAL* exi
         skipToNextNalOrEnd(currentPos);
 
         // If this is the picture data, we expect it to extend to the end of the packet
+
         if (containsPicData) {
             while (currentPos->length != 0) {
                 // Any NALUs we encounter on the way to the end of the packet must be reference frame slices
+
                 LC_ASSERT(isSeqReferenceFrameStart(currentPos));
                 skipToNextNalOrEnd(currentPos);
             }
@@ -667,16 +669,16 @@ static void processRtpPayloadSlow(PBUFFER_DESC currentPos, PLENTRY_INTERNAL* exi
 void requestDecoderRefresh(void) {
     // Wait for the next IDR frame
     waitingForIdrFrame = true;
-    
+
     // Flush the decode unit queue
     freeDecodeUnitList(LbqFlushQueueItems(&decodeUnitQueue));
-    
+
     // Request the receive thread drop its state
     // on the next call. We can't do it here because
     // it may be trying to queue DUs and we'll nuke
     // the state out from under it.
     dropStatePending = true;
-    
+
     // Request the IDR frame
     LiRequestIdrFrame();
 }
@@ -720,7 +722,7 @@ static void processRtpPayload(PNV_VIDEO_PACKET videoPacket, int length,
     LC_ASSERT((flags & ~(FLAG_SOF | FLAG_EOF | FLAG_CONTAINS_PIC_DATA)) == 0);
 
     streamPacketIndex = videoPacket->streamPacketIndex;
-    
+
     // Drop packets from a previously corrupt frame
     if (isBefore32(frameIndex, nextFrameNumber)) {
         return;
@@ -743,10 +745,10 @@ static void processRtpPayload(PNV_VIDEO_PACKET videoPacket, int length,
         }
         return;
     }
-    
+
     // Verify that we didn't receive an incomplete frame
     LC_ASSERT(firstPacket ^ decodingFrame);
-    
+
     // Check sequencing of this frame to ensure we didn't
     // miss one in between
     if (firstPacket) {
@@ -775,13 +777,13 @@ static void processRtpPayload(PNV_VIDEO_PACKET videoPacket, int length,
         // We're now decoding a frame
         decodingFrame = true;
         firstPacketReceiveTime = receiveTimeMs;
-        
+
         // Some versions of Sunshine don't send a valid PTS, so we will
         // synthesize one using the receive time as the time base.
         if (!syntheticPtsBase) {
             syntheticPtsBase = receiveTimeMs;
         }
-        
+
         if (!presentationTimeMs && frameIndex > 0) {
             firstPacketPresentationTime = (unsigned int)(receiveTimeMs - syntheticPtsBase);
         }

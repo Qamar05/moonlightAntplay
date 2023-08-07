@@ -7,6 +7,7 @@
     android:layout_margin="@dimen/_40sdp"
     android:layout_height="wrap_content"
     android:background="@drawable/inset_dialog"
+    android:layout_marginBottom="@dimen/_10sdp"
     android:padding="@dimen/_3sdp"
     android:orientation="vertical">
 
@@ -23,8 +24,10 @@
         android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:paddingBottom="@dimen/_10sdp"
         app:layout_constraintTop_toBottomOf="@+id/selectState"
         android:id="@+id/rvStateList"
+        android:layout_marginBottom="@dimen/_10sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
         android:layout_width="match_parent"

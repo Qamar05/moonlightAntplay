@@ -2,6 +2,7 @@ package com.antplay.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.GameManager;
 import android.app.GameState;
 import android.app.LocaleManager;
@@ -10,12 +11,18 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.Insets;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.LocaleList;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.antplay.R;
 import com.antplay.nvstream.http.ComputerDetails;
@@ -177,7 +184,7 @@ public class UiHelper {
             if (crashCount % 3 == 0) {
                 // At 3 consecutive crashes, we'll forcefully reset their settings
                 PreferenceConfiguration.resetStreamingSettings(activity);
-                Dialog.displayDialog(activity,
+                MyDialog.displayDialog(activity,
                         activity.getResources().getString(R.string.title_decoding_reset),
                         activity.getResources().getString(R.string.message_decoding_reset),
                         new Runnable() {
@@ -189,7 +196,7 @@ public class UiHelper {
                         });
             }
             else {
-                Dialog.displayDialog(activity,
+                MyDialog.displayDialog(activity,
                         activity.getResources().getString(R.string.title_decoding_error),
                         activity.getResources().getString(R.string.message_decoding_error),
                         new Runnable() {
@@ -204,57 +211,64 @@ public class UiHelper {
     }
 
     public static void displayQuitConfirmationDialog(Activity parent, final Runnable onYes, final Runnable onNo) {
-        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which){
-                    case DialogInterface.BUTTON_POSITIVE:
-                        if (onYes != null) {
-                            onYes.run();
-                        }
-                        break;
+        Dialog dialog = new Dialog(parent);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_logout);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titleText =  dialog.findViewById(R.id.titleText);
+        TextView msgText =  dialog.findViewById(R.id.msgText);
+        Button txtNo = dialog.findViewById(R.id.txtNo);
+        Button txtYes = dialog.findViewById(R.id.txtYes);
+        msgText.setText(parent.getResources().getString(R.string.applist_quit_confirmation));
+        titleText.setText("Session Quit");
+        txtYes.setOnClickListener(view -> {
+            dialog.dismiss();
+            if (onYes != null) {
+                onYes.run();
 
-                    case DialogInterface.BUTTON_NEGATIVE:
-                        if (onNo != null) {
-                            onNo.run();
-                        }
-                        break;
-                }
             }
-        };
+        });
+        txtNo.setOnClickListener(view -> {
+            dialog.dismiss();
+            if (onNo != null) {
+                onNo.run();
+            }
+        });
+        dialog.show();
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(parent);
-        builder.setMessage(parent.getResources().getString(R.string.applist_quit_confirmation))
-                .setPositiveButton(parent.getResources().getString(R.string.yes), dialogClickListener)
-                .setNegativeButton(parent.getResources().getString(R.string.no), dialogClickListener)
-                .show();
     }
 
     public static void displayDeletePcConfirmationDialog(Activity parent, ComputerDetails computer, final Runnable onYes, final Runnable onNo) {
-        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which){
-                    case DialogInterface.BUTTON_POSITIVE:
-                        if (onYes != null) {
-                            onYes.run();
-                        }
-                        break;
+        Dialog dialog = new Dialog(parent);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_logout);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titleText =  dialog.findViewById(R.id.titleText);
+        TextView msgText =  dialog.findViewById(R.id.msgText);
+        Button txtNo = dialog.findViewById(R.id.txtNo);
+        Button txtYes = dialog.findViewById(R.id.txtYes);
+        titleText.setText("Delete PC");
+        msgText.setText(parent.getResources().getString(R.string.delete_pc_msg));
+        txtYes.setOnClickListener(view -> {
+            dialog.dismiss();
+            if (onYes != null) {
+                onYes.run();
 
-                    case DialogInterface.BUTTON_NEGATIVE:
-                        if (onNo != null) {
-                            onNo.run();
-                        }
-                        break;
-                }
             }
-        };
+        });
+        txtNo.setOnClickListener(view -> {
+            dialog.dismiss();
+            if (onNo != null) {
+                onNo.run();
+            }
+        });
+        dialog.show();
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(parent ,R.style.CustomDialog);
-        builder.setMessage(parent.getResources().getString(R.string.delete_pc_msg))
-                .setTitle(computer.name)
-                .setPositiveButton(parent.getResources().getString(R.string.yes), dialogClickListener)
-                .setNegativeButton(parent.getResources().getString(R.string.no), dialogClickListener)
-                .show();
     }
 }

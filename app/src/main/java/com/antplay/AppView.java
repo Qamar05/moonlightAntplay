@@ -16,13 +16,12 @@ import com.antplay.preferences.PreferenceConfiguration;
 import com.antplay.ui.fragments.AdapterFragment;
 import com.antplay.ui.intrface.AdapterFragmentCallbacks;
 import com.antplay.utils.CacheHelper;
-import com.antplay.utils.Dialog;
+import com.antplay.utils.MyDialog;
 import com.antplay.utils.ServerHelper;
 import com.antplay.utils.ShortcutHelper;
 import com.antplay.utils.SpinnerDialog;
 import com.antplay.utils.UiHelper;
 
-import android.app.Activity;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -367,7 +366,7 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
         super.onDestroy();
 
         SpinnerDialog.closeDialogs(this);
-        Dialog.closeDialogs();
+        MyDialog.closeDialogs();
 
         if (managerBinder != null) {
             unbindService(serviceConnection);
@@ -401,7 +400,7 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
         AppObject selectedApp = (AppObject) appGridAdapter.getItem(info.position);
 
 
-        menu.setHeaderTitle("AntPlay");
+        menu.setHeaderTitle(selectedApp.app.getAppName());
 
         if (lastRunningAppId != 0) {
             if (lastRunningAppId == selectedApp.app.getAppId()) {
@@ -469,7 +468,7 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
                 return true;
 
             case VIEW_DETAILS_ID:
-                Dialog.displayDialog(AppView.this, getResources().getString(R.string.title_details), app.app.toString(), false);
+                MyDialog.displayDialog(AppView.this, getResources().getString(R.string.title_details), app.app.toString(), false);
                 return true;
 
             case HIDE_APP_ID:
@@ -487,6 +486,7 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
             case CREATE_SHORTCUT_ID:
                 ImageView appImageView = info.targetView.findViewById(R.id.grid_image);
                 Bitmap appBits = ((BitmapDrawable)appImageView.getDrawable()).getBitmap();
+
                 if (!shortcutHelper.createPinnedGameShortcut(computer, app.app, appBits)) {
                     Toast.makeText(AppView.this, getResources().getString(R.string.unable_to_pin_shortcut), Toast.LENGTH_LONG).show();
                 }

@@ -15,7 +15,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class LegacyDatabaseReader {
-    private static final String COMPUTER_DB_NAME = "computers.db";
+    private static final String COMPUTER_DB_NAME = "mycomputers.db";
     private static final String COMPUTER_TABLE_NAME = "Computers";
 
     private static final String ADDRESS_PREFIX = "ADDRESS_PREFIX__";

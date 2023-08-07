@@ -64,6 +64,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         btnLetsGo = (Button) findViewById(R.id.btn_signup);
         loadingPB = (ProgressBar) findViewById(R.id.loadingLogin_progress_xml);
         etEmail.setText("shobhit.agarwal@vmstechs.com");
+//        etEmail.setText("fetowoy970@inkiny.com");
         etPass.setText("Antplay@123");
         tvForgetPass.setOnClickListener(this);
         tvSignupHere.setOnClickListener(this);

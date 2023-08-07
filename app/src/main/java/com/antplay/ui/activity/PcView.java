@@ -37,7 +37,7 @@ import com.antplay.ui.fragments.AdapterFragment;
 import com.antplay.ui.intrface.AdapterFragmentCallbacks;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
-import com.antplay.utils.Dialog;
+import com.antplay.utils.MyDialog;
 import com.antplay.utils.HelpLauncher;
 import com.antplay.utils.RestClient;
 import com.antplay.utils.ServerHelper;
@@ -47,7 +47,6 @@ import com.antplay.utils.SpinnerDialog;
 import com.antplay.utils.UiHelper;
 
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Service;
 import android.content.ComponentName;
@@ -208,8 +207,9 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         int portTestResult;
 
 
+
         SpinnerDialog dialog = SpinnerDialog.displayDialog(this, getResources().getString(R.string.title_add_pc),
-                getResources().getString(R.string.msg_add_pc), false);
+                getResources().getString(R.string.msg_add_pc), false);;
 
         try {
             ComputerDetails details = new ComputerDetails();
@@ -261,9 +261,9 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         dialog.dismiss();
 
         if (invalidInput) {
-            Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_unknown_host), false);
+            MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_unknown_host), false);
         } else if (wrongSiteLocal) {
-            Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_wrong_sitelocal), false);
+            MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_wrong_sitelocal), false);
         } else if (!success) {
             String dialogText;
             if (portTestResult != MoonBridge.ML_TEST_RESULT_INCONCLUSIVE && portTestResult != 0) {
@@ -271,7 +271,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             } else {
                 dialogText = getResources().getString(R.string.addpc_fail);
             }
-            Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), dialogText, false);
+            MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), dialogText, false);
         } else {
             PcView.this.runOnUiThread(new Runnable() {
                 @Override
@@ -514,13 +514,17 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     @Override
     public void onDestroy() {
         super.onDestroy();
+try {
+    if (managerBinder != null) {
+        unbindService(serviceConnection);
+        joinAddThread();
+        unbindService(serviceConnection2);
 
-        if (managerBinder != null) {
-            unbindService(serviceConnection);
-                joinAddThread();
-                unbindService(serviceConnection2);
+    }
+}
+catch (Exception e){
 
-        }
+}
     }
 
     @Override
@@ -546,7 +550,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     protected void onStop() {
         super.onStop();
 
-        Dialog.closeDialogs();
+        MyDialog.closeDialogs();
     }
 
     @Override
@@ -642,7 +646,14 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
                         final String pinStr = PairingManager.generatePinString();
 
                         // Spin the dialog off in a thread because it blocks
-                        Dialog.displayDialog(PcView.this, getResources().getString(R.string.pair_pairing_title), getResources().getString(R.string.pair_pairing_msg) + " " + pinStr + "\n\n" + getResources().getString(R.string.pair_pairing_help), false);
+
+
+
+                        MyDialog.displayDialog(PcView.this, getResources().getString(R.string.pair_pairing_title), getResources().getString(R.string.pair_pairing_msg) + " " + pinStr + "\n\n" + getResources().getString(R.string.pair_pairing_help), false);
+
+
+
+
                         //sendAndVerifySecurityPin(pinStr);
                         sendAndVerifySecurityPinManually(pinStr);
                         PairingManager pm = httpConn.getPairingManager();
@@ -683,7 +694,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
                     message = e.getMessage();
                 }
 
-                Dialog.closeDialogs();
+                MyDialog.closeDialogs();
 
                 final String toastMessage = message;
                 final boolean toastSuccess = success;
@@ -902,7 +913,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
                 return true;
 
             case VIEW_DETAILS_ID:
-                Dialog.displayDialog(PcView.this, getResources().getString(R.string.title_details), computer.details.toString(), false);
+                MyDialog.displayDialog(PcView.this, getResources().getString(R.string.title_details), computer.details.toString(), false);
                 return true;
 
             case TEST_NETWORK_ID:

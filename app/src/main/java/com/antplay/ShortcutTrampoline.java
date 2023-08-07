@@ -15,7 +15,7 @@ import com.antplay.nvstream.http.NvApp;
 import com.antplay.nvstream.http.PairingManager;
 import com.antplay.nvstream.wol.WakeOnLanSender;
 import com.antplay.ui.activity.PcView;
-import com.antplay.utils.Dialog;
+import com.antplay.utils.MyDialog;
 import com.antplay.utils.ServerHelper;
 import com.antplay.utils.SpinnerDialog;
 import com.antplay.utils.UiHelper;
@@ -53,7 +53,7 @@ public class ShortcutTrampoline extends Activity {
                     computer = managerBinder.getComputer(uuidString);
 
                     if (computer == null) {
-                        Dialog.displayDialog(ShortcutTrampoline.this,
+                        MyDialog.displayDialog(ShortcutTrampoline.this,
                                 getResources().getString(R.string.conn_error_title),
                                 getResources().getString(R.string.scut_pc_not_found),
                                 true);
@@ -182,13 +182,13 @@ public class ShortcutTrampoline extends Activity {
                                         }
                                         else if (details.state == ComputerDetails.State.OFFLINE) {
                                             // Computer offline - display an error dialog
-                                            Dialog.displayDialog(ShortcutTrampoline.this,
+                                            MyDialog.displayDialog(ShortcutTrampoline.this,
                                                     getResources().getString(R.string.conn_error_title),
                                                     getResources().getString(R.string.error_pc_offline),
                                                     true);
                                         } else if (details.pairState != PairingManager.PairState.PAIRED) {
                                             // Computer not paired - display an error dialog
-                                            Dialog.displayDialog(ShortcutTrampoline.this,
+                                            MyDialog.displayDialog(ShortcutTrampoline.this,
                                                     getResources().getString(R.string.conn_error_title),
                                                     getResources().getString(R.string.scut_not_paired),
                                                     true);
@@ -218,7 +218,7 @@ public class ShortcutTrampoline extends Activity {
     protected boolean validateInput(String uuidString, String appIdString) {
         // Validate UUID
         if (uuidString == null) {
-            Dialog.displayDialog(ShortcutTrampoline.this,
+            MyDialog.displayDialog(ShortcutTrampoline.this,
                     getResources().getString(R.string.conn_error_title),
                     getResources().getString(R.string.scut_invalid_uuid),
                     true);
@@ -228,7 +228,7 @@ public class ShortcutTrampoline extends Activity {
         try {
             UUID.fromString(uuidString);
         } catch (IllegalArgumentException ex) {
-            Dialog.displayDialog(ShortcutTrampoline.this,
+            MyDialog.displayDialog(ShortcutTrampoline.this,
                     getResources().getString(R.string.conn_error_title),
                     getResources().getString(R.string.scut_invalid_uuid),
                     true);
@@ -240,7 +240,7 @@ public class ShortcutTrampoline extends Activity {
             try {
                 Integer.parseInt(appIdString);
             } catch (NumberFormatException ex) {
-                Dialog.displayDialog(ShortcutTrampoline.this,
+                MyDialog.displayDialog(ShortcutTrampoline.this,
                         getResources().getString(R.string.conn_error_title),
                         getResources().getString(R.string.scut_invalid_app_id),
                         true);
@@ -285,7 +285,7 @@ public class ShortcutTrampoline extends Activity {
             blockingLoadSpinner = null;
         }
 
-        Dialog.closeDialogs();
+        MyDialog.closeDialogs();
 
         if (managerBinder != null) {
             managerBinder.stopPolling();

@@ -10946,6 +10946,7 @@ com.antplay.BuildConfig:
     public static final int VERSION_CODE
     public static final java.lang.String VERSION_NAME
     public void <init>()
+com.antplay.Game$18
 com.antplay.Game:
     public static final java.lang.String EXTRA_APP_HDR
     public static final java.lang.String EXTRA_APP_ID
@@ -10964,6 +10965,10 @@ com.antplay.Game:
     private static final int STYLUS_UP_DEAD_ZONE_DELAY
     private static final int STYLUS_UP_DEAD_ZONE_RADIUS
     private static final int THREE_FINGER_TAP_THRESHOLD
+    private synthetic void lambda$openExitVMDialog$1(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openExitVMDialog$2(android.app.Dialog,android.view.View)
+    private void openExitVMDialog()
+    private void shutDownVM()
 com.antplay.LimeLog:
     public static void setFileHandler(java.lang.String)
 com.antplay.PosterContentProvider:
@@ -10998,6 +11003,7 @@ com.antplay.api.APIClient:
     public void <init>()
 com.antplay.api.RetrofitAPI:
     public abstract retrofit2.Call getAllBillingPlan()
+    public abstract retrofit2.Call shutDownVm(java.lang.String,com.antplay.models.VMTimerReq)
     public abstract retrofit2.Call updatePin(java.lang.String,com.antplay.models.UpdatePinRequestModal)
 com.antplay.binding.PlatformBinding:
     public void <init>()
@@ -11257,7 +11263,11 @@ com.antplay.models.LoginRequestModal:
     public void setPassword(java.lang.String)
     public void setUsername(java.lang.String)
 com.antplay.models.LoginResponse
-com.antplay.models.MessageResponse
+com.antplay.models.MessageResponse:
+    private java.lang.String message
+    public java.lang.String getMessage()
+    public void setMessage(java.lang.String)
+    public void setSuccess(java.lang.String)
 com.antplay.models.Payment:
     public void setBillingPlan(java.lang.String)
     public void setBillingPrice(java.lang.Double)
@@ -11580,6 +11590,7 @@ com.antplay.utils.Const:
 com.antplay.utils.DateFormatterHelper
 com.antplay.utils.HelpLauncher:
     public void <init>()
+    public static void launchTroubleshooting(android.content.Context)
 com.antplay.utils.NetHelper:
     public void <init>()
     private boolean isNetworkAvailable(android.content.Context)
