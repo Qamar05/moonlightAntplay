@@ -82,7 +82,7 @@
 43-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\fb7116196c481d237063c2d46ff6cdcc\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 44    <!-- FIXME: We should set extractNativeLibs=false but this breaks installation on the Fire TV 3 -->
 45    <application
-45-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:32:5-269:19
+45-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:32:5-263:19
 46        android:allowBackup="true"
 46-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:33:9-35
 47        android:appCategory="game"
@@ -122,465 +122,451 @@
 65        android:theme="@style/AppTheme" >
 65-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:48:9-40
 66        <activity
-66-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:49:9-55:20
-67            android:name="com.antplay.ui.activity.LoginSignUpActivity"
-67-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:50:13-60
-68            android:exported="false" >
-68-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:51:13-37
-69            <meta-data
-69-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:52:13-54:36
-70                android:name="android.app.lib_name"
-70-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:53:17-52
-71                android:value="" />
-71-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:54:17-33
-72        </activity>
-73        <activity
-73-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:56:9-63:20
-74            android:name="com.antplay.ui.activity.SubscriptionPlanActivity"
-74-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:57:13-65
-75            android:exported="true"
-75-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:59:13-36
-76            android:theme="@style/Theme.MyApplication" >
-76-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:58:13-55
-77            <meta-data
-77-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:52:13-54:36
-78                android:name="android.app.lib_name"
-78-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:53:17-52
-79                android:value="" />
-79-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:54:17-33
-80        </activity>
+66-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:49:9-58:20
+67            android:name="com.antplay.ui.activity.SplashActivity"
+67-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:50:13-55
+68            android:exported="true"
+68-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:51:13-36
+69            android:resizeableActivity="true" >
+69-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:52:13-46
+70            <intent-filter>
+70-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:53:13-57:29
+71                <action android:name="android.intent.action.MAIN" />
+71-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:54:17-69
+71-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:54:25-66
+72
+73                <category android:name="android.intent.category.LAUNCHER" />
+73-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:56:17-77
+73-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:56:27-74
+74            </intent-filter>
+75        </activity>
+76        <activity
+76-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:59:9-63:49
+77            android:name="com.antplay.ui.activity.OnBoardingActivity"
+77-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:60:13-59
+78            android:exported="true"
+78-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:61:13-36
+79            android:resizeableActivity="true"
+79-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:63:13-46
+80            android:theme="@style/Theme.MyApplication" />
+80-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:62:13-55
 81        <activity
-81-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:64:9-71:20
-82            android:name="com.antplay.ui.activity.HomeActivity"
-82-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:65:13-53
-83            android:exported="false"
+81-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:64:9-70:20
+82            android:name="com.antplay.ui.activity.LoginSignUpActivity"
+82-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:65:13-60
+83            android:exported="false" >
 83-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:66:13-37
-84            android:theme="@android:style/Theme.NoTitleBar" >
-84-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:67:13-60
-85            <meta-data
-85-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:52:13-54:36
-86                android:name="android.app.lib_name"
-86-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:53:17-52
-87                android:value="" />
-87-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:54:17-33
-88        </activity>
-89        <activity
-89-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:72:9-79:20
-90            android:name="com.antplay.ui.activity.ForgotPasswordActivity"
-90-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:73:13-63
-91            android:exported="false"
-91-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:74:13-37
-92            android:resizeableActivity="true" >
-92-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:75:13-46
-93            <meta-data
-93-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:52:13-54:36
-94                android:name="android.app.lib_name"
-94-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:53:17-52
-95                android:value="" />
-95-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:54:17-33
-96        </activity>
-97        <activity
-97-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:80:9-86:20
-98            android:name="com.antplay.ui.activity.GeneralWebViewActivity"
-98-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:81:13-63
-99            android:exported="false" >
-99-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:82:13-37
-100            <meta-data
-100-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:52:13-54:36
-101                android:name="android.app.lib_name"
-101-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:53:17-52
-102                android:value="" />
-102-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:54:17-33
-103        </activity>
-104        <activity
-104-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:87:9-93:20
-105            android:name="com.antplay.ui.activity.SignupActivity"
-105-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:88:13-55
-106            android:exported="false" >
-106-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:89:13-37
-107            <meta-data
-107-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:52:13-54:36
-108                android:name="android.app.lib_name"
-108-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:53:17-52
-109                android:value="" />
-109-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:54:17-33
-110        </activity>
-111        <activity
-111-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:94:9-103:20
-112            android:name="com.antplay.ui.activity.SplashActivity"
-112-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:95:13-55
-113            android:exported="true"
-113-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:96:13-36
-114            android:resizeableActivity="true" >
-114-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:97:13-46
-115            <intent-filter>
-115-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:98:13-102:29
-116                <action android:name="android.intent.action.MAIN" />
-116-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:99:17-69
-116-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:99:25-66
-117
-118                <category android:name="android.intent.category.LAUNCHER" />
-118-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:101:17-77
-118-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:101:27-74
-119            </intent-filter>
-120        </activity>
-121        <activity
-121-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:104:9-107:49
-122            android:name="com.antplay.ui.activity.LoginActivity"
-122-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:105:13-54
-123            android:exported="false"
-123-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:106:13-37
-124            android:resizeableActivity="true" />
-124-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:107:13-46
-125        <activity
-125-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:108:9-112:49
-126            android:name="com.antplay.ui.activity.ProfileActivity"
-126-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:109:13-56
-127            android:exported="true"
-127-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:110:13-36
-128            android:resizeableActivity="true"
-128-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:112:13-46
-129            android:theme="@style/Theme.AppCompat.NoActionBar" />
-129-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:111:13-63
-130        <activity
-130-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:113:9-116:49
-131            android:name="com.antplay.ui.activity.LoginWithOTP"
-131-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:114:13-53
-132            android:exported="true"
-132-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:115:13-36
-133            android:resizeableActivity="true" />
-133-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:116:13-46
-134        <activity
-134-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:117:9-120:49
-135            android:name="com.antplay.ui.activity.VerifyOTP"
-135-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:118:13-50
-136            android:exported="true"
-136-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:119:13-36
-137            android:resizeableActivity="true" />
-137-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:120:13-46
-138        <activity
-138-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:121:9-125:49
-139            android:name="com.antplay.ui.activity.EditProfileActivity"
-139-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:122:13-60
-140            android:exported="true"
-140-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:123:13-36
-141            android:resizeableActivity="true"
-141-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:125:13-46
-142            android:theme="@style/Theme.MyApplication" />
-142-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:124:13-55
-143        <activity
-143-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:126:9-129:49
-144            android:name="com.antplay.ui.activity.ChangePasswordActivity"
-144-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:127:13-63
-145            android:exported="true"
-145-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:128:13-36
-146            android:resizeableActivity="true" />
-146-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:129:13-46
-147        <activity
-147-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:130:9-134:49
-148            android:name="com.antplay.ui.activity.PaymentHistoryActivity"
-148-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:131:13-63
-149            android:exported="true"
-149-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:133:13-36
-150            android:resizeableActivity="true"
-150-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:134:13-46
-151            android:theme="@style/Theme.MyApplication" />
-151-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:132:13-55
-152        <activity
-152-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:136:9-140:49
-153            android:name="com.antplay.ui.activity.OnBoardingActivity"
-153-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:137:13-59
-154            android:exported="true"
-154-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:138:13-36
-155            android:resizeableActivity="true"
-155-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:140:13-46
-156            android:theme="@style/Theme.MyApplication" />
-156-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:139:13-55
-157
-158        <provider
-159            android:name="com.antplay.PosterContentProvider"
-160            android:authorities="poster.com.antplay.debug"
-161            android:enabled="true"
-162            android:exported="true" /> <!-- Samsung multi-window support -->
-163        <uses-library
-163-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:147:9-149:40
-164            android:name="com.sec.android.app.multiwindow"
-164-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:148:13-59
-165            android:required="false" />
-165-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:149:13-37
-166
-167        <meta-data
-167-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:151:9-153:36
-168            android:name="com.sec.android.support.multiwindow"
-168-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:152:13-63
-169            android:value="true" />
-169-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:153:13-33
-170        <!--
-171 Disable Game Mode downscaling since it can break our UI dialogs and doesn't benefit
-172             performance much for us since we don't use GL/Vulkan for rendering anyway
-173        -->
-174        <meta-data
-174-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:158:9-160:37
-175            android:name="com.android.graphics.intervention.wm.allowDownscale"
-175-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:159:13-79
-176            android:value="false" />
-176-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:160:13-34
-177        <!--
-178 Samsung DeX support requires explicit placement of android:resizeableActivity="true"
-179             in each activity even though it is implied by targeting API 24+
-180        -->
-181        <activity
-181-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:165:9-182:20
-182            android:name="com.antplay.ui.activity.PcView"
-182-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:166:13-47
-183            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-183-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:168:13-179
-184            android:exported="true"
-184-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:169:13-36
-185            android:resizeableActivity="true"
-185-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:170:13-46
-186            android:theme="@style/Theme.MyApplication" >
-186-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:167:13-55
-187            <intent-filter>
-187-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:171:13-181:29
-188
-189                <!--
-190                <action android:name="android.intent.action.MAIN" />
-191
-192                <category android:name="android.intent.category.LAUNCHER" />
-193                -->
-194                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
-194-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:178:17-89
-194-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:178:27-86
-195                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-195-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:179:17-86
-195-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:179:27-83
-196                <category android:name="tv.ouya.intent.category.APP" />
-196-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:180:17-72
-196-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:180:27-69
-197            </intent-filter>
-198        </activity> <!-- Small hack to support launcher shortcuts without relaunching over and over again when the back button is pressed -->
+84            <meta-data
+84-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:67:13-69:36
+85                android:name="android.app.lib_name"
+85-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:68:17-52
+86                android:value="" />
+86-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:69:17-33
+87        </activity>
+88        <activity
+88-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:71:9-75:49
+89            android:name="com.antplay.ui.activity.LoginActivity"
+89-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:72:13-54
+90            android:exported="true"
+90-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:73:13-36
+91            android:resizeableActivity="true"
+91-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:75:13-46
+92            android:theme="@style/MyAutofilledHighlight" />
+92-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:74:13-57
+93        <activity
+93-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:76:9-83:20
+94            android:name="com.antplay.ui.activity.SignupActivity"
+94-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:77:13-55
+95            android:exported="true"
+95-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:79:13-36
+96            android:theme="@style/MyAutofilledHighlight" >
+96-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:78:13-57
+97            <meta-data
+97-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:67:13-69:36
+98                android:name="android.app.lib_name"
+98-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:68:17-52
+99                android:value="" />
+99-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:69:17-33
+100        </activity>
+101        <activity
+101-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:84:9-91:20
+102            android:name="com.antplay.ui.activity.ForgotPasswordActivity"
+102-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:85:13-63
+103            android:exported="false"
+103-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:86:13-37
+104            android:resizeableActivity="true" >
+104-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:87:13-46
+105            <meta-data
+105-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:67:13-69:36
+106                android:name="android.app.lib_name"
+106-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:68:17-52
+107                android:value="" />
+107-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:69:17-33
+108        </activity>
+109        <activity
+109-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:92:9-96:49
+110            android:name="com.antplay.ui.activity.LoginWithOTP"
+110-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:93:13-53
+111            android:exported="true"
+111-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:95:13-36
+112            android:resizeableActivity="true"
+112-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:96:13-46
+113            android:theme="@style/MyAutofilledHighlight" />
+113-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:94:13-57
+114        <activity
+114-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:97:9-100:49
+115            android:name="com.antplay.ui.activity.VerifyOTP"
+115-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:98:13-50
+116            android:exported="true"
+116-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:99:13-36
+117            android:resizeableActivity="true" />
+117-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:100:13-46
+118        <activity
+118-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:102:9-106:49
+119            android:name="com.antplay.ui.activity.ProfileActivity"
+119-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:103:13-56
+120            android:exported="true"
+120-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:104:13-36
+121            android:resizeableActivity="true"
+121-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:106:13-46
+122            android:theme="@style/Theme.AppCompat.NoActionBar" />
+122-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:105:13-63
+123        <activity
+123-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:108:9-112:49
+124            android:name="com.antplay.ui.activity.EditProfileActivity"
+124-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:109:13-60
+125            android:exported="true"
+125-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:110:13-36
+126            android:resizeableActivity="true"
+126-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:112:13-46
+127            android:theme="@style/MyAutofilledHighlight" />
+127-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:111:13-57
+128        <activity
+128-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:113:9-117:49
+129            android:name="com.antplay.ui.activity.ChangePasswordActivity"
+129-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:114:13-63
+130            android:exported="true"
+130-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:116:13-36
+131            android:resizeableActivity="true"
+131-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:117:13-46
+132            android:theme="@style/MyAutofilledHighlight" />
+132-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:115:13-57
+133        <activity
+133-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:119:9-126:20
+134            android:name="com.antplay.ui.activity.SubscriptionPlanActivity"
+134-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:120:13-65
+135            android:exported="true"
+135-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:122:13-36
+136            android:theme="@style/Theme.MyApplication" >
+136-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:121:13-55
+137            <meta-data
+137-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:67:13-69:36
+138                android:name="android.app.lib_name"
+138-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:68:17-52
+139                android:value="" />
+139-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:69:17-33
+140        </activity>
+141        <activity
+141-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:128:9-132:49
+142            android:name="com.antplay.ui.activity.PaymentHistoryActivity"
+142-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:129:13-63
+143            android:exported="true"
+143-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:131:13-36
+144            android:resizeableActivity="true"
+144-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:132:13-46
+145            android:theme="@style/Theme.MyApplication" />
+145-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:130:13-55
+146        <activity
+146-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:134:9-140:20
+147            android:name="com.antplay.ui.activity.GeneralWebViewActivity"
+147-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:135:13-63
+148            android:exported="false" >
+148-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:136:13-37
+149            <meta-data
+149-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:67:13-69:36
+150                android:name="android.app.lib_name"
+150-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:68:17-52
+151                android:value="" />
+151-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:69:17-33
+152        </activity>
+153
+154        <provider
+155            android:name="com.antplay.PosterContentProvider"
+156            android:authorities="poster.com.antplay.debug"
+157            android:enabled="true"
+158            android:exported="true" /> <!-- Samsung multi-window support -->
+159        <uses-library
+159-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:147:9-149:40
+160            android:name="com.sec.android.app.multiwindow"
+160-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:148:13-59
+161            android:required="false" />
+161-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:149:13-37
+162
+163        <meta-data
+163-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:151:9-153:36
+164            android:name="com.sec.android.support.multiwindow"
+164-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:152:13-63
+165            android:value="true" />
+165-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:153:13-33
+166        <meta-data
+166-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:155:9-157:37
+167            android:name="com.android.graphics.intervention.wm.allowDownscale"
+167-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:156:13-79
+168            android:value="false" />
+168-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:157:13-34
+169
+170        <activity
+170-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:159:9-176:20
+171            android:name="com.antplay.ui.activity.PcView"
+171-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:160:13-47
+172            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+172-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:162:13-179
+173            android:exported="true"
+173-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:163:13-36
+174            android:resizeableActivity="true"
+174-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:164:13-46
+175            android:theme="@style/Theme.MyApplication" >
+175-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:161:13-55
+176            <intent-filter>
+176-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:165:13-175:29
+177
+178                <!--
+179                <action android:name="android.intent.action.MAIN" />
+180
+181                <category android:name="android.intent.category.LAUNCHER" />
+182                -->
+183                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+183-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:172:17-89
+183-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:172:27-86
+184                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+184-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:173:17-86
+184-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:173:27-83
+185                <category android:name="tv.ouya.intent.category.APP" />
+185-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:174:17-72
+185-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:174:27-69
+186            </intent-filter>
+187        </activity> <!-- Small hack to support launcher shortcuts without relaunching over and over again when the back button is pressed -->
+188        <activity
+188-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:177:9-187:20
+189            android:name="com.antplay.ShortcutTrampoline"
+189-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:178:13-47
+190            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+190-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:179:13-186
+191            android:exported="true"
+191-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:180:13-36
+192            android:noHistory="true"
+192-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:182:13-37
+193            android:resizeableActivity="true"
+193-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:183:13-46
+194            android:theme="@style/Theme.MyApplication" >
+194-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:181:13-55
+195            <meta-data
+195-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:184:13-186:66
+196                android:name="android.support.PARENT_ACTIVITY"
+196-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:185:17-63
+197                android:value="com.antplay.ui.activity.PcView" />
+197-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:186:17-63
+198        </activity>
 199        <activity
-199-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:183:9-193:20
-200            android:name="com.antplay.ShortcutTrampoline"
-200-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:184:13-47
-201            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-201-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:185:13-186
+199-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:188:9-197:20
+200            android:name="com.antplay.AppView"
+200-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:189:13-36
+201            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+201-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:192:13-179
 202            android:exported="true"
-202-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:186:13-36
-203            android:noHistory="true"
-203-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:188:13-37
-204            android:resizeableActivity="true"
-204-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:189:13-46
-205            android:theme="@style/Theme.MyApplication" >
-205-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:187:13-55
-206            <meta-data
-206-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:190:13-192:66
-207                android:name="android.support.PARENT_ACTIVITY"
-207-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:191:17-63
-208                android:value="com.antplay.ui.activity.PcView" />
-208-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:192:17-63
-209        </activity>
-210        <activity
-210-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:194:9-203:20
-211            android:name="com.antplay.AppView"
-211-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:195:13-36
-212            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-212-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:198:13-179
-213            android:exported="true"
-213-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:197:13-36
-214            android:resizeableActivity="true"
-214-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:199:13-46
-215            android:theme="@style/Theme.MyApplication" >
-215-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:196:13-55
-216            <meta-data
-216-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:190:13-192:66
-217                android:name="android.support.PARENT_ACTIVITY"
-217-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:191:17-63
-218                android:value="com.antplay.ui.activity.PcView" />
-218-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:192:17-63
-219        </activity>
-220        <activity
-220-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:204:9-213:20
-221            android:name="com.antplay.preferences.StreamSettings"
-221-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:206:13-55
-222            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-222-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:207:13-179
-223            android:label="Streaming Settings"
-223-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:208:13-47
-224            android:resizeableActivity="true"
-224-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:209:13-46
-225            android:theme="@style/Theme.MyApplication" >
-225-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:205:13-55
+202-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:191:13-36
+203            android:resizeableActivity="true"
+203-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:193:13-46
+204            android:theme="@style/Theme.MyApplication" >
+204-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:190:13-55
+205            <meta-data
+205-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:184:13-186:66
+206                android:name="android.support.PARENT_ACTIVITY"
+206-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:185:17-63
+207                android:value="com.antplay.ui.activity.PcView" />
+207-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:186:17-63
+208        </activity>
+209        <activity
+209-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:198:9-207:20
+210            android:name="com.antplay.preferences.StreamSettings"
+210-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:200:13-55
+211            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+211-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:201:13-179
+212            android:label="Streaming Settings"
+212-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:202:13-47
+213            android:resizeableActivity="true"
+213-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:203:13-46
+214            android:theme="@style/Theme.MyApplication" >
+214-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:199:13-55
+215            <meta-data
+215-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:184:13-186:66
+216                android:name="android.support.PARENT_ACTIVITY"
+216-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:185:17-63
+217                android:value="com.antplay.ui.activity.PcView" />
+217-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:186:17-63
+218        </activity>
+219        <activity
+219-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:208:9-218:20
+220            android:name="com.antplay.preferences.AddComputerManually"
+220-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:209:13-60
+221            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+221-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:210:13-179
+222            android:label="Add Computer Manually"
+222-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:211:13-50
+223            android:resizeableActivity="true"
+223-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:212:13-46
+224            android:theme="@style/Theme.MyApplication"
+224-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:213:13-55
+225            android:windowSoftInputMode="stateVisible" >
+225-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:214:13-55
 226            <meta-data
-226-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:190:13-192:66
+226-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:184:13-186:66
 227                android:name="android.support.PARENT_ACTIVITY"
-227-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:191:17-63
+227-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:185:17-63
 228                android:value="com.antplay.ui.activity.PcView" />
-228-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:192:17-63
+228-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:186:17-63
 229        </activity>
 230        <activity
-230-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:214:9-224:20
-231            android:name="com.antplay.preferences.AddComputerManually"
-231-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:215:13-60
-232            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-232-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:216:13-179
-233            android:label="Add Computer Manually"
-233-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:217:13-50
-234            android:resizeableActivity="true"
-234-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:218:13-46
-235            android:theme="@style/Theme.MyApplication"
-235-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:219:13-55
-236            android:windowSoftInputMode="stateVisible" >
-236-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:220:13-55
-237            <meta-data
-237-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:190:13-192:66
-238                android:name="android.support.PARENT_ACTIVITY"
-238-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:191:17-63
-239                android:value="com.antplay.ui.activity.PcView" />
-239-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:192:17-63
-240        </activity>
-241        <activity
-241-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:225:9-249:20
-242            android:name="com.antplay.Game"
-242-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:226:13-33
-243            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-243-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:227:13-186
-244            android:excludeFromRecents="true"
-244-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:228:13-46
-245            android:launchMode="singleTask"
-245-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:229:13-44
-246            android:noHistory="true"
-246-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:230:13-37
-247            android:preferMinimalPostProcessing="true"
-247-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:231:13-55
-248            android:resizeableActivity="true"
-248-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:232:13-46
-249            android:supportsPictureInPicture="true"
-249-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:233:13-52
-250            android:theme="@style/StreamTheme" >
-250-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:234:13-47
+230-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:219:9-243:20
+231            android:name="com.antplay.Game"
+231-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:220:13-33
+232            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+232-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:221:13-186
+233            android:excludeFromRecents="true"
+233-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:222:13-46
+234            android:launchMode="singleTask"
+234-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:223:13-44
+235            android:noHistory="true"
+235-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:224:13-37
+236            android:preferMinimalPostProcessing="true"
+236-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:225:13-55
+237            android:resizeableActivity="true"
+237-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:226:13-46
+238            android:supportsPictureInPicture="true"
+238-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:227:13-52
+239            android:theme="@style/StreamTheme" >
+239-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:228:13-47
+240            <meta-data
+240-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:184:13-186:66
+241                android:name="android.support.PARENT_ACTIVITY"
+241-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:185:17-63
+242                android:value="com.antplay.AppView" />
+242-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:186:17-63
+243
+244            <!--
+245                 Special metadata for NVIDIA Shield devices to prevent input buffering
+246                 and most importantly, opt out of mouse acceleration while streaming
+247            -->
+248            <meta-data
+248-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:237:13-239:40
+249                android:name="com.nvidia.immediateInput"
+249-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:238:17-57
+250                android:value="true" />
+250-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:239:17-37
 251            <meta-data
-251-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:190:13-192:66
-252                android:name="android.support.PARENT_ACTIVITY"
-252-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:191:17-63
-253                android:value="com.antplay.AppView" />
-253-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:192:17-63
-254
-255            <!--
-256                 Special metadata for NVIDIA Shield devices to prevent input buffering
-257                 and most importantly, opt out of mouse acceleration while streaming
-258            -->
-259            <meta-data
-259-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:243:13-245:40
-260                android:name="com.nvidia.immediateInput"
-260-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:244:17-57
-261                android:value="true" />
-261-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:245:17-37
-262            <meta-data
-262-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:246:13-248:40
-263                android:name="com.nvidia.rawCursorInput"
-263-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:247:17-57
-264                android:value="true" />
-264-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:248:17-37
-265        </activity>
-266
-267        <service
-267-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:251:9-253:62
-268            android:name="com.antplay.discovery.DiscoveryService"
-268-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:252:13-55
-269            android:label="mDNS PC Auto-Discovery Service" />
-269-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:253:13-59
-270        <service
-270-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:254:9-256:59
-271            android:name="com.antplay.computers.ComputerManagerService"
-271-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:255:13-61
-272            android:label="Computer Management Service" />
-272-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:256:13-56
-273        <service
-273-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:257:9-259:50
-274            android:name="com.antplay.binding.input.driver.UsbDriverService"
-274-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:258:13-66
-275            android:label="Usb Driver Service" />
-275-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:259:13-47
-276
-277        <activity
-277-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:261:9-268:20
-278            android:name="com.antplay.HelpActivity"
-278-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:262:13-41
-279            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-279-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:263:13-179
-280            android:resizeableActivity="true" >
-280-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:264:13-46
-281            <meta-data
-281-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:190:13-192:66
-282                android:name="android.support.PARENT_ACTIVITY"
-282-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:191:17-63
-283                android:value="com.antplay.ui.activity.PcView" />
-283-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:192:17-63
-284        </activity>
-285        <activity
-285-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:23:9-27:75
-286            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-286-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:24:13-93
-287            android:excludeFromRecents="true"
-287-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:25:13-46
-288            android:exported="false"
-288-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:26:13-37
-289            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-289-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:27:13-72
-290        <!--
-291            Service handling Google Sign-In user revocation. For apps that do not integrate with
-292            Google Sign-In, this service will never be started.
-293        -->
-294        <service
-294-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:33:9-37:51
-295            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-295-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:34:13-89
-296            android:exported="true"
-296-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:35:13-36
-297            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-297-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:36:13-107
-298            android:visibleToInstantApps="true" />
-298-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:37:13-48
-299
-300        <activity
-300-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\863b30bbb9ca21dbc709f6089aa89519\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-301            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-301-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\863b30bbb9ca21dbc709f6089aa89519\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-302            android:exported="false"
-302-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\863b30bbb9ca21dbc709f6089aa89519\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-303            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-303-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\863b30bbb9ca21dbc709f6089aa89519\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-304
-305        <meta-data
-305-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\b95e33de72ab4f1d5f41235647aba1c4\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-306            android:name="com.google.android.gms.version"
-306-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\b95e33de72ab4f1d5f41235647aba1c4\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-307            android:value="@integer/google_play_services_version" />
-307-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\b95e33de72ab4f1d5f41235647aba1c4\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
-308
-309        <provider
-309-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-310            android:name="androidx.startup.InitializationProvider"
-310-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-311            android:authorities="com.antplay.debug.androidx-startup"
-311-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-312            android:exported="false" >
-312-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-313            <meta-data
-313-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-314                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-314-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-315                android:value="androidx.startup" />
-315-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-316            <meta-data
-316-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-317                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-317-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-318                android:value="androidx.startup" />
-318-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-319        </provider>
-320    </application>
-321
-322</manifest>
+251-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:240:13-242:40
+252                android:name="com.nvidia.rawCursorInput"
+252-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:241:17-57
+253                android:value="true" />
+253-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:242:17-37
+254        </activity>
+255
+256        <service
+256-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:245:9-247:62
+257            android:name="com.antplay.discovery.DiscoveryService"
+257-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:246:13-55
+258            android:label="mDNS PC Auto-Discovery Service" />
+258-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:247:13-59
+259        <service
+259-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:248:9-250:59
+260            android:name="com.antplay.computers.ComputerManagerService"
+260-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:249:13-61
+261            android:label="Computer Management Service" />
+261-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:250:13-56
+262        <service
+262-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:251:9-253:50
+263            android:name="com.antplay.binding.input.driver.UsbDriverService"
+263-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:252:13-66
+264            android:label="Usb Driver Service" />
+264-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:253:13-47
+265
+266        <activity
+266-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:255:9-262:20
+267            android:name="com.antplay.HelpActivity"
+267-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:256:13-41
+268            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+268-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:257:13-179
+269            android:resizeableActivity="true" >
+269-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:258:13-46
+270            <meta-data
+270-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:184:13-186:66
+271                android:name="android.support.PARENT_ACTIVITY"
+271-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:185:17-63
+272                android:value="com.antplay.ui.activity.PcView" />
+272-->C:\vmsProject\moonlightAntplay\app\src\main\AndroidManifest.xml:186:17-63
+273        </activity>
+274        <activity
+274-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:23:9-27:75
+275            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+275-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:24:13-93
+276            android:excludeFromRecents="true"
+276-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:25:13-46
+277            android:exported="false"
+277-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:26:13-37
+278            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+278-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:27:13-72
+279        <!--
+280            Service handling Google Sign-In user revocation. For apps that do not integrate with
+281            Google Sign-In, this service will never be started.
+282        -->
+283        <service
+283-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:33:9-37:51
+284            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+284-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:34:13-89
+285            android:exported="true"
+285-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:35:13-36
+286            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+286-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:36:13-107
+287            android:visibleToInstantApps="true" />
+287-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\HP\.gradle\caches\transforms-3\dbddc1d7a4f1651de9662e2f54acabde\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:37:13-48
+288
+289        <activity
+289-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\863b30bbb9ca21dbc709f6089aa89519\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+290            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+290-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\863b30bbb9ca21dbc709f6089aa89519\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+291            android:exported="false"
+291-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\863b30bbb9ca21dbc709f6089aa89519\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+292            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+292-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\863b30bbb9ca21dbc709f6089aa89519\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+293
+294        <meta-data
+294-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\b95e33de72ab4f1d5f41235647aba1c4\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+295            android:name="com.google.android.gms.version"
+295-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\b95e33de72ab4f1d5f41235647aba1c4\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+296            android:value="@integer/google_play_services_version" />
+296-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\b95e33de72ab4f1d5f41235647aba1c4\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+297
+298        <provider
+298-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+299            android:name="androidx.startup.InitializationProvider"
+299-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+300            android:authorities="com.antplay.debug.androidx-startup"
+300-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+301            android:exported="false" >
+301-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+302            <meta-data
+302-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+303                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+303-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+304                android:value="androidx.startup" />
+304-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\a86acf5a19d615b92d2bafa8fd682636\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+305            <meta-data
+305-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+306                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+306-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+307                android:value="androidx.startup" />
+307-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\fb3202aa7d09f0c3e48db72d31afb7f9\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+308        </provider>
+309    </application>
+310
+311</manifest>

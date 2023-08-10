@@ -3,7 +3,6 @@ package com.antplay.ui.activity;
 
 import static com.antplay.utils.Const.emailPattern;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -11,17 +10,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,13 +29,10 @@ import com.antplay.models.UserDetailsModal;
 import com.antplay.models.UserUpdateRequestModal;
 import com.antplay.models.UserUpdateResponseModal;
 import com.antplay.ui.adapter.StateListAdapter;
-import com.antplay.ui.adapter.SubscriptionPlanAdapter;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.SharedPreferenceUtils;
-import com.skydoves.powermenu.CustomPowerMenu;
-import com.skydoves.powermenu.MenuAnimation;
-import com.skydoves.powermenu.OnMenuItemClickListener;
+
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
@@ -58,6 +50,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     List<String> stateList;
 
     String access_token, email, phoneNumber;
+    String city,address,state,pinCode;
     RetrofitAPI retrofitAPI;
     Context mContext;
     Dialog dialog;
@@ -167,6 +160,11 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                 public void onResponse(Call<UserDetailsModal> call, Response<UserDetailsModal> response) {
                     if (response.isSuccessful()) {
                         progressBar.setVisibility(View.GONE);
+                        UserDetailsModal userDetailsModal = response.body();
+                        city =  userDetailsModal.getCity();
+                        address =  userDetailsModal.getAddress();
+                        state  =  userDetailsModal.getState();
+                        pinCode  =   userDetailsModal.getPincode();
                         SharedPreferenceUtils.saveString(mContext, Const.FIRSTNAME, response.body().getFirstName());
                         SharedPreferenceUtils.saveString(mContext, Const.LASTNAME, response.body().getLastName());
                         SharedPreferenceUtils.saveString(mContext, Const.EMAIL_ID, response.body().getEmail());
@@ -206,11 +204,17 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                 openStateDialog();
                 break;
             case R.id.buttonUpdateProfile:
-                if (validateFormField()) {
-                    if(AppUtils.isOnline(mContext))
-                        updateUserProfile();
-                    else
-                        AppUtils.showInternetDialog(mContext);
+                if(edTxtCity.getText().toString().equalsIgnoreCase(city)
+                        && edTxtAddress.getText().toString().equalsIgnoreCase(address)
+                        && edTxtState.getText().toString().equalsIgnoreCase(state)
+                        && editTextPinCode.getText().toString().equalsIgnoreCase(pinCode)){
+                    Toast.makeText(mContext, "There is no change to update", Toast.LENGTH_SHORT).show();
+            }
+            else if (validateFormField()) {
+                if(AppUtils.isOnline(mContext))
+                    updateUserProfile();
+                else
+                    AppUtils.showInternetDialog(mContext);
                 }
                 break;
         }

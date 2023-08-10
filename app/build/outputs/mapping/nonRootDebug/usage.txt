@@ -10946,7 +10946,6 @@ com.antplay.BuildConfig:
     public static final int VERSION_CODE
     public static final java.lang.String VERSION_NAME
     public void <init>()
-com.antplay.Game$18
 com.antplay.Game:
     public static final java.lang.String EXTRA_APP_HDR
     public static final java.lang.String EXTRA_APP_ID
@@ -10965,10 +10964,11 @@ com.antplay.Game:
     private static final int STYLUS_UP_DEAD_ZONE_DELAY
     private static final int STYLUS_UP_DEAD_ZONE_RADIUS
     private static final int THREE_FINGER_TAP_THRESHOLD
-    private synthetic void lambda$openExitVMDialog$1(android.app.Dialog,android.view.View)
-    private static synthetic void lambda$openExitVMDialog$2(android.app.Dialog,android.view.View)
+    private synthetic void lambda$openExitVMDialog$3(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openExitVMDialog$4(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openTimerDialog$1(android.app.Dialog,android.view.View)
     private void openExitVMDialog()
-    private void shutDownVM()
+    private void openTimerDialog()
 com.antplay.LimeLog:
     public static void setFileHandler(java.lang.String)
 com.antplay.PosterContentProvider:
@@ -11003,7 +11003,7 @@ com.antplay.api.APIClient:
     public void <init>()
 com.antplay.api.RetrofitAPI:
     public abstract retrofit2.Call getAllBillingPlan()
-    public abstract retrofit2.Call shutDownVm(java.lang.String,com.antplay.models.VMTimerReq)
+    public abstract retrofit2.Call startVm(java.lang.String,com.antplay.models.VMTimerReq)
     public abstract retrofit2.Call updatePin(java.lang.String,com.antplay.models.UpdatePinRequestModal)
 com.antplay.binding.PlatformBinding:
     public void <init>()
@@ -11264,8 +11264,6 @@ com.antplay.models.LoginRequestModal:
     public void setUsername(java.lang.String)
 com.antplay.models.LoginResponse
 com.antplay.models.MessageResponse:
-    private java.lang.String message
-    public java.lang.String getMessage()
     public void setMessage(java.lang.String)
     public void setSuccess(java.lang.String)
 com.antplay.models.Payment:
@@ -11527,6 +11525,7 @@ com.antplay.ui.activity.EditProfileActivity:
     android.widget.Spinner spinnerStateList
 com.antplay.ui.activity.ForgotPasswordActivity:
     java.lang.String strEmail
+com.antplay.ui.activity.HomeActivity
 com.antplay.ui.activity.LoginActivity:
     java.lang.String st_email
     java.lang.String st_password
@@ -11556,18 +11555,9 @@ com.antplay.ui.activity.VerifyOTP:
 com.antplay.ui.adapter.ZoomOutPageTransformer:
     private static final float MIN_ALPHA
     private static final float MIN_SCALE
-com.antplay.ui.fragments.HomeFragment:
-    private static final java.lang.String ARG_PARAM1
-    private static final java.lang.String ARG_PARAM2
-    public static com.antplay.ui.fragments.HomeFragment newInstance(java.lang.String,java.lang.String)
-com.antplay.ui.fragments.SettingsFragment:
-    private static final java.lang.String ARG_PARAM1
-    private static final java.lang.String ARG_PARAM2
-    public static com.antplay.ui.fragments.SettingsFragment newInstance(java.lang.String,java.lang.String)
-com.antplay.ui.fragments.VMFragment:
-    private static final java.lang.String ARG_PARAM1
-    private static final java.lang.String ARG_PARAM2
-    public static com.antplay.ui.fragments.VMFragment newInstance(java.lang.String,java.lang.String)
+com.antplay.ui.fragments.HomeFragment
+com.antplay.ui.fragments.SettingsFragment
+com.antplay.ui.fragments.VMFragment
 com.antplay.ui.intrface.GameGestures:
     public abstract void toggleKeyboard()
 com.antplay.ui.intrface.StreamView:

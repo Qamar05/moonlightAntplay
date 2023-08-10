@@ -14,14 +14,19 @@ import java.util.HashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import com.antplay.AppView;
+import com.antplay.Game;
 import com.antplay.LimeLog;
 import com.antplay.R;
+import com.antplay.api.APIClient;
+import com.antplay.api.RetrofitAPI;
 import com.antplay.binding.PlatformBinding;
 import com.antplay.binding.crypto.AndroidCryptoProvider;
 import com.antplay.computers.ComputerManagerListener;
 import com.antplay.computers.ComputerManagerService;
 import com.antplay.grid.PcGridAdapter;
 import com.antplay.grid.assets.DiskAssetLoader;
+import com.antplay.models.MessageResponse;
+import com.antplay.models.VMTimerReq;
 import com.antplay.nvstream.http.ComputerDetails;
 import com.antplay.nvstream.http.NvApp;
 import com.antplay.nvstream.http.NvHTTP;
@@ -48,11 +53,14 @@ import com.antplay.utils.UiHelper;
 
 
 import android.app.ActivityManager;
+import android.app.Dialog;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
@@ -65,11 +73,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Window;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
@@ -83,12 +95,23 @@ import org.xmlpull.v1.XmlPullParserException;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class PcView extends AppCompatActivity implements AdapterFragmentCallbacks {
     private RelativeLayout noPcFoundLayout;
     private PcGridAdapter pcGridAdapter;
     private ShortcutHelper shortcutHelper;
     boolean doubleBackToExitPressedOnce = false;
     private Thread addThread;
+
+    RetrofitAPI retrofitAPI;
+
+    String accessToken , strVMId;
+
+    boolean isShutDown =  false;
     private ComputerManagerService.ComputerManagerBinder managerBinder;
     private final LinkedBlockingQueue<String> computersToAdd = new LinkedBlockingQueue<>();
     private boolean freezeUpdates, runningPolling, inForeground, completeOnCreateCalled;
@@ -378,6 +401,12 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         // Set the correct layout for the PC grid
         pcGridAdapter.updateLayoutWithPreferences(this, PreferenceConfiguration.readPreferences(this));
 
+
+        retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
+        accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
+        strVMId = SharedPreferenceUtils.getString(PcView.this, Const.VMID);
+
+
         // Setup the list view
         ImageButton profileButton = findViewById(R.id.profileButton);
         ImageButton settingsButton = findViewById(R.id.settingsButton);
@@ -416,9 +445,16 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
 
         // Assume we're in the foreground when created to avoid a race
         // between binding to CMS and onResume()
+        retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
+        accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
+        isShutDown   =  SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_SHUT_DOWN);
         inForeground = true;
-        if (AppUtils.isOnline(PcView.this))
-            getVMFromServerManually();
+        if (AppUtils.isOnline(PcView.this)){
+            if(isShutDown)
+                startVm();
+            else
+                getVMFromServerManually("firstTime");
+        }
         else
             AppUtils.showInternetDialog(PcView.this);
 
@@ -1044,36 +1080,74 @@ catch (Exception e){
         new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
     }
 
-    private void getVMFromServerManually() {
-        String accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
-        Log.d(TAG, " Access Token : " + accessToken);
 
-        new RestClient(PcView.this).getRequestWithHeader("add_vm_manually", "getvmip", "", accessToken, new RestClient.ResponseListener() {
-            @Override
-            public void onResponse(String tag, String response) {
 
-                if (response != null) {
-                    Log.d(TAG,"Response : "+response );
-                    try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        JSONArray jsonArray = jsonObject.getJSONArray("data");
-                        String vmIp = jsonArray.getJSONObject(0).getString("vmip");
-                        handleDoneEvent(vmIp);
-                        bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection2, Service.BIND_AUTO_CREATE);
-                        pcGridAdapter = new PcGridAdapter(PcView.this, PreferenceConfiguration.readPreferences(PcView.this));
-                        initializeViews();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }, new RestClient.ErrorListener() {
-            @Override
-            public void onError(String tag, String errorMsg, long statusCode) {
-                Log.e(TAG, "Reason Of Failure : " + errorMsg);
-            }
-        });
-    }
+
+
+//    private void getVMFromServerManually() {
+//        String accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
+//        Log.d(TAG, " Access Token : " + accessToken);
+//
+//        new RestClient(PcView.this).getRequestWithHeader("add_vm_manually", "getvmip", "", accessToken, new RestClient.ResponseListener() {
+//            @Override
+//            public void onResponse(String tag, String response) {
+//
+//                if (response != null) {
+//                    Log.d(TAG,"Response : "+response );
+//                    try {
+//                        JSONObject jsonObject = new JSONObject(response);
+//                        String messageValue  =  jsonObject.getString("message");
+//                        if(messageValue.equalsIgnoreCase("success")) {
+//                            JSONArray jsonArray = jsonObject.getJSONArray("data");
+//                            String vmIp = jsonArray.getJSONObject(0).getString("vmip");
+//                            handleDoneEvent(vmIp);
+//                            bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection2, Service.BIND_AUTO_CREATE);
+//                            pcGridAdapter = new PcGridAdapter(PcView.this, PreferenceConfiguration.readPreferences(PcView.this));
+//                            initializeViews();
+//                        }
+//                        else {
+//                            openDialog();
+//                        }
+//
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        }, new RestClient.ErrorListener() {
+//            @Override
+//            public void onError(String tag, String errorMsg, long statusCode) {
+//                Log.e(TAG, "Reason Of Failure : " + errorMsg);
+//            }
+//        });
+//    }
+
+    private void openDialog() {
+            Dialog dialog = new Dialog(PcView.this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_logout);
+            dialog.setCancelable(false);
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            TextView titleText =  dialog.findViewById(R.id.titleText);
+            TextView msgText =  dialog.findViewById(R.id.msgText);
+            Button txtNo = dialog.findViewById(R.id.txtNo);
+            Button txtYes = dialog.findViewById(R.id.txtYes);
+            titleText.setText(getResources().getString(R.string.no_vm_title));
+            msgText.setText(getResources().getString(R.string.no_vm_msg));
+            txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
+            txtYes.setText("Close");
+            txtNo.setVisibility(View.GONE);
+
+            txtYes.setOnClickListener(view -> {
+                dialog.dismiss();
+            });
+
+            dialog.show();
+
+        }
+
 
     private boolean handleDoneEvent(String vmIp) {
         if (vmIp.length() == 0) {
@@ -1082,6 +1156,72 @@ catch (Exception e){
         }
         computersToAdd.add(vmIp);
         return false;
+    }
+
+
+    private void getVMFromServerManually(String strValue) {
+        Call<ResponseBody> call = retrofitAPI.getVMIP("Bearer " + accessToken);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.code()==200) {
+                    try {
+                        JSONObject jsonObject = new JSONObject(response.body().string());
+                        String messageValue = jsonObject.getString("message");
+                        if (messageValue.equalsIgnoreCase("success")) {
+                            JSONArray jsonArray = jsonObject.getJSONArray("data");
+                            String vmIp = jsonArray.getJSONObject(0).getString("vmip");
+                            handleDoneEvent(vmIp);
+                            bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection2, Service.BIND_AUTO_CREATE);
+                            pcGridAdapter = new PcGridAdapter(PcView.this, PreferenceConfiguration.readPreferences(PcView.this));
+                            initializeViews();
+                        }
+                    } catch (Exception e) {
+                    }
+                }
+                else if(strValue.equalsIgnoreCase("firstTime")){
+                            openDialog();
+                }
+                else{
+                    startVm();
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                // progressBar.setVisibility(View.GONE);
+                AppUtils.showToast(Const.something_went_wrong, PcView.this);
+            }
+        });
+    }
+
+
+    private void startVm() {
+        VMTimerReq  vmTimerReq  =  new VMTimerReq(strVMId);
+        Call<MessageResponse> call = retrofitAPI.startVm("Bearer " + accessToken , vmTimerReq);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
+                if(response.code()==Const.SUCCESS_CODE_200) {
+                    if (response.body().getSuccess().equalsIgnoreCase("true")) {
+                        SharedPreferenceUtils.saveBoolean(PcView.this, Const.IS_SHUT_DOWN, false);
+                        getVMFromServerManually("afterShutDown");
+                    }
+                }
+                else if(response.code()==Const.ERROR_CODE_404 || response.code()==Const.ERROR_CODE_400 || response.code()==Const.ERROR_CODE_500) {
+                    try {
+                        JSONObject jObj = new JSONObject(response.errorBody().string());
+                        String value = jObj.getString("message");
+                        Toast.makeText(PcView.this, "" + value, Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<MessageResponse> call, Throwable t) {
+                AppUtils.showToast(Const.something_went_wrong, PcView.this);
+            }
+        });
     }
 
 }

@@ -429,13 +429,13 @@
                         android:layout_width="@dimen/_8sdp"
                         android:layout_height="@dimen/_8sdp"
                         android:layout_marginLeft="@dimen/_12sdp"
-                        android:src="@drawable/about" />
+                        android:src="@drawable/ic_contact_us" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
-                        android:text="@string/about"
+                        android:text="@string/contact"
                         android:textAllCaps="true"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_6sdp"

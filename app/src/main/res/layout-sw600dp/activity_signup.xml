@@ -286,8 +286,8 @@
 
     <CheckBox
         android:id="@+id/chkBoxUserAgreement"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_15sdp"
         android:layout_marginBottom="10dp"
         android:buttonTint="@color/gray"
         android:checked="false"
@@ -301,11 +301,13 @@
         app:layout_constraintWidth_percent="0.46" />
 
     <TextView
+        android:layout_marginLeft="@dimen/_2sdp"
         android:id="@+id/txtUserAgreement"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
         android:text="@string/user_agreements"
         android:textColor="@color/white"
         android:textStyle="bold"

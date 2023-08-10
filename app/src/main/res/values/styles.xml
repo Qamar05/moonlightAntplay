@@ -23,9 +23,11 @@
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
 
-
     </style>
 
+    <style name="MyAutofilledHighlight" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:autofilledHighlight" tools:ignore="NewApi">@drawable/my_bgdrawable</item>
+    </style>
     <style name="StreamBaseTheme" parent="AppBaseTheme">
         <!-- Transparent streaming background to avoid extra overdraw -->
         <item name="android:windowBackground">@android:color/transparent</item>

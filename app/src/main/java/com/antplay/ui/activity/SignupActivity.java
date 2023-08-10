@@ -26,6 +26,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.antplay.R;
@@ -37,6 +38,8 @@ import com.antplay.ui.adapter.StateListAdapter;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +48,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class SignupActivity extends Activity implements View.OnClickListener,StateListAdapter.ButtonClickListener {
+public class SignupActivity extends AppCompatActivity implements View.OnClickListener,StateListAdapter.ButtonClickListener {
 
     EditText edtFirstName, edtLastName,edTxtState , edtPhoneNumber, edtEmail, edtPassword, edtConfirmPassword, edtAge, edtAddress, edtCity, edtPinCode;
     Button btnSignup;
@@ -116,10 +119,23 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
                 public void onResponse(Call<UserRegisterResp> call, Response<UserRegisterResp> response) {
                     progressBar.setVisibility(View.GONE);
                     if (response.body() != null) {
-                        Toast.makeText(SignupActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        if (response.body().isStatus())
+                        if (response.code()==Const.SUCCESS_CODE_200){
+                            Toast.makeText(SignupActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             AppUtils.navigateScreen((Activity) mContext, LoginActivity.class);
+                        }
+                        else if (response.code()==Const.ERROR_CODE_500 ||
+                                response.code()==Const.ERROR_CODE_400 ||
+                                response.code()==Const.ERROR_CODE_404) {
+                            try {
+                                JSONObject jObj = new JSONObject(response.errorBody().string());
+                                Toast.makeText(SignupActivity.this, jObj.getString("detail"), Toast.LENGTH_SHORT).show();
+                            }
+                            catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
+
                 }
                 @Override
                 public void onFailure(Call<UserRegisterResp> call, Throwable t) {
@@ -131,84 +147,104 @@ public class SignupActivity extends Activity implements View.OnClickListener,Sta
     private boolean validateFormField() {
         if (edtFirstName.getText().toString().contains(" ")) {
             edtFirstName.setError(getString(R.string.remove_whitespace));
+            edtFirstName.requestFocus();
             return false;
         }
         if (edtFirstName.length() == 0) {
             edtFirstName.setError(getString(R.string.error_firstname));
+            edtFirstName.requestFocus();
             return false;
         }
         if (edtLastName.getText().toString().contains(" ")) {
             edtLastName.setError(getString(R.string.remove_whitespace));
+            edtLastName.requestFocus();
             return false;
         }
         if (edtLastName.length() == 0) {
             edtLastName.setError(getString(R.string.error_lastname));
+            edtLastName.requestFocus();
             return false;
         }
         if (edtPhoneNumber.getText().toString().contains(" ")) {
             edtPhoneNumber.setError(getString(R.string.remove_whitespace));
+            edtPhoneNumber.requestFocus();
             return false;
         }
         if (edtPhoneNumber.length() == 0) {
             edtPhoneNumber.setError(getString(R.string.error_phone));
+            edtPhoneNumber.requestFocus();
             return false;
         }
         if (edtEmail.getText().toString().contains(" ")) {
             edtEmail.setError(getString(R.string.remove_whitespace));
+            edtEmail.requestFocus();
             return false;
         } else if (edtEmail.length() == 0) {
             edtEmail.setError(getString(R.string.error_email));
+            edtEmail.requestFocus();
             return false;
         } else if (!edtEmail.getText().toString().matches(emailPattern)) {
             edtEmail.setError(getString(R.string.error_invalidEmail));
+            edtEmail.requestFocus();
             return false;
         }
         if (edtPassword.getText().toString().contains(" ")) {
             edtPassword.setError(getString(R.string.remove_whitespace));
+            edtPassword.requestFocus();
             return false;
         } else if (edtPassword.length() == 0) {
             edtPassword.setError(getString(R.string.error_password));
+            edtPassword.requestFocus();
             return false;
         } else if (edtPassword.length() < 8) {
             edtPassword.setError(getString(R.string.error_pass_minimum));
+            edtPassword.requestFocus();
             return false;
         } else if (!edtPassword.getText().toString().matches(Const.passwordRegex)) {
             edtPassword.setError(getString(R.string.pass_regex));
+            edtPassword.requestFocus();
             return false;
         }
         if (!edtPassword.getText().toString().equals(edtConfirmPassword.getText().toString())) {
             edtConfirmPassword.setError(getString(R.string.error_password_not_match));
+            edtConfirmPassword.requestFocus();
             return false;
         }
         if (edtAge.getText().toString().trim().contains(" ")) {
             edtAge.setError(getString(R.string.remove_whitespace));
+            edtAge.requestFocus();
             return false;
         } else if (edtAge.length() == 0) {
             edtAge.setError(getString(R.string.error_age));
+            edtAge.requestFocus();
             return false;
         } else if (Integer.parseInt(edtAge.getText().toString().trim()) < 18) {
             edtAge.setError(getString(R.string.error_greater_18));
+            edtAge.requestFocus();
             return false;
         }
         if (edtAddress.getText().toString().trim().length() == 0) {
             edtAddress.setError(getString(R.string.error_address));
+            edtAddress.requestFocus();
             return false;
         }
         if (edtCity.getText().toString().trim().length() == 0) {
             edtCity.setError(getString(R.string.error_city));
+            edtCity.requestFocus();
             return false;
         }
         if (edtPinCode.getText().toString().contains(" ")) {
             edtPinCode.setError(getString(R.string.remove_whitespace));
+            edtPinCode.requestFocus();
             return false;
         }
         if (edtPinCode.length() == 0) {
             edtPinCode.setError(getString(R.string.error_pinCode));
+            edtPinCode.requestFocus();
             return false;
         }
         if (!chkBoxUserAgreement.isChecked()) {
               Toast.makeText(this, getString(R.string.error_checkbox), Toast.LENGTH_SHORT).show();
-            //AppUtils.showSnack(getWindow().getDecorView().getRootView(), R.color.black, getString(R.string.error_checkbox), RegisterActivity.this);
             return false;
         }
         return true;

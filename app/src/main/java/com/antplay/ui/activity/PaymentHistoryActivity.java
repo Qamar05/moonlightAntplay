@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,8 @@ import com.antplay.utils.Const;
 import com.antplay.utils.SharedPreferenceUtils;
 
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +41,7 @@ public class PaymentHistoryActivity extends AppCompatActivity {
     Context mContext;
     RetrofitAPI retrofitAPI;
     PaymentHistoryAdapter paymentHistoryAdapter;
+    TextView tvNoDataFound;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -51,6 +55,7 @@ public class PaymentHistoryActivity extends AppCompatActivity {
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView_payment);
         linear_back= (LinearLayout) findViewById(R.id.back_linear_payment);
         loadingPB = (ProgressBar) findViewById(R.id.loading_getPaymentHistory);
+        tvNoDataFound = findViewById(R.id.tvNoDataFound);
         linear_back.setOnClickListener(v -> finish());
         if(AppUtils.isOnline(mContext))
             callPaymentHistoryAPI();
@@ -73,8 +78,10 @@ public class PaymentHistoryActivity extends AppCompatActivity {
                         if (paymentHistoryList != null && paymentHistoryList.size() > 0) {
                             paymentHistoryAdapter = new PaymentHistoryAdapter(mContext, response.body().getData());
                             recyclerView.setAdapter(paymentHistoryAdapter);
-                        } else
-                            AppUtils.showToast(Const.no_records, PaymentHistoryActivity.this);
+                        } else {
+                            tvNoDataFound.setVisibility(View.VISIBLE);
+                            tvNoDataFound.setText(getString(R.string.noDataFound));
+                        }
                     }
                 }
 

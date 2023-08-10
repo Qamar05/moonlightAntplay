@@ -33,6 +33,7 @@ import com.antplay.nvstream.jni.MoonBridge;
 import com.antplay.preferences.GlPreferences;
 import com.antplay.preferences.PreferenceConfiguration;
 import com.antplay.ui.activity.PcView;
+import com.antplay.ui.activity.SplashActivity;
 import com.antplay.ui.intrface.GameGestures;
 import com.antplay.ui.intrface.StreamView;
 import com.antplay.utils.AppUtils;
@@ -178,6 +179,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     private WifiManager.WifiLock highPerfWifiLock;
     private WifiManager.WifiLock lowLatencyWifiLock;
 
+    TextView tvTimer ,tvExpire;
+
     private boolean connectedToUsbDriverService = false;
     private ServiceConnection usbDriverServiceConnection = new ServiceConnection() {
         @Override
@@ -273,6 +276,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                         WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
             }
         }
+        tvTimer =  findViewById(R.id.tvTimer);
+        tvExpire =  findViewById(R.id.tvExpire);
 
         // Listen for non-touch events on the game surface
         streamView = findViewById(R.id.surfaceView);
@@ -1099,6 +1104,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        stopConnection();
 
         InputManager inputManager = (InputManager) getSystemService(Context.INPUT_SERVICE);
         if (controllerHandler != null) {
@@ -1916,7 +1922,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         if (connecting || connected) {
             connecting = connected = false;
             updatePipAutoEnter();
-            endVMTimeAPi();
+            endVMTimeAPi(true);
 
             controllerHandler.stop();
 
@@ -1942,36 +1948,28 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         // This does network I/O, so don't do it on the main thread.
         final int portTestResult = MoonBridge.testClientConnectivity(ServerHelper.CONNECTION_TEST_SERVER, 443, portFlags);
 
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (spinner != null) {
-                    spinner.dismiss();
-                    spinner = null;
+        runOnUiThread(() -> {
+            if (spinner != null) {
+                spinner.dismiss();
+                spinner = null;
+            }
+            if (!displayedFailureDialog) {
+                displayedFailureDialog = true;
+                LimeLog.severe(stage + " failed: " + errorCode);
+                // If video initialization failed and the surface is still valid, display extra information for the user
+                if (stage.contains("video") && streamView.getHolder().getSurface().isValid()) {
+                    Toast.makeText(Game.this, getResources().getText(R.string.video_decoder_init_failed), Toast.LENGTH_LONG).show();
                 }
-
-                if (!displayedFailureDialog) {
-                    displayedFailureDialog = true;
-                    LimeLog.severe(stage + " failed: " + errorCode);
-
-                    // If video initialization failed and the surface is still valid, display extra information for the user
-                    if (stage.contains("video") && streamView.getHolder().getSurface().isValid()) {
-                        Toast.makeText(Game.this, getResources().getText(R.string.video_decoder_init_failed), Toast.LENGTH_LONG).show();
-                    }
-
-                    String dialogText = getResources().getString(R.string.conn_error_msg) + " " + stage +" (error "+errorCode+")";
-
-                    if (portFlags != 0) {
-                        dialogText += "\n\n" + getResources().getString(R.string.check_ports_msg) + "\n" +
-                                MoonBridge.stringifyPortFlags(portFlags, "\n");
-                    }
-
-                    if (portTestResult != MoonBridge.ML_TEST_RESULT_INCONCLUSIVE && portTestResult != 0)  {
-                        dialogText += "\n\n" + getResources().getString(R.string.nettest_text_blocked);
-                    }
-
-                    MyDialog.displayDialog(Game.this, getResources().getString(R.string.conn_error_title), dialogText, true);
+                String dialogText = getResources().getString(R.string.conn_error_msg) + " " + stage +" (error "+errorCode+")";
+                if (portFlags != 0) {
+                    dialogText += "\n\n" + getResources().getString(R.string.check_ports_msg) + "\n" +
+                            MoonBridge.stringifyPortFlags(portFlags, "\n");
                 }
+                if (portTestResult != MoonBridge.ML_TEST_RESULT_INCONCLUSIVE && portTestResult != 0)  {
+                    dialogText += "\n\n" + getResources().getString(R.string.nettest_text_blocked);
+                }
+                endVMTimeAPi(false);
+                MyDialog.displayDialog(Game.this, getResources().getString(R.string.conn_error_title), dialogText, true);
             }
         });
     }
@@ -2123,7 +2121,9 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         call.enqueue(new Callback<>() {
             @Override
             public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
-           //     callTimer(Long.parseLong(time_remaining));
+                if(response.body().getSuccess().equalsIgnoreCase("True"))
+                    callTimer(Long.valueOf(time_remaining));
+
             }
             @Override
             public void onFailure(Call<MessageResponse> call, Throwable t) {
@@ -2132,7 +2132,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         });
     }
 
-    private void endVMTimeAPi() {
+    private void endVMTimeAPi(boolean value) {
         vmTimerReq = new VMTimerReq(strVMId);
         Call<MessageResponse> call = retrofitAPI.endVmTime("Bearer " + accessToken , vmTimerReq);
         call.enqueue(new Callback<>() {
@@ -2140,13 +2140,14 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
                try {
                    if (response.body().getSuccess().equalsIgnoreCase("true")) {
-
+                       if(value) {
+                           shutDownVM();
+                       }
                    }
                }
                catch (Exception e){
-
                }
-                  //  shutDownVM();
+
             }
             @Override
             public void onFailure(Call<MessageResponse> call, Throwable t) {
@@ -2165,9 +2166,10 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                         JSONObject jsonObject = new JSONObject(response.body().string());
                         JSONArray jsonArray = jsonObject.getJSONArray("data");
                         strVMId = jsonArray.getJSONObject(0).getString("vmid");
+                        time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
+                        SharedPreferenceUtils.saveString(Game.this, Const.VMID, strVMId);
 
-                        // time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
-                        time_remaining = "100";
+                        // time_remaining = "100";
 
 
                     }
@@ -2183,34 +2185,32 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         });
     }
 
-//    private void openTimerDialog(String timeRemaining) {
-//        Dialog dialog = new Dialog(Game.this);
-//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        dialog.setContentView(R.layout.dialog_logout);
-//        dialog.setCancelable(false);
-//        dialog.setCanceledOnTouchOutside(false);
-//        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        TextView timerText =  dialog.findViewById(R.id.timerText);
-//        TextView titleText =  dialog.findViewById(R.id.titleText);
-//        TextView msgText =  dialog.findViewById(R.id.msgText);
-//        Button txtNo = dialog.findViewById(R.id.txtNo);
-//        Button txtYes = dialog.findViewById(R.id.txtYes);
-//        timerText.setVisibility(View.VISIBLE);
-//        titleText.setText(getResources().getString(R.string.subscription_title));
-//        msgText.setText(getResources().getString(R.string.subscription_msg));
-//        txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
-//        txtYes.setText("Close");
-//        txtNo.setVisibility(View.GONE);
-//
-//
-//        txtYes.setOnClickListener(view -> {
-//            dialog.dismiss();
-//        });
-//
-//        dialog.dismiss();
-//
-//    }
+    private void openTimerDialog() {
+        Dialog dialog = new Dialog(Game.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_logout);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titleText =  dialog.findViewById(R.id.titleText);
+        TextView msgText =  dialog.findViewById(R.id.msgText);
+        Button txtNo = dialog.findViewById(R.id.txtNo);
+        Button txtYes = dialog.findViewById(R.id.txtYes);
+        titleText.setText(getResources().getString(R.string.subscription_title));
+        msgText.setText(getResources().getString(R.string.subscription_msg));
+        txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
+        txtYes.setText("Close");
+        txtNo.setVisibility(View.GONE);
+
+
+        txtYes.setOnClickListener(view -> {
+            dialog.dismiss();
+        });
+
+        dialog.dismiss();
+
+    }
 
 
     @Override
@@ -2445,31 +2445,14 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                 return false;
         }
     }
-//    private void callTimer(Long timeRemaining) {
-//        new CountDownTimer(timeRemaining, 1000) {
-//
-//            public void onTick(long secUntilFinished) {
-//                time_remaining = String.valueOf(secUntilFinished);
-//                Log.i("testt_timerrr" , time_remaining);
-//                if(Integer.parseInt(time_remaining)<90){
-//                 //   openTimerDialog(time_remaining);
-//                }
-//
-//                // timerText.setText(String.valueOf(secUntilFinished));
-//            }
-//            public void onFinish() {
-//                endVMTimeAPi();
-//
-//            }
-//        }.start();
-//    }
 private void shutDownVM() {
     Call<MessageResponse> call = retrofitAPI.shutDownVm("Bearer " + accessToken , vmTimerReq);
     call.enqueue(new Callback<>() {
         @Override
             public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
                 if (response.body().getSuccess().equalsIgnoreCase("true")) {
-                    Toast.makeText(Game.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Game.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    SharedPreferenceUtils.saveBoolean(Game.this, Const.IS_SHUT_DOWN, true);
                     AppUtils.navigateScreen(Game.this, PcView.class);
                 }
             }
@@ -2482,8 +2465,8 @@ private void shutDownVM() {
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
+            AppUtils.navigateScreenWithoutFinish(Game.this, PcView.class);
+            finishAffinity();
         }
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Please click back again to exit the VM", Toast.LENGTH_SHORT).show();
@@ -2498,7 +2481,7 @@ private void shutDownVM() {
         dialog.setCanceledOnTouchOutside(false);
         dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        TextView timerText =  dialog.findViewById(R.id.timerText);
+
         TextView titleText =  dialog.findViewById(R.id.titleText);
         TextView msgText =  dialog.findViewById(R.id.msgText);
         Button txtNo = dialog.findViewById(R.id.txtNo);
@@ -2512,16 +2495,36 @@ private void shutDownVM() {
         txtYes.setOnClickListener(view -> {
             dialog.dismiss();
             onBackPressed();
-
-
         });
-
         txtNo.setOnClickListener(view -> {
             dialog.dismiss();
         });
 
-
         dialog.dismiss();
+    }
+    private void callTimer(long seconds) {
+        new CountDownTimer(seconds*1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                long value = millisUntilFinished / 1000;
+                long hours = value / 3600;
+                long minutes =value % 3600 / 60;
+                long   sec = value % 60;
+
+
+
+                String  timeString = String.format("%02d:%02d:%02d", hours, minutes, sec);
+                tvTimer.setText("Time Remaining : "+ timeString + " hrs.");
+
+                if(value<300)
+                    tvExpire.setVisibility(View.VISIBLE);
+
+            }
+
+            public void onFinish() {
+                AppUtils.navigateScreen(Game.this,PcView.class);
+            }
+        }.start();
 
     }
 }

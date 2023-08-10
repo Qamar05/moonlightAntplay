@@ -34,12 +34,14 @@
             android:paddingRight="@dimen/activity_horizontal_margin">
 
             <ProgressBar
+                android:visibility="gone"
                 android:id="@+id/pcs_loading"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:indeterminate="true" />
 
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -47,7 +49,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toEndOf="@+id/pcs_loading"
                 android:layout_toRightOf="@+id/pcs_loading"
-                android:gravity="center"
+                android:gravity="left"
                 android:text="@string/searching_pc"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </RelativeLayout>

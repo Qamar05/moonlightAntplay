@@ -79,7 +79,7 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
                 progressSubscriptionPlan.setVisibility(View.GONE);
                 if (response != null) {
                     planList = response.body().getData();
-                    if (planList.size() > 0) {
+                    if (response != null && planList.size() > 0) {
                         adapter = new SubscriptionPlanAdapter(SubscriptionPlanActivity.this, planList, buttonClickListener);
                         rvSubscriptionPlans.setAdapter(adapter);
                     } else {

@@ -17,6 +17,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.LoginRequestModal;
@@ -39,7 +41,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends Activity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private String TAG = "ANT_PLAY";
     Button btnLetsGo;
     TextView tvForgetPass, tvSignupHere;
@@ -95,21 +97,29 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         }
     }
 
-
     private boolean CheckAllLoginFields() {
         String emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
         if (etEmail.getText().toString().trim().length() == 0) {
             etEmail.setError(getString(R.string.error_email));
+            etEmail.requestFocus();
             return false;
         } else if (!etEmail.getText().toString().matches(emailPattern)) {
             etEmail.setError(getString(R.string.error_invalidEmail));
+            etEmail.requestFocus();
             return false;
         }
         if (etPass.getText().toString().trim().length() == 0) {
             etPass.setError(getString(R.string.error_password));
+            etPass.requestFocus();
             return false;
         } else if (etPass.length() < 8) {
             etPass.setError(getString(R.string.error_pass_minimum));
+            etPass.requestFocus();
+            return false;
+        }
+        else if (!etPass.getText().toString().matches(Const.passwordRegex)) {
+            etPass.setError(getString(R.string.pass_regex));
+            etPass.requestFocus();
             return false;
         }
         return true;

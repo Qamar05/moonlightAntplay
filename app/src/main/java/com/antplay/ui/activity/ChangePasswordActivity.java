@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
@@ -24,18 +26,22 @@ import com.antplay.models.ChangePasswordResp;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.SharedPreferenceUtils;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ChangePasswordActivity extends Activity implements View.OnClickListener {
+public class ChangePasswordActivity extends AppCompatActivity implements View.OnClickListener {
     LinearLayout backLinear;
     EditText edTxtOldPassword, edTxtNewPassword, edTxtConfirmPassword;
     Button btnUpdate;
     private ProgressBar progressBar;
     String access_token;
     RetrofitAPI retrofitAPI;
-    ImageView ivOldPasswordShow ,ivNewPasswordShow ,  ivConfirmPasswordShow;
+    ImageView ivOldPasswordShow,ivNewPasswordShow,ivConfirmPasswordShow;
     boolean showOldPassword = false,showNewPassword = false,showConfirmPassword = false;
     Context mContext;
 
@@ -100,17 +106,21 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
     private boolean CheckAllFields() {
         if (edTxtOldPassword.getText().toString().trim().length() == 0) {
             edTxtOldPassword.setError(getString(R.string.error_old_password));
+            edTxtOldPassword.requestFocus();
             return false;
         }
         if (edTxtNewPassword.getText().toString().trim().length()<8) {
             edTxtNewPassword.setError(getString(R.string.error_pass_minimum));
+            edTxtNewPassword.requestFocus();
             return false;
         } else if (!edTxtNewPassword.getText().toString().matches(Const.passwordRegex)) {
             edTxtNewPassword.setError(getString(R.string.pass_regex));
+            edTxtNewPassword.requestFocus();
             return false;
         }
         if (!edTxtNewPassword.getText().toString().equals(edTxtConfirmPassword.getText().toString())) {
             edTxtConfirmPassword.setError(getString(R.string.error_password_not_match));
+            edTxtConfirmPassword.requestFocus();
             return false;
         }
         return true;
@@ -127,7 +137,18 @@ public class ChangePasswordActivity extends Activity implements View.OnClickList
                 progressBar.setVisibility(View.GONE);
                 if (response.code() == 200)
                     AppUtils.navigateScreen(ChangePasswordActivity.this, PcView.class);
-                else if (response.code() == Const.ERROR_CODE_404 || response.code() == Const.ERROR_CODE_400 ||response.code() == Const.ERROR_CODE_500 )
+                else if(response.code()==Const.ERROR_CODE_400){
+                    try {
+                        JSONObject jObj = new JSONObject(response.errorBody().string());
+                        String value = jObj.getString("old_password");
+                        JSONArray jsonArray = new JSONArray(value);
+                        String finalValue   =  jsonArray.get(0).toString();
+                        Toast.makeText(ChangePasswordActivity.this, ""+finalValue, Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                else if (response.code() == Const.ERROR_CODE_404 ||response.code() == Const.ERROR_CODE_500 )
                     Toast.makeText(ChangePasswordActivity.this,  response.message(), Toast.LENGTH_SHORT).show();
             }
             @Override

@@ -165,7 +165,6 @@
 -keep class com.antplay.ui.activity.EditProfileActivity { <init>(); }
 -keep class com.antplay.ui.activity.ForgotPasswordActivity { <init>(); }
 -keep class com.antplay.ui.activity.GeneralWebViewActivity { <init>(); }
--keep class com.antplay.ui.activity.HomeActivity { <init>(); }
 -keep class com.antplay.ui.activity.LoginActivity { <init>(); }
 -keep class com.antplay.ui.activity.LoginSignUpActivity { <init>(); }
 -keep class com.antplay.ui.activity.LoginWithOTP { <init>(); }

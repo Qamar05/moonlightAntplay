@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 public class RestClient {
-    public static final String BASE_URL = "https://uat.antplay.tech/api/";
+    public static final String BASE_URL = "https://uat.antplay.tech/v1/api/";
 
     Context context;
     boolean status;
@@ -821,7 +821,7 @@ public class RestClient {
 
         if (isOnline(context)) {
             HandlerThread handlerThread = new HandlerThread("HandlerThread");
-            handlerThread.start();
+
             Handler handler = new Handler(handlerThread.getLooper()) {
                 @Override
                 public void handleMessage(Message msg) {

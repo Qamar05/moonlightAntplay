@@ -64,6 +64,21 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.antplay.ui.activity.SplashActivity"
+            android:exported="true"
+            android:resizeableActivity="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.antplay.ui.activity.OnBoardingActivity"
+            android:exported="true"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.MyApplication" />
+        <activity
             android:name="com.antplay.ui.activity.LoginSignUpActivity"
             android:exported="false" >
             <meta-data
@@ -71,17 +86,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.antplay.ui.activity.SubscriptionPlanActivity"
+            android:name="com.antplay.ui.activity.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.MyApplication" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:resizeableActivity="true"
+            android:theme="@style/MyAutofilledHighlight" />
         <activity
-            android:name="com.antplay.ui.activity.HomeActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.NoTitleBar" >
+            android:name="com.antplay.ui.activity.SignupActivity"
+            android:exported="true"
+            android:theme="@style/MyAutofilledHighlight" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -95,32 +107,13 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.antplay.ui.activity.GeneralWebViewActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name="com.antplay.ui.activity.SignupActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name="com.antplay.ui.activity.SplashActivity"
+            android:name="com.antplay.ui.activity.LoginWithOTP"
             android:exported="true"
-            android:resizeableActivity="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:resizeableActivity="true"
+            android:theme="@style/MyAutofilledHighlight" />
         <activity
-            android:name="com.antplay.ui.activity.LoginActivity"
-            android:exported="false"
+            android:name="com.antplay.ui.activity.VerifyOTP"
+            android:exported="true"
             android:resizeableActivity="true" />
         <activity
             android:name="com.antplay.ui.activity.ProfileActivity"
@@ -128,32 +121,35 @@
             android:resizeableActivity="true"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name="com.antplay.ui.activity.LoginWithOTP"
-            android:exported="true"
-            android:resizeableActivity="true" />
-        <activity
-            android:name="com.antplay.ui.activity.VerifyOTP"
-            android:exported="true"
-            android:resizeableActivity="true" />
-        <activity
             android:name="com.antplay.ui.activity.EditProfileActivity"
             android:exported="true"
             android:resizeableActivity="true"
-            android:theme="@style/Theme.MyApplication" />
+            android:theme="@style/MyAutofilledHighlight" />
         <activity
             android:name="com.antplay.ui.activity.ChangePasswordActivity"
             android:exported="true"
-            android:resizeableActivity="true" />
+            android:resizeableActivity="true"
+            android:theme="@style/MyAutofilledHighlight" />
+        <activity
+            android:name="com.antplay.ui.activity.SubscriptionPlanActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyApplication" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name="com.antplay.ui.activity.PaymentHistoryActivity"
             android:exported="true"
             android:resizeableActivity="true"
             android:theme="@style/Theme.MyApplication" />
         <activity
-            android:name="com.antplay.ui.activity.OnBoardingActivity"
-            android:exported="true"
-            android:resizeableActivity="true"
-            android:theme="@style/Theme.MyApplication" />
+            android:name="com.antplay.ui.activity.GeneralWebViewActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <provider
             android:name="com.antplay.PosterContentProvider"
@@ -167,17 +163,10 @@
         <meta-data
             android:name="com.sec.android.support.multiwindow"
             android:value="true" />
-        <!--
- Disable Game Mode downscaling since it can break our UI dialogs and doesn't benefit
-             performance much for us since we don't use GL/Vulkan for rendering anyway
-        -->
         <meta-data
             android:name="com.android.graphics.intervention.wm.allowDownscale"
             android:value="false" />
-        <!--
- Samsung DeX support requires explicit placement of android:resizeableActivity="true"
-             in each activity even though it is implied by targeting API 24+
-        -->
+
         <activity
             android:name="com.antplay.ui.activity.PcView"
             android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"

@@ -3,11 +3,11 @@ package com.antplay.utils;
 public class Const {
     //public static String DEV_URL="http://192.168.0.80:8080";
     //public static String DEV_URL="http://103.182.65.1/api/"; //http://103.182.65.1/api/login/
-    public static String DEV_URL="https://uat.antplay.tech/api/"; //http://103.182.65.1/api/login/
+    public static String DEV_URL="https://uat.antplay.tech/v1/api/"; //http://103.182.65.1/api/login/
     public static String PROD_URL="http://192.168.0.80:8080";
     //public static String PROD_URL="https://fmcg.xaapps.com/";
 //     public static String DEV_URL =  "https://api.antplay.tech/api/";
-    public static String URL =  "https://uat.antplay.tech/api/";
+    public static String URL =  "https://uat.antplay.tech/v1/api/";
 
 //    public static String emailPattern = "^(?:\\d{10}|\\w+@\\w+\\.\\w{2,3})$";
     public static String emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
@@ -15,6 +15,7 @@ public class Const {
     public static String phoneRegex = "^[1-9][0-9]{9,10}$";
     public static String ACCESS_TOKEN="access_token";
     public static String IS_LOGGED_IN="logged_in";
+    public static String IS_SHUT_DOWN="shut_down";
     public static String IS_FIRST_TIME="is_first_time";
     public static String REDIRECT_URL="redirectURL";
 
@@ -22,6 +23,7 @@ public class Const {
 
     public static String USERNAME="username";
     public static String FIRSTNAME="first_name";
+
     public static String LASTNAME="last_name";
     public static String EMAIL_ID="email_id";
     public static String PHONE_NUMBER="phone_number";
@@ -51,12 +53,24 @@ public class Const {
     /*****
      * Intent Values
      * ****/
-    public static String TERMS_AND_CONDITION_URL="https://antplay.tech/termsAndConditionsForApp";
-    public static String PRIVACY_POLICY_URL="https://antplay.tech/privacyPolicyForApp";
-    public static String ABOUT_US_URL="https://antplay.tech/aboutUsForApp";
+
+//    public static String TERMS_AND_CONDITION_URL="https://antplay.tech/termsAndConditionsForApp";
+//    public static String PRIVACY_POLICY_URL="https://antplay.tech/privacyPolicyForApp";
+//    public static String ABOUT_US_URL="https://antplay.tech/aboutUsForApp";
+//    public static String WEBSITE_URL="https://antplay.tech/";
+//    public static String DISCORD_URL="https://discord.gg/vGHsh8MYXX";
+//    public static String INSTAGRAM_URL="https://www.instagram.com/antplay.tech/";
+//    public static String FAQ_URL="https://antplay.tech/faqForApp";
+
+
+    public static String TERMS_AND_CONDITION_URL="https://antplay.tech/terms-and-conditions";
+    public static String PRIVACY_POLICY_URL="https://antplay.tech/privacy-policy";
+    public static String ABOUT_US_URL="https://antplay.tech/contact-us";
     public static String WEBSITE_URL="https://antplay.tech/";
     public static String DISCORD_URL="https://discord.gg/vGHsh8MYXX";
     public static String INSTAGRAM_URL="https://www.instagram.com/antplay.tech/";
-    public static String FAQ_URL="https://antplay.tech/faqForApp";
+    public static String FAQ_URL="https://antplay.tech/faq";
+
+    public static String VMID="vmId";
 
 }

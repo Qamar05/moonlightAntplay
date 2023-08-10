@@ -68,4 +68,9 @@ public interface RetrofitAPI {
     Call<MessageResponse> endVmTime(@Header("Authorization") String token, @Body VMTimerReq vmTimerReq);
     @POST("shutdownvm/")
     Call<MessageResponse> shutDownVm(@Header("Authorization") String token, @Body VMTimerReq vmTimerReq);
+    @POST("startvm/")
+    Call<MessageResponse> startVm(@Header("Authorization") String token ,@Body VMTimerReq vmTimerReq);
+
+    @GET("getvmip")
+    Call<ResponseBody> getVMIP(@Header("Authorization") String token);
 }

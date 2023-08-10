@@ -53,6 +53,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     int[] daysOfMonths = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     RetrofitAPI retrofitAPI;
     ProgressBar loadingProgressBar;
+    boolean planActive =  false;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -312,9 +313,15 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                                     txtCurrentPlan.setText(paymentHistory_list.get(i).getBillingPlan());
                                     String newdate =  convertDateToString(paymentHistory_list.get(i).getExpiry_date());
                                     txtExpiryDate.setText(newdate);
+                                    planActive =  true;
                                     break;
                                 }
                             }
+                            if(!planActive) {
+                                txtCurrentPlan.setText("No Active Plan");
+                                txtExpiryDate.setText("N/A");
+                            }
+
                         }
                         catch (Exception e){
 

@@ -275,8 +275,8 @@
     <string name="pacing_smoothness">Prefer smoothest video (may significantly increase latency)</string>
 
     <string name="signupHere"><u>Sign up here</u></string>
-    <string name="emailOrMobile">E-mail or Mobile Number</string>
-    <string name="termsCondition">I agree with the terms of </string>
+    <string name="emailOrMobile">E-mail </string>
+    <string name="termsCondition">I agree with the terms of  </string>
     <string name="user_agreements">user agreement</string>
     <string name="alreadyRegister"><u>Already have an account? Sign in here.</u></string>
     <string name="forgotPass"><u>Forgot Password?</u></string>
@@ -354,6 +354,7 @@
     <string name="instagram">Instagram</string>
     <string name="website">AntPlay.Tech</string>
     <string name="about">About Us</string>
+    <string name="contact">Contact Us</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="name">Name</string>
@@ -386,9 +387,12 @@
     <string name="more_professional">and more professional and precise control</string>
     <string name="choose_new_pc">CHOOSE A NEW PC</string>
     <string name="close">Close</string>
-    <string name="subscription_msg">Your subscription is going to expire in 5 minutes, Renew your subscription to continue.</string>
+    <string name="subscription_msg">Your subscription is going to expire.</string>
     <string name="subscription_title">Subscription Alert</string>
     <string name="subs_continue">Continue</string>
+
+    <string name="no_vm_title">Alert</string>
+    <string name="no_vm_msg">Please wait we are creating your VM </string>
 
     <string name="exit_vm_msg">Are you sure you want to Exit?</string>
     <string name="exit_vm">Exit</string>

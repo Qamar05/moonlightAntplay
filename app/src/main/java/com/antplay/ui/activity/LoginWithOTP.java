@@ -13,6 +13,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.antplay.AppView;
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
@@ -23,7 +27,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginWithOTP extends Activity implements View.OnClickListener {
+public class LoginWithOTP extends AppCompatActivity implements View.OnClickListener {
 
     EditText edt_phone;
     Button btn_lestGo;

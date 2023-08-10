@@ -11,6 +11,7 @@
         <item name="colorBackgroundFloating">@color/color_236349</item>
         <item name="android:colorBackgroundFloating" tools:targetApi="23">@color/color_236349</item>
 
+
     </style>
 
     <style name="Theme.MyApplication2" parent="Base.Theme.MyApplication">

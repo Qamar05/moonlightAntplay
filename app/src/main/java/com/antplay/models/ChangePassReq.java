@@ -3,8 +3,6 @@ package com.antplay.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-
-
 public class ChangePassReq {
     @SerializedName("old_password")
     @Expose
@@ -15,7 +13,6 @@ public class ChangePassReq {
     @SerializedName("confirm_password")
     @Expose
     private String confirm_password;
-
 
     public ChangePassReq(String old_password, String new_password , String confirm_password){
         this.old_password =  old_password;
