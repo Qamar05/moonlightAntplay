@@ -10946,6 +10946,7 @@ com.antplay.BuildConfig:
     public static final int VERSION_CODE
     public static final java.lang.String VERSION_NAME
     public void <init>()
+com.antplay.Game$17
 com.antplay.Game:
     public static final java.lang.String EXTRA_APP_HDR
     public static final java.lang.String EXTRA_APP_ID
@@ -10969,6 +10970,7 @@ com.antplay.Game:
     private static synthetic void lambda$openTimerDialog$1(android.app.Dialog,android.view.View)
     private void openExitVMDialog()
     private void openTimerDialog()
+    private void shutDownVM()
 com.antplay.LimeLog:
     public static void setFileHandler(java.lang.String)
 com.antplay.PosterContentProvider:
@@ -11003,7 +11005,7 @@ com.antplay.api.APIClient:
     public void <init>()
 com.antplay.api.RetrofitAPI:
     public abstract retrofit2.Call getAllBillingPlan()
-    public abstract retrofit2.Call startVm(java.lang.String,com.antplay.models.VMTimerReq)
+    public abstract retrofit2.Call shutDownVm(java.lang.String,com.antplay.models.VMTimerReq)
     public abstract retrofit2.Call updatePin(java.lang.String,com.antplay.models.UpdatePinRequestModal)
 com.antplay.binding.PlatformBinding:
     public void <init>()
@@ -11264,6 +11266,8 @@ com.antplay.models.LoginRequestModal:
     public void setUsername(java.lang.String)
 com.antplay.models.LoginResponse
 com.antplay.models.MessageResponse:
+    private java.lang.String message
+    public java.lang.String getMessage()
     public void setMessage(java.lang.String)
     public void setSuccess(java.lang.String)
 com.antplay.models.Payment:

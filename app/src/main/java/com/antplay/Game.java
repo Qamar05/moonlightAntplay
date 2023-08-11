@@ -2141,7 +2141,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                try {
                    if (response.body().getSuccess().equalsIgnoreCase("true")) {
                        if(value) {
-                           shutDownVM();
+                           //   shutDownVM();
                        }
                    }
                }

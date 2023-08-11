@@ -130,7 +130,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
                     managerBinder = localBinder;
 
                     // Start updates
-                    startComputerUpdates();
+                   startComputerUpdates();
 
                     // Force a keypair to be generated early to avoid discovery delays
                     new AndroidCryptoProvider(PcView.this).getClientCertificate();
@@ -299,9 +299,9 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             PcView.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(PcView.this, getResources().getString(R.string.addpc_success), Toast.LENGTH_LONG).show();
+                 //   Toast.makeText(PcView.this, getResources().getString(R.string.addpc_success), Toast.LENGTH_LONG).show();
 
-                   // completeOnCreate();
+                    completeOnCreate();
 
 
 
@@ -436,7 +436,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         } else {
             noPcFoundLayout.setVisibility(View.INVISIBLE);
         }
-        pcGridAdapter.notifyDataSetChanged();
+       // pcGridAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -447,7 +447,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         // between binding to CMS and onResume()
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
-        isShutDown   =  SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_SHUT_DOWN);
+        //isShutDown   =  SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_SHUT_DOWN);
         inForeground = true;
         if (AppUtils.isOnline(PcView.this)){
             if(isShutDown)
@@ -502,6 +502,8 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         shortcutHelper = new ShortcutHelper(this);
         UiHelper.setLocale(this);
 
+
+
         // Bind to the computer manager service
         bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection, Service.BIND_AUTO_CREATE);
         pcGridAdapter = new PcGridAdapter(this, PreferenceConfiguration.readPreferences(this));
@@ -514,17 +516,12 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         // and our activity is in the foreground.
         if (managerBinder != null && !runningPolling && inForeground) {
             freezeUpdates = false;
-            managerBinder.startPolling(new ComputerManagerListener() {
-                @Override
-                public void notifyComputerUpdated(final ComputerDetails details) {
-                    if (!freezeUpdates) {
-                        PcView.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                updateComputer(details);
-                            }
-                        });
-                    }
+            managerBinder.startPolling(details -> {
+                if (!freezeUpdates) {
+                    PcView.this.runOnUiThread(() -> {
+                        if(details.manualAddress!=null)
+                        updateComputer(details);
+                    });
                 }
             });
             runningPolling = true;
@@ -1013,7 +1010,7 @@ catch (Exception e){
 
         if (existingEntry != null) {
             // Replace the information in the existing entry
-            existingEntry.details = details;
+           // existingEntry.details = details;
         } else {
             // Add a new entry
             pcGridAdapter.addComputer(new ComputerObject(details));
@@ -1183,7 +1180,7 @@ catch (Exception e){
                             openDialog();
                 }
                 else{
-                    startVm();
+                  //  startVm();
                 }
             }
             @Override
