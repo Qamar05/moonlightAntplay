@@ -3,11 +3,15 @@ package com.antplay.utils;
 public class Const {
     //public static String DEV_URL="http://192.168.0.80:8080";
     //public static String DEV_URL="http://103.182.65.1/api/"; //http://103.182.65.1/api/login/
-    public static String DEV_URL="https://uat.antplay.tech/v1/api/"; //http://103.182.65.1/api/login/
+     //http://103.182.65.1/api/login/
     public static String PROD_URL="http://192.168.0.80:8080";
     //public static String PROD_URL="https://fmcg.xaapps.com/";
 //     public static String DEV_URL =  "https://api.antplay.tech/api/";
-    public static String URL =  "https://uat.antplay.tech/v1/api/";
+
+//    public static String URL =  "https://uat.antplay.tech/v1/api/";
+//    public static String DEV_URL="https://uat.antplay.tech/v1/api/";
+    public static String URL =  "https://api.antplay.tech/v1/api/";
+    public static String DEV_URL="https://api.antplay.tech/v1/api/";
 
 //    public static String emailPattern = "^(?:\\d{10}|\\w+@\\w+\\.\\w{2,3})$";
     public static String emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";

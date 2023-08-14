@@ -26,6 +26,8 @@ import com.antplay.computers.ComputerManagerService;
 import com.antplay.grid.PcGridAdapter;
 import com.antplay.grid.assets.DiskAssetLoader;
 import com.antplay.models.MessageResponse;
+import com.antplay.models.UpdatePinRequestModal;
+import com.antplay.models.UpdatePinResponseModal;
 import com.antplay.models.VMTimerReq;
 import com.antplay.nvstream.http.ComputerDetails;
 import com.antplay.nvstream.http.NvApp;
@@ -112,6 +114,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     String accessToken , strVMId;
 
     boolean isShutDown =  false;
+    SpinnerDialog dialog;
     private ComputerManagerService.ComputerManagerBinder managerBinder;
     private final LinkedBlockingQueue<String> computersToAdd = new LinkedBlockingQueue<>();
     private boolean freezeUpdates, runningPolling, inForeground, completeOnCreateCalled;
@@ -682,7 +685,7 @@ catch (Exception e){
 
 
 
-                        MyDialog.displayDialog(PcView.this, getResources().getString(R.string.pair_pairing_title), getResources().getString(R.string.pair_pairing_msg) + " " + pinStr + "\n\n" + getResources().getString(R.string.pair_pairing_help), false);
+//                        MyDialog.displayDialog(PcView.this, getResources().getString(R.string.pair_pairing_title), getResources().getString(R.string.pair_pairing_msg) + " " + pinStr + "\n\n" + getResources().getString(R.string.pair_pairing_help), false);
 
 
 
@@ -752,36 +755,64 @@ catch (Exception e){
     }
 
     String TAG = "ANT_PLAY";
+
+
     private void sendAndVerifySecurityPinManually(String pinStr) {
-        String accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
-        Log.d(TAG, "PIN : " + pinStr + " Access Token : " + accessToken);
-        HashMap<String, String> pinMap = new HashMap<>();
-        pinMap.put("pin", pinStr);
-
-        Log.d(TAG, " Access Token : " + accessToken);
-        new RestClient(PcView.this).postRequestWithHeader("update_pin", "vmauth", pinMap, accessToken, "", new RestClient.ResponseListener() {
+        UpdatePinRequestModal updatePinRequestModal  =  new UpdatePinRequestModal(pinStr);
+        Call<UpdatePinResponseModal> call = retrofitAPI.updatePin("Bearer " + accessToken , updatePinRequestModal);
+        call.enqueue(new Callback<>() {
             @Override
-            public void onResponse(String tag, String response) {
-                if (response != null) {
-                    Log.d(TAG, "Response : " + response);
+            public void onResponse(Call<UpdatePinResponseModal> call, Response<UpdatePinResponseModal> response) {
+                if(response.code()==Const.SUCCESS_CODE_200) {
+                    String status = response.body().getPinData().getStatus();
+                }
+                else if(response.code()==Const.ERROR_CODE_404 || response.code()==Const.ERROR_CODE_400 || response.code()==Const.ERROR_CODE_500) {
                     try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        String status = jsonObject.getJSONObject("data").getString("status");
-
-                        Log.d("ANT_PLAY", "Status : " + status);
-
-                    } catch (JSONException e) {
+                        JSONObject jObj = new JSONObject(response.errorBody().string());
+                        String value = jObj.getString("message");
+                        Toast.makeText(PcView.this, "" + value, Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
             }
-        }, new RestClient.ErrorListener() {
             @Override
-            public void onError(String tag, String errorMsg, long statusCode) {
-                Log.d("ANT_PLAY", "Message : " + errorMsg);
+            public void onFailure(Call<UpdatePinResponseModal> call, Throwable t) {
+                AppUtils.showToast(Const.something_went_wrong, PcView.this);
             }
         });
+
     }
+
+
+//    private void sendAndVerifySecurityPinManually(String pinStr) {
+//        HashMap<String, String> pinMap = new HashMap<>();
+//        pinMap.put("pin", pinStr);
+//
+//        Log.d(TAG, " Access Token : " + accessToken);
+//        new RestClient(PcView.this).postRequestWithHeader("update_pin", "vmauth", pinMap, accessToken, "", new RestClient.ResponseListener() {
+//            @Override
+//            public void onResponse(String tag, String response) {
+//                if (response != null) {
+//                    Log.d(TAG, "Response : " + response);
+//                    try {
+//                        JSONObject jsonObject = new JSONObject(response);
+//                        String status = jsonObject.getJSONObject("data").getString("status");
+//
+//                        Log.d("ANT_PLAY", "Status : " + status);
+//
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        }, new RestClient.ErrorListener() {
+//            @Override
+//            public void onError(String tag, String errorMsg, long statusCode) {
+//                Log.d("ANT_PLAY", "Message : " + errorMsg);
+//            }
+//        });
+//    }
 
 
     private void doWakeOnLan(final ComputerDetails computer) {
@@ -1132,19 +1163,19 @@ catch (Exception e){
             Button txtNo = dialog.findViewById(R.id.txtNo);
             Button txtYes = dialog.findViewById(R.id.txtYes);
             titleText.setText(getResources().getString(R.string.no_vm_title));
-            msgText.setText(getResources().getString(R.string.no_vm_msg));
+            msgText.setText(getResources().getString(R.string.searching_pc));
             txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
-            txtYes.setText("Close");
-            txtNo.setVisibility(View.GONE);
+            txtYes.setText("purchase");
 
             txtYes.setOnClickListener(view -> {
                 dialog.dismiss();
+                AppUtils.navigateScreenWithoutFinish(PcView.this, SubscriptionPlanActivity.class);
             });
-
+            txtNo.setOnClickListener(view -> {
+                dialog.dismiss();
+            });
             dialog.show();
-
         }
-
 
     private boolean handleDoneEvent(String vmIp) {
         if (vmIp.length() == 0) {

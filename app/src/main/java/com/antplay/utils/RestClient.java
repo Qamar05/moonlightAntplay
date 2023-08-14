@@ -164,7 +164,7 @@ public class RestClient {
                 public void handleMessage(Message msg) {
                     InputStream is = null;
                     try {
-                        URL url = new URL(Const.URL + baseUrl); //+ postUrl
+                        URL url = new URL(Const.DEV_URL + baseUrl); //+ postUrl
                         Log.d(TAG_RESPONSE, "===========" + baseUrl + "===========");
                         HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
@@ -498,7 +498,7 @@ public class RestClient {
                     Log.d("auth", authorizationValue);
                     //String auth = "Bearer "+ new String(new Base64().encode(apiToken.getBytes()));
                     try {
-                        URL url = new URL(BASE_URL + postUrl); //+ postUrl
+                        URL url = new URL(Const.DEV_URL + postUrl); //+ postUrl
                         HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
                         /************ Header Started ************/

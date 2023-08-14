@@ -32,6 +32,8 @@ import com.antplay.utils.Const;
 import com.antplay.utils.DateFormatterHelper;
 import com.antplay.utils.SharedPreferenceUtils;
 
+import org.json.JSONObject;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -268,28 +270,30 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         call.enqueue(new Callback<UserDetailsModal>() {
             @Override
             public void onResponse(Call<UserDetailsModal> call, Response<UserDetailsModal> response) {
-                if (response.isSuccessful()) {
-                   // progressBar.setVisibility(View.GONE);
-                    if(response.body()!=null) {
-                        SharedPreferenceUtils.saveString(mContext, Const.FIRSTNAME, response.body().getFirstName());
-                        SharedPreferenceUtils.saveString(mContext, Const.LASTNAME, response.body().getLastName());
-                        SharedPreferenceUtils.saveString(mContext, Const.EMAIL_ID, response.body().getEmail());
-                        SharedPreferenceUtils.saveString(mContext, Const.PHONE_NUMBER, response.body().getPhoneNumber());
-                        SharedPreferenceUtils.saveString(mContext, Const.ADDRESS, response.body().getAddress());
-                        SharedPreferenceUtils.saveString(mContext, Const.STATE, response.body().getState());
-                        SharedPreferenceUtils.saveString(mContext, Const.CITY, response.body().getCity());
-                        SharedPreferenceUtils.saveString(mContext, Const.USERNAME, response.body().getUsername());
-                        SharedPreferenceUtils.saveString(mContext, Const.PINCODE, response.body().getPincode());
-                        txtUserID.setText(response.body().getEmail());
+                if (response.code() == Const.SUCCESS_CODE_200) {
+                    SharedPreferenceUtils.saveString(mContext, Const.FIRSTNAME, response.body().getFirstName());
+                    SharedPreferenceUtils.saveString(mContext, Const.LASTNAME, response.body().getLastName());
+                    SharedPreferenceUtils.saveString(mContext, Const.EMAIL_ID, response.body().getEmail());
+                    SharedPreferenceUtils.saveString(mContext, Const.PHONE_NUMBER, response.body().getPhoneNumber());
+                    SharedPreferenceUtils.saveString(mContext, Const.ADDRESS, response.body().getAddress());
+                    SharedPreferenceUtils.saveString(mContext, Const.STATE, response.body().getState());
+                    SharedPreferenceUtils.saveString(mContext, Const.CITY, response.body().getCity());
+                    SharedPreferenceUtils.saveString(mContext, Const.USERNAME, response.body().getUsername());
+                    SharedPreferenceUtils.saveString(mContext, Const.PINCODE, response.body().getPincode());
+                    txtUserID.setText(response.body().getEmail());
+                } else if (response.code() == Const.ERROR_CODE_404 ||
+                        response.code() == Const.ERROR_CODE_500 ||
+                        response.code() == Const.ERROR_CODE_400) {
+                    try {
+                        JSONObject jObj = new JSONObject(response.errorBody().string());
+                        Toast.makeText(ProfileActivity.this, jObj.getString("detail"), Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    else
-                        AppUtils.showToast(Const.no_records, mContext);
                 }
-                else {
-                     // progressBar.setVisibility(View.GONE);
-                    AppUtils.showToast(Const.something_went_wrong, mContext);
-                }
+
             }
+
             @Override
             public void onFailure(Call<UserDetailsModal> call, Throwable t) {
             //    progressBar.setVisibility(View.GONE);
@@ -304,30 +308,26 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             call.enqueue(new Callback<>() {
                 @Override
                 public void onResponse(Call<PaymentHistory_modal> call, Response<PaymentHistory_modal> response) {
-                    if (response.isSuccessful()) {
-                        loadingProgressBar.setVisibility(View.GONE);
+                    loadingProgressBar.setVisibility(View.GONE);
+                    if(response.code()==Const.SUCCESS_CODE_200) {
                         List<Payment> paymentHistory_list = response.body().getData();
                         try {
                             for (int i = 0; i < paymentHistory_list.size(); i++) {
                                 if (paymentHistory_list.get(i).getPaymentStatus().equalsIgnoreCase("active")) {
                                     txtCurrentPlan.setText(paymentHistory_list.get(i).getBillingPlan());
-                                    String newdate =  convertDateToString(paymentHistory_list.get(i).getExpiry_date());
+                                    String newdate = convertDateToString(paymentHistory_list.get(i).getExpiry_date());
                                     txtExpiryDate.setText(newdate);
-                                    planActive =  true;
                                     break;
                                 }
                             }
-                            if(!planActive) {
-                                txtCurrentPlan.setText("No Active Plan");
-                                txtExpiryDate.setText("N/A");
-                            }
-
+                        } catch (Exception e) {
                         }
-                        catch (Exception e){
-
-                        }
-                    } else {
-                        loadingProgressBar.setVisibility(View.GONE);
+                    }
+                    else if (response.code()==Const.ERROR_CODE_400||
+                              response.code()==Const.ERROR_CODE_500 ||
+                              response.code()==Const.ERROR_CODE_404){
+                            txtCurrentPlan.setText("No Active Plan");
+                            txtExpiryDate.setText("N/A");
                     }
                 }
 

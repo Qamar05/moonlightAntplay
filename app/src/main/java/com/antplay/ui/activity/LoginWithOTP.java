@@ -57,7 +57,7 @@ public class LoginWithOTP extends AppCompatActivity implements View.OnClickListe
 
     private void callSendOTP() {
         progressBar.setVisibility(View.VISIBLE);
-        Call<SendOTPResponse> call = retrofitAPI.sendOTP(Const.URL+"getuserbyphone/"+phoneValue);
+        Call<SendOTPResponse> call = retrofitAPI.sendOTP(Const.DEV_URL+"getuserbyphone/"+phoneValue);
         call.enqueue(new Callback<>() {
             @Override
             public void onResponse(Call<SendOTPResponse> call, Response<SendOTPResponse> response) {

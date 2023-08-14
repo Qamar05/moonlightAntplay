@@ -118,7 +118,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 @Override
                 public void onResponse(Call<UserRegisterResp> call, Response<UserRegisterResp> response) {
                     progressBar.setVisibility(View.GONE);
-                    if (response.body() != null) {
                         if (response.code()==Const.SUCCESS_CODE_200){
                             Toast.makeText(SignupActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             AppUtils.navigateScreen((Activity) mContext, LoginActivity.class);
@@ -133,7 +132,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                             catch (Exception e) {
                                 e.printStackTrace();
                             }
-                        }
+
                     }
 
                 }

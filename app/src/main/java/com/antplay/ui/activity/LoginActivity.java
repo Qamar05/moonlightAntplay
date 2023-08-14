@@ -131,7 +131,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 loadingPB.setVisibility(View.GONE);
-                if (response != null) {
                     if (response.code() == 200) {
                         try {
                             String responseValue = response.body().string();
@@ -144,7 +143,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    } else if (response.code() == 401) {
+                    } else if (response.code() == Const.ERROR_CODE_400 ||
+                                response.code()==Const.ERROR_CODE_500||
+                                response.code()==Const.ERROR_CODE_404) {
                         try {
                             JSONObject jObj = new JSONObject(response.errorBody().string());
                             Toast.makeText(LoginActivity.this, jObj.getString("detail"), Toast.LENGTH_SHORT).show();
@@ -155,7 +156,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(LoginActivity.this, "Something went wrong, please try again later.", Toast.LENGTH_LONG).show();
                     }
                 }
-            }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {

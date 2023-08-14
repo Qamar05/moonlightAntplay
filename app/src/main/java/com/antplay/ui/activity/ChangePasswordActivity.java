@@ -137,7 +137,9 @@ public class ChangePasswordActivity extends AppCompatActivity implements View.On
                 progressBar.setVisibility(View.GONE);
                 if (response.code() == 200)
                     AppUtils.navigateScreen(ChangePasswordActivity.this, PcView.class);
-                else if(response.code()==Const.ERROR_CODE_400){
+                else if(response.code()==Const.ERROR_CODE_400 ||
+                        response.code()==Const.ERROR_CODE_500 ||
+                        response.code()==Const.ERROR_CODE_404){
                     try {
                         JSONObject jObj = new JSONObject(response.errorBody().string());
                         String value = jObj.getString("old_password");

@@ -66,6 +66,7 @@
         android:orientation="vertical"
         android:layout_marginLeft="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintStart_toEndOf="parent"

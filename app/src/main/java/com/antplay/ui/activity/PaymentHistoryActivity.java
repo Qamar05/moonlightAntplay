@@ -67,21 +67,22 @@ public class PaymentHistoryActivity extends AppCompatActivity {
 
     private void callPaymentHistoryAPI() {
             loadingPB.setVisibility(View.VISIBLE);
-
             Call<PaymentHistory_modal> call = retrofitAPI.getPaymentHistory("Bearer " + SharedPreferenceUtils.getString(PaymentHistoryActivity.this, Const.ACCESS_TOKEN));
             call.enqueue(new Callback<>() {
                 @Override
                 public void onResponse(Call<PaymentHistory_modal> call, Response<PaymentHistory_modal> response) {
                     loadingPB.setVisibility(View.GONE);
-                    if (response.isSuccessful()) {
+                    if(response.code()==Const.SUCCESS_CODE_200) {
                         paymentHistoryList = response.body().getData();
                         if (paymentHistoryList != null && paymentHistoryList.size() > 0) {
                             paymentHistoryAdapter = new PaymentHistoryAdapter(mContext, response.body().getData());
                             recyclerView.setAdapter(paymentHistoryAdapter);
-                        } else {
-                            tvNoDataFound.setVisibility(View.VISIBLE);
-                            tvNoDataFound.setText(getString(R.string.noDataFound));
                         }
+                    }
+                    else if (response.code()==Const.ERROR_CODE_400||
+                            response.code()==Const.ERROR_CODE_500 ||
+                            response.code()==Const.ERROR_CODE_404){
+                        tvNoDataFound.setVisibility(View.VISIBLE);
                     }
                 }
 

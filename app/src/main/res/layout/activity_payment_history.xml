@@ -86,8 +86,8 @@
 
 
     <TextView
-        android:textColor="@color/black"
-        android:text="no data found "
+        android:textColor="@color/white"
+        android:text="@string/noPaymentHistory"
         android:id="@+id/tvNoDataFound"
         android:layout_centerInParent="true"
         android:visibility="invisible"

@@ -108,12 +108,13 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
                 @Override
                 public void onResponse(Call<StartPaymentResp> call, Response<StartPaymentResp> response) {
                     progressSubscriptionPlan.setVisibility(View.GONE);
-                    if (response != null) {
+                    if (response.code()==Const.SUCCESS_CODE_200) {
                         if (response.body().getPayment_url() != null) {
                             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(response.body().getPayment_url()));
                             startActivity(browserIntent);
                         }
                     }
+
                 }
                 @Override
                 public void onFailure(Call<StartPaymentResp> call, Throwable t) {

@@ -3823,6 +3823,7 @@ string new_pass
 string next
 string no
 string noDataFound
+string noPaymentHistory
 string no_frame_received_error
 string no_internet
 string no_video_received_error

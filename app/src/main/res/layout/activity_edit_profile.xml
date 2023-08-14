@@ -439,7 +439,7 @@
                             android:layout_marginTop="@dimen/_10sdp"
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
-                            android:text="@string/city"
+                            android:text="@string/state"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_12sdp" />
 
@@ -450,7 +450,7 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:id="@+id/edTxtCity"
+                                android:id="@+id/edTxtState"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/_10sdp"
@@ -568,7 +568,7 @@
                             android:layout_marginTop="@dimen/_10sdp"
                             android:layout_marginRight="@dimen/_10sdp"
                             android:fontFamily="sans-serif"
-                            android:text="@string/state"
+                            android:text="@string/city"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_12sdp" />
 
@@ -579,7 +579,7 @@
                             android:weightSum="2">
 
                             <EditText
-                                android:id="@+id/edTxtState"
+                                android:id="@+id/edTxtCity"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/_10sdp"

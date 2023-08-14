@@ -16,6 +16,9 @@ import com.antplay.api.RetrofitAPI;
 import com.antplay.models.ResetEmailReq;
 import com.antplay.models.ResultResponse;
 import com.antplay.utils.AppUtils;
+import com.antplay.utils.Const;
+
+import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -57,10 +60,20 @@ public class ForgotPasswordActivity extends Activity {
                 @Override
                 public void onResponse(Call<ResultResponse> call, Response<ResultResponse> response) {
                     progressBar.setVisibility(View.GONE);
-                    if (response.body() != null) {
+
+                    Toast.makeText(mContext, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    if (response.code() == Const.SUCCESS_CODE_200) {
                         Toast.makeText(mContext, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        if (response.body().isStatus())
-                            AppUtils.navigateScreen(ForgotPasswordActivity.this, LoginActivity.class);
+                        AppUtils.navigateScreen(ForgotPasswordActivity.this, LoginActivity.class);
+                    } else if (response.code() == Const.ERROR_CODE_500 ||
+                            response.code() == Const.ERROR_CODE_400 ||
+                            response.code() == Const.ERROR_CODE_404) {
+                        try {
+                            JSONObject jObj = new JSONObject(response.errorBody().string());
+                            Toast.makeText(ForgotPasswordActivity.this, jObj.getString("detail"), Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
 

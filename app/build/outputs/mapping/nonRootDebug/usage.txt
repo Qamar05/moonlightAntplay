@@ -11006,7 +11006,6 @@ com.antplay.api.APIClient:
 com.antplay.api.RetrofitAPI:
     public abstract retrofit2.Call getAllBillingPlan()
     public abstract retrofit2.Call shutDownVm(java.lang.String,com.antplay.models.VMTimerReq)
-    public abstract retrofit2.Call updatePin(java.lang.String,com.antplay.models.UpdatePinRequestModal)
 com.antplay.binding.PlatformBinding:
     public void <init>()
 com.antplay.binding.crypto.AndroidCryptoProvider:
@@ -11282,11 +11281,16 @@ com.antplay.models.PaymentHistory_modal:
     public java.lang.String getMessage()
     public void setData(java.util.List)
     public void setMessage(java.lang.String)
-com.antplay.models.PinResponseData
+com.antplay.models.PinResponseData:
+    private java.lang.String status
+    public void <init>()
+    public void setStatus(java.lang.String)
 com.antplay.models.ResetEmailReq:
     public java.lang.String getEmail()
     public void setEmail(java.lang.String)
 com.antplay.models.ResultResponse:
+    private boolean status
+    public boolean isStatus()
     public void setMessage(java.lang.String)
     public void setStatus(boolean)
 com.antplay.models.SendOTPResponse
@@ -11312,8 +11316,11 @@ com.antplay.models.StartPaymentResp:
     public void setSubscriptions(java.lang.String)
     public void setTransaction_date(java.lang.String)
     public void setTransaction_id(java.lang.String)
-com.antplay.models.UpdatePinRequestModal
-com.antplay.models.UpdatePinResponseModal
+com.antplay.models.UpdatePinResponseModal:
+    private java.lang.String message
+    public java.lang.String getMessage()
+    public void setMessage(java.lang.String)
+    public void setPinData(com.antplay.models.PinResponseData)
 com.antplay.models.UserDetailsModal:
     private java.lang.Object mAge
     private java.lang.String mExpire
@@ -11547,6 +11554,7 @@ com.antplay.ui.activity.PcView:
     private static final int UNPAIR_ID
     private static final int VIEW_DETAILS_ID
     private static final int WOL_ID
+    com.antplay.utils.SpinnerDialog dialog
 com.antplay.ui.activity.ProfileActivity:
     private int dayInYear(long)
     private java.lang.String getDateFromSec(long)
@@ -11597,6 +11605,8 @@ com.antplay.utils.RestClient$3$1
 com.antplay.utils.RestClient$3
 com.antplay.utils.RestClient$4$1
 com.antplay.utils.RestClient$4
+com.antplay.utils.RestClient$5$1
+com.antplay.utils.RestClient$5
 com.antplay.utils.RestClient$6$1
 com.antplay.utils.RestClient$6
 com.antplay.utils.RestClient$7$1
@@ -11614,8 +11624,10 @@ com.antplay.utils.RestClient:
     public com.antplay.utils.RestClient downloadFile(java.lang.String,java.lang.String,java.util.HashMap,java.lang.String,com.antplay.utils.RestClient$FileDownloadListener,com.antplay.utils.RestClient$ErrorListener)
     public com.antplay.utils.RestClient enableErrorLog()
     public com.antplay.utils.RestClient enableResponseLog()
+    public java.lang.String getPostDataString(java.util.HashMap)
     public com.antplay.utils.RestClient getRequest(java.lang.String,java.lang.String,com.antplay.utils.RestClient$ResponseListener,com.antplay.utils.RestClient$ErrorListener)
     public com.antplay.utils.RestClient postRequest(java.lang.String,java.lang.String,java.util.HashMap,com.antplay.utils.RestClient$ResponseListener,com.antplay.utils.RestClient$ErrorListener)
+    public com.antplay.utils.RestClient postRequestWithHeader(java.lang.String,java.lang.String,java.util.HashMap,java.lang.String,java.lang.String,com.antplay.utils.RestClient$ResponseListener,com.antplay.utils.RestClient$ErrorListener)
     public com.antplay.utils.RestClient postRequestWithLocalisation(java.lang.String,java.lang.String,java.util.HashMap,java.lang.String,com.antplay.utils.RestClient$ResponseListener,com.antplay.utils.RestClient$ErrorListener)
     public com.antplay.utils.RestClient postRequestWithoutMethod(java.lang.String,java.lang.String,java.util.HashMap,com.antplay.utils.RestClient$ResponseListenerUpdated,com.antplay.utils.RestClient$ErrorListener)
     public com.antplay.utils.RestClient setTimeout(int)
@@ -19317,7 +19329,14 @@ com.google.gson.Gson:
     public boolean htmlSafe()
     public com.google.gson.GsonBuilder newBuilder()
     public boolean serializeNulls()
+    public java.lang.String toJson(com.google.gson.JsonElement)
+    public java.lang.String toJson(java.lang.Object)
+    public java.lang.String toJson(java.lang.Object,java.lang.reflect.Type)
+    public void toJson(com.google.gson.JsonElement,com.google.gson.stream.JsonWriter)
+    public void toJson(com.google.gson.JsonElement,java.lang.Appendable)
     public void toJson(java.lang.Object,java.lang.Appendable)
+    public void toJson(java.lang.Object,java.lang.reflect.Type,com.google.gson.stream.JsonWriter)
+    public void toJson(java.lang.Object,java.lang.reflect.Type,java.lang.Appendable)
     public com.google.gson.JsonElement toJsonTree(java.lang.Object)
     public com.google.gson.JsonElement toJsonTree(java.lang.Object,java.lang.reflect.Type)
 com.google.gson.GsonBuilder
@@ -19462,8 +19481,11 @@ com.google.gson.internal.Primitives:
     public static boolean isWrapperType(java.lang.reflect.Type)
     public static java.lang.Class unwrap(java.lang.Class)
     public static java.lang.Class wrap(java.lang.Class)
+com.google.gson.internal.Streams$AppendableWriter$CurrentWrite
+com.google.gson.internal.Streams$AppendableWriter
 com.google.gson.internal.Streams:
     private void <init>()
+    public static java.io.Writer writerForAppendable(java.lang.Appendable)
 com.google.gson.internal.bind.DefaultDateTypeAdapter$1
 com.google.gson.internal.bind.DefaultDateTypeAdapter$DateType$1:
     protected java.util.Date deserialize(java.util.Date)
@@ -19555,7 +19577,9 @@ com.google.gson.stream.JsonReader:
     private static final int PEEKED_UNQUOTED_NAME
 com.google.gson.stream.JsonScope
 com.google.gson.stream.JsonWriter:
+    public final boolean isHtmlSafe()
     public com.google.gson.stream.JsonWriter jsonValue(java.lang.String)
+    public final void setHtmlSafe(boolean)
     public com.google.gson.stream.JsonWriter value(double)
 com.google.gson.stream.MalformedJsonException:
     private static final long serialVersionUID
@@ -36560,6 +36584,8 @@ com.antplay.binding.video.MediaCodecDecoderRenderer:
     private java.nio.ByteBuffer[] legacyInputBuffers
 com.antplay.binding.video.VideoStats:
     static final synthetic boolean $assertionsDisabled
+com.antplay.models.UpdatePinResponseModal:
+    private com.antplay.models.PinResponseData pinData
 com.antplay.nvstream.http.NvHTTP$TLSv12SocketFactory
 com.antplay.preferences.StreamSettings$SettingsFragment$6
 com.google.android.gms.common.api.TransformedResult

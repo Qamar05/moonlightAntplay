@@ -41,15 +41,14 @@
                 android:indeterminate="true" />
 
             <TextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
                 android:layout_toEndOf="@+id/pcs_loading"
                 android:layout_toRightOf="@+id/pcs_loading"
-                android:gravity="left"
+                android:gravity="center"
                 android:text="@string/searching_pc"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </RelativeLayout>

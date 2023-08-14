@@ -3822,6 +3822,7 @@ int string new_pass 0x7f100108
 int string next 0x7f100109
 int string no 0x7f10010a
 int string noDataFound 0x7f10010b
+int string noPaymentHistory 0x7f1001d8
 int string no_frame_received_error 0x7f10010c
 int string no_internet 0x7f10010d
 int string no_video_received_error 0x7f10010e
