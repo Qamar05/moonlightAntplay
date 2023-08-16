@@ -14,11 +14,13 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
+import com.antplay.models.SendOTPResponse;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
 import com.antplay.utils.GenericTextWatcher;
@@ -46,9 +48,11 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
     String getMobile;
     SMSReceiver smsBroadcastReceiver;
     Context mContext;
+    RetrofitAPI retrofitAPI;
 
 
     private static final int REQ_USER_CONSENT = 200;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,9 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_verify_otp);
         mContext =  VerifyOTP.this;
+        retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
+
+        progressBar =  findViewById(R.id.progressBar);
         otp_textbox_one = findViewById(R.id.otp_edit_box1);
         otp_textbox_two = findViewById(R.id.otp_edit_box2);
         otp_textbox_three = findViewById(R.id.otp_edit_box3);
@@ -102,13 +109,14 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
     }
 
     private void callVerifyOTP() {
+        progressBar.setVisibility(View.VISIBLE);
         String otp = otp_textbox_one.getText().toString()+otp_textbox_two.getText().toString()+otp_textbox_three.getText().toString()+otp_textbox_four.getText().toString()+otp_textbox_five.getText().toString()+otp_textbox_six.getText().toString();
-        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         Call<ResponseBody> call = retrofitAPI.verifyOTP(getMobile,otp);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.isSuccessful()) {
+                progressBar.setVisibility(View.VISIBLE);
+                if (response.code()==Const.SUCCESS_CODE_200) {
                     String responseValue;
                     try {
                         responseValue = response.body().string();
@@ -134,10 +142,6 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
                         e.printStackTrace();
                     }
                 }
-                else {
-                    Toast.makeText(mContext, "Something went wrong, please try again later.", Toast.LENGTH_LONG).show();
-                }
-
             }
 
             @Override
@@ -185,7 +189,7 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
                 linearLayout.setVisibility(View.VISIBLE);
                 tv_resend.setVisibility(View.INVISIBLE);
                 txtDidNotReceiveOTP.setVisibility(View.VISIBLE);
-                callTimer();
+                callSendOTP();
                 break;
             case R.id.verifyOTP:
                 if (validateOTPTextFields()){
@@ -256,5 +260,27 @@ public class VerifyOTP extends Activity implements View.OnClickListener {
             otp_textbox_six.setText(String.valueOf(otpValue.charAt(5)));
 
         }
+    }
+    private void callSendOTP() {
+        progressBar.setVisibility(View.VISIBLE);
+        Call<SendOTPResponse> call = retrofitAPI.sendOTP(Const.DEV_URL+"getuserbyphone/"+getMobile);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<SendOTPResponse> call, Response<SendOTPResponse> response) {
+                progressBar.setVisibility(View.GONE);
+                if (response.code() == Const.SUCCESS_CODE_200) {
+                    callTimer();
+                } else if (response.code() == Const.ERROR_CODE_404) {
+                    Toast.makeText(mContext, getString(R.string.enter_registered_mobile), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SendOTPResponse> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(mContext, t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }

@@ -67,14 +67,10 @@ public class ChangePasswordActivity extends AppCompatActivity implements View.On
         ivConfirmPasswordShow = findViewById(R.id.ivConfirmPasswordShow);
         backLinear.setOnClickListener(this);
         btnUpdate.setOnClickListener(this);
-
         ivOldPasswordShow.setOnClickListener(this);
         ivNewPasswordShow.setOnClickListener(this);
         ivConfirmPasswordShow.setOnClickListener(this);
-
-
     }
-
 
     @Override
     public void onClick(View v) {
@@ -98,8 +94,7 @@ public class ChangePasswordActivity extends AppCompatActivity implements View.On
                  break;
             case R.id.ivConfirmPasswordShow:
                 showHideConfirmPassword(edTxtConfirmPassword , ivConfirmPasswordShow);
-
-                 break;
+                break;
             }
     }
 
@@ -131,32 +126,31 @@ public class ChangePasswordActivity extends AppCompatActivity implements View.On
         ChangePassReq changePasswordRequestModal = new ChangePassReq(edTxtOldPassword.getText().toString(),
                 edTxtNewPassword.getText().toString(), edTxtConfirmPassword.getText().toString());
         Call<ChangePasswordResp> call = retrofitAPI.changePassword("Bearer "+access_token,changePasswordRequestModal);
-        call.enqueue(new Callback<ChangePasswordResp>() {
+        call.enqueue(new Callback<>() {
             @Override
             public void onResponse(Call<ChangePasswordResp> call, Response<ChangePasswordResp> response) {
                 progressBar.setVisibility(View.GONE);
-                if (response.code() == 200)
+                if (response.code() == Const.SUCCESS_CODE_200) {
+                    Toast.makeText(ChangePasswordActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     AppUtils.navigateScreen(ChangePasswordActivity.this, PcView.class);
-                else if(response.code()==Const.ERROR_CODE_400 ||
-                        response.code()==Const.ERROR_CODE_500 ||
-                        response.code()==Const.ERROR_CODE_404){
+                } else if (response.code() == Const.ERROR_CODE_400 ||
+                        response.code() == Const.ERROR_CODE_500 ||
+                        response.code() == Const.ERROR_CODE_404) {
                     try {
                         JSONObject jObj = new JSONObject(response.errorBody().string());
                         String value = jObj.getString("old_password");
                         JSONArray jsonArray = new JSONArray(value);
-                        String finalValue   =  jsonArray.get(0).toString();
-                        Toast.makeText(ChangePasswordActivity.this, ""+finalValue, Toast.LENGTH_SHORT).show();
+                        String finalValue = jsonArray.get(0).toString();
+                        Toast.makeText(ChangePasswordActivity.this, "" + finalValue, Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
-                else if (response.code() == Const.ERROR_CODE_404 ||response.code() == Const.ERROR_CODE_500 )
-                    Toast.makeText(ChangePasswordActivity.this,  response.message(), Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onFailure(Call<ChangePasswordResp> call, Throwable t) {
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(ChangePasswordActivity.this,  Const.something_went_wrong, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ChangePasswordActivity.this, Const.something_went_wrong, Toast.LENGTH_SHORT).show();
             }
         });
     }

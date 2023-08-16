@@ -3129,6 +3129,7 @@ id power_background
 id power_menu_card
 id power_menu_listView
 id profileButton
+id progressBar
 id progressBarEditProfile
 id progressSignUp
 id progressSubscriptionPlan

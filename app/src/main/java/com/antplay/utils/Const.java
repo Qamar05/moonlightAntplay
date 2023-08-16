@@ -20,6 +20,7 @@ public class Const {
     public static String ACCESS_TOKEN="access_token";
     public static String IS_LOGGED_IN="logged_in";
     public static String IS_SHUT_DOWN="shut_down";
+    public static String IS_STARTVM="startvm";
     public static String IS_FIRST_TIME="is_first_time";
     public static String REDIRECT_URL="redirectURL";
 

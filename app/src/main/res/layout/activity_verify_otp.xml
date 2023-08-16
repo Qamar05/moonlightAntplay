@@ -196,7 +196,6 @@
         android:visibility="gone"
         android:gravity="center_horizontal" />
 
-
     <TextView
         android:id="@+id/verifyOTP"
         android:layout_width="match_parent"
@@ -212,5 +211,13 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:gravity="center_horizontal" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

@@ -112,8 +112,8 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     RetrofitAPI retrofitAPI;
 
     String accessToken , strVMId;
-
     boolean isShutDown =  false;
+    boolean isStartVm =  false;
     SpinnerDialog dialog;
     private ComputerManagerService.ComputerManagerBinder managerBinder;
     private final LinkedBlockingQueue<String> computersToAdd = new LinkedBlockingQueue<>();
@@ -450,14 +450,9 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         // between binding to CMS and onResume()
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
-        //isShutDown   =  SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_SHUT_DOWN);
         inForeground = true;
-        if (AppUtils.isOnline(PcView.this)){
-            if(isShutDown)
-                startVm();
-            else
-                getVMFromServerManually("firstTime");
-        }
+        if (AppUtils.isOnline(PcView.this))
+                getVM();
         else
             AppUtils.showInternetDialog(PcView.this);
 
@@ -524,6 +519,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
                     PcView.this.runOnUiThread(() -> {
                         if(details.manualAddress!=null)
                         updateComputer(details);
+                        //doAppList(details, false, false);
                     });
                 }
             });
@@ -757,62 +753,62 @@ catch (Exception e){
     String TAG = "ANT_PLAY";
 
 
-    private void sendAndVerifySecurityPinManually(String pinStr) {
-        UpdatePinRequestModal updatePinRequestModal  =  new UpdatePinRequestModal(pinStr);
-        Call<UpdatePinResponseModal> call = retrofitAPI.updatePin("Bearer " + accessToken , updatePinRequestModal);
-        call.enqueue(new Callback<>() {
-            @Override
-            public void onResponse(Call<UpdatePinResponseModal> call, Response<UpdatePinResponseModal> response) {
-                if(response.code()==Const.SUCCESS_CODE_200) {
-                    String status = response.body().getPinData().getStatus();
-                }
-                else if(response.code()==Const.ERROR_CODE_404 || response.code()==Const.ERROR_CODE_400 || response.code()==Const.ERROR_CODE_500) {
-                    try {
-                        JSONObject jObj = new JSONObject(response.errorBody().string());
-                        String value = jObj.getString("message");
-                        Toast.makeText(PcView.this, "" + value, Toast.LENGTH_SHORT).show();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-            @Override
-            public void onFailure(Call<UpdatePinResponseModal> call, Throwable t) {
-                AppUtils.showToast(Const.something_went_wrong, PcView.this);
-            }
-        });
-
-    }
-
-
 //    private void sendAndVerifySecurityPinManually(String pinStr) {
-//        HashMap<String, String> pinMap = new HashMap<>();
-//        pinMap.put("pin", pinStr);
-//
-//        Log.d(TAG, " Access Token : " + accessToken);
-//        new RestClient(PcView.this).postRequestWithHeader("update_pin", "vmauth", pinMap, accessToken, "", new RestClient.ResponseListener() {
+//        UpdatePinRequestModal updatePinRequestModal  =  new UpdatePinRequestModal(pinStr);
+//        Call<UpdatePinResponseModal> call = retrofitAPI.updatePin("Bearer " + accessToken , updatePinRequestModal);
+//        call.enqueue(new Callback<>() {
 //            @Override
-//            public void onResponse(String tag, String response) {
-//                if (response != null) {
-//                    Log.d(TAG, "Response : " + response);
+//            public void onResponse(Call<UpdatePinResponseModal> call, Response<UpdatePinResponseModal> response) {
+//                if(response.code()==Const.SUCCESS_CODE_200) {
+//                    String status = response.body().getPinData().getStatus();
+//                }
+//                else if(response.code()==Const.ERROR_CODE_404 || response.code()==Const.ERROR_CODE_400 || response.code()==Const.ERROR_CODE_500) {
 //                    try {
-//                        JSONObject jsonObject = new JSONObject(response);
-//                        String status = jsonObject.getJSONObject("data").getString("status");
-//
-//                        Log.d("ANT_PLAY", "Status : " + status);
-//
-//                    } catch (JSONException e) {
+//                        JSONObject jObj = new JSONObject(response.errorBody().string());
+//                        String value = jObj.getString("message");
+//                        Toast.makeText(PcView.this, "" + value, Toast.LENGTH_SHORT).show();
+//                    } catch (Exception e) {
 //                        e.printStackTrace();
 //                    }
 //                }
 //            }
-//        }, new RestClient.ErrorListener() {
 //            @Override
-//            public void onError(String tag, String errorMsg, long statusCode) {
-//                Log.d("ANT_PLAY", "Message : " + errorMsg);
+//            public void onFailure(Call<UpdatePinResponseModal> call, Throwable t) {
+//                AppUtils.showToast(Const.something_went_wrong, PcView.this);
 //            }
 //        });
+//
 //    }
+
+
+    private void sendAndVerifySecurityPinManually(String pinStr) {
+        HashMap<String, String> pinMap = new HashMap<>();
+        pinMap.put("pin", pinStr);
+
+        Log.d(TAG, " Access Token : " + accessToken);
+        new RestClient(PcView.this).postRequestWithHeader("update_pin", "vmauth", pinMap, accessToken, "", new RestClient.ResponseListener() {
+            @Override
+            public void onResponse(String tag, String response) {
+                if (response != null) {
+                    Log.d(TAG, "Response : " + response);
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        String status = jsonObject.getJSONObject("data").getString("status");
+
+                        Log.d("ANT_PLAY", "Status : " + status);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }, new RestClient.ErrorListener() {
+            @Override
+            public void onError(String tag, String errorMsg, long statusCode) {
+                Log.d("ANT_PLAY", "Message : " + errorMsg);
+            }
+        });
+    }
 
 
     private void doWakeOnLan(final ComputerDetails computer) {
@@ -1150,21 +1146,26 @@ catch (Exception e){
 //        });
 //    }
 
-    private void openDialog() {
+    private void openDialog(boolean purchaseVmFLag) {
             Dialog dialog = new Dialog(PcView.this);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setContentView(R.layout.dialog_logout);
             dialog.setCancelable(false);
             dialog.setCanceledOnTouchOutside(false);
             dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            TextView titleText =  dialog.findViewById(R.id.titleText);
-            TextView msgText =  dialog.findViewById(R.id.msgText);
-            Button txtNo = dialog.findViewById(R.id.txtNo);
-            Button txtYes = dialog.findViewById(R.id.txtYes);
-            titleText.setText(getResources().getString(R.string.no_vm_title));
-            msgText.setText(getResources().getString(R.string.searching_pc));
-            txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titleText =  dialog.findViewById(R.id.titleText);
+        TextView msgText =  dialog.findViewById(R.id.msgText);
+        Button txtNo = dialog.findViewById(R.id.txtNo);
+        Button txtYes = dialog.findViewById(R.id.txtYes);
+        titleText.setText(getResources().getString(R.string.no_vm_title));
+        msgText.setText(getResources().getString(R.string.searching_pc));
+        txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
+        if(!purchaseVmFLag)
+            txtYes.setVisibility(View.GONE);
+        else
+            txtYes.setVisibility(View.VISIBLE);
+
             txtYes.setText("purchase");
 
             txtYes.setOnClickListener(view -> {
@@ -1187,7 +1188,7 @@ catch (Exception e){
     }
 
 
-    private void getVMFromServerManually(String strValue) {
+    private void getVMFromServerManually() {
         Call<ResponseBody> call = retrofitAPI.getVMIP("Bearer " + accessToken);
         call.enqueue(new Callback<>() {
             @Override
@@ -1207,12 +1208,10 @@ catch (Exception e){
                     } catch (Exception e) {
                     }
                 }
-                else if(strValue.equalsIgnoreCase("firstTime")){
-                            openDialog();
+                else if(response.code()==400||response.code()==404||response.code()==500){
+                    openDialog(true);
                 }
-                else{
-                  //  startVm();
-                }
+
             }
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
@@ -1222,8 +1221,7 @@ catch (Exception e){
         });
     }
 
-
-    private void startVm() {
+    private void startVm(String strVMId) {
         VMTimerReq  vmTimerReq  =  new VMTimerReq(strVMId);
         Call<MessageResponse> call = retrofitAPI.startVm("Bearer " + accessToken , vmTimerReq);
         call.enqueue(new Callback<>() {
@@ -1232,7 +1230,7 @@ catch (Exception e){
                 if(response.code()==Const.SUCCESS_CODE_200) {
                     if (response.body().getSuccess().equalsIgnoreCase("true")) {
                         SharedPreferenceUtils.saveBoolean(PcView.this, Const.IS_SHUT_DOWN, false);
-                        getVMFromServerManually("afterShutDown");
+                        getVMFromServerManually();
                     }
                 }
                 else if(response.code()==Const.ERROR_CODE_404 || response.code()==Const.ERROR_CODE_400 || response.code()==Const.ERROR_CODE_500) {
@@ -1251,5 +1249,54 @@ catch (Exception e){
             }
         });
     }
+
+    private void getVM() {
+        Call<ResponseBody> call = retrofitAPI.getVMFromServer("Bearer " + accessToken);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.code()==Const.SUCCESS_CODE_200) {
+                    try {
+                        JSONObject jsonObject = new JSONObject(response.body().string());
+                        JSONArray jsonArray = jsonObject.getJSONArray("data");
+                        String strVMId = jsonArray.getJSONObject(0).getString("vmid");
+                        String startVmCallCount = jsonArray.getJSONObject(0).getString("start_vm_call_count");
+                        String status = jsonArray.getJSONObject(0).getString("status");
+
+                        isShutDown   =  SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_SHUT_DOWN);
+                        String time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
+
+                        if(!isShutDown){
+                            if(startVmCallCount.equalsIgnoreCase("0"))
+                                startVm(strVMId);
+                            else if(startVmCallCount.equalsIgnoreCase("1"))
+                                getVMFromServerManually();
+                            else if(Integer.parseInt(startVmCallCount) >=2) {
+                                if (status.equalsIgnoreCase("running"))
+                                    getVMFromServerManually();
+                                else
+                                    startVm(strVMId);
+                            }
+                        }
+                        else{
+                            startVm(strVMId);
+                        }
+
+
+                    } catch (Exception e) {
+                    }
+                }
+                else if(response.code()==Const.ERROR_CODE_404){
+                    openDialog(false);
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                // progressBar.setVisibility(View.GONE);
+                AppUtils.showToast(Const.something_went_wrong, PcView.this);
+            }
+        });
+    }
+
 
 }

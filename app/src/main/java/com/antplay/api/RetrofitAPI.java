@@ -34,8 +34,6 @@ import retrofit2.http.Url;
 
 
 public interface RetrofitAPI {
-    @GET("getallbillingplan")
-    Call<AllBillingPlanResp> getAllBillingPlan();
     @GET("getbillingplan")
     Call<AllBillingPlanResp> getBillingPlan(@Header("Authorization") String token , @Query("user_type") String userType);
     @POST("vmauth/")

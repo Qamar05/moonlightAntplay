@@ -61,11 +61,10 @@ public class LoginWithOTP extends AppCompatActivity implements View.OnClickListe
         call.enqueue(new Callback<>() {
             @Override
             public void onResponse(Call<SendOTPResponse> call, Response<SendOTPResponse> response) {
+                progressBar.setVisibility(View.GONE);
                 if (response.code() == Const.SUCCESS_CODE_200) {
-                    progressBar.setVisibility(View.GONE);
                     AppUtils.navigateScreenSendValue(LoginWithOTP.this, VerifyOTP.class, "mobile", phoneValue);
                 } else if (response.code() == Const.ERROR_CODE_404) {
-                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(mContext, getString(R.string.enter_registered_mobile), Toast.LENGTH_SHORT).show();
                 }
             }

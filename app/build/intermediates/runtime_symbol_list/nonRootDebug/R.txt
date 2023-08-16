@@ -3128,6 +3128,7 @@ int id power_background 0x7f0901c2
 int id power_menu_card 0x7f0901c3
 int id power_menu_listView 0x7f0901c4
 int id profileButton 0x7f0901c5
+int id progressBar 0x7f09029d
 int id progressBarEditProfile 0x7f0901c6
 int id progressSignUp 0x7f0901c7
 int id progressSubscriptionPlan 0x7f0901c8
