@@ -41,6 +41,7 @@
                 android:indeterminate="true" />
 
             <TextView
+                android:id="@+id/searchPC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -49,7 +50,6 @@
                 android:layout_toEndOf="@+id/pcs_loading"
                 android:layout_toRightOf="@+id/pcs_loading"
                 android:gravity="center"
-                android:text="@string/searching_pc"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </RelativeLayout>
 

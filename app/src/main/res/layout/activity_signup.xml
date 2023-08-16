@@ -55,7 +55,7 @@
         android:fontFamily="sans-serif"
         android:hint="@string/phone_number"
         android:inputType="phone"
-        android:maxLength="20"
+        android:maxLength="10"
         android:padding="15dp"
         android:textColorHint="@color/gray"
         android:textSize="@dimen/_12sdp"

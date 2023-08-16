@@ -145,7 +145,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         }
                     } else if (response.code() == Const.ERROR_CODE_400 ||
                                 response.code()==Const.ERROR_CODE_500||
-                                response.code()==Const.ERROR_CODE_404) {
+                                response.code()==Const.ERROR_CODE_404 ||
+                            response.code()==401) {
                         try {
                             JSONObject jObj = new JSONObject(response.errorBody().string());
                             Toast.makeText(LoginActivity.this, jObj.getString("detail"), Toast.LENGTH_SHORT).show();

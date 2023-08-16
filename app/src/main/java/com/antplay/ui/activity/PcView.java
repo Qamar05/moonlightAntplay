@@ -115,6 +115,8 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     boolean isShutDown =  false;
     boolean isStartVm =  false;
     SpinnerDialog dialog;
+    TextView searchPC;
+    ComputerDetails saveComputerDeatails;
     private ComputerManagerService.ComputerManagerBinder managerBinder;
     private final LinkedBlockingQueue<String> computersToAdd = new LinkedBlockingQueue<>();
     private boolean freezeUpdates, runningPolling, inForeground, completeOnCreateCalled;
@@ -409,12 +411,13 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
         strVMId = SharedPreferenceUtils.getString(PcView.this, Const.VMID);
 
-
+         searchPC = findViewById(R.id.searchPC);
         // Setup the list view
         ImageButton profileButton = findViewById(R.id.profileButton);
         ImageButton settingsButton = findViewById(R.id.settingsButton);
         ImageButton addComputerButton = findViewById(R.id.manuallyAddPc);
         ImageButton helpButton = findViewById(R.id.helpButton);
+
 
         profileButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, ProfileActivity.class)));
         settingsButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, StreamSettings.class)));
@@ -517,8 +520,12 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             managerBinder.startPolling(details -> {
                 if (!freezeUpdates) {
                     PcView.this.runOnUiThread(() -> {
-                        if(details.manualAddress!=null)
-                        updateComputer(details);
+                        if(details.manualAddress!=null){
+                            saveComputerDeatails = details;
+                            updateComputer(details);
+                        }
+
+
                         //doAppList(details, false, false);
                     });
                 }
@@ -1146,7 +1153,7 @@ catch (Exception e){
 //        });
 //    }
 
-    private void openDialog(boolean purchaseVmFLag) {
+    private void openDialog(boolean purchaseVmFLag , String msg) {
             Dialog dialog = new Dialog(PcView.this);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setContentView(R.layout.dialog_logout);
@@ -1159,14 +1166,26 @@ catch (Exception e){
         Button txtNo = dialog.findViewById(R.id.txtNo);
         Button txtYes = dialog.findViewById(R.id.txtYes);
         titleText.setText(getResources().getString(R.string.no_vm_title));
-        msgText.setText(getResources().getString(R.string.searching_pc));
-        txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
-        if(!purchaseVmFLag)
-            txtYes.setVisibility(View.GONE);
-        else
-            txtYes.setVisibility(View.VISIBLE);
+        txtYes.setText("purchase");
 
-            txtYes.setText("purchase");
+
+        if(!purchaseVmFLag) {
+            txtYes.setVisibility(View.VISIBLE);
+            msgText.setText(getResources().getString(R.string.searching_pc_first));
+            txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
+        }
+        else {
+            txtYes.setVisibility(View.GONE);
+            txtNo.setText("Ok");
+            if(msg.equalsIgnoreCase(""))
+                msgText.setText(getResources().getString(R.string.searching_pc_second));
+            else
+                msgText.setText(getResources().getString(R.string.startVMMsg));
+
+
+        }
+
+
 
             txtYes.setOnClickListener(view -> {
                 dialog.dismiss();
@@ -1198,6 +1217,7 @@ catch (Exception e){
                         JSONObject jsonObject = new JSONObject(response.body().string());
                         String messageValue = jsonObject.getString("message");
                         if (messageValue.equalsIgnoreCase("success")) {
+                            SharedPreferenceUtils.saveBoolean(PcView.this, Const.IS_SHUT_DOWN, false);
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
                             String vmIp = jsonArray.getJSONObject(0).getString("vmip");
                             handleDoneEvent(vmIp);
@@ -1208,8 +1228,15 @@ catch (Exception e){
                     } catch (Exception e) {
                     }
                 }
-                else if(response.code()==400||response.code()==404||response.code()==500){
-                    openDialog(true);
+                else if(response.code()==400||response.code()==404||response.code()==500 ||response.code()==401){
+                    if(isShutDown){
+                        openDialog(true,getResources().getString(R.string.startVMMsg));
+                        searchPC.setText(getResources().getString(R.string.startVMMsg));
+                    }
+                    else {
+                        openDialog(true ,"");
+                        searchPC.setText(getResources().getString(R.string.searching_pc_second));
+                    }
                 }
 
             }
@@ -1229,7 +1256,6 @@ catch (Exception e){
             public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
                 if(response.code()==Const.SUCCESS_CODE_200) {
                     if (response.body().getSuccess().equalsIgnoreCase("true")) {
-                        SharedPreferenceUtils.saveBoolean(PcView.this, Const.IS_SHUT_DOWN, false);
                         getVMFromServerManually();
                     }
                 }
@@ -1264,9 +1290,8 @@ catch (Exception e){
                         String status = jsonArray.getJSONObject(0).getString("status");
 
                         isShutDown   =  SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_SHUT_DOWN);
-                        String time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
 
-                        if(!isShutDown){
+
                             if(startVmCallCount.equalsIgnoreCase("0"))
                                 startVm(strVMId);
                             else if(startVmCallCount.equalsIgnoreCase("1"))
@@ -1276,18 +1301,18 @@ catch (Exception e){
                                     getVMFromServerManually();
                                 else
                                     startVm(strVMId);
-                            }
-                        }
-                        else{
-                            startVm(strVMId);
-                        }
 
+
+                            }
 
                     } catch (Exception e) {
                     }
                 }
-                else if(response.code()==Const.ERROR_CODE_404){
-                    openDialog(false);
+                else if(response.code()==404 || response.code()==500 || response.code()==400||response.code()==401){
+                    openDialog(false,"");
+                    searchPC.setText(getResources().getString(R.string.searching_pc_first));
+
+
                 }
             }
             @Override

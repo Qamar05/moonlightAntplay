@@ -37,8 +37,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_centerVertical="true"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="left"
-                android:text="@string/searching_pc"/>
+                android:gravity="left" />
         </RelativeLayout>
 
     </RelativeLayout>

@@ -396,8 +396,9 @@
 
     <string name="no_vm_title">Alert</string>
     <string name="no_vm_msg">Please wait while we are creating your virtual machine, it may take half an hour.</string>
-    <string name="searching_pc">To get a virtual machine, purchase a plan. If you already have purchased, Please wait for half an hour while we are creating your machine.
-    </string>
+    <string name="searching_pc_first">To get a virtual machine, purchase a plan</string>
+    <string name="searching_pc_second"> Please wait for half an hour while we are creating your machine.</string>
+    <string name="startVMMsg">Please wait while we are getting your virtual machine ready for you.</string>
 
     <string name="exit_vm_msg">Are you sure you want to Exit?</string>
     <string name="exit_vm">Exit</string>

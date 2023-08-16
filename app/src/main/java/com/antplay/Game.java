@@ -2141,7 +2141,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                try {
                    if (response.body().getSuccess().equalsIgnoreCase("true")) {
                        if(value) {
-                           //   shutDownVM();
+                              shutDownVM();
                        }
                    }
                }
@@ -2454,6 +2454,7 @@ private void shutDownVM() {
                     //Toast.makeText(Game.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     SharedPreferenceUtils.saveBoolean(Game.this, Const.IS_SHUT_DOWN, true);
                     AppUtils.navigateScreen(Game.this, PcView.class);
+                    finishAffinity();
                 }
             }
             @Override

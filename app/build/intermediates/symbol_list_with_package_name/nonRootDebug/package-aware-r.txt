@@ -3164,6 +3164,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchPC
 id search_badge
 id search_bar
 id search_button
@@ -3901,11 +3902,13 @@ string scut_invalid_uuid
 string scut_not_paired
 string scut_pc_not_found
 string search_menu_title
-string searching_pc
+string searching_pc_first
+string searching_pc_second
 string signup
 string signupHere
 string skip
 string slow_connection_msg
+string startVMMsg
 string state
 string status
 string status_bar_notification_info_overflow

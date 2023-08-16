@@ -10946,7 +10946,6 @@ com.antplay.BuildConfig:
     public static final int VERSION_CODE
     public static final java.lang.String VERSION_NAME
     public void <init>()
-com.antplay.Game$17
 com.antplay.Game:
     public static final java.lang.String EXTRA_APP_HDR
     public static final java.lang.String EXTRA_APP_ID
@@ -10970,7 +10969,6 @@ com.antplay.Game:
     private static synthetic void lambda$openTimerDialog$1(android.app.Dialog,android.view.View)
     private void openExitVMDialog()
     private void openTimerDialog()
-    private void shutDownVM()
 com.antplay.LimeLog:
     public static void setFileHandler(java.lang.String)
 com.antplay.PosterContentProvider:
@@ -11004,7 +11002,6 @@ com.antplay.api.APIClient:
     public static final java.lang.String UOMYYGUKCD
     public void <init>()
 com.antplay.api.RetrofitAPI:
-    public abstract retrofit2.Call shutDownVm(java.lang.String,com.antplay.models.VMTimerReq)
     public abstract retrofit2.Call updatePin(java.lang.String,com.antplay.models.UpdatePinRequestModal)
 com.antplay.binding.PlatformBinding:
     public void <init>()
