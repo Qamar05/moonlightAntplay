@@ -219,8 +219,7 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
                         @Override
                         public void run() {
                             // Disable shortcuts referencing this PC for now
-                            shortcutHelper.disableComputerShortcut(details,
-                                    getResources().getString(R.string.scut_not_paired));
+                            shortcutHelper.disableComputerShortcut(details, getResources().getString(R.string.scut_not_paired));
 
                             // Display a toast to the user and quit the activity
                             Toast.makeText(AppView.this, getResources().getText(R.string.scut_not_paired), Toast.LENGTH_SHORT).show();

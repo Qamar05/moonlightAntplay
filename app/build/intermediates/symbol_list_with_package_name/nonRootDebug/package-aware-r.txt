@@ -3904,6 +3904,7 @@ string scut_pc_not_found
 string search_menu_title
 string searching_pc_first
 string searching_pc_second
+string setting
 string signup
 string signupHere
 string skip

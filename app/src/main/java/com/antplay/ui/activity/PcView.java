@@ -111,6 +111,8 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
 
     RetrofitAPI retrofitAPI;
 
+    String startVmCallCount;
+
     String accessToken , strVMId;
     boolean isShutDown =  false;
     boolean isStartVm =  false;
@@ -1229,13 +1231,13 @@ catch (Exception e){
                     }
                 }
                 else if(response.code()==400||response.code()==404||response.code()==500 ||response.code()==401){
-                    if(isShutDown){
-                        openDialog(true,getResources().getString(R.string.startVMMsg));
-                        searchPC.setText(getResources().getString(R.string.startVMMsg));
-                    }
-                    else {
+                    if(startVmCallCount.equalsIgnoreCase("1")){
                         openDialog(true ,"");
                         searchPC.setText(getResources().getString(R.string.searching_pc_second));
+                    }
+                    else {
+                        openDialog(true,getResources().getString(R.string.startVMMsg));
+                        searchPC.setText(getResources().getString(R.string.startVMMsg));
                     }
                 }
 
@@ -1286,7 +1288,7 @@ catch (Exception e){
                         JSONObject jsonObject = new JSONObject(response.body().string());
                         JSONArray jsonArray = jsonObject.getJSONArray("data");
                         String strVMId = jsonArray.getJSONObject(0).getString("vmid");
-                        String startVmCallCount = jsonArray.getJSONObject(0).getString("start_vm_call_count");
+                        startVmCallCount = jsonArray.getJSONObject(0).getString("start_vm_call_count");
                         String status = jsonArray.getJSONObject(0).getString("status");
 
                         isShutDown   =  SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_SHUT_DOWN);
@@ -1294,9 +1296,7 @@ catch (Exception e){
 
                             if(startVmCallCount.equalsIgnoreCase("0"))
                                 startVm(strVMId);
-                            else if(startVmCallCount.equalsIgnoreCase("1"))
-                                getVMFromServerManually();
-                            else if(Integer.parseInt(startVmCallCount) >=2) {
+                            else if(Integer.parseInt(startVmCallCount) >=1) {
                                 if (status.equalsIgnoreCase("running"))
                                     getVMFromServerManually();
                                 else

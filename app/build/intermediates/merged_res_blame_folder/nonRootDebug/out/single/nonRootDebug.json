@@ -92,6 +92,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\layout-sw600dp\\dialog_logout.xml"
     },
     {
+        "merged": "com.antplay.app-merged_res-33:/xml_preferences.xml.flat",
+        "source": "com.antplay.app-main-35:/xml/preferences.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable-xhdpi_home.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\drawable-xhdpi\\home.png"
     },
@@ -580,10 +584,6 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-28:\\drawable-anydpi-v21\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.antplay.app-merged_res-33:/layout-sw600dp_activity_signup.xml.flat",
-        "source": "com.antplay.app-main-35:/layout-sw600dp/activity_signup.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\layout_fragment_on_boarding_three.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\layout\\fragment_on_boarding_three.xml"
     },
@@ -848,10 +848,6 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-35:\\drawable\\visibility_off.png"
     },
     {
-        "merged": "com.antplay.app-merged_res-33:/layout_activity_signup.xml.flat",
-        "source": "com.antplay.app-main-35:/layout/activity_signup.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable-hdpi_ic_contactus_background.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-28:\\drawable-hdpi\\ic_contactus_background.png"
     },
@@ -1078,6 +1074,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\drawable-hdpi_ic_lock.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-28:\\drawable-hdpi\\ic_lock.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-33:/layout_activity_stream_settings.xml.flat",
+        "source": "com.antplay.app-main-35:/layout/activity_stream_settings.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-33:\\layout_activity_configure_virtual_controller.xml.flat",

@@ -851,7 +851,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             boolean refreshRateIsEqual = isRefreshRateEqualMatch(bestMode.getRefreshRate());
 
             LimeLog.info("Current display mode: "+bestMode.getPhysicalWidth()+"x"+
-                    bestMode.getPhysicalHeight()+"x"+bestMode.getRefreshRate());
+                    bestMode.getPhysicalHeight()+"x"+bestMode.getRefreshRate() + prefConfig.width +  " height " +  prefConfig.height);
 
             for (Display.Mode candidate : display.getSupportedModes()) {
                 boolean refreshRateReduced = candidate.getRefreshRate() < bestMode.getRefreshRate();
@@ -1104,7 +1104,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopConnection();
+        stopConnection(true);
 
         InputManager inputManager = (InputManager) getSystemService(Context.INPUT_SERVICE);
         if (controllerHandler != null) {
@@ -1145,7 +1145,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             int videoFormat = decoderRenderer.getActiveVideoFormat();
 
             displayedFailureDialog = true;
-            stopConnection();
+            stopConnection(false);
 
             if (prefConfig.enableLatencyToast) {
                 int averageEndToEndLat = decoderRenderer.getAverageEndToEndLatency();
@@ -1918,11 +1918,11 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     public void stageComplete(String stage) {
     }
 
-    private void stopConnection() {
+    private void stopConnection(boolean flag) {
         if (connecting || connected) {
             connecting = connected = false;
             updatePipAutoEnter();
-            endVMTimeAPi(true);
+            endVMTimeAPi(flag);
 
             controllerHandler.stop();
 
@@ -1993,7 +1993,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                 if (!displayedFailureDialog) {
                     displayedFailureDialog = true;
                     LimeLog.severe("Connection terminated: " + errorCode);
-                    stopConnection();
+                    stopConnection(false);
 
                     // Display the error dialog if it was an unexpected termination.
                     // Otherwise, just finish the activity immediately.
@@ -2313,7 +2313,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             decoderRenderer.prepareForStop();
 
             if (connected) {
-                stopConnection();
+                stopConnection(false);
             }
         }
     }

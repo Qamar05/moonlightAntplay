@@ -3903,6 +3903,7 @@ int string scut_pc_not_found 0x7f100157
 int string search_menu_title 0x7f100158
 int string searching_pc_first 0x7f10015a
 int string searching_pc_second 0x7f10015b
+int string setting 0x7f1001dc
 int string signup 0x7f10015c
 int string signupHere 0x7f10015d
 int string skip 0x7f10015e

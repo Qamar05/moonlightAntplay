@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Display;
 
 import com.antplay.nvstream.jni.MoonBridge;
@@ -383,6 +384,12 @@ public class PreferenceConfiguration {
         }
 
         String str = prefs.getString(LEGACY_RES_FPS_PREF_STRING, null);
+        try {
+            Log.i("testt_resolution ", str);
+        }
+        catch (Exception e){
+
+        }
         if (str != null) {
             if (str.equals("360p30")) {
                 config.width = 640;
