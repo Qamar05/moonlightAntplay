@@ -77,7 +77,7 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
             @Override
             public void onResponse(Call<AllBillingPlanResp> call, Response<AllBillingPlanResp> response) {
                 progressSubscriptionPlan.setVisibility(View.GONE);
-                if (response != null) {
+                if (response.code()==200) {
                     planList = response.body().getData();
                     if (response != null && planList.size() > 0) {
                         adapter = new SubscriptionPlanAdapter(SubscriptionPlanActivity.this, planList, buttonClickListener);
@@ -86,6 +86,13 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
                         tvNoDataFound.setVisibility(View.VISIBLE);
                         tvNoDataFound.setText(getString(R.string.noDataFound));
                     }
+                }
+                else if (response.code() == Const.ERROR_CODE_400 ||
+                        response.code()==Const.ERROR_CODE_500||
+                        response.code()==Const.ERROR_CODE_404 ||
+                        response.code()==401) {
+                    tvNoDataFound.setVisibility(View.VISIBLE);
+                    tvNoDataFound.setText(getString(R.string.noDataFound));
                 }
             }
 
