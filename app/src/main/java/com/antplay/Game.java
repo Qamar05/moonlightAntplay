@@ -1,50 +1,6 @@
 package com.antplay;
 
 
-import com.antplay.api.APIClient;
-import com.antplay.api.RetrofitAPI;
-import com.antplay.binding.PlatformBinding;
-import com.antplay.binding.audio.AndroidAudioRenderer;
-import com.antplay.binding.input.ControllerHandler;
-import com.antplay.binding.input.KeyboardTranslator;
-import com.antplay.binding.input.capture.InputCaptureManager;
-import com.antplay.binding.input.capture.InputCaptureProvider;
-import com.antplay.binding.input.touch.AbsoluteTouchContext;
-import com.antplay.binding.input.touch.RelativeTouchContext;
-import com.antplay.binding.input.driver.UsbDriverService;
-import com.antplay.binding.input.evdev.EvdevListener;
-import com.antplay.binding.input.touch.TouchContext;
-import com.antplay.binding.input.virtual_controller.VirtualController;
-import com.antplay.binding.video.CrashListener;
-import com.antplay.binding.video.MediaCodecDecoderRenderer;
-import com.antplay.binding.video.MediaCodecHelper;
-import com.antplay.binding.video.PerfOverlayListener;
-import com.antplay.models.MessageResponse;
-import com.antplay.models.VMTimerReq;
-import com.antplay.nvstream.NvConnection;
-import com.antplay.nvstream.NvConnectionListener;
-import com.antplay.nvstream.StreamConfiguration;
-import com.antplay.nvstream.http.ComputerDetails;
-import com.antplay.nvstream.http.NvApp;
-import com.antplay.nvstream.http.NvHTTP;
-import com.antplay.nvstream.input.KeyboardPacket;
-import com.antplay.nvstream.input.MouseButtonPacket;
-import com.antplay.nvstream.jni.MoonBridge;
-import com.antplay.preferences.GlPreferences;
-import com.antplay.preferences.PreferenceConfiguration;
-import com.antplay.ui.activity.PcView;
-import com.antplay.ui.activity.SplashActivity;
-import com.antplay.ui.intrface.GameGestures;
-import com.antplay.ui.intrface.StreamView;
-import com.antplay.utils.AppUtils;
-import com.antplay.utils.Const;
-import com.antplay.utils.MyDialog;
-import com.antplay.utils.ServerHelper;
-import com.antplay.utils.SharedPreferenceUtils;
-import com.antplay.utils.ShortcutHelper;
-import com.antplay.utils.SpinnerDialog;
-import com.antplay.utils.UiHelper;
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -87,12 +43,59 @@ import android.view.View.OnSystemUiVisibilityChangeListener;
 import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.antplay.api.APIClient;
+import com.antplay.api.RetrofitAPI;
+import com.antplay.binding.PlatformBinding;
+import com.antplay.binding.audio.AndroidAudioRenderer;
+import com.antplay.binding.input.ControllerHandler;
+import com.antplay.binding.input.KeyboardTranslator;
+import com.antplay.binding.input.capture.InputCaptureManager;
+import com.antplay.binding.input.capture.InputCaptureProvider;
+import com.antplay.binding.input.driver.UsbDriverService;
+import com.antplay.binding.input.evdev.EvdevListener;
+import com.antplay.binding.input.touch.AbsoluteTouchContext;
+import com.antplay.binding.input.touch.RelativeTouchContext;
+import com.antplay.binding.input.touch.TouchContext;
+import com.antplay.binding.input.virtual_controller.VirtualController;
+import com.antplay.binding.video.CrashListener;
+import com.antplay.binding.video.MediaCodecDecoderRenderer;
+import com.antplay.binding.video.MediaCodecHelper;
+import com.antplay.binding.video.PerfOverlayListener;
+import com.antplay.models.MessageResponse;
+import com.antplay.models.VMTimerReq;
+import com.antplay.nvstream.NvConnection;
+import com.antplay.nvstream.NvConnectionListener;
+import com.antplay.nvstream.StreamConfiguration;
+import com.antplay.nvstream.http.ComputerDetails;
+import com.antplay.nvstream.http.NvApp;
+import com.antplay.nvstream.http.NvHTTP;
+import com.antplay.nvstream.input.KeyboardPacket;
+import com.antplay.nvstream.input.MouseButtonPacket;
+import com.antplay.nvstream.jni.MoonBridge;
+import com.antplay.preferences.GlPreferences;
+import com.antplay.preferences.PreferenceConfiguration;
+import com.antplay.ui.activity.PcView;
+import com.antplay.ui.activity.SubscriptionPlanActivity;
+import com.antplay.ui.intrface.GameGestures;
+import com.antplay.ui.intrface.StreamView;
+import com.antplay.utils.AppUtils;
+import com.antplay.utils.Const;
+import com.antplay.utils.MyDialog;
+import com.antplay.utils.ServerHelper;
+import com.antplay.utils.SharedPreferenceUtils;
+import com.antplay.utils.ShortcutHelper;
+import com.antplay.utils.SpinnerDialog;
+import com.antplay.utils.UiHelper;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -104,8 +107,6 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Locale;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -180,6 +181,9 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     private WifiManager.WifiLock lowLatencyWifiLock;
 
     TextView tvTimer ,tvExpire;
+    ImageView ivClose;
+    ConstraintLayout  overlayLayout;
+
 
     private boolean connectedToUsbDriverService = false;
     private ServiceConnection usbDriverServiceConnection = new ServiceConnection() {
@@ -278,12 +282,36 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         }
         tvTimer =  findViewById(R.id.tvTimer);
         tvExpire =  findViewById(R.id.tvExpire);
+        ivClose =  findViewById(R.id.ivClose);
+        overlayLayout =  findViewById(R.id.overlayLayout);
+
+        String value = SharedPreferenceUtils.getString(Game.this,Const.SHOW_OVERLAY);
+        if(value ==null || !value.equalsIgnoreCase("true")){
+            overlayLayout.setVisibility(View.VISIBLE);
+        }
+        else
+            ivClose.setVisibility(View.GONE);
+
+
+
+
+        ivClose.setOnClickListener(view -> {
+            ivClose.setVisibility(View.GONE);
+            SharedPreferenceUtils.saveString(Game.this,Const.SHOW_OVERLAY,"true");
+            overlayLayout.setVisibility(View.GONE);
+        });
+
+
+
 
         // Listen for non-touch events on the game surface
         streamView = findViewById(R.id.surfaceView);
         streamView.setOnGenericMotionListener(this);
         streamView.setOnKeyListener(this);
         streamView.setInputCallbacks(this);
+
+
+
 
         // Listen for touch events on the background touch view to enable trackpad mode
         // to work on areas outside of the StreamView itself. We use a separate View
@@ -1682,6 +1710,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                             lastAbsTouchUpX = event.getX(0);
                             lastAbsTouchUpY = event.getY(0);
 
+                            Log.i("test_rightClick" , "testttttttttt");
+
                             // Eraser is right click
                             conn.sendMouseButtonUp(MouseButtonPacket.BUTTON_RIGHT);
                         }
@@ -1754,8 +1784,13 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                         if (event.getEventTime() - threeFingerDownTime < THREE_FINGER_TAP_THRESHOLD) {
                             // This is a 3 finger tap to bring up the keyboard
                             toggleKeyboard();
+                            Log.i("test_rightClick2" , "testttttttttt");
+
                             return true;
                         }
+                        //else
+
+                      //  openDialog();
                     }
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && (event.getFlags() & MotionEvent.FLAG_CANCELED) != 0) {
@@ -1821,6 +1856,31 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
         // Unknown class
         return false;
+    }
+
+    private void openDialog() {
+        Dialog dialog = new Dialog(Game.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_logout);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titleText =  dialog.findViewById(R.id.titleText);
+        TextView msgText =  dialog.findViewById(R.id.msgText);
+        Button txtNo = dialog.findViewById(R.id.txtNo);
+        Button txtYes = dialog.findViewById(R.id.txtYes);
+        titleText.setText(getResources().getString(R.string.no_vm_title));
+        txtNo.setVisibility(View.GONE);
+        txtYes.setText("Ok");
+        msgText.setText(getResources().getString(R.string.open_keyword) + "\n" +  getResources().getString(R.string.tapRightCLick));
+
+        txtYes.setOnClickListener(view -> {
+            dialog.dismiss();
+        });
+
+        dialog.show();
+
     }
 
     @Override
@@ -2512,17 +2572,15 @@ private void shutDownVM() {
                 long minutes =value % 3600 / 60;
                 long   sec = value % 60;
 
-
-
                 String  timeString = String.format("%02d:%02d:%02d", hours, minutes, sec);
                 tvTimer.setText("Time Remaining : "+ timeString + " hrs.");
 
                 if(value<300)
                     tvExpire.setVisibility(View.VISIBLE);
-
             }
 
             public void onFinish() {
+                endVMTimeAPi(true);
                 AppUtils.navigateScreen(Game.this,PcView.class);
             }
         }.start();

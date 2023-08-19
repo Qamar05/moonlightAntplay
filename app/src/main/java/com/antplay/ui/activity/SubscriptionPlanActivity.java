@@ -114,7 +114,6 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
                             startActivity(browserIntent);
                         }
                     }
-
                 }
                 @Override
                 public void onFailure(Call<StartPaymentResp> call, Throwable t) {

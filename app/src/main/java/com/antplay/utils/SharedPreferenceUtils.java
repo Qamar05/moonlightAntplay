@@ -3,6 +3,9 @@ package com.antplay.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.antplay.nvstream.http.ComputerDetails;
+import com.google.gson.Gson;
+
 public class SharedPreferenceUtils {
 
     private static String preferenceName = "com.vms.antplay";
@@ -72,6 +75,25 @@ public class SharedPreferenceUtils {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(isLoggedIn, b);
         editor.apply();
+    }
+
+    public static void saveObject(Context context , String key , ComputerDetails value){
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceName, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(value);
+        editor.putString(key, json);
+        editor.commit();
+    }
+
+
+
+    public static ComputerDetails getObject(Context context, String key) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceName, Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString(key, "");
+        ComputerDetails obj = gson.fromJson(json, ComputerDetails.class);
+        return obj;
     }
 
 }

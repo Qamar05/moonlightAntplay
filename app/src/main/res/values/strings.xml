@@ -403,5 +403,8 @@
 
     <string name="exit_vm_msg">Are you sure you want to Exit?</string>
     <string name="exit_vm">Exit</string>
+    <string name="open_keyword">Tap with three fingers to invoke virtual keyboard.</string>
+    <string name="tapRightCLick">To perform right click , put one finger on the screen and tap with
+        the second one.</string>
 
 </resources>

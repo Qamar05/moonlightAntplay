@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/walkthrough_new_5">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_trans" />
+
+
+
+    <ImageView
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:background="@drawable/three_finger"
+        android:layout_marginTop="@dimen/_100sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/ivThreeFinger"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"/>
+
+
+
+
+    <TextView
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:paddingRight="@dimen/_20sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ivThreeFinger"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/txtOpenKeyword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:fontFamily="sans-serif"
+        android:text="@string/open_keyword"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:gravity="center_horizontal" />
+
+
+    <ImageView
+        app:layout_constraintTop_toBottomOf="@+id/txtOpenKeyword"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:background="@drawable/two_finger"
+        android:layout_marginTop="@dimen/_70sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/ivTwoFinger"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:backgroundTint="@color/white"
+        app:tint="@color/white" />
+
+
+    <TextView
+        android:layout_marginLeft="@dimen/_70sdp"
+        android:paddingRight="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@+id/txtOpenKeyword"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ivTwoFinger"
+        android:layout_below="@+id/txtOpenKeyword"
+        android:id="@+id/txtTapRightClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_70sdp"
+        android:fontFamily="sans-serif"
+        android:text="@string/tapRightCLick"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:gravity="center_horizontal" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

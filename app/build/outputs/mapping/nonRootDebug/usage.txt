@@ -7624,8 +7624,6 @@ androidx.core.view.NestedScrollingChildHelper:
     public void onStopNestedScroll(android.view.View)
 androidx.core.view.NestedScrollingParent:
     public abstract int getNestedScrollAxes()
-androidx.core.view.NestedScrollingParentHelper:
-    public void onStopNestedScroll(android.view.View)
 androidx.core.view.PointerIconCompat$Api24Impl:
     private void <init>()
 androidx.core.view.PointerIconCompat:
@@ -8449,7 +8447,6 @@ androidx.core.widget.ListViewCompat$Api19Impl:
     private void <init>()
 androidx.core.widget.ListViewCompat:
     private void <init>()
-    public static boolean canScrollList(android.widget.ListView,int)
 androidx.core.widget.NestedScrollView$Api21Impl:
     private void <init>()
 androidx.core.widget.NestedScrollView:
@@ -10175,6 +10172,96 @@ androidx.startup.StartupLogger:
     private void <init>()
     public static void e(java.lang.String,java.lang.Throwable)
     public static void i(java.lang.String)
+androidx.swiperefreshlayout.R$attr
+androidx.swiperefreshlayout.R$color
+androidx.swiperefreshlayout.R$dimen
+androidx.swiperefreshlayout.R$drawable
+androidx.swiperefreshlayout.R$id
+androidx.swiperefreshlayout.R$integer
+androidx.swiperefreshlayout.R$layout
+androidx.swiperefreshlayout.R$string
+androidx.swiperefreshlayout.R$style
+androidx.swiperefreshlayout.R$styleable
+androidx.swiperefreshlayout.R
+androidx.swiperefreshlayout.widget.CircleImageView:
+    private static final int FILL_SHADOW_COLOR
+    private static final int KEY_SHADOW_COLOR
+    private static final int SHADOW_ELEVATION
+    private static final float SHADOW_RADIUS
+    private static final float X_OFFSET
+    private static final float Y_OFFSET
+    public void setBackgroundColorRes(int)
+androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize
+androidx.swiperefreshlayout.widget.CircularProgressDrawable$Ring:
+    float getArrowHeight()
+    float getArrowScale()
+    float getArrowWidth()
+    int getBackgroundColor()
+    float getCenterRadius()
+    int[] getColors()
+    float getRotation()
+    boolean getShowArrow()
+    android.graphics.Paint$Cap getStrokeCap()
+    float getStrokeWidth()
+    void setBackgroundColor(int)
+    void setStrokeCap(android.graphics.Paint$Cap)
+androidx.swiperefreshlayout.widget.CircularProgressDrawable:
+    private static final int ANIMATION_DURATION
+    private static final int ARROW_HEIGHT
+    private static final int ARROW_HEIGHT_LARGE
+    private static final int ARROW_WIDTH
+    private static final int ARROW_WIDTH_LARGE
+    private static final float CENTER_RADIUS
+    private static final float CENTER_RADIUS_LARGE
+    private static final float COLOR_CHANGE_OFFSET
+    public static final int DEFAULT
+    private static final float GROUP_FULL_ROTATION
+    public static final int LARGE
+    private static final float MAX_PROGRESS_ARC
+    private static final float MIN_PROGRESS_ARC
+    private static final float RING_ROTATION
+    private static final float SHRINK_OFFSET
+    private static final float STROKE_WIDTH
+    private static final float STROKE_WIDTH_LARGE
+    public boolean getArrowEnabled()
+    public float getArrowHeight()
+    public float getArrowScale()
+    public float getArrowWidth()
+    public int getBackgroundColor()
+    public float getCenterRadius()
+    public int[] getColorSchemeColors()
+    public float getEndTrim()
+    public float getProgressRotation()
+    private float getRotation()
+    public float getStartTrim()
+    public android.graphics.Paint$Cap getStrokeCap()
+    public float getStrokeWidth()
+    public void setArrowDimensions(float,float)
+    public void setBackgroundColor(int)
+    public void setCenterRadius(float)
+    public void setStrokeCap(android.graphics.Paint$Cap)
+androidx.swiperefreshlayout.widget.SwipeRefreshLayout:
+    private static final int ALPHA_ANIMATION_DURATION
+    private static final int ANIMATE_TO_START_DURATION
+    private static final int ANIMATE_TO_TRIGGER_DURATION
+    private static final int CIRCLE_BG_LIGHT
+    static final int CIRCLE_DIAMETER
+    static final int CIRCLE_DIAMETER_LARGE
+    private static final float DECELERATE_INTERPOLATION_FACTOR
+    public static final int DEFAULT
+    private static final int DEFAULT_CIRCLE_TARGET
+    public static final int DEFAULT_SLINGSHOT_DISTANCE
+    private static final float DRAG_RATE
+    private static final int INVALID_POINTER
+    public static final int LARGE
+    private static final int MAX_ALPHA
+    private static final float MAX_PROGRESS_ANGLE
+    private static final int SCALE_DOWN_DURATION
+    private static final int STARTING_PROGRESS_ALPHA
+    public void <init>(android.content.Context)
+    public boolean isRefreshing()
+    public void setProgressViewEndTarget(boolean,int)
+    public void setProgressViewOffset(boolean,int,int)
 androidx.tracing.R
 androidx.tracing.Trace:
     static final java.lang.String TAG
@@ -10964,9 +11051,11 @@ com.antplay.Game:
     private static final int STYLUS_UP_DEAD_ZONE_DELAY
     private static final int STYLUS_UP_DEAD_ZONE_RADIUS
     private static final int THREE_FINGER_TAP_THRESHOLD
-    private synthetic void lambda$openExitVMDialog$3(android.app.Dialog,android.view.View)
-    private static synthetic void lambda$openExitVMDialog$4(android.app.Dialog,android.view.View)
-    private static synthetic void lambda$openTimerDialog$1(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openDialog$1(android.app.Dialog,android.view.View)
+    private synthetic void lambda$openExitVMDialog$5(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openExitVMDialog$6(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openTimerDialog$3(android.app.Dialog,android.view.View)
+    private void openDialog()
     private void openExitVMDialog()
     private void openTimerDialog()
 com.antplay.LimeLog:
@@ -11549,7 +11638,6 @@ com.antplay.ui.activity.PcView:
     private static final int UNPAIR_ID
     private static final int VIEW_DETAILS_ID
     private static final int WOL_ID
-    com.antplay.utils.SpinnerDialog dialog
 com.antplay.ui.activity.ProfileActivity:
     private int dayInYear(long)
     private java.lang.String getDateFromSec(long)
@@ -19307,16 +19395,11 @@ com.google.gson.Gson:
     static final boolean DEFAULT_SERIALIZE_NULLS
     static final boolean DEFAULT_SPECIALIZE_FLOAT_VALUES
     private static final java.lang.String JSON_NON_EXECUTABLE_PREFIX
-    private static void assertFullConsumption(java.lang.Object,com.google.gson.stream.JsonReader)
     public com.google.gson.internal.Excluder excluder()
     public com.google.gson.FieldNamingStrategy fieldNamingStrategy()
     public java.lang.Object fromJson(com.google.gson.JsonElement,java.lang.Class)
     public java.lang.Object fromJson(com.google.gson.JsonElement,java.lang.reflect.Type)
-    public java.lang.Object fromJson(com.google.gson.stream.JsonReader,java.lang.reflect.Type)
     public java.lang.Object fromJson(java.io.Reader,java.lang.Class)
-    public java.lang.Object fromJson(java.io.Reader,java.lang.reflect.Type)
-    public java.lang.Object fromJson(java.lang.String,java.lang.Class)
-    public java.lang.Object fromJson(java.lang.String,java.lang.reflect.Type)
     public boolean htmlSafe()
     public com.google.gson.GsonBuilder newBuilder()
     public boolean serializeNulls()
@@ -19464,7 +19547,6 @@ com.google.gson.internal.Primitives:
     private void <init>()
     public static boolean isWrapperType(java.lang.reflect.Type)
     public static java.lang.Class unwrap(java.lang.Class)
-    public static java.lang.Class wrap(java.lang.Class)
 com.google.gson.internal.Streams:
     private void <init>()
 com.google.gson.internal.bind.DefaultDateTypeAdapter$1

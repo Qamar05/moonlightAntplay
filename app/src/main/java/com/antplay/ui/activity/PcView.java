@@ -54,6 +54,7 @@ import com.antplay.utils.SpinnerDialog;
 import com.antplay.utils.UiHelper;
 
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Dialog;
 import android.app.Service;
@@ -88,6 +89,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -102,7 +104,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PcView extends AppCompatActivity implements AdapterFragmentCallbacks {
+public class PcView extends AppCompatActivity implements AdapterFragmentCallbacks  {
     private RelativeLayout noPcFoundLayout;
     private PcGridAdapter pcGridAdapter;
     private ShortcutHelper shortcutHelper;
@@ -238,8 +240,11 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
 
 
 
-        SpinnerDialog dialog = SpinnerDialog.displayDialog(this, getResources().getString(R.string.title_add_pc),
-                getResources().getString(R.string.msg_add_pc), false);;
+
+
+
+        dialog = SpinnerDialog.displayDialog(this, getResources().getString(R.string.title_add_pc),
+                getResources().getString(R.string.msg_add_pc), false);
 
         try {
             ComputerDetails details = new ComputerDetails();
@@ -267,7 +272,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             }
         } catch (InterruptedException e) {
             // Propagate the InterruptedException to the caller for proper handling
-            dialog.dismiss();
+//            dialog.dismiss();
 
             throw e;
         } catch (IllegalArgumentException e) {
@@ -288,7 +293,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             portTestResult = MoonBridge.ML_TEST_RESULT_INCONCLUSIVE;
         }
 
-        dialog.dismiss();
+//        dialog.dismiss();
 
         if (invalidInput) {
             MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_unknown_host), false);
@@ -420,8 +425,28 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         ImageButton addComputerButton = findViewById(R.id.manuallyAddPc);
         ImageButton helpButton = findViewById(R.id.helpButton);
 
+        SwipeRefreshLayout swipeLayout = findViewById(R.id.refreshLayout);
+        // Adding Listener
+        swipeLayout.setOnRefreshListener(() -> {
+            // Your code here
+            // To keep animation for 4 seconds
+            new Handler().postDelayed(() -> {
+                // Stop animation (This will be after 3 seconds)
+                swipeLayout.setRefreshing(false);
+                getVM();
+            }, 1000); // Delay in millis
+        });
 
-        profileButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, ProfileActivity.class)));
+        // Scheme colors for animation
+        swipeLayout.setColorSchemeColors(
+                getResources().getColor(R.color.teal_700));
+
+try {
+    profileButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, ProfileActivity.class)));
+}
+catch (Exception e){
+
+}
         settingsButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, StreamSettings.class)));
         addComputerButton.setOnClickListener(v -> {
             Intent i = new Intent(PcView.this, AddComputerManually.class);
@@ -517,6 +542,16 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     private void startComputerUpdates() {
         // Only allow polling to start if we're bound to CMS, polling is not already running,
         // and our activity is in the foreground.
+
+        try{
+            ComputerDetails computerDetails =  SharedPreferenceUtils.getObject(PcView.this,Const.SAVE_DETAILS);
+            if(computerDetails!=null)
+                removeComputer(computerDetails);
+        }
+        catch (Exception e){
+
+        }
+
         if (managerBinder != null && !runningPolling && inForeground) {
             freezeUpdates = false;
             managerBinder.startPolling(details -> {
@@ -524,6 +559,8 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
                     PcView.this.runOnUiThread(() -> {
                         if(details.manualAddress!=null){
                             saveComputerDeatails = details;
+                            SharedPreferenceUtils.saveObject(PcView.this, Const.SAVE_DETAILS, saveComputerDeatails);
+
                             updateComputer(details);
                         }
 
@@ -911,12 +948,14 @@ catch (Exception e){
             return;
         }
 
-        Intent i = new Intent(this, AppView.class);
-        i.putExtra(AppView.NAME_EXTRA, computer.name);
-        i.putExtra(AppView.UUID_EXTRA, computer.uuid);
-        i.putExtra(AppView.NEW_PAIR_EXTRA, newlyPaired);
-        i.putExtra(AppView.SHOW_HIDDEN_APPS_EXTRA, showHiddenGames);
-        startActivity(i);
+        ServerHelper.doStart(PcView.this, new NvApp("app", computer.runningGameId, false), computer, managerBinder);
+
+//        Intent i = new Intent(this, AppView.class);
+//        i.putExtra(AppView.NAME_EXTRA, computer.name);
+//        i.putExtra(AppView.UUID_EXTRA, computer.uuid);
+//        i.putExtra(AppView.NEW_PAIR_EXTRA, newlyPaired);
+//        i.putExtra(AppView.SHOW_HIDDEN_APPS_EXTRA, showHiddenGames);
+//        startActivity(i);
     }
 
     @Override
@@ -1050,7 +1089,7 @@ catch (Exception e){
         } else {
             // Add a new entry
             pcGridAdapter.addComputer(new ComputerObject(details));
-
+            dialog.dismiss();
             // Remove the "Discovery in progress" view
             noPcFoundLayout.setVisibility(View.INVISIBLE);
         }
@@ -1112,56 +1151,13 @@ catch (Exception e){
         Toast.makeText(this, "Please click back again to exit", Toast.LENGTH_SHORT).show();
         new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
     }
-
-
-
-
-
-//    private void getVMFromServerManually() {
-//        String accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
-//        Log.d(TAG, " Access Token : " + accessToken);
-//
-//        new RestClient(PcView.this).getRequestWithHeader("add_vm_manually", "getvmip", "", accessToken, new RestClient.ResponseListener() {
-//            @Override
-//            public void onResponse(String tag, String response) {
-//
-//                if (response != null) {
-//                    Log.d(TAG,"Response : "+response );
-//                    try {
-//                        JSONObject jsonObject = new JSONObject(response);
-//                        String messageValue  =  jsonObject.getString("message");
-//                        if(messageValue.equalsIgnoreCase("success")) {
-//                            JSONArray jsonArray = jsonObject.getJSONArray("data");
-//                            String vmIp = jsonArray.getJSONObject(0).getString("vmip");
-//                            handleDoneEvent(vmIp);
-//                            bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection2, Service.BIND_AUTO_CREATE);
-//                            pcGridAdapter = new PcGridAdapter(PcView.this, PreferenceConfiguration.readPreferences(PcView.this));
-//                            initializeViews();
-//                        }
-//                        else {
-//                            openDialog();
-//                        }
-//
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//        }, new RestClient.ErrorListener() {
-//            @Override
-//            public void onError(String tag, String errorMsg, long statusCode) {
-//                Log.e(TAG, "Reason Of Failure : " + errorMsg);
-//            }
-//        });
-//    }
-
     private void openDialog(boolean purchaseVmFLag , String msg) {
-            Dialog dialog = new Dialog(PcView.this);
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            dialog.setContentView(R.layout.dialog_logout);
-            dialog.setCancelable(false);
-            dialog.setCanceledOnTouchOutside(false);
-            dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        Dialog dialog = new Dialog(PcView.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_logout);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         TextView titleText =  dialog.findViewById(R.id.titleText);
         TextView msgText =  dialog.findViewById(R.id.msgText);
@@ -1231,7 +1227,7 @@ catch (Exception e){
                     }
                 }
                 else if(response.code()==400||response.code()==404||response.code()==500 ||response.code()==401){
-                    if(startVmCallCount.equalsIgnoreCase("1")){
+                    if(Integer.parseInt(startVmCallCount)<=1){
                         openDialog(true ,"");
                         searchPC.setText(getResources().getString(R.string.searching_pc_second));
                     }

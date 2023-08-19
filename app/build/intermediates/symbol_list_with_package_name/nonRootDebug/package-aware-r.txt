@@ -2533,6 +2533,7 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable btngradient
 drawable btngradient_logout
 drawable btnshape
+drawable close_icn
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -2552,6 +2553,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable computers_pc
 drawable custom_spn_bg
 drawable default_dot
 drawable design_fab_background
@@ -2653,9 +2655,11 @@ drawable tab_selector
 drawable test_custom_background
 drawable test_level_drawable
 drawable text_background
+drawable three_finger
 drawable timerwatch
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable two_finger
 drawable ubi
 drawable user_agreement
 drawable ut
@@ -2823,6 +2827,10 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id comp_btn
+id comp_btn_shutdown
+id comp_desc
+id comp_image
 id configure_virtual_controller_frameLayout
 id confirm_button
 id constraint
@@ -2977,10 +2985,13 @@ id item_power_menu_icon
 id item_power_menu_layout
 id item_power_menu_title
 id item_touch_helper_previous_elevation
+id ivClose
 id ivConfirmPasswordShow
 id ivNewPasswordShow
 id ivOldPasswordShow
 id ivPasswordShow
+id ivThreeFinger
+id ivTwoFinger
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3104,6 +3115,7 @@ id otp_edit_box5
 id otp_edit_box6
 id outline
 id outward
+id overlayLayout
 id overshoot
 id packed
 id parallax
@@ -3141,6 +3153,7 @@ id ratio
 id rectangles
 id recyclerView
 id recyclerView_payment
+id refreshLayout
 id relative_back_otp
 id reverseSawtooth
 id right
@@ -3307,11 +3320,13 @@ id txtDurationInHours
 id txtExpiryDate
 id txtNext
 id txtNo
+id txtOpenKeyword
 id txtPlaneAmount
 id txtPlaneName
 id txtPlayPC
 id txtSkip
 id txtSubscribe
+id txtTapRightClick
 id txtTimer
 id txtUserAgreement
 id txtUserEmailID
@@ -3439,6 +3454,7 @@ layout app_grid_item
 layout app_grid_item_small
 layout app_grid_view
 layout app_grid_view_small
+layout computers_available_list
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3461,6 +3477,7 @@ layout fragment_home
 layout fragment_on_boarding_five
 layout fragment_on_boarding_four
 layout fragment_on_boarding_one
+layout fragment_on_boarding_seven
 layout fragment_on_boarding_six
 layout fragment_on_boarding_three
 layout fragment_on_boarding_two
@@ -3832,6 +3849,7 @@ string no_video_received_error
 string no_vm_msg
 string no_vm_title
 string old_pass
+string open_keyword
 string otp_send
 string otp_verify
 string pacing_balanced
@@ -3959,6 +3977,7 @@ string summary_setup_guide
 string summary_troubleshooting
 string summary_unlock_fps
 string summary_video_format
+string tapRightCLick
 string termsCondition
 string terms_and_condition
 string text_native_res_dialog

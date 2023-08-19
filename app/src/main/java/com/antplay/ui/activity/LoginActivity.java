@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.antplay.Game;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.LoginRequestModal;
@@ -138,6 +139,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             String accessToken = jObj.getJSONObject("data").getString("access");
                             SharedPreferenceUtils.saveUserLoggedIn(LoginActivity.this, Const.IS_LOGGED_IN, true);
                             SharedPreferenceUtils.saveString(LoginActivity.this, Const.ACCESS_TOKEN, accessToken);
+                            SharedPreferenceUtils.saveString(LoginActivity.this,Const.SHOW_OVERLAY,"false");
                             AppUtils.navigateScreen(LoginActivity.this, PcView.class);
                             finishAffinity();
                         } catch (Exception e) {

@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.antplay.ui.fragments.OnBoardingFive;
 import com.antplay.ui.fragments.OnBoardingFour;
 import com.antplay.ui.fragments.OnBoardingOne;
+import com.antplay.ui.fragments.OnBoardingSeven;
 import com.antplay.ui.fragments.OnBoardingSix;
 import com.antplay.ui.fragments.OnBoardingThree;
 import com.antplay.ui.fragments.OnBoardingTwo;
@@ -18,7 +19,7 @@ import com.antplay.ui.fragments.OnBoardingTwo;
 
 public class OnBoardingPagerAdapter extends FragmentStatePagerAdapter {
 
-    int PAGE_COUNT = 6;
+    int PAGE_COUNT = 7;
 
 
 
@@ -43,6 +44,9 @@ public class OnBoardingPagerAdapter extends FragmentStatePagerAdapter {
                 return new OnBoardingFive();
             case 5:
                 return new OnBoardingSix();
+            case 6:
+                return new OnBoardingSeven();
+
         }
         return null;
     }

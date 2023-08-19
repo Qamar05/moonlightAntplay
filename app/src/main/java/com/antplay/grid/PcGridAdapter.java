@@ -36,7 +36,7 @@ public class PcGridAdapter extends GenericGridAdapter<PcView.ComputerObject> {
     }
 
     private void sortList() {
-        Collections.sort(itemList, new Comparator<PcView.ComputerObject>() {
+        Collections.sort(itemList, new Comparator<>() {
             @Override
             public int compare(PcView.ComputerObject lhs, PcView.ComputerObject rhs) {
                 return lhs.details.name.toLowerCase().compareTo(rhs.details.name.toLowerCase());
@@ -50,7 +50,7 @@ public class PcGridAdapter extends GenericGridAdapter<PcView.ComputerObject> {
 
     @Override
     public void populateView(View parentView, ImageView imgView, ProgressBar prgView, TextView txtView, ImageView overlayView, PcView.ComputerObject obj) {
-        imgView.setImageResource(R.drawable.ic_computer);
+        imgView.setImageResource(R.drawable.computers_pc);
         if (obj.details.state == ComputerDetails.State.ONLINE) {
             imgView.setAlpha(1.0f);
         }
@@ -82,7 +82,7 @@ public class PcGridAdapter extends GenericGridAdapter<PcView.ComputerObject> {
         // to avoid colliding with the loading spinner when status is unknown
         else if (obj.details.state == ComputerDetails.State.ONLINE &&
                 obj.details.pairState == PairingManager.PairState.NOT_PAIRED) {
-            overlayView.setImageResource(R.drawable.ic_lock);
+//            overlayView.setImageResource(R.drawable.ic_lock);
             overlayView.setAlpha(1.0f);
             overlayView.setVisibility(View.VISIBLE);
         }

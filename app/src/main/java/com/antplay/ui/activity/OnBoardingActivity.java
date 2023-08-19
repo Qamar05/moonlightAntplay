@@ -65,7 +65,7 @@ public class  OnBoardingActivity extends AppCompatActivity implements View.OnCli
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 currentItem = position;
                 Log.d("PAGER", "Current Position: " + position);
-                if (position == 5) {
+                if (position == 6) {
                     txtNext.setText(getResources().getString(R.string.finish));
                     txtSkip.setVisibility(View.INVISIBLE);
                 } else {
@@ -112,7 +112,7 @@ public class  OnBoardingActivity extends AppCompatActivity implements View.OnCli
         int currentItem = viewPager.getCurrentItem();
         currentItem++;
         Log.d("PAGER", "Current Item: " + currentItem);
-        if (currentItem == 6) {
+        if (currentItem == 7) {
             SharedPreferenceUtils.saveBoolean(OnBoardingActivity.this, Const.IS_FIRST_TIME,true);
             AppUtils.navigateScreen(OnBoardingActivity.this, LoginSignUpActivity.class);
         } else {
