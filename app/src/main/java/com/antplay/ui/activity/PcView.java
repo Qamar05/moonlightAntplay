@@ -272,7 +272,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             }
         } catch (InterruptedException e) {
             // Propagate the InterruptedException to the caller for proper handling
-//            dialog.dismiss();
+            dialog.dismiss();
 
             throw e;
         } catch (IllegalArgumentException e) {
@@ -293,7 +293,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             portTestResult = MoonBridge.ML_TEST_RESULT_INCONCLUSIVE;
         }
 
-//        dialog.dismiss();
+        dialog.dismiss();
 
         if (invalidInput) {
             MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_unknown_host), false);
@@ -1089,7 +1089,7 @@ catch (Exception e){
         } else {
             // Add a new entry
             pcGridAdapter.addComputer(new ComputerObject(details));
-            dialog.dismiss();
+
             // Remove the "Discovery in progress" view
             noPcFoundLayout.setVisibility(View.INVISIBLE);
         }

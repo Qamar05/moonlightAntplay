@@ -96,7 +96,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_15sdp"
                         android:fontFamily="sans-serif"
-                        android:text="alex.pinto@gmail.com"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_12sdp"
                         android:textStyle="bold" />

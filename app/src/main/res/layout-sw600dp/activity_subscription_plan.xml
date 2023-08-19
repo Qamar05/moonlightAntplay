@@ -59,20 +59,27 @@
 
     </LinearLayout>
 
+    <androidx.core.widget.NestedScrollView
+        android:paddingBottom="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/titleLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSubscriptionPlans"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginLeft="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_5sdp"
-        android:layout_marginBottom="@dimen/_30sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleLayout"/>
+        app:layout_constraintStart_toEndOf="parent" />
 
 
+    </androidx.core.widget.NestedScrollView>
 
 
     <TextView
