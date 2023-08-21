@@ -156,10 +156,11 @@
             android:name="com.android.graphics.intervention.wm.allowDownscale"
             android:value="false" />
 
+<!--        android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"-->
+
         <activity
             android:name=".ui.activity.PcView"
             android:theme="@style/Theme.MyApplication"
-            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
             android:exported="true"
             android:resizeableActivity="true">
             <intent-filter>

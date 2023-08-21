@@ -50,8 +50,9 @@ import retrofit2.Response;
 
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener,StateListAdapter.ButtonClickListener {
 
-    EditText edtFirstName, edtLastName,edTxtState , edtPhoneNumber, edtEmail, edtPassword, edtConfirmPassword, edtAge, edtAddress, edtCity, edtPinCode;
+    EditText edtFirstName, edtLastName , edtPhoneNumber, edtEmail, edtPassword, edtConfirmPassword, edtAge, edtAddress, edtCity, edtPinCode;
     Button btnSignup;
+    TextView  edTxtState;
     TextView txtAlreadyRegister, txtUserAgreement;
     CheckBox chkBoxUserAgreement;
     ProgressBar progressBar;
@@ -74,7 +75,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         edtFirstName = (EditText) findViewById(R.id.edtFirstName);
         edtLastName = (EditText) findViewById(R.id.edtLastName);
         edtPhoneNumber = (EditText) findViewById(R.id.edtPhoneNumber);
-        edTxtState = (EditText) findViewById(R.id.edTxtState);
+        edTxtState = (TextView) findViewById(R.id.edTxtState);
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         edtConfirmPassword = (EditText) findViewById(R.id.edtConfirmPassword);

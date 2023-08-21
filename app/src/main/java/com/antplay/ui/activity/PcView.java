@@ -82,7 +82,9 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -106,6 +108,10 @@ import retrofit2.Response;
 
 public class PcView extends AppCompatActivity implements AdapterFragmentCallbacks  {
     private RelativeLayout noPcFoundLayout;
+
+    TextView  tvTimer;
+    ProgressBar progressBar;
+    String time_remaining;
     private PcGridAdapter pcGridAdapter;
     private ShortcutHelper shortcutHelper;
     boolean doubleBackToExitPressedOnce = false;
@@ -419,9 +425,11 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         strVMId = SharedPreferenceUtils.getString(PcView.this, Const.VMID);
 
          searchPC = findViewById(R.id.searchPC);
+        tvTimer = findViewById(R.id.tvTimer);
+        progressBar = findViewById(R.id.progressBar);
         // Setup the list view
         ImageButton profileButton = findViewById(R.id.profileButton);
-        ImageButton settingsButton = findViewById(R.id.settingsButton);
+        ImageView settingsButton = findViewById(R.id.settingsButton);
         ImageButton addComputerButton = findViewById(R.id.manuallyAddPc);
         ImageButton helpButton = findViewById(R.id.helpButton);
 
@@ -441,12 +449,9 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         swipeLayout.setColorSchemeColors(
                 getResources().getColor(R.color.teal_700));
 
-try {
-    profileButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, ProfileActivity.class)));
-}
-catch (Exception e){
 
-}
+        profileButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, ProfileActivity.class)));
+
         settingsButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, StreamSettings.class)));
         addComputerButton.setOnClickListener(v -> {
             Intent i = new Intent(PcView.this, AddComputerManually.class);
@@ -560,7 +565,8 @@ catch (Exception e){
                         if(details.manualAddress!=null){
                             saveComputerDeatails = details;
                             SharedPreferenceUtils.saveObject(PcView.this, Const.SAVE_DETAILS, saveComputerDeatails);
-
+                            progressBar.setVisibility(View.GONE);
+                            showTimer(time_remaining);
                             updateComputer(details);
                         }
 
@@ -1179,13 +1185,9 @@ catch (Exception e){
                 msgText.setText(getResources().getString(R.string.searching_pc_second));
             else
                 msgText.setText(getResources().getString(R.string.startVMMsg));
-
-
         }
 
-
-
-            txtYes.setOnClickListener(view -> {
+        txtYes.setOnClickListener(view -> {
                 dialog.dismiss();
                 AppUtils.navigateScreenWithoutFinish(PcView.this, SubscriptionPlanActivity.class);
             });
@@ -1218,6 +1220,7 @@ catch (Exception e){
                             SharedPreferenceUtils.saveBoolean(PcView.this, Const.IS_SHUT_DOWN, false);
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
                             String vmIp = jsonArray.getJSONObject(0).getString("vmip");
+
                             handleDoneEvent(vmIp);
                             bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection2, Service.BIND_AUTO_CREATE);
                             pcGridAdapter = new PcGridAdapter(PcView.this, PreferenceConfiguration.readPreferences(PcView.this));
@@ -1244,6 +1247,16 @@ catch (Exception e){
                 AppUtils.showToast(Const.something_went_wrong, PcView.this);
             }
         });
+    }
+
+    private void showTimer(String timeRemaining) {
+        long value = Long.parseLong(timeRemaining);
+        long hours = value / 3600;
+        long minutes =value % 3600 / 60;
+        long   sec = value % 60;
+
+        String  timeString = String.format("%02d:%02d:%02d", hours, minutes, sec);
+        tvTimer.setText(timeString + " hrs.");
     }
 
     private void startVm(String strVMId) {
@@ -1286,29 +1299,22 @@ catch (Exception e){
                         String strVMId = jsonArray.getJSONObject(0).getString("vmid");
                         startVmCallCount = jsonArray.getJSONObject(0).getString("start_vm_call_count");
                         String status = jsonArray.getJSONObject(0).getString("status");
-
                         isShutDown   =  SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_SHUT_DOWN);
-
-
-                            if(startVmCallCount.equalsIgnoreCase("0"))
+                         time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
+                        if(startVmCallCount.equalsIgnoreCase("0"))
                                 startVm(strVMId);
-                            else if(Integer.parseInt(startVmCallCount) >=1) {
+                        else if(Integer.parseInt(startVmCallCount) >=1) {
                                 if (status.equalsIgnoreCase("running"))
                                     getVMFromServerManually();
                                 else
                                     startVm(strVMId);
-
-
-                            }
-
+                        }
                     } catch (Exception e) {
                     }
                 }
                 else if(response.code()==404 || response.code()==500 || response.code()==400||response.code()==401){
                     openDialog(false,"");
                     searchPC.setText(getResources().getString(R.string.searching_pc_first));
-
-
                 }
             }
             @Override
@@ -1318,6 +1324,4 @@ catch (Exception e){
             }
         });
     }
-
-
 }

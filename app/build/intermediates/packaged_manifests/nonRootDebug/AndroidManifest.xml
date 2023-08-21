@@ -165,11 +165,9 @@
             android:value="true" />
         <meta-data
             android:name="com.android.graphics.intervention.wm.allowDownscale"
-            android:value="false" />
-
+            android:value="false" /> <!-- android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection" -->
         <activity
             android:name="com.antplay.ui.activity.PcView"
-            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
             android:exported="true"
             android:resizeableActivity="true"
             android:theme="@style/Theme.MyApplication" >

@@ -194,34 +194,34 @@ public class StreamSettings extends Activity {
             ListPreference pref = (ListPreference) findPreference(preferenceKey);
 
             // Count the number of matching entries we'll be removing
-            for (CharSequence seq : pref.getEntryValues()) {
-                if (seq.toString().equalsIgnoreCase(value)) {
-                    matchingCount++;
-                }
-            }
+//            for (CharSequence seq : pref.getEntryValues()) {
+//                if (seq.toString().equalsIgnoreCase(value)) {
+//                    matchingCount++;
+//                }
+//            }
 
             // Create the new arrays
-            CharSequence[] entries = new CharSequence[pref.getEntries().length-matchingCount];
-            CharSequence[] entryValues = new CharSequence[pref.getEntryValues().length-matchingCount];
-            int outIndex = 0;
-            for (int i = 0; i < pref.getEntryValues().length; i++) {
-                if (pref.getEntryValues()[i].toString().equalsIgnoreCase(value)) {
-                    // Skip matching values
-                    continue;
-                }
+//            CharSequence[] entries = new CharSequence[pref.getEntries().length-matchingCount];
+//            CharSequence[] entryValues = new CharSequence[pref.getEntryValues().length-matchingCount];
+//            int outIndex = 0;
+//            for (int i = 0; i < pref.getEntryValues().length; i++) {
+//                if (pref.getEntryValues()[i].toString().equalsIgnoreCase(value)) {
+//                    // Skip matching values
+//                    continue;
+//                }
+//
+//                entries[outIndex] = pref.getEntries()[i];
+//                entryValues[outIndex] = pref.getEntryValues()[i];
+//                outIndex++;
+//            }
 
-                entries[outIndex] = pref.getEntries()[i];
-                entryValues[outIndex] = pref.getEntryValues()[i];
-                outIndex++;
-            }
-
-            if (pref.getValue().equalsIgnoreCase(value)) {
-                onMatched.run();
-            }
-
-            // Update the preference with the new list
-            pref.setEntries(entries);
-            pref.setEntryValues(entryValues);
+//            if (pref.getValue().equalsIgnoreCase(value)) {
+//                onMatched.run();
+//            }
+//
+//            // Update the preference with the new list
+//            pref.setEntries(entries);
+//            pref.setEntryValues(entryValues);
         }
 
         private void resetBitrateToDefault(SharedPreferences prefs, String res, String fps) {
@@ -357,7 +357,7 @@ public class StreamSettings extends Activity {
                     // unless they report greater than 4K resolutions.
                     if (!getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEVISION) ||
                             (width > 3840 || height > 2160)) {
-                        addNativeResolutionEntries(width, height, hasInsets);
+                       // addNativeResolutionEntries(width, height, hasInsets);
                     }
 
                     if ((width >= 3840 || height >= 2160) && maxSupportedResW < 3840) {
@@ -595,51 +595,51 @@ public class StreamSettings extends Activity {
 
             // Add a listener to the FPS and resolution preference
             // so the bitrate can be auto-adjusted
-            findPreference(PreferenceConfiguration.RESOLUTION_PREF_STRING).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(SettingsFragment.this.getActivity());
-                    String valueStr = (String) newValue;
-
-                    // Detect if this value is the native resolution option
-                    CharSequence[] values = ((ListPreference)preference).getEntryValues();
-                    boolean isNativeRes = true;
-                    for (int i = 0; i < values.length; i++) {
-                        // Look for a match prior to the start of the native resolution entries
-                        if (valueStr.equals(values[i].toString()) && i < nativeResolutionStartIndex) {
-                            isNativeRes = false;
-                            break;
-                        }
-                    }
-
-                    // If this is native resolution, show the warning dialog
-                    if (isNativeRes) {
-                        MyDialog.displayDialog(getActivity(),
-                                getResources().getString(R.string.title_native_res_dialog),
-                                getResources().getString(R.string.text_native_res_dialog),
-                                false);
-                    }
-
-                    // Write the new bitrate value
-                    resetBitrateToDefault(prefs, valueStr, null);
-
-                    // Allow the original preference change to take place
-                    return true;
-                }
-            });
-            findPreference(PreferenceConfiguration.FPS_PREF_STRING).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(SettingsFragment.this.getActivity());
-                    String valueStr = (String) newValue;
-
-                    // Write the new bitrate value
-                    resetBitrateToDefault(prefs, null, valueStr);
-
-                    // Allow the original preference change to take place
-                    return true;
-                }
-            });
+//            findPreference(PreferenceConfiguration.RESOLUTION_PREF_STRING).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+//                @Override
+//                public boolean onPreferenceChange(Preference preference, Object newValue) {
+//                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(SettingsFragment.this.getActivity());
+//                    String valueStr = (String) newValue;
+//
+//                    // Detect if this value is the native resolution option
+//                    CharSequence[] values = ((ListPreference)preference).getEntryValues();
+//                    boolean isNativeRes = true;
+//                    for (int i = 0; i < values.length; i++) {
+//                        // Look for a match prior to the start of the native resolution entries
+//                        if (valueStr.equals(values[i].toString()) && i < nativeResolutionStartIndex) {
+//                            isNativeRes = false;
+//                            break;
+//                        }
+//                    }
+//
+//                    // If this is native resolution, show the warning dialog
+//                    if (isNativeRes) {
+//                        MyDialog.displayDialog(getActivity(),
+//                                getResources().getString(R.string.title_native_res_dialog),
+//                                getResources().getString(R.string.text_native_res_dialog),
+//                                false);
+//                    }
+//
+//                    // Write the new bitrate value
+//                    resetBitrateToDefault(prefs, valueStr, null);
+//
+//                    // Allow the original preference change to take place
+//                    return true;
+//                }
+//            });
+//            findPreference(PreferenceConfiguration.FPS_PREF_STRING).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+//                @Override
+//                public boolean onPreferenceChange(Preference preference, Object newValue) {
+//                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(SettingsFragment.this.getActivity());
+//                    String valueStr = (String) newValue;
+//
+//                    // Write the new bitrate value
+//                    resetBitrateToDefault(prefs, null, valueStr);
+//
+//                    // Allow the original preference change to take place
+//                    return true;
+//                }
+//            });
         }
     }
 }
