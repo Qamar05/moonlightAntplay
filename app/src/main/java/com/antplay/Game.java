@@ -184,6 +184,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     ImageView ivClose;
     ConstraintLayout  overlayLayout;
 
+    boolean isBackPressed =  false;
+
 
     private boolean connectedToUsbDriverService = false;
     private ServiceConnection usbDriverServiceConnection = new ServiceConnection() {
@@ -221,6 +223,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.i("testt12" , "test");
 
         UiHelper.setLocale(this);
 
@@ -382,6 +386,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         appName = Game.this.getIntent().getStringExtra(EXTRA_APP_NAME);
         pcName = Game.this.getIntent().getStringExtra(EXTRA_PC_NAME);
 
+
+
         String host = Game.this.getIntent().getStringExtra(EXTRA_HOST);
         int port = Game.this.getIntent().getIntExtra(EXTRA_PORT, NvHTTP.DEFAULT_HTTP_PORT);
         int httpsPort = Game.this.getIntent().getIntExtra(EXTRA_HTTPS_PORT, 0); // 0 is treated as unknown
@@ -390,6 +396,9 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         String uuid = Game.this.getIntent().getStringExtra(EXTRA_PC_UUID);
         boolean appSupportsHdr = Game.this.getIntent().getBooleanExtra(EXTRA_APP_HDR, false);
         byte[] derCertData = Game.this.getIntent().getByteArrayExtra(EXTRA_SERVER_CERT);
+
+
+        Log.i("testt_appp"  , appName + pcName + host + uuid+ appId);
 
         X509Certificate serverCert = null;
         try {
@@ -401,10 +410,13 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             e.printStackTrace();
         }
 
+        Log.i("testt_appp"  , "testt_11");
         if (appId == StreamConfiguration.INVALID_APP_ID) {
             finish();
             return;
         }
+
+        Log.i("testt_appp"  , "testt_1");
 
         // Report this shortcut being used
         ComputerDetails computer = new ComputerDetails();
@@ -416,10 +428,12 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             // This may be null if launched from the "Resume Session" PC context menu item
             shortcutHelper.reportGameLaunched(computer, new NvApp(appName, appId, appSupportsHdr));
         }
-
+        Log.i("testt_appp"  , "testt_2");
         // Initialize the MediaCodec helper before creating the decoder
         GlPreferences glPrefs = GlPreferences.readPreferences(this);
         MediaCodecHelper.initialize(this, glPrefs.glRenderer);
+
+        Log.i("testt_appp"  , "testt_3");
 
         // Check if the user has enabled HDR
         boolean willStreamHdr = false;
@@ -455,6 +469,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             performanceOverlayView.setVisibility(View.VISIBLE);
         }
 
+        Log.i("testt_appp"  , "testt_4");
         decoderRenderer = new MediaCodecDecoderRenderer(
                 this,
                 prefConfig,
@@ -1132,7 +1147,10 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopConnection(true);
+        stopConnection(false);
+
+        SpinnerDialog.closeDialogs(this);
+        MyDialog.closeDialogs();
 
         InputManager inputManager = (InputManager) getSystemService(Context.INPUT_SERVICE);
         if (controllerHandler != null) {
@@ -1710,7 +1728,6 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                             lastAbsTouchUpX = event.getX(0);
                             lastAbsTouchUpY = event.getY(0);
 
-                            Log.i("test_rightClick" , "testttttttttt");
 
                             // Eraser is right click
                             conn.sendMouseButtonUp(MouseButtonPacket.BUTTON_RIGHT);
@@ -1982,7 +1999,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         if (connecting || connected) {
             connecting = connected = false;
             updatePipAutoEnter();
-            endVMTimeAPi(flag);
+            if(!isBackPressed)
+                endVMTimeAPi(flag);
 
             controllerHandler.stop();
 
@@ -2203,6 +2221,11 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                        if(value) {
                               shutDownVM();
                        }
+                       else {
+                           AppUtils.navigateScreen(Game.this, PcView.class);
+                               finishAffinity();
+
+                       }
                    }
                }
                catch (Exception e){
@@ -2227,10 +2250,11 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                         JSONArray jsonArray = jsonObject.getJSONArray("data");
                         strVMId = jsonArray.getJSONObject(0).getString("vmid");
                         time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
-                        SharedPreferenceUtils.saveString(Game.this, Const.VMID, strVMId);
-
+                      //  SharedPreferenceUtils.saveString(Game.this, Const.VMID, strVMId);
+                       // Log.i("testt13" , "test");
                         // time_remaining = "100";
 
+                        Log.i("testt13" , "tesbebt");
 
                     }
                     catch (Exception e){
@@ -2525,9 +2549,12 @@ private void shutDownVM() {
     }
     @Override
     public void onBackPressed() {
+
         if (doubleBackToExitPressedOnce) {
-            AppUtils.navigateScreenWithoutFinish(Game.this, PcView.class);
-            finishAffinity();
+            isBackPressed =  true;
+            endVMTimeAPi(false);
+//            AppUtils.navigateScreen(Game.this, PcView.class);
+//            finishAffinity();
         }
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Please click back again to exit the VM", Toast.LENGTH_SHORT).show();
@@ -2585,5 +2612,14 @@ private void shutDownVM() {
             }
         }.start();
 
+    }
+    public void exitActivity(){
+        if (doubleBackToExitPressedOnce) {
+            AppUtils.navigateScreen(Game.this, PcView.class);
+            finishAffinity();
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click back again to exit the VM", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
     }
 }

@@ -2532,6 +2532,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable btngradient
 drawable btngradient_logout
+drawable btngradient_white
 drawable btnshape
 drawable close_icn
 drawable common_full_open_on_phone
@@ -2790,7 +2791,9 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnResetPassword
+id btnShutDownVM
 id btnSignUp
+id btnStartVM
 id btnUpdatePassword
 id btn_letsGo_otp
 id btn_login
@@ -2967,6 +2970,7 @@ id ignoreRequest
 id image
 id imgAddTimer
 id imgBack
+id imgBackground
 id imgSpacLine1
 id imgSpacLine2
 id imgSpacLine3
@@ -3022,6 +3026,7 @@ id linear_website
 id listMode
 id list_item
 id llTimer
+id loadingBar
 id loadingLogin_progress_xml
 id loadingProgressBar
 id loading_changePass
@@ -3263,6 +3268,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id text_PcName
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3923,14 +3929,17 @@ string search_menu_title
 string searching_pc_first
 string searching_pc_second
 string setting
+string shutdown_vmmsg
 string signup
 string signupHere
 string skip
 string slow_connection_msg
 string startVMMsg
+string start_vm
 string state
 string status
 string status_bar_notification_info_overflow
+string stop_vm
 string subs_continue
 string subscribe
 string subscription_msg

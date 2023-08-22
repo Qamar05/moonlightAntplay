@@ -1,4 +1,4 @@
-# The proguard configuration file for the following section is C:\vmsProject\moonlightAntplay\app\build\intermediates\default_proguard_files\global\proguard-android.txt-7.3.1
+# The proguard configuration file for the following section is C:\TestNewMonlight\moonlightAntplay\app\build\intermediates\default_proguard_files\global\proguard-android.txt-7.3.1
 # This is a configuration file for ProGuard.
 # http://proguard.sourceforge.net/index.html#manual/usage.html
 #
@@ -116,8 +116,8 @@
 # These classes are duplicated between android.jar and core-lambda-stubs.jar.
 -dontnote java.lang.invoke.**
 
-# End of content from C:\vmsProject\moonlightAntplay\app\build\intermediates\default_proguard_files\global\proguard-android.txt-7.3.1
-# The proguard configuration file for the following section is C:\vmsProject\moonlightAntplay\app\proguard-rules.pro
+# End of content from C:\TestNewMonlight\moonlightAntplay\app\build\intermediates\default_proguard_files\global\proguard-android.txt-7.3.1
+# The proguard configuration file for the following section is C:\TestNewMonlight\moonlightAntplay\app\proguard-rules.pro
 # Don't obfuscate code
 -dontobfuscate
 
@@ -147,8 +147,8 @@
 -dontwarn javax.jmdns.impl.DNSCache
 -dontwarn org.slf4j.**
 
-# End of content from C:\vmsProject\moonlightAntplay\app\proguard-rules.pro
-# The proguard configuration file for the following section is C:\vmsProject\moonlightAntplay\app\build\intermediates\aapt_proguard_file\nonRootDebug\aapt_rules.txt
+# End of content from C:\TestNewMonlight\moonlightAntplay\app\proguard-rules.pro
+# The proguard configuration file for the following section is C:\TestNewMonlight\moonlightAntplay\app\build\intermediates\aapt_proguard_file\nonRootDebug\aapt_rules.txt
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
 -keep class androidx.startup.InitializationProvider { <init>(); }
 -keep class com.antplay.AppView { <init>(); }
@@ -296,7 +296,7 @@
 -keep class com.google.android.material.timepicker.TimePickerView { <init>(android.content.Context, android.util.AttributeSet); }
 
 
-# End of content from C:\vmsProject\moonlightAntplay\app\build\intermediates\aapt_proguard_file\nonRootDebug\aapt_rules.txt
+# End of content from C:\TestNewMonlight\moonlightAntplay\app\build\intermediates\aapt_proguard_file\nonRootDebug\aapt_rules.txt
 # The proguard configuration file for the following section is C:\Users\HP\.gradle\caches\transforms-3\2d977ee9c407744495283287b5b02a68\transformed\rules\lib\META-INF\proguard\retrofit2.pro
 # Retrofit does reflection on generic parameters. InnerClasses is required to use Signature and
 # EnclosingMethod is required to use InnerClasses.

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-31:/values-ja/values-ja.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-3:/values-ja/values-ja.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\fb7116196c481d237063c2d46ff6cdcc\\transformed\\core-1.9.0\\res\\values-ja\\values-ja.xml",
@@ -74,7 +74,7 @@
                     }
                 },
                 {
-                    "source": "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\res\\values-ja\\strings.xml",
+                    "source": "C:\\TestNewMonlight\\moonlightAntplay\\app\\src\\main\\res\\values-ja\\strings.xml",
                     "from": {
                         "startLines": "78,75,76,77,62,60,61,59,67,70,69,68,66,65,64,63,115,90,81,109,99,103,42,43,47,46,40,39,44,41,45,49,48,127,119,126,36,34,33,35,52,56,74,55,17,16,15,14,13,12,11,4,8,5,7,6,53,118,95,88,111,113,93,101,107,130,97,105,123,121,125,83,85,117,73,87,110,112,92,100,106,86,129,96,104,122,120,124,82,84,94,116,128,30,29,28,27,134,133,135,24,21,20,23,22,54",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

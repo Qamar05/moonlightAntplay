@@ -110,7 +110,12 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     private RelativeLayout noPcFoundLayout;
 
     TextView  tvTimer;
-    ProgressBar progressBar;
+    ComputerDetails myComputerDetails;
+
+    TextView  text_PcName;
+    Button btnStartVM;
+    Button btnShutDownVM;
+    ProgressBar progressBar ,loadingBar;
     String time_remaining;
     private PcGridAdapter pcGridAdapter;
     private ShortcutHelper shortcutHelper;
@@ -121,7 +126,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
 
     String startVmCallCount;
 
-    String accessToken , strVMId;
+    String accessToken , strVMId ,status;
     boolean isShutDown =  false;
     boolean isStartVm =  false;
     SpinnerDialog dialog;
@@ -310,9 +315,9 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             if (portTestResult != MoonBridge.ML_TEST_RESULT_INCONCLUSIVE && portTestResult != 0) {
                 dialogText = getResources().getString(R.string.nettest_text_blocked);
             } else {
-                dialogText = getResources().getString(R.string.addpc_fail);
+               // dialogText = getResources().getString(R.string.addpc_fail);
             }
-            MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), dialogText, false);
+           // MyDialog.displayDialog(this, getResources().getString(R.string.conn_error_title), dialogText, false);
         } else {
             PcView.this.runOnUiThread(new Runnable() {
                 @Override
@@ -422,10 +427,15 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
 
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
-        strVMId = SharedPreferenceUtils.getString(PcView.this, Const.VMID);
 
-         searchPC = findViewById(R.id.searchPC);
+
+        searchPC = findViewById(R.id.searchPC);
         tvTimer = findViewById(R.id.tvTimer);
+        text_PcName = findViewById(R.id.text_PcName);
+        progressBar = findViewById(R.id.progressBar);
+        loadingBar = findViewById(R.id.loadingBar);
+        btnStartVM = findViewById(R.id.btnStartVM);
+        btnShutDownVM = findViewById(R.id.btnShutDownVM);
         progressBar = findViewById(R.id.progressBar);
         // Setup the list view
         ImageButton profileButton = findViewById(R.id.profileButton);
@@ -441,13 +451,31 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             new Handler().postDelayed(() -> {
                 // Stop animation (This will be after 3 seconds)
                 swipeLayout.setRefreshing(false);
-                getVM();
+           //     getVM("");
             }, 1000); // Delay in millis
         });
 
         // Scheme colors for animation
         swipeLayout.setColorSchemeColors(
                 getResources().getColor(R.color.teal_700));
+
+
+
+        btnStartVM.setOnClickListener(view -> {
+            String btnText =  btnStartVM.getText().toString();
+            if(btnText.equalsIgnoreCase("start")){
+                startVm(strVMId,time_remaining);
+            }
+            else if(btnText.equalsIgnoreCase("connect")){
+                doPair(myComputerDetails);
+            }
+        });
+
+        btnShutDownVM.setOnClickListener(view -> {
+            String btnText =  btnShutDownVM.getText().toString();
+            shutDownVM();
+
+        });
 
 
         profileButton.setOnClickListener(v -> startActivity(new Intent(PcView.this, ProfileActivity.class)));
@@ -487,9 +515,10 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
         inForeground = true;
         if (AppUtils.isOnline(PcView.this))
-                getVM();
+            getVM("");
         else
             AppUtils.showInternetDialog(PcView.this);
+        tvTimer = findViewById(R.id.tvTimer);
 
         // Create a GLSurfaceView to fetch GLRenderer unless we have
         // a cached result already.
@@ -562,12 +591,13 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             managerBinder.startPolling(details -> {
                 if (!freezeUpdates) {
                     PcView.this.runOnUiThread(() -> {
+                        Log.i("testt6" , "test");
                         if(details.manualAddress!=null){
                             saveComputerDeatails = details;
                             SharedPreferenceUtils.saveObject(PcView.this, Const.SAVE_DETAILS, saveComputerDeatails);
                             progressBar.setVisibility(View.GONE);
-                            showTimer(time_remaining);
-                            updateComputer(details);
+                           // showTimer(time_remaining);
+                            updateComputer(details ,time_remaining);
                         }
 
 
@@ -620,6 +650,7 @@ catch (Exception e){
 
         inForeground = true;
         startComputerUpdates();
+
     }
 
     @Override
@@ -710,7 +741,7 @@ catch (Exception e){
             return;
         }
 
-        Toast.makeText(PcView.this, getResources().getString(R.string.pairing), Toast.LENGTH_SHORT).show();
+    //    Toast.makeText(PcView.this, getResources().getString(R.string.pairing), Toast.LENGTH_SHORT).show();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -721,6 +752,8 @@ catch (Exception e){
                     // Stop updates and wait while pairing
                     stopComputerUpdates(true);
 
+                    Log.i("testt1" , "test");
+
                     httpConn = new NvHTTP(ServerHelper.getCurrentAddressFromComputer(computer), computer.httpsPort, managerBinder.getUniqueId(), computer.serverCert, PlatformBinding.getCryptoProvider(PcView.this));
                     if (httpConn.getPairState() == PairState.PAIRED) {
                         // Don't display any toast, but open the app list
@@ -728,19 +761,17 @@ catch (Exception e){
                         success = true;
                     } else {
                         final String pinStr = PairingManager.generatePinString();
+                        Log.i("testt2" , "test");
 
                         // Spin the dialog off in a thread because it blocks
 
-
-
 //                        MyDialog.displayDialog(PcView.this, getResources().getString(R.string.pair_pairing_title), getResources().getString(R.string.pair_pairing_msg) + " " + pinStr + "\n\n" + getResources().getString(R.string.pair_pairing_help), false);
-
-
 
 
                         //sendAndVerifySecurityPin(pinStr);
                         sendAndVerifySecurityPinManually(pinStr);
                         PairingManager pm = httpConn.getPairingManager();
+                        Log.i("testt3" , "test");
 
                         PairState pairState = pm.pair(httpConn.getServerInfo(true), pinStr);
                         if (pairState == PairState.PIN_WRONG) {
@@ -757,10 +788,11 @@ catch (Exception e){
                             // Just navigate to the app view without displaying a toast
                             message = null;
                             success = true;
+                            Log.i("testt4" , "test");
 
                             // Pin this certificate for later HTTPS use
                             managerBinder.getComputer(computer.uuid).serverCert = pm.getPairedCert();
-
+                            Log.i("testt5" , "test");
                             // Invalidate reachability information after pairing to force
                             // a refresh before reading pair state again
                             managerBinder.invalidateStateForComputer(computer.uuid);
@@ -778,7 +810,7 @@ catch (Exception e){
                     message = e.getMessage();
                 }
 
-                MyDialog.closeDialogs();
+              //  MyDialog.closeDialogs();
 
                 final String toastMessage = message;
                 final boolean toastSuccess = success;
@@ -786,10 +818,12 @@ catch (Exception e){
                     @Override
                     public void run() {
                         if (toastMessage != null) {
+                            Log.i("testt8" , "test");
                             Toast.makeText(PcView.this, toastMessage, Toast.LENGTH_LONG).show();
                         }
 
                         if (toastSuccess) {
+                            Log.i("testt5" , "test");
                             // Open the app list after a successful pairing attempt
                             doAppList(computer, true, false);
                         } else {
@@ -954,14 +988,14 @@ catch (Exception e){
             return;
         }
 
-        ServerHelper.doStart(PcView.this, new NvApp("app", computer.runningGameId, false), computer, managerBinder);
+       // ServerHelper.doStart(PcView.this, new NvApp("app", computer.runningGameId, false), computer, managerBinder);
 
-//        Intent i = new Intent(this, AppView.class);
-//        i.putExtra(AppView.NAME_EXTRA, computer.name);
-//        i.putExtra(AppView.UUID_EXTRA, computer.uuid);
-//        i.putExtra(AppView.NEW_PAIR_EXTRA, newlyPaired);
-//        i.putExtra(AppView.SHOW_HIDDEN_APPS_EXTRA, showHiddenGames);
-//        startActivity(i);
+        Intent i = new Intent(this, AppView.class);
+        i.putExtra(AppView.NAME_EXTRA, computer.name);
+        i.putExtra(AppView.UUID_EXTRA, computer.uuid);
+        i.putExtra(AppView.NEW_PAIR_EXTRA, newlyPaired);
+        i.putExtra(AppView.SHOW_HIDDEN_APPS_EXTRA, showHiddenGames);
+        startActivity(i);
     }
 
     @Override
@@ -1071,7 +1105,33 @@ catch (Exception e){
         }
     }
 
-    private void updateComputer(ComputerDetails details) {
+    private void updateComputer(ComputerDetails details , String value) {
+        Log.i("testt7" , "test");
+        showTimer(value);
+        myComputerDetails  =   details;
+        text_PcName.setText("" + details.name);
+        if(status.equalsIgnoreCase("running")){
+            btnShutDownVM.setVisibility(View.VISIBLE);
+            btnStartVM.setVisibility(View.VISIBLE);
+            text_PcName.setVisibility(View.VISIBLE);
+            btnStartVM.setText("Connect");
+            btnShutDownVM.setText("Shutdown");
+            progressBar.setVisibility(View.GONE);
+            //showTimer(time_remaining);
+
+        }
+        else if(status.equalsIgnoreCase("stopped")){
+            text_PcName.setVisibility(View.INVISIBLE);
+            btnStartVM.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
+           // showTimer(time_remaining);
+            btnStartVM.setText("Start");
+
+            btnShutDownVM.setVisibility(View.INVISIBLE);
+        }
+
+
+
         ComputerObject existingEntry = null;
 
         for (int i = 0; i < pcGridAdapter.getCount(); i++) {
@@ -1207,7 +1267,7 @@ catch (Exception e){
     }
 
 
-    private void getVMFromServerManually() {
+    private void getVMIP(String value) {
         Call<ResponseBody> call = retrofitAPI.getVMIP("Bearer " + accessToken);
         call.enqueue(new Callback<>() {
             @Override
@@ -1220,24 +1280,36 @@ catch (Exception e){
                             SharedPreferenceUtils.saveBoolean(PcView.this, Const.IS_SHUT_DOWN, false);
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
                             String vmIp = jsonArray.getJSONObject(0).getString("vmip");
-
                             handleDoneEvent(vmIp);
                             bindService(new Intent(PcView.this, ComputerManagerService.class), serviceConnection2, Service.BIND_AUTO_CREATE);
                             pcGridAdapter = new PcGridAdapter(PcView.this, PreferenceConfiguration.readPreferences(PcView.this));
                             initializeViews();
+                            Log.i("testttt_timming" , "fwef" + value);
+                          //  showTimer(value);
                         }
                     } catch (Exception e) {
                     }
                 }
                 else if(response.code()==400||response.code()==404||response.code()==500 ||response.code()==401){
-                    if(Integer.parseInt(startVmCallCount)<=1){
-                        openDialog(true ,"");
-                        searchPC.setText(getResources().getString(R.string.searching_pc_second));
+                    text_PcName.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.GONE);
+                    showTimer(time_remaining);
+                    btnStartVM.setVisibility(View.VISIBLE);
+                    btnStartVM.setText("Start");
+
+                    btnShutDownVM.setVisibility(View.INVISIBLE);
+                    if(status.equalsIgnoreCase("running")) {
+                        if (Integer.parseInt(startVmCallCount) <= 1) {
+                            openDialog(true, getResources().getString(R.string.searching_pc_second));
+                            searchPC.setText(getResources().getString(R.string.searching_pc_second));
+                        } else {
+                            openDialog(true, getResources().getString(R.string.startVMMsg));
+                            searchPC.setText(getResources().getString(R.string.startVMMsg));
+                        }
                     }
-                    else {
-                        openDialog(true,getResources().getString(R.string.startVMMsg));
-                        searchPC.setText(getResources().getString(R.string.startVMMsg));
-                    }
+                    else
+                        openDialog(true, getResources().getString(R.string.shutdown_vmmsg));
+
                 }
 
             }
@@ -1259,15 +1331,18 @@ catch (Exception e){
         tvTimer.setText(timeString + " hrs.");
     }
 
-    private void startVm(String strVMId) {
+    private void startVm(String strVMId ,String timeRemaining) {
+        loadingBar.setVisibility(View.VISIBLE);
         VMTimerReq  vmTimerReq  =  new VMTimerReq(strVMId);
         Call<MessageResponse> call = retrofitAPI.startVm("Bearer " + accessToken , vmTimerReq);
         call.enqueue(new Callback<>() {
             @Override
             public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
+                loadingBar.setVisibility(View.GONE);
                 if(response.code()==Const.SUCCESS_CODE_200) {
                     if (response.body().getSuccess().equalsIgnoreCase("true")) {
-                        getVMFromServerManually();
+
+                        getVMIP(timeRemaining);
                     }
                 }
                 else if(response.code()==Const.ERROR_CODE_404 || response.code()==Const.ERROR_CODE_400 || response.code()==Const.ERROR_CODE_500) {
@@ -1287,7 +1362,7 @@ catch (Exception e){
         });
     }
 
-    private void getVM() {
+    private void getVM(String myVmStatus) {
         Call<ResponseBody> call = retrofitAPI.getVMFromServer("Bearer " + accessToken);
         call.enqueue(new Callback<>() {
             @Override
@@ -1296,18 +1371,23 @@ catch (Exception e){
                     try {
                         JSONObject jsonObject = new JSONObject(response.body().string());
                         JSONArray jsonArray = jsonObject.getJSONArray("data");
-                        String strVMId = jsonArray.getJSONObject(0).getString("vmid");
+                        strVMId = jsonArray.getJSONObject(0).getString("vmid");
                         startVmCallCount = jsonArray.getJSONObject(0).getString("start_vm_call_count");
-                        String status = jsonArray.getJSONObject(0).getString("status");
-                        isShutDown   =  SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_SHUT_DOWN);
+                       if(myVmStatus.equalsIgnoreCase(""))
+                        status = jsonArray.getJSONObject(0).getString("status");
+                       else
+                          status =  myVmStatus;
+
                          time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
+                       // showTimer(time_remaining);
+                        Log.i("onBackPress" , "onBackPressed - getVm" + time_remaining);
                         if(startVmCallCount.equalsIgnoreCase("0"))
-                                startVm(strVMId);
+                                startVm(strVMId ,time_remaining);
                         else if(Integer.parseInt(startVmCallCount) >=1) {
                                 if (status.equalsIgnoreCase("running"))
-                                    getVMFromServerManually();
+                                    getVMIP(time_remaining);
                                 else
-                                    startVm(strVMId);
+                                    startVm(strVMId ,time_remaining);
                         }
                     } catch (Exception e) {
                     }
@@ -1324,4 +1404,31 @@ catch (Exception e){
             }
         });
     }
+    private void shutDownVM() {
+        loadingBar.setVisibility(View.VISIBLE);
+        VMTimerReq  vmTimerReq  =  new VMTimerReq(strVMId);
+
+        Call<MessageResponse> call = retrofitAPI.shutDownVm("Bearer " + accessToken , vmTimerReq);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
+                loadingBar.setVisibility(View.GONE);
+                if (response.code()==200) {
+                    //Toast.makeText(Game.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    SharedPreferenceUtils.saveBoolean(PcView.this, Const.IS_SHUT_DOWN, true);
+                    status =  "stopped";
+
+                    getVM(status);
+
+                }
+
+
+            }
+            @Override
+            public void onFailure(Call<MessageResponse> call, Throwable t) {
+                AppUtils.showToast(Const.something_went_wrong, PcView.this);
+            }
+        });
+    }
+
 }

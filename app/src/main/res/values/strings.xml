@@ -407,4 +407,11 @@
     <string name="tapRightCLick">To perform right click , put one finger on the screen and tap with
         the second one.</string>
 
+    <string name="start_vm">Start</string>
+    <string name="stop_vm">Shutdown</string>
+
+    <string name="shutdown_vmmsg">your machine was shutted down , please start your machine to continue</string>
+
+
+
 </resources>

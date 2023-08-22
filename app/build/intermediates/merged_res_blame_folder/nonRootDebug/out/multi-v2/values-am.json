@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-31:/values-am/values-am.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-3:/values-am/values-am.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\b95e33de72ab4f1d5f41235647aba1c4\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-am\\values.xml",

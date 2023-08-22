@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-31:/values-v29/values-v29.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-3:/values-v29/values-v29.xml",
             "map": [
                 {
-                    "source": "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\res\\values-v29\\styles.xml",
+                    "source": "C:\\TestNewMonlight\\moonlightAntplay\\app\\src\\main\\res\\values-v29\\styles.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

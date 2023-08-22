@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.antplay.app-mergeNonRootDebugResources-31:/values-pl/values-pl.xml",
+            "outputFile": "com.antplay.app-mergeNonRootDebugResources-3:/values-pl/values-pl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\e66b148cde062fd5c5e8b006265846a1\\transformed\\material-1.4.0\\res\\values-pl\\values-pl.xml",
@@ -37,6 +37,23 @@
                         "startOffsets": "3466,3570,3738,3860,3970,4121,4246,4357,4596,4767,4876,5051,5179,5338,5499,5568,5634",
                         "endColumns": "103,167,121,109,150,124,110,98,170,108,174,127,158,160,68,65,83",
                         "endOffsets": "3565,3733,3855,3965,4116,4241,4352,4451,4762,4871,5046,5174,5333,5494,5563,5629,5713"
+                    }
+                },
+                {
+                    "source": "C:\\TestNewMonlight\\moonlightAntplay\\app\\src\\main\\res\\values-pl\\strings.xml",
+                    "from": {
+                        "startLines": "4,2,5,3",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "179,57,247,114",
+                        "endColumns": "66,55,59,63",
+                        "endOffsets": "241,108,302,173"
+                    },
+                    "to": {
+                        "startLines": "107,108,109,110",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "9660,9727,9783,9843",
+                        "endColumns": "66,55,59,63",
+                        "endOffsets": "9722,9778,9838,9902"
                     }
                 },
                 {
@@ -88,23 +105,6 @@
                         "startOffsets": "4456",
                         "endColumns": "139",
                         "endOffsets": "4591"
-                    }
-                },
-                {
-                    "source": "C:\\vmsProject\\moonlightAntplay\\app\\src\\main\\res\\values-pl\\strings.xml",
-                    "from": {
-                        "startLines": "4,2,5,3",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "179,57,247,114",
-                        "endColumns": "66,55,59,63",
-                        "endOffsets": "241,108,302,173"
-                    },
-                    "to": {
-                        "startLines": "107,108,109,110",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "9660,9727,9783,9843",
-                        "endColumns": "66,55,59,63",
-                        "endOffsets": "9722,9778,9838,9902"
                     }
                 }
             ]

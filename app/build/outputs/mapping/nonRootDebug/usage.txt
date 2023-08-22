@@ -11051,6 +11051,8 @@ com.antplay.Game:
     private static final int STYLUS_UP_DEAD_ZONE_DELAY
     private static final int STYLUS_UP_DEAD_ZONE_RADIUS
     private static final int THREE_FINGER_TAP_THRESHOLD
+    public void exitActivity()
+    private synthetic void lambda$exitActivity$7()
     private static synthetic void lambda$openDialog$1(android.app.Dialog,android.view.View)
     private synthetic void lambda$openExitVMDialog$5(android.app.Dialog,android.view.View)
     private static synthetic void lambda$openExitVMDialog$6(android.app.Dialog,android.view.View)
