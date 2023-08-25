@@ -119,7 +119,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         OnSystemUiVisibilityChangeListener, GameGestures, StreamView.InputCallbacks,
         PerfOverlayListener, UsbDriverService.UsbDriverStateListener, View.OnKeyListener {
     private int lastButtonState = 0;
-
+    Dialog endVMDialog;
     // Only 2 touches are supported
     private final TouchContext[] touchContextMap = new TouchContext[2];
     private long threeFingerDownTime = 0;
@@ -186,6 +186,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
     boolean isBackPressed =  false;
 
+    Handler handler =  new Handler();
+
 
     private boolean connectedToUsbDriverService = false;
     private ServiceConnection usbDriverServiceConnection = new ServiceConnection() {
@@ -216,7 +218,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     public static final String EXTRA_PC_NAME = "PcName";
     public static final String EXTRA_APP_HDR = "HDR";
     public static final String EXTRA_SERVER_CERT = "ServerCert";
-    String accessToken , strVMId , time_remaining;
+    String accessToken , strVMId , time_remaining , status,vmip= "";
     RetrofitAPI retrofitAPI;
     VMTimerReq vmTimerReq;
 
@@ -255,7 +257,10 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         setContentView(R.layout.activity_game);
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         accessToken = SharedPreferenceUtils.getString(Game.this, Const.ACCESS_TOKEN);
-        getVM();
+        getVM("onCreate");
+
+
+
 
 
 
@@ -1147,7 +1152,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopConnection(false);
+        Log.i("testt_onDestroy" , "testtttt");
+        stopConnection(true);
 
         SpinnerDialog.closeDialogs(this);
         MyDialog.closeDialogs();
@@ -1179,7 +1185,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     @Override
     protected void onStop() {
         super.onStop();
-
+        Log.i("testt_onStop" , "testtttt");
         SpinnerDialog.closeDialogs(this);
         MyDialog.closeDialogs();
 
@@ -1807,7 +1813,6 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                         }
                         //else
 
-                      //  openDialog();
                     }
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && (event.getFlags() & MotionEvent.FLAG_CANCELED) != 0) {
@@ -1875,30 +1880,6 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         return false;
     }
 
-    private void openDialog() {
-        Dialog dialog = new Dialog(Game.this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialog_logout);
-        dialog.setCancelable(false);
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        TextView titleText =  dialog.findViewById(R.id.titleText);
-        TextView msgText =  dialog.findViewById(R.id.msgText);
-        Button txtNo = dialog.findViewById(R.id.txtNo);
-        Button txtYes = dialog.findViewById(R.id.txtYes);
-        titleText.setText(getResources().getString(R.string.no_vm_title));
-        txtNo.setVisibility(View.GONE);
-        txtYes.setText("Ok");
-        msgText.setText(getResources().getString(R.string.open_keyword) + "\n" +  getResources().getString(R.string.tapRightCLick));
-
-        txtYes.setOnClickListener(view -> {
-            dialog.dismiss();
-        });
-
-        dialog.show();
-
-    }
 
     @Override
     public boolean onGenericMotionEvent(MotionEvent event) {
@@ -1998,6 +1979,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     private void stopConnection(boolean flag) {
         if (connecting || connected) {
             connecting = connected = false;
+            SharedPreferenceUtils.saveBoolean(Game.this,Const.IS_VM_DISCONNECTED,true);
             updatePipAutoEnter();
             if(!isBackPressed)
                 endVMTimeAPi(flag);
@@ -2163,6 +2145,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                     spinner = null;
                 }
                 connected = true;
+                SharedPreferenceUtils.saveBoolean(Game.this,Const.IS_VM_CONNECTED,true);
+                SharedPreferenceUtils.saveBoolean(Game.this,Const.IS_VM_DISCONNECTED,false);
 
                 startVMTimeAPi();
 
@@ -2211,6 +2195,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     }
 
     private void endVMTimeAPi(boolean value) {
+        Log.i("test_onEndVmm" , "testt" + value);
+        openDialog();
         vmTimerReq = new VMTimerReq(strVMId);
         Call<MessageResponse> call = retrofitAPI.endVmTime("Bearer " + accessToken , vmTimerReq);
         call.enqueue(new Callback<>() {
@@ -2219,9 +2205,10 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                try {
                    if (response.body().getSuccess().equalsIgnoreCase("true")) {
                        if(value) {
-                              shutDownVM();
+                           getVM("endVmTImer");
                        }
                        else {
+                            endVMDialog.dismiss();
                            AppUtils.navigateScreen(Game.this, PcView.class);
                                finishAffinity();
 
@@ -2239,7 +2226,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         });
     }
 
-   private void getVM() {
+   private void getVM(String getVmSTatus) {
+        strVMId = "";
         Call<ResponseBody> call = retrofitAPI.getVMFromServer("Bearer " + accessToken);
         call.enqueue(new Callback<>() {
             @Override
@@ -2250,11 +2238,17 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                         JSONArray jsonArray = jsonObject.getJSONArray("data");
                         strVMId = jsonArray.getJSONObject(0).getString("vmid");
                         time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
-                      //  SharedPreferenceUtils.saveString(Game.this, Const.VMID, strVMId);
-                       // Log.i("testt13" , "test");
-                        // time_remaining = "100";
+                        status = jsonArray.getJSONObject(0).getString("status");
+                        vmip = jsonArray.getJSONObject(0).getString("vmip");
 
-                        Log.i("testt13" , "tesbebt");
+                        if(getVmSTatus.equalsIgnoreCase("endVmTImer")){
+                            if (status.equalsIgnoreCase("running")){
+                                if(vmip!=null)
+                                    shutDownVM();
+                                else
+                                    stopVM();
+                            }
+                        }
 
                     }
                     catch (Exception e){
@@ -2529,24 +2523,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                 return false;
         }
     }
-private void shutDownVM() {
-    Call<MessageResponse> call = retrofitAPI.shutDownVm("Bearer " + accessToken , vmTimerReq);
-    call.enqueue(new Callback<>() {
-        @Override
-            public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
-                if (response.body().getSuccess().equalsIgnoreCase("true")) {
-                    //Toast.makeText(Game.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                    SharedPreferenceUtils.saveBoolean(Game.this, Const.IS_SHUT_DOWN, true);
-                    AppUtils.navigateScreen(Game.this, PcView.class);
-                    finishAffinity();
-                }
-            }
-            @Override
-            public void onFailure(Call<MessageResponse> call, Throwable t) {
-                AppUtils.showToast(Const.something_went_wrong, Game.this);
-            }
-        });
-    }
+
     @Override
     public void onBackPressed() {
 
@@ -2622,4 +2599,71 @@ private void shutDownVM() {
         Toast.makeText(this, "Please click back again to exit the VM", Toast.LENGTH_SHORT).show();
         new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
     }
+    private void shutDownVM() {
+        Call<MessageResponse> call = retrofitAPI.shutDownVm("Bearer " + accessToken , vmTimerReq);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
+                if (response.code()==200) {
+                    endVMDialog.dismiss();
+                    //Toast.makeText(Game.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    SharedPreferenceUtils.saveBoolean(Game.this, Const.IS_SHUT_DOWN, true);
+                    AppUtils.navigateScreen(Game.this, PcView.class);
+                    finishAffinity();
+                }
+            }
+            @Override
+            public void onFailure(Call<MessageResponse> call, Throwable t) {
+                AppUtils.showToast(Const.something_went_wrong, Game.this);
+            }
+        });
+    }
+
+    private void stopVM() {
+        Call<MessageResponse> call = retrofitAPI.stopVM("Bearer " + accessToken , vmTimerReq);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
+                if (response.code()==200) {
+                    endVMDialog.dismiss();
+                    //Toast.makeText(Game.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    SharedPreferenceUtils.saveBoolean(Game.this, Const.IS_SHUT_DOWN, true);
+                    AppUtils.navigateScreen(Game.this, PcView.class);
+                    finishAffinity();
+                }
+            }
+            @Override
+            public void onFailure(Call<MessageResponse> call, Throwable t) {
+                AppUtils.showToast(Const.something_went_wrong, Game.this);
+            }
+        });
+    }
+    private void openDialog() {
+        endVMDialog = new Dialog(Game.this);
+        endVMDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        endVMDialog.setContentView(R.layout.dialog_logout);
+        endVMDialog.setCancelable(false);
+        endVMDialog.setCanceledOnTouchOutside(false);
+        endVMDialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        endVMDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titleText =  endVMDialog.findViewById(R.id.titleText);
+        TextView msgText =  endVMDialog.findViewById(R.id.msgText);
+        Button txtNo = endVMDialog.findViewById(R.id.txtNo);
+        Button txtYes = endVMDialog.findViewById(R.id.txtYes);
+        titleText.setText(getResources().getString(R.string.no_vm_title));
+        txtYes.setVisibility(View.GONE);
+        txtNo.setVisibility(View.GONE);
+
+        msgText.setText("Please wait");
+
+        txtYes.setOnClickListener(view -> {
+            endVMDialog.dismiss();
+        });
+        txtNo.setOnClickListener(view -> {
+             endVMDialog.dismiss();
+        });
+         endVMDialog.show();
+    }
+
+
 }

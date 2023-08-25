@@ -13,8 +13,10 @@ import com.antplay.nvstream.http.NvApp;
 import com.antplay.nvstream.http.NvHTTP;
 import com.antplay.nvstream.http.PairingManager;
 import com.antplay.preferences.PreferenceConfiguration;
+import com.antplay.ui.activity.PcView;
 import com.antplay.ui.fragments.AdapterFragment;
 import com.antplay.ui.intrface.AdapterFragmentCallbacks;
+import com.antplay.utils.AppUtils;
 import com.antplay.utils.CacheHelper;
 import com.antplay.utils.MyDialog;
 import com.antplay.utils.ServerHelper;
@@ -653,5 +655,10 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
         public String toString() {
             return app.getAppName();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        AppUtils.navigateScreen(AppView.this, PcView.class);
     }
 }

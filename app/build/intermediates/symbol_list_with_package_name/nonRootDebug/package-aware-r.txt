@@ -2519,6 +2519,7 @@ drawable back_arrow
 drawable backarrow
 drawable background_image
 drawable backgroundimage
+drawable baseline_refresh_24
 drawable bg_white_round
 drawable black_trans_bg
 drawable border_button
@@ -2994,6 +2995,7 @@ id ivConfirmPasswordShow
 id ivNewPasswordShow
 id ivOldPasswordShow
 id ivPasswordShow
+id ivRefresh
 id ivThreeFinger
 id ivTwoFinger
 id jumpToEnd

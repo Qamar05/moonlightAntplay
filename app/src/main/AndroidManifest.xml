@@ -30,6 +30,7 @@
         android:required="false" />
 
     <application
+        android:name=".ui.activity.MyApplication"
         android:allowBackup="true"
         android:appCategory="game"
         android:banner="@drawable/atv_banner"

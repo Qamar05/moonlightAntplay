@@ -21,6 +21,8 @@ public class Const {
     public static String IS_LOGGED_IN="logged_in";
     public static String IS_SHUT_DOWN="shut_down";
     public static String SHOW_OVERLAY="show_overlay";
+    public static String IS_VM_CONNECTED="vm_connected";
+    public static String IS_VM_DISCONNECTED="vm_disconnected";
     public static String SAVE_DETAILS="save_details";
 
     public static String IS_STARTVM="startvm";

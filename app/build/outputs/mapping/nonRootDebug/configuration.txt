@@ -168,6 +168,7 @@
 -keep class com.antplay.ui.activity.LoginActivity { <init>(); }
 -keep class com.antplay.ui.activity.LoginSignUpActivity { <init>(); }
 -keep class com.antplay.ui.activity.LoginWithOTP { <init>(); }
+-keep class com.antplay.ui.activity.MyApplication { <init>(); }
 -keep class com.antplay.ui.activity.OnBoardingActivity { <init>(); }
 -keep class com.antplay.ui.activity.PaymentHistoryActivity { <init>(); }
 -keep class com.antplay.ui.activity.PcView { <init>(); }

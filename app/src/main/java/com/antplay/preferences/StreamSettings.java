@@ -156,29 +156,29 @@ public class StreamSettings extends Activity {
 
             String newValue = nativeWidth+"x"+nativeHeight;
 
-            CharSequence[] values = pref.getEntryValues();
+//            CharSequence[] values = pref.getEntryValues();
 
             // Check if the native resolution is already present
-            for (CharSequence value : values) {
-                if (newValue.equals(value.toString())) {
-                    // It is present in the default list, so don't add it again
-                    return;
-                }
-            }
+//            for (CharSequence value : values) {
+//                if (newValue.equals(value.toString())) {
+//                    // It is present in the default list, so don't add it again
+//                    return;
+//                }
+//            }
 
-            CharSequence[] newEntries = Arrays.copyOf(pref.getEntries(), pref.getEntries().length + 1);
-            CharSequence[] newValues = Arrays.copyOf(values, values.length + 1);
+//            CharSequence[] newEntries = Arrays.copyOf(pref.getEntries(), pref.getEntries().length + 1);
+//            CharSequence[] newValues = Arrays.copyOf(values, values.length + 1);
 
             // Add the new native option
-            newEntries[newEntries.length - 1] = newName;
-            newValues[newValues.length - 1] = newValue;
-
-            pref.setEntries(newEntries);
-            pref.setEntryValues(newValues);
-
-            if (newValues.length - 1 < nativeResolutionStartIndex) {
-                nativeResolutionStartIndex = newValues.length - 1;
-            }
+//            newEntries[newEntries.length - 1] = newName;
+//            newValues[newValues.length - 1] = newValue;
+//
+//            pref.setEntries(newEntries);
+//            pref.setEntryValues(newValues);
+//
+//            if (newValues.length - 1 < nativeResolutionStartIndex) {
+//                nativeResolutionStartIndex = newValues.length - 1;
+//            }
         }
 
         private void addNativeResolutionEntries(int nativeWidth, int nativeHeight, boolean insetsRemoved) {

@@ -279,7 +279,7 @@
         android:fontFamily="sans-serif"
         android:hint="@string/pin_code"
         android:inputType="number"
-        android:maxLength="20"
+        android:maxLength="6"
         android:padding="15dp"
         android:textColorHint="@color/gray"
         android:textSize="@dimen/_12sdp"

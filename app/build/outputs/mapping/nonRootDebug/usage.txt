@@ -11052,12 +11052,10 @@ com.antplay.Game:
     private static final int STYLUS_UP_DEAD_ZONE_RADIUS
     private static final int THREE_FINGER_TAP_THRESHOLD
     public void exitActivity()
-    private synthetic void lambda$exitActivity$7()
-    private static synthetic void lambda$openDialog$1(android.app.Dialog,android.view.View)
-    private synthetic void lambda$openExitVMDialog$5(android.app.Dialog,android.view.View)
-    private static synthetic void lambda$openExitVMDialog$6(android.app.Dialog,android.view.View)
-    private static synthetic void lambda$openTimerDialog$3(android.app.Dialog,android.view.View)
-    private void openDialog()
+    private synthetic void lambda$exitActivity$6()
+    private synthetic void lambda$openExitVMDialog$4(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openExitVMDialog$5(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openTimerDialog$2(android.app.Dialog,android.view.View)
     private void openExitVMDialog()
     private void openTimerDialog()
 com.antplay.LimeLog:
@@ -11626,6 +11624,8 @@ com.antplay.ui.activity.HomeActivity
 com.antplay.ui.activity.LoginActivity:
     java.lang.String st_email
     java.lang.String st_password
+com.antplay.ui.activity.MyApplication:
+    public static void activityDestroy()
 com.antplay.ui.activity.OnBoardingActivity:
     private void mathscalculation()
     private void updateSharedPreferences(boolean)
@@ -11640,6 +11640,11 @@ com.antplay.ui.activity.PcView:
     private static final int UNPAIR_ID
     private static final int VIEW_DETAILS_ID
     private static final int WOL_ID
+    android.app.Dialog startVMDialog
+    java.util.Timer startVmTimer
+    private synthetic void lambda$openStartVMDialog$14(android.view.View)
+    private synthetic void lambda$openStartVMDialog$15(android.view.View)
+    private void openStartVMDialog()
 com.antplay.ui.activity.ProfileActivity:
     private int dayInYear(long)
     private java.lang.String getDateFromSec(long)

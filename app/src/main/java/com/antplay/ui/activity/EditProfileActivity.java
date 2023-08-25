@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,8 +44,10 @@ import retrofit2.Response;
 public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener, StateListAdapter.ButtonClickListener {
     private String TAG = "ANT_PLAY";
     LinearLayout linearLayout;
-    EditText edTxtName, edTxtUserName, edTxtPhoneNumber, edTxtEmail, edTxtAge, edTxtState , edTxtCity, edTxtAddress, editTextPinCode;
+    EditText edTxtName, edTxtUserName, edTxtPhoneNumber, edTxtEmail, edTxtAge , edTxtCity, edTxtAddress, editTextPinCode;
+   TextView edTxtState;
     Button buttonUpdateProfile;
+
     Spinner spinnerStateList;
     private ProgressBar progressBar;
     List<String> stateList;

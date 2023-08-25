@@ -399,7 +399,7 @@
     <string name="no_vm_msg">Please wait while we are creating your virtual machine, it may take half an hour.</string>
     <string name="searching_pc_first">To get a virtual machine, purchase a plan</string>
     <string name="searching_pc_second"> Please wait for max. 20 min while we are creating your machine.</string>
-    <string name="startVMMsg">Please wait while we are getting your virtual machine ready for you.</string>
+    <string name="startVMMsg">Please wait while we are getting your virtual machine ready for you.it may take upto 60 sec.</string>
 
     <string name="exit_vm_msg">Are you sure you want to Exit?</string>
     <string name="exit_vm">Exit</string>
@@ -411,6 +411,10 @@
     <string name="stop_vm">Shutdown</string>
 
     <string name="shutdown_vmmsg">your machine was shutted down , please start your machine to continue</string>
+
+
+
+
 
 
 
