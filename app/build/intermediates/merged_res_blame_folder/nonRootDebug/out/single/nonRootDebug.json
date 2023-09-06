@@ -12,16 +12,20 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xhdpi\\ic_computer.png"
     },
     {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_header_layout.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\header_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_background_image.jpg.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\background_image.jpg"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_logout.png.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\logout.png"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_btngradient_logout.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\btngradient_logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_logout.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\logout.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-ldpi_ic_help.png.flat",
@@ -30,6 +34,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xxxhdpi_ic_help.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xxxhdpi\\ic_help.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-5:/drawable-xhdpi_baseline_keyboard_24.png.flat",
+        "source": "com.antplay.app-nonRoot-0:/drawable-xhdpi/baseline_keyboard_24.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_walkthrough_new_4_tab.jpg.flat",
@@ -54,6 +62,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\mipmap-anydpi-v26_ic_contactus_round.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\mipmap-anydpi-v26\\ic_contactus_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-mdpi_baseline_help_outline_24.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-mdpi\\baseline_help_outline_24.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-anydpi-v21_ic_help.xml.flat",
@@ -92,12 +104,12 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\close_icn.png"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xhdpi_ic_contact_us.png.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable-xhdpi\\ic_contact_us.png"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-anydpi-v21\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xhdpi_ic_contact_us.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable-xhdpi\\ic_contact_us.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-mdpi_ic_help.png.flat",
@@ -132,12 +144,12 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\mipmap-xxhdpi_ic_contactus.png.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\mipmap-xxhdpi\\ic_contactus.png"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_btngradient.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\btngradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\mipmap-xxhdpi_ic_contactus.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\mipmap-xxhdpi\\ic_contactus.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xxhdpi_ic_contactus_foreground.png.flat",
@@ -276,6 +288,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\dialog_logout.xml"
     },
     {
+        "merged": "com.antplay.app-merged_res-5:/drawable-mdpi_baseline_keyboard_24.png.flat",
+        "source": "com.antplay.app-nonRoot-0:/drawable-mdpi/baseline_keyboard_24.png"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\mipmap-xxhdpi\\ic_launcher.png"
     },
@@ -348,12 +364,16 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xhdpi\\baseline_refresh_24.png"
     },
     {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_activity_subscription_plan.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\activity_subscription_plan.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\mipmap-xxxhdpi_ic_pc_scut_foreground.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\mipmap-xxxhdpi\\ic_pc_scut_foreground.png"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_activity_subscription_plan.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\activity_subscription_plan.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xhdpi_baseline_help_outline_24.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xhdpi\\baseline_help_outline_24.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xhdpi_ic_play.png.flat",
@@ -382,6 +402,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xhdpi_ouya_icon.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable-xhdpi\\ouya_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-anydpi-v21_baseline_help_outline_24.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-anydpi-v21\\baseline_help_outline_24.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\xml_network_security_config.xml.flat",
@@ -460,6 +484,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\website.png"
     },
     {
+        "merged": "com.antplay.app-merged_res-5:/layout_activity_game.xml.flat",
+        "source": "com.antplay.app-main-7:/layout/activity_game.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_walkthrough_new_6_tab.jpg.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\walkthrough_new_6_tab.jpg"
     },
@@ -502,6 +530,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_item_billing_plan.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\item_billing_plan.xml"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-5:/drawable-ldpi_baseline_keyboard_24.png.flat",
+        "source": "com.antplay.app-nonRoot-0:/drawable-ldpi/baseline_keyboard_24.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_activity_on_boarding.xml.flat",
@@ -558,6 +590,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xhdpi_ic_lock.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xhdpi\\ic_lock.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-hdpi_baseline_help_outline_24.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-hdpi\\baseline_help_outline_24.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xxhdpi_ic_add.png.flat",
@@ -684,10 +720,6 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\text_background.xml"
     },
     {
-        "merged": "com.antplay.app-merged_res-5:/layout_activity_edit_profile.xml.flat",
-        "source": "com.antplay.app-main-7:/layout/activity_edit_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_tab_selector.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\tab_selector.xml"
     },
@@ -718,6 +750,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_two_finger.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\two_finger.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xxxhdpi_baseline_help_outline_24.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xxxhdpi\\baseline_help_outline_24.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_bg_white_round.xml.flat",
@@ -762,6 +798,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_default_dot.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\default_dot.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_shutingdownvm_dialog_layout.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\shutingdownvm_dialog_layout.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xxhdpi_forward.png.flat",
@@ -876,6 +916,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-ldpi\\forward.png"
     },
     {
+        "merged": "com.antplay.app-merged_res-5:/drawable-anydpi-v21_baseline_keyboard_24.xml.flat",
+        "source": "com.antplay.app-nonRoot-0:/drawable-anydpi-v21/baseline_keyboard_24.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_state_item_adapter_layout.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\state_item_adapter_layout.xml"
     },
@@ -924,6 +968,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable-xxhdpi\\ic_contact_us.png"
     },
     {
+        "merged": "com.antplay.app-merged_res-5:/drawable-xxxhdpi_baseline_keyboard_24.png.flat",
+        "source": "com.antplay.app-nonRoot-0:/drawable-xxxhdpi/baseline_keyboard_24.png"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_fragment_on_boarding_six.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\fragment_on_boarding_six.xml"
     },
@@ -948,6 +996,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\videobackground.jpg"
     },
     {
+        "merged": "com.antplay.app-merged_res-5:/drawable-hdpi_baseline_keyboard_24.png.flat",
+        "source": "com.antplay.app-nonRoot-0:/drawable-hdpi/baseline_keyboard_24.png"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_app_icon.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\app_icon.png"
     },
@@ -958,6 +1010,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-mdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-5:/drawable-xxhdpi_baseline_keyboard_24.png.flat",
+        "source": "com.antplay.app-nonRoot-0:/drawable-xxhdpi/baseline_keyboard_24.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-anydpi-v21_ic_add.xml.flat",
@@ -1032,6 +1088,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable-hdpi\\ic_contact_us.png"
     },
     {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xxhdpi_baseline_help_outline_24.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xxhdpi\\baseline_help_outline_24.png"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-hdpi_ic_profile.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-hdpi\\ic_profile.png"
     },
@@ -1100,10 +1160,6 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xhdpi\\ic_contactus_background.png"
     },
     {
-        "merged": "com.antplay.app-merged_res-5:/layout-sw600dp_activity_edit_profile.xml.flat",
-        "source": "com.antplay.app-main-7:/layout-sw600dp/activity_edit_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-ldpi_ic_add.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-ldpi\\ic_add.png"
     },
@@ -1134,6 +1190,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xhdpi_backarrow.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable-xhdpi\\backarrow.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-ldpi_baseline_help_outline_24.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-ldpi\\baseline_help_outline_24.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\mipmap-xxhdpi_ic_pc_scut.png.flat",

@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.IBinder;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Rational;
 import android.view.Display;
@@ -119,6 +120,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         OnSystemUiVisibilityChangeListener, GameGestures, StreamView.InputCallbacks,
         PerfOverlayListener, UsbDriverService.UsbDriverStateListener, View.OnKeyListener {
     private int lastButtonState = 0;
+    int width , height;
     Dialog endVMDialog;
     // Only 2 touches are supported
     private final TouchContext[] touchContextMap = new TouchContext[2];
@@ -181,7 +183,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     private WifiManager.WifiLock lowLatencyWifiLock;
 
     TextView tvTimer ,tvExpire;
-    ImageView ivClose;
+    ImageView ivClose ,ivKeyboard;
     ConstraintLayout  overlayLayout;
 
     boolean isBackPressed =  false;
@@ -259,6 +261,11 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         accessToken = SharedPreferenceUtils.getString(Game.this, Const.ACCESS_TOKEN);
         getVM("onCreate");
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+         height = displayMetrics.heightPixels;
+         width = displayMetrics.widthPixels;
+
 
 
 
@@ -293,6 +300,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         tvExpire =  findViewById(R.id.tvExpire);
         ivClose =  findViewById(R.id.ivClose);
         overlayLayout =  findViewById(R.id.overlayLayout);
+        ivKeyboard =  findViewById(R.id.ivKeyboard);
 
         String value = SharedPreferenceUtils.getString(Game.this,Const.SHOW_OVERLAY);
         if(value ==null || !value.equalsIgnoreCase("true")){
@@ -310,6 +318,12 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             overlayLayout.setVisibility(View.GONE);
         });
 
+        ivKeyboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toggleKeyboard();
+            }
+        });
 
 
 
@@ -420,6 +434,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             finish();
             return;
         }
+
 
         Log.i("testt_appp"  , "testt_1");
 
@@ -544,6 +559,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             }
         }
 
+        Log.i("getWidthHeight" , ""+prefConfig.width + prefConfig.height);
         StreamConfiguration config = new StreamConfiguration.Builder()
                 .setResolution(prefConfig.width, prefConfig.height)
                 .setLaunchRefreshRate(prefConfig.fps)
@@ -736,11 +752,11 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
     @TargetApi(Build.VERSION_CODES.O)
     private PictureInPictureParams getPictureInPictureParams(boolean autoEnter) {
+        Log.i("getWidthHeight" , ""+prefConfig.width + prefConfig.height);
         PictureInPictureParams.Builder builder =
                 new PictureInPictureParams.Builder()
                         .setAspectRatio(new Rational(prefConfig.width, prefConfig.height))
-                        .setSourceRectHint(new Rect(
-                                streamView.getLeft(), streamView.getTop(),
+                        .setSourceRectHint(new Rect(streamView.getLeft(), streamView.getTop(),
                                 streamView.getRight(), streamView.getBottom()));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -1977,28 +1993,33 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     }
 
     private void stopConnection(boolean flag) {
-        if (connecting || connected) {
-            connecting = connected = false;
-            SharedPreferenceUtils.saveBoolean(Game.this,Const.IS_VM_DISCONNECTED,true);
-            updatePipAutoEnter();
-            if(!isBackPressed)
-                endVMTimeAPi(flag);
+        try {
+            if (connecting || connected) {
+                connecting = connected = false;
+                SharedPreferenceUtils.saveBoolean(Game.this, Const.IS_VM_DISCONNECTED, true);
+                updatePipAutoEnter();
+                if (!isBackPressed)
+                    endVMTimeAPi(flag);
 
-            controllerHandler.stop();
+                controllerHandler.stop();
 
-            // Update GameManager state to indicate we're no longer in game
-            UiHelper.notifyStreamEnded(this);
+                // Update GameManager state to indicate we're no longer in game
+                UiHelper.notifyStreamEnded(this);
 
-            // Stop may take a few hundred ms to do some network I/O to tell
-            // the server we're going away and clean up. Let it run in a separate
-            // thread to keep things smooth for the UI. Inside moonlight-common,
-            // we prevent another thread from starting a connection before and
-            // during the process of stopping this one.
-            new Thread() {
-                public void run() {
-                    conn.stop();
-                }
-            }.start();
+                // Stop may take a few hundred ms to do some network I/O to tell
+                // the server we're going away and clean up. Let it run in a separate
+                // thread to keep things smooth for the UI. Inside moonlight-common,
+                // we prevent another thread from starting a connection before and
+                // during the process of stopping this one.
+                new Thread() {
+                    public void run() {
+                        conn.stop();
+                    }
+                }.start();
+            }
+        }
+        catch (Exception e){
+
         }
     }
 
@@ -2009,27 +2030,32 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         final int portTestResult = MoonBridge.testClientConnectivity(ServerHelper.CONNECTION_TEST_SERVER, 443, portFlags);
 
         runOnUiThread(() -> {
-            if (spinner != null) {
-                spinner.dismiss();
-                spinner = null;
+            try {
+                if (spinner != null) {
+                    spinner.dismiss();
+                    spinner = null;
+                }
+                if (!displayedFailureDialog) {
+                    displayedFailureDialog = true;
+                    LimeLog.severe(stage + " failed: " + errorCode);
+                    // If video initialization failed and the surface is still valid, display extra information for the user
+                    if (stage.contains("video") && streamView.getHolder().getSurface().isValid()) {
+                        Toast.makeText(Game.this, getResources().getText(R.string.video_decoder_init_failed), Toast.LENGTH_LONG).show();
+                    }
+                    String dialogText = getResources().getString(R.string.conn_error_msg) + " " + stage + " (error " + errorCode + ")";
+                    if (portFlags != 0) {
+                        dialogText += "\n\n" + getResources().getString(R.string.check_ports_msg) + "\n" +
+                                MoonBridge.stringifyPortFlags(portFlags, "\n");
+                    }
+                    if (portTestResult != MoonBridge.ML_TEST_RESULT_INCONCLUSIVE && portTestResult != 0) {
+                        dialogText += "\n\n" + getResources().getString(R.string.nettest_text_blocked);
+                    }
+                    endVMTimeAPi(false);
+                    //    MyDialog.displayDialog(Game.this, getResources().getString(R.string.conn_error_title), dialogText, true);
+                }
             }
-            if (!displayedFailureDialog) {
-                displayedFailureDialog = true;
-                LimeLog.severe(stage + " failed: " + errorCode);
-                // If video initialization failed and the surface is still valid, display extra information for the user
-                if (stage.contains("video") && streamView.getHolder().getSurface().isValid()) {
-                    Toast.makeText(Game.this, getResources().getText(R.string.video_decoder_init_failed), Toast.LENGTH_LONG).show();
-                }
-                String dialogText = getResources().getString(R.string.conn_error_msg) + " " + stage +" (error "+errorCode+")";
-                if (portFlags != 0) {
-                    dialogText += "\n\n" + getResources().getString(R.string.check_ports_msg) + "\n" +
-                            MoonBridge.stringifyPortFlags(portFlags, "\n");
-                }
-                if (portTestResult != MoonBridge.ML_TEST_RESULT_INCONCLUSIVE && portTestResult != 0)  {
-                    dialogText += "\n\n" + getResources().getString(R.string.nettest_text_blocked);
-                }
-                endVMTimeAPi(false);
-                MyDialog.displayDialog(Game.this, getResources().getString(R.string.conn_error_title), dialogText, true);
+            catch (Exception e){
+
             }
         });
     }
@@ -2041,30 +2067,21 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         final int portFlags = MoonBridge.getPortFlagsFromTerminationErrorCode(errorCode);
         final int portTestResult = MoonBridge.testClientConnectivity(ServerHelper.CONNECTION_TEST_SERVER,443, portFlags);
 
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                // Let the display go to sleep now
+        runOnUiThread(() -> {
+            try {
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-                // Ungrab input
                 setInputGrabState(false);
-
                 if (!displayedFailureDialog) {
                     displayedFailureDialog = true;
                     LimeLog.severe("Connection terminated: " + errorCode);
                     stopConnection(false);
-
-                    // Display the error dialog if it was an unexpected termination.
-                    // Otherwise, just finish the activity immediately.
                     if (errorCode != MoonBridge.ML_ERROR_GRACEFUL_TERMINATION) {
                         String message;
 
                         if (portTestResult != MoonBridge.ML_TEST_RESULT_INCONCLUSIVE && portTestResult != 0) {
                             // If we got a blocked result, that supersedes any other error message
                             message = getResources().getString(R.string.nettest_text_blocked);
-                        }
-                        else {
+                        } else {
                             switch (errorCode) {
                                 case MoonBridge.ML_ERROR_NO_VIDEO_TRAFFIC:
                                     message = getResources().getString(R.string.no_video_received_error);
@@ -2096,13 +2113,16 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
                         MyDialog.displayDialog(Game.this, getResources().getString(R.string.conn_terminated_title),
                                 message, true);
-                    }
-                    else {
+                    } else {
                         finish();
                     }
                 }
             }
+            catch (Exception e){
+
+            }
         });
+
     }
 
     @Override
@@ -2608,6 +2628,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                     endVMDialog.dismiss();
                     //Toast.makeText(Game.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     SharedPreferenceUtils.saveBoolean(Game.this, Const.IS_SHUT_DOWN, true);
+
                     AppUtils.navigateScreen(Game.this, PcView.class);
                     finishAffinity();
                 }
@@ -2664,6 +2685,5 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         });
          endVMDialog.show();
     }
-
 
 }

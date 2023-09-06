@@ -120,7 +120,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 public void onResponse(Call<UserRegisterResp> call, Response<UserRegisterResp> response) {
                     progressBar.setVisibility(View.GONE);
                         if (response.code()==Const.SUCCESS_CODE_200){
-                            Toast.makeText(SignupActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignupActivity.this, getResources().getString(R.string.check_mail), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(SignupActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             AppUtils.navigateScreen((Activity) mContext, LoginActivity.class);
                         }
                         else if (response.code()==Const.ERROR_CODE_500 ||
@@ -133,9 +134,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                             catch (Exception e) {
                                 e.printStackTrace();
                             }
-
-                    }
-
+                        }
                 }
                 @Override
                 public void onFailure(Call<UserRegisterResp> call, Throwable t) {

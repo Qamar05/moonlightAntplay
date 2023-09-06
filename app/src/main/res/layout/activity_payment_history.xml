@@ -39,7 +39,7 @@
                 android:fontFamily="sans-serif"
                 android:text="@string/back"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_12sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textStyle="normal" />
 
         </LinearLayout>
@@ -64,7 +64,7 @@
                 android:layout_margin="@dimen/_10sdp"
                 android:text="@string/payment_history"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_12sdp" />
+                android:textSize="@dimen/_14sdp" />
 
         </LinearLayout>
 

@@ -8,34 +8,44 @@
     tools:context=".ui.activity.SubscriptionPlanActivity">
 
 
-
-    <ImageView
-        android:layout_marginTop="@dimen/_10sdp"
+    <LinearLayout
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:id="@+id/imgBack"
-        android:layout_width="@dimen/_10sdp"
-        android:layout_height="@dimen/_10sdp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:src="@drawable/backarrow" />
-
-    <TextView
-        android:layout_marginTop="@dimen/_6sdp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/back_linear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/back"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintStart_toEndOf="@id/imgBack"
-        android:textStyle="normal" />
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/backarrow" />
+
+
+        <TextView
+            android:id="@+id/backText"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toEndOf="@id/imgBack"
+            android:textStyle="normal" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/titleLayout"
-        app:layout_constraintTop_toBottomOf="@+id/imgBack"
+        app:layout_constraintTop_toBottomOf="@+id/back_linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_20sdp"

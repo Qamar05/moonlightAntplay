@@ -180,7 +180,7 @@
         android:fontFamily="sans-serif"
         android:hint="@string/age"
         android:inputType="number"
-        android:maxLength="3"
+        android:maxLength="2"
         android:padding="15dp"
         android:digits="1234567890"
         android:textColorHint="@color/gray"

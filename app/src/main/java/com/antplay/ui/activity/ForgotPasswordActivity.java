@@ -41,7 +41,6 @@ public class ForgotPasswordActivity extends Activity {
         progressBar =  findViewById(R.id.progressSignUp);
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         btnResetPassword.setOnClickListener(view -> {
-
             if (AppUtils.validateEmailField(mContext,edtEmail)) {
                 if(AppUtils.isOnline(mContext))
                     callForgotPasswordApi();

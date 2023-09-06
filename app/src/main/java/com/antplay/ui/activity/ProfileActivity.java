@@ -36,6 +36,7 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -46,7 +47,7 @@ import retrofit2.Response;
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     LinearLayout backLinear, logoutLinear, linear_Change, linearAgree, linearWebsite, linearAbout,
-            linearPayment, linearEdit, linearDiscord, linearInstagram, linearPrivacyPolicy;
+            linearPayment, linearEdit, linearDiscord, linearInstagram, linearPrivacyPolicy,linear_FAQ;
 
     TextView  tv_manageSubs, txtUserID,txtExpiryDate,txtCurrentPlan;
     String strEmailId,access_token;
@@ -84,6 +85,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         txtExpiryDate = (TextView) findViewById(R.id.txtExpiryDate);
         linearPrivacyPolicy = (LinearLayout) findViewById(R.id.linear_privacyPolicy);
         loadingProgressBar =  findViewById(R.id.loadingProgressBar);
+        linear_FAQ =  findViewById(R.id.linear_FAQ);
 
         tv_manageSubs.setOnClickListener(this);
         backLinear.setOnClickListener(this);
@@ -91,6 +93,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         linear_Change.setOnClickListener(this);
         linearAgree.setOnClickListener(this);
         linearPrivacyPolicy.setOnClickListener(this);
+        linear_FAQ.setOnClickListener(this);
         linearWebsite.setOnClickListener(this);
         linearDiscord.setOnClickListener(this);
         linearInstagram.setOnClickListener(this);
@@ -263,6 +266,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.linear_edit:
                 AppUtils.navigateScreenWithoutFinish((Activity) mContext, EditProfileActivity.class);
                 break;
+            case R.id.linear_FAQ:
+                Intent faqIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Const.FAQ_URL));
+                startActivity(faqIntent);
+                break;
         }
     }
     private void getUserDetails() {
@@ -314,11 +321,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                         try {
                             for (int i = 0; i < paymentHistory_list.size(); i++) {
                                 if (paymentHistory_list.get(i).getPaymentStatus().equalsIgnoreCase("active")) {
-                                    txtCurrentPlan.setText(paymentHistory_list.get(i).getBillingPlan());
-                                    String newdate = convertDateToString(paymentHistory_list.get(i).getExpiry_date());
-                                    txtExpiryDate.setText(newdate);
+                                   // txtCurrentPlan.setText(paymentHistory_list.get(i).getBillingPlan());
+                                    convertDateToString(paymentHistory_list.get(i).getExpiry_date() ,paymentHistory_list.get(i).getBillingPlan());
+                                   // txtExpiryDate.setText(newdate);
                                     break;
                                 }
+                                txtCurrentPlan.setText("No Active Plan");
+                                txtExpiryDate.setText("N/A");
                             }
                         } catch (Exception e) {
                         }
@@ -339,23 +348,32 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             });
     }
 
-    private String  convertDateToString(String expiry_date) {
-        //2023-08-28T09:03:21
+    private void  convertDateToString(String expiry_date, String billingPlan) {
+        Calendar c = Calendar.getInstance();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-
         SimpleDateFormat formatterOut = new SimpleDateFormat(" dd MMM , yyyy");
+
+        String getCurrentDateTime = formatterOut.format(c.getTime());
+
 
 
         String convertedDate = null;
         try {
             Date date = formatter.parse(expiry_date);
-            System.out.println(date);
+//            System.out.println(date);
             convertedDate = formatterOut.format(date);
+            if (getCurrentDateTime.compareTo(convertedDate) < 0) {
+                 txtCurrentPlan.setText(billingPlan);
+                 txtExpiryDate.setText(convertedDate);
+            }
+            else {
+                txtCurrentPlan.setText("No Active Plan");
+                txtExpiryDate.setText("Expired");
+            }
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return convertedDate;
     }
 
 }

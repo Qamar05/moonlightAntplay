@@ -38,7 +38,7 @@ public class SubscriptionPlanAdapter extends RecyclerView.Adapter<SubscriptionPl
         BillingDataList data =planList.get(position);
         viewHolder.txtPlaneName.setText(data.getPlan_name());
         viewHolder.txtPlaneAmount.setText(data.getPrice() + " Rs.");
-        viewHolder.txtValidity.setText(data.getHour_limit() );
+        viewHolder.txtValidity.setText("Max days : " + data.getTerm());
         viewHolder.txtDurationInHours.setText(data.getHour_limit() + " Hours");
         viewHolder.tv_gpu.setText(data.getGpu());
         viewHolder.tv_cpu.setText(data.getCpu() + " CPU");

@@ -2519,6 +2519,8 @@ drawable back_arrow
 drawable backarrow
 drawable background_image
 drawable backgroundimage
+drawable baseline_help_outline_24
+drawable baseline_keyboard_24
 drawable baseline_refresh_24
 drawable bg_white_round
 drawable black_trans_bg
@@ -2775,6 +2777,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id backText
 id back_linear
 id back_linear_edit
 id back_linear_payment
@@ -2992,6 +2995,7 @@ id item_power_menu_title
 id item_touch_helper_previous_elevation
 id ivClose
 id ivConfirmPasswordShow
+id ivKeyboard
 id ivNewPasswordShow
 id ivOldPasswordShow
 id ivPasswordShow
@@ -3013,6 +3017,7 @@ id linear
 id linearBottom
 id linearLayout_payment_adapter
 id linearUpper_paymentHistory_adapter
+id linear_FAQ
 id linear_aboutUs
 id linear_agreements
 id linear_changePassword
@@ -3281,6 +3286,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timerText
 id title
 id titleDividerNoCustom
 id titleLayout
@@ -3328,6 +3334,7 @@ id txtDurationInHours
 id txtExpiryDate
 id txtNext
 id txtNo
+id txtNote
 id txtOpenKeyword
 id txtPlaneAmount
 id txtPlaneName
@@ -3491,6 +3498,7 @@ layout fragment_on_boarding_three
 layout fragment_on_boarding_two
 layout fragment_settings
 layout fragment_v_m
+layout header_layout
 layout internet_dialog_layout
 layout item_billing_plan
 layout item_power_menu_library_skydoves
@@ -3554,6 +3562,7 @@ layout sdp_example
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout shutingdownvm_dialog_layout
 layout state_dialog_layout
 layout state_item_adapter_layout
 layout subcription_item_layout
@@ -3666,6 +3675,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string check_connection
 string check_internet_connection
+string check_mail
 string check_ports_msg
 string chip_text
 string choose_new_pc
@@ -3772,6 +3782,7 @@ string icon_content_description
 string instagram
 string ip_hint
 string item_view_role_description
+string keyboard_note
 string lastname
 string letsGo
 string login
@@ -3931,6 +3942,7 @@ string search_menu_title
 string searching_pc_first
 string searching_pc_second
 string setting
+string shutdownVMMsg
 string shutdown_vmmsg
 string signup
 string signupHere

@@ -270,6 +270,7 @@
                     android:src="@drawable/timerwatch" />
 
                 <ProgressBar
+                    android:visibility="gone"
                     android:id="@+id/progressBar"
                     android:layout_width="@dimen/_12sdp"
                     android:layout_height="@dimen/_12sdp"

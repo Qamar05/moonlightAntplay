@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,11 +43,14 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
     ProgressBar progressSubscriptionPlan;
     ImageView imgBack;
 
+    TextView backText;
+
     TextView tvNoDataFound;
     String accessToken;
     SubscriptionPlanAdapter.ButtonClickListener buttonClickListener;
     RetrofitAPI retrofitAPI;
     Context mContext;
+    LinearLayout back_linear;
 
 
     @Override
@@ -54,13 +58,18 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription_plan);
         mContext = SubscriptionPlanActivity.this;
+        back_linear =  findViewById(R.id.back_linear);
         rvSubscriptionPlans = findViewById(R.id.rvSubscriptionPlans);
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         accessToken = SharedPreferenceUtils.getString(SubscriptionPlanActivity.this, Const.ACCESS_TOKEN);
         progressSubscriptionPlan = findViewById(R.id.progressSubscriptionPlan);
         tvNoDataFound = findViewById(R.id.tvNoDataFound);
         imgBack = findViewById(R.id.imgBack);
+        backText =  findViewById(R.id.backText);
         imgBack.setOnClickListener(v -> finish());
+        back_linear.setOnClickListener(view -> {
+            finish();
+        });
         buttonClickListener = this;
         if (AppUtils.isOnline(mContext))
             getPlanApi();

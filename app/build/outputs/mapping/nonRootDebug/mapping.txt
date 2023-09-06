@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: bf629cf
-# pg_map_hash: SHA-256 bf629cf6b737dbe330bbb4cff04c5e5e4d86d38e3c8c81cf47af82634eba389b
+# pg_map_id: a0019ec
+# pg_map_hash: SHA-256 a0019ecf31e9991db2157d2b4565065663c7450c683c50e8e7752cf31db17f1a
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -13061,7 +13061,7 @@ com.antplay.AppView$AppObject -> com.antplay.AppView$AppObject:
 com.antplay.BuildConfig -> com.antplay.BuildConfig:
     7:7:void <clinit>() -> <clinit>
 com.antplay.Game -> com.antplay.Game:
-    void $r8$lambda$1YqddAUsGoNOSZrd_Bm7zZAq0XY(com.antplay.Game) -> $r8$lambda$1YqddAUsGoNOSZrd_Bm7zZAq0XY
+    void $r8$lambda$1cCjMgvMCM9B37zKqJ3YWMV8AO4(com.antplay.Game,int,int,int) -> $r8$lambda$1cCjMgvMCM9B37zKqJ3YWMV8AO4
       # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$28_b6dwbZX9Kg5OUkHNg4lyX1hA(com.antplay.Game,java.lang.String,int,int,int) -> $r8$lambda$28_b6dwbZX9Kg5OUkHNg4lyX1hA
       # {"id":"com.android.tools.r8.synthesized"}
@@ -13069,13 +13069,13 @@ com.antplay.Game -> com.antplay.Game:
       # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$EaZs_7gM0aL87uOGPob1PIDlje8(com.antplay.Game,android.view.View) -> $r8$lambda$EaZs_7gM0aL87uOGPob1PIDlje8
       # {"id":"com.android.tools.r8.synthesized"}
-    void $r8$lambda$LGVznweEaUCbP8WiQo7SzzxepYw(com.antplay.Game,android.view.View) -> $r8$lambda$LGVznweEaUCbP8WiQo7SzzxepYw
+    void $r8$lambda$W3ifB3TcQp4j-BpS2Uya1u762h8(com.antplay.Game,android.view.View) -> $r8$lambda$W3ifB3TcQp4j-BpS2Uya1u762h8
+      # {"id":"com.android.tools.r8.synthesized"}
+    void $r8$lambda$a04yFroFIG8-AgU8vYQPN6P92Po(com.antplay.Game) -> $r8$lambda$a04yFroFIG8-AgU8vYQPN6P92Po
       # {"id":"com.android.tools.r8.synthesized"}
     com.antplay.nvstream.NvConnection -$$Nest$fgetconn(com.antplay.Game) -> -$$Nest$fgetconn
       # {"id":"com.android.tools.r8.synthesized"}
     com.antplay.binding.input.ControllerHandler -$$Nest$fgetcontrollerHandler(com.antplay.Game) -> -$$Nest$fgetcontrollerHandler
-      # {"id":"com.android.tools.r8.synthesized"}
-    boolean -$$Nest$fgetdisplayedFailureDialog(com.antplay.Game) -> -$$Nest$fgetdisplayedFailureDialog
       # {"id":"com.android.tools.r8.synthesized"}
     boolean -$$Nest$fgetgrabbedInput(com.antplay.Game) -> -$$Nest$fgetgrabbedInput
       # {"id":"com.android.tools.r8.synthesized"}
@@ -13099,8 +13099,6 @@ com.antplay.Game -> com.antplay.Game:
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$fputconnecting(com.antplay.Game,boolean) -> -$$Nest$fputconnecting
       # {"id":"com.android.tools.r8.synthesized"}
-    void -$$Nest$fputdisplayedFailureDialog(com.antplay.Game,boolean) -> -$$Nest$fputdisplayedFailureDialog
-      # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$fputreportedCrash(com.antplay.Game,boolean) -> -$$Nest$fputreportedCrash
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$fputrequestedNotificationOverlayVisibility(com.antplay.Game,int) -> -$$Nest$fputrequestedNotificationOverlayVisibility
@@ -13123,85 +13121,84 @@ com.antplay.Game -> com.antplay.Game:
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mstartVMTimeAPi(com.antplay.Game) -> -$$Nest$mstartVMTimeAPi
       # {"id":"com.android.tools.r8.synthesized"}
-    void -$$Nest$mstopConnection(com.antplay.Game,boolean) -> -$$Nest$mstopConnection
-      # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mstopVM(com.antplay.Game) -> -$$Nest$mstopVM
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mupdatePipAutoEnter(com.antplay.Game) -> -$$Nest$mupdatePipAutoEnter
       # {"id":"com.android.tools.r8.synthesized"}
-    117:1261:void <init>() -> <init>
-    2570:2591:void callTimer(long) -> callTimer
-    2140:2177:void connectionStarted() -> connectionStarted
-    2110:2136:void connectionStatusUpdate(int) -> connectionStatusUpdate
-    2041:2106:void connectionTerminated(int) -> connectionTerminated
-    2295:2301:void displayMessage(java.lang.String) -> displayMessage
-    2305:2313:void displayTransientMessage(java.lang.String) -> displayTransientMessage
-    2197:2226:void endVMTimeAPi(boolean) -> endVMTimeAPi
-    1340:1353:byte getModifierState(android.view.KeyEvent) -> getModifierState
-    1357:1357:byte getModifierState() -> getModifierState
-    739:763:android.app.PictureInPictureParams getPictureInPictureParams(boolean) -> getPictureInPictureParams
-    1530:1534:com.antplay.binding.input.touch.TouchContext getTouchContext(int) -> getTouchContext
-    2229:2263:void getVM(java.lang.String) -> getVM
-    1368:1439:boolean handleKeyDown(android.view.KeyEvent) -> handleKeyDown
-    1520:1525:boolean handleKeyMultiple(android.view.KeyEvent) -> handleKeyMultiple
-    1450:1503:boolean handleKeyUp(android.view.KeyEvent) -> handleKeyUp
-    1549:1880:boolean handleMotionEvent(android.view.View,android.view.MotionEvent) -> handleMotionEvent
-    1270:1330:boolean handleSpecialKeys(int,boolean) -> handleSpecialKeys
-    1117:1122:void hideSystemUi(int) -> hideSystemUi
-    854:854:boolean isRefreshRateEqualMatch(float) -> isRefreshRateEqualMatch
-    859:860:boolean isRefreshRateGoodMatch(float) -> isRefreshRateGoodMatch
-    2449:2463:void keyboardEvent(boolean,short) -> keyboardEvent
-    2537:2537:void lambda$onBackPressed$3() -> lambda$onBackPressed$3
-    308:311:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
-    2659:2660:void lambda$openDialog$7(android.view.View) -> lambda$openDialog$7
-    2662:2663:void lambda$openDialog$8(android.view.View) -> lambda$openDialog$8
-    2012:2034:void lambda$stageFailed$1(java.lang.String,int,int,int) -> lambda$stageFailed$1
-    884:884:boolean mayReduceRefreshRate() -> mayReduceRefreshRate
-    2407:2435:void mouseButtonEvent(int,boolean) -> mouseButtonEvent
-    2444:2445:void mouseHScroll(byte) -> mouseHScroll
-    2400:2401:void mouseMove(int,int) -> mouseMove
-    2439:2440:void mouseVScroll(byte) -> mouseVScroll
-    2529:2538:void onBackPressed() -> onBackPressed
-    691:735:void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
-    227:628:void onCreate(android.os.Bundle) -> onCreate
-    1154:1183:void onDestroy() -> onDestroy
-    1945:1945:boolean onGenericMotion(android.view.View,android.view.MotionEvent) -> onGenericMotion
-    1886:1886:boolean onGenericMotionEvent(android.view.MotionEvent) -> onGenericMotionEvent
-    2514:2522:boolean onKey(android.view.View,int,android.view.KeyEvent) -> onKey
-    1362:1362:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-    1508:1508:boolean onKeyMultiple(int,int,android.view.KeyEvent) -> onKeyMultiple
-    1444:1444:boolean onKeyUp(int,android.view.KeyEvent) -> onKeyUp
-    1127:1150:void onMultiWindowModeChanged(boolean) -> onMultiWindowModeChanged
-    2490:2496:void onPerfUpdate(java.lang.String) -> onPerfUpdate
-    834:837:boolean onPictureInPictureRequested() -> onPictureInPictureRequested
-    1187:1244:void onStop() -> onStop
-    2468:2486:void onSystemUiVisibilityChange(int) -> onSystemUiVisibilityChange
-    1951:1960:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-    2508:2510:void onUsbPermissionPromptCompleted() -> onUsbPermissionPromptCompleted
-    2502:2504:void onUsbPermissionPromptStarting() -> onUsbPermissionPromptStarting
-    812:828:void onUserLeaveHint() -> onUserLeaveHint
-    842:851:void onWindowFocusChanged(boolean) -> onWindowFocusChanged
-    2641:2665:void openDialog() -> openDialog
-    890:1081:float prepareDisplayForRendering() -> prepareDisplayForRendering
-    2317:2320:void rumble(short,short,short) -> rumble
-    2324:2326:void setHdrMode(boolean,byte[]) -> setHdrMode
-    1248:1259:void setInputGrabState(boolean) -> setInputGrabState
-    785:808:void setMetaKeyCaptureState(boolean) -> setMetaKeyCaptureState
-    631:687:void setPreferredOrientationForCurrentDisplay() -> setPreferredOrientationForCurrentDisplay
-    865:880:boolean shouldIgnoreInsetsForResolution(int,int) -> shouldIgnoreInsetsForResolution
-    2602:2619:void shutDownVM() -> shutDownVM
-    1977:1977:void stageComplete(java.lang.String) -> stageComplete
-    2009:2035:void stageFailed(java.lang.String,int,int) -> stageFailed
-    1965:1973:void stageStarting(java.lang.String) -> stageStarting
-    2180:2194:void startVMTimeAPi() -> startVMTimeAPi
-    1980:2003:void stopConnection(boolean) -> stopConnection
-    2622:2639:void stopVM() -> stopVM
-    2330:2344:void surfaceChanged(android.view.SurfaceHolder,int,int,int) -> surfaceChanged
-    2350:2380:void surfaceCreated(android.view.SurfaceHolder) -> surfaceCreated
-    2384:2396:void surfaceDestroyed(android.view.SurfaceHolder) -> surfaceDestroyed
-    1540:1543:void toggleKeyboard() -> toggleKeyboard
-    1895:1941:void updateMousePosition(android.view.View,android.view.MotionEvent) -> updateMousePosition
-    767:779:void updatePipAutoEnter() -> updatePipAutoEnter
+    118:1277:void <init>() -> <init>
+    2591:2612:void callTimer(long) -> callTimer
+    2160:2198:void connectionStarted() -> connectionStarted
+    2130:2156:void connectionStatusUpdate(int) -> connectionStatusUpdate
+    2067:2126:void connectionTerminated(int) -> connectionTerminated
+    2316:2322:void displayMessage(java.lang.String) -> displayMessage
+    2326:2334:void displayTransientMessage(java.lang.String) -> displayTransientMessage
+    2218:2247:void endVMTimeAPi(boolean) -> endVMTimeAPi
+    1356:1369:byte getModifierState(android.view.KeyEvent) -> getModifierState
+    1373:1373:byte getModifierState() -> getModifierState
+    755:779:android.app.PictureInPictureParams getPictureInPictureParams(boolean) -> getPictureInPictureParams
+    1546:1550:com.antplay.binding.input.touch.TouchContext getTouchContext(int) -> getTouchContext
+    2250:2284:void getVM(java.lang.String) -> getVM
+    1384:1455:boolean handleKeyDown(android.view.KeyEvent) -> handleKeyDown
+    1536:1541:boolean handleKeyMultiple(android.view.KeyEvent) -> handleKeyMultiple
+    1466:1519:boolean handleKeyUp(android.view.KeyEvent) -> handleKeyUp
+    1565:1896:boolean handleMotionEvent(android.view.View,android.view.MotionEvent) -> handleMotionEvent
+    1286:1346:boolean handleSpecialKeys(int,boolean) -> handleSpecialKeys
+    1133:1138:void hideSystemUi(int) -> hideSystemUi
+    870:870:boolean isRefreshRateEqualMatch(float) -> isRefreshRateEqualMatch
+    875:876:boolean isRefreshRateGoodMatch(float) -> isRefreshRateGoodMatch
+    2470:2484:void keyboardEvent(boolean,short) -> keyboardEvent
+    2072:2124:void lambda$connectionTerminated$2(int,int,int) -> lambda$connectionTerminated$2
+    2558:2558:void lambda$onBackPressed$4() -> lambda$onBackPressed$4
+    316:319:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
+    2681:2682:void lambda$openDialog$8(android.view.View) -> lambda$openDialog$8
+    2684:2685:void lambda$openDialog$9(android.view.View) -> lambda$openDialog$9
+    2034:2060:void lambda$stageFailed$1(java.lang.String,int,int,int) -> lambda$stageFailed$1
+    900:900:boolean mayReduceRefreshRate() -> mayReduceRefreshRate
+    2428:2456:void mouseButtonEvent(int,boolean) -> mouseButtonEvent
+    2465:2466:void mouseHScroll(byte) -> mouseHScroll
+    2421:2422:void mouseMove(int,int) -> mouseMove
+    2460:2461:void mouseVScroll(byte) -> mouseVScroll
+    2550:2559:void onBackPressed() -> onBackPressed
+    707:751:void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
+    229:644:void onCreate(android.os.Bundle) -> onCreate
+    1170:1199:void onDestroy() -> onDestroy
+    1961:1961:boolean onGenericMotion(android.view.View,android.view.MotionEvent) -> onGenericMotion
+    1902:1902:boolean onGenericMotionEvent(android.view.MotionEvent) -> onGenericMotionEvent
+    2535:2543:boolean onKey(android.view.View,int,android.view.KeyEvent) -> onKey
+    1378:1378:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
+    1524:1524:boolean onKeyMultiple(int,int,android.view.KeyEvent) -> onKeyMultiple
+    1460:1460:boolean onKeyUp(int,android.view.KeyEvent) -> onKeyUp
+    1143:1166:void onMultiWindowModeChanged(boolean) -> onMultiWindowModeChanged
+    2511:2517:void onPerfUpdate(java.lang.String) -> onPerfUpdate
+    850:853:boolean onPictureInPictureRequested() -> onPictureInPictureRequested
+    1203:1260:void onStop() -> onStop
+    2489:2507:void onSystemUiVisibilityChange(int) -> onSystemUiVisibilityChange
+    1967:1976:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+    2529:2531:void onUsbPermissionPromptCompleted() -> onUsbPermissionPromptCompleted
+    2523:2525:void onUsbPermissionPromptStarting() -> onUsbPermissionPromptStarting
+    828:844:void onUserLeaveHint() -> onUserLeaveHint
+    858:867:void onWindowFocusChanged(boolean) -> onWindowFocusChanged
+    2663:2687:void openDialog() -> openDialog
+    906:1097:float prepareDisplayForRendering() -> prepareDisplayForRendering
+    2338:2341:void rumble(short,short,short) -> rumble
+    2345:2347:void setHdrMode(boolean,byte[]) -> setHdrMode
+    1264:1275:void setInputGrabState(boolean) -> setInputGrabState
+    801:824:void setMetaKeyCaptureState(boolean) -> setMetaKeyCaptureState
+    647:703:void setPreferredOrientationForCurrentDisplay() -> setPreferredOrientationForCurrentDisplay
+    881:896:boolean shouldIgnoreInsetsForResolution(int,int) -> shouldIgnoreInsetsForResolution
+    2623:2641:void shutDownVM() -> shutDownVM
+    1993:1993:void stageComplete(java.lang.String) -> stageComplete
+    2030:2061:void stageFailed(java.lang.String,int,int) -> stageFailed
+    1981:1989:void stageStarting(java.lang.String) -> stageStarting
+    2201:2215:void startVMTimeAPi() -> startVMTimeAPi
+    1997:2024:void stopConnection(boolean) -> stopConnection
+    2644:2661:void stopVM() -> stopVM
+    2351:2365:void surfaceChanged(android.view.SurfaceHolder,int,int,int) -> surfaceChanged
+    2371:2401:void surfaceCreated(android.view.SurfaceHolder) -> surfaceCreated
+    2405:2417:void surfaceDestroyed(android.view.SurfaceHolder) -> surfaceDestroyed
+    1556:1559:void toggleKeyboard() -> toggleKeyboard
+    1911:1957:void updateMousePosition(android.view.View,android.view.MotionEvent) -> updateMousePosition
+    783:795:void updatePipAutoEnter() -> updatePipAutoEnter
 com.antplay.Game$$ExternalSyntheticApiModelOutline0 -> com.antplay.Game$$ExternalSyntheticApiModelOutline0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -13227,7 +13224,26 @@ com.antplay.Game$$ExternalSyntheticApiModelOutline4 -> com.antplay.Game$$Externa
 # {"id":"com.android.tools.r8.synthesized"}
     android.app.PictureInPictureParams$Builder com.antplay.Game$$InternalSyntheticApiModelOutline$2$1fb8c64508410360138a1ffb7000a3eab54088215d3aef3a43b432a74305c800$1.m(android.app.PictureInPictureParams$Builder,boolean) -> m
       # {"id":"com.android.tools.r8.synthesized"}
+com.antplay.Game$$ExternalSyntheticLambda10 -> com.antplay.Game$$ExternalSyntheticLambda10:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    com.antplay.Game com.antplay.Game$$InternalSyntheticLambda$3$083276326944e973f67b8aa1ced43fcbc0bdb2ce4f8618f7bb9027e69dd92f28$1.f$0 -> f$0
+    void com.antplay.Game$$InternalSyntheticLambda$3$083276326944e973f67b8aa1ced43fcbc0bdb2ce4f8618f7bb9027e69dd92f28$1.<init>(com.antplay.Game) -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void com.antplay.Game$$InternalSyntheticLambda$3$083276326944e973f67b8aa1ced43fcbc0bdb2ce4f8618f7bb9027e69dd92f28$1.onClick(android.view.View) -> onClick
+      # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.Game$$ExternalSyntheticLambda5 -> com.antplay.Game$$ExternalSyntheticLambda5:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    com.antplay.Game com.antplay.Game$$InternalSyntheticLambda$1$2128cdc413739bd60e8f0b124eae5add0fa50822a854f42256cc609067b3cf1c$0.f$0 -> f$0
+    int com.antplay.Game$$InternalSyntheticLambda$1$2128cdc413739bd60e8f0b124eae5add0fa50822a854f42256cc609067b3cf1c$0.f$3 -> f$3
+    int com.antplay.Game$$InternalSyntheticLambda$1$2128cdc413739bd60e8f0b124eae5add0fa50822a854f42256cc609067b3cf1c$0.f$2 -> f$2
+    int com.antplay.Game$$InternalSyntheticLambda$1$2128cdc413739bd60e8f0b124eae5add0fa50822a854f42256cc609067b3cf1c$0.f$1 -> f$1
+    void com.antplay.Game$$InternalSyntheticLambda$1$2128cdc413739bd60e8f0b124eae5add0fa50822a854f42256cc609067b3cf1c$0.<init>(com.antplay.Game,int,int,int) -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void com.antplay.Game$$InternalSyntheticLambda$1$2128cdc413739bd60e8f0b124eae5add0fa50822a854f42256cc609067b3cf1c$0.run() -> run
+      # {"id":"com.android.tools.r8.synthesized"}
+com.antplay.Game$$ExternalSyntheticLambda6 -> com.antplay.Game$$ExternalSyntheticLambda6:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
     com.antplay.Game com.antplay.Game$$InternalSyntheticLambda$1$a33f2732d68722b068dba6fb88eafda99fbfb527d8a6bfe868ee29d21c23cf85$0.f$0 -> f$0
@@ -13235,7 +13251,7 @@ com.antplay.Game$$ExternalSyntheticLambda5 -> com.antplay.Game$$ExternalSyntheti
       # {"id":"com.android.tools.r8.synthesized"}
     void com.antplay.Game$$InternalSyntheticLambda$1$a33f2732d68722b068dba6fb88eafda99fbfb527d8a6bfe868ee29d21c23cf85$0.run() -> run
       # {"id":"com.android.tools.r8.synthesized"}
-com.antplay.Game$$ExternalSyntheticLambda6 -> com.antplay.Game$$ExternalSyntheticLambda6:
+com.antplay.Game$$ExternalSyntheticLambda7 -> com.antplay.Game$$ExternalSyntheticLambda7:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
     com.antplay.Game com.antplay.Game$$InternalSyntheticLambda$1$ce7dd2d087fd3b80c872efd85297a5a03f5c8a1e2f0e1471349c26027ecf6cc7$0.f$0 -> f$0
@@ -13247,7 +13263,7 @@ com.antplay.Game$$ExternalSyntheticLambda6 -> com.antplay.Game$$ExternalSyntheti
       # {"id":"com.android.tools.r8.synthesized"}
     void com.antplay.Game$$InternalSyntheticLambda$1$ce7dd2d087fd3b80c872efd85297a5a03f5c8a1e2f0e1471349c26027ecf6cc7$0.run() -> run
       # {"id":"com.android.tools.r8.synthesized"}
-com.antplay.Game$$ExternalSyntheticLambda7 -> com.antplay.Game$$ExternalSyntheticLambda7:
+com.antplay.Game$$ExternalSyntheticLambda8 -> com.antplay.Game$$ExternalSyntheticLambda8:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
     com.antplay.Game com.antplay.Game$$InternalSyntheticLambda$1$e017dbcd8902e5b1721967b4b65a7162c00709ec52cd0555819e5c353af0d339$0.f$0 -> f$0
@@ -13255,7 +13271,7 @@ com.antplay.Game$$ExternalSyntheticLambda7 -> com.antplay.Game$$ExternalSyntheti
       # {"id":"com.android.tools.r8.synthesized"}
     void com.antplay.Game$$InternalSyntheticLambda$1$e017dbcd8902e5b1721967b4b65a7162c00709ec52cd0555819e5c353af0d339$0.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
-com.antplay.Game$$ExternalSyntheticLambda8 -> com.antplay.Game$$ExternalSyntheticLambda8:
+com.antplay.Game$$ExternalSyntheticLambda9 -> com.antplay.Game$$ExternalSyntheticLambda9:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
     com.antplay.Game com.antplay.Game$$InternalSyntheticLambda$3$083276326944e973f67b8aa1ced43fcbc0bdb2ce4f8618f7bb9027e69dd92f28$0.f$0 -> f$0
@@ -13263,81 +13279,73 @@ com.antplay.Game$$ExternalSyntheticLambda8 -> com.antplay.Game$$ExternalSyntheti
       # {"id":"com.android.tools.r8.synthesized"}
     void com.antplay.Game$$InternalSyntheticLambda$3$083276326944e973f67b8aa1ced43fcbc0bdb2ce4f8618f7bb9027e69dd92f28$0.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
-com.antplay.Game$$ExternalSyntheticLambda9 -> com.antplay.Game$$ExternalSyntheticLambda9:
-# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
-# {"id":"com.android.tools.r8.synthesized"}
-    com.antplay.Game com.antplay.Game$$InternalSyntheticLambda$3$083276326944e973f67b8aa1ced43fcbc0bdb2ce4f8618f7bb9027e69dd92f28$1.f$0 -> f$0
-    void com.antplay.Game$$InternalSyntheticLambda$3$083276326944e973f67b8aa1ced43fcbc0bdb2ce4f8618f7bb9027e69dd92f28$1.<init>(com.antplay.Game) -> <init>
-      # {"id":"com.android.tools.r8.synthesized"}
-    void com.antplay.Game$$InternalSyntheticLambda$3$083276326944e973f67b8aa1ced43fcbc0bdb2ce4f8618f7bb9027e69dd92f28$1.onClick(android.view.View) -> onClick
-      # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.Game$1 -> com.antplay.Game$1:
-    193:193:void <init>(com.antplay.Game) -> <init>
-    196:203:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
-    207:208:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+    195:195:void <init>(com.antplay.Game) -> <init>
+    198:205:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
+    209:210:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.antplay.Game$10 -> com.antplay.Game$10:
-    2140:2140:void <init>(com.antplay.Game) -> <init>
-    2143:2175:void run() -> run
+    2160:2160:void <init>(com.antplay.Game) -> <init>
+    2163:2196:void run() -> run
 com.antplay.Game$10$1 -> com.antplay.Game$10$1:
-    2161:2161:void <init>(com.antplay.Game$10) -> <init>
-    2164:2165:void run() -> run
+    2182:2182:void <init>(com.antplay.Game$10) -> <init>
+    2185:2186:void run() -> run
 com.antplay.Game$11 -> com.antplay.Game$11:
-    2182:2182:void <init>(com.antplay.Game) -> <init>
-    2191:2192:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    2185:2188:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    2203:2203:void <init>(com.antplay.Game) -> <init>
+    2212:2213:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    2206:2209:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.Game$12 -> com.antplay.Game$12:
-    2201:2201:void <init>(com.antplay.Game,boolean) -> <init>
-    2223:2224:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    2205:2220:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    2222:2222:void <init>(com.antplay.Game,boolean) -> <init>
+    2244:2245:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    2226:2241:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.Game$13 -> com.antplay.Game$13:
-    2231:2231:void <init>(com.antplay.Game,java.lang.String) -> <init>
-    2260:2261:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    2234:2256:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    2252:2252:void <init>(com.antplay.Game,java.lang.String) -> <init>
+    2281:2282:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    2255:2277:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.Game$14 -> com.antplay.Game$14:
-    2295:2295:void <init>(com.antplay.Game,java.lang.String) -> <init>
-    2298:2299:void run() -> run
+    2316:2316:void <init>(com.antplay.Game,java.lang.String) -> <init>
+    2319:2320:void run() -> run
 com.antplay.Game$15 -> com.antplay.Game$15:
-    2306:2306:void <init>(com.antplay.Game,java.lang.String) -> <init>
-    2309:2310:void run() -> run
+    2327:2327:void <init>(com.antplay.Game,java.lang.String) -> <init>
+    2330:2331:void run() -> run
 com.antplay.Game$16 -> com.antplay.Game$16:
-    2490:2490:void <init>(com.antplay.Game,java.lang.String) -> <init>
-    2493:2494:void run() -> run
+    2511:2511:void <init>(com.antplay.Game,java.lang.String) -> <init>
+    2514:2515:void run() -> run
 com.antplay.Game$17 -> com.antplay.Game$17:
-    2570:2570:void <init>(com.antplay.Game,long,long) -> <init>
-    2586:2588:void onFinish() -> onFinish
-    2573:2583:void onTick(long) -> onTick
+    2591:2591:void <init>(com.antplay.Game,long,long) -> <init>
+    2607:2609:void onFinish() -> onFinish
+    2594:2604:void onTick(long) -> onTick
 com.antplay.Game$18 -> com.antplay.Game$18:
-    2603:2603:void <init>(com.antplay.Game) -> <init>
-    2616:2617:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    2606:2613:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    2624:2624:void <init>(com.antplay.Game) -> <init>
+    2638:2639:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    2627:2635:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.Game$19 -> com.antplay.Game$19:
-    2623:2623:void <init>(com.antplay.Game) -> <init>
-    2636:2637:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    2626:2633:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    2645:2645:void <init>(com.antplay.Game) -> <init>
+    2658:2659:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    2648:2655:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.Game$2 -> com.antplay.Game$2:
-    359:359:void <init>(com.antplay.Game) -> <init>
-    362:362:boolean onCapturedPointer(android.view.View,android.view.MotionEvent) -> onCapturedPointer
+    321:321:void <init>(com.antplay.Game) -> <init>
+    324:325:void onClick(android.view.View) -> onClick
 com.antplay.Game$3 -> com.antplay.Game$3:
-    481:481:void <init>(com.antplay.Game) -> <init>
-    488:490:void notifyCrash(java.lang.Exception) -> notifyCrash
+    373:373:void <init>(com.antplay.Game) -> <init>
+    376:376:boolean onCapturedPointer(android.view.View,android.view.MotionEvent) -> onCapturedPointer
 com.antplay.Game$4 -> com.antplay.Game$4:
-    1086:1086:void <init>(com.antplay.Game) -> <init>
-    1094:1113:void run() -> run
+    496:496:void <init>(com.antplay.Game) -> <init>
+    503:505:void notifyCrash(java.lang.Exception) -> notifyCrash
 com.antplay.Game$5 -> com.antplay.Game$5:
-    1261:1261:void <init>(com.antplay.Game) -> <init>
-    1264:1265:void run() -> run
+    1102:1102:void <init>(com.antplay.Game) -> <init>
+    1110:1129:void run() -> run
 com.antplay.Game$6 -> com.antplay.Game$6:
-    1965:1965:void <init>(com.antplay.Game,java.lang.String) -> <init>
-    1968:1971:void run() -> run
+    1277:1277:void <init>(com.antplay.Game) -> <init>
+    1280:1281:void run() -> run
 com.antplay.Game$7 -> com.antplay.Game$7:
-    1997:1997:void <init>(com.antplay.Game) -> <init>
-    1999:2000:void run() -> run
+    1981:1981:void <init>(com.antplay.Game,java.lang.String) -> <init>
+    1984:1987:void run() -> run
 com.antplay.Game$8 -> com.antplay.Game$8:
-    2044:2044:void <init>(com.antplay.Game,int,int,int) -> <init>
-    2048:2104:void run() -> run
+    2014:2014:void <init>(com.antplay.Game) -> <init>
+    2016:2017:void run() -> run
 com.antplay.Game$9 -> com.antplay.Game$9:
-    2110:2110:void <init>(com.antplay.Game,int) -> <init>
-    2113:2134:void run() -> run
+    2130:2130:void <init>(com.antplay.Game,int) -> <init>
+    2133:2154:void run() -> run
 com.antplay.HelpActivity -> com.antplay.HelpActivity:
     com.antplay.utils.SpinnerDialog -$$Nest$fgetloadingDialog(com.antplay.HelpActivity) -> -$$Nest$fgetloadingDialog
       # {"id":"com.android.tools.r8.synthesized"}
@@ -14414,6 +14422,7 @@ com.antplay.models.BillingDataList -> com.antplay.models.BillingDataList:
     115:115:java.lang.String getPrice() -> getPrice
     83:83:java.lang.String getRam() -> getRam
     91:91:java.lang.String getSsd() -> getSsd
+    99:99:java.lang.String getTerm() -> getTerm
 com.antplay.models.ChangePassReq -> com.antplay.models.ChangePassReq:
     17:21:void <init>(java.lang.String,java.lang.String,java.lang.String) -> <init>
 com.antplay.models.ChangePasswordResp -> com.antplay.models.ChangePasswordResp:
@@ -14458,8 +14467,6 @@ com.antplay.models.UserDetailsModal -> com.antplay.models.UserDetailsModal:
     124:124:java.lang.String getUsername() -> getUsername
 com.antplay.models.UserRegisterRequest -> com.antplay.models.UserRegisterRequest:
     43:54:void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> <init>
-com.antplay.models.UserRegisterResp -> com.antplay.models.UserRegisterResp:
-    13:13:void <init>() -> <init>
 com.antplay.models.UserUpdateRequestModal -> com.antplay.models.UserUpdateRequestModal:
     32:39:void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> <init>
 com.antplay.models.UserUpdateResponseModal -> com.antplay.models.UserUpdateResponseModal:
@@ -15020,29 +15027,29 @@ com.antplay.ui.activity.EditProfileActivity -> com.antplay.ui.activity.EditProfi
     void -$$Nest$msetData(com.antplay.ui.activity.EditProfileActivity,com.antplay.models.UserDetailsModal) -> -$$Nest$msetData
       # {"id":"com.android.tools.r8.synthesized"}
     44:45:void <init>() -> <init>
-    158:197:void getUserDetails() -> getUserDetails
-    243:245:void onButtonClick(int) -> onButtonClick
-    201:223:void onClick(android.view.View) -> onClick
-    64:97:void onCreate(android.os.Bundle) -> onCreate
-    226:239:void openStateDialog() -> openStateDialog
-    101:125:void setData(com.antplay.models.UserDetailsModal) -> setData
-    129:155:void updateUserProfile() -> updateUserProfile
-    248:288:boolean validateFormField() -> validateFormField
+    159:198:void getUserDetails() -> getUserDetails
+    244:246:void onButtonClick(int) -> onButtonClick
+    202:224:void onClick(android.view.View) -> onClick
+    65:98:void onCreate(android.os.Bundle) -> onCreate
+    227:240:void openStateDialog() -> openStateDialog
+    102:126:void setData(com.antplay.models.UserDetailsModal) -> setData
+    130:156:void updateUserProfile() -> updateUserProfile
+    249:289:boolean validateFormField() -> validateFormField
 com.antplay.ui.activity.EditProfileActivity$1 -> com.antplay.ui.activity.EditProfileActivity$1:
-    138:138:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
-    151:153:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    141:148:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    139:139:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
+    152:154:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    142:149:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.EditProfileActivity$2 -> com.antplay.ui.activity.EditProfileActivity$2:
-    160:160:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
-    188:191:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    163:184:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    161:161:void <init>(com.antplay.ui.activity.EditProfileActivity) -> <init>
+    189:192:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    164:185:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.ForgotPasswordActivity -> com.antplay.ui.activity.ForgotPasswordActivity:
     void $r8$lambda$QNH21aCVG0ku47poiFmdqKwgCoI(com.antplay.ui.activity.ForgotPasswordActivity,android.view.View) -> $r8$lambda$QNH21aCVG0ku47poiFmdqKwgCoI
       # {"id":"com.android.tools.r8.synthesized"}
     27:27:void <init>() -> <init>
-    55:89:void callForgotPasswordApi() -> callForgotPasswordApi
-    45:51:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
-    36:52:void onCreate(android.os.Bundle) -> onCreate
+    54:88:void callForgotPasswordApi() -> callForgotPasswordApi
+    44:50:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
+    36:51:void onCreate(android.os.Bundle) -> onCreate
 com.antplay.ui.activity.ForgotPasswordActivity$$ExternalSyntheticLambda0 -> com.antplay.ui.activity.ForgotPasswordActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -15052,9 +15059,9 @@ com.antplay.ui.activity.ForgotPasswordActivity$$ExternalSyntheticLambda0 -> com.
     void com.antplay.ui.activity.ForgotPasswordActivity$$InternalSyntheticLambda$1$e6a1ab83ad726d30999698c663a3eac891b55d82931e32f84568ddb42f6a4594$0.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.ui.activity.ForgotPasswordActivity$1 -> com.antplay.ui.activity.ForgotPasswordActivity$1:
-    59:59:void <init>(com.antplay.ui.activity.ForgotPasswordActivity) -> <init>
-    82:84:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    62:78:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    58:58:void <init>(com.antplay.ui.activity.ForgotPasswordActivity) -> <init>
+    81:83:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    61:77:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.GeneralWebViewActivity -> com.antplay.ui.activity.GeneralWebViewActivity:
     11:11:void <init>() -> <init>
     17:30:void onCreate(android.os.Bundle) -> onCreate
@@ -15086,8 +15093,25 @@ com.antplay.ui.activity.LoginWithOTP$1 -> com.antplay.ui.activity.LoginWithOTP$1
     74:77:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
     64:70:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.MyApplication -> com.antplay.ui.activity.MyApplication:
-    6:6:void <init>() -> <init>
-    10:12:void onCreate() -> onCreate
+    void -$$Nest$fputisAppInForeground(com.antplay.ui.activity.MyApplication,boolean) -> -$$Nest$fputisAppInForeground
+      # {"id":"com.android.tools.r8.synthesized"}
+    31:33:void <init>() -> <init>
+    40:44:void onCreate() -> onCreate
+    93:100:void onTrimMemory(int) -> onTrimMemory
+com.antplay.ui.activity.MyApplication$MyActivityLifecycleCallbacks -> com.antplay.ui.activity.MyApplication$MyActivityLifecycleCallbacks:
+    void <init>(com.antplay.ui.activity.MyApplication,com.antplay.ui.activity.MyApplication$MyActivityLifecycleCallbacks-IA) -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    50:50:void <init>(com.antplay.ui.activity.MyApplication) -> <init>
+    54:55:void onActivityCreated(android.app.Activity,android.os.Bundle) -> onActivityCreated
+    89:89:void onActivityDestroyed(android.app.Activity) -> onActivityDestroyed
+    72:73:void onActivityPaused(android.app.Activity) -> onActivityPaused
+    67:68:void onActivityResumed(android.app.Activity) -> onActivityResumed
+    83:84:void onActivitySaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivitySaveInstanceState
+    60:62:void onActivityStarted(android.app.Activity) -> onActivityStarted
+    77:79:void onActivityStopped(android.app.Activity) -> onActivityStopped
+com.antplay.ui.activity.MyApplication$MyActivityLifecycleCallbacks-IA -> com.antplay.ui.activity.MyApplication$MyActivityLifecycleCallbacks-IA:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
 com.antplay.ui.activity.OnBoardingActivity -> com.antplay.ui.activity.OnBoardingActivity:
     23:23:void <init>() -> <init>
     112:122:void movePagerToNextPage() -> movePagerToNextPage
@@ -15162,6 +15186,8 @@ com.antplay.ui.activity.PcView -> com.antplay.ui.activity.PcView:
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$fputpcGridAdapter(com.antplay.ui.activity.PcView,com.antplay.grid.PcGridAdapter) -> -$$Nest$fputpcGridAdapter
       # {"id":"com.android.tools.r8.synthesized"}
+    void -$$Nest$mcallTimer(com.antplay.ui.activity.PcView,android.widget.TextView,long) -> -$$Nest$mcallTimer
+      # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mcompleteOnCreate(com.antplay.ui.activity.PcView) -> -$$Nest$mcompleteOnCreate
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mdoAddPc(com.antplay.ui.activity.PcView,java.lang.String) -> -$$Nest$mdoAddPc
@@ -15170,11 +15196,11 @@ com.antplay.ui.activity.PcView -> com.antplay.ui.activity.PcView:
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mdoPair(com.antplay.ui.activity.PcView,com.antplay.nvstream.http.ComputerDetails) -> -$$Nest$mdoPair
       # {"id":"com.android.tools.r8.synthesized"}
-    void -$$Nest$mgetVMForShutDown(com.antplay.ui.activity.PcView) -> -$$Nest$mgetVMForShutDown
+    void -$$Nest$mgetVM(com.antplay.ui.activity.PcView,java.lang.String) -> -$$Nest$mgetVM
       # {"id":"com.android.tools.r8.synthesized"}
-    void -$$Nest$mgetVMIP(com.antplay.ui.activity.PcView,java.lang.String) -> -$$Nest$mgetVMIP
+    void -$$Nest$mgetVMIP(com.antplay.ui.activity.PcView,java.lang.String,java.lang.String) -> -$$Nest$mgetVMIP
       # {"id":"com.android.tools.r8.synthesized"}
-    boolean -$$Nest$mhandleDoneEvent(com.antplay.ui.activity.PcView,java.lang.String) -> -$$Nest$mhandleDoneEvent
+    boolean -$$Nest$mhandleDoneEvent(com.antplay.ui.activity.PcView,java.lang.String,java.lang.String) -> -$$Nest$mhandleDoneEvent
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$minitializeViews(com.antplay.ui.activity.PcView) -> -$$Nest$minitializeViews
       # {"id":"com.android.tools.r8.synthesized"}
@@ -15182,13 +15208,15 @@ com.antplay.ui.activity.PcView -> com.antplay.ui.activity.PcView:
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mopenDialog(com.antplay.ui.activity.PcView,boolean,java.lang.String) -> -$$Nest$mopenDialog
       # {"id":"com.android.tools.r8.synthesized"}
+    void -$$Nest$mopenShutDownVMDialog(com.antplay.ui.activity.PcView,java.lang.String) -> -$$Nest$mopenShutDownVMDialog
+      # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mremoveComputer(com.antplay.ui.activity.PcView,com.antplay.nvstream.http.ComputerDetails) -> -$$Nest$mremoveComputer
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$msendAndVerifySecurityPinManually(com.antplay.ui.activity.PcView,java.lang.String) -> -$$Nest$msendAndVerifySecurityPinManually
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mshowTimer(com.antplay.ui.activity.PcView,java.lang.String) -> -$$Nest$mshowTimer
       # {"id":"com.android.tools.r8.synthesized"}
-    void -$$Nest$mshutDownVM(com.antplay.ui.activity.PcView) -> -$$Nest$mshutDownVM
+    void -$$Nest$mshutDownVM(com.antplay.ui.activity.PcView,java.lang.String,java.lang.String) -> -$$Nest$mshutDownVM
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mstartAddThread(com.antplay.ui.activity.PcView) -> -$$Nest$mstartAddThread
       # {"id":"com.android.tools.r8.synthesized"}
@@ -15198,60 +15226,63 @@ com.antplay.ui.activity.PcView -> com.antplay.ui.activity.PcView:
       # {"id":"com.android.tools.r8.synthesized"}
     void -$$Nest$mstopComputerUpdates(com.antplay.ui.activity.PcView,boolean) -> -$$Nest$mstopComputerUpdates
       # {"id":"com.android.tools.r8.synthesized"}
-    void -$$Nest$mstopVM(com.antplay.ui.activity.PcView) -> -$$Nest$mstopVM
+    void -$$Nest$mstopVM(com.antplay.ui.activity.PcView,java.lang.String,java.lang.String) -> -$$Nest$mstopVM
       # {"id":"com.android.tools.r8.synthesized"}
-    112:865:void <init>() -> <init>
-    590:601:void completeOnCreate() -> completeOnCreate
-    260:354:void doAddPc(java.lang.String) -> doAddPc
-    1008:1025:void doAppList(com.antplay.nvstream.http.ComputerDetails,boolean,boolean) -> doAppList
-    762:863:void doPair(com.antplay.nvstream.http.ComputerDetails) -> doPair
-    960:1005:void doUnpair(com.antplay.nvstream.http.ComputerDetails) -> doUnpair
-    927:957:void doWakeOnLan(com.antplay.nvstream.http.ComputerDetails) -> doWakeOnLan
-    1194:1194:int getAdapterFragmentLayoutId() -> getAdapterFragmentLayoutId
-    1395:1437:void getVM() -> getVM
-    1533:1564:void getVMForShutDown() -> getVMForShutDown
-    1293:1341:void getVMIP(java.lang.String) -> getVMIP
-    1283:1288:boolean handleDoneEvent(java.lang.String) -> handleDoneEvent
-    424:521:void initializeViews() -> initializeViews
-    194:231:boolean isWrongSubnetSiteLocalAddress(java.lang.String) -> isWrongSubnetSiteLocalAddress
-    375:391:void joinAddThread() -> joinAddThread
-    453:457:void lambda$initializeViews$0(androidx.swiperefreshlayout.widget.SwipeRefreshLayout) -> lambda$initializeViews$0
-    452:458:void lambda$initializeViews$1(androidx.swiperefreshlayout.widget.SwipeRefreshLayout) -> lambda$initializeViews$1
-    465:474:void lambda$initializeViews$2(android.view.View) -> lambda$initializeViews$2
-    477:483:void lambda$initializeViews$3(android.view.View) -> lambda$initializeViews$3
-    493:493:void lambda$initializeViews$4(android.view.View) -> lambda$initializeViews$4
-    496:496:void lambda$initializeViews$5(android.view.View) -> lambda$initializeViews$5
-    498:498:void lambda$initializeViews$6(android.view.View) -> lambda$initializeViews$6
-    500:502:void lambda$initializeViews$7(android.view.View) -> lambda$initializeViews$7
-    503:503:void lambda$initializeViews$8(android.view.View) -> lambda$initializeViews$8
-    1243:1243:void lambda$onBackPressed$11() -> lambda$onBackPressed$11
-    1273:1275:void lambda$openDialog$12(android.app.Dialog,android.view.View) -> lambda$openDialog$12
-    1277:1278:void lambda$openDialog$13(android.app.Dialog,android.view.View) -> lambda$openDialog$13
-    619:634:void lambda$startComputerUpdates$10(com.antplay.nvstream.http.ComputerDetails) -> lambda$startComputerUpdates$10
-    621:632:void lambda$startComputerUpdates$9(com.antplay.nvstream.http.ComputerDetails) -> lambda$startComputerUpdates$9
-    1237:1244:void onBackPressed() -> onBackPressed
-    399:410:void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
-    1029:1102:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    758:759:void onContextMenuClosed(android.view.Menu) -> onContextMenuClosed
-    525:587:void onCreate(android.os.Bundle) -> onCreate
-    700:751:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-    657:669:void onDestroy() -> onDestroy
-    685:689:void onPause() -> onPause
-    673:681:void onResume() -> onResume
-    693:696:void onStop() -> onStop
-    1246:1280:void openDialog(boolean,java.lang.String) -> openDialog
-    239:256:java.net.URI parseRawUserInputToUri(java.lang.String) -> parseRawUserInputToUri
-    1199:1217:void receiveAbsListView(android.widget.AbsListView) -> receiveAbsListView
-    1107:1132:void removeComputer(com.antplay.nvstream.http.ComputerDetails) -> removeComputer
-    897:923:void sendAndVerifySecurityPinManually(java.lang.String) -> sendAndVerifySecurityPinManually
-    1344:1351:void showTimer(java.lang.String) -> showTimer
-    1439:1471:void shutDownVM() -> shutDownVM
-    357:372:void startAddThread() -> startAddThread
-    608:637:void startComputerUpdates() -> startComputerUpdates
-    1354:1392:void startVm(java.lang.String) -> startVm
-    640:653:void stopComputerUpdates(boolean) -> stopComputerUpdates
-    1500:1530:void stopVM() -> stopVM
-    1136:1190:void updateComputer(com.antplay.nvstream.http.ComputerDetails,java.lang.String) -> updateComputer
+    107:841:void <init>() -> <init>
+    1629:1671:void callTimer(android.widget.TextView,long) -> callTimer
+    574:585:void completeOnCreate() -> completeOnCreate
+    257:344:void doAddPc(java.lang.String) -> doAddPc
+    984:999:void doAppList(com.antplay.nvstream.http.ComputerDetails,boolean,boolean) -> doAppList
+    743:839:void doPair(com.antplay.nvstream.http.ComputerDetails) -> doPair
+    936:981:void doUnpair(com.antplay.nvstream.http.ComputerDetails) -> doUnpair
+    903:933:void doWakeOnLan(com.antplay.nvstream.http.ComputerDetails) -> doWakeOnLan
+    1182:1182:int getAdapterFragmentLayoutId() -> getAdapterFragmentLayoutId
+    1400:1461:void getVM(java.lang.String) -> getVM
+    1566:1602:void getVMForShutDown() -> getVMForShutDown
+    1282:1344:void getVMIP(java.lang.String,java.lang.String) -> getVMIP
+    1271:1277:boolean handleDoneEvent(java.lang.String,java.lang.String) -> handleDoneEvent
+    414:515:void initializeViews() -> initializeViews
+    191:228:boolean isWrongSubnetSiteLocalAddress(java.lang.String) -> isWrongSubnetSiteLocalAddress
+    365:381:void joinAddThread() -> joinAddThread
+    446:448:void lambda$initializeViews$0(androidx.swiperefreshlayout.widget.SwipeRefreshLayout) -> lambda$initializeViews$0
+    445:449:void lambda$initializeViews$1(androidx.swiperefreshlayout.widget.SwipeRefreshLayout) -> lambda$initializeViews$1
+    456:466:void lambda$initializeViews$2(android.view.View) -> lambda$initializeViews$2
+    469:477:void lambda$initializeViews$3(android.view.View) -> lambda$initializeViews$3
+    487:487:void lambda$initializeViews$4(android.view.View) -> lambda$initializeViews$4
+    490:490:void lambda$initializeViews$5(android.view.View) -> lambda$initializeViews$5
+    492:492:void lambda$initializeViews$6(android.view.View) -> lambda$initializeViews$6
+    494:496:void lambda$initializeViews$7(android.view.View) -> lambda$initializeViews$7
+    497:497:void lambda$initializeViews$8(android.view.View) -> lambda$initializeViews$8
+    1231:1231:void lambda$onBackPressed$11() -> lambda$onBackPressed$11
+    1261:1263:void lambda$openDialog$12(android.app.Dialog,android.view.View) -> lambda$openDialog$12
+    1265:1266:void lambda$openDialog$13(android.app.Dialog,android.view.View) -> lambda$openDialog$13
+    603:615:void lambda$startComputerUpdates$10(com.antplay.nvstream.http.ComputerDetails) -> lambda$startComputerUpdates$10
+    606:613:void lambda$startComputerUpdates$9(com.antplay.nvstream.http.ComputerDetails) -> lambda$startComputerUpdates$9
+    1225:1232:void onBackPressed() -> onBackPressed
+    389:400:void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
+    1003:1076:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
+    739:740:void onContextMenuClosed(android.view.Menu) -> onContextMenuClosed
+    519:571:void onCreate(android.os.Bundle) -> onCreate
+    681:732:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+    638:650:void onDestroy() -> onDestroy
+    666:670:void onPause() -> onPause
+    654:662:void onResume() -> onResume
+    674:677:void onStop() -> onStop
+    1234:1268:void openDialog(boolean,java.lang.String) -> openDialog
+    1605:1626:void openShutDownVMDialog(java.lang.String) -> openShutDownVMDialog
+    236:253:java.net.URI parseRawUserInputToUri(java.lang.String) -> parseRawUserInputToUri
+    1187:1205:void receiveAbsListView(android.widget.AbsListView) -> receiveAbsListView
+    1081:1106:void removeComputer(com.antplay.nvstream.http.ComputerDetails) -> removeComputer
+    873:899:void sendAndVerifySecurityPinManually(java.lang.String) -> sendAndVerifySecurityPinManually
+    1347:1354:void showTimer(java.lang.String) -> showTimer
+    1467:1519:void shutDownVM(java.lang.String,java.lang.String) -> shutDownVM
+    347:362:void startAddThread() -> startAddThread
+    592:618:void startComputerUpdates() -> startComputerUpdates
+    1357:1396:void startVm(java.lang.String) -> startVm
+    621:634:void stopComputerUpdates(boolean) -> stopComputerUpdates
+    1521:1562:void stopVM(java.lang.String,java.lang.String) -> stopVM
+    1115:1178:void updateComputer(com.antplay.nvstream.http.ComputerDetails,java.lang.String) -> updateComputer
+    1673:1687:void vmShutDownInBackground() -> vmShutDownInBackground
 com.antplay.ui.activity.PcView$$ExternalSyntheticLambda0 -> com.antplay.ui.activity.PcView$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -15369,111 +15400,115 @@ com.antplay.ui.activity.PcView$$ExternalSyntheticLambda9 -> com.antplay.ui.activ
     void com.antplay.ui.activity.PcView$$InternalSyntheticLambda$2$9999ea3555d396ef9846173eac59a9ef653c3498354fd71f598ddf94d2e40937$7.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.ui.activity.PcView$1 -> com.antplay.ui.activity.PcView$1:
-    151:151:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    153:172:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
-    175:176:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+    148:148:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    150:169:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
+    172:173:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.antplay.ui.activity.PcView$1$1 -> com.antplay.ui.activity.PcView$1$1:
-    156:156:void <init>(com.antplay.ui.activity.PcView$1,com.antplay.computers.ComputerManagerService$ComputerManagerBinder) -> <init>
-    160:170:void run() -> run
+    153:153:void <init>(com.antplay.ui.activity.PcView$1,com.antplay.computers.ComputerManagerService$ComputerManagerBinder) -> <init>
+    157:167:void run() -> run
 com.antplay.ui.activity.PcView$10 -> com.antplay.ui.activity.PcView$10:
-    937:937:void <init>(com.antplay.ui.activity.PcView,com.antplay.nvstream.http.ComputerDetails) -> <init>
-    942:955:void run() -> run
+    946:946:void <init>(com.antplay.ui.activity.PcView,com.antplay.nvstream.http.ComputerDetails) -> <init>
+    952:979:void run() -> run
 com.antplay.ui.activity.PcView$10$1 -> com.antplay.ui.activity.PcView$10$1:
-    949:949:void <init>(com.antplay.ui.activity.PcView$10,java.lang.String) -> <init>
-    952:953:void run() -> run
+    973:973:void <init>(com.antplay.ui.activity.PcView$10,java.lang.String) -> <init>
+    976:977:void run() -> run
 com.antplay.ui.activity.PcView$11 -> com.antplay.ui.activity.PcView$11:
-    970:970:void <init>(com.antplay.ui.activity.PcView,com.antplay.nvstream.http.ComputerDetails) -> <init>
-    976:1003:void run() -> run
-com.antplay.ui.activity.PcView$11$1 -> com.antplay.ui.activity.PcView$11$1:
-    997:997:void <init>(com.antplay.ui.activity.PcView$11,java.lang.String) -> <init>
-    1000:1001:void run() -> run
+    1023:1023:void <init>(com.antplay.ui.activity.PcView,com.antplay.ui.activity.PcView$ComputerObject) -> <init>
+    1026:1031:void run() -> run
 com.antplay.ui.activity.PcView$12 -> com.antplay.ui.activity.PcView$12:
-    1049:1049:void <init>(com.antplay.ui.activity.PcView,com.antplay.ui.activity.PcView$ComputerObject) -> <init>
-    1052:1057:void run() -> run
+    1055:1055:void <init>(com.antplay.ui.activity.PcView,com.antplay.ui.activity.PcView$ComputerObject) -> <init>
+    1058:1059:void run() -> run
 com.antplay.ui.activity.PcView$13 -> com.antplay.ui.activity.PcView$13:
-    1081:1081:void <init>(com.antplay.ui.activity.PcView,com.antplay.ui.activity.PcView$ComputerObject) -> <init>
-    1084:1085:void run() -> run
+    1188:1188:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    1191:1201:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
 com.antplay.ui.activity.PcView$14 -> com.antplay.ui.activity.PcView$14:
-    1200:1200:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    1203:1213:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+    1284:1284:void <init>(com.antplay.ui.activity.PcView,java.lang.String,java.lang.String) -> <init>
+    1341:1342:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1287:1335:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$15 -> com.antplay.ui.activity.PcView$15:
-    1295:1295:void <init>(com.antplay.ui.activity.PcView,java.lang.String) -> <init>
-    1338:1339:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1298:1332:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1360:1360:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    1392:1394:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1363:1389:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$16 -> com.antplay.ui.activity.PcView$16:
-    1357:1357:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    1389:1390:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1360:1386:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1401:1401:void <init>(com.antplay.ui.activity.PcView,java.lang.String) -> <init>
+    1455:1456:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1404:1452:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$17 -> com.antplay.ui.activity.PcView$17:
-    1396:1396:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    1434:1435:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1399:1431:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1469:1469:void <init>(com.antplay.ui.activity.PcView,java.lang.String) -> <init>
+    1516:1517:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1472:1513:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$18 -> com.antplay.ui.activity.PcView$18:
-    1443:1443:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    1468:1469:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1446:1465:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1523:1523:void <init>(com.antplay.ui.activity.PcView,java.lang.String) -> <init>
+    1559:1560:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1526:1556:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$19 -> com.antplay.ui.activity.PcView$19:
-    1502:1502:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    1527:1528:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1505:1524:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1567:1567:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    1595:1596:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1570:1591:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$2 -> com.antplay.ui.activity.PcView$2:
-    180:180:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    182:184:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
-    187:189:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+    177:177:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    179:181:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
+    184:186:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.antplay.ui.activity.PcView$20 -> com.antplay.ui.activity.PcView$20:
-    1534:1534:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    1561:1562:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1537:1557:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1629:1629:void <init>(com.antplay.ui.activity.PcView,long,long,android.widget.TextView,long) -> <init>
+    1646:1667:void onFinish() -> onFinish
+    1631:1643:void onTick(long) -> onTick
 com.antplay.ui.activity.PcView$21 -> com.antplay.ui.activity.PcView$21:
-    711:711:void <clinit>() -> <clinit>
+    1677:1677:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    1680:1684:void run() -> run
+com.antplay.ui.activity.PcView$22 -> com.antplay.ui.activity.PcView$22:
+    692:692:void <clinit>() -> <clinit>
 com.antplay.ui.activity.PcView$3 -> com.antplay.ui.activity.PcView$3:
-    335:335:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    340:350:void run() -> run
+    327:327:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    332:340:void run() -> run
 com.antplay.ui.activity.PcView$4 -> com.antplay.ui.activity.PcView$4:
-    357:357:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    360:368:void run() -> run
+    347:347:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    350:358:void run() -> run
 com.antplay.ui.activity.PcView$5 -> com.antplay.ui.activity.PcView$5:
-    539:539:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    542:543:void run() -> run
+    540:540:void <init>(com.antplay.ui.activity.PcView,com.antplay.preferences.GlPreferences) -> <init>
+    563:563:void onDrawFrame(javax.microedition.khronos.opengles.GL10) -> onDrawFrame
+    559:559:void onSurfaceChanged(javax.microedition.khronos.opengles.GL10,int,int) -> onSurfaceChanged
+    543:555:void onSurfaceCreated(javax.microedition.khronos.opengles.GL10,javax.microedition.khronos.egl.EGLConfig) -> onSurfaceCreated
+com.antplay.ui.activity.PcView$5$1 -> com.antplay.ui.activity.PcView$5$1:
+    549:549:void <init>(com.antplay.ui.activity.PcView$5) -> <init>
+    552:553:void run() -> run
 com.antplay.ui.activity.PcView$6 -> com.antplay.ui.activity.PcView$6:
-    555:555:void <init>(com.antplay.ui.activity.PcView,com.antplay.preferences.GlPreferences) -> <init>
-    579:579:void onDrawFrame(javax.microedition.khronos.opengles.GL10) -> onDrawFrame
-    575:575:void onSurfaceChanged(javax.microedition.khronos.opengles.GL10,int,int) -> onSurfaceChanged
-    559:571:void onSurfaceCreated(javax.microedition.khronos.opengles.GL10,javax.microedition.khronos.egl.EGLConfig) -> onSurfaceCreated
+    753:753:void <init>(com.antplay.ui.activity.PcView,com.antplay.nvstream.http.ComputerDetails) -> <init>
+    758:837:void run() -> run
 com.antplay.ui.activity.PcView$6$1 -> com.antplay.ui.activity.PcView$6$1:
-    565:565:void <init>(com.antplay.ui.activity.PcView$6) -> <init>
-    568:569:void run() -> run
+    824:824:void <init>(com.antplay.ui.activity.PcView$6,java.lang.String,boolean) -> <init>
+    827:835:void run() -> run
 com.antplay.ui.activity.PcView$7 -> com.antplay.ui.activity.PcView$7:
-    772:772:void <init>(com.antplay.ui.activity.PcView,com.antplay.nvstream.http.ComputerDetails) -> <init>
-    777:861:void run() -> run
-com.antplay.ui.activity.PcView$7$1 -> com.antplay.ui.activity.PcView$7$1:
-    843:843:void <init>(com.antplay.ui.activity.PcView$7,java.lang.String,boolean) -> <init>
-    846:859:void run() -> run
+    877:877:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    880:892:void onResponse(java.lang.String,java.lang.String) -> onResponse
 com.antplay.ui.activity.PcView$8 -> com.antplay.ui.activity.PcView$8:
-    901:901:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    904:916:void onResponse(java.lang.String,java.lang.String) -> onResponse
+    893:893:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    896:897:void onError(java.lang.String,java.lang.String,long) -> onError
 com.antplay.ui.activity.PcView$9 -> com.antplay.ui.activity.PcView$9:
-    917:917:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    920:921:void onError(java.lang.String,java.lang.String,long) -> onError
+    913:913:void <init>(com.antplay.ui.activity.PcView,com.antplay.nvstream.http.ComputerDetails) -> <init>
+    918:931:void run() -> run
+com.antplay.ui.activity.PcView$9$1 -> com.antplay.ui.activity.PcView$9$1:
+    925:925:void <init>(com.antplay.ui.activity.PcView$9,java.lang.String) -> <init>
+    928:929:void run() -> run
 com.antplay.ui.activity.PcView$ComputerObject -> com.antplay.ui.activity.PcView$ComputerObject:
-    1222:1227:void <init>(com.antplay.nvstream.http.ComputerDetails) -> <init>
-    1231:1231:java.lang.String toString() -> toString
+    1210:1215:void <init>(com.antplay.nvstream.http.ComputerDetails) -> <init>
+    1219:1219:java.lang.String toString() -> toString
 com.antplay.ui.activity.ProfileActivity -> com.antplay.ui.activity.ProfileActivity:
     void $r8$lambda$2ZC9yxHtC64jvUjScq6yvafzW84(android.app.Dialog,android.view.View) -> $r8$lambda$2ZC9yxHtC64jvUjScq6yvafzW84
       # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$M4P66zMhdtJnmc7_HdZBzzBBp_s(com.antplay.ui.activity.ProfileActivity,android.app.Dialog,android.view.View) -> $r8$lambda$M4P66zMhdtJnmc7_HdZBzzBBp_s
       # {"id":"com.android.tools.r8.synthesized"}
-    java.lang.String -$$Nest$mconvertDateToString(com.antplay.ui.activity.ProfileActivity,java.lang.String) -> -$$Nest$mconvertDateToString
+    void -$$Nest$mconvertDateToString(com.antplay.ui.activity.ProfileActivity,java.lang.String,java.lang.String) -> -$$Nest$mconvertDateToString
       # {"id":"com.android.tools.r8.synthesized"}
-    46:58:void <init>() -> <init>
-    306:340:void callPaymentHistoryAPI() -> callPaymentHistoryAPI
-    344:358:java.lang.String convertDateToString(java.lang.String) -> convertDateToString
-    269:303:void getUserDetails() -> getUserDetails
-    121:127:void lambda$logoutMethod$0(android.app.Dialog,android.view.View) -> lambda$logoutMethod$0
-    129:130:void lambda$logoutMethod$1(android.app.Dialog,android.view.View) -> lambda$logoutMethod$1
-    111:140:void logoutMethod() -> logoutMethod
-    226:267:void onClick(android.view.View) -> onClick
-    63:106:void onCreate(android.os.Bundle) -> onCreate
+    47:59:void <init>() -> <init>
+    313:349:void callPaymentHistoryAPI() -> callPaymentHistoryAPI
+    352:377:void convertDateToString(java.lang.String,java.lang.String) -> convertDateToString
+    276:310:void getUserDetails() -> getUserDetails
+    124:130:void lambda$logoutMethod$0(android.app.Dialog,android.view.View) -> lambda$logoutMethod$0
+    132:133:void lambda$logoutMethod$1(android.app.Dialog,android.view.View) -> lambda$logoutMethod$1
+    114:143:void logoutMethod() -> logoutMethod
+    229:274:void onClick(android.view.View) -> onClick
+    64:109:void onCreate(android.os.Bundle) -> onCreate
 com.antplay.ui.activity.ProfileActivity$$ExternalSyntheticLambda0 -> com.antplay.ui.activity.ProfileActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -15492,33 +15527,33 @@ com.antplay.ui.activity.ProfileActivity$$ExternalSyntheticLambda1 -> com.antplay
     void com.antplay.ui.activity.ProfileActivity$$InternalSyntheticLambda$2$3c3769892b37e4249e62d8e364e0c28982d37a314400c980697416430e0ff450$1.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.ui.activity.ProfileActivity$1 -> com.antplay.ui.activity.ProfileActivity$1:
-    270:270:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
-    300:301:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    273:295:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    277:277:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    307:308:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    280:302:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.ProfileActivity$2 -> com.antplay.ui.activity.ProfileActivity$2:
-    308:308:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
-    336:338:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    311:332:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    315:315:void <init>(com.antplay.ui.activity.ProfileActivity) -> <init>
+    345:347:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    318:341:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.SignupActivity -> com.antplay.ui.activity.SignupActivity:
     51:67:void <init>() -> <init>
-    113:145:void callRegisterApi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> callRegisterApi
-    320:322:void onButtonClick(int) -> onButtonClick
-    256:300:void onClick(android.view.View) -> onClick
+    113:144:void callRegisterApi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> callRegisterApi
+    319:321:void onButtonClick(int) -> onButtonClick
+    255:299:void onClick(android.view.View) -> onClick
     72:106:void onCreate(android.os.Bundle) -> onCreate
-    303:316:void openStateDialog() -> openStateDialog
-    341:355:void showHideConfirmPassword(android.widget.EditText,android.widget.ImageView) -> showHideConfirmPassword
-    324:338:void showHidePassword(android.widget.EditText,android.widget.ImageView) -> showHidePassword
-    148:250:boolean validateFormField() -> validateFormField
+    302:315:void openStateDialog() -> openStateDialog
+    340:354:void showHideConfirmPassword(android.widget.EditText,android.widget.ImageView) -> showHideConfirmPassword
+    323:337:void showHidePassword(android.widget.EditText,android.widget.ImageView) -> showHidePassword
+    147:249:boolean validateFormField() -> validateFormField
 com.antplay.ui.activity.SignupActivity$1 -> com.antplay.ui.activity.SignupActivity$1:
     118:118:void <init>(com.antplay.ui.activity.SignupActivity) -> <init>
-    142:143:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    121:139:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    141:142:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    121:138:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.SplashActivity -> com.antplay.ui.activity.SplashActivity:
     void $r8$lambda$sYVCYwisWCcSbWyXn8Shyf1J8qY(com.antplay.ui.activity.SplashActivity) -> $r8$lambda$sYVCYwisWCcSbWyXn8Shyf1J8qY
       # {"id":"com.android.tools.r8.synthesized"}
-    14:15:void <init>() -> <init>
-    26:34:void lambda$onCreate$0() -> lambda$onCreate$0
-    19:35:void onCreate(android.os.Bundle) -> onCreate
+    15:16:void <init>() -> <init>
+    28:35:void lambda$onCreate$0() -> lambda$onCreate$0
+    20:36:void onCreate(android.os.Bundle) -> onCreate
 com.antplay.ui.activity.SplashActivity$$ExternalSyntheticLambda0 -> com.antplay.ui.activity.SplashActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -15528,13 +15563,16 @@ com.antplay.ui.activity.SplashActivity$$ExternalSyntheticLambda0 -> com.antplay.
     void com.antplay.ui.activity.SplashActivity$$InternalSyntheticLambda$1$1cc137a5cd4e1d2d27cb175d4e18c1f511a66289c14d64ceeb8b2264cc714777$0.run() -> run
       # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.ui.activity.SubscriptionPlanActivity -> com.antplay.ui.activity.SubscriptionPlanActivity:
+    void $r8$lambda$8L3fdjGh4pNWlS_17Rlk7zLZoPY(com.antplay.ui.activity.SubscriptionPlanActivity,android.view.View) -> $r8$lambda$8L3fdjGh4pNWlS_17Rlk7zLZoPY
+      # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$EiLg50D1UEXtjZNnZ20ZXqd4Kdw(com.antplay.ui.activity.SubscriptionPlanActivity,android.view.View) -> $r8$lambda$EiLg50D1UEXtjZNnZ20ZXqd4Kdw
       # {"id":"com.android.tools.r8.synthesized"}
-    38:38:void <init>() -> <init>
-    74:105:void getPlanApi() -> getPlanApi
-    63:63:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
-    109:133:void onButtonClick(int) -> onButtonClick
-    54:71:void onCreate(android.os.Bundle) -> onCreate
+    39:39:void <init>() -> <init>
+    83:114:void getPlanApi() -> getPlanApi
+    69:69:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
+    71:72:void lambda$onCreate$1(android.view.View) -> lambda$onCreate$1
+    118:142:void onButtonClick(int) -> onButtonClick
+    58:80:void onCreate(android.os.Bundle) -> onCreate
 com.antplay.ui.activity.SubscriptionPlanActivity$$ExternalSyntheticLambda0 -> com.antplay.ui.activity.SubscriptionPlanActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -15543,14 +15581,22 @@ com.antplay.ui.activity.SubscriptionPlanActivity$$ExternalSyntheticLambda0 -> co
       # {"id":"com.android.tools.r8.synthesized"}
     void com.antplay.ui.activity.SubscriptionPlanActivity$$InternalSyntheticLambda$1$87601e0a186da199f5a002004f5ae56460a031ed32888f4c1832104ad96fdab8$0.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
+com.antplay.ui.activity.SubscriptionPlanActivity$$ExternalSyntheticLambda1 -> com.antplay.ui.activity.SubscriptionPlanActivity$$ExternalSyntheticLambda1:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    com.antplay.ui.activity.SubscriptionPlanActivity com.antplay.ui.activity.SubscriptionPlanActivity$$InternalSyntheticLambda$1$87601e0a186da199f5a002004f5ae56460a031ed32888f4c1832104ad96fdab8$1.f$0 -> f$0
+    void com.antplay.ui.activity.SubscriptionPlanActivity$$InternalSyntheticLambda$1$87601e0a186da199f5a002004f5ae56460a031ed32888f4c1832104ad96fdab8$1.<init>(com.antplay.ui.activity.SubscriptionPlanActivity) -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void com.antplay.ui.activity.SubscriptionPlanActivity$$InternalSyntheticLambda$1$87601e0a186da199f5a002004f5ae56460a031ed32888f4c1832104ad96fdab8$1.onClick(android.view.View) -> onClick
+      # {"id":"com.android.tools.r8.synthesized"}
 com.antplay.ui.activity.SubscriptionPlanActivity$1 -> com.antplay.ui.activity.SubscriptionPlanActivity$1:
-    76:76:void <init>(com.antplay.ui.activity.SubscriptionPlanActivity) -> <init>
-    101:103:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    79:97:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    85:85:void <init>(com.antplay.ui.activity.SubscriptionPlanActivity) -> <init>
+    110:112:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    88:106:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.SubscriptionPlanActivity$2 -> com.antplay.ui.activity.SubscriptionPlanActivity$2:
-    114:114:void <init>(com.antplay.ui.activity.SubscriptionPlanActivity) -> <init>
-    127:129:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    117:124:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    123:123:void <init>(com.antplay.ui.activity.SubscriptionPlanActivity) -> <init>
+    136:138:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    126:133:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.VerifyOTP -> com.antplay.ui.activity.VerifyOTP:
     void -$$Nest$mcallTimer(com.antplay.ui.activity.VerifyOTP) -> -$$Nest$mcallTimer
       # {"id":"com.android.tools.r8.synthesized"}
@@ -15672,10 +15718,16 @@ com.antplay.ui.fragments.OnBoardingThree -> com.antplay.ui.fragments.OnBoardingT
 com.antplay.ui.fragments.OnBoardingTwo -> com.antplay.ui.fragments.OnBoardingTwo:
     18:18:void <init>() -> <init>
     24:24:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+com.antplay.ui.intrface.ClearService -> com.antplay.ui.intrface.ClearService:
+    40:40:void <init>() -> <init>
+    76:76:android.os.IBinder onBind(android.content.Intent) -> onBind
+    48:50:void onCreate() -> onCreate
+    68:72:void onDestroy() -> onDestroy
+    56:60:int onStartCommand(android.content.Intent,int,int) -> onStartCommand
 com.antplay.ui.intrface.StreamView -> com.antplay.ui.intrface.StreamView:
     26:27:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    66:79:boolean onKeyPreIme(int,android.view.KeyEvent) -> onKeyPreIme
-    41:60:void onMeasure(int,int) -> onMeasure
+    64:76:boolean onKeyPreIme(int,android.view.KeyEvent) -> onKeyPreIme
+    41:58:void onMeasure(int,int) -> onMeasure
     14:15:void setDesiredAspectRatio(double) -> setDesiredAspectRatio
     18:19:void setInputCallbacks(com.antplay.ui.intrface.StreamView$InputCallbacks) -> setInputCallbacks
 com.antplay.utils.AppUtils -> com.antplay.utils.AppUtils:
@@ -15708,7 +15760,7 @@ com.antplay.utils.CacheHelper -> com.antplay.utils.CacheHelper:
     54:64:void writeInputStreamToOutputStream(java.io.InputStream,java.io.OutputStream,long) -> writeInputStreamToOutputStream
     84:85:void writeStringToOutputStream(java.io.OutputStream,java.lang.String) -> writeStringToOutputStream
 com.antplay.utils.Const -> com.antplay.utils.Const:
-    7:84:void <clinit>() -> <clinit>
+    7:86:void <clinit>() -> <clinit>
 com.antplay.utils.GenericTextWatcher -> com.antplay.utils.GenericTextWatcher:
     15:18:void <init>(android.view.View,android.widget.EditText[]) -> <init>
     32:69:void afterTextChanged(android.text.Editable) -> afterTextChanged

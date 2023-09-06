@@ -659,6 +659,6 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
 
     @Override
     public void onBackPressed() {
-        AppUtils.navigateScreen(AppView.this, PcView.class);
+        AppUtils.navigateScreen(AppView.this,PcView.class);
     }
 }

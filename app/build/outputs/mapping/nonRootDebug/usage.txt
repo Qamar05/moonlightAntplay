@@ -11052,10 +11052,10 @@ com.antplay.Game:
     private static final int STYLUS_UP_DEAD_ZONE_RADIUS
     private static final int THREE_FINGER_TAP_THRESHOLD
     public void exitActivity()
-    private synthetic void lambda$exitActivity$6()
-    private synthetic void lambda$openExitVMDialog$4(android.app.Dialog,android.view.View)
-    private static synthetic void lambda$openExitVMDialog$5(android.app.Dialog,android.view.View)
-    private static synthetic void lambda$openTimerDialog$2(android.app.Dialog,android.view.View)
+    private synthetic void lambda$exitActivity$7()
+    private synthetic void lambda$openExitVMDialog$5(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openExitVMDialog$6(android.app.Dialog,android.view.View)
+    private static synthetic void lambda$openTimerDialog$3(android.app.Dialog,android.view.View)
     private void openExitVMDialog()
     private void openTimerDialog()
 com.antplay.LimeLog:
@@ -11320,9 +11320,7 @@ com.antplay.models.AllBillingPlanResp:
     public void setMessage(java.lang.String)
 com.antplay.models.BillingDataList:
     private java.lang.String plan_type
-    private java.lang.String term
     public java.lang.String getPlan_type()
-    public java.lang.String getTerm()
     public void setCpu(java.lang.String)
     public void setGpu(java.lang.String)
     public void setHour_limit(java.lang.String)
@@ -11449,6 +11447,7 @@ com.antplay.models.UserRegisterRequest:
     public void setPhone_number(java.lang.String)
     public void setPincode(java.lang.String)
     public void setState(java.lang.String)
+com.antplay.models.UserRegisterResp
 com.antplay.models.UserUpdateRequestModal:
     public java.lang.String getAddress()
     public java.lang.String getCity()
@@ -11624,8 +11623,14 @@ com.antplay.ui.activity.HomeActivity
 com.antplay.ui.activity.LoginActivity:
     java.lang.String st_email
     java.lang.String st_password
+com.antplay.ui.activity.MyApplication$1
+com.antplay.ui.activity.MyApplication$2
+com.antplay.ui.activity.MyApplication$3
 com.antplay.ui.activity.MyApplication:
-    public static void activityDestroy()
+    public void getVMForShutDown()
+    public boolean isAppInForeground()
+    private void shutDownVM(java.lang.String)
+    private void stopVM(java.lang.String)
 com.antplay.ui.activity.OnBoardingActivity:
     private void mathscalculation()
     private void updateSharedPreferences(boolean)
@@ -11642,14 +11647,14 @@ com.antplay.ui.activity.PcView:
     private static final int WOL_ID
     android.app.Dialog startVMDialog
     java.util.Timer startVmTimer
-    private synthetic void lambda$openStartVMDialog$14(android.view.View)
-    private synthetic void lambda$openStartVMDialog$15(android.view.View)
-    private void openStartVMDialog()
 com.antplay.ui.activity.ProfileActivity:
     private int dayInYear(long)
     private java.lang.String getDateFromSec(long)
     private long getMonthCount(long)
     private long getYear(long)
+com.antplay.ui.activity.SplashActivity:
+    private void doSomethingAfterAppKilled()
+    private static synthetic void lambda$doSomethingAfterAppKilled$1()
 com.antplay.ui.activity.VerifyOTP:
     private static final int REQ_USER_CONSENT
     android.widget.EditText et_confirmPassword
@@ -11660,6 +11665,14 @@ com.antplay.ui.adapter.ZoomOutPageTransformer:
 com.antplay.ui.fragments.HomeFragment
 com.antplay.ui.fragments.SettingsFragment
 com.antplay.ui.fragments.VMFragment
+com.antplay.ui.intrface.ClearService$1
+com.antplay.ui.intrface.ClearService$2
+com.antplay.ui.intrface.ClearService$3
+com.antplay.ui.intrface.ClearService:
+    private static final int NOTIFICATION_ID
+    public void getVMForShutDown()
+    private void shutDownVM(java.lang.String)
+    private void stopVM(java.lang.String)
 com.antplay.ui.intrface.GameGestures:
     public abstract void toggleKeyboard()
 com.antplay.ui.intrface.StreamView:

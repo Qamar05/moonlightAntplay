@@ -82,5 +82,8 @@ public class Const {
     public static String FAQ_URL="https://antplay.tech/faq";
 
     public static String VMID="vmId";
+    public static String STARTBtnStatus="start_btnStatus";
+    public static String connectbtnVisible="connectbtnVisible";
+
 
 }

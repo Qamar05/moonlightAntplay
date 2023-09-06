@@ -334,7 +334,7 @@
     <string name="subscribe">Subscribe</string>
     <string name="active_plan">Active Plan</string>
     <string name="wrong_old_pass">Please check your Old Password. It might be wrong.</string>
-    <string name="change_pass">Change password</string>
+    <string name="change_pass">Change Password</string>
     <string name="upadte_pass">Update password</string>
     <string name="old_pass">Old Password</string>
     <string name="new_pass">New Password</string>
@@ -399,10 +399,12 @@
     <string name="no_vm_msg">Please wait while we are creating your virtual machine, it may take half an hour.</string>
     <string name="searching_pc_first">To get a virtual machine, purchase a plan</string>
     <string name="searching_pc_second"> Please wait for max. 20 min while we are creating your machine.</string>
-    <string name="startVMMsg">Please wait while we are getting your virtual machine ready for you.it may take upto 60 sec.</string>
+    <string name="startVMMsg">Please wait while we are getting your virtual machine ready for you.</string>
+    <string name="shutdownVMMsg">Please wait while we are shutting down your virtual machine </string>
 
     <string name="exit_vm_msg">Are you sure you want to Exit?</string>
     <string name="exit_vm">Exit</string>
+    <string name="keyboard_note">Note - if your phone support three finger swipe to take screenshot or something else then user 4 fingers to invoke virtual keyboard, or turn off swipe three finger functionality to invoke virtual keyboard with three fingers. </string>
     <string name="open_keyword">Tap with three fingers to invoke virtual keyboard.</string>
     <string name="tapRightCLick">To perform right click , put one finger on the screen and tap with
         the second one.</string>
@@ -411,10 +413,11 @@
     <string name="stop_vm">Shutdown</string>
 
     <string name="shutdown_vmmsg">your machine was shutted down , please start your machine to continue</string>
+    <string name="check_mail">Please check verification email</string>
 
 
 
-
+<!--    it may take upto 60 sec.-->
 
 
 

@@ -14,7 +14,8 @@
         android:background="@color/background" />
 
     <FrameLayout
-        android:paddingTop="@dimen/_20sdp"
+        android:layout_below="@+id/appListText"
+        android:paddingTop="@dimen/_10sdp"
         android:id="@+id/appFragmentContainer"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
@@ -35,6 +36,6 @@
         android:paddingBottom="5dp"
         android:textColor="@color/white"
         android:preferKeepClear="true"
-        android:textSize="28sp"/>
+        android:textSize="@dimen/_16sdp"/>
 
 </RelativeLayout>
