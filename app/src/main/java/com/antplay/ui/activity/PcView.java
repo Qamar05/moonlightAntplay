@@ -148,26 +148,16 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     private final ServiceConnection serviceConnection = new ServiceConnection() {
         public void onServiceConnected(ComponentName className, IBinder binder) {
             final ComputerManagerService.ComputerManagerBinder localBinder = ((ComputerManagerService.ComputerManagerBinder) binder);
-
-            // Wait in a separate thread to avoid stalling the UI
             new Thread() {
                 @Override
                 public void run() {
-                    // Wait for the binder to be ready
                     localBinder.waitForReady();
-
-                    // Now make the binder visible
                     managerBinder = localBinder;
-
-                    // Start updates
-                   startComputerUpdates();
-
-                    // Force a keypair to be generated early to avoid discovery delays
+                    startComputerUpdates();
                     new AndroidCryptoProvider(PcView.this).getClientCertificate();
                 }
             }.start();
         }
-
         public void onServiceDisconnected(ComponentName className) {
             managerBinder = null;
         }
@@ -530,7 +520,6 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         tvTimer = findViewById(R.id.tvTimer);
 
         vmShutDownInBackground();
-
 
         // Create a GLSurfaceView to fetch GLRenderer unless we have
         // a cached result already.
@@ -989,6 +978,12 @@ catch (Exception e){
             Toast.makeText(PcView.this, getResources().getString(R.string.error_manager_not_running), Toast.LENGTH_LONG).show();
             return;
         }
+        if (timerVmShutDown != null) {
+            timerVmShutDown.cancel();
+            timerVmShutDown.purge();
+            timerVmShutDown = null;
+        }
+        SharedPreferenceUtils.saveBoolean(PcView.this, Const.IS_VM_DISCONNECTED , false);
 
         Intent i = new Intent(this, AppView.class);
         i.putExtra(AppView.NAME_EXTRA, computer.name);
@@ -996,6 +991,8 @@ catch (Exception e){
         i.putExtra(AppView.NEW_PAIR_EXTRA, newlyPaired);
         i.putExtra(AppView.SHOW_HIDDEN_APPS_EXTRA, showHiddenGames);
         startActivity(i);
+
+
     }
 
     @Override
@@ -1669,10 +1666,9 @@ catch (Exception e){
         }.start();
 
     }
-    public void vmShutDownInBackground(){
+    public void vmShutDownInBackground() {
         isVmDisConnected = SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_VM_DISCONNECTED);
-        Log.i("test", "" + isVmDisConnected);
-        if(isVmDisConnected) {
+        if (isVmDisConnected) {
             timerVmShutDown = new Timer();
             timerVmShutDown.scheduleAtFixedRate(new TimerTask() {
                 @Override
@@ -1682,9 +1678,9 @@ catch (Exception e){
                     else
                         AppUtils.showInternetDialog(PcView.this);
                 }
-            }, 0, 300 * 1000);
+
+            }, 0, 400 * 1000);
         }
     }
-
 }
 

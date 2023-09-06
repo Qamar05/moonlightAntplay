@@ -183,7 +183,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     private WifiManager.WifiLock lowLatencyWifiLock;
 
     TextView tvTimer ,tvExpire;
-    ImageView ivClose ,ivKeyboard;
+    ImageView ivClose ,ivKeyboard , ivKeyboardOverlay;
     ConstraintLayout  overlayLayout;
 
     boolean isBackPressed =  false;
@@ -301,6 +301,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         ivClose =  findViewById(R.id.ivClose);
         overlayLayout =  findViewById(R.id.overlayLayout);
         ivKeyboard =  findViewById(R.id.ivKeyboard);
+
 
         String value = SharedPreferenceUtils.getString(Game.this,Const.SHOW_OVERLAY);
         if(value ==null || !value.equalsIgnoreCase("true")){
