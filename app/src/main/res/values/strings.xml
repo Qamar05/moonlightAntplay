@@ -398,7 +398,7 @@
     <string name="no_vm_title">Alert</string>
     <string name="no_vm_msg">Please wait while we are creating your virtual machine, it may take half an hour.</string>
     <string name="searching_pc_first">To get a virtual machine, purchase a plan</string>
-    <string name="searching_pc_second"> Please wait for max. 20 min while we are creating your machine.</string>
+    <string name="searching_pc_second"> Please wait while we are creating your machine.</string>
     <string name="startVMMsg">Please wait while we are getting your virtual machine ready for you.</string>
     <string name="shutdownVMMsg">Please wait while we are shutting down your virtual machine </string>
 
@@ -406,8 +406,7 @@
     <string name="exit_vm">Exit</string>
     <string name="keyboard_note">Note - if your phone support three finger swipe to take screenshot or something else then user 4 fingers to invoke virtual keyboard, or turn off swipe three finger functionality to invoke virtual keyboard with three fingers. </string>
     <string name="open_keyword">Tap with three fingers to invoke virtual keyboard.</string>
-    <string name="tapRightCLick">To perform right click , put one finger on the screen and tap with
-        the second one.</string>
+    <string name="tapRightCLick">Touch and hold for right click</string>
 
     <string name="start_vm">Start</string>
     <string name="stop_vm">Shutdown</string>

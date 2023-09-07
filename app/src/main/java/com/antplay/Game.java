@@ -1170,7 +1170,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     protected void onDestroy() {
         super.onDestroy();
         Log.i("testt_onDestroy" , "testtttt");
-        stopConnection(true);
+        stopConnection(false);
 
         SpinnerDialog.closeDialogs(this);
         MyDialog.closeDialogs();
@@ -2075,7 +2075,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                 if (!displayedFailureDialog) {
                     displayedFailureDialog = true;
                     LimeLog.severe("Connection terminated: " + errorCode);
-                    stopConnection(false);
+
                     if (errorCode != MoonBridge.ML_ERROR_GRACEFUL_TERMINATION) {
                         String message;
 
@@ -2114,7 +2114,9 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
                         MyDialog.displayDialog(Game.this, getResources().getString(R.string.conn_terminated_title),
                                 message, true);
-                    } else {
+                    }
+                    else {
+//                        stopConnection(false);
                         finish();
                     }
                 }
@@ -2143,7 +2145,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                         notificationOverlayView.setText(getResources().getString(R.string.poor_connection_msg));
                     }
 
-                    requestedNotificationOverlayVisibility = View.VISIBLE;
+                   // requestedNotificationOverlayVisibility = View.VISIBLE;
                 }
                 else if (connectionStatus == MoonBridge.CONN_STATUS_OKAY) {
                     requestedNotificationOverlayVisibility = View.GONE;
@@ -2229,7 +2231,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                            getVM("endVmTImer");
                        }
                        else {
-                            endVMDialog.dismiss();
+                           // endVMDialog.dismiss();
                            AppUtils.navigateScreen(Game.this, PcView.class);
                                finishAffinity();
 

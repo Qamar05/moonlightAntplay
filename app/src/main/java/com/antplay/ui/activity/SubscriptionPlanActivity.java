@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.antplay.R;
 import com.antplay.api.APIClient;
@@ -66,6 +68,17 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
         tvNoDataFound = findViewById(R.id.tvNoDataFound);
         imgBack = findViewById(R.id.imgBack);
         backText =  findViewById(R.id.backText);
+        SwipeRefreshLayout swipeLayout = findViewById(R.id.refreshLayout);
+        swipeLayout.setOnRefreshListener(() -> {
+            new Handler().postDelayed(() -> {
+                swipeLayout.setRefreshing(false);
+                if (AppUtils.isOnline(mContext))
+                    getPlanApi();
+                else
+                    AppUtils.showInternetDialog(mContext);
+            }, 1000);
+        });
+        swipeLayout.setColorSchemeColors(getResources().getColor(R.color.teal_700));
         imgBack.setOnClickListener(v -> finish());
         back_linear.setOnClickListener(view -> {
             finish();
