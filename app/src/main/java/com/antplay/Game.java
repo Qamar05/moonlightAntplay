@@ -2219,7 +2219,6 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
     private void endVMTimeAPi(boolean value) {
         Log.i("test_onEndVmm" , "testt" + value);
-        openDialog();
         vmTimerReq = new VMTimerReq(strVMId);
         Call<MessageResponse> call = retrofitAPI.endVmTime("Bearer " + accessToken , vmTimerReq);
         call.enqueue(new Callback<>() {
@@ -2231,7 +2230,6 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                            getVM("endVmTImer");
                        }
                        else {
-                           // endVMDialog.dismiss();
                            AppUtils.navigateScreen(Game.this, PcView.class);
                                finishAffinity();
 

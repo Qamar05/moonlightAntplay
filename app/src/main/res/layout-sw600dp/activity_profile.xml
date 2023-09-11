@@ -136,7 +136,7 @@
                             android:layout_marginRight="@dimen/_20sdp"
                             android:fontFamily="sans-serif"
                             android:gravity="right"
-                            android:text="dfhrthrwtjr"
+                            android:text=""
                             android:textColor="@color/teal_200"
                             android:textSize="@dimen/_9sdp" />
 
@@ -173,7 +173,7 @@
                             android:layout_marginRight="@dimen/_20sdp"
                             android:fontFamily="sans-serif"
                             android:gravity="right"
-                            android:text="svsvwv"
+                            android:text=""
                             android:textColor="@color/teal_200"
                             android:textSize="@dimen/_9sdp" />
 

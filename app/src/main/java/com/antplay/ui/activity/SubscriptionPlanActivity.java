@@ -19,14 +19,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.antplay.AppView;
 import com.antplay.R;
 import com.antplay.api.APIClient;
 import com.antplay.api.RetrofitAPI;
 import com.antplay.models.AllBillingPlanResp;
 import com.antplay.models.BillingDataList;
+import com.antplay.models.Payment;
+import com.antplay.models.PaymentHistory_modal;
 import com.antplay.models.StartPaymentReq;
 import com.antplay.models.StartPaymentResp;
 import com.antplay.models.UserViewResponse;
+import com.antplay.ui.adapter.PaymentHistoryAdapter;
 import com.antplay.ui.adapter.SubscriptionPlanAdapter;
 import com.antplay.utils.AppUtils;
 import com.antplay.utils.Const;
@@ -54,7 +58,9 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
     Context mContext;
     LinearLayout back_linear;
 
+    boolean paymentStatus =  false;
 
+    boolean isSUBScriptionScreen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,8 +87,10 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
         swipeLayout.setColorSchemeColors(getResources().getColor(R.color.teal_700));
         imgBack.setOnClickListener(v -> finish());
         back_linear.setOnClickListener(view -> {
-            finish();
+            AppUtils.navigateScreen((Activity) mContext,PcView.class);
+            finishAffinity();
         });
+
         buttonClickListener = this;
         if (AppUtils.isOnline(mContext))
             getPlanApi();
@@ -153,5 +161,13 @@ public class SubscriptionPlanActivity extends AppCompatActivity implements Subsc
         } else
            AppUtils.showInternetDialog(mContext);
     }
+
+    @Override
+    public void onBackPressed() {
+        AppUtils.navigateScreen((Activity) mContext,PcView.class);
+        finishAffinity();
+    }
+
+
 }
 

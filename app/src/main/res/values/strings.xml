@@ -159,13 +159,11 @@
     <string name="resolution_prefix_native_fullscreen">Native Full-Screen</string>
     <string name="resolution_prefix_native_landscape">(Landscape)</string>
     <string name="resolution_prefix_native_portrait">(Portrait)</string>
-
     <string name="category_audio_settings">Audio Settings</string>
     <string name="title_audio_config_list">Surround sound configuration</string>
     <string name="summary_audio_config_list">Enable 5.1 or 7.1 surround sound for home-theater systems</string>
     <string name="title_checkbox_enable_audiofx">Enable system equalizer support</string>
     <string name="summary_checkbox_enable_audiofx">Allows audio effects to function while streaming, but may increase audio latency</string>
-
     <string name="category_input_settings">Input Settings</string>
     <string name="title_checkbox_touchscreen_trackpad">Use the touchscreen as a trackpad</string>
     <string name="summary_checkbox_touchscreen_trackpad">If enabled, the touchscreen acts like a trackpad. If disabled, the touchscreen directly controls the mouse cursor.</string>
@@ -188,7 +186,6 @@
     <string name="summary_checkbox_flip_face_buttons">Switches the face buttons A/B and X/Y for gamepads and the on-screen controls</string>
     <string name="title_checkbox_absolute_mouse_mode">Remote desktop mouse mode</string>
     <string name="summary_checkbox_absolute_mouse_mode">This can make mouse acceleration behave more naturally for remote desktop usage, but it is incompatible with many games.</string>
-
     <string name="category_on_screen_controls_settings">On-screen Controls Settings</string>
     <string name="title_checkbox_show_onscreen_controls">Show on-screen controls</string>
     <string name="summary_checkbox_show_onscreen_controls">Show virtual controller overlay on touchscreen</string>
@@ -205,7 +202,6 @@
     <string name="summary_osc_opacity">Make the on-screen controls more/less transparent</string>
     <string name="dialog_title_osc_opacity">Change opacity</string>
     <string name="suffix_osc_opacity">%</string>
-
     <string name="category_ui_settings">UI Settings</string>
     <string name="title_checkbox_enable_pip">Enable Picture-in-Picture observer mode</string>
     <string name="summary_checkbox_enable_pip">Allows the stream to be viewed (but not controlled) while multitasking</string>
@@ -213,13 +209,11 @@
     <string name="summary_language_list">Language to use for AntPlay</string>
     <string name="title_checkbox_small_icon_mode">Use small box art</string>
     <string name="summary_checkbox_small_icon_mode">Smaller box art in the app grid allows more apps to be visible on screen</string>
-
     <string name="category_host_settings">Host Settings</string>
     <string name="title_checkbox_enable_sops">Optimize game settings</string>
     <string name="summary_checkbox_enable_sops">Allow GFE to modify game settings for optimal streaming</string>
     <string name="title_checkbox_host_audio">Play audio on PC</string>
     <string name="summary_checkbox_host_audio">Play audio from the computer and this device</string>
-
     <string name="category_advanced_settings">Advanced Settings</string>
     <string name="title_unlock_fps">Unlock all possible frame rates</string>
     <string name="summary_unlock_fps">Streaming at 90 or 120 FPS may reduce latency on high-end devices but can cause lag or instability on devices that can\'t support it</string>
@@ -239,7 +233,6 @@
     <string name="summary_enable_perf_overlay">Display real-time stream performance information while streaming</string>
     <string name="title_enable_post_stream_toast">Show latency message after streaming</string>
     <string name="summary_enable_post_stream_toast">Display a latency information message after the stream ends</string>
-
     <string name="category_help">Help</string>
     <string name="title_setup_guide">Setup guide</string>
     <string name="summary_setup_guide">View instructions on how to set up your gaming PC for streaming</string>
@@ -247,47 +240,38 @@
     <string name="summary_troubleshooting">View tips for diagnosing and fixing common streaming issues</string>
     <string name="title_privacy_policy">Privacy policy</string>
     <string name="summary_privacy_policy">View AntPlay\'s privacy policy</string>
-
-    <!-- Array strings -->
     <string name="resolution_360p">360p</string>
     <string name="resolution_480p">480p</string>
     <string name="resolution_720p">720p</string>
     <string name="resolution_1080p">1080p</string>
     <string name="resolution_1440p">1440p</string>
     <string name="resolution_4k">4K</string>
-
     <string name="fps_30">30 FPS</string>
     <string name="fps_60">60 FPS</string>
     <string name="fps_90">90 FPS</string>
     <string name="fps_120">120 FPS</string>
-
     <string name="audioconf_stereo">Stereo</string>
     <string name="audioconf_51surround">5.1 Surround Sound</string>
     <string name="audioconf_71surround">7.1 Surround Sound</string>
-
     <string name="videoformat_hevcauto">Automatic (Recommended)</string>
     <string name="videoformat_hevcalways">Prefer HEVC</string>
     <string name="videoformat_hevcnever">Never use HEVC</string>
-
     <string name="title_frame_pacing">Video frame pacing</string>
     <string name="summary_frame_pacing">Specify how to balance video latency and smoothness</string>
     <string name="pacing_latency">Prefer lowest latency</string>
     <string name="pacing_balanced">Balanced</string>
     <string name="pacing_balanced_alt">Balanced with FPS limit</string>
     <string name="pacing_smoothness">Prefer smoothest video (may significantly increase latency)</string>
-
     <string name="signupHere"><u>Sign up here</u></string>
     <string name="emailOrMobile">E-mail </string>
     <string name="termsCondition">I agree with the terms of  </string>
     <string name="user_agreements">user agreement</string>
     <string name="alreadyRegister"><u>Already have an account? Sign in here.</u></string>
     <string name="forgotPass"><u>Forgot Password?</u></string>
-
     <string name="password">Password</string>
     <string name="signup">Sign Up</string>
     <string name="letsGo">Let’s Go</string>
     <string name="user_agreement">User agreement</string>
-
     <string name="error_email">Email is required</string>
     <string name="error_name">Name is required</string>
     <string name="error_firstname">First Name is required</string>
@@ -394,29 +378,22 @@
     <string name="subscription_msg">Your subscription is going to expire.</string>
     <string name="subscription_title">Subscription Alert</string>
     <string name="subs_continue">Continue</string>
-
     <string name="no_vm_title">Alert</string>
     <string name="no_vm_msg">Please wait while we are creating your virtual machine, it may take half an hour.</string>
     <string name="searching_pc_first">To get a virtual machine, purchase a plan</string>
     <string name="searching_pc_second"> Please wait while we are creating your machine.</string>
     <string name="startVMMsg">Please wait while we are getting your virtual machine ready for you.</string>
     <string name="shutdownVMMsg">Please wait while we are shutting down your virtual machine </string>
-
     <string name="exit_vm_msg">Are you sure you want to Exit?</string>
     <string name="exit_vm">Exit</string>
     <string name="keyboard_note">Note - if your phone support three finger swipe to take screenshot or something else then user 4 fingers to invoke virtual keyboard, or turn off swipe three finger functionality to invoke virtual keyboard with three fingers. </string>
     <string name="open_keyword">Tap with three fingers to invoke virtual keyboard.</string>
-    <string name="tapRightCLick">Touch and hold for right click</string>
-
+    <string name="tapRightCLick">To perform right click , put one finger on the screen and tap with the second one.</string>
     <string name="start_vm">Start</string>
     <string name="stop_vm">Shutdown</string>
-
-    <string name="shutdown_vmmsg">your machine was shutted down , please start your machine to continue</string>
+    <string name="shutdown_vmmsg">your machine was shut down , please start your machine to continue</string>
     <string name="check_mail">Please check verification email</string>
-
-
-<!--    it may take upto 60 sec.-->
-
-
+    <string name="success_msg">your subscription is successfullly done. it will take around 20 min to create your virtual machine</string>
+    <string name="payment_success">Payment Success</string>
 
 </resources>

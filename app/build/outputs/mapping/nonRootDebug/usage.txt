@@ -11052,9 +11052,12 @@ com.antplay.Game:
     android.widget.ImageView ivKeyboardOverlay
     public void exitActivity()
     private synthetic void lambda$exitActivity$7()
+    private synthetic void lambda$openDialog$8(android.view.View)
+    private synthetic void lambda$openDialog$9(android.view.View)
     private synthetic void lambda$openExitVMDialog$5(android.app.Dialog,android.view.View)
     private static synthetic void lambda$openExitVMDialog$6(android.app.Dialog,android.view.View)
     private static synthetic void lambda$openTimerDialog$3(android.app.Dialog,android.view.View)
+    private void openDialog()
     private void openExitVMDialog()
     private void openTimerDialog()
 com.antplay.LimeLog:
@@ -11644,6 +11647,7 @@ com.antplay.ui.activity.PcView:
     private static final int UNPAIR_ID
     private static final int VIEW_DETAILS_ID
     private static final int WOL_ID
+    boolean paymentStatus
     android.app.Dialog startVMDialog
     java.util.Timer startVmTimer
 com.antplay.ui.activity.ProfileActivity:
@@ -11654,6 +11658,8 @@ com.antplay.ui.activity.ProfileActivity:
 com.antplay.ui.activity.SplashActivity:
     private void doSomethingAfterAppKilled()
     private static synthetic void lambda$doSomethingAfterAppKilled$1()
+com.antplay.ui.activity.SubscriptionPlanActivity:
+    boolean isSUBScriptionScreen
 com.antplay.ui.activity.VerifyOTP:
     private static final int REQ_USER_CONSENT
     android.widget.EditText et_confirmPassword

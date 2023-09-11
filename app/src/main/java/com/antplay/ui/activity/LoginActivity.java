@@ -116,11 +116,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             etPass.requestFocus();
             return false;
         }
-        else if (!etPass.getText().toString().matches(Const.passwordRegex)) {
-            etPass.setError(getString(R.string.pass_regex));
-            etPass.requestFocus();
-            return false;
-        }
+//        else if (!etPass.getText().toString().matches(Const.passwordRegex)) {
+//            etPass.setError(getString(R.string.pass_regex));
+//            etPass.requestFocus();
+//            return false;
+//        }
         return true;
     }
 

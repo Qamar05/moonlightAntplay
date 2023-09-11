@@ -2534,6 +2534,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable btngradient
+drawable btngradient_grey
 drawable btngradient_logout
 drawable btngradient_white
 drawable btnshape
@@ -2644,6 +2645,7 @@ drawable notify_panel_notification_icon_bg
 drawable otp_border
 drawable ouya_icon
 drawable payment_button_bg
+drawable payment_success
 drawable payment_sucess
 drawable paymenthistory
 drawable person
@@ -2999,6 +3001,7 @@ id ivKeyboard
 id ivNewPasswordShow
 id ivOldPasswordShow
 id ivPasswordShow
+id ivPayment
 id ivRefresh
 id ivThreeFinger
 id ivTwoFinger
@@ -3554,6 +3557,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout payment_success_dialog
 layout paymenthistory_adapter
 layout pc_grid_item
 layout pc_grid_view
@@ -3892,6 +3896,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string payment_history
+string payment_success
 string pcview_menu_app_list
 string pcview_menu_delete_pc
 string pcview_menu_details
@@ -3959,6 +3964,7 @@ string subscribe
 string subscription_msg
 string subscription_plan
 string subscription_title
+string success_msg
 string suffix_osc_opacity
 string suffix_seekbar_bitrate_mbps
 string suffix_seekbar_deadzone

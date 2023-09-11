@@ -114,9 +114,9 @@ import retrofit2.Response;
 public class PcView extends AppCompatActivity implements AdapterFragmentCallbacks  {
     private RelativeLayout noPcFoundLayout;
     Dialog startVMDialog,shutDownVMDialog;
-    boolean startVMStatus,isVMConnected ,isVmDisConnected ,firstTimeVMTimer;
+    boolean startVMStatus,isVMConnected ,isVmDisConnected ,firstTimeVMTimer ,paymentStatus;
     Timer timerVmShutDown;
-    boolean shutdownVMStatus ,startVmTimerStatus = false;
+    boolean shutdownVMStatus ,startVmTimerStatus = false,firstTimeStartVmApi=false;
 
     String startVmValue = "" , connectbtnVisible;
 
@@ -137,6 +137,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     private ShortcutHelper shortcutHelper;
     boolean doubleBackToExitPressedOnce = false;
     private Thread addThread;
+    Dialog paymentSuccessDialog;
 
     RetrofitAPI retrofitAPI;
     boolean btnStatus =  false;
@@ -432,10 +433,6 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         firstTimeVMTimer =  SharedPreferenceUtils.getBoolean(PcView.this,Const.FIRSTTIMEVMTIMER);
 
 
-
-//        Intent serviceIntent = new Intent(this, ClearService.class);
-//        ContextCompat.startForegroundService(this, serviceIntent);
-
         ivRefresh = findViewById(R.id.ivRefresh);
         searchPC = findViewById(R.id.searchPC);
         tvTimer = findViewById(R.id.tvTimer);
@@ -459,6 +456,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         swipeLayout.setColorSchemeColors(getResources().getColor(R.color.teal_700));
         startVMStatus  =  SharedPreferenceUtils.getBoolean(PcView.this,Const.IS_STARTVM);
         shutdownVMStatus  =  SharedPreferenceUtils.getBoolean(PcView.this,Const.IS_SHUT_DOWN);
+        firstTimeStartVmApi  =  SharedPreferenceUtils.getBoolean(PcView.this,Const.FIRSTTIMESTARTVMAPI);
 
 
         btnStartVM.setOnClickListener(view -> {
@@ -486,13 +484,13 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             }
         });
 
-        if(startVMStatus) {
-            ivRefresh.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.GONE);
-           // showTimer(time_remaining);
-        }
-        else
-            ivRefresh.setVisibility(View.INVISIBLE);
+//        if(startVMStatus) {
+//            ivRefresh.setVisibility(View.VISIBLE);
+//            progressBar.setVisibility(View.GONE);
+//           // showTimer(time_remaining);
+//        }
+//        else
+//            ivRefresh.setVisibility(View.INVISIBLE);
 
         ivRefresh.setOnClickListener(view -> getVM(""));
 
@@ -532,8 +530,10 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         // between binding to CMS and onResume()
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
+        firstTimeStartVmApi = SharedPreferenceUtils.getBoolean(PcView.this, Const.FIRSTTIMESTARTVMAPI);
         inForeground = true;
         firstTimeVMTimer =  SharedPreferenceUtils.getBoolean(PcView.this,Const.FIRSTTIMEVMTIMER);
+
         if(!firstTimeVMTimer) {
             if (AppUtils.isOnline(PcView.this))
                 getVM("");
@@ -543,12 +543,15 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         else{
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                 Long time  = timeDifference();
-                if(time>1200){
-                    SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEVMTIMER ,false);
+                if(time==null || time>1200) {
+                    SharedPreferenceUtils.saveBoolean(PcView.this, Const.FIRSTTIMEVMTIMER, false);
                     getVM("");
                 }
                 else
-                    openShutDownVMDialog("vmtimer" , 1200-time);
+                    openShutDownVMDialog("vmtimer", 1200 - time);
+
+
+
             }
         }
 
@@ -690,17 +693,20 @@ try {
     }
 }
 catch (Exception e){
-
 }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.i("test_onResumee" ,"testOnResume");
+//        boolean firstTimePayment = SharedPreferenceUtils.getBoolean(PcView.this , Const.FIRST_TIME_PAYMENT);
+//        if(firstTimePayment){
+//            getVM("");
+//       }
 
-        // Display a decoder crash notification if we've returned after a crash
+
         UiHelper.showDecoderCrashDialog(this);
-
         inForeground = true;
         startComputerUpdates();
 
@@ -804,9 +810,6 @@ catch (Exception e){
                 try {
                     // Stop updates and wait while pairing
                     stopComputerUpdates(true);
-
-                    Log.i("testt1" , "test");
-
                     httpConn = new NvHTTP(ServerHelper.getCurrentAddressFromComputer(computer), computer.httpsPort, managerBinder.getUniqueId(), computer.serverCert, PlatformBinding.getCryptoProvider(PcView.this));
                     if (httpConn.getPairState() == PairState.PAIRED) {
                         // Don't display any toast, but open the app list
@@ -814,17 +817,8 @@ catch (Exception e){
                         success = true;
                     } else {
                         final String pinStr = PairingManager.generatePinString();
-                        Log.i("testt2" , "test");
-
-                        // Spin the dialog off in a thread because it blocks
-
-//                        MyDialog.displayDialog(PcView.this, getResources().getString(R.string.pair_pairing_title), getResources().getString(R.string.pair_pairing_msg) + " " + pinStr + "\n\n" + getResources().getString(R.string.pair_pairing_help), false);
-
-
-                        //sendAndVerifySecurityPin(pinStr);
                         sendAndVerifySecurityPinManually(pinStr);
                         PairingManager pm = httpConn.getPairingManager();
-                        Log.i("testt3" , "test");
 
                         PairState pairState = pm.pair(httpConn.getServerInfo(true), pinStr);
                         if (pairState == PairState.PIN_WRONG) {
@@ -1151,38 +1145,29 @@ catch (Exception e){
     }
 
     private void updateComputer(ComputerDetails details , String value) {
-//        if (details.state == ComputerDetails.State.OFFLINE || details.activeAddress == null) {
-//            Toast.makeText(PcView.this, getResources().getString(R.string.pair_pc_offline), Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-
-
         showTimer(value);
         myComputerDetails  =   details;
         text_PcName.setText("" + details.name);
         if(status.equalsIgnoreCase("running")){
             SharedPreferenceUtils.saveBoolean(PcView.this,Const.IS_VM_DISCONNECTED , true);
-            Log.i("testttt_btnstatus" , ""+ btnStatus);
             if(!btnShutDownStatus)
                 btnStartVM.setVisibility(View.VISIBLE);
            else
                 btnStartVM.setVisibility(View.INVISIBLE);
-
            btnShutDownVM.setVisibility(View.VISIBLE);
-//            else
-//                btnStartVM.setVisibility(View.VISIBLE);
-//                btnShutDownVM.setVisibility(View.VISIBLE);
-
-
-
+        if (details.state == ComputerDetails.State.OFFLINE || details.activeAddress == null) {
+            btnStartVM.setBackground(getResources().getDrawable(R.drawable.btngradient_grey));
+            btnStartVM.setClickable(false);
+        }
+        else {
+            btnStartVM.setBackground(getResources().getDrawable(R.drawable.btngradient_white));
+            btnStartVM.setClickable(true);
+        }
             text_PcName.setVisibility(View.VISIBLE);
             btnStartVM.setText("Connect");
             btnShutDownVM.setText("Shutdown");
             progressBar.setVisibility(View.GONE);
             ivRefresh.setVisibility(View.INVISIBLE);
-
-
-
         }
         else if(status.equalsIgnoreCase("stopped")){
             progressBar.setVisibility(View.GONE);
@@ -1190,42 +1175,30 @@ catch (Exception e){
             btnShutDownVM.setVisibility(View.INVISIBLE);
 
         }
-
-
-
         ComputerObject existingEntry = null;
-
         for (int i = 0; i < pcGridAdapter.getCount(); i++) {
             ComputerObject computer = (ComputerObject) pcGridAdapter.getItem(i);
-
-            // Check if this is the same computer
             if (details.uuid.equals(computer.details.uuid)) {
                 existingEntry = computer;
                 break;
             }
         }
-
-        // Add a launcher shortcut for this PC
         if (details.pairState == PairState.PAIRED) {
             shortcutHelper.createAppViewShortcutForOnlineHost(details);
         }
-
         if (existingEntry != null) {
-            // Replace the information in the existing entry
-           // existingEntry.details = details;
         } else {
-            // Add a new entry
             pcGridAdapter.addComputer(new ComputerObject(details));
-
-            // Remove the "Discovery in progress" view
             noPcFoundLayout.setVisibility(View.INVISIBLE);
-            if(startVmValue.equalsIgnoreCase("")) {
-                dialog.dismiss();
+            try {
+                if (startVmValue.equalsIgnoreCase("")) {
+                    dialog.dismiss();
+                }
+            }
+            catch (Exception e){
+
             }
         }
-
-
-        // Notify the view that the data has changed
         pcGridAdapter.notifyDataSetChanged();
     }
 
@@ -1272,52 +1245,7 @@ catch (Exception e){
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click back again to exit", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
-    }
-    private void openDialog(boolean purchaseVmFLag , String msg) {
-        Dialog dialog = new Dialog(PcView.this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialog_logout);
-        dialog.setCancelable(false);
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        TextView titleText =  dialog.findViewById(R.id.titleText);
-        TextView msgText =  dialog.findViewById(R.id.msgText);
-        Button txtNo = dialog.findViewById(R.id.txtNo);
-        Button txtYes = dialog.findViewById(R.id.txtYes);
-        titleText.setText(getResources().getString(R.string.no_vm_title));
-        txtYes.setText("purchase");
 
-        msgText.setText(msg);
-        if(!purchaseVmFLag) {
-            txtYes.setVisibility(View.VISIBLE);
-            txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
-        }
-        else {
-            txtYes.setVisibility(View.GONE);
-            txtNo.setText("Ok");
-
-
-        }
-
-        txtYes.setOnClickListener(view -> {
-                dialog.dismiss();
-                AppUtils.navigateScreenWithoutFinish(PcView.this, SubscriptionPlanActivity.class);
-            });
-            txtNo.setOnClickListener(view -> {
-                dialog.dismiss();
-            });
-            dialog.show();
-        }
 
     private boolean handleDoneEvent(String vmIp ,String startVM) {
         if (vmIp.length() == 0) {
@@ -1330,6 +1258,123 @@ catch (Exception e){
     }
 
 
+    private void startVm(String strVMId) {
+            loadingBar.setVisibility(View.VISIBLE);
+        VMTimerReq  vmTimerReq  =  new VMTimerReq(strVMId);
+        Call<MessageResponse> call = retrofitAPI.startVm("Bearer " + accessToken , vmTimerReq);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
+                    loadingBar.setVisibility(View.GONE);
+                if(response.code()==Const.SUCCESS_CODE_200) {
+                    if (response.body().getSuccess().equalsIgnoreCase("true")) {
+                        if(startVmCallCount.equalsIgnoreCase("0")||!firstTimeStartVmApi){
+                            SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRST_TIME_PAYMENT,false);
+                            firstTimeVMTimer =  true;
+                            SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEVMTIMER ,true);
+
+//                            openPaymentSuccessDialog();
+                        }
+                        else if(btnStatus) {
+                            openShutDownVMDialog("start",0L);
+                        }
+                    }
+                }
+                else if(response.code()==401|| response.code()==Const.ERROR_CODE_404 ||
+                        response.code()==Const.ERROR_CODE_400 || response.code()==Const.ERROR_CODE_500) {
+                    try {
+                        if(shutDownVMDialog.isShowing()){
+                            shutDownVMDialog.dismiss();
+                        }
+                        JSONObject jObj = new JSONObject(response.errorBody().string());
+                        String value = jObj.getString("message");
+                        Toast.makeText(PcView.this, "" + value, Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<MessageResponse> call, Throwable t) {
+                loadingBar.setVisibility(View.GONE);
+                try {
+                    if (shutDownVMDialog.isShowing()) {
+                        shutDownVMDialog.dismiss();
+                    }
+                }catch (Exception e){
+
+                }
+            //    AppUtils.showToast(Const.something_went_wrong, PcView.this);
+            }
+        });
+    }
+    private void getVM(String startVm) {
+        try {
+            Call<ResponseBody> call = retrofitAPI.getVMFromServer("Bearer " + accessToken);
+            call.enqueue(new Callback<>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    if (response.code() == Const.SUCCESS_CODE_200) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response.body().string());
+                            JSONArray jsonArray = jsonObject.getJSONArray("data");
+                            strVMId = jsonArray.getJSONObject(0).getString("vmid");
+                            startVmCallCount = jsonArray.getJSONObject(0).getString("start_vm_call_count");
+                            status = jsonArray.getJSONObject(0).getString("status");
+                            vmip = jsonArray.getJSONObject(0).getString("vmip");
+                            time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
+                            SharedPreferenceUtils.saveString(PcView.this, Const.VMID, strVMId);
+                            if (startVmCallCount.equalsIgnoreCase("0")||!firstTimeStartVmApi) {
+                                startVm(strVMId);
+                                openPaymentSuccessDialog();
+
+
+                            }
+                            else if (Integer.parseInt(startVmCallCount) >= 1) {
+                                if (status.equalsIgnoreCase("running")) {
+                                        getVMIP(time_remaining,startVm);
+                                }
+                                else {
+                                    boolean firstTimePayment = SharedPreferenceUtils.getBoolean(PcView.this, Const.FIRST_TIME_PAYMENT);
+                                    if (firstTimePayment) {
+                                        startVm(strVMId);
+                                    } else {
+                                        ivRefresh.setVisibility(View.GONE);
+                                        btnStartVM.setVisibility(View.VISIBLE);
+                                        btnShutDownVM.setVisibility(View.GONE);
+                                        progressBar.setVisibility(View.GONE);
+                                        btnStartVM.setText("Start");
+                                        showTimer(time_remaining);
+                                    }
+                                }
+                            }
+                        } catch (Exception e) {
+                        }
+                    } else if (response.code() == 404 || response.code() == 500 || response.code() == 400 || response.code() == 401) {
+                        openDialog(false, getResources().getString(R.string.searching_pc_first));
+
+                       try {
+                           tvTimer.setText("00:00:00 hrs.");
+                           searchPC = findViewById(R.id.searchPC);
+                           searchPC.setText(getResources().getString(R.string.searching_pc_first));
+                           progressBar.setVisibility(View.GONE);
+
+                       }
+                       catch (Exception e){
+
+                       }
+
+                    }
+                }
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                  //  AppUtils.showToast(Const.something_went_wrong, PcView.this);
+                }
+            });
+        }
+        catch (Exception e){
+        }
+    }
     private void getVMIP(String timeRemaing ,String startVm) {
         loadingBar.setVisibility(View.VISIBLE);
         Call<ResponseBody> call = retrofitAPI.getVMIP("Bearer " + accessToken);
@@ -1349,9 +1394,6 @@ catch (Exception e){
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
                             String vmIp = jsonArray.getJSONObject(0).getString("vmip");
                             startVmTimerStatus =  false;
-//                            if(btnStatus)
-//                                SharedPreferenceUtils.saveBoolean(PcView.this,Const.IS_VM_DISCONNECTED , true);
-
                             progressBar.setVisibility(View.GONE);
                             showTimer(time_remaining);
                             handleDoneEvent(vmIp ,startVm);
@@ -1365,29 +1407,28 @@ catch (Exception e){
                 else if(response.code()==400||response.code()==404||response.code()==500 ||response.code()==401) {
                     progressBar.setVisibility(View.GONE);
                     showTimer(timeRemaing);
-                    if (status.equalsIgnoreCase("running")) {
-                            if (Integer.parseInt(startVmCallCount) <= 1) {
-                                firstTimeVMTimer =  true;
-                                SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEVMTIMER ,true);
-                                saveTime();
-                                openShutDownVMDialog("vmtimer" , 1200L);
-
-
-//                                openDialog(true, getResources().getString(R.string.searching_pc_second));
-//                                searchPC.setText(getResources().getString(R.string.searching_pc_second));
-                            } else {
-                                if(!startVmTimerStatus) {
-                                    openDialog(true, getResources().getString(R.string.startVMMsg));
-                                    searchPC.setText(getResources().getString(R.string.startVMMsg));
-                                }
-                                else
-                                    callTimer(timerText,60 ,"start");
-
+                    if (status.equalsIgnoreCase("running") ) {
+                        if (Integer.parseInt(startVmCallCount) <= 1 || !firstTimeStartVmApi) {
+//                            firstTimeVMTimer =  true;
+//                            SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEVMTIMER ,true);
+//                            saveTime();
+//                            SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRST_TIME_PAYMENT,false);
+//                            openPaymentSuccessDialog();
+                        }
+                        else {
+                            if(!startVmTimerStatus) {
+                                openDialog(true, getResources().getString(R.string.startVMMsg));
+                                searchPC.setText(getResources().getString(R.string.startVMMsg));
                             }
-                        } else
-                            openDialog(true, getResources().getString(R.string.shutdown_vmmsg));
+                            else
+                                callTimer(timerText,60 ,"start");
+
+                        }
                     }
+//                    else
+//                            openDialog(true, getResources().getString(R.string.shutdown_vmmsg));
                 }
+            }
 
 
             @Override
@@ -1398,119 +1439,7 @@ catch (Exception e){
         });
     }
 
-    private void showTimer(String timeRemaining) {
-        long value = Long.parseLong(timeRemaining);
-        long hours = value / 3600;
-        long minutes =value % 3600 / 60;
-        long   sec = value % 60;
 
-        String  timeString = String.format("%02d:%02d:%02d", hours, minutes, sec);
-        tvTimer.setText(timeString + " hrs.");
-    }
-
-    private void startVm(String strVMId) {
-            loadingBar.setVisibility(View.VISIBLE);
-        VMTimerReq  vmTimerReq  =  new VMTimerReq(strVMId);
-        Call<MessageResponse> call = retrofitAPI.startVm("Bearer " + accessToken , vmTimerReq);
-        call.enqueue(new Callback<>() {
-            @Override
-            public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
-                    loadingBar.setVisibility(View.GONE);
-                if(response.code()==Const.SUCCESS_CODE_200) {
-                    if (response.body().getSuccess().equalsIgnoreCase("true")) {
-                        startVMStatus =  true;
-                        shutdownVMStatus =  false;
-                        SharedPreferenceUtils.saveBoolean(PcView.this,Const.IS_STARTVM , true);
-                        SharedPreferenceUtils.saveBoolean(PcView.this,Const.IS_SHUT_DOWN , false);
-                        if(startVmCallCount.equalsIgnoreCase("0")){
-                            ivRefresh.setVisibility(View.VISIBLE);
-                            openDialog(true, getResources().getString(R.string.searching_pc_second));
-                            searchPC.setText(getResources().getString(R.string.searching_pc_second));
-                        }
-                        else if(btnStatus) {
-                            openShutDownVMDialog("start",0L);
-                        }
-                    }
-                }
-                else if(response.code()==Const.ERROR_CODE_404 || response.code()==Const.ERROR_CODE_400 || response.code()==Const.ERROR_CODE_500) {
-                    try {
-                        JSONObject jObj = new JSONObject(response.errorBody().string());
-                        String value = jObj.getString("message");
-                        Toast.makeText(PcView.this, "" + value, Toast.LENGTH_SHORT).show();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-            @Override
-            public void onFailure(Call<MessageResponse> call, Throwable t) {
-                loadingBar.setVisibility(View.GONE);
-                AppUtils.showToast(Const.something_went_wrong, PcView.this);
-            }
-        });
-    }
-
-    private void getVM(String startVm) {
-        try {
-            Call<ResponseBody> call = retrofitAPI.getVMFromServer("Bearer " + accessToken);
-            call.enqueue(new Callback<>() {
-                @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    if (response.code() == Const.SUCCESS_CODE_200) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response.body().string());
-                            JSONArray jsonArray = jsonObject.getJSONArray("data");
-                            strVMId = jsonArray.getJSONObject(0).getString("vmid");
-                            startVmCallCount = jsonArray.getJSONObject(0).getString("start_vm_call_count");
-                            status = jsonArray.getJSONObject(0).getString("status");
-                            vmip = jsonArray.getJSONObject(0).getString("vmip");
-                            time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
-                            SharedPreferenceUtils.saveString(PcView.this, Const.VMID, strVMId);
-                            if (startVmCallCount.equalsIgnoreCase("0"))
-                                startVm(strVMId);
-                            else if (Integer.parseInt(startVmCallCount) >= 1) {
-                                if (status.equalsIgnoreCase("running")) {
-                                        getVMIP(time_remaining,startVm);
-                                }
-                                else {
-                                    ivRefresh.setVisibility(View.GONE);
-                                    btnStartVM.setVisibility(View.VISIBLE);
-                                    btnShutDownVM.setVisibility(View.GONE);
-                                    progressBar.setVisibility(View.GONE);
-                                    btnStartVM.setText("Start");
-                                    showTimer(time_remaining);
-                                }
-
-                            }
-                        } catch (Exception e) {
-                        }
-                    } else if (response.code() == 404 || response.code() == 500 || response.code() == 400 || response.code() == 401) {
-                        openDialog(false, getResources().getString(R.string.searching_pc_first));
-                       try {
-                           tvTimer.setText("00:00:00 hrs.");
-                           searchPC = findViewById(R.id.searchPC);
-                           searchPC.setText(getResources().getString(R.string.searching_pc_first));
-                           progressBar.setVisibility(View.GONE);
-
-                       }
-                       catch (Exception e){
-
-                       }
-
-                    }
-                }
-                @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    AppUtils.showToast(Const.something_went_wrong, PcView.this);
-                }
-            });
-        }
-        catch (Exception e){
-        }
-    }
-
-
-   
 
     private void shutDownVM(String status ,String strVMId) {
         VMTimerReq  vmTimerReq  =  new VMTimerReq(strVMId);
@@ -1543,7 +1472,8 @@ catch (Exception e){
                     }
 
                 }
-                else if(response.code()==400||response.code()==404){
+                else if(response.code()==400||response.code()==404 ||
+                        response.code()==500||response.code()==401){
                     try {
                         shutDownVMDialog.dismiss();
                     }
@@ -1589,7 +1519,8 @@ catch (Exception e){
                     }
 
                 }
-                else if(response.code()==400||response.code()==404){
+                else if(response.code()==400||response.code()==404 ||
+                    response.code()==500||response.code()==401){
                     try {
                         shutDownVMDialog.dismiss();
                     }
@@ -1603,14 +1534,13 @@ catch (Exception e){
             }
         });
     }
-
     public void getVMForShutDown() {
         try {
             Call<ResponseBody> call = retrofitAPI.getVMFromServer("Bearer " + accessToken);
             call.enqueue(new Callback<>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    if (response.isSuccessful()) {
+                    if (response.code()==200) {
                         try {
                             JSONObject jsonObject = new JSONObject(response.body().string());
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
@@ -1630,6 +1560,7 @@ catch (Exception e){
                         } catch (Exception e) {
                         }
                     }
+
                 }
 
                 @Override
@@ -1642,8 +1573,15 @@ catch (Exception e){
 
         }
     }
-
     private void openShutDownVMDialog(String status ,Long time) {
+        try {
+            if (paymentSuccessDialog.isShowing()) {
+                paymentSuccessDialog.dismiss();
+            }
+        }
+        catch (Exception e){
+
+        }
         shutDownVMDialog = new Dialog(PcView.this);
         shutDownVMDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         shutDownVMDialog.setContentView(R.layout.shutingdownvm_dialog_layout);
@@ -1670,7 +1608,6 @@ catch (Exception e){
         shutDownVMDialog.show();
 
     }
-
     private void callTimer(TextView timerText, long sec,String status) {
         new CountDownTimer(sec*1000, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -1707,13 +1644,15 @@ catch (Exception e){
                     getVM("");
                 }
                 else if(status.equalsIgnoreCase("vmtimer")){
+                    firstTimeVMTimer =  false;
                     SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEVMTIMER ,false);
+                    firstTimeStartVmApi=true;
+                    SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMESTARTVMAPI ,true);
                     getVM("");
                 }
             }
         }.start();
     }
-
     @RequiresApi(api = Build.VERSION_CODES.O)
     public Long timeDifference() {
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("H:mm:ss 'h'");
@@ -1735,19 +1674,88 @@ catch (Exception e){
             long seconds = difference.getSeconds();
 
             long newTime  =   hours*3600+minutes*60+seconds;
-
-
             return newTime;
         }
         return null;
     }
-
     public void saveTime(){
         SimpleDateFormat sdf = new SimpleDateFormat("H:mm:ss 'h'");
         String s = sdf.format(new Date());
         SharedPreferenceUtils.saveString(PcView.this,Const.startTime,s);
+    }
+    private void showTimer(String timeRemaining) {
+        long value = Long.parseLong(timeRemaining);
+        long hours = value / 3600;
+        long minutes =value % 3600 / 60;
+        long   sec = value % 60;
 
+        String  timeString = String.format("%02d:%02d:%02d", hours, minutes, sec);
+        tvTimer.setText(timeString + " hrs.");
+    }
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click back again to exit", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
+    }
+    private void openDialog(boolean purchaseVmFLag , String msg) {
+        Dialog dialog = new Dialog(PcView.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_logout);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titleText =  dialog.findViewById(R.id.titleText);
+        TextView msgText =  dialog.findViewById(R.id.msgText);
+        Button txtNo = dialog.findViewById(R.id.txtNo);
+        Button txtYes = dialog.findViewById(R.id.txtYes);
+        titleText.setText(getResources().getString(R.string.no_vm_title));
+        txtYes.setText("purchase");
 
+        msgText.setText(msg);
+        if(!purchaseVmFLag) {
+            txtYes.setVisibility(View.VISIBLE);
+            txtNo.setText(getResources().getString(R.string.applist_menu_cancel));
+        }
+        else {
+            txtYes.setVisibility(View.GONE);
+            txtNo.setText("Ok");
+        }
+
+        txtYes.setOnClickListener(view -> {
+            dialog.dismiss();
+            SharedPreferenceUtils.saveBoolean(PcView.this , Const.FIRST_TIME_PAYMENT,true);
+            AppUtils.navigateScreenWithoutFinish(PcView.this, SubscriptionPlanActivity.class);
+        });
+        txtNo.setOnClickListener(view -> {
+            dialog.dismiss();
+        });
+        dialog.show();
+    }
+    private void openPaymentSuccessDialog() {
+         paymentSuccessDialog = new Dialog(PcView.this);
+        paymentSuccessDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        paymentSuccessDialog.setContentView(R.layout.payment_success_dialog);
+        paymentSuccessDialog.setCancelable(false);
+        paymentSuccessDialog.setCanceledOnTouchOutside(false);
+        paymentSuccessDialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        paymentSuccessDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView msgText =  paymentSuccessDialog.findViewById(R.id.msgText);
+        Button txtYes = paymentSuccessDialog.findViewById(R.id.txtYes);
+        txtYes.setText("OK");
+        msgText.setText(getResources().getString(R.string.success_msg));
+
+        txtYes.setOnClickListener(view -> {
+            paymentSuccessDialog.dismiss();
+            saveTime();
+           openShutDownVMDialog("vmtimer" , 1200L);
+        });
+        paymentSuccessDialog.show();
     }
 
 }

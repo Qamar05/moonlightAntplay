@@ -32,16 +32,16 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\logout.png"
     },
     {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout-sw600dp_payment_success_dialog.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout-sw600dp\\payment_success_dialog.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-ldpi_ic_help.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-ldpi\\ic_help.png"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xxxhdpi_ic_help.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xxxhdpi\\ic_help.png"
-    },
-    {
-        "merged": "com.antplay.app-merged_res-5:/xml_preferences.xml.flat",
-        "source": "com.antplay.app-main-7:/xml/preferences.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_walkthrough_new_4_tab.jpg.flat",
@@ -656,6 +656,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xhdpi\\forward.png"
     },
     {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_payment_success.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\payment_success.png"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-ldpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-ldpi\\ic_launcher_background.png"
     },
@@ -816,6 +820,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-hdpi\\baseline_keyboard_24.png"
     },
     {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_payment_success_dialog.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\payment_success_dialog.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\layout_shutingdownvm_dialog_layout.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\layout\\shutingdownvm_dialog_layout.xml"
     },
@@ -964,8 +972,16 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-nonRoot-0:\\drawable-xxhdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "com.antplay.app-merged_res-5:/layout_activity_pc_view.xml.flat",
+        "source": "com.antplay.app-main-7:/layout/activity_pc_view.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_visibility_off.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\visibility_off.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable_btngradient_grey.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable\\btngradient_grey.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-anydpi-v21_ic_contactus_background.xml.flat",
@@ -1174,6 +1190,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xhdpi_atv_banner.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-main-7:\\drawable-xhdpi\\atv_banner.png"
+    },
+    {
+        "merged": "com.antplay.app-merged_res-5:/layout-sw600dp_activity_pc_view.xml.flat",
+        "source": "com.antplay.app-main-7:/layout-sw600dp/activity_pc_view.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.6\\com.antplay.app-merged_res-5:\\drawable-xxhdpi_ic_help.png.flat",

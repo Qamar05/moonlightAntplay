@@ -88,6 +88,12 @@ public class Const {
 
     public static String startTime = "starttime";
     public static String middleTIme = "middleTime";
+    public static String FIRST_TIME_PAYMENT = "firsttimepayment";
+    public static String FIRSTTIMESTARTVMAPI = "firstTimeStartVmApi";
+
+    public static String isSUBScriptionScreen = "isSUBScriptionScreen";
+    public static String PAYMENT_STATUS = "payment_status";
+
 
 
 }

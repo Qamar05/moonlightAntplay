@@ -326,6 +326,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                                    // txtExpiryDate.setText(newdate);
                                     break;
                                 }
+                                Log.i("test_time2" , "testttt");
+
                                 txtCurrentPlan.setText("No Active Plan");
                                 txtExpiryDate.setText("N/A");
                             }
@@ -335,6 +337,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     else if (response.code()==Const.ERROR_CODE_400||
                               response.code()==Const.ERROR_CODE_500 ||
                               response.code()==Const.ERROR_CODE_404){
+                        Log.i("test_time3" , "testttt");
                             txtCurrentPlan.setText("No Active Plan");
                             txtExpiryDate.setText("N/A");
                     }
@@ -353,18 +356,35 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         SimpleDateFormat formatterOut = new SimpleDateFormat(" dd MMM , yyyy");
 
+        SimpleDateFormat formatterOutTime = new SimpleDateFormat(" HH:mm:ss");
+
         String getCurrentDateTime = formatterOut.format(c.getTime());
+        String getCurrentTime = formatterOutTime.format(c.getTime());
 
 
 
         String convertedDate = null;
+        String convertedTime = null;
         try {
             Date date = formatter.parse(expiry_date);
+            Date date2 = formatter.parse(expiry_date);
 //            System.out.println(date);
             convertedDate = formatterOut.format(date);
+            convertedTime = formatterOutTime.format(date2);
+
             if (getCurrentDateTime.compareTo(convertedDate) < 0) {
                  txtCurrentPlan.setText(billingPlan);
                  txtExpiryDate.setText(convertedDate);
+            }
+            else if(getCurrentDateTime.compareTo(convertedDate)==0){
+                if(getCurrentTime.compareTo(convertedTime)<0){
+                    txtCurrentPlan.setText(billingPlan);
+                        txtExpiryDate.setText(convertedDate);
+                    }
+                    else{
+                        txtCurrentPlan.setText("No Active Plan");
+                        txtExpiryDate.setText("Expired");
+                    }
             }
             else {
                 txtCurrentPlan.setText("No Active Plan");
