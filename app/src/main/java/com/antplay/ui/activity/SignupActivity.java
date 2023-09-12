@@ -227,6 +227,11 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             edtAddress.requestFocus();
             return false;
         }
+        if (edTxtState.getText().toString().trim().length() == 0) {
+            edtCity.setError(getString(R.string.error_state));
+            edtCity.requestFocus();
+            return false;
+        }
         if (edtCity.getText().toString().trim().length() == 0) {
             edtCity.setError(getString(R.string.error_city));
             edtCity.requestFocus();

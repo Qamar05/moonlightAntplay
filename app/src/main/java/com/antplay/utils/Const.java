@@ -93,6 +93,7 @@ public class Const {
 
     public static String isSUBScriptionScreen = "isSUBScriptionScreen";
     public static String PAYMENT_STATUS = "payment_status";
+    public static String LOGIN_EMAIL = "login_email";
 
 
 

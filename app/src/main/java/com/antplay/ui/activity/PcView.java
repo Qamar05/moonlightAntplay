@@ -126,6 +126,8 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     Timer startVmTimer;
     ComputerDetails myComputerDetails;
 
+    String loginEmail="";
+
     TextView  text_PcName,timerText;
     Button btnStartVM,btnShutDownVM;
 
@@ -154,6 +156,8 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
     TextView searchPC;
     ImageView ivRefresh;
     ComputerDetails saveComputerDeatails;
+
+    boolean againStartVm = false;
     private ComputerManagerService.ComputerManagerBinder managerBinder;
     private final LinkedBlockingQueue<String> computersToAdd = new LinkedBlockingQueue<>();
     private boolean freezeUpdates, runningPolling, inForeground, completeOnCreateCalled;
@@ -477,12 +481,15 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
             if (status.equalsIgnoreCase("running")){
                 openShutDownVMDialog("shutdown",0L);
                 btnShutDownStatus =  true;
-                if(vmip!=null)
+                if(vmip!="")
                     shutDownVM("",strVMId);
                 else
-                    stopVM("" ,strVMId);
+                    Toast.makeText(PcView.this,"ip is" + vmip,Toast.LENGTH_LONG).show();
+                   // stopVM("" ,strVMId);
             }
         });
+
+
 
 //        if(startVMStatus) {
 //            ivRefresh.setVisibility(View.VISIBLE);
@@ -531,29 +538,40 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
         retrofitAPI = APIClient.getRetrofitInstance().create(RetrofitAPI.class);
         accessToken = SharedPreferenceUtils.getString(PcView.this, Const.ACCESS_TOKEN);
         firstTimeStartVmApi = SharedPreferenceUtils.getBoolean(PcView.this, Const.FIRSTTIMESTARTVMAPI);
+        String email = SharedPreferenceUtils.getString(PcView.this, Const.EMAIL_ID);
+        String loginEmail = SharedPreferenceUtils.getString(PcView.this, Const.LOGIN_EMAIL);
+
+        Log.i("testt_emaillll" , email +" testt" + loginEmail);
+
+        if(email==null|| !email.equalsIgnoreCase(loginEmail)){
+            Log.i("testt_emaillll2" , email +" testt" + loginEmail);
+            SharedPreferenceUtils.saveString(PcView.this, Const.EMAIL_ID ,loginEmail);
+            SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEVMTIMER ,false);
+
+        }
+
         inForeground = true;
         firstTimeVMTimer =  SharedPreferenceUtils.getBoolean(PcView.this,Const.FIRSTTIMEVMTIMER);
 
-        if(!firstTimeVMTimer) {
-            if (AppUtils.isOnline(PcView.this))
-                getVM("");
-            else
-                AppUtils.showInternetDialog(PcView.this);
-        }
-        else{
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                Long time  = timeDifference();
-                if(time==null || time>1200) {
-                    SharedPreferenceUtils.saveBoolean(PcView.this, Const.FIRSTTIMEVMTIMER, false);
+        if (!firstTimeVMTimer) {
+            SharedPreferenceUtils.saveString(PcView.this,Const.EMAIL_ID,loginEmail);
+                if (AppUtils.isOnline(PcView.this))
                     getVM("");
-                }
                 else
-                    openShutDownVMDialog("vmtimer", 1200 - time);
-
-
-
+                    AppUtils.showInternetDialog(PcView.this);
+            } else {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    Long time = timeDifference();
+                    if (time == null || time > 1200) {
+                        SharedPreferenceUtils.saveBoolean(PcView.this, Const.FIRSTTIMEVMTIMER, false);
+                        getVM("");
+                    } else
+                        openShutDownVMDialog("vmtimer", 1200 - time);
+                }
             }
-        }
+
+
+
 
 
         tvTimer = findViewById(R.id.tvTimer);
@@ -575,7 +593,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
                         isFirstTime =  false;
                     }
                 }
-            }, 0, 300* 1000);
+            }, 0, 400* 1000);
         }
 
 
@@ -799,8 +817,6 @@ catch (Exception e){
             Toast.makeText(PcView.this, getResources().getString(R.string.error_manager_not_running), Toast.LENGTH_LONG).show();
             return;
         }
-
-    //    Toast.makeText(PcView.this, getResources().getString(R.string.pairing), Toast.LENGTH_SHORT).show();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -815,7 +831,8 @@ catch (Exception e){
                         // Don't display any toast, but open the app list
                         message = null;
                         success = true;
-                    } else {
+                    }
+                    else {
                         final String pinStr = PairingManager.generatePinString();
                         sendAndVerifySecurityPinManually(pinStr);
                         PairingManager pm = httpConn.getPairingManager();
@@ -840,7 +857,8 @@ catch (Exception e){
                                 managerBinder.invalidateStateForComputer(computer.uuid);
                             }
                             catch (Exception e){
-                                doPair(computer);
+                                startActivity(getIntent());
+                               // doPair(computer);
                             }
                         } else {
                             // Should be no other values
@@ -869,7 +887,8 @@ catch (Exception e){
                         if (toastSuccess) {
                             doAppList(computer, true, false);
                         } else {
-                            startComputerUpdates();
+                            startActivity(getIntent());
+//                            startComputerUpdates();
                         }
                     }
                 });
@@ -1268,7 +1287,7 @@ catch (Exception e){
                     loadingBar.setVisibility(View.GONE);
                 if(response.code()==Const.SUCCESS_CODE_200) {
                     if (response.body().getSuccess().equalsIgnoreCase("true")) {
-                        if(startVmCallCount.equalsIgnoreCase("0")||!firstTimeStartVmApi){
+                        if(startVmCallCount.equalsIgnoreCase("0") || againStartVm){
                             SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRST_TIME_PAYMENT,false);
                             firstTimeVMTimer =  true;
                             SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEVMTIMER ,true);
@@ -1324,11 +1343,9 @@ catch (Exception e){
                             vmip = jsonArray.getJSONObject(0).getString("vmip");
                             time_remaining = jsonArray.getJSONObject(0).getString("time_remaining");
                             SharedPreferenceUtils.saveString(PcView.this, Const.VMID, strVMId);
-                            if (startVmCallCount.equalsIgnoreCase("0")||!firstTimeStartVmApi) {
+                            if (startVmCallCount.equalsIgnoreCase("0")) {
                                 startVm(strVMId);
                                 openPaymentSuccessDialog();
-
-
                             }
                             else if (Integer.parseInt(startVmCallCount) >= 1) {
                                 if (status.equalsIgnoreCase("running")) {
@@ -1337,7 +1354,9 @@ catch (Exception e){
                                 else {
                                     boolean firstTimePayment = SharedPreferenceUtils.getBoolean(PcView.this, Const.FIRST_TIME_PAYMENT);
                                     if (firstTimePayment) {
+                                        againStartVm =  true;
                                         startVm(strVMId);
+                                        openPaymentSuccessDialog();
                                     } else {
                                         ivRefresh.setVisibility(View.GONE);
                                         btnStartVM.setVisibility(View.VISIBLE);
@@ -1408,7 +1427,7 @@ catch (Exception e){
                     progressBar.setVisibility(View.GONE);
                     showTimer(timeRemaing);
                     if (status.equalsIgnoreCase("running") ) {
-                        if (Integer.parseInt(startVmCallCount) <= 1 || !firstTimeStartVmApi) {
+                        if (Integer.parseInt(startVmCallCount) <= 1) {
 //                            firstTimeVMTimer =  true;
 //                            SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEVMTIMER ,true);
 //                            saveTime();
@@ -1467,8 +1486,7 @@ catch (Exception e){
                         SharedPreferenceUtils.saveBoolean(PcView.this, Const.IS_VM_DISCONNECTED, false);
                         SharedPreferenceUtils.saveString(PcView.this,Const.connectbtnVisible , "stopped");
                         SharedPreferenceUtils.saveBoolean(PcView.this,Const.STARTBtnStatus , false);
-
-                       // getVM("");
+                        startActivity(getIntent());
                     }
 
                 }
@@ -1547,14 +1565,19 @@ catch (Exception e){
                             String status = jsonArray.getJSONObject(0).getString("status");
                             String vmip = jsonArray.getJSONObject(0).getString("vmip");
                             String strVMId = jsonArray.getJSONObject(0).getString("vmid");
+                            String startVmCallCount = jsonArray.getJSONObject(0).getString("start_vm_call_count");
 
                             isVmDisConnected = SharedPreferenceUtils.getBoolean(PcView.this, Const.IS_VM_DISCONNECTED);
                             if (isVmDisConnected) {
+                                boolean firstTimeVMTimer = SharedPreferenceUtils.getBoolean(PcView.this, Const.FIRSTTIMEVMTIMER);
+                                if(!firstTimeVMTimer){
                                 if (status.equalsIgnoreCase("running")) {
-                                    if (vmip != null)
-                                        shutDownVM("background" ,strVMId);
-                                    else
-                                        stopVM("background" ,strVMId);
+                                        if (vmip != "")
+                                            shutDownVM("background", strVMId);
+                                        else
+                                            Toast.makeText(PcView.this, "ip is" + vmip, Toast.LENGTH_LONG).show();
+                                        //  stopVM("background" ,strVMId);
+                                    }
                                 }
                             }
                         } catch (Exception e) {
@@ -1580,7 +1603,10 @@ catch (Exception e){
             }
         }
         catch (Exception e){
-
+        }
+        boolean firstTimePayment = SharedPreferenceUtils.getBoolean(PcView.this, Const.FIRST_TIME_PAYMENT);
+        if(firstTimePayment){
+            startVm(strVMId);
         }
         shutDownVMDialog = new Dialog(PcView.this);
         shutDownVMDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -1648,7 +1674,7 @@ catch (Exception e){
                     SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEVMTIMER ,false);
                     firstTimeStartVmApi=true;
                     SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMESTARTVMAPI ,true);
-                    getVM("");
+                    startActivity(getIntent());
                 }
             }
         }.start();
