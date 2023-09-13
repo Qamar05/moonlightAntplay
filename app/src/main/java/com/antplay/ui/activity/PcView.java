@@ -1358,6 +1358,7 @@ catch (Exception e){
                                 SharedPreferenceUtils.saveBoolean(PcView.this, Const.FIRSTTIMEDIALOG, true);
                                 paymentStatus = SharedPreferenceUtils.getBoolean(PcView.this, Const.PAYMENT_STATUS);
                                 if(!paymentStatus) {
+
                                     openPaymentSuccessDialog();
                                     paymentStatus = true;
                                     SharedPreferenceUtils.saveBoolean(PcView.this, Const.PAYMENT_STATUS, true);
