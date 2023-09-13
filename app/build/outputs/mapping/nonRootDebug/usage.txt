@@ -11651,7 +11651,6 @@ com.antplay.ui.activity.PcView:
     private static final int UNPAIR_ID
     private static final int VIEW_DETAILS_ID
     private static final int WOL_ID
-    boolean paymentStatus
     android.app.Dialog startVMDialog
     java.util.Timer startVmTimer
     private void stopVM(java.lang.String,java.lang.String)

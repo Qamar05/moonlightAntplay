@@ -114,7 +114,7 @@ import retrofit2.Response;
 public class PcView extends AppCompatActivity implements AdapterFragmentCallbacks  {
     private RelativeLayout noPcFoundLayout;
     Dialog startVMDialog,shutDownVMDialog;
-    boolean startVMStatus,isVMConnected ,isVmDisConnected ,firstTimeVMTimer ,paymentStatus;
+    boolean startVMStatus,isVMConnected ,isVmDisConnected ,firstTimeVMTimer ,paymentStatus = false;
     Timer timerVmShutDown;
     boolean shutdownVMStatus ,startVmTimerStatus = false,firstTimeStartVmApi=false;
 
@@ -1354,9 +1354,22 @@ catch (Exception e){
                             SharedPreferenceUtils.saveString(PcView.this, Const.VMID, strVMId);
 
                             if (startVmCallCount.equalsIgnoreCase("0")) {
-                                firstTimeDialog =  true;
-                                SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEDIALOG,true);
-                                openPaymentSuccessDialog();
+                                firstTimeDialog = true;
+                                SharedPreferenceUtils.saveBoolean(PcView.this, Const.FIRSTTIMEDIALOG, true);
+                                paymentStatus = SharedPreferenceUtils.getBoolean(PcView.this, Const.PAYMENT_STATUS);
+                                if(!paymentStatus) {
+                                    openPaymentSuccessDialog();
+                                    paymentStatus = true;
+                                    SharedPreferenceUtils.saveBoolean(PcView.this, Const.PAYMENT_STATUS, true);
+                                }
+                                else{
+                                    ivRefresh.setVisibility(View.GONE);
+                                    btnStartVM.setVisibility(View.VISIBLE);
+                                    btnShutDownVM.setVisibility(View.GONE);
+                                    progressBar.setVisibility(View.GONE);
+                                    btnStartVM.setText("Start");
+                                    showTimer(time_remaining);
+                                }
                             }
                             else if (status.equalsIgnoreCase("running"))
                                 getVMIP(time_remaining,startVm);
@@ -1765,15 +1778,7 @@ catch (Exception e){
         msgText.setText(getResources().getString(R.string.success_msg));
 
 
-//        if(!paymentSuccessDialog.isShowing()){
-//            SharedPreferenceUtils.saveBoolean(PcView.this,Const.FIRSTTIMEDIALOG,true);
-//            firstTimeDialog =  true;
-//            ivRefresh.setVisibility(View.GONE);
-//            btnStartVM.setVisibility(View.VISIBLE);
-//            btnShutDownVM.setVisibility(View.GONE);
-//            progressBar.setVisibility(View.GONE);
-//            btnStartVM.setText("Start");
-//        }
+
 
         txtYes.setOnClickListener(view -> {
             firstTimeDialog =  true;

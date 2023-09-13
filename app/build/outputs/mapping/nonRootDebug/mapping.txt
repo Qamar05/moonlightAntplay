@@ -3,8 +3,8 @@
 # min_api: 16
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: c56a1a1
-# pg_map_hash: SHA-256 c56a1a1815fd40bac8f5b3926398f840e7ab854ffd5aee51e14665d2dc01bfa6
+# pg_map_id: 8367767
+# pg_map_hash: SHA-256 8367767fd5fd37561d5a2885ff682da6d113e4b1dccb238471c005380f711357
 android.animation.Animator$AnimatorPauseListener -> android.animation.Animator$AnimatorPauseListener:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -18201,7 +18201,7 @@ com.antplay.ui.activity.PcView -> com.antplay.ui.activity.PcView:
     void -$$Nest$mstopComputerUpdates(com.antplay.ui.activity.PcView,boolean) -> -$$Nest$mstopComputerUpdates
       # {"id":"com.android.tools.r8.synthesized"}
     114:905:void <init>() -> <init>
-    1624:1669:void callTimer(android.widget.TextView,long,java.lang.String) -> callTimer
+    1637:1682:void callTimer(android.widget.TextView,long,java.lang.String) -> callTimer
     646:657:void completeOnCreate() -> completeOnCreate
     270:357:void doAddPc(java.lang.String) -> doAddPc
     1048:1063:void doAppList(com.antplay.nvstream.http.ComputerDetails,boolean,boolean) -> doAppList
@@ -18209,9 +18209,9 @@ com.antplay.ui.activity.PcView -> com.antplay.ui.activity.PcView:
     1000:1045:void doUnpair(com.antplay.nvstream.http.ComputerDetails) -> doUnpair
     967:997:void doWakeOnLan(com.antplay.nvstream.http.ComputerDetails) -> doWakeOnLan
     1232:1232:int getAdapterFragmentLayoutId() -> getAdapterFragmentLayoutId
-    1341:1397:void getVM(java.lang.String) -> getVM
-    1547:1588:void getVMForShutDown() -> getVMForShutDown
-    1399:1449:void getVMIP(java.lang.String,java.lang.String) -> getVMIP
+    1341:1410:void getVM(java.lang.String) -> getVM
+    1560:1601:void getVMForShutDown() -> getVMForShutDown
+    1412:1462:void getVMIP(java.lang.String,java.lang.String) -> getVMIP
     1276:1282:boolean handleDoneEvent(java.lang.String,java.lang.String) -> handleDoneEvent
     427:539:void initializeViews() -> initializeViews
     204:241:boolean isWrongSubnetSiteLocalAddress(java.lang.String) -> isWrongSubnetSiteLocalAddress
@@ -18225,13 +18225,13 @@ com.antplay.ui.activity.PcView -> com.antplay.ui.activity.PcView:
     516:516:void lambda$initializeViews$6(android.view.View) -> lambda$initializeViews$6
     518:520:void lambda$initializeViews$7(android.view.View) -> lambda$initializeViews$7
     521:521:void lambda$initializeViews$8(android.view.View) -> lambda$initializeViews$8
-    1717:1717:void lambda$onBackPressed$11() -> lambda$onBackPressed$11
-    1745:1748:void lambda$openDialog$12(android.app.Dialog,android.view.View) -> lambda$openDialog$12
-    1750:1751:void lambda$openDialog$13(android.app.Dialog,android.view.View) -> lambda$openDialog$13
-    1779:1787:void lambda$openPaymentSuccessDialog$14(android.view.View) -> lambda$openPaymentSuccessDialog$14
+    1730:1730:void lambda$onBackPressed$11() -> lambda$onBackPressed$11
+    1758:1761:void lambda$openDialog$12(android.app.Dialog,android.view.View) -> lambda$openDialog$12
+    1763:1764:void lambda$openDialog$13(android.app.Dialog,android.view.View) -> lambda$openDialog$13
+    1784:1792:void lambda$openPaymentSuccessDialog$14(android.view.View) -> lambda$openPaymentSuccessDialog$14
     675:687:void lambda$startComputerUpdates$10(com.antplay.nvstream.http.ComputerDetails) -> lambda$startComputerUpdates$10
     678:685:void lambda$startComputerUpdates$9(com.antplay.nvstream.http.ComputerDetails) -> lambda$startComputerUpdates$9
-    1711:1718:void onBackPressed() -> onBackPressed
+    1724:1731:void onBackPressed() -> onBackPressed
     402:413:void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
     1067:1140:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
     814:815:void onContextMenuClosed(android.view.Menu) -> onContextMenuClosed
@@ -18241,21 +18241,21 @@ com.antplay.ui.activity.PcView -> com.antplay.ui.activity.PcView:
     741:745:void onPause() -> onPause
     725:737:void onResume() -> onResume
     749:752:void onStop() -> onStop
-    1720:1753:void openDialog(boolean,java.lang.String) -> openDialog
-    1755:1789:void openPaymentSuccessDialog() -> openPaymentSuccessDialog
-    1591:1622:void openShutDownVMDialog(java.lang.String,java.lang.Long) -> openShutDownVMDialog
+    1733:1766:void openDialog(boolean,java.lang.String) -> openDialog
+    1768:1794:void openPaymentSuccessDialog() -> openPaymentSuccessDialog
+    1604:1635:void openShutDownVMDialog(java.lang.String,java.lang.Long) -> openShutDownVMDialog
     249:266:java.net.URI parseRawUserInputToUri(java.lang.String) -> parseRawUserInputToUri
     1237:1255:void receiveAbsListView(android.widget.AbsListView) -> receiveAbsListView
     1145:1170:void removeComputer(com.antplay.nvstream.http.ComputerDetails) -> removeComputer
-    1696:1699:void saveTime() -> saveTime
+    1709:1712:void saveTime() -> saveTime
     937:963:void sendAndVerifySecurityPinManually(java.lang.String) -> sendAndVerifySecurityPinManually
-    1701:1708:void showTimer(java.lang.String) -> showTimer
-    1454:1498:void shutDownVM(java.lang.String,java.lang.String) -> shutDownVM
+    1714:1721:void showTimer(java.lang.String) -> showTimer
+    1467:1511:void shutDownVM(java.lang.String,java.lang.String) -> shutDownVM
     360:375:void startAddThread() -> startAddThread
     664:690:void startComputerUpdates() -> startComputerUpdates
     1287:1338:void startVm(java.lang.String) -> startVm
     693:706:void stopComputerUpdates(boolean) -> stopComputerUpdates
-    1672:1693:java.lang.Long timeDifference() -> timeDifference
+    1685:1706:java.lang.Long timeDifference() -> timeDifference
     1173:1228:void updateComputer(com.antplay.nvstream.http.ComputerDetails,java.lang.String) -> updateComputer
 com.antplay.ui.activity.PcView$$ExternalSyntheticLambda0 -> com.antplay.ui.activity.PcView$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
@@ -18415,28 +18415,28 @@ com.antplay.ui.activity.PcView$15 -> com.antplay.ui.activity.PcView$15:
     1293:1324:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$16 -> com.antplay.ui.activity.PcView$16:
     1342:1342:void <init>(com.antplay.ui.activity.PcView,java.lang.String) -> <init>
-    1392:1392:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1345:1388:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1405:1405:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1345:1401:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$17 -> com.antplay.ui.activity.PcView$17:
-    1401:1401:void <init>(com.antplay.ui.activity.PcView,java.lang.String,java.lang.String) -> <init>
-    1446:1447:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1404:1439:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1414:1414:void <init>(com.antplay.ui.activity.PcView,java.lang.String,java.lang.String) -> <init>
+    1459:1460:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1417:1452:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$18 -> com.antplay.ui.activity.PcView$18:
-    1456:1456:void <init>(com.antplay.ui.activity.PcView,java.lang.String) -> <init>
-    1495:1496:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1459:1492:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1469:1469:void <init>(com.antplay.ui.activity.PcView,java.lang.String) -> <init>
+    1508:1509:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1472:1505:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$2 -> com.antplay.ui.activity.PcView$2:
     190:190:void <init>(com.antplay.ui.activity.PcView) -> <init>
     192:194:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
     197:199:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.antplay.ui.activity.PcView$20 -> com.antplay.ui.activity.PcView$20:
-    1548:1548:void <init>(com.antplay.ui.activity.PcView) -> <init>
-    1581:1582:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
-    1551:1577:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
+    1561:1561:void <init>(com.antplay.ui.activity.PcView) -> <init>
+    1594:1595:void onFailure(retrofit2.Call,java.lang.Throwable) -> onFailure
+    1564:1590:void onResponse(retrofit2.Call,retrofit2.Response) -> onResponse
 com.antplay.ui.activity.PcView$21 -> com.antplay.ui.activity.PcView$21:
-    1624:1624:void <init>(com.antplay.ui.activity.PcView,long,long,android.widget.TextView,java.lang.String) -> <init>
-    1641:1667:void onFinish() -> onFinish
-    1626:1638:void onTick(long) -> onTick
+    1637:1637:void <init>(com.antplay.ui.activity.PcView,long,long,android.widget.TextView,java.lang.String) -> <init>
+    1654:1680:void onFinish() -> onFinish
+    1639:1651:void onTick(long) -> onTick
 com.antplay.ui.activity.PcView$22 -> com.antplay.ui.activity.PcView$22:
     767:767:void <clinit>() -> <clinit>
 com.antplay.ui.activity.PcView$3 -> com.antplay.ui.activity.PcView$3:
