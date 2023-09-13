@@ -85,6 +85,7 @@ public class Const {
     public static String STARTBtnStatus = "start_btnStatus";
     public static String connectbtnVisible = "connectbtnVisible";
     public static String FIRSTTIMEVMTIMER = "firsttimevmtimer";
+    public static String FIRSTTIMEDIALOG = "firstTimeDialog";
 
     public static String startTime = "starttime";
     public static String middleTIme = "middleTime";
