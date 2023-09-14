@@ -109,6 +109,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void logoutMethod() {
+
         try {
             Dialog dialog = new Dialog(mContext);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -123,6 +124,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 dialog.dismiss();
                 SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
                 SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
+                SharedPreferenceUtils.saveString(ProfileActivity.this, Const.EMAIL_ID, "");
                 AppUtils.navigateScreen(ProfileActivity.this, LoginSignUpActivity.class);
                 finishAffinity();
             });
@@ -134,6 +136,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         catch (Exception e){
             SharedPreferenceUtils.saveUserLoggedIn(ProfileActivity.this, Const.IS_LOGGED_IN, false);
             SharedPreferenceUtils.saveString(ProfileActivity.this, Const.ACCESS_TOKEN, "");
+            SharedPreferenceUtils.saveString(ProfileActivity.this, Const.EMAIL_ID, "");
             AppUtils.navigateScreen(ProfileActivity.this, LoginSignUpActivity.class);
             finishAffinity();
         }
