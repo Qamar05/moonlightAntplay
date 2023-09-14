@@ -11031,6 +11031,7 @@ com.antplay.BuildConfig:
     public static final int VERSION_CODE
     public static final java.lang.String VERSION_NAME
     public void <init>()
+com.antplay.Game$19
 com.antplay.Game:
     public static final java.lang.String EXTRA_APP_HDR
     public static final java.lang.String EXTRA_APP_ID
@@ -11060,6 +11061,7 @@ com.antplay.Game:
     private void openDialog()
     private void openExitVMDialog()
     private void openTimerDialog()
+    private void stopVM()
 com.antplay.LimeLog:
     public static void setFileHandler(java.lang.String)
 com.antplay.PosterContentProvider:
@@ -11093,6 +11095,7 @@ com.antplay.api.APIClient:
     public static final java.lang.String UOMYYGUKCD
     public void <init>()
 com.antplay.api.RetrofitAPI:
+    public abstract retrofit2.Call stopVM(java.lang.String,com.antplay.models.VMTimerReq)
     public abstract retrofit2.Call updatePin(java.lang.String,com.antplay.models.UpdatePinRequestModal)
 com.antplay.binding.PlatformBinding:
     public void <init>()
@@ -11636,6 +11639,7 @@ com.antplay.ui.activity.MyApplication:
 com.antplay.ui.activity.OnBoardingActivity:
     private void mathscalculation()
     private void updateSharedPreferences(boolean)
+com.antplay.ui.activity.PcView$19
 com.antplay.ui.activity.PcView:
     private static final int DELETE_ID
     private static final int FULL_APP_LIST_ID
@@ -11647,9 +11651,9 @@ com.antplay.ui.activity.PcView:
     private static final int UNPAIR_ID
     private static final int VIEW_DETAILS_ID
     private static final int WOL_ID
-    boolean paymentStatus
     android.app.Dialog startVMDialog
     java.util.Timer startVmTimer
+    private void stopVM(java.lang.String,java.lang.String)
 com.antplay.ui.activity.ProfileActivity:
     private int dayInYear(long)
     private java.lang.String getDateFromSec(long)

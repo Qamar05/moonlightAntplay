@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp">
+
+
+    <RelativeLayout
+        android:id="@+id/rlSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradienttext"
+        android:padding="15dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/txtPlaneName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Basic"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtPlaneAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="sans-serif"
+            android:text="1 Rs."
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_marginTop="3dp"
+            android:id="@+id/txtValidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtPlaneName"
+            android:fontFamily="sans-serif"
+            android:text="1 Day"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtDurationInHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtPlaneAmount"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif"
+            android:text="2 Hours"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/viewSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txtDurationInHours"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />
+
+        <ImageView
+            android:id="@+id/imgSpacLine1"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@id/viewSeparator"
+            android:layout_marginTop="12dp"            android:src="@drawable/arrow" />
+
+        <TextView
+            android:id="@+id/tv_gpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewSeparator"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imgSpacLine1"
+            android:fontFamily="sans-serif"
+            android:text="GetForce GTX 1660 6GB GPU"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imgSpacLine2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@id/imgSpacLine1"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/arrow" />
+
+        <TextView
+            android:id="@+id/tv_cpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgSpacLine1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imgSpacLine1"
+            android:fontFamily="sans-serif"
+            android:text="8 CPU"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imgSpacLine3"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@id/imgSpacLine2"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/arrow" />
+
+        <TextView
+            android:id="@+id/tv_ram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgSpacLine2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imgSpacLine1"
+            android:fontFamily="sans-serif"
+            android:text="12GB Ram"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imgSpacLine4"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@id/imgSpacLine3"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/arrow" />
+
+        <TextView
+            android:id="@+id/tv_ssd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgSpacLine3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imgSpacLine1"
+            android:fontFamily="sans-serif"
+            android:text="400 SSD"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imgSpacLine5"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@id/imgSpacLine4"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/arrow"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_mbp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgSpacLine4"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imgSpacLine1"
+            android:fontFamily="sans-serif"
+            android:text="Upstream 50 MBP"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/txtSubscribe"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@id/imgSpacLine5"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/payment_button_bg"
+            android:gravity="center"
+            android:text="@string/subscribe"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/active_plan"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@id/txtSubscribe"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/payment_button_bg"
+            android:gravity="center"
+            android:text="@string/active_plan"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

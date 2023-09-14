@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/stream_settings"
+    android:background="@drawable/background_image"
+    tools:context=".preferences.StreamSettings">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_green"/>
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/back_linear_payment"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/_10sdp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="@dimen/_10sdp"-->
+<!--            android:layout_height="@dimen/_10sdp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="@dimen/_10sdp"-->
+<!--            android:src="@drawable/backarrow" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:fontFamily="sans-serif"-->
+<!--            android:text="@string/back"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/_12sdp"-->
+<!--            android:textStyle="normal" />-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="@dimen/_20sdp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="@dimen/_17sdp"-->
+<!--            android:layout_height="@dimen/_17sdp"-->
+<!--            android:layout_marginLeft="@dimen/_10sdp"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            android:src="@drawable/ic_settings"-->
+<!--            app:tint="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/_10sdp"-->
+<!--            android:text="@string/setting"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/_12sdp" />-->
+
+<!--    </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+</RelativeLayout>

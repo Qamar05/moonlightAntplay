@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/inset_dialog"
+    android:layout_gravity="center"
+    android:padding="@dimen/_10sdp"
+    android:layout_margin="@dimen/_30sdp"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/logout"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:layout_marginRight="@dimen/_10sdp"
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@+id/titleText"/>
+
+
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@+id/timerText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:layout_gravity="center"
+        android:indeterminate="true"/>
+
+
+
+
+    <TextView
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timerText"
+        android:id="@+id/msgText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:lineSpacingExtra="3sp"
+        android:text="@string/are_you_sure"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/txtNo"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:background="@drawable/btngradient"
+        android:text="@string/no"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtYes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgText" />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/txtYes"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btngradient"
+        android:text="@string/yes"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtNo"
+        app:layout_constraintTop_toBottomOf="@+id/msgText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

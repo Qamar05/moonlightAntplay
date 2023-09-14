@@ -2267,7 +2267,9 @@ public class Game extends Activity implements SurfaceHolder.Callback,
                                 if(vmip!=null)
                                     shutDownVM();
                                 else
-                                    stopVM();
+                                    Toast.makeText(Game.this,"ip is" + vmip,Toast.LENGTH_LONG).show();
+
+                                //stopVM();
                             }
                         }
 

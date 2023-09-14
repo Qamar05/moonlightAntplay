@@ -393,7 +393,9 @@
     <string name="stop_vm">Shutdown</string>
     <string name="shutdown_vmmsg">your machine was shut down , please start your machine to continue</string>
     <string name="check_mail">Please check verification email</string>
-    <string name="success_msg">your subscription is successfullly done. it will take around 20 min to create your virtual machine</string>
+    <string name="success_msg">your subscription is successfullly done. Please start your machine to make it ready for you.</string>
     <string name="payment_success">Payment Success</string>
+
+
 
 </resources>

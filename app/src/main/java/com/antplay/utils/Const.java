@@ -85,6 +85,7 @@ public class Const {
     public static String STARTBtnStatus = "start_btnStatus";
     public static String connectbtnVisible = "connectbtnVisible";
     public static String FIRSTTIMEVMTIMER = "firsttimevmtimer";
+    public static String FIRSTTIMEDIALOG = "firstTimeDialog";
 
     public static String startTime = "starttime";
     public static String middleTIme = "middleTime";
@@ -93,6 +94,7 @@ public class Const {
 
     public static String isSUBScriptionScreen = "isSUBScriptionScreen";
     public static String PAYMENT_STATUS = "payment_status";
+    public static String LOGIN_EMAIL = "login_email";
 
 
 
